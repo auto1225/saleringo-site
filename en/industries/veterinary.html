@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<!-- Review subdomain. The canonical tags below still point at the production
+     domain on purpose, so this copy never competes with it in search.
+     To make this the live site: delete this meta and the Disallow in robots.txt. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Front Desk for Veterinary Practices | Saleringo</title>
+<meta name="description" content="An AI phone agent for veterinary practices. Books appointments and boosters after hours, quotes from your own price list, and routes emergencies to a person.">
+<link rel="canonical" href="https://saleringo.com/en/industries/veterinary.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://saleringo.com/en/industries/veterinary.html">
+<meta property="og:title" content="AI Front Desk for Veterinary Practices">
+<meta property="og:description" content="An AI phone agent for veterinary practices. Books appointments and boosters after hours, quotes from your own price list, and routes emergencies to a person.">
+<meta property="og:image" content="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Front Desk for Veterinary Practices">
+<meta name="twitter:description" content="An AI phone agent for veterinary practices. Books appointments and boosters after hours, quotes from your own price list, and routes emergencies to a person.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./veterinary.html">
+<link rel="alternate" hreflang="x-default" href="./veterinary.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Veterinary Practices","item":"https://saleringo.com/en/industries/veterinary.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=4.4">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=4.4">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=4.4">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=4.4">
+<style>
+  /* ── VETERINARY · archetype: NIGHT PRACTICE ────────────────────
+     opens dark and quiet, because that is when this trade's hardest
+     calls arrive. brightens once the answering turns into a booking. */
+
+  .hero{position:relative;overflow:hidden;padding-bottom:96px;display:block;}
+  .hero.photohero .scrim{background:
+    linear-gradient(96deg, rgba(4,9,18,.96) 0%, rgba(4,9,18,.88) 42%, rgba(4,9,18,.30) 80%),
+    linear-gradient(180deg, transparent 42%, rgba(5,11,22,.86) 82%, #050B16 100%);}
+  .hero.photohero .tint{opacity:.45;background:radial-gradient(52% 60% at 84% 26%, rgba(23,189,189,.28), transparent 70%);}
+  .hero-inner{position:relative;z-index:2;padding:172px 0 0;display:grid;
+    grid-template-columns:1.16fr .84fr;gap:60px;align-items:end;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.03;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:26px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .sub{margin-top:24px;font-size:16.5px;line-height:1.75;color:var(--tx2);font-weight:500;max-width:530px;}
+  .hero .ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:12.5px;color:var(--tx3);font-weight:500;}
+  .herofacts{display:grid;gap:12px;padding-bottom:8px;}
+  .hfact{background:rgba(255,255,255,.045);border:1px solid var(--hair2);border-radius:16px;padding:16px 18px;
+    backdrop-filter:blur(8px);}
+  .hfact b{display:block;font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:-.03em;color:#fff;}
+  .hfact span{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:var(--tx2);font-weight:600;}
+  .heroscene{position:relative;z-index:2;margin:56px auto 0;max-width:1400px;padding:0 32px;}
+
+  /* ── the reality band ── */
+  .reality .cols{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start;}
+  .secintro{margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
+  .nots{margin-top:34px;display:grid;gap:12px;}
+  .notrow{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--hair);border-radius:16px;
+    padding:18px 20px;background:rgba(255,255,255,.03);}
+  .notrow i{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(217,106,94,.14);
+    border:1px solid rgba(217,106,94,.35);color:#E58C81;font-size:12px;font-weight:800;font-style:normal;
+    display:flex;align-items:center;justify-content:center;}
+  .notrow.good i{background:rgba(58,201,138,.14);border-color:rgba(58,201,138,.35);color:#6FE3B0;}
+  .notrow b{display:block;font-size:14px;color:#fff;}
+  .notrow span{display:block;margin-top:4px;font-size:12.5px;line-height:1.6;color:var(--tx2);font-weight:500;}
+
+  /* ── reception photograph band ── */
+  .vetband{background:#FDFDFE;}
+  .vetband .photosplit{min-height:500px;}
+  /* the frame carries a real practice's signage high in the shot — crop to the desk */
+  .vetband .photosplit .media img.ph{object-position:center 92%;}
+  .vetband .copy .lead{max-width:440px;}
+
+  /* ── CRM ── */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:14px;line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:13px;padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:11px;color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .kpiwrap{margin-top:34px;}
+
+  /* ── scenarios / question bank ── */
+  .blockhead{max-width:720px;margin-bottom:34px;}
+  .blockhead h3{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.6vw,34px);
+    font-weight:600;letter-spacing:-.03em;line-height:1.12;}
+  .blockhead p{margin-top:14px;font-size:15px;line-height:1.75;font-weight:500;}
+  .sec-light .blockhead h3{color:var(--l-ink);} .sec-light .blockhead p{color:var(--l-mut);}
+  .sec-dark .blockhead h3,.bg-dusk .blockhead h3{color:#fff;}
+  .bg-dusk .blockhead p{color:var(--tx2);}
+  .qnote{margin-top:20px;font-size:12.5px;line-height:1.75;font-weight:600;color:#8A94A3;max-width:760px;}
+
+  /* three-state integration status */
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:10.5px;font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.build h4{color:#8FBAFF;} .statcol.build h4 i{background:#5B9DFF;}
+  .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
+  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:13px;line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:11.5px;font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:12.5px;line-height:1.75;color:var(--tx3);font-weight:600;max-width:740px;}
+
+  /* multi-branch */
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:16px;color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:13.5px;line-height:1.72;color:var(--tx2);font-weight:500;}
+  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
+  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
+  .mlsite{border:1px solid var(--app-line,rgba(255,255,255,.09));border-radius:13px;padding:15px 16px;
+    background:var(--app-panel,#0E1B2E);}
+  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:#fff;}
+  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
+  .mlsite dl{margin-top:11px;}
+  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:11.5px;border-top:1px solid rgba(255,255,255,.07);}
+  .mlsite .r:first-of-type{border-top:0;}
+  .mlsite .r dt{width:80px;flex:none;color:var(--tx3);font-weight:800;font-size:9.5px;
+    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
+  .mlsite .r dd{color:#DCE6F2;font-weight:600;margin:0;}
+
+  /* faq + closer */
+  .faqsec .head{text-align:center;margin-bottom:46px;}
+  .closer{position:relative;padding:118px 0 0;text-align:center;overflow:hidden;}
+  .closer .riskrow{margin-bottom:74px;text-align:left;}
+  .closer .riskrow.short{grid-template-columns:repeat(2,1fr);max-width:660px;margin-left:auto;margin-right:auto;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.05;}
+  .closer .lead{margin:22px auto 0;max-width:520px;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .closer .more{margin-top:26px;font-size:12.5px;color:var(--tx3);font-weight:500;}
+  .closer .more a{color:var(--tx2);}
+
+  /* inline lead form */
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:14.5px;
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:34px;padding-top:150px;}
+    .heroscene{padding:0 18px;}
+    .reality .cols{grid-template-columns:1fr;gap:44px;}
+    .closer .riskrow{margin-bottom:54px;}
+  }
+</style>
+</head>
+<body data-grade="clinic">
+
+<!-- ═══════ HERO · the night call ═══════ -->
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+         srcset="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1900 1900w"
+         sizes="100vw"
+         alt="" width="1900" height="1269" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+    <a class="logo" href="../index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+    <span class="links">
+      <a href="../voice.html">AI Phone</a>
+      <a href="../webchat.html">Chatbot</a>
+      <a href="../whatsapp.html">WhatsApp</a>
+      <a href="../platform.html">Platform</a>
+      <a class="on" href="../industries.html">Industries</a>
+      <a href="../examples.html">Examples</a>
+      <a href="../pricing.html">Pricing</a>
+    </span>
+    <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+    <span class="sep"></span>
+    <a class="btn btn-white" href="../get-started.html">Get started<span class="cir">↗</span></a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav></div>
+
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow"><i></i>For Veterinary Practices</span>
+      <h1>The call came at 11:40 PM.<br><em>The emergency hospital was expecting them by midnight.</em></h1>
+      <p class="sub">Owners phone frightened, at night, about an animal that cannot explain itself. Saleringo never guesses at any of it — it refuses the clinical question in the first sentence, routes the caller where you told it to route them, and writes the record so your morning list already knows. The rest of the time it books the nurse appointment, reads the booster due date off the animal's own record, and quotes the band from your price list.</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="#early-access">Watch it answer my questions<span class="cir">↗</span></a>
+        <a class="btn btn-ghostd" href="../demo.html">Watch it answer — 2 min</a>
+      </div>
+      <div class="micro">Founding cohort open · start on website chat, add WhatsApp &amp; voice when ready</div>
+      <p class="photocap">Photography is illustrative — the kind of practice Saleringo is built for, not named customers and not testimonials.</p>
+    </div>
+    <div class="herofacts">
+      <div class="hfact"><b>Never</b><span>a dose, a diagnosis, or a view on whether you should be worried</span></div>
+      <div class="hfact"><b>One sentence</b><span>how long it takes to hand an emergency to the number you nominated</span></div>
+      <div class="hfact"><b>Approved only</b><span>weight-banded prices from your own list, or no price at all</span></div>
+    </div>
+  </div>
+
+  <!-- ── scene: the practice at night, the call still answered ── -->
+  <div class="heroscene">
+    <div class="scene-frame">
+<div class="photo-scrim" style="height:clamp(300px,38vw,520px);">
+  <img class="ph" src="https://images.pexels.com/photos/30320851/pexels-photo-30320851.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+       srcset="https://images.pexels.com/photos/30320851/pexels-photo-30320851.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/30320851/pexels-photo-30320851.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/30320851/pexels-photo-30320851.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+       sizes="100vw" alt="A lit shopfront on a quiet street after dark, closed for the night"
+       loading="lazy" decoding="async" width="1600" height="1068">
+</div>
+      <div class="scene-overlay tl">
+        <b>11:40 PM · out of hours</b>
+        <span>Owner calling · animal unable to settle</span>
+      </div>
+      <div class="scene-overlay br">
+        <b>Refused, then routed</b>
+        <span>Nominated hospital called ahead · record on the morning list</span>
+      </div>
+    </div>
+    <p class="photocap">The practice is shut. The caller still gets a person, a place, and a record.
+      Illustrative photography; not a Saleringo customer practice.</p>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════ THE REALITY OF VETERINARY ENQUIRIES ═══════ -->
+<section class="reality bg-grid grain t-md">
+  <div class="wrap">
+    <div class="secrule reveal">
+      <span class="eyebrow"><i></i>What actually arrives, and when</span><span class="line"></span>
+    </div>
+    <div class="cols">
+      <div class="reveal">
+        <h2 class="h2 onDark">Half of it is a booster.<br>The other half is a person<br><em style="font-style:normal;color:var(--teal);">who should not be talking to software.</em></h2>
+        <p class="secintro">No other trade on this site has a sharper line running through its inbox. On one side sit
+          the questions a practice answers forty times a week — hours, boosters, nail clips, what a dental costs, whether
+          you see rabbits. On the other sit toxicity, dosage, symptoms and end-of-life, where a confident answer from a
+          machine is worse than no answer at all. A veterinary AI is only worth putting on your main line if it can tell
+          the two apart every single time, out loud, in the first sentence.</p>
+        <a class="linkcta" style="margin-top:30px;color:#fff;border-color:rgba(255,255,255,.4);" href="../security.html">Guardrails &amp; Trust Center&nbsp;&nbsp;→</a>
+      </div>
+      <div class="reveal">
+        <div class="nots">
+          <div class="notrow"><i>✕</i><span><b>The 9 PM call you never hear about</b><span>The owner rings, gets voicemail, rings the emergency hospital instead — and the practice finds out days later, if at all.</span></span></div>
+          <div class="notrow"><i>✕</i><span><b>The booster that quietly lapses</b><span>Vaccination and post-op recalls are the most reliable recurring work in the building, and they leak every week the desk is busy.</span></span></div>
+          <div class="notrow"><i>✕</i><span><b>The price shopper at 6:50 PM</b><span>They are ringing four practices in one evening. Whoever answers with a real, weight-banded figure books the animal.</span></span></div>
+          <div class="notrow good"><i>✓</i><span><b>What changes with an answered line</b><span>Bookings taken outside opening hours, recalls that fire themselves, and every clinical question in the room with a person instead of dying in a voicemail box.</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="t-sm sec-dark" data-packstatus>
+  <div class="wrap">
+    <div style="border:1px solid rgba(232,164,76,.34);background:rgba(232,164,76,.06);
+         border-radius:16px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+      <span style="font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+            color:#F0BE7C;border:1px solid rgba(232,164,76,.4);border-radius:6px;padding:5px 9px;
+            white-space:nowrap;">Onboarding our first practices</span>
+      <p style="flex:1;min-width:260px;font-size:14px;line-height:1.7;color:var(--tx2);font-weight:500;margin:0;">
+        This pack is being set up with its first practices now. The safety behavior below — toxicity, dosage and symptom questions refused outright — is built and is the part we would ask you to test first. The rest is being configured with the practices onboarding this quarter. <a href="../industries.html#waitlist" style="color:var(--teal);font-weight:700;">See which packs are live →</a></p>
+    </div>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ RECEPTION · full-bleed photograph ═══════ -->
+<section class="vetband">
+  <div class="photosplit">
+    <div class="media">
+      <img class="ph" src="https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+           srcset="https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="(max-width:900px) 100vw, 50vw"
+           alt="A practice reception desk with wood panelling and warm lighting" loading="lazy" decoding="async" width="1200" height="1600">
+    </div>
+    <div class="copy reveal">
+      <span class="eyebrow light"><i></i>Consult running, waiting room full</span>
+      <h2 class="h2" style="margin-top:22px">Your nurse is holding<br>a cat. The phone does<br>not care.</h2>
+      <p class="lead" style="margin-top:18px;">Reception in a veterinary practice is a triage desk with a card machine attached. Somebody is settling a bill, somebody else is carrying in a carrier, and the fourth ring becomes voicemail. Saleringo takes that call with your hours, your species list, your price bands and your out-of-hours instructions — and puts the written record in front of your team before the consult ends.</p>
+      <a class="linkcta" style="margin-top:28px;" href="../demo.html">Watch it answer a front-desk question&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ THE VETERINARY CRM PACK ═══════ -->
+<section class="crmsec sec-dark bg-spot t-xl" id="veterinary-crm">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:760px;">
+      <span class="eyebrow"><i></i>The veterinary CRM pack</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">A generic CRM records a customer.<br>This one records <em style="font-style:normal;color:var(--teal);">an animal, an owner and a due date.</em></h2>
+      <p class="secintro">Answering is the easy half. The half that pays is what is written down afterwards —
+        on a pipeline built from the stages a practice actually runs, with fields that hold a species, a weight
+        band and a booster date, because every one of those changes what may be said back.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Patient pipeline</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Front desk</div>
+          <span class="it on"><span class="dot"></span>Pipeline<span class="n">34</span></span>
+          <span class="it"><span class="dot"></span>New inquiries<span class="n">11</span></span>
+          <span class="it"><span class="dot"></span>Recalls due<span class="n">18</span></span>
+          <span class="it"><span class="dot"></span>Estimates<span class="n">7</span></span>
+          <div class="grp">Clinical</div>
+          <span class="it"><span class="dot"></span>Routed to a vet<span class="n">9</span></span>
+          <span class="it"><span class="dot"></span>Referral partners</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Price list</span>
+          <span class="it"><span class="dot"></span>Species &amp; clinicians</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">11</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">RB</span><span class="nm">Rabbit · 2 yr</span></div>
+                <div class="mt">Nail clip and a check — owner asks if you see rabbits</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 7:05 AM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">CT</span><span class="nm">Cat · 9 mo</span></div>
+                <div class="mt">Not yet registered · asking about first visit</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4><span class="sw"></span>Appointment booked<span class="ct">12</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DG</span><span class="nm">Dog · 12 kg</span></div>
+                <div class="mt">Nurse clinic Wed 15:20 · weight check before dental</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">Riverside</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">KT</span><span class="nm">Kitten · 14 wk</span></div>
+                <div class="mt">Second vaccination · microchip added at the same visit</div>
+                <div class="ft"><span class="tag">Booster</span><span class="amt">$65–110</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4><span class="sw"></span>Estimate under review<span class="ct">7</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">SP</span><span class="nm">Spaniel · 12 kg</span></div>
+                <div class="mt">Dental under anaesthetic · weight-banded range from your list</div>
+                <div class="ft"><span class="tag">Estimate</span><span class="amt">$420–580</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">LB</span><span class="nm">Labrador · 9 yr</span></div>
+                <div class="mt">Pre-anaesthetic bloods recommended by your own age rule</div>
+                <div class="ft"><span class="tag">Estimate</span><span class="amt">$95</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4><span class="sw"></span>Seen &amp; recalled<span class="ct">4</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">TR</span><span class="nm">Terrier · 5 yr</span></div>
+                <div class="mt">Post-op check done · next booster auto-set</div>
+                <div class="ft"><span class="tag">Closed</span><span class="chan">Riverside</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">HS</span><span class="nm">Horse · yard visit</span></div>
+                <div class="mt">Seen on the round · annual reminder queued</div>
+                <div class="ft"><span class="tag">Closed</span><span class="chan">Westfield</span></div></div>
+            </div>
+          </div>
+
+          <div class="kpiwrap">
+            <div class="kpitiles">
+              <div class="kpitile hi"><span class="lb">Open records</span><span class="vl">34</span><span class="dl flat">sample data</span></div>
+              <div class="kpitile"><span class="lb">Routed to a person</span><span class="vl">9</span><span class="dl flat">symptoms · dosage · end-of-life</span></div>
+              <div class="kpitile"><span class="lb">Recalls due</span><span class="vl">18</span><span class="dl flat">boosters and post-op checks</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with sample data. Stages, species rules, price bands and out-of-hours routing are configured for your practice during onboarding.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">SP</span>
+            <span><b>Spaniel, 12 kg — dental estimate</b><span>First contact — phone, 6:50 PM · Riverside</span></span>
+            <span class="stg">Estimate under review</span>
+          </div>
+          <div class="crow"><span class="k">Animal</span><span class="v">Species, breed, age and weight band — the band is what the price hangs off</span></div>
+          <div class="crow"><span class="k">Owner</span><span class="v">Named contact, preferred channel, and which branch they usually attend</span></div>
+          <div class="crow"><span class="k">Registered</span><span class="v">Yes — record matched, so the booster history was read, not asked for<span class="aibadge">Auto</span></span></div>
+          <div class="crow"><span class="k">Reason</span><span class="v">Dental under general anaesthetic · owner asked for a written figure first</span></div>
+          <div class="crow"><span class="k">Estimate</span><span class="v">$420–580 from your own weight-banded list, plus $95 bloods <em>— confirmed by the vet after examining her</em></span></div>
+          <div class="crow"><span class="k">Insurance</span><span class="v">Insurer and policy number captured <em>— never an opinion on whether it is covered</em></span></div>
+          <div class="crow"><span class="k">Recall due</span><span class="v">Booster set from the animal's own history; post-op check queued on the day</span></div>
+          <div class="crow"><span class="k">Summary</span><span class="v">Asked twice whether the bloods were optional. Cost-sensitive, not hesitant about the procedure.<span class="aibadge">AI written</span></span></div>
+          <div class="crow"><span class="k">Not answered</span><span class="v">No symptom assessment, no dosage, no prescription — those left the AI immediately</span></div>
+        </div>
+        <p class="mockcap">Product illustration with sample data — not a real animal, owner or practice.</p>
+      </div>
+      <div>
+        <span class="eyebrow"><i></i>The fields a practice actually needs</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">Species and weight are not<br>optional metadata here.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>The species decides who can see it.</b> A rabbit, a snake and a horse do not go on the same list. The AI only offers clinicians and clinics you have marked as seeing that species — and says so plainly if none is free.</span></li>
+          <li><i>→</i><span><b>The weight band decides the price.</b> Anaesthetic work is priced by weight in almost every practice, so it is priced by weight here too: your bands, your figures, always a range until the vet has examined the animal.</span></li>
+          <li><i>→</i><span><b>Recalls fire off the animal's own record.</b> Boosters, post-op checks, parasite treatment. The reminder goes out on the channel the owner last used, and the reply lands back on the same record.</span></li>
+          <li><i>→</i><span><b>A Monday number, not a feeling.</b> Inquiries, bookings taken out of hours, recalls answered, and how many conversations left the AI for a person — per branch and per clinician, exportable to PDF or Excel.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the whole platform&nbsp;&nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SIX WORKED SCENARIOS ═══════ -->
+<section class="bg-dusk t-xl" id="worked-examples">
+  <div class="wrap">
+    <div class="blockhead reveal">
+      <span class="eyebrow"><i></i>Six worked examples</span>
+      <h3>What it says, and what<br>it leaves behind.</h3>
+      <p>Six conversations a veterinary practice has every week, written out in full — including the two where the
+        right answer is to stop talking. These are worked illustrations, not customer stories: no named practice,
+        no invented outcome, no testimonial. Four more veterinary scenarios sit on the
+        <a href="../examples.html#veterinary" style="color:var(--teal);font-weight:700;">worked examples page</a>.</p>
+    </div>
+
+    <div class="exgrid reveal">
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Mon 07:05</span><span class="via">Phone</span><span class="tag solved">Booked by AI</span></div>
+        <div class="exbody">
+          <p class="exq">Do you actually see rabbits? Ours needs her nails done and she's due a once-over.</p>
+          <div class="exturn"><span class="who">Saleringo</span>We do — two of our vets see rabbits and one of our nurses
+            does nail clips. The nurse has <b>Thursday 11:40</b> or <b>Friday 09:15</b> at Riverside. If you want the check
+            done at the same visit I'll put it with a vet who sees rabbits rather than splitting it into two trips.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Booked with a clinician marked in your setup as seeing that species</span></div>
+            <div class="exrow"><i>✓</i><span>Two appointments merged into one visit by your own rule, not improvised</span></div>
+            <div class="exrow"><i>✓</i><span>New patient record opened with species, age and owner contact</span></div>
+          </div>
+          <p class="exlabel">Worked illustration, not a customer story. Exotics calls are the ones a general answering service books wrong — this one can only offer clinicians you have listed.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Tue 12:25</span><span class="via">WhatsApp</span><span class="tag solved">Estimate approved</span></div>
+        <div class="exbody">
+          <p class="exq">We got the dental estimate you sent. Are the bloods actually necessary, and can we go ahead?</p>
+          <div class="exturn"><span class="who">Saleringo</span>The estimate stands: <b>$420 to $580</b> depending on whether
+            extractions are needed, plus <b>$95</b> for pre-anaesthetic bloods. Whether they are necessary for her is a
+            clinical call and the vet will make it at the pre-op check — what I can tell you is that your practice
+            recommends them over eight years old. I have a pre-op slot Monday 09:30. Shall I hold it?</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Existing estimate restated exactly, from your own weight-banded list</span><span class="amt">$420–580</span></div>
+            <div class="exrow"><i>✓</i><span>Pre-op check held; record moved to <b>Appointment booked</b></span></div>
+            <div class="exrow"><i>✕</i><span>The "is it necessary" half was handed to the vet, not answered</span></div>
+          </div>
+          <p class="exlabel">Worked illustration, not a customer story. Half of this message is admin and half is clinical — the whole trick is splitting it in one reply.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Sat 08:15</span><span class="via">WhatsApp</span><span class="tag human">Handed to a vet</span></div>
+        <div class="exbody">
+          <p class="exq">Can I have more of the tablets you gave her last month? She's nearly out.</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>A repeat has to be authorised by a vet, and I'm not
+            allowed anywhere near medication — so I'm putting this in front of the duty vet now with the animal's record
+            attached. I've noted that she has about two days left, because that's the part that decides how quickly
+            they come back to you.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Request queued to the duty vet with the record already open</span></div>
+            <div class="exrow"><i>✓</i><span>The urgent detail — days of medication remaining — captured and flagged</span></div>
+            <div class="exrow"><i>✕</i><span>No drug named, no quantity confirmed, no timing suggested</span></div>
+          </div>
+          <p class="exlabel">Worked illustration, not a customer story. Medication is a categorical refusal. What the AI can do is make the human step fast instead of slow.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Tue 09:00</span><span class="via">Automatic</span><span class="tag solved">Recall fired</span></div>
+        <div class="exbody">
+          <p class="exq">— nobody asked for this one; the record's own due date fired it —</p>
+          <div class="exturn"><span class="who">Saleringo</span>Morning — Bramble's annual booster came due on the 2nd and
+            we haven't seen her yet. The nurse has Thursday 16:10 or Saturday 09:40. Reply with either and I'll book it;
+            reply STOP and I'll leave you alone.</div>
+          <div class="exturn"><span class="who">Owner</span>Saturday please.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Overdue booster chased without anyone opening a list</span></div>
+            <div class="exrow"><i>✓</i><span>Booked into the nurse clinic; next annual reminder set on the same record</span></div>
+            <div class="exrow"><i>✓</i><span>Opt-out honoured in the message itself, not buried in a footer</span></div>
+          </div>
+          <p class="exlabel">Worked illustration, not a customer story. This one runs unprompted. It is the least visible thing on the page and usually the one that pays for the month.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Thu 13:30</span><span class="via">Phone</span><span class="tag solved">Routed to a branch</span></div>
+        <div class="exbody">
+          <p class="exq">Our vet mentioned a scan. Do you do that yourselves or do we have to go somewhere else?</p>
+          <div class="exturn"><span class="who">Saleringo</span>Imaging like that is done at Westfield, not Riverside —
+            it's the branch with the equipment, and it runs its own list and its own price sheet. I can't book imaging
+            without a vet's referral on the record, so I've asked Riverside to confirm it and flagged you for a callback
+            today. Westfield's own number and hours are on their way to you now.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Answered from the branch that actually has the equipment, not the one they dialled</span></div>
+            <div class="exrow"><i>✓</i><span>Referral requirement stated instead of quietly booked around</span></div>
+            <div class="exrow"><i>✓</i><span>Callback queued at the referring branch, record shared between both</span></div>
+          </div>
+          <p class="exlabel">Worked illustration, not a customer story. Multi-branch practices lose people at exactly this handover. The AI is only allowed to name partners and branches you have entered.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Sun 21:10</span><span class="via">Phone</span><span class="tag human">Straight to a person</span></div>
+        <div class="exbody">
+          <p class="exq">He's fourteen and he can't get up any more. I think it might be time. What do you think?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm not going to answer that, and I'm sorry — it isn't
+            a question for me. I'm connecting you to the on-call vet now. Stay on the line; they'll have his record in
+            front of them and I've told them what you said.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Connected to the on-call number you nominated, in the first sentence</span></div>
+            <div class="exrow"><i>✓</i><span>Record opened with the owner's words passed on, so nothing had to be repeated</span></div>
+            <div class="exrow"><i>✓</i><span>Flagged for a follow-up call by a named member of your team</span></div>
+            <div class="exrow"><i>✕</i><span>No opinion, no reassurance, no "many owners find…" — nothing.</span></div>
+          </div>
+          <p class="exlabel">Worked illustration, not a customer story. This is the conversation that decides whether a practice can put an AI on its main line at all. The only correct behavior is to leave.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ QUESTION BANK ═══════ -->
+<section class="sec-light t-md" id="what-it-answers">
+  <div class="wrap">
+    <div class="blockhead reveal">
+      <span class="eyebrow light"><i></i>What it will and won't answer</span>
+      <h3>The line, written down<br>before you go live.</h3>
+      <p>Your vets approve every row of this before an owner hears anything. The third column is the one to read
+        twice — and the red rows are the reason a practice can put this on its main number rather than a side line.</p>
+    </div>
+    <div class="qbank reveal">
+      <div class="qrow hd"><span>Owner asks</span><span>What happens</span><span>Handled by</span></div>
+      <div class="qrow"><span class="qq">Are you open this weekend?</span>
+        <span class="qa">Answers with that branch's own hours, and the out-of-hours number you nominated.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Do you see rabbits, reptiles or horses?</span>
+        <span class="qa">Answers from your species list and only offers clinicians marked as seeing that species.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">How much is a kitten's second vaccination?</span>
+        <span class="qa">Quotes your approved figure — $65, or $110 with the microchip at the same visit.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">When is my dog's booster due?</span>
+        <span class="qa">Reads the due date off the animal's own record instead of asking the owner.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can I have a written estimate for a dental?</span>
+        <span class="qa">Sends the weight-banded range from your list — $420–580, plus $95 bloods — and books the check that confirms it.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Is there parking, and can you help me carry a large dog in?</span>
+        <span class="qa">Answers from the practical facts you approved for that branch.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">My insurer needs a claim form signed.</span>
+        <span class="qa">Captures the insurer and policy number, then hands it to your admin team.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">We can't afford the treatment — what are the options?</span>
+        <span class="qa">Never negotiated by the AI. Routed to a person, with the estimate already attached.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">I want to query this bill.</span>
+        <span class="qa">States your published policy, then hands the decision to your practice manager.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Is this plant / food / chocolate toxic to my dog?</span>
+        <span class="qa">Refused. Emergency route given in the first sentence, staff alerted, record created.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">How much of her medicine should I give?</span>
+        <span class="qa">Refused. No dose is ever calculated, adjusted, confirmed or repeated back.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">She's limping and off her food — should I be worried?</span>
+        <span class="qa">Refused. Symptoms are never assessed, in any wording. Routed to a vet with the facts intact.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Can I give him the tablets our other dog had?</span>
+        <span class="qa">Refused. Medication questions of every kind leave the AI immediately.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Do you think it's time to put him to sleep?</span>
+        <span class="qa">Refused. Connected to the on-call vet at once, with what the owner said passed on.</span><span class="qs never">Never</span></div>
+    </div>
+    <p class="qnote">These limits are built in, not configured and not switchable. You can make the AI answer less than
+      this list. You cannot make it answer more.</p>
+  </div>
+</section>
+
+<!-- ═══════ BRANCHES & REFERRAL PARTNERS ═══════ -->
+<section class="sec-dark bg-grid t-xl" id="branches">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Two branches, a night partner, one number</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Westfield does not quote<br><em style="font-style:normal;color:var(--teal);">Riverside's</em> price sheet.</h2>
+      <p class="secintro">Most practices are not one building. There is the main surgery, the branch that took over
+        somebody's retirement, the yard round, and the hospital that covers the night. Each is set up as its own site
+        inside one account — and the AI is only ever allowed to name the partners you entered yourself.</p>
+    </div>
+    <div class="mlgrid reveal">
+      <div class="mlcard"><span class="n">01</span><b>Its own number, hours and price sheet</b>
+        <p>An owner asking about Westfield hears Westfield's hours, Westfield's clinicians and Westfield's bands.
+          Never the other site's figures, in either direction.</p></div>
+      <div class="mlcard"><span class="n">02</span><b>Its own list, its own recalls</b>
+        <p>Bookings land on the calendar of the branch the owner actually rang, with a clinician who sees that
+          species. Booster and post-op recalls run per site.</p></div>
+      <div class="mlcard"><span class="n">03</span><b>Referral and out-of-hours partners are entered, not inferred</b>
+        <p>The night hospital, the imaging center, the specialist you refer orthopaedics to — each is a named
+          destination with its own instructions. The AI cannot invent one, and it will say it does not know
+          rather than guess.</p></div>
+      <div class="mlcard"><span class="n">04</span><b>Managers see their branch; the owner sees all of them</b>
+        <p>Your Westfield manager opens the pipeline and sees Westfield. You open one report with every site in
+          the same row: inquiries, bookings out of hours, recalls answered, conversations routed to a person.</p></div>
+    </div>
+
+    <div class="mlsites reveal">
+      <div class="mlsite"><div class="h"><i></i>Riverside · main surgery</div>
+        <dl><div class="r"><dt>Own line</dt><dd>own number &amp; hours</dd></div>
+        <div class="r"><dt>Prices</dt><dd>its own weight bands</dd></div>
+        <div class="r"><dt>Species</dt><dd>small animal · exotics</dd></div>
+        <div class="r"><dt>Access</dt><dd>manager sees this site</dd></div></dl></div>
+      <div class="mlsite"><div class="h"><i></i>Westfield · branch</div>
+        <dl><div class="r"><dt>Own line</dt><dd>own number &amp; hours</dd></div>
+        <div class="r"><dt>Prices</dt><dd>its own sheet</dd></div>
+        <div class="r"><dt>Species</dt><dd>small animal · equine round</dd></div>
+        <div class="r"><dt>Access</dt><dd>manager sees this site</dd></div></dl></div>
+      <div class="mlsite"><div class="h"><i></i>Group view — owner</div>
+        <dl><div class="r"><dt>Sites</dt><dd>all, side by side</dd></div>
+        <div class="r"><dt>Partners</dt><dd>night &amp; referral, per site</dd></div>
+        <div class="r"><dt>Export</dt><dd>PDF · Excel</dd></div>
+        <div class="r"><dt>Access</dt><dd>you see all · they see one</dd></div></dl></div>
+    </div>
+    <p class="statnote">Branches, numbers, price sheets, species rules and who-sees-what are configured with you during
+      onboarding. There is no self-serve wizard, and we are not going to invent a number of hours for it.</p>
+  </div>
+</section>
+
+<!-- ═══════ INTEGRATION HONESTY ═══════ -->
+<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#050B16,#081426);">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:720px;">
+      <span class="eyebrow"><i></i>Your existing systems, honestly</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Three columns.<br>No logo wall.</h2>
+      <p class="secintro">This answer normally hides in an FAQ, which is exactly where a practice owner finds it
+        after they have already paid. Here it is where you can see it — and the middle column is empty on purpose.</p>
+    </div>
+    <div class="statgrid reveal">
+      <div class="statcol now"><h4><i></i>Live today</h4>
+        <ul>
+          <li>Google Calendar &amp; Outlook Calendar<span>Two-way. Real availability is read before a slot is offered, and the booking is written back</span></li>
+          <li>Your existing phone number<span>Forward everything, or only the calls nobody picks up in a few rings</span></li>
+          <li>Website chat &amp; WhatsApp Business<span>The safest place to start, and the channel most owners message from</span></li>
+          <li>Zapier · CSV export · PDF &amp; Excel reports<span>How records reach the systems you already run today</span></li>
+          <li>Saleringo's own inbox &amp; scheduler<span>Every conversation lands here, with bookings on their own calendar</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>In build</h4>
+        <ul>
+          <li>Nothing veterinary-specific sits here today<span>When a direct link to a practice-management system is genuinely being built, this column is where it will appear — and it still will not get a date</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>Bridge for now</h4>
+        <ul>
+          <li>Your practice-management system<span>No direct link, whichever one you run. Records reach it through Zapier or a CSV your desk imports</span></li>
+          <li>Your accounts and reminder tools<span>Same path. A bridge means a person or an automation does a step — that is a real cost, and it is the usual reason software like this quietly stops being used</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="statnote">We are not going to tell you a veterinary system is connected when it is not, and we are not
+      going to name a month. If your practice cannot run without a two-way write into your patient software today, say so
+      on the call and we will tell you to wait. We would rather lose the month than the trust —
+      <a href="../integrations.html" style="color:var(--teal);font-weight:700;">the full integration list is here</a>.</p>
+  </div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/4473356/pexels-photo-4473356.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/4473356/pexels-photo-4473356.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/4473356/pexels-photo-4473356.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/4473356/pexels-photo-4473356.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A woman holding a "We Are Open" sign in a doorway" loading="lazy" decoding="async" width="1600" height="2232">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3.4vw,44px);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">Boosters and recalls<br>are the revenue that leaks.</p>
+    <p style="margin-top:10px;font-size:13.5px;color:rgba(255,255,255,.76);font-weight:600;max-width:50ch;">Due dates read from the animal’s own record, not asked for. Booked while the desk is busy with someone else.</p>
+  </div>
+</section>
+<p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a named customer, and not a testimonial.</p>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faqsec bg-clinical t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow light"><i></i>FAQ</span>
+      <h2 class="h2" style="margin-top:20px">Veterinary practices ask us</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Will it ever give clinical advice?</summary>
+        <p>No, and not as a setting you could switch on. Toxicity, dosage, symptom assessment, "should I be worried", medication and end-of-life questions are refused categorically. The AI says so in the first sentence, routes the caller to the number you nominated, and writes the record so your team is not starting cold. It books, quotes and reminds. It does not assess.</p>
+      </details>
+      <details>
+        <summary>Does it connect to our practice-management system?</summary>
+        <p>Not directly — whichever one you run, treat it as a bridge. Records reach it through Zapier or a CSV export your desk imports, and every conversation also lands in Saleringo's own inbox with bookings on its own scheduler. A bridge means somebody does a step. Be honest with yourself about whether your desk will do that daily, because if the answer is no, this is not ready for you yet.</p>
+      </details>
+      <details>
+        <summary>What happens with an out-of-hours emergency?</summary>
+        <p>It stops answering questions. The caller gets the out-of-hours instructions and the number you nominated — your own on-call line, or the partner hospital you entered — in the first sentence, with your staff alerted and a record created so the follow-up actually happens. It never handles an emergency alone and it never tries to work out how urgent something is.</p>
+      </details>
+      <details>
+        <summary>Can it quote prices?</summary>
+        <p>Only figures your vets have approved, and for anaesthetic work only as a weight-banded range, confirmed after the animal has been examined. If a price is not on the approved list, the AI says it cannot quote it and books the appointment that produces the real figure. Nothing is ever improvised, rounded or averaged.</p>
+      </details>
+      <details>
+        <summary>Can it see the animal's record — boosters, weight, history?</summary>
+        <p>It works from the record held in Saleringo, which is built up from the conversations themselves and from anything you import at onboarding. That is what lets it read a booster due date instead of asking for it. Where your patient software is the source of truth, the bridge above is how the two stay aligned, and we would rather you knew that up front.</p>
+      </details>
+      <details>
+        <summary>Can it handle repeat prescriptions?</summary>
+        <p>It can take the request, attach the record and put it in front of a vet immediately, with the detail that matters — how much medication is left — captured. It cannot name a drug, confirm a quantity, suggest timing or authorise anything. Repeats are a veterinary decision and they stay one.</p>
+      </details>
+      <details>
+        <summary>We run two branches and refer to a hospital. How does routing work?</summary>
+        <p>Each branch is its own site inside one account, with its own number, hours, clinicians, species list and price sheet. Referral and out-of-hours partners are entered by you as named destinations with their own instructions. The AI cannot invent a partner and will say it does not know rather than guess — see <a href="#branches">branches and referral partners</a> above.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>The published plans: <b>Start $79/mo</b>, <b>Grow $249/mo</b>, <b>Scale from $599/mo</b>. AI Phone starts at Scale, and voice usage is billed on top from $0.14/min in the US. Locations and channels are separate limits, which catches people out, so the <a href="../pricing.html">pricing page</a> works your month through in full. Founding cohort is 50% off for three months.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="t-sm sec-dark"><div class="wrap" style="max-width:760px;margin:0 auto;">
+  <div class="quotecard light pending">
+        <div class="mark">“</div>
+        <p>This space is held for a founding hotelier. We are in early access, so there is no customer quote here yet — when a partner stay agrees to be named, their words go in this card. We would rather leave it empty than invent one.</p>
+        <div class="by">
+          <span class="avatar av-b" style="opacity:.5;">?</span>
+          <span><b>Reserved · founding boutique stay</b><span>Veterinary · United Kingdom</span></span>
+        </div>
+        <div class="metric">Want this to be your quote? <a href="../index.html#early-access" style="color:#0A7F7F;">Watch it answer my questions ↗</a></div>
+      </div>
+</div></section>
+
+<!-- ═══════ CLOSER ═══════ -->
+<section class="closer bg-aurora">
+  <div class="wrap">
+    <div class="riskrow short reveal">
+      <div class="riskitem"><div class="ic">◷</div><b>Month to month</b><span>No annual lock-in. Leave whenever it stops earning its keep.</span></div>
+      <div class="riskitem"><div class="ic">%</div><b>Founding pricing</b><span>50% off for 3 months, locked before general availability.</span></div>
+    </div>
+
+    <h2 class="reveal">The booster gets booked.<br>The 11 PM call gets <em>a person.</em></h2>
+    <p class="lead onDark reveal">Import your price list, approve the bands, name your out-of-hours number — and let Saleringo take the next call your nurse cannot.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="#early-access">Watch it answer my questions<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" data-book data-fallback="../index.html#early-access" href="../index.html#early-access">Ask for a 20-min call — we propose times<span class="cir">↗</span></a>
+    </div>
+
+    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
+      <div class="lh">Get your practice's setup plan</div>
+      <p class="lsub">Tell us how many branches you run and where calls land tonight. We reply with the pipeline
+        stages, species rules, price bands and out-of-hours routing we would set up for you — written by a person.</p>
+      <form class="eaform" data-earlyaccess>
+        <input class="full" type="email" name="email" placeholder="Work email" required>
+        <input type="text" name="business" placeholder="Practice name">
+        <input type="text" name="country" placeholder="Country">
+        <input type="hidden" name="industry" required value="Veterinary">
+        <input type="hidden" name="context" value="Veterinary industry page">
+        <select name="locations" aria-label="How many branches">
+          <option value="">How many branches?</option>
+          <option>One</option><option>Two or three</option><option>Four or more</option>
+        </select>
+        <select name="channel" aria-label="Main channel">
+          <option value="">Where calls land now…</option>
+          <option>Phone</option><option>Website chat</option>
+          <option>WhatsApp / messenger</option><option>All of them</option>
+        </select>
+        <button class="btn btn-teal" type="submit">Get the Veterinary setup plan →</button>
+        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No lock-in</span></div>
+        <p class="eanote full">A human replies within one business day. No newsletter, no spam.</p>
+        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your message is ready below — pick whichever way you prefer to send it.</p>
+      </form>
+      <p class="eanote" style="margin-top:18px;"><span class="pilltag pt-teal">✓ Verified answers only — it never assesses a symptom and never invents a price</span></p>
+    </div>
+    <div class="more">Also built for: <a href="./clinics.html">Clinics</a> · <a href="./dental.html">Dental</a> · <a href="./franchise.html">Franchise &amp; Multi-Site</a> · <a href="../security.html">Trust Center ↗</a></div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+        <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer record.</p>
+        <p style="margin-top:10px;">hello@saleringo.com</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a class="lnk" href="../voice.html">AI Phone</a>
+        <a class="lnk" href="../webchat.html">Chatbot</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; Messenger</a>
+        <a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer's guide</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../examples.html#veterinary">Worked examples</a>
+        <a class="lnk" href="../pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Industries</h4>
+        <a class="lnk" href="./veterinary.html">Veterinary</a>
+        <a class="lnk" href="./clinics.html">Clinics</a>
+        <a class="lnk" href="./dental.html">Dental</a>
+        <a class="lnk" href="./franchise.html">Franchise &amp; Multi-Site</a>
+        <a class="lnk" href="../industries.html">All industries</a>
+        <a class="lnk" href="../cross-border.html">Cross-border</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; Trust</a>
+        <a class="lnk" href="../privacy.html">Privacy Policy</a>
+        <a class="lnk" href="../terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Saleringo · Honest Marketing Co., Ltd. — registered in South Korea, serving customers worldwide</span>
+      <span class="r"><span>English · serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+</main>
+
+<div class="stickycta" data-sticky>
+  <div class="wrap">
+    <span class="msg">One surgery or four. <b>Boosters booked, emergencies routed, one Monday report.</b></span>
+    <a class="btn btn-teal" href="#early-access">Get the Veterinary setup plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=4.4"></script>
+</body>
+</html>

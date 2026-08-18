@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<!-- Review subdomain. The canonical tags below still point at the production
+     domain on purpose, so this copy never competes with it in search.
+     To make this the live site: delete this meta and the Disallow in robots.txt. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Chat Agent That Books &amp; Quotes | Saleringo</title>
+<meta name="description" content="An AI chat agent for your website that books appointments and quotes from your own price list — then files the customer in a CRM built for your trade.">
+<link rel="canonical" href="https://saleringo.com/en/webchat.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://saleringo.com/en/webchat.html">
+<meta property="og:title" content="AI Chat Agent That Books &amp; Quotes">
+<meta property="og:description" content="An AI chat agent for your website that books appointments and quotes from your own price list — then files the customer in a CRM built for your trade.">
+<meta property="og:image" content="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=900&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Chat Agent That Books &amp; Quotes">
+<meta name="twitter:description" content="An AI chat agent for your website that books appointments and quotes from your own price list — then files the customer in a CRM built for your trade.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=900&amp;h=630">
+<link rel="alternate" hreflang="en" href="./webchat.html">
+<link rel="alternate" hreflang="x-default" href="./webchat.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it slow my site down?","acceptedAnswer":{"@type":"Answer","text":"No. The widget loads asynchronously after your page renders, weighs about 40KB, and never blocks your content. If our CDN were unreachable, your site loads without the widget \u2014 nothing breaks and nothing errors on your page."}},{"@type":"Question","name":"Does it detect the visitor's language?","acceptedAnswer":{"@type":"Answer","text":"Yes. It detects the language a visitor writes in and replies in it \u2014 30+ languages. Your approved facts stay in one source language; translations are generated per conversation, and the lead record notes which language was used so your reply can match."}},{"@type":"Question","name":"How does the handoff to a human work?","acceptedAnswer":{"@type":"Answer","text":"When a question falls outside your approved facts \u2014 or hits a topic you flagged, like contracts, payments, or medical advice \u2014 the widget tells the visitor a person will follow up, collects their contact details, and notifies your team by email and in the Saleringo inbox with the full transcript. During business hours, your team can also take over the chat live."}},{"@type":"Question","name":"What data does it store, and where?","acceptedAnswer":{"@type":"Answer","text":"Conversation transcripts and the lead fields you configure. No cookie is set for visitors who never open the widget. You choose the data region at setup, you can delete a conversation or a whole lead record from the dashboard, and deletion removes it from the knowledge base too. Full detail is on our Security & Trust and Privacy pages."}},{"@type":"Question","name":"Can it run alongside my existing chat widget?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set Saleringo to the opposite corner and run both while you evaluate \u2014 many teams do this for a couple of weeks. When you switch, removing the old widget is the only change; your Saleringo install stays the same three lines."}}]}
+</script>
+<link rel="stylesheet" href="../assets/css/site.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/crm.css?v=4.4">
+<style>
+  /* ═══ PRODUCT-UI SHOWCASE — light-first page ═══ */
+  body{background:#F4F8FB;}
+  /* vertical rhythm comes from the .t-* tempo classes in site.css */
+  .khead{max-width:660px;}
+  .khead.mid{margin:0 auto;text-align:center;}
+
+  /* nav sits on a LIGHT hero here — restyle, same markup */
+  .hero .nav{background:rgba(255,255,255,.74);border-color:rgba(11,27,51,.10);
+    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 46px rgba(11,27,51,.12);}
+  .hero .nav .logo{color:var(--l-ink);}
+  .hero .nav .links{color:#5A6779;}
+  .hero .nav .links a:hover,.hero .nav .links .on{color:var(--l-ink);}
+  .hero .nav .sep{background:rgba(11,27,51,.14);}
+  .hero .nav .loc{color:#5A6779;}
+  .hero .nav .btn-white{background:var(--l-ink);color:#fff;box-shadow:0 14px 32px rgba(11,27,51,.26);}
+  .hero .nav .btn-white .cir{background:rgba(255,255,255,.18);color:#fff;}
+  .hero .nav .burger span{background:var(--l-ink);}
+  .hero .nav .links.open{background:rgba(255,255,255,.98);border-color:rgba(11,27,51,.10);}
+
+  /* ═══ PHOTOGRAPHY — real images carry this page (see assets/PHOTOS.md) ═══ */
+  /* the hero stacks nav + grid + band, so it cannot stay a flex row */
+  .hero.photohero{display:block;min-height:min(78vh,780px);}
+  /* the base filter is tuned for night shots; a daylit interior needs almost none */
+  .photohero.light .bgimg img{filter:brightness(1.03) saturate(1.05) contrast(1.02);}
+  .photohero.light .scrim{background:
+    linear-gradient(180deg,rgba(244,248,251,0) 56%,rgba(244,248,251,.80) 84%,#F4F8FB 100%),
+    linear-gradient(100deg,rgba(250,252,254,.97) 0%,rgba(250,252,254,.90) 38%,rgba(250,252,254,.36) 74%);}
+  .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
+  /* light glass panel — copy never sits on bare photograph */
+  .hero-panel.lt{background:rgba(255,255,255,.82);backdrop-filter:blur(20px) saturate(1.18);
+    border-color:rgba(11,27,51,.09);padding:38px 40px;
+    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 34px 84px rgba(11,27,51,.16);}
+  .herowho{margin-top:26px;padding-top:20px;border-top:1px solid rgba(11,27,51,.10);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .hero-panel.lt .facepile .avatarimg{border-color:#fff;}
+  .herowho .wt{font-size:12px;line-height:1.6;color:var(--l-mut);font-weight:600;max-width:280px;}
+  .herowho .wt b{color:var(--l-ink);}
+  /* split photo band, dropped into a light paper card */
+  .psband{border-radius:24px;overflow:hidden;background:#fff;border:1px solid #EDE5D8;
+    box-shadow:0 2px 3px rgba(11,27,51,.03),0 30px 70px rgba(11,27,51,.09);}
+  .psband .photosplit{min-height:436px;}
+  .psband .copy{padding:54px 50px;}
+  .psband .copy h3{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.6vw,32px);
+    font-weight:600;letter-spacing:-.04em;color:var(--l-ink);line-height:1.12;}
+  .psband .copy p{margin-top:15px;font-size:14.5px;line-height:1.76;color:var(--l-mut);font-weight:500;max-width:430px;}
+  .psband .copy .kv{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;}
+  /* audience strip */
+  .audwrap{margin-top:46px;}
+  .audwrap .audcard{min-height:252px;}
+  .audwrap .photocap{margin-top:14px;text-align:center;}
+  /* closer photo band */
+  .closerband{max-width:1128px;margin:0 auto;border-radius:26px;min-height:334px;
+    display:flex;align-items:flex-end;text-align:left;box-shadow:0 40px 90px rgba(0,0,0,.46);}
+  .closerband .cbcopy{padding:34px 40px;max-width:660px;}
+  .closerband .cbt{display:block;margin-top:14px;font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(21px,2.5vw,30px);font-weight:600;letter-spacing:-.035em;color:#fff;line-height:1.16;}
+  .closerband .cbs{display:block;margin-top:11px;font-size:13.5px;line-height:1.72;
+    color:rgba(255,255,255,.76);font-weight:500;max-width:520px;}
+  @media (max-width:760px){.psband .copy{padding:34px 24px;}.closerband .cbcopy{padding:26px 22px;}}
+
+  /* ── hero — code-first, asymmetric. The snippet IS the hero object,
+        so this page never repeats the centred badge/H1/sub/CTA/pill stack. ── */
+  .hero{position:relative;overflow:hidden;padding-bottom:84px;}
+  /* padding-top only — .wrap's side padding must survive, or the glass panel
+     runs off the right edge on narrow screens. min-width:0 stops the code
+     column's min-content from blowing the grid wider than the viewport. */
+  .herogrid{position:relative;z-index:2;padding-top:164px;display:grid;
+    grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center;}
+  .herogrid > *{min-width:0;}
+  .hcopy{text-align:left;}
+  .hero h1{margin-top:22px;font-family:'Space Grotesk',sans-serif;max-width:14ch;
+    line-height:1.02;letter-spacing:-.05em;font-weight:600;color:var(--l-ink);}
+  .hero h1 .quiet{color:#63718A;}
+  .hero h1 em{font-style:normal;color:#2C6FE0;}
+  .hero .sub{margin-top:20px;max-width:460px;font-size:16.5px;line-height:1.72;color:var(--l-mut);font-weight:500;}
+  .hero .ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .specline{margin-top:26px;padding-top:18px;border-top:1px solid rgba(11,27,51,.10);
+    font-size:12.5px;line-height:1.9;color:var(--l-mut);font-weight:600;max-width:440px;}
+  .specline b{color:var(--l-ink);}
+  .hcode .gradborder{box-shadow:0 40px 90px rgba(11,27,51,.18);}
+  .codecap{margin-top:16px;font-size:12px;color:var(--l-mut);font-weight:600;text-align:center;}
+  .heroband{position:relative;z-index:2;margin:56px auto 0;display:flex;gap:10px;
+    justify-content:center;align-items:center;flex-wrap:wrap;}
+  .heroband .bandlab{font-size:10.5px;font-weight:800;letter-spacing:.2em;
+    text-transform:uppercase;color:#9AA6B5;margin-right:6px;}
+  /* ── cost of inaction + alternatives ── */
+  .costsec .costnums{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .costnum{background:#fff;border:1px solid #EDE5D8;border-radius:20px;padding:30px 28px;
+    box-shadow:0 2px 3px rgba(11,27,51,.03),0 24px 60px rgba(11,27,51,.06);}
+  .costnum .t{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#A6B0BD;}
+  .costnum .n{margin-top:14px;font-size:46px;font-weight:600;letter-spacing:-.04em;color:var(--l-ink);line-height:1;}
+  .costnum p{margin-top:14px;font-size:13px;line-height:1.75;color:var(--l-mut);font-weight:500;}
+  .costsec .costfoot{margin-top:26px;text-align:center;font-size:12px;line-height:1.8;color:var(--l-mut);font-weight:500;}
+  .costsec .costfoot a{color:#0A7F7F;font-weight:700;}
+  .costsec .altwrap{margin-top:70px;}
+  .costsec .altwrap .cap{text-align:center;font-size:11px;font-weight:800;letter-spacing:.2em;
+    text-transform:uppercase;color:#A6B0BD;margin-bottom:24px;}
+  .costsec .altnote{margin-top:18px;text-align:center;font-size:11.5px;color:#8C97A6;font-weight:500;}
+  .proofslot{max-width:830px;margin:60px auto 0;}
+  .secpad .riskrow{margin-top:44px;}
+  .closer .riskrow.short{grid-template-columns:repeat(2,1fr);max-width:640px;margin-left:auto;margin-right:auto;}
+  @media (max-width:900px){.costsec .costnums{grid-template-columns:1fr;}}
+  .scenecap{margin-top:16px;text-align:center;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:#9AA6B5;font-weight:700;}
+  @media (max-width:1000px){.herogrid{grid-template-columns:1fr;gap:44px;padding-top:150px;}}
+
+  /* ── install snippet ── */
+  .instcols{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:center;}
+  .gradborder>.browserframe{border-radius:23px;border:0;box-shadow:none;}
+  .codeblk{padding:22px 24px;font-family:'Consolas','SF Mono',monospace;font-size:12.5px;line-height:1.95;
+    color:#D5DFEC;overflow-x:auto;white-space:pre;}
+  .codeblk .c-com{color:var(--tx3);} .codeblk .c-tag{color:#5B9DFF;}
+  .codeblk .c-attr{color:#17BDBD;} .codeblk .c-str{color:#E8A44C;}
+  .sniprow{display:flex;gap:8px;flex-wrap:wrap;padding:13px 22px;border-top:1px solid var(--hair);}
+  .instlist{margin-top:26px;display:grid;gap:13px;}
+  .instlist .b{display:flex;gap:13px;align-items:flex-start;font-size:14px;line-height:1.62;color:var(--l-mut);font-weight:500;}
+  .instlist .b i{flex:none;width:24px;height:24px;border-radius:50%;background:#E3F5F5;color:#0A7F7F;
+    font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;font-style:normal;margin-top:1px;}
+  .instlist .b b{color:var(--l-ink);}
+
+  /* ── watch it think (dark) ── */
+  .thinkcols{display:grid;grid-template-columns:1.06fr .94fr;gap:46px;align-items:start;margin-top:38px;}
+  .gradborder>.core{border-radius:23px;border:0;background:linear-gradient(180deg,#0D1A30,#091224);}
+  .tsteps{display:grid;gap:14px;}
+  .tstep{border:1px solid var(--hair);border-radius:18px;padding:20px 22px;background:rgba(255,255,255,.035);}
+  .tstep .n{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--chan-chat);}
+  .tstep b{display:block;margin-top:9px;font-size:16px;color:#fff;letter-spacing:-.01em;}
+  .tstep p{margin-top:7px;font-size:13px;line-height:1.7;color:var(--tx2);font-weight:500;}
+  .tstep .tags{margin-top:13px;display:flex;gap:7px;flex-wrap:wrap;}
+  .tnote{margin-top:16px;font-size:12.5px;color:var(--tx3);font-weight:600;line-height:1.7;}
+
+  /* ── widget customization (white) ── */
+  .custsec{background:#fff;}
+  .swatchrow{margin:30px auto 0;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;}
+  .sw{width:38px;height:38px;border-radius:12px;box-shadow:0 8px 18px rgba(11,27,51,.16);position:relative;}
+  .sw.on:after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800;}
+  .swlbl{font-size:12px;font-weight:700;color:#A6B0BD;letter-spacing:.06em;}
+  .custgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:44px auto 0;}
+  .wpage{position:relative;height:326px;background:#F3F5F8;padding:22px 22px 0;overflow:hidden;}
+  .wpage.dkpage{background:#101C31;}
+  .wline{height:10px;border-radius:5px;background:#E2E7EE;margin-bottom:12px;}
+  .dkpage .wline{background:rgba(255,255,255,.08);}
+  .widget{position:absolute;bottom:18px;right:18px;width:238px;border-radius:16px;overflow:hidden;
+    background:#fff;box-shadow:0 24px 50px rgba(11,27,51,.28);border:1px solid var(--l-hair);}
+  .widget.dk{right:auto;left:18px;background:#0B1B33;border-color:rgba(255,255,255,.12);}
+  .widget .whead{display:flex;align-items:center;gap:9px;padding:12px 14px;background:var(--teal-deep);color:#fff;}
+  .widget.dk .whead{background:#2C6FE0;}
+  .widget .whead b{font-size:12px;}
+  .widget .whead span{display:block;font-size:9.5px;opacity:.85;font-weight:600;}
+  .widget .wdot{width:7px;height:7px;border-radius:50%;background:#7BF5C8;flex:none;}
+  .widget .wbody{padding:12px;display:flex;flex-direction:column;gap:8px;}
+  .widget .wb{max-width:88%;font-size:11px;line-height:1.5;padding:8px 11px;border-radius:11px;font-weight:500;}
+  .widget .wb.bot{align-self:flex-start;background:#F0F3F7;color:var(--l-ink);border-bottom-left-radius:4px;}
+  .widget.dk .wb.bot{background:rgba(255,255,255,.08);color:#E2EAF3;}
+  .widget .wb.vis{align-self:flex-end;background:var(--teal-deep);color:#fff;border-bottom-right-radius:4px;}
+  .widget.dk .wb.vis{background:#2C6FE0;}
+  .widget .winput{margin:0 12px 12px;border:1px solid #E2E7EE;border-radius:999px;padding:8px 13px;font-size:10.5px;color:#A6B0BD;font-weight:500;}
+  .widget.dk .winput{border-color:rgba(255,255,255,.14);color:var(--tx3);}
+  .launcher{position:absolute;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;
+    background:var(--teal-deep);box-shadow:0 14px 28px rgba(15,163,163,.4);}
+  .custcap{margin-top:14px;text-align:center;font-size:12px;color:var(--l-mut);font-weight:600;}
+  .custcap b{color:var(--l-ink);}
+
+  /* ── funnel ── */
+  .funflow{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .fstep{position:relative;background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:22px;
+    box-shadow:0 2px 3px rgba(11,27,51,.03),0 22px 50px rgba(11,27,51,.07);}
+  .fstep:not(:last-child):after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);
+    color:#C6CEDA;font-size:17px;font-weight:700;z-index:2;}
+  .fstep .fn{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;color:#A6B0BD;}
+  .fstep svg{display:block;width:100%;height:auto;margin:14px 0 16px;border-radius:12px;background:#F3F6FA;border:1px solid var(--l-hair);}
+  .fstep b{display:block;font-size:16px;letter-spacing:-.01em;color:var(--l-ink);}
+  .fstep p{margin-top:7px;font-size:12.5px;line-height:1.68;color:var(--l-mut);font-weight:500;}
+  .funfoot{margin-top:30px;text-align:center;font-size:13px;color:var(--l-mut);font-weight:600;}
+  .funfoot b{color:var(--l-ink);}
+
+  /* ── inbox + world (dark) ── */
+  .inbsec{background:linear-gradient(180deg,#071021 0%,#050B16 100%);}
+  .worldband{margin-top:96px;display:grid;grid-template-columns:.8fr 1.2fr;gap:46px;align-items:center;}
+
+  /* ── pricing ── */
+  .pricecols{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center;margin-top:46px;}
+  .incl{display:grid;gap:12px;}
+  .incl .r{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--l-mut);font-weight:500;}
+  .incl .r i{flex:none;color:#0A7F7F;font-style:normal;font-weight:800;}
+  .incl .r b{color:var(--l-ink);}
+  .meter{margin-top:24px;background:#fff;border:1px solid var(--l-hair);border-radius:16px;padding:18px 20px;}
+  .meter .t{display:flex;font-size:12px;font-weight:700;color:var(--l-mut);}
+  .meter .t b{margin-left:auto;color:var(--l-ink);font-family:'Space Grotesk',sans-serif;}
+  .meter .bar{margin-top:11px;height:7px;border-radius:4px;background:#EAEFF4;overflow:hidden;}
+  .meter .bar i{display:block;height:100%;width:62%;border-radius:4px;background:linear-gradient(90deg,#17BDBD,#2C6FE0);}
+  .meter .s{margin-top:10px;font-size:11.5px;color:var(--l-mut);font-weight:600;}
+
+  /* ── AFTER THE CHAT — the CRM half ── */
+  .crmsec{background:linear-gradient(180deg,#050B16 0%,#08131F 60%,#050B16 100%);}
+  .crmsec .khead{max-width:800px;}
+  .crmtrio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px;align-items:start;}
+  .crmtrio .cw h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#fff;
+    letter-spacing:-.02em;line-height:1.24;}
+  .crmtrio .cw p{margin-top:9px;font-size:13px;line-height:1.7;color:var(--tx2);font-weight:500;}
+  .crmtrio .cw p b{color:#fff;}
+  .crmtrio .cw{margin-bottom:15px;}
+  .mockcap{margin-top:12px;font-size:11px;color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .crmfoot{margin-top:38px;text-align:center;}
+  @media (max-width:1000px){.crmtrio{grid-template-columns:1fr;max-width:560px;margin-left:auto;margin-right:auto;}}
+
+  /* the ask, inline — the funnel used to end in a mail client */
+  .leadwrap{max-width:680px;margin:58px auto 0;text-align:left;}
+  .leadcard{padding:34px 36px;}
+  .leadcard h3{font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:600;color:#fff;letter-spacing:-.025em;}
+  .leadsub{margin-top:10px;font-size:13.5px;line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadcard .eaform{margin-top:22px;max-width:none;}
+  .badgerow{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;
+    margin-top:14px;font-size:11.5px;font-weight:700;color:var(--tx2);}
+  .badgerow i{font-style:normal;color:var(--tx3);}
+  .badgerow span{white-space:nowrap;}
+  @media (max-width:760px){.leadcard{padding:26px 22px;}}
+
+  .crmsec .linkcta{color:#fff;border-bottom-color:var(--hair2);}
+  .crmsec .pilltag{background:rgba(255,255,255,.07);color:var(--app-tx2);
+    border:1px solid var(--app-line);font-weight:700;}
+  /* ── closer + footer ── */
+  .closer{position:relative;padding:110px 0 0;text-align:center;overflow:hidden;}
+  .closer h2{margin-top:56px;font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,4.6vw,56px);
+    font-weight:600;letter-spacing:-.045em;color:#fff;line-height:1.06;}
+  .closer .lead{margin:22px auto 0;max-width:530px;}
+  .closer .ctas{margin-top:36px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  @media (max-width:1000px){
+    .instcols,.thinkcols,.pricecols,.worldband{grid-template-columns:1fr;gap:40px;}
+    .funflow{grid-template-columns:1fr 1fr;}
+    .fstep:nth-child(2n):after{display:none;}
+  }
+  @media (max-width:760px){
+    .herogrid{padding-top:140px;}
+    .hero.photohero{min-height:0;}
+    .hero-panel.lt{padding:28px 22px;}
+    .herowho .wt{max-width:none;}
+    .custgrid,.funflow{grid-template-columns:1fr;}
+    .fstep:after{display:none;}
+    .widget{width:206px;}
+    .scene-overlay{padding:9px 11px;border-radius:12px;max-width:52%;}
+    .scene-overlay b{font-size:11px;} .scene-overlay span{font-size:9.5px;}
+    .hcode .gradborder{border-radius:20px;}
+  }
+</style>
+</head>
+<body data-chan="chat" data-grade="chat">
+
+<!-- ═══════ HERO — a real workplace behind the install snippet ═══════ -->
+<header class="hero photohero light bg-clinical">
+
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+         srcset="https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="100vw"
+         alt="" width="1900" height="1269" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="grainlayer grain" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+    <a class="logo" href="./index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+    <span class="links">
+      <a href="./voice.html">AI Phone</a>
+      <a class="on" href="./webchat.html">Chatbot</a>
+      <a href="./whatsapp.html">WhatsApp</a>
+      <a href="./platform.html">Platform</a>
+      <a href="./industries.html">Industries</a>
+    <a href="./examples.html">Examples</a>
+      <a href="./pricing.html">Pricing</a>
+    </span>
+    <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+    <span class="sep"></span>
+    <a class="btn btn-white" href="./get-started.html">Get started<span class="cir">↗</span></a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav></div>
+
+  <div class="wrap herogrid">
+    <div class="hcopy hero-panel lt">
+      <span class="chanbadge chat">AI chat agent · website</span>
+      <h1>Your traffic already came. <span class="quiet">Send it back as booked appointments.</span></h1>
+      <p class="sub">One script tag turns the page they are already reading into a conversation — and turns the conversation into a held slot, a priced quote and a customer record, in a CRM built for your trade. Not a transcript you still have to act on.</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="./index.html#early-access">Watch it answer my questions<span class="cir">↗</span></a>
+        <a class="btn btn-ghostd" data-book data-fallback="./index.html#early-access" href="./index.html#early-access">Ask for a 20-min call — we propose times<span class="cir">↗</span></a>
+      </div>
+      <p class="specline"><b>~40&nbsp;KB</b>, loaded async · <b>30+ languages</b> auto-detected · live the same day</p>
+      <div class="herowho">
+        <span class="facepile">
+          <span class="avatarimg s"><img src="https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=160&amp;h=160" alt="" loading="lazy" decoding="async" width="160" height="160"></span>
+          <span class="avatarimg s"><img src="https://images.pexels.com/photos/8201198/pexels-photo-8201198.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=160&amp;h=160" alt="" loading="lazy" decoding="async" width="160" height="160"></span>
+          <span class="avatarimg s"><img src="https://images.pexels.com/photos/29086752/pexels-photo-29086752.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=160&amp;h=160" alt="" loading="lazy" decoding="async" width="160" height="160"></span>
+        </span>
+        <span class="wt">For owners who still answer their own inquiries — <b>founding cohort open</b></span>
+      </div>
+    </div>
+
+    <!-- THE HERO OBJECT IS THE SNIPPET — this is the whole product surface -->
+    <div class="hcode">
+      <div class="gradborder">
+        <div class="browserframe">
+          <div class="bar"><i></i><i></i><i></i><span class="url">yoursite.com — index.html</span></div>
+          <div class="codeblk"><span class="c-com">&lt;!-- paste before &lt;/body&gt; --&gt;</span>
+<span class="c-tag">&lt;script</span> <span class="c-attr">src</span>=<span class="c-str">"https://cdn.saleringo.com/widget.js"</span>
+        <span class="c-attr">data-site</span>=<span class="c-str">"your-site-id"</span> <span class="c-attr">async</span><span class="c-tag">&gt;&lt;/script&gt;</span></div>
+          <div class="sniprow">
+            <span class="vchip">✓ 3 lines · async</span>
+            <span class="rchip">✓ Never blocks your page render</span>
+            <span class="rchip">✓ No cookie until a visitor chats</span>
+          </div>
+        </div>
+      </div>
+      <p class="codecap">If our CDN were ever unreachable, your page simply loads without the widget. Nothing breaks.</p>
+    </div>
+  </div>
+
+  <div class="wrap heroband">
+    <span class="bandlab">Drops into</span>
+    <span class="intchip light"><i style="background:#0FA3A3;"></i>WordPress</span>
+    <span class="intchip light"><i style="background:#0FA3A3;"></i>Shopify</span>
+    <span class="intchip light"><i style="background:#0FA3A3;"></i>Squarespace</span>
+    <span class="intchip light"><i style="background:#0FA3A3;"></i>Wix</span>
+    <span class="intchip light"><i style="background:#0FA3A3;"></i>Webflow</span>
+    <span class="intchip light"><i style="background:#0FA3A3;"></i>Hand-built HTML</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════ 2 · INSTALL SNIPPET (cream paper) ═══════ -->
+<section class="secpad bg-paper t-xl">
+  <div class="wrap"><div class="instcols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>Install</span>
+      <h2 class="h2" style="margin-top:20px;">Paste it. That's the install.</h2>
+      <p class="lead" style="margin-top:16px;">No developer project, no migration, no rebuild. If you can edit your site's footer, you can ship this before your coffee gets cold.</p>
+      <div class="instlist">
+        <span class="b"><i>1</i><span><b>Paste the tag</b> before <code>&lt;/body&gt;</code> — anywhere on the site.</span></span>
+        <span class="b"><i>2</i><span><b>Approve your facts.</b> We draft a knowledge base from your own pages; nothing can be said until you tick it.</span></span>
+        <span class="b"><i>3</i><span><b>Flip it live.</b> Answers, lead capture, and bookings start the same day.</span></span>
+      </div>
+      <a class="linkcta" style="margin-top:30px;" href="./platform.html">What happens after the chat&nbsp;&nbsp;→</a>
+    </div>
+    <div class="reveal">
+      <div class="scene-frame light">
+<svg viewBox="0 0 1000 620" role="img" aria-label="A real business website with the Saleringo launcher open in the corner: a visitor asks about a service and gets a straight answer without leaving the page.">
+  <defs>
+    <linearGradient id="wcWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7FAFC"/><stop offset="1" stop-color="#E8EFF5"/></linearGradient>
+    <linearGradient id="wcHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12294E"/><stop offset="1" stop-color="#0A7F7F"/></linearGradient>
+    <radialGradient id="wcGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".26"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1000" height="620" fill="url(#wcWall)"/>
+  <ellipse cx="740" cy="420" rx="300" ry="240" fill="url(#wcGlow)"/>
+
+  <!-- the customer's own website, unchanged -->
+  <g transform="translate(48,40)">
+    <rect width="904" height="540" rx="14" fill="#FFFFFF" stroke="#D9E3EC" stroke-width="1.5"/>
+    <rect width="904" height="42" rx="14" fill="#F1F5F9"/><rect y="28" width="904" height="14" fill="#F1F5F9"/>
+    <circle cx="26" cy="21" r="4.5" fill="#C9D6E2"/><circle cx="42" cy="21" r="4.5" fill="#C9D6E2"/><circle cx="58" cy="21" r="4.5" fill="#C9D6E2"/>
+    <rect x="330" y="13" width="244" height="16" rx="8" fill="#E3EAF1"/>
+    <text x="452" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" fill="#8FA0B2" text-anchor="middle" font-weight="600">northside-hvac.com</text>
+
+    <!-- site nav -->
+    <rect x="34" y="62" width="96" height="12" rx="6" fill="#0B1B33"/>
+    <g fill="#C4D0DC">
+      <rect x="560" y="64" width="54" height="8" rx="4"/><rect x="630" y="64" width="48" height="8" rx="4"/>
+      <rect x="694" y="64" width="60" height="8" rx="4"/>
+    </g>
+    <rect x="774" y="56" width="96" height="26" rx="13" fill="#0B1B33"/>
+    <text x="822" y="73" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">Get a quote</text>
+
+    <!-- the page's own hero -->
+    <rect x="34" y="98" width="836" height="212" rx="12" fill="url(#wcHero)"/>
+    <rect x="70" y="140" width="330" height="20" rx="10" fill="#FFFFFF" opacity=".92"/>
+    <rect x="70" y="172" width="252" height="20" rx="10" fill="#FFFFFF" opacity=".92"/>
+    <rect x="70" y="212" width="300" height="9" rx="4.5" fill="#FFFFFF" opacity=".45"/>
+    <rect x="70" y="230" width="246" height="9" rx="4.5" fill="#FFFFFF" opacity=".45"/>
+    <rect x="70" y="258" width="132" height="30" rx="15" fill="#17BDBD"/>
+
+    <!-- service cards -->
+    <g>
+      <rect x="34" y="330" width="264" height="122" rx="10" fill="#F7FAFC" stroke="#E4EBF2"/>
+      <rect x="56" y="356" width="110" height="10" rx="5" fill="#0B1B33"/>
+      <rect x="56" y="380" width="200" height="7" rx="3.5" fill="#C4D0DC"/>
+      <rect x="56" y="396" width="164" height="7" rx="3.5" fill="#C4D0DC"/>
+      <rect x="320" y="330" width="264" height="122" rx="10" fill="#F7FAFC" stroke="#E4EBF2"/>
+      <rect x="342" y="356" width="94" height="10" rx="5" fill="#0B1B33"/>
+      <rect x="342" y="380" width="200" height="7" rx="3.5" fill="#C4D0DC"/>
+      <rect x="342" y="396" width="140" height="7" rx="3.5" fill="#C4D0DC"/>
+      <rect x="606" y="330" width="264" height="122" rx="10" fill="#F7FAFC" stroke="#E4EBF2"/>
+      <rect x="628" y="356" width="120" height="10" rx="5" fill="#0B1B33"/>
+      <rect x="628" y="380" width="188" height="7" rx="3.5" fill="#C4D0DC"/>
+    </g>
+    <rect x="34" y="482" width="300" height="8" rx="4" fill="#DCE5ED"/>
+    <rect x="34" y="500" width="220" height="8" rx="4" fill="#DCE5ED"/>
+  </g>
+
+  <!-- the widget, open in the corner of that page -->
+  <g transform="translate(596,236)">
+    <rect width="330" height="316" rx="18" fill="#FFFFFF" stroke="#CFEAEA" stroke-width="2"/>
+    <rect width="330" height="56" rx="18" fill="#0B1B33"/><rect y="38" width="330" height="18" fill="#0B1B33"/>
+    <circle cx="30" cy="28" r="11" fill="#17BDBD"/>
+    <text x="52" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#fff" font-weight="700">Northside HVAC</text>
+    <text x="52" y="42" font-family="Plus Jakarta Sans,sans-serif" font-size="10" fill="#94A2B8" font-weight="600">Answers now · a person can take over</text>
+
+    <g font-family="Plus Jakarta Sans,sans-serif">
+      <rect x="18" y="76" width="212" height="46" rx="12" fill="#EFF3F7"/>
+      <text x="34" y="96" font-size="11.5" fill="#4A5A6B" font-weight="600">Do you do same-day AC</text>
+      <text x="34" y="112" font-size="11.5" fill="#4A5A6B" font-weight="600">repair in Plano?</text>
+
+      <rect x="60" y="132" width="252" height="64" rx="12" fill="#E3F5F5"/>
+      <text x="76" y="152" font-size="11.5" fill="#0B4F4F" font-weight="600">Yes — Plano is in our service</text>
+      <text x="76" y="168" font-size="11.5" fill="#0B4F4F" font-weight="600">area. Same-day call-out is $95,</text>
+      <text x="76" y="184" font-size="11.5" fill="#0B4F4F" font-weight="600">applied to the repair.</text>
+      <rect x="60" y="202" width="126" height="20" rx="10" fill="#DFF3F3"/>
+      <text x="123" y="216" font-size="9.5" fill="#0A7F7F" text-anchor="middle" font-weight="800">✓ FROM YOUR FACTS</text>
+
+      <rect x="18" y="232" width="188" height="30" rx="12" fill="#EFF3F7"/>
+      <text x="34" y="252" font-size="11.5" fill="#4A5A6B" font-weight="600">Book me for this afternoon</text>
+
+      <rect x="18" y="272" width="294" height="30" rx="15" fill="#0FA3A3"/>
+      <text x="165" y="292" font-size="11.5" fill="#fff" text-anchor="middle" font-weight="700">✓ Booked 14:00–16:00 · lead saved</text>
+    </g>
+  </g>
+
+  <!-- the launcher it grew out of -->
+  <g transform="translate(908,568)">
+    <circle r="30" fill="#0FA3A3"/>
+    <path d="M-11 -5 h22 M-11 3 h14" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
+      </div>
+      <p style="margin-top:16px;font-size:12px;color:var(--l-mut);font-weight:600;text-align:center;">
+        Your page, unchanged. The widget is the only thing that is new.</p>
+    </div>
+  </div>
+
+  <!-- the person who actually pastes the line — photography, not an illustration -->
+  <div class="psband reveal" style="margin-top:66px;">
+    <div class="photosplit">
+      <div class="media">
+        <img class="ph" src="https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:1000px) 100vw, 50vw"
+             alt="A business owner working at his desk with a laptop open in front of him"
+             loading="lazy" decoding="async" width="1200" height="1800">
+      </div>
+      <div class="copy">
+        <span class="eyebrow light"><i></i>Who actually does this</span>
+        <h3>If you can edit your footer,<br>you are the developer.</h3>
+        <p>The people who ship this are the ones who already log in to change a phone number on the site. Paste one tag, approve your facts, flip it on — and if you change your mind, delete the line and the page is exactly what it was this morning.</p>
+        <div class="kv">
+          <span class="pilltag pt-teal">✓ No rebuild</span>
+          <span class="pilltag pt-line">No migration</span>
+          <span class="pilltag pt-line">Uninstall is one line</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ═══════ 3 · WATCH IT THINK (aurora dark) ═══════ -->
+<section class="secpad bg-aurora t-md">
+  <div class="wrap">
+    <div class="khead mid reveal">
+      <span class="eyebrow"><i></i>Watch it think</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">One real question,<br>decided in three stages.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Same behavior it ships with on your site: understand, retrieve, then answer — or stop and hand a person the whole thread.</p>
+    </div>
+    <p class="thinklead reveal">Want to pick the trade and ask your own hard question? That demo is on the <a href="./demo.html#demostage">see-it-work page</a> &mdash; eight trades, and it will show you what it refuses to answer as readily as what it books.</p>
+
+    <div class="thinkcols">
+      <div class="reveal">
+        <div class="gradborder">
+          <div class="core">
+            <div class="demo-head"><span class="dot"></span><span>Boutique Stays — worked example</span>
+              <span class="chanbadge chat" style="margin-left:auto;">Web chat</span></div>
+            <div class="demo-body">
+              <div class="bub user">Is the garden cottage free next Friday? We're 4 adults with a dog.</div>
+              <div class="bub ai">Pets up to 30 lbs are welcome (+$25/night). Friday is open — one night is $320, breakfast included.</div>
+              <span class="vchip">✓ From your price list</span>
+              <div class="bub user">Book it and charge my card.</div>
+              <span class="hchip">→ Booking request saved — our manager confirms availability before payment</span>
+              <span class="rchip">✓ Request logged · guest record created</span>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:14px;text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);font-weight:700;">
+          Scripted demo — the real widget behaves the same way</p>
+      </div>
+
+      <div class="tsteps reveal">
+        <div class="tstep">
+          <span class="n">STAGE 01</span>
+          <b>It reads what was actually asked</b>
+          <p>Four adults, one dog, next Friday, a cottage. Three constraints and a date — not a keyword match on "cottage".</p>
+          <div class="tags"><span class="pilltag pt-dark">4 adults</span><span class="pilltag pt-dark">1 dog</span><span class="pilltag pt-dark">Fri night</span></div>
+        </div>
+        <div class="tstep">
+          <span class="n">STAGE 02</span>
+          <b>It pulls the facts you approved</b>
+          <p>Pet policy, weight limit, Friday availability, rate, what breakfast includes. Each one signed off by your team, each with a source and an expiry date.</p>
+          <div class="tags"><span class="pilltag pt-teal">✓ Pet policy</span><span class="pilltag pt-teal">✓ Friday rate</span></div>
+        </div>
+        <div class="tstep">
+          <span class="n">STAGE 03</span>
+          <b>It answers — or it stops</b>
+          <p>Taking a card is not an approved fact, so it doesn't. It saves the request, tells the guest a human confirms, and drops the full thread in your inbox.</p>
+          <div class="tags"><span class="pilltag pt-amber">→ Human handoff</span><span class="pilltag pt-line">Full transcript attached</span></div>
+        </div>
+        <p class="tnote">If two approved facts disagree, it answers neither. It flags the conflict for you and hands the visitor to a person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 4 · CUSTOMIZATION (white) ═══════ -->
+<section class="secpad custsec t-sm">
+  <div class="wrap">
+    <div class="khead mid reveal">
+      <span class="eyebrow light"><i></i>Your site, your widget</span>
+      <h2 class="h2" style="margin-top:20px;">It should look like<br>you built it yourself.</h2>
+      <p class="lead" style="margin-top:16px;">Brand color, corner, launcher shape, welcome line, and language — all set from your dashboard. No redeploy, no second script tag.</p>
+    </div>
+
+    <div class="swatchrow reveal">
+      <span class="swlbl">BRAND COLOR</span>
+      <span class="sw on" style="background:#0FA3A3;"></span>
+      <span class="sw" style="background:#2C6FE0;"></span>
+      <span class="sw" style="background:#7A5CC7;"></span>
+      <span class="sw" style="background:#C7695C;"></span>
+      <span class="sw" style="background:#E8A44C;"></span>
+      <span class="sw" style="background:#1E9E63;"></span>
+      <span class="sw" style="background:#0B1B33;"></span>
+      <span class="swlbl">OR PASTE A HEX</span>
+    </div>
+
+    <div class="custgrid reveal">
+      <div>
+        <div class="browserframe light">
+          <div class="bar"><i></i><i></i><i></i><span class="url">rosewood-venue.com</span></div>
+          <div class="wpage">
+            <div class="wline" style="width:38%;height:16px;"></div>
+            <div class="wline" style="width:82%;"></div>
+            <div class="wline" style="width:74%;"></div>
+            <div class="wline" style="width:56%;"></div>
+            <div class="wline" style="width:66%;"></div>
+            <div class="widget">
+              <div class="whead"><span class="wdot"></span><span><b>Rosewood Venue</b><span>Replies in seconds · 24/7</span></span></div>
+              <div class="wbody">
+                <div class="wb bot">Hi! Ask about dates, capacity, or pricing — I answer from our approved info only.</div>
+                <div class="wb vis">Do you host winter weddings?</div>
+              </div>
+              <div class="winput">Type your question…</div>
+            </div>
+          </div>
+        </div>
+        <div class="custcap"><b>Light theme</b> · teal · bottom-right · English</div>
+      </div>
+      <div>
+        <div class="browserframe light">
+          <div class="bar"><i></i><i></i><i></i><span class="url">clinica-delsol.com</span></div>
+          <div class="wpage dkpage">
+            <div class="wline" style="width:42%;height:16px;"></div>
+            <div class="wline" style="width:78%;"></div>
+            <div class="wline" style="width:66%;"></div>
+            <div class="wline" style="width:52%;"></div>
+            <div class="wline" style="width:70%;"></div>
+            <div class="widget dk">
+              <div class="whead"><span class="wdot"></span><span><b>Clínica del Sol</b><span>Responde en segundos · 24/7</span></span></div>
+              <div class="wbody">
+                <div class="wb bot">Hola — ¿en qué podemos ayudarte hoy?</div>
+                <div class="wb vis">¿Tienen citas por la tarde?</div>
+              </div>
+              <div class="winput">Escribe tu pregunta…</div>
+            </div>
+          </div>
+        </div>
+        <div class="custcap"><b>Dark theme</b> · blue · bottom-left · Español</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 5 · FROM VISITOR TO BOOKED (cream paper) ═══════ -->
+<section class="secpad bg-paper t-xl">
+  <div class="wrap">
+    <div class="khead mid reveal">
+      <span class="eyebrow light"><i></i>From visitor to booked</span>
+      <h2 class="h2" style="margin-top:20px;">Four steps.<br>No form to abandon.</h2>
+      <p class="lead" style="margin-top:16px;">The contact form asks a stranger to work for you. A conversation does the work for them — and still ends with a name, a need, and a slot on the calendar.</p>
+    </div>
+
+    <!-- who is on the other end of those four steps -->
+    <div class="audwrap reveal">
+      <div class="audgrid">
+        <div class="audcard">
+          <img class="ph" src="https://images.pexels.com/photos/8171192/pexels-photo-8171192.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/8171192/pexels-photo-8171192.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8171192/pexels-photo-8171192.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8171192/pexels-photo-8171192.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:900px) 100vw, 25vw"
+               alt="A woman with a warm smile in an office" loading="lazy" decoding="async" width="800" height="533">
+          <b>Clinic front desk</b><span>The same five questions, all day long</span>
+        </div>
+        <div class="audcard">
+          <img class="ph" src="https://images.pexels.com/photos/8413334/pexels-photo-8413334.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/8413334/pexels-photo-8413334.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8413334/pexels-photo-8413334.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8413334/pexels-photo-8413334.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:900px) 100vw, 25vw"
+               alt="A dentist working on a patient under the clinic lamp" loading="lazy" decoding="async" width="800" height="533">
+          <b>Practice owner</b><span>Hands full when the inquiry lands</span>
+        </div>
+        <div class="audcard">
+          <img class="ph" src="https://images.pexels.com/photos/17001844/pexels-photo-17001844.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/17001844/pexels-photo-17001844.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/17001844/pexels-photo-17001844.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/17001844/pexels-photo-17001844.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:900px) 100vw, 25vw"
+               alt="A wedding hall with tables set and florals in place" loading="lazy" decoding="async" width="800" height="533">
+          <b>Venue coordinator</b><span>Tour requests arrive after closing</span>
+        </div>
+        <div class="audcard">
+          <img class="ph" src="https://images.pexels.com/photos/8902305/pexels-photo-8902305.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/8902305/pexels-photo-8902305.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8902305/pexels-photo-8902305.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8902305/pexels-photo-8902305.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:900px) 100vw, 25vw"
+               alt="A maker boxing an order at the workbench while on a call" loading="lazy" decoding="async" width="800" height="533">
+          <b>Studio owner</b><span>Half the questions come from abroad</span>
+        </div>
+      </div>
+      <p class="photocap light">The roles the widget answers on behalf of. Stock photography — Saleringo is pre-launch, so these are jobs, not customers.</p>
+    </div>
+
+    <div class="funflow reveal">
+      <div class="fstep">
+        <span class="fn">STEP 01</span>
+        <svg viewBox="0 0 240 108" role="img" aria-label="A visitor lands on the site and the chat launcher appears">
+          <rect x="14" y="12" width="212" height="84" rx="8" fill="#fff" stroke="#E2E7EE"/>
+          <rect x="14" y="12" width="212" height="16" rx="8" fill="#EEF2F7"/>
+          <circle cx="26" cy="20" r="2.5" fill="#C9D6E2"/><circle cx="35" cy="20" r="2.5" fill="#C9D6E2"/>
+          <rect x="28" y="42" width="86" height="8" rx="4" fill="#DDE4EC"/>
+          <rect x="28" y="58" width="120" height="6" rx="3" fill="#E7ECF2"/>
+          <rect x="28" y="72" width="96" height="6" rx="3" fill="#E7ECF2"/>
+          <circle cx="200" cy="76" r="15" fill="#0FA3A3"/>
+          <path d="M193 74 h14 M193 79 h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <b>They land</b>
+        <p>The launcher appears in your corner, in your color. Most visitors never fill in a form — this one they will tap.</p>
+      </div>
+      <div class="fstep">
+        <span class="fn">STEP 02</span>
+        <svg viewBox="0 0 240 108" role="img" aria-label="The visitor asks a question and gets an answer from the facts you approved">
+          <rect x="96" y="16" width="130" height="26" rx="10" fill="#0FA3A3"/>
+          <rect x="108" y="26" width="76" height="6" rx="3" fill="rgba(255,255,255,.75)"/>
+          <rect x="14" y="50" width="150" height="34" rx="10" fill="#fff" stroke="#E2E7EE"/>
+          <rect x="26" y="60" width="112" height="6" rx="3" fill="#C9D6E2"/>
+          <rect x="26" y="72" width="84" height="6" rx="3" fill="#DDE4EC"/>
+          <rect x="14" y="90" width="88" height="14" rx="7" fill="#E3F5F5"/>
+          <text x="58" y="100" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" font-weight="800" fill="#0A7F7F" text-anchor="middle">✓ YOUR FACTS</text>
+        </svg>
+        <b>They ask</b>
+        <p>Price, availability, policy, "do you take my insurance". Answered from approved facts, in the language they typed.</p>
+      </div>
+      <div class="fstep">
+        <span class="fn">STEP 03</span>
+        <svg viewBox="0 0 240 108" role="img" aria-label="A structured lead record is filled in automatically">
+          <rect x="20" y="10" width="200" height="88" rx="10" fill="#fff" stroke="#E2E7EE"/>
+          <rect x="34" y="24" width="62" height="8" rx="4" fill="#0B1B33"/>
+          <rect x="34" y="44" width="52" height="6" rx="3" fill="#C9D6E2"/><rect x="112" y="42" width="94" height="10" rx="5" fill="#EEF2F7"/>
+          <rect x="34" y="62" width="46" height="6" rx="3" fill="#C9D6E2"/><rect x="112" y="60" width="94" height="10" rx="5" fill="#EEF2F7"/>
+          <rect x="34" y="80" width="56" height="6" rx="3" fill="#C9D6E2"/><rect x="112" y="78" width="94" height="10" rx="5" fill="#DFF3F3"/>
+          <circle cx="202" cy="24" r="9" fill="#0FA3A3"/><path d="M198 24 l3 3 l5 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <b>The lead writes itself</b>
+        <p>Name, need, budget range, timing, language — captured mid-conversation and filed in your inbox and CRM.</p>
+      </div>
+      <div class="fstep">
+        <span class="fn">STEP 04</span>
+        <svg viewBox="0 0 240 108" role="img" aria-label="A calendar slot is booked and a reminder is queued">
+          <rect x="30" y="12" width="180" height="84" rx="10" fill="#fff" stroke="#E2E7EE"/>
+          <rect x="30" y="12" width="180" height="18" rx="10" fill="#0B1B33"/>
+          <rect x="44" y="19" width="40" height="5" rx="2.5" fill="rgba(255,255,255,.6)"/>
+          <g fill="#EEF2F7">
+            <rect x="44" y="40" width="26" height="18" rx="4"/><rect x="78" y="40" width="26" height="18" rx="4"/>
+            <rect x="146" y="40" width="26" height="18" rx="4"/><rect x="180" y="40" width="16" height="18" rx="4"/>
+            <rect x="44" y="66" width="26" height="18" rx="4"/><rect x="112" y="66" width="26" height="18" rx="4"/>
+            <rect x="146" y="66" width="26" height="18" rx="4"/><rect x="180" y="66" width="16" height="18" rx="4"/>
+          </g>
+          <rect x="112" y="40" width="26" height="18" rx="4" fill="#0FA3A3"/>
+          <rect x="78" y="66" width="26" height="18" rx="4" fill="#DFF3F3"/>
+        </svg>
+        <b>The slot is held</b>
+        <p>Real openings from your Google or Outlook calendar, offered in the visitor's time zone, with a reminder queued.</p>
+      </div>
+    </div>
+    <p class="funfoot reveal">Roughly <b>1 in 5</b> conversations still reaches a human — on purpose. Handoff is a feature, not a failure.</p>
+  </div>
+</section>
+
+<!-- ═══════ 6 · ONE INBOX + THE WORLD (dark, grid field) ═══════ -->
+<section class="secpad inbsec bg-grid t-md">
+  <div class="wrap">
+    <div class="khead reveal">
+      <div class="secrule"><span class="eyebrow"><i></i>One inbox</span><span class="line"></span></div>
+      <h2 class="h2 onDark">Every chat lands where<br>your team already looks.</h2>
+      <p class="lead onDark" style="margin-top:16px;max-width:560px;">Web chat sits next to phone calls and WhatsApp threads in the same list — with who the AI handled, who needs a person, and what got booked.</p>
+    </div>
+
+    <div class="reveal" style="margin-top:44px;">
+      <div class="browserframe light">
+        <div class="bar"><i></i><i></i><i></i><span class="url">app.saleringo.com/inbox</span></div>
+        <div class="inboxmock">
+          <div class="col">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.16em;color:#A6B0BD;margin-bottom:12px;">CHANNELS</div>
+            <div class="convrow on"><span class="chanmini cm-c">💬</span><span class="cv"><b>Web chat</b></span><span class="st st-ai">17</span></div>
+            <div class="convrow"><span class="chanmini cm-v">✆</span><span class="cv"><b>Phone</b></span></div>
+            <div class="convrow"><span class="chanmini cm-m">✓</span><span class="cv"><b>WhatsApp</b></span></div>
+            <div class="convrow"><span class="chanmini cm-c">💬</span><span class="cv"><b>All channels</b></span></div>
+          </div>
+          <div class="col">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.16em;color:#A6B0BD;margin-bottom:12px;">WEB CHAT</div>
+            <div class="convrow on"><span class="avatar av-c" style="width:30px;height:30px;font-size:11px;">EJ</span><span class="cv"><b>Emma &amp; James · 02:14</b><span>120 guests, Oct 12 — tour held Sat 11:00</span></span><span class="st st-hu">Human</span></div>
+            <div class="convrow"><span class="avatar av-b" style="width:30px;height:30px;font-size:11px;">LP</span><span class="cv"><b>L. Peeters · 23:41</b><span>Garden cottage Friday, dog — request logged</span></span><span class="st st-ai">AI</span></div>
+            <div class="convrow"><span class="avatar av-d" style="width:30px;height:30px;font-size:11px;">SK</span><span class="cv"><b>S. Khan · 04:06</b><span>Implant pricing — exam booked Thursday</span></span><span class="st st-ai">AI</span></div>
+            <div class="convrow"><span class="avatar av-a" style="width:30px;height:30px;font-size:11px;">MR</span><span class="cv"><b>M. Rodriguez · 01:52</b><span>Quote for a full repaint — lead captured</span></span><span class="st st-ai">AI</span></div>
+          </div>
+          <div class="col">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.16em;color:#A6B0BD;margin-bottom:12px;">LEAD</div>
+            <div style="font-size:14px;font-weight:800;color:var(--l-ink);">Emma &amp; James</div>
+            <div style="margin-top:10px;font-size:11.5px;color:var(--l-mut);line-height:2;">
+              Language · <b style="color:var(--l-ink);">English</b><br>
+              Date · <b style="color:var(--l-ink);">Oct 12 (Sat)</b><br>
+              Guests · <b style="color:var(--l-ink);">120</b><br>
+              Quote · <b style="color:var(--l-ink);">$9,800 sent</b><br>
+              Next · <b style="color:#0A7F7F;">Tour Sat 11:00</b></div>
+            <div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="pilltag pt-teal">✓ Answers from your facts</span>
+              <span class="pilltag pt-line">Transcript attached</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ★ SCENE 2: world arcs — the global angle -->
+    <div class="worldband">
+      <div class="reveal">
+        <span class="eyebrow"><i></i>Global by default</span>
+        <h3 class="h2 onDark" style="margin-top:18px;font-size:36px;">Their language.<br>Their hour.</h3>
+        <p class="lead onDark" style="margin-top:14px;">The widget detects the language a visitor writes in and replies in it — 30+ languages. Prices are shown in USD, EUR, or GBP as you set them, and slots are offered in the visitor's own time zone.</p>
+        <div class="langrow" style="margin-top:22px;justify-content:flex-start;">
+          <span class="langchip hi">English</span><span class="langchip hi">Español</span><span class="langchip hi">Français</span>
+          <span class="langchip">Deutsch</span><span class="langchip">Português</span><span class="langchip">日本語</span>
+          <span class="langchip">한국어</span><span class="langchip">+ 20 more</span>
+        </div>
+      </div>
+      <div class="reveal"><div class="scene-frame">
+</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 6b · WHAT THE CONTACT FORM COSTS (cream paper) ═══════ -->
+<section class="secpad costsec bg-paper t-md">
+  <div class="wrap">
+    <div class="khead mid reveal">
+      <span class="eyebrow light"><i></i>The cost of the form</span>
+      <h2 class="h2" style="margin-top:20px;">A contact form is not free. It is just billed in lost visitors.</h2>
+      <p class="lead" style="margin-top:16px;">Nobody quotes you a price for the inquiries that never got answered, so here are the numbers the category is built on. Check every one of them.</p>
+    </div>
+
+    <div class="costnums reveal">
+      <div class="costnum">
+        <div class="t">Reply within 5 minutes</div>
+        <div class="n sg">21×</div>
+        <p>The often-cited Lead Response Management finding: a web lead contacted inside five minutes is vastly more likely to qualify than one contacted after thirty. A form answered tomorrow morning is the after-thirty case, every time.</p>
+      </div>
+      <div class="costnum">
+        <div class="t">Visitors who never fill the form</div>
+        <div class="n sg">most</div>
+        <p>Almost every visitor who has a question leaves without asking it, because asking costs them a form, an email address, and a wait. A chat that answers on the spot removes all three.</p>
+      </div>
+      <div class="costnum">
+        <div class="t">Your own arithmetic</div>
+        <div class="n sg">× job value</div>
+        <p>Take last month's inquiries, the share you replied to the next day, and what one job is worth. That product is what the form costs you. Saleringo's chatbot is $79/mo.</p>
+      </div>
+    </div>
+    <p class="costfoot reveal">Industry ranges reported in trade press — not our measurements, and not a promise about your business.<br>
+      Run yours on the <a href="./pricing.html">pricing calculator ↗</a>.</p>
+
+    <div class="psband reveal" style="margin-top:62px;">
+      <div class="photosplit rev">
+        <div class="copy">
+          <span class="eyebrow light"><i></i>Why the form loses</span>
+          <h3>The question arrives while<br>your hands are full.</h3>
+          <p>Nobody abandons your site because they disliked the form. They abandon it because the answer was three clicks and a day away, and a competitor's page answered in four seconds. The form does not lose the inquiry — the wait does.</p>
+          <div class="kv">
+            <span class="pilltag pt-line">Answered in seconds</span>
+            <span class="pilltag pt-teal">✓ Every hour, every language</span>
+          </div>
+        </div>
+        <div class="media">
+          <img class="ph" src="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:1000px) 100vw, 50vw"
+               alt="A technician working on an air-conditioning unit with a gauge set in hand"
+               loading="lazy" decoding="async" width="1200" height="852">
+        </div>
+      </div>
+    </div>
+
+    <div class="altwrap reveal">
+      <div class="cap">What businesses usually compare it against</div>
+      <div class="altgrid">
+        <div class="altcol">
+          <h4>Contact form</h4>
+          <div class="cost sg">$0</div>
+          <ul>
+            <li><i>·</i>Answers nothing — it only takes a message</li>
+            <li><i>·</i>Visitor waits until someone opens the inbox</li>
+            <li><i>·</i>No price, no availability, no booking</li>
+            <li><i>·</i>Most visitors never fill it in</li>
+          </ul>
+        </div>
+        <div class="altcol">
+          <h4>Template chatbot</h4>
+          <div class="cost sg">low $ /mo</div>
+          <ul>
+            <li><i>·</i>Answers from whatever it scraped</li>
+            <li><i>·</i>Guesses confidently when it is unsure</li>
+            <li><i>·</i>Decision trees break on real questions</li>
+            <li><i>·</i>No record of why it said what it said</li>
+          </ul>
+        </div>
+        <div class="altcol">
+          <h4>Staffed live chat</h4>
+          <div class="cost sg">salaried</div>
+          <ul>
+            <li><i>·</i>Excellent — during one shift, in one language</li>
+            <li><i>·</i>Offline exactly when overseas buyers browse</li>
+            <li><i>·</i>Cost rises with every conversation</li>
+            <li><i>·</i>Sick days, holidays, turnover</li>
+          </ul>
+        </div>
+        <div class="altcol win">
+          <h4>Saleringo Chatbot</h4>
+          <div class="cost sg">from $79 /mo</div>
+          <ul>
+            <li><i>✓</i>Answers in seconds, every hour</li>
+            <li><i>✓</i>Only from facts a person approved</li>
+            <li><i>✓</i>Books the next step and writes the lead down</li>
+            <li><i>✓</i>Hands the whole thread to a human when unsure</li>
+          </ul>
+        </div>
+      </div>
+      <p class="altnote">Comparison columns describe how these options generally work. They are not quotes for your business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 8b · AFTER THE CHAT — booking, quote, record, number ═══════ -->
+<section class="crmsec sec-dark t-xl">
+  <div class="wrap">
+    <div class="khead reveal">
+      <div class="secrule"><span class="eyebrow"><i></i>After the chat</span><span class="line"></span></div>
+      <h2 class="h2 onDark">A transcript is not a customer.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most website chat tools end with a log for you to read. This one ends
+        with the visitor sitting in a pipeline you can work: their slot held on your real calendar, a quote priced off
+        your own list, a record written for you, and a Monday number that says what the website is actually worth.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo &mdash; <b>Pipeline</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Front desk</div>
+          <span class="it on"><span class="dot"></span>Pipeline<span class="n">18</span></span>
+          <span class="it"><span class="dot"></span>Conversations<span class="n">96</span></span>
+          <span class="it"><span class="dot"></span>Bookings<span class="n">24</span></span>
+          <span class="it"><span class="dot"></span>Quotes<span class="n">9</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>Reports</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Knowledge</span>
+          <span class="it"><span class="dot"></span>Price list</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">6</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">JD</span><span class="nm">J. Delacroix</span></div>
+                <div class="mt">Read the pricing page twice, then asked about lead times</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat &middot; 23:14</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">AH</span><span class="nm">A. Haruna</span></div>
+                <div class="mt">Wants to know if you cover the next town over</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4><span class="sw"></span>Booked<span class="ct">4</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">SK</span><span class="nm">S. Kowalski</span></div>
+                <div class="mt">Consultation &mdash; Thu 10:30</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">Web chat</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">TN</span><span class="nm">T. Nakamura</span></div>
+                <div class="mt">Site visit &mdash; Fri 14:00</div>
+                <div class="ft"><span class="tag hot">Hot</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4><span class="sw"></span>Quote sent<span class="ct">5</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">RB</span><span class="nm">R. Berger</span></div>
+                <div class="mt">Two options sent, awaiting a choice</div>
+                <div class="ft"><span class="tag">Auto-quote</span><span class="amt">$1,840</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">MO</span><span class="nm">M. Oyelaran</span></div>
+                <div class="mt">Asked to be reminded next week</div>
+                <div class="ft"><span class="tag">Follow-up d+7</span><span class="amt">$620</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4><span class="sw"></span>Won<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">LF</span><span class="nm">L. Ferreira</span></div>
+                <div class="mt">Signed &mdash; deposit received</div>
+                <div class="ft"><span class="tag">Closed</span><span class="amt">$2,970</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">PV</span><span class="nm">P. Voss</span></div>
+                <div class="mt">Confirmed for next month</div>
+                <div class="ft"><span class="tag">Closed</span><span class="amt">$1,150</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crmtrio reveal">
+      <div>
+        <div class="cw">
+          <h3>It holds the slot</h3>
+          <p>Not &ldquo;someone will be in touch&rdquo;. The widget checks your live calendar, your opening
+            hours and your buffer between jobs, then holds the time while the visitor is still reading.</p>
+        </div>
+        <div class="appwin tight">
+          <div class="bar"><i></i><i></i><i></i><span class="tt">Bookings &mdash; <b>this week</b></span></div>
+          <div class="body">
+            <div class="calmock" style="border:0;padding:0;background:transparent;">
+              <div class="ch"><b>Mon &ndash; Fri</b><span>3 booked from chat</span></div>
+              <div class="calgrid">
+                <div class="dh">Mon</div><div class="dh">Tue</div><div class="dh">Wed</div><div class="dh">Thu</div><div class="dh">Fri</div>
+                <div class="slot taken">09:00</div><div class="slot free">09:00</div><div class="slot new">09:00</div><div class="slot free">09:00</div><div class="slot taken">09:00</div>
+                <div class="slot free">11:30</div><div class="slot new">11:30</div><div class="slot free">11:30</div><div class="slot taken">11:30</div><div class="slot free">11:30</div>
+                <div class="slot taken">14:00</div><div class="slot free">14:00</div><div class="slot free">14:00</div><div class="slot new">14:00</div><div class="slot taken">14:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cw">
+          <h3>It prices from your list</h3>
+          <p>Give it the price list you already have &mdash; options, add-ons, the discount rules you apply by
+            hand today &mdash; and the estimate goes out the same hour. <b>It never invents a number.</b></p>
+        </div>
+        <div class="quotedoc">
+          <div class="qh">
+            <div><b>Estimate #0934</b><div class="qm">Built from the chat &middot; sent 6 minutes later</div></div>
+            <span class="qs">Sent</span>
+          </div>
+          <div class="qline"><span class="d">Base service</span><span class="s">from your price list</span><span class="v">$1,450</span></div>
+          <div class="qline"><span class="d">Add-on chosen in chat</span><span class="s">option B</span><span class="v">$390</span></div>
+          <div class="qline disc"><span class="d">Off-peak rule</span><span class="s">weekday booking</span><span class="v">&minus;$120</span></div>
+          <div class="qline tot"><span class="d">Total</span><span class="v">$1,720</span></div>
+          <p class="qf">Sample figures. Auto-send for standard requests, hold for your approval above a
+            threshold you set &mdash; your choice, per rule.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="cw">
+          <h3>It writes the record</h3>
+          <p>Summary, what they were after, how they sounded and what happens next &mdash; filed before anyone
+            on your team opens the tab. One person, one record, even across three channels.</p>
+        </div>
+        <div class="custcard">
+          <div class="ch"><span class="ini">JD</span>
+            <span><b>J. Delacroix</b><span>First contact &mdash; web chat, 23:14</span></span>
+            <span class="stg">New</span>
+          </div>
+          <div class="crow"><span class="k">Summary</span><span class="v">Compared two packages on the pricing page, then asked about
+            lead times and whether the deposit is refundable.<span class="aibadge">AI written</span></span></div>
+          <div class="crow"><span class="k">Intent</span><span class="v"><em>High</em> &mdash; asked about availability, not just price</span></div>
+          <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti"><i></i>Positive, comparing options</span></span></div>
+          <div class="crow"><span class="k">Next action</span><span class="v">Send the lead-time note &mdash; scheduled, day +1<span class="aibadge">Auto</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:34px;">
+      <div class="kpitiles">
+        <div class="kpitile"><div class="lb">Chats this month</div><div class="vl">96</div><div class="dl">41 outside office hours</div></div>
+        <div class="kpitile hi"><div class="lb">Handled by AI alone</div><div class="vl">78%</div><div class="dl">22% passed to a person</div></div>
+        <div class="kpitile"><div class="lb">Booked from chat</div><div class="vl">24</div><div class="dl flat">plus 9 open quotes</div></div>
+      </div>
+    </div>
+
+    <p class="mockcap reveal">Product illustrations with sample data. Stages, fields, price rules and reports are set up around your business &mdash; your figures are your own.</p>
+
+    <div class="crmfoot reveal">
+      <a class="linkcta" href="./platform.html">See the whole platform &mdash; pipeline, quotes, records, reports&nbsp;&nbsp;&rarr;</a>
+    </div>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ 7 · PRICING (light) ═══════ -->
+<section class="secpad sec-light t-xl">
+  <div class="wrap">
+    <div class="khead mid reveal">
+      <span class="eyebrow light"><i></i>Pricing</span>
+      <h2 class="h2" style="margin-top:20px;">The chat agent starts at $79 a month.</h2>
+      <p class="lead" style="margin-top:16px;">Every plan includes the website chatbot. Add WhatsApp and AI Phone later — same inbox, same approved facts, no second setup.</p>
+    </div>
+    <div class="pricecols">
+      <div class="ptray reveal"><div class="plan">
+        <div class="nm">Start</div>
+        <div class="pr sg">$79<small> /mo</small></div>
+        <ul>
+          <li><b>Website chatbot</b> · lead inbox</li>
+          <li>500 AI conversations included</li>
+          <li>Bookings · 2 seats</li>
+          <li>30+ languages · human handoff</li>
+        </ul>
+        <a class="cta teal" href="./pricing.html">See all plans &amp; usage pricing</a>
+      </div></div>
+      <div class="reveal">
+        <div class="incl">
+          <span class="r"><i>✓</i><span><b>It answers from your facts.</b> Every reply traces back to something you approved, with a source and an expiry date.</span></span>
+          <span class="r"><i>✓</i><span><b>Lead capture and CRM push.</b> Google Calendar, Outlook, Zapier, webhooks, CSV export — included, not an add-on.</span></span>
+          <span class="r"><i>✓</i><span><b>Monthly billing.</b> No annual lock-in to try it; cancel from the dashboard.</span></span>
+          <span class="r"><i>✓</i><span><b>Founding cohort:</b> 50% off for the first 3 months, plus onboarding with a human who builds your knowledge base with you.</span></span>
+        </div>
+        <div class="meter">
+          <div class="t"><span>Typical small-site month</span><b>312 / 500 conversations</b></div>
+          <div class="bar"><i></i></div>
+          <div class="s">Overage is billed per conversation at your plan rate — shown in the dashboard before you cross the line, never as a surprise invoice.</div>
+        </div>
+        <a class="linkcta" style="margin-top:26px;" href="./pricing.html">Open the pricing calculator&nbsp;&nbsp;→</a>
+      </div>
+    </div>
+
+    <div class="proofslot reveal">
+      <div class="quotecard light pending">
+        <div class="mark">“</div>
+        <p>This slot is reserved for a founding customer telling you what the widget actually changed on their site — conversations answered, leads captured, bookings made. We will publish it with a real name and a real number, and not one day earlier.</p>
+        <div class="by"><span class="avatar av-c" style="width:32px;height:32px;font-size:11px;">SR</span>
+          <span><b>Reserved · founding cohort</b><span>Website chat · 2026</span></span></div>
+        <div class="metric">Reserved · a published conversion figure, once one exists</div>
+      </div>
+    </div>
+
+    <!-- risk reversal sits with the price, where the objection is formed -->
+    <div class="riskrow light reveal">
+      <div class="riskitem light"><span class="ic">↩</span><b>Uninstall is one line</b><span>Delete the script tag and the widget is gone. No lock-in, no migration to undo.</span></div>
+      <div class="riskitem light"><span class="ic">✓</span><b>You approve every fact</b><span>Nothing can be said to a customer until a person on your team ticks it.</span></div>
+      <div class="riskitem light"><span class="ic">◷</span><b>Monthly, not annual</b><span>Founding pricing is locked for you, but the commitment stays month to month.</span></div>
+      <div class="riskitem light"><span class="ic">☺</span><b>A human onboards you</b><span>We build the first knowledge base with you — not a help-doc link and good luck.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 8 · FAQ (white) ═══════ -->
+<section class="secpad sec-light2 t-sm">
+  <div class="wrap">
+    <div class="khead mid reveal">
+      <span class="eyebrow light"><i></i>Questions we actually get</span>
+      <h2 class="h2" style="margin-top:20px;">Before you paste the line.</h2>
+    </div>
+    <div class="faq reveal" style="margin-top:38px;">
+      <details open>
+        <summary>Will it slow my site down?</summary>
+        <p>No. The widget loads asynchronously after your page renders, weighs about 40KB, and never blocks your content. If our CDN were unreachable, your site loads without the widget — nothing breaks and nothing errors on your page.</p>
+      </details>
+      <details>
+        <summary>Does it detect the visitor's language?</summary>
+        <p>Yes. It detects the language a visitor writes in and replies in it — 30+ languages. Your approved facts stay in one source language; translations are generated per conversation, and the lead record notes which language was used so your reply can match.</p>
+      </details>
+      <details>
+        <summary>How does the handoff to a human work?</summary>
+        <p>When a question falls outside your approved facts — or hits a topic you flagged, like contracts, payments, or medical advice — the widget tells the visitor a person will follow up, collects their contact details, and notifies your team by email and in the Saleringo inbox with the full transcript. During business hours, your team can also take over the chat live.</p>
+      </details>
+      <details>
+        <summary>What data does it store, and where?</summary>
+        <p>Conversation transcripts and the lead fields you configure. No cookie is set for visitors who never open the widget. You choose the data region at setup, you can delete a conversation or a whole lead record from the dashboard, and deletion removes it from the knowledge base too. Full detail is on our <a href="./security.html" style="color:#0A7F7F;font-weight:700;">Security &amp; Trust</a> and <a href="./privacy.html" style="color:#0A7F7F;font-weight:700;">Privacy</a> pages.</p>
+      </details>
+      <details>
+        <summary>Can it run alongside my existing chat widget?</summary>
+        <p>Yes. Set Saleringo to the opposite corner and run both while you evaluate — many teams do this for a couple of weeks. When you switch, removing the old widget is the only change; your Saleringo install stays the same three lines.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 9 · RISK REVERSAL + CLOSER (spotlight) ═══════ -->
+<section class="closer bg-spot">
+  <div class="wrap">
+    <div class="photo-scrim closerband reveal">
+      <img class="ph" src="https://images.pexels.com/photos/12689014/pexels-photo-12689014.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024"
+             srcset="https://images.pexels.com/photos/12689014/pexels-photo-12689014.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/12689014/pexels-photo-12689014.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/12689014/pexels-photo-12689014.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+             sizes="(max-width:1150px) 100vw, 75vw"
+           alt="An event hall lit for the evening, chandeliers on, nobody at the desk"
+           loading="lazy" decoding="async" width="1200" height="800">
+      <div class="cbcopy">
+        <span class="eyebrow"><i></i>Right now, somewhere</span>
+        <span class="cbt">They are on a page you already wrote,<br>with a question you already answered.</span>
+        <span class="cbs">The only thing standing between the two is whether anything on that page can talk back.</span>
+      </div>
+    </div>
+
+    <div class="riskrow short reveal" style="margin-top:60px;">
+      <div class="riskitem"><span class="ic">↩</span><b>Uninstall is one line</b><span>Delete the script tag and the widget is gone.</span></div>
+      <div class="riskitem"><span class="ic">◷</span><b>Monthly, not annual</b><span>Founding pricing locked; commitment stays month to month.</span></div>
+    </div>
+
+    <h2 class="reveal">Tonight, someone opens your site<br>with <em>a question.</em></h2>
+    <p class="lead onDark reveal">Three lines of code decide whether they get an answer or a contact form. Join the founding cohort — 50% off for 3 months, live the same day.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="./index.html#early-access">Watch it answer my questions<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" data-book data-fallback="./index.html#early-access" href="./index.html#early-access">Ask for a 20-min call — we propose times<span class="cir">↗</span></a>
+    </div>
+
+    <!-- the ask, on the page — not in a mail client -->
+    <div class="leadwrap reveal" id="get-plan">
+      <div class="gradborder"><div class="leadcard">
+        <h3>Get your setup plan</h3>
+        <p class="leadsub">Tell us your trade and we send back the plan for it: what the widget would answer on
+          your pages, how your calendar and price list get connected, and what the first month costs. A person writes it.</p>
+        <form class="eaform" data-earlyaccess>
+          <input type="hidden" name="context" value="Website chat page">
+          <input class="full" type="email" name="email" placeholder="Work email" required>
+          <select name="industry" aria-label="Industry" required>
+            <option value="">Industry…</option>
+            <option>Home services</option><option>Dental</option><option>Wedding &amp; venues</option>
+            <option>Stays &amp; hotels</option><option>Clinic</option><option>Veterinary</option>
+            <option>Tutoring</option><option>Franchise</option><option>Other</option>
+          </select>
+          <select name="channel" aria-label="Main channel">
+            <option value="">Main channel…</option>
+            <option>Phone</option><option selected>Website chat</option><option>WhatsApp / messenger</option><option>All of them</option>
+          </select>
+          <input type="text" name="business" placeholder="Business name (optional)">
+          <input type="url" name="country" placeholder="Your website (optional)">
+          <button class="btn btn-teal" type="submit">Get my setup plan<span class="cir">→</span></button>
+          <p class="badgerow full"><span>14-day refund</span><i>·</i><span>Cancel anytime</span><i>·</i><span>No lock-in</span></p>
+          <p class="eanote full">A person replies within one business day. No newsletter, no spam.
+            The widget answers only from a fact base you approve line by line.</p>
+          <p class="eanote full" data-ea-done hidden style="color:var(--accent);">Your message is ready below — pick whichever way you prefer to send it.</p>
+        </form>
+      </div></div>
+    </div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+        <p>An AI receptionist and the CRM behind it — phone, web chat and messenger, one customer record, one dashboard.</p>
+        <p style="margin-top:10px;">hello@saleringo.com</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a class="lnk" href="./voice.html">AI Phone</a>
+        <a class="lnk" href="./webchat.html">Chatbot</a>
+        <a class="lnk" href="./whatsapp.html">WhatsApp &amp; Messenger</a>
+        <a class="lnk" href="./platform.html">Platform &amp; CRM</a>
+      <a class="lnk" href="./integrations.html">Integrations</a>
+      <a class="lnk" href="./ai-answering-service.html">Buyer's guide</a>
+        <a class="lnk" href="./verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="./demo.html">Scripted demo</a>
+        <a class="lnk" href="./pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Industries</h4>
+      <a class="lnk" href="./examples.html">Worked examples</a>
+        <a class="lnk" href="./industries/home-services.html">Home Services</a>
+        <a class="lnk" href="./industries/dental.html">Dental</a>
+        <a class="lnk" href="./industries/venues.html">Wedding &amp; Venues</a>
+        <a class="lnk" href="./industries/stays.html">Boutique Stays</a>
+      <a class="lnk" href="./industries/clinics.html">Clinics</a>
+      <a class="lnk" href="./industries/veterinary.html">Veterinary</a>
+      <a class="lnk" href="./industries/franchise.html">Franchise</a>
+      <a class="lnk" href="./industries/academies.html">Academies</a>
+        <a class="lnk" href="./industries.html">All industries</a>
+        <a class="lnk" href="./cross-border.html">Cross-border</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a class="lnk" href="./about.html">About</a>
+        <a class="lnk" href="./security.html">Security &amp; Trust</a>
+        <a class="lnk" href="./privacy.html">Privacy Policy</a>
+        <a class="lnk" href="./terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Saleringo · Honest Marketing Co., Ltd. — registered in South Korea, serving customers worldwide</span>
+      <span class="r"><span>English · serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+</main>
+
+<!-- sticky conversion bar — IntersectionObserver in site.js, gated on #cta-gate -->
+<div class="stickycta">
+  <div class="wrap">
+    <span class="msg">Someone is on your site right now with a question. <b>Three lines of code turn it into a booking.</b></span>
+    <a class="btn btn-teal" href="./index.html#early-access">Watch it answer my questions<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../assets/js/site.js?v=4.4"></script>
+</body>
+</html>

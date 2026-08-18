@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<!-- Review subdomain. The canonical tags below still point at the production
+     domain on purpose, so this copy never competes with it in search.
+     To make this the live site: delete this meta and the Disallow in robots.txt. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CRM Behind the Call — Bookings &amp; Quotes | Saleringo</title>
+<meta name="description" content="The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports — built for your trade.">
+<link rel="canonical" href="https://saleringo.com/en/platform.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://saleringo.com/en/platform.html">
+<meta property="og:title" content="The CRM Behind the Call — Booking, Quotes, Pipeline">
+<meta property="og:description" content="The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports — built for your trade.">
+<meta property="og:image" content="https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The CRM Behind the Call — Booking, Quotes, Pipeline">
+<meta name="twitter:description" content="The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports — built for your trade.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./platform.html">
+<link rel="alternate" hreflang="x-default" href="./platform.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "The CRM Behind the Call \u2014 Bookings & Quotes | Saleringo", "description": "The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports \u2014 built for your trade.", "url": "https://saleringo.com/en/platform.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
+</script>
+<link rel="stylesheet" href="../assets/css/site.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/crm.css?v=4.4">
+<style>
+  /* ── HERO: headline over a dark field, product window bleeding out the bottom ──
+     Deliberately NOT the site's usual left-copy / right-scene hero — this page's
+     job is to make the software visible, so the software is the hero. */
+  .phero{position:relative;padding:158px 0 0;overflow:hidden;isolation:isolate;}
+  .phero .aur{position:absolute;left:50%;top:-140px;width:1180px;height:640px;transform:translateX(-50%);
+    background:radial-gradient(closest-side,rgba(23,189,189,.18),transparent 72%);pointer-events:none;z-index:-1;}
+  .phero .hcap{max-width:780px;margin:0 auto;text-align:center;}
+  .phero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.03;
+    letter-spacing:-.042em;font-weight:600;color:#fff;margin-top:22px;}
+  .phero h1 em{font-style:normal;color:var(--teal);}
+  .phero .sub{margin:22px auto 0;max-width:600px;font-size:16.5px;line-height:1.75;color:var(--tx2);font-weight:500;}
+  .phero .ctas{margin-top:30px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .herowin{margin-top:56px;position:relative;}
+  .herowin::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:190px;
+    background:linear-gradient(180deg,transparent,var(--bg0) 88%);pointer-events:none;z-index:3;}
+
+  .sechead{max-width:660px;}
+  .sechead .h2{margin-top:20px;}
+  .sechead p{margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;}
+  .sec-light .sechead p{color:var(--l-mut);}
+
+  .duo{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .duo.rev .m{order:2;}
+  @media(max-width:940px){.duo{grid-template-columns:1fr;gap:34px;}.duo.rev .m{order:0;}}
+
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:14px;line-height:1.65;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:13px;padding-top:1px;}
+  .sec-light .ptlist li{border-color:var(--l-hair);color:var(--l-mut);}
+  .sec-light .ptlist li b{color:var(--l-ink);}
+  .sec-light .ptlist li i{color:var(--teal-deep);}
+
+  .packgrid{margin-top:34px;}
+  .packgrid.bento > *{min-width:0;}
+  @media(max-width:900px){.packgrid{grid-template-columns:1fr;}}
+  .pack{border:1px solid var(--l-hair);border-radius:16px;padding:22px;background:#fff;}
+  .pack h4{font-size:15px;color:var(--l-ink);letter-spacing:-.015em;}
+  .pack .fields{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
+  .pack .fields span{font-size:10.5px;font-weight:700;letter-spacing:.02em;color:#4A5666;
+    background:#F1F4F8;border-radius:6px;padding:4px 8px;}
+  .pack .auto{margin-top:14px;padding-top:12px;border-top:1px dashed var(--l-hair);
+    font-size:12.5px;line-height:1.6;color:var(--l-mut);font-weight:500;}
+  .pack .auto b{color:var(--teal-deep);font-weight:800;}
+
+  .mockcap{margin-top:12px;font-size:11px;color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .sec-light .mockcap{color:#8A94A3;}
+</style>
+</head>
+<body data-grade="trust">
+
+<div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="./index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+  <span class="links">
+    <a href="./voice.html">AI Phone</a>
+    <a href="./webchat.html">Chatbot</a>
+    <a href="./whatsapp.html">WhatsApp</a>
+    <a href="./platform.html" aria-current="page" style="color:#fff;">Platform</a>
+    <a href="./industries.html">Industries</a>
+    <a href="./examples.html">Examples</a>
+    <a href="./pricing.html">Pricing</a>
+  </span>
+  <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="./get-started.html">Get started<span class="cir">↗</span></a>
+  <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav></div>
+
+<main>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="phero bg-grid">
+  <div class="aur"></div>
+  <div class="wrap">
+    <div class="hcap">
+      <span class="eyebrow"><i></i>The half nobody shows you</span>
+      <h1>Answering is the easy part.<br><em>Running the business</em> is the product.</h1>
+      <p class="sub">Anyone can put a robot on your phone line. Saleringo turns that conversation into a
+        booked appointment, a priced quote, a customer record and a revenue report — inside a CRM
+        already shaped for your industry.</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="./get-started.html">See it on your business<span class="cir">↗</span></a>
+        <a class="btn btn-ghostd" href="./pricing.html">What it costs<span class="cir">↗</span></a>
+      </div>
+    </div>
+
+    <div class="herowin reveal">
+      <div class="appwin">
+        <div class="bar"><i></i><i></i><i></i>
+          <span class="tt">Saleringo — <b>Pipeline</b></span>
+          <span class="live">Live</span>
+        </div>
+        <div class="split">
+          <div class="rail">
+            <div class="grp">Front desk</div>
+            <span class="it on"><span class="dot"></span>Pipeline<span class="n">19</span></span>
+            <span class="it"><span class="dot"></span>Conversations<span class="n">142</span></span>
+            <span class="it"><span class="dot"></span>Bookings<span class="n">31</span></span>
+            <span class="it"><span class="dot"></span>Quotes<span class="n">12</span></span>
+            <div class="grp">Insight</div>
+            <span class="it"><span class="dot"></span>Dashboard</span>
+            <span class="it"><span class="dot"></span>Reports</span>
+            <div class="grp">Setup</div>
+            <span class="it"><span class="dot"></span>Knowledge</span>
+            <span class="it"><span class="dot"></span>Price list</span>
+          </div>
+          <div class="pane">
+            <div class="pipeboard">
+              <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
+                <div class="pcard"><div class="who"><span class="ini">RT</span><span class="nm">R. Tanaka</span></div>
+                  <div class="mt">Asked about crown replacement, no insurance</div>
+                  <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 11:42 PM</span></div></div>
+                <div class="pcard"><div class="who"><span class="ini">AM</span><span class="nm">A. Moreau</span></div>
+                  <div class="mt">Wants a Saturday slot for two people</div>
+                  <div class="ft"><span class="tag ai">AI logged</span><span class="chan">WhatsApp</span></div></div>
+              </div>
+              <div class="pipecol s2"><h4><span class="sw"></span>Booked<span class="ct">4</span></h4>
+                <div class="pcard"><div class="who"><span class="ini">DK</span><span class="nm">D. Karlsson</span></div>
+                  <div class="mt">Consultation — Thu 10:30, Dr. Lind</div>
+                  <div class="ft"><span class="tag">Calendar</span><span class="chan">Web chat</span></div></div>
+                <div class="pcard"><div class="who"><span class="ini">PN</span><span class="nm">P. Nguyen</span></div>
+                  <div class="mt">Site visit — Fri 14:00</div>
+                  <div class="ft"><span class="tag hot">Hot</span><span class="chan">Phone</span></div></div>
+              </div>
+              <div class="pipecol s3"><h4><span class="sw"></span>Quote sent<span class="ct">5</span></h4>
+                <div class="pcard"><div class="who"><span class="ini">LB</span><span class="nm">L. Bianchi</span></div>
+                  <div class="mt">Full package + weekend surcharge</div>
+                  <div class="ft"><span class="tag">Auto-quote</span><span class="amt">$4,280</span></div></div>
+                <div class="pcard"><div class="who"><span class="ini">SO</span><span class="nm">S. Okonkwo</span></div>
+                  <div class="mt">Two options sent, awaiting choice</div>
+                  <div class="ft"><span class="tag">Follow-up d+2</span><span class="amt">$1,950</span></div></div>
+              </div>
+              <div class="pipecol s4"><h4><span class="sw"></span>Won<span class="ct">3</span></h4>
+                <div class="pcard"><div class="who"><span class="ini">MH</span><span class="nm">M. Haddad</span></div>
+                  <div class="mt">Signed — deposit received</div>
+                  <div class="ft"><span class="tag">Closed</span><span class="amt">$6,100</span></div></div>
+                <div class="pcard"><div class="who"><span class="ini">EV</span><span class="nm">E. Vargas</span></div>
+                  <div class="mt">Confirmed for next month</div>
+                  <div class="ft"><span class="tag">Closed</span><span class="amt">$2,340</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mockcap">Product illustration with sample data. Stage names, fields and price rules are configured per business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ THE LEDGER ══════════ -->
+<section class="sec-dark t-md">
+  <div class="wrap">
+    <div class="sechead reveal" style="max-width:760px;">
+      <span class="eyebrow"><i></i>What actually happens to an inquiry</span>
+      <h2 class="h2 onDark">A question came in.<br>Where did it go?</h2>
+      <p>Most businesses lose money not because nobody answered, but because what was said
+        never became anything. A sticky note. A memory. A number nobody called back.</p>
+    </div>
+
+    <div class="reveal" style="margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <div class="audcard"><img class="ph" src="https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+               srcset="https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
+               sizes="(max-width:900px) 100vw, 32vw"
+               alt="A shop owner in an apron standing with folded arms in his own store" loading="eager" fetchpriority="high" decoding="async" width="800" height="1198">
+        <b>The owner is the front desk</b><span>and the front desk closes when they do</span></div>
+      <div class="audcard"><img class="ph" src="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+               srcset="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
+               sizes="(max-width:900px) 100vw, 32vw"
+               alt="Two cafe owners standing together behind their counter" loading="lazy" decoding="async" width="800" height="534">
+        <b>Two people, forty jobs</b><span>the pad of paper is the system</span></div>
+      <div class="audcard"><img class="ph" src="https://images.pexels.com/photos/4270095/pexels-photo-4270095.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+               srcset="https://images.pexels.com/photos/4270095/pexels-photo-4270095.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/4270095/pexels-photo-4270095.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/4270095/pexels-photo-4270095.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
+               sizes="(max-width:900px) 100vw, 32vw"
+               alt="A dentist showing a treatment model to a seated patient" loading="lazy" decoding="async" width="800" height="1200">
+        <b>Chairside when it rings</b><span>and the caller hears voicemail</span></div>
+    </div>
+    <p class="photocap">Photography is illustrative. These are the kinds of businesses Saleringo is built for — not named customers, and not testimonials.</p>
+
+    <div class="ledger reveal" style="margin-top:34px;">
+      <div class="lb-o">
+        <h4>Without a system</h4>
+        <ul>
+          <li><i>✕</i>The 9 PM caller hears voicemail and calls the next name on the list</li>
+          <li><i>✕</i>The 2 PM caller is written on a pad; the pad is gone by Friday</li>
+          <li><i>✕</i>The quote waits for someone with time to build it — two days, maybe four</li>
+          <li><i>✕</i>Nobody follows up, because nobody remembers there was someone to follow up with</li>
+          <li><i>✕</i>You end the month knowing revenue, and nothing about where it came from</li>
+        </ul>
+      </div>
+      <div class="lb-n">
+        <h4>With Saleringo</h4>
+        <ul>
+          <li><i>✓</i>The 9 PM caller is answered, understood and booked before they hang up</li>
+          <li><i>✓</i>Every conversation becomes a customer record, written while it happens</li>
+          <li><i>✓</i>The quote is priced from your own price list and sent the same hour</li>
+          <li><i>✓</i>Follow-ups fire on schedule; hot leads reach your phone immediately</li>
+          <li><i>✓</i>You end the month knowing which channel earned it and what converted</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ THE FIVE STEPS ══════════ -->
+<section class="sec-dark bg-spot t-xl">
+  <div class="wrap">
+    <div class="sechead reveal" style="max-width:700px;">
+      <span class="eyebrow"><i></i>One conversation · four outputs</span>
+      <h2 class="h2 onDark">The call ends.<br>The work is already done.</h2>
+    </div>
+    <div class="flowline reveal">
+      <div class="fnode done"><span class="bul">01</span><b>Answered</b>
+        <span>Phone, website chat or messenger — in the caller's language, at any hour.</span></div>
+      <div class="fnode done"><span class="bul">02</span><b>Booked</b>
+        <span>Date, time, service and staff member checked against your real calendar.</span></div>
+      <div class="fnode done"><span class="bul">03</span><b>Quoted</b>
+        <span>Priced from your list — options, add-ons and discount rules applied.</span></div>
+      <div class="fnode done"><span class="bul">04</span><b>Recorded</b>
+        <span>Customer, summary, intent, sentiment and next action filed in the CRM.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOOKING ══════════ -->
+<section class="sec-dark t-md" style="background:linear-gradient(180deg,var(--bg0),var(--bg1));">
+  <div class="wrap">
+    <div class="duo">
+      <div class="reveal">
+        <span class="eyebrow"><i></i>Automatic booking</span>
+        <h2 class="h2 onDark" style="margin-top:20px;">It doesn't offer to book.<br>It books.</h2>
+        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
+          The AI collects what a booking actually needs — date, time, service, party size, which
+          room or which practitioner — checks it against your live calendar, and holds the slot
+          while the customer is still talking.</p>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Your rules, not ours.</b> Opening hours, buffer times, double-booking limits, which services need a longer slot.</span></li>
+          <li><i>→</i><span><b>Changes and cancellations too.</b> A caller moving an appointment updates the calendar and alerts the staff member affected.</span></li>
+          <li><i>→</i><span><b>Confirmation goes out immediately</b> on the channel the customer used, with a reminder before the day.</span></li>
+        </ul>
+      </div>
+      <div class="m reveal">
+        <div class="appwin tight">
+          <div class="bar"><i></i><i></i><i></i><span class="tt">Bookings — <b>this week</b></span></div>
+          <div class="body">
+            <div class="calmock" style="border:0;padding:0;background:transparent;">
+              <div class="ch"><b>March 10 – 14</b><span>4 booked by AI</span></div>
+              <div class="calgrid">
+                <div class="dh">Mon</div><div class="dh">Tue</div><div class="dh">Wed</div><div class="dh">Thu</div><div class="dh">Fri</div>
+                <div class="slot taken">09:00</div><div class="slot free">09:00</div><div class="slot taken">09:00</div><div class="slot free">09:00</div><div class="slot taken">09:00</div>
+                <div class="slot free">10:30</div><div class="slot new">10:30</div><div class="slot free">10:30</div><div class="slot new">10:30</div><div class="slot free">10:30</div>
+                <div class="slot taken">13:00</div><div class="slot taken">13:00</div><div class="slot free">13:00</div><div class="slot taken">13:00</div><div class="slot new">13:00</div>
+                <div class="slot free">15:30</div><div class="slot free">15:30</div><div class="slot new">15:30</div><div class="slot free">15:30</div><div class="slot free">15:30</div>
+                <div class="slot">17:00</div><div class="slot">17:00</div><div class="slot">17:00</div><div class="slot">17:00</div><div class="slot">17:00</div>
+              </div>
+              <p style="margin-top:13px;font-size:11.5px;color:var(--app-tx3);font-weight:600;">
+                Marked <b style="color:#5FE3E3;">AI</b> — booked from a conversation, no staff involved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUOTES — light break for rhythm ══════════ -->
+<section class="sec-light t-xl">
+  <div class="wrap">
+    <div class="duo rev">
+      <div class="m reveal">
+        <div class="quotedoc">
+          <div class="qh">
+            <div><b>Estimate #2461</b><div class="qm">Prepared automatically · 4 minutes after the call ended</div></div>
+            <span class="qs">Sent</span>
+          </div>
+          <div class="qline"><span class="d">Base package</span><span class="s">Sat · 120 guests</span><span class="v">$3,600</span></div>
+          <div class="qline"><span class="d">Extended hours</span><span class="s">+2 h</span><span class="v">$480</span></div>
+          <div class="qline"><span class="d">Add-on — premium set</span><span class="s">from price list</span><span class="v">$620</span></div>
+          <div class="qline disc"><span class="d">Off-peak discount</span><span class="s">rule: March weekday</span><span class="v">−$420</span></div>
+          <div class="qline tot"><span class="d">Total</span><span class="v">$4,280</span></div>
+          <p class="qf">Generated from your own price list, option matrix and discount rules.
+            Nothing is priced that you have not priced yourself.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow light"><i></i>Automatic quoting</span>
+        <h2 class="h2" style="margin-top:20px;">The quote that used to<br>take two days.</h2>
+        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--l-mut);font-weight:500;max-width:520px;">
+          Your prices, your options, your discount logic. The AI takes what the customer asked for,
+          runs it through the rules you set, and produces a real estimate — ready to send, or ready
+          for you to check first if that's how you'd rather work.</p>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>You keep control of price.</b> The system never invents a number. If a case falls outside your rules, it routes to a person instead of guessing.</span></li>
+          <li><i>→</i><span><b>Send or review.</b> Auto-send for standard requests; hold for approval on anything above a threshold you set.</span></li>
+          <li><i>→</i><span><b>Every version is kept</b> against the customer record, so you can see what was offered and what was accepted.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ══════════ CUSTOMER RECORD ══════════ -->
+<section class="sec-dark t-md">
+  <div class="wrap">
+    <div class="duo">
+      <div class="reveal">
+        <span class="eyebrow"><i></i>Customer records &amp; analysis</span>
+        <h2 class="h2 onDark" style="margin-top:20px;">Nobody types this.<br>It types itself.</h2>
+        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
+          The part your staff never has time for. Every conversation is summarized, the customer's
+          intent classified, their tone read, and the next action assigned — so the record is
+          complete before anyone opens it.</p>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Searchable history.</b> What they asked, when, on which channel, and what was promised.</span></li>
+          <li><i>→</i><span><b>Hot-lead alerts.</b> High-intent conversations reach your phone while the customer is still deciding.</span></li>
+          <li><i>→</i><span><b>Duplicate matching</b> across phone, chat and messenger — one person, one record, three channels.</span></li>
+        </ul>
+      </div>
+      <div class="m reveal">
+        <div class="custcard">
+          <div class="ch"><span class="ini">LB</span>
+            <span><b>L. Bianchi</b><span>First contact — phone, 11:42 PM</span></span>
+            <span class="stg">Quote sent</span>
+          </div>
+          <div class="crow"><span class="k">Summary</span><span class="v">Asked about a Saturday event for 120 guests in March.
+            Compared two packages, asked twice about the cancellation window.<span class="aibadge">AI written</span></span></div>
+          <div class="crow"><span class="k">Intent</span><span class="v"><em>High</em> — requested pricing and availability in the same call</span></div>
+          <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti"><i></i>Positive, price-sensitive</span></span></div>
+          <div class="crow"><span class="k">Collected</span><span class="v">Date · guest count · budget range · preferred contact time</span></div>
+          <div class="crow"><span class="k">Next action</span><span class="v">Follow up on cancellation terms — scheduled, day +2<span class="aibadge">Auto</span></span></div>
+          <div class="crow"><span class="k">Channels</span><span class="v">Phone → WhatsApp · merged into one record</span></div>
+        </div>
+        <p class="mockcap">Product illustration with sample data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DASHBOARD & REPORTS ══════════ -->
+<section class="sec-dark bg-aurora t-xl">
+  <div class="wrap">
+    <div class="sechead reveal" style="max-width:720px;">
+      <span class="eyebrow"><i></i>Statistics &amp; revenue</span>
+      <h2 class="h2 onDark">Monday morning, one screen,<br>and no guessing.</h2>
+      <p>How many people asked. How many the AI handled alone. How many became appointments,
+        quotes, customers. Which channel earns, and which one only costs.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Dashboard</b></span><span class="live">Live</span></div>
+      <div class="body">
+        <div class="kpitiles">
+          <div class="kpitile"><div class="lb">Conversations</div><div class="vl">142</div><div class="dl">▲ 18% vs last month</div></div>
+          <div class="kpitile hi"><div class="lb">Handled by AI alone</div><div class="vl">73%</div><div class="dl">27% passed to a person</div></div>
+          <div class="kpitile"><div class="lb">New customers</div><div class="vl">38</div><div class="dl">▲ 11 vs last month</div></div>
+          <div class="kpitile"><div class="lb">Hot leads</div><div class="vl">9</div><div class="dl">alerted in real time</div></div>
+          <div class="kpitile"><div class="lb">Booked this week</div><div class="vl">31</div><div class="dl">14 outside office hours</div></div>
+          <div class="kpitile"><div class="lb">Pipeline value</div><div class="vl">$47.2k</div><div class="dl flat">open quotes + booked</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
+          <div class="repcard">
+            <h5>Inquiries by channel</h5>
+            <div class="barrow"><span class="bl">Phone</span><span class="bt"><span class="bf" style="width:64%"></span></span><span class="bv">71</span></div>
+            <div class="barrow"><span class="bl">Web chat</span><span class="bt"><span class="bf alt" style="width:38%"></span></span><span class="bv">42</span></div>
+            <div class="barrow"><span class="bl">Messenger</span><span class="bt"><span class="bf alt2" style="width:26%"></span></span><span class="bv">29</span></div>
+            <h5 style="margin-top:20px;">Revenue contribution</h5>
+            <div class="barrow"><span class="bl">Phone</span><span class="bt"><span class="bf" style="width:71%"></span></span><span class="bv">$26.1k</span></div>
+            <div class="barrow"><span class="bl">Web chat</span><span class="bt"><span class="bf alt" style="width:31%"></span></span><span class="bv">$11.4k</span></div>
+            <div class="barrow"><span class="bl">Messenger</span><span class="bt"><span class="bf alt2" style="width:24%"></span></span><span class="bv">$9.7k</span></div>
+          </div>
+          <div class="repcard">
+            <h5>Pipeline conversion</h5>
+            <div class="funnelrow">
+              <div class="fstep f1"><b>142</b><span>Inquiry</span></div>
+              <div class="fstep f2"><b>31</b><span>Booked</span></div>
+              <div class="fstep f3"><b>12</b><span>Quoted</span></div>
+              <div class="fstep f4"><b>8</b><span>Won</span></div>
+            </div>
+            <p style="margin-top:16px;font-size:12.5px;line-height:1.65;color:var(--app-tx2);font-weight:500;">
+              Every stage is a real number you can click into and see the names behind.
+              Export the whole view to PDF or Excel for your accountant, your board, or your own Monday.</p>
+            <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="pilltag">PDF export</span>
+              <span class="pilltag">Excel export</span>
+              <span class="pilltag">Scheduled email</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with sample data. Your figures are your own.</p>
+  </div>
+</section>
+
+<!-- ══════════ INDUSTRY PACKS ══════════ -->
+<section class="sec-light t-sm">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <span class="eyebrow light"><i></i>Industry packs</span>
+      <h2 class="h2">A generic CRM asks for a name.<br>Yours asks the right questions.</h2>
+      <p>This is the difference between software you configure for six months and software that
+        already knows your trade. Each pack ships with the fields, stages, pricing logic and
+        follow-up rhythm that industry actually runs on.</p>
+    </div>
+    <div class="packgrid bento reveal">
+      <div class="pack">
+        <h4>Clinics &amp; dental</h4>
+        <div class="fields"><span>Treatment interest</span><span>Insurance</span><span>First visit?</span><span>Preferred practitioner</span><span>Recall due</span></div>
+        <p class="auto"><b>Automates:</b> new-patient intake, recall reminders, no-show follow-up,
+          treatment-plan estimates. Diagnosis and prescription questions are never answered — they route to your staff.</p>
+      </div>
+      <div class="pack">
+        <h4>Venues &amp; events</h4>
+        <div class="fields"><span>Event date</span><span>Guest count</span><span>Package</span><span>Budget band</span><span>Site visit</span></div>
+        <p class="auto"><b>Automates:</b> date-availability checks, package quoting with seasonal rules,
+          site-visit booking, deposit reminders, the long multi-month follow-up cycle.</p>
+      </div>
+      <div class="pack">
+        <h4>Home services</h4>
+        <div class="fields"><span>Job type</span><span>Address / zone</span><span>Urgency</span><span>Equipment age</span><span>Access notes</span></div>
+        <p class="auto"><b>Automates:</b> emergency triage after hours, technician dispatch windows,
+          call-out pricing by zone, post-job review requests.</p>
+      </div>
+      <div class="pack" style="padding:0;overflow:hidden;">
+        <div style="position:relative;height:150px;overflow:hidden;"><img class="ph" src="https://images.pexels.com/photos/10376250/pexels-photo-10376250.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+               srcset="https://images.pexels.com/photos/10376250/pexels-photo-10376250.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/10376250/pexels-photo-10376250.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/10376250/pexels-photo-10376250.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
+               sizes="(max-width:900px) 100vw, 32vw"
+               alt="A man working at his desk with a laptop" loading="lazy" decoding="async" width="800" height="534"></div>
+        <div style="padding:20px 22px 22px;">
+        <h4>Boutique stays</h4>
+        <div class="fields"><span>Dates</span><span>Party size</span><span>Room type</span><span>Late arrival</span><span>Language</span></div>
+        <p class="auto"><b>Automates:</b> availability and rate answers in the guest's language,
+          direct-booking capture, pre-arrival messages, upsell of late checkout.</p>
+        </div>
+      </div>
+      <div class="pack">
+        <h4>Academies &amp; training</h4>
+        <div class="fields"><span>Student age</span><span>Level</span><span>Schedule fit</span><span>Trial class</span><span>Parent contact</span></div>
+        <p class="auto"><b>Automates:</b> trial-class booking, level-test scheduling, term enrolment
+          reminders, the parent follow-up nobody has time for.</p>
+      </div>
+      <div class="pack">
+        <h4>Your industry</h4>
+        <div class="fields"><span>Your fields</span><span>Your stages</span><span>Your rules</span></div>
+        <p class="auto"><b>Not on the list?</b> Packs are built from your own inquiry history and price
+          list. Tell us the five questions your front desk always asks — that's the starting point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FITS YOUR STACK ══════════ -->
+<section class="sec-dark t-md">
+  <div class="wrap">
+    <div class="duo">
+      <div class="reveal">
+        <span class="eyebrow"><i></i>You may already have a CRM</span>
+        <h2 class="h2 onDark" style="margin-top:20px;">Then keep it.<br>We'll keep it fed.</h2>
+        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
+          Saleringo's CRM is there for businesses who never got one to stick. If you already run
+          something you like, the answering layer writes into it instead — same records, same
+          bookings, your existing system of record.</p>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Calendar:</b> Google Calendar, Outlook, and the booking systems most trades already use.</span></li>
+          <li><i>→</i><span><b>Records:</b> push contacts, conversation summaries and stage changes into your CRM.</span></li>
+          <li><i>→</i><span><b>No migration project.</b> Nothing is ripped out. Start with answering, adopt the CRM only if it earns it.</span></li>
+        </ul>
+        <p style="margin-top:22px;font-size:12.5px;color:var(--tx3);font-weight:600;line-height:1.6;">
+          Integrations are configured during onboarding. Tell us what you run and we'll tell you
+          honestly whether it connects today or needs work.</p>
+      </div>
+      <div class="m reveal">
+        <div class="photocard tall">
+<img class="ph" src="https://images.pexels.com/photos/6888761/pexels-photo-6888761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               srcset="https://images.pexels.com/photos/6888761/pexels-photo-6888761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6888761/pexels-photo-6888761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/6888761/pexels-photo-6888761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
+               sizes="(max-width:940px) 100vw, 46vw"
+               alt="A shop owner standing with folded arms in his own shop" loading="lazy" decoding="async" width="900" height="1350">
+          <span class="kicker">Who this is for</span>
+          <h3>Owners who are also the front desk</h3>
+          <p>If the phone rings and it's your problem — during dinner, on a Sunday, in the middle of
+            a job — this is the half of the product that gives you the evening back and still shows
+            you the numbers on Monday.</p>
+        </div>
+        <p class="photocap">Photography is illustrative — not a named customer, and not a testimonial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CLOSER ══════════ -->
+<section class="closer sec-dark t-xl">
+  <div class="wrap" style="text-align:center;">
+    <span class="eyebrow"><i></i>Start where it hurts most</span>
+    <h2 class="h2 onDark reveal" style="margin-top:22px;font-size:clamp(30px,3.6vw,46px);">
+      Answer the phone first.<br><span class="gradtext">Then watch what it turns into.</span></h2>
+    <p style="margin:20px auto 0;max-width:560px;font-size:16px;line-height:1.75;color:var(--tx2);font-weight:500;">
+      Most businesses start with one channel and one industry pack. The pipeline, quotes and
+      reporting come with it — you simply stop needing to do them by hand.</p>
+    <div style="margin-top:32px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn btn-teal" href="./get-started.html">See it on your business<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="./demo.html">Watch a call first<span class="cir">↗</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bigfooter"><div class="wrap">
+  <div class="cols">
+    <div class="brand">
+      <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+      <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
+      <p style="margin-top:10px;">hello@saleringo.com</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <a class="lnk" href="./voice.html">AI Phone</a>
+      <a class="lnk" href="./webchat.html">Chatbot</a>
+      <a class="lnk" href="./whatsapp.html">WhatsApp &amp; Messenger</a>
+      <a class="lnk" href="./platform.html">Platform &amp; CRM</a>
+      <a class="lnk" href="./integrations.html">Integrations</a>
+      <a class="lnk" href="./ai-answering-service.html">Buyer's guide</a>
+      <a class="lnk" href="./demo.html">See a conversation</a>
+      <a class="lnk" href="./pricing.html">Pricing</a>
+    </div>
+    <div>
+      <h4>Industries</h4>
+      <a class="lnk" href="./examples.html">Worked examples</a>
+      <a class="lnk" href="./industries/home-services.html">Home Services</a>
+      <a class="lnk" href="./industries/dental.html">Dental</a>
+      <a class="lnk" href="./industries/venues.html">Wedding &amp; Venues</a>
+      <a class="lnk" href="./industries/stays.html">Boutique Stays</a>
+      <a class="lnk" href="./industries/clinics.html">Clinics</a>
+      <a class="lnk" href="./industries/veterinary.html">Veterinary</a>
+      <a class="lnk" href="./industries/franchise.html">Franchise</a>
+      <a class="lnk" href="./industries/academies.html">Academies</a>
+      <a class="lnk" href="./industries.html">All industries</a>
+      <a class="lnk" href="./cross-border.html">Cross-border</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a class="lnk" href="./about.html">About</a>
+      <a class="lnk" href="./security.html">Security &amp; Trust</a>
+      <a class="lnk" href="./verified-ai.html">How answers are checked</a>
+      <a class="lnk" href="./privacy.html">Privacy Policy</a>
+      <a class="lnk" href="./terms.html">Terms of Service</a>
+    </div>
+  </div>
+  <div class="base">
+    <span>© 2026 Saleringo · Honest Marketing Co., Ltd. — registered in South Korea, serving customers worldwide</span>
+    <span class="r"><span>English · serving customers worldwide</span></span>
+  </div>
+</div></footer>
+
+<div class="stickycta">
+  <div class="wrap">
+    <span class="msg">Answering is where it starts. <b>Booking, quoting and reporting are where it pays.</b></span>
+    <a class="btn btn-teal" href="./get-started.html">See it on your business<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../assets/js/site.js?v=4.4"></script>
+</body>
+</html>

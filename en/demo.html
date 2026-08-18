@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<!-- Review subdomain. The canonical tags below still point at the production
+     domain on purpose, so this copy never competes with it in search.
+     To make this the live site: delete this meta and the Disallow in robots.txt. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>See a Full Conversation, and What It Filed | Saleringo</title>
+<meta name="description" content="See a full conversation on phone, chat and messenger — and what it produced: the booking held, the quote built, the customer record written.">
+<link rel="canonical" href="https://saleringo.com/en/demo.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://saleringo.com/en/demo.html">
+<meta property="og:title" content="See a Full Conversation, and What It Filed">
+<meta property="og:description" content="See a full conversation on phone, chat and messenger — and what it produced: the booking held, the quote built, the customer record written.">
+<meta property="og:image" content="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=900&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="See a Full Conversation, and What It Filed">
+<meta name="twitter:description" content="See a full conversation on phone, chat and messenger — and what it produced: the booking held, the quote built, the customer record written.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=900&amp;h=630">
+<link rel="alternate" hreflang="en" href="./demo.html">
+<link rel="alternate" hreflang="x-default" href="./demo.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "See a Full Conversation, and What It Filed | Saleringo", "description": "See a full conversation on phone, chat and messenger \u2014 and what it produced: the booking held, the quote built, the customer record written.", "url": "https://saleringo.com/en/demo.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
+</script>
+<link rel="stylesheet" href="../assets/css/site.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/crm.css?v=4.4">
+<style>
+  /* hero — a photograph carries it; .photohero's flex centring is not wanted here
+     because the header also holds the nav and the night-timeline strip */
+  .dhero{position:relative;overflow:hidden;display:block;min-height:0;background:#050B16;}
+  .dhero .bgimg img{filter:brightness(1.28) saturate(1.12) contrast(1.04);}
+  .dhero .scrim{background:linear-gradient(180deg,rgba(4,8,15,.72) 0%,rgba(4,8,15,.52) 38%,rgba(4,8,15,.78) 74%,#050B16 100%);}
+  .dhero .wrap,.stage .wrap,.startsec .wrap,.closer .wrap{position:relative;z-index:1;}
+  .nightstrip{position:relative;z-index:2;max-width:1080px;margin:52px auto 0;padding:0 32px;}
+  .startscene{margin-top:56px;}
+  @media (max-width:900px){.nightstrip{padding:0 18px;}}
+  .dhero-inner{position:relative;text-align:center;padding:172px 0 54px;z-index:2;}
+  .dhero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.045em;font-weight:600;color:#fff;max-width:16ch;margin-inline:auto;}
+  .dhero .sub{margin:22px auto 0;max-width:600px;font-size:16.5px;line-height:1.7;color:var(--tx2);font-weight:500;}
+
+  /* channel tab bar */
+  .chtabs{margin-top:40px;display:inline-flex;gap:6px;border:1px solid var(--hair2);border-radius:999px;padding:6px;
+    background:rgba(255,255,255,.05);backdrop-filter:blur(10px);}
+  .chtab{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--tx2);
+    border:0;border-radius:999px;padding:11px 22px;background:transparent;cursor:pointer;transition:all .4s var(--ease);}
+  .chtab i{width:8px;height:8px;border-radius:50%;font-style:normal;opacity:.6;}
+  .chtab:hover{color:#fff;}
+  .chtab.on{background:rgba(255,255,255,.10);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.12) inset;}
+  .chtab.on i{opacity:1;}
+
+  /* demo stage */
+  .stage{position:relative;}
+  .stage{position:relative;overflow:hidden;}
+  .stage .glow{position:absolute;left:50%;top:160px;transform:translateX(-50%);width:min(920px,140vw);height:440px;
+    background:radial-gradient(closest-side, rgba(23,189,189,.15), transparent 70%);filter:blur(12px);pointer-events:none;}
+  .stage .chiprow{position:relative;margin-bottom:26px;}
+  .bigdemo{position:relative;max-width:720px;margin:0 auto;}
+  .bigdemo .demo-body{min-height:330px;}
+  .stagehint{position:relative;text-align:center;margin-top:18px;font-size:12px;color:var(--tx3);font-weight:500;}
+
+  /* phone panel */
+  .callstage{position:relative;display:flex;justify-content:center;}
+  .callstage .phoneframe{width:340px;max-width:94vw;}
+  .callstage .callcard{padding:26px 20px 18px;}
+
+  /* whatsapp panel */
+  .wagrid{position:relative;max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+  .walab{padding:12px 18px 0;font-size:9.5px;font-weight:800;letter-spacing:.18em;color:var(--tx3);text-transform:uppercase;}
+
+  /* trades band — the eight chips above have faces */
+  .tradesec{position:relative;}
+  .tradesec .wrap{position:relative;z-index:1;}
+  .tradesec .head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:34px;}
+  .tradesec .audcard{min-height:280px;}
+  .tradesec .audcard > img.ph{filter:brightness(.84) saturate(1.05) contrast(1.06);}
+  .tradesec .photocap{margin-top:18px;}
+
+  /* aside cards */
+  .aside-grid{position:relative;max-width:900px;margin:44px auto 0;display:grid;grid-template-columns:1.3fr 1fr;gap:14px;align-items:stretch;}
+  .aside-grid .core{padding:24px;height:100%;}
+  .acard .k{font-size:9.5px;font-weight:800;letter-spacing:.18em;color:var(--teal);}
+  .acard .t{margin-top:10px;font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;letter-spacing:-.02em;color:#fff;}
+  .wh .item{display:flex;flex-direction:column;gap:8px;margin-top:18px;}
+  .wh .item p{font-size:12.5px;line-height:1.65;color:var(--tx2);font-weight:500;}
+  .wh .linkcta{color:#fff;border-bottom-color:var(--hair2);font-size:12.5px;margin-top:20px;}
+  .crm2 .k{color:var(--tx2);}
+  .crm2 .nm{margin-top:12px;display:flex;align-items:center;font-size:14px;font-weight:700;color:#fff;}
+  .crm2 .time{margin-left:auto;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:600;color:#0A1526;background:#fff;border-radius:999px;padding:3px 10px;}
+  .crm2 .row{display:flex;justify-content:space-between;font-size:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-weight:500;}
+  .crm2 .rk{color:var(--tx2);} .crm2 .rv{color:#fff;font-weight:600;}
+  .crm2 .slot{margin-top:14px;display:inline-block;font-size:11.5px;font-weight:700;color:#04211F;background:linear-gradient(180deg,#1CC8C8,#0FA3A3);border-radius:9px;padding:7px 13px;box-shadow:0 8px 22px rgba(15,163,163,.35);}
+  .crm2 .mut{margin-top:12px;font-size:11px;color:var(--tx3);font-weight:500;line-height:1.6;}
+
+  /* ── THE OUTCOME BLOCK ────────────────────────────────────────────
+     A chat window on its own is a toy. What makes it a product is the
+     four objects the conversation leaves behind: a pipeline card, a
+     held slot, a priced quote and a written customer record. Every
+     panel below the conversation shows them. ── */
+  .outcome{position:relative;max-width:1080px;margin:46px auto 0;}
+  .outcome .oh{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
+    padding-bottom:16px;border-bottom:1px solid var(--hair);}
+  .outcome .oh .ol{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;
+    letter-spacing:-.025em;color:#fff;}
+  .outcome .oh .ot{font-size:12.5px;line-height:1.6;color:var(--tx2);font-weight:600;}
+  .outcome .oh .ot b{color:var(--teal);}
+  .ogrid{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+  .obox{min-width:0;}
+  .obl{display:flex;align-items:center;gap:9px;margin-bottom:11px;font-size:9.5px;font-weight:800;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--tx3);}
+  .obl em{font-style:normal;font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--teal);letter-spacing:.06em;}
+  .obl i{flex:1;height:1px;background:var(--hair);font-style:normal;}
+  .ocap{margin-top:18px;font-size:11.5px;line-height:1.7;color:var(--tx3);font-weight:600;text-align:center;}
+  .outcome .pipecol{background:rgba(255,255,255,.03);}
+  .outcome.tight{margin-top:34px;max-width:900px;}
+  .outcome.tight .ogrid{gap:14px;}
+  @media (max-width:900px){.ogrid{grid-template-columns:1fr;}}
+
+  /* honesty note */
+  .scripted{position:relative;max-width:720px;margin:28px auto 0;border:1px dashed var(--hair2);border-radius:18px;
+    padding:20px 24px;display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.02);text-align:left;}
+  .scripted .ic{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(232,164,76,.5);color:var(--amber);
+    font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .scripted b{display:block;font-size:13.5px;color:#fff;letter-spacing:-.01em;}
+  .scripted p{margin-top:5px;font-size:12.5px;line-height:1.7;color:var(--tx2);font-weight:500;}
+
+  /* start in three steps */
+  .startsec{background:linear-gradient(180deg,#FDFDFE,var(--l-bg));}
+  .startsec .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:110px;align-items:start;}
+  .startsec .lead{margin-top:26px;max-width:400px;}
+  .startsec .linkcta{margin-top:36px;}
+
+  /* closer + big footer (from site anchor) */
+  .closer{position:relative;background:
+    radial-gradient(900px 500px at 50% -10%, rgba(23,189,189,.14), transparent 60%),
+    linear-gradient(180deg,#060D1C,#04080F);
+    padding:150px 0 0;text-align:center;overflow:hidden;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5vw,58px);font-weight:600;letter-spacing:-.045em;color:#fff;line-height:1.05;position:relative;}
+  .closer .lead{margin:24px auto 0;max-width:520px;position:relative;}
+  .closer .ctas{margin-top:42px;display:flex;justify-content:center;gap:16px;position:relative;flex-wrap:wrap;}
+  .bigfooter{margin-top:130px;}
+
+  @media (max-width:900px){
+    .chtabs{flex-wrap:wrap;justify-content:center;border-radius:24px;}
+    .wagrid{grid-template-columns:1fr;}
+    .aside-grid{grid-template-columns:1fr;}
+    .startsec .cols{grid-template-columns:1fr;gap:56px;}
+  }
+</style>
+</head>
+<body data-grade="chat">
+
+<!-- ═══════ HERO ═══════ -->
+<header class="dhero photohero grain">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw"
+         alt="" width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+    <a class="logo" href="./index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+    <span class="links">
+      <a href="./voice.html">AI Phone</a>
+      <a href="./webchat.html">Chatbot</a>
+      <a href="./whatsapp.html">WhatsApp</a>
+      <a href="./platform.html">Platform</a>
+      <a href="./industries.html">Industries</a>
+    <a href="./examples.html">Examples</a>
+      <a href="./pricing.html">Pricing</a>
+    </span>
+    <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+    <span class="sep"></span>
+    <a class="btn btn-white" href="./get-started.html">Get started<span class="cir">↗</span></a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav></div>
+
+  <div class="wrap dhero-inner">
+    <span class="eyebrow"><i></i>Full conversations · 3 channels · 8 trades</span>
+    <h1 style="margin-top:28px;">Watch it answer. Then see what it filed.</h1>
+    <p class="sub">The same AI on a phone call, a website chat and a WhatsApp thread — answering from facts you approved, handing the hard question to a person. Then, under every conversation, the part most demos never show you: the slot it held, the quote it priced, the record it wrote and the pipeline card it created.</p>
+    <div class="chtabs" role="tablist" aria-label="Choose a channel">
+      <button class="chtab on" role="tab" aria-selected="true" data-tab="chat"><i style="background:var(--chan-chat);"></i>Web chat</button>
+      <button class="chtab" role="tab" aria-selected="false" data-tab="phone"><i style="background:var(--chan-voice);"></i>Phone call</button>
+      <button class="chtab" role="tab" aria-selected="false" data-tab="wa"><i style="background:var(--chan-msg);"></i>WhatsApp</button>
+    </div>
+  </div>
+
+  <div class="nightstrip">
+    <div class="scene-frame">
+<svg viewBox="0 0 1000 240" role="img" aria-label="One evening plotted from 6 PM to 6 AM. Five inquiries arrive after closing time across web chat, WhatsApp and the phone, all inside the hours nobody is at the desk.">
+  <defs>
+    <linearGradient id="dtBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050B16"/><stop offset="1" stop-color="#0A1728"/></linearGradient>
+    <linearGradient id="dtClosed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#17BDBD" stop-opacity=".02"/><stop offset=".5" stop-color="#17BDBD" stop-opacity=".10"/><stop offset="1" stop-color="#17BDBD" stop-opacity=".02"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="240" fill="url(#dtBg)"/>
+
+  <!-- the closed band -->
+  <rect x="250" y="118" width="680" height="34" fill="url(#dtClosed)"/>
+  <text x="590" y="182" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#5E6C82" text-anchor="middle" font-weight="600">nobody at the desk</text>
+
+  <!-- axis -->
+  <path d="M70 135 H930" stroke="#22364F" stroke-width="1.5"/>
+  <g font-family="Space Grotesk,sans-serif" font-size="10.5" fill="#5E6C82" text-anchor="middle">
+    <path d="M70 129 V141 M285 129 V141 M500 129 V141 M715 129 V141 M930 129 V141" stroke="#22364F" stroke-width="1.5"/>
+    <text x="70" y="160">18:00</text><text x="285" y="160">21:00</text><text x="500" y="160">00:00</text>
+    <text x="715" y="160">03:00</text><text x="930" y="160">06:00</text>
+  </g>
+  <text x="70" y="208" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#5E6C82" font-weight="600">you close</text>
+  <text x="930" y="208" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#5E6C82" text-anchor="end" font-weight="600">you open</text>
+
+  <!-- inquiries -->
+  <g font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="800">
+    <g>
+      <path d="M156 135 V78" stroke="#5B9DFF" stroke-width="1.2" stroke-dasharray="3 4"/>
+      <circle cx="156" cy="135" r="4.5" fill="#5B9DFF"/>
+      <rect x="106" y="56" width="100" height="24" rx="12" fill="rgba(91,157,255,.14)" stroke="rgba(91,157,255,.5)" stroke-width="1.2"/>
+      <text x="156" y="72" fill="#8FBEFF" text-anchor="middle">CHAT 19:12</text>
+    </g>
+    <g>
+      <path d="M333 135 V110" stroke="#34D186" stroke-width="1.2" stroke-dasharray="3 4"/>
+      <circle cx="333" cy="135" r="4.5" fill="#34D186"/>
+      <rect x="277" y="88" width="112" height="24" rx="12" fill="rgba(52,209,134,.14)" stroke="rgba(52,209,134,.5)" stroke-width="1.2"/>
+      <text x="333" y="104" fill="#6FE0AC" text-anchor="middle">WHATSAPP 21:40</text>
+    </g>
+    <g>
+      <path d="M433 135 V78" stroke="#34D186" stroke-width="1.2" stroke-dasharray="3 4"/>
+      <circle cx="433" cy="135" r="4.5" fill="#34D186"/>
+      <rect x="377" y="56" width="112" height="24" rx="12" fill="rgba(52,209,134,.14)" stroke="rgba(52,209,134,.5)" stroke-width="1.2"/>
+      <text x="433" y="72" fill="#6FE0AC" text-anchor="middle">WHATSAPP 23:04</text>
+    </g>
+    <g>
+      <path d="M700 135 V110" stroke="#17BDBD" stroke-width="1.2" stroke-dasharray="3 4"/>
+      <circle cx="700" cy="135" r="6" fill="#17BDBD"/>
+      <circle cx="700" cy="135" r="13" fill="none" stroke="#17BDBD" stroke-width="1.2" opacity=".45"/>
+      <rect x="648" y="88" width="104" height="24" rx="12" fill="rgba(23,189,189,.16)" stroke="rgba(23,189,189,.6)" stroke-width="1.2"/>
+      <text x="700" y="104" fill="#9BE7E7" text-anchor="middle">CALL 02:47</text>
+    </g>
+    <g>
+      <path d="M873 135 V78" stroke="#5B9DFF" stroke-width="1.2" stroke-dasharray="3 4"/>
+      <circle cx="873" cy="135" r="4.5" fill="#5B9DFF"/>
+      <rect x="823" y="56" width="100" height="24" rx="12" fill="rgba(91,157,255,.14)" stroke="rgba(91,157,255,.5)" stroke-width="1.2"/>
+      <text x="873" y="72" fill="#8FBEFF" text-anchor="middle">CHAT 05:12</text>
+    </g>
+  </g>
+
+  <text x="500" y="30" font-family="Space Grotesk,sans-serif" font-size="11" fill="#17BDBD" text-anchor="middle" letter-spacing="2.6">ONE ORDINARY TUESDAY NIGHT</text>
+</svg>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════ DEMO STAGE ═══════ -->
+<section class="stage sec-dark bg-grid t-xl">
+  <div class="wrap">
+    <div class="glow" aria-hidden="true"></div>
+
+    <!-- ── PANEL: WEB CHAT ── -->
+    <div data-panel="chat" role="tabpanel" aria-label="Web chat demo" data-play data-play-trade="dental">
+      <div class="chiprow" role="tablist" aria-label="Choose your trade">
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="dental" type="button">Dental</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="clinics" type="button">Clinics</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="venues" type="button">Wedding &amp; Venues</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="home" type="button">Home Services</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="stays" type="button">Boutique Stays</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="academies" type="button">Academies</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="veterinary" type="button">Veterinary</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="franchise" type="button">Franchise</button>
+      </div>
+
+      <div class="playwrap" id="demostage" role="tabpanel">
+        <div class="shell"><div class="core" style="padding:0;overflow:hidden;">
+          <div class="demo-head" style="padding:14px 18px;"><span class="dot"></span>
+            <span data-play-label>Scripted demo &mdash; Dental</span>
+            <span class="chanbadge chat" style="margin-left:auto;">Web chat</span></div>
+          <div class="demo-body" data-play-body aria-live="polite" style="min-height:250px;padding:18px;"></div>
+          <div class="askrow" data-play-asks role="group" aria-label="You are the customer. Ask a question."></div>
+          <p class="playwhy" data-play-why hidden></p>
+        </div></div>
+
+        <div>
+          <div class="ogrid" data-play-out></div>
+          <p class="sronly" data-play-sr aria-live="polite"></p>
+          <p class="playcap">Four objects, built from the conversation you just chose. The struck-through
+            frames are not still loading &mdash; they are what the product refuses to produce, and why.</p>
+        </div>
+      </div>
+
+      <div class="stagehint">Pick a trade, then ask it the question you would dread it getting wrong.
+        The facts, the price list and the handoff rules all change with the trade.</div>
+    </div>
+
+
+    <div data-panel="phone" role="tabpanel" aria-label="Phone call demo" hidden>
+      <div class="chiprow" role="tablist" aria-label="Choose a call scenario">
+        <button class="chip on" data-call="home">Home Services</button>
+        <button class="chip" data-call="dental">Dental</button>
+        <button class="chip" data-call="venues">Wedding &amp; Venues</button>
+      </div>
+      <div class="callstage"><div class="phoneframe"><div class="screen">
+        <div class="notch"></div>
+
+        <div data-callscene="home">
+          <div class="callcard">
+            <div class="callhead">
+              <span class="avatar av-a">MR</span>
+              <span class="who"><b>Incoming call</b><span>+1 (214) ••• ••38 · 2:47 AM</span></span>
+              <span class="timer sg">01:12</span>
+            </div>
+            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="transcript">
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">My AC died and it’s 95°F (35°C) out. Can anyone come tonight?</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">I’m sorry to hear that. I can hold tomorrow’s first slot at 8 AM, or book an emergency visit tonight — the after-hours call-out is <em>$180</em>. Which works for you?</span></div>
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Tonight. And… I think I smell gas near the unit.</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">Please step away from the unit now — I’m connecting you to our <em>on-call tech</em> as we speak. If the smell is strong, hang up and call your local emergency number first.</span></div>
+            </div>
+          </div>
+          <div class="resultrow"><span class="rchip">✓ CRM updated · job created, tech dispatched</span></div>
+        </div>
+
+        <div data-callscene="dental" hidden>
+          <div class="callcard">
+            <div class="callhead">
+              <span class="avatar av-d">SK</span>
+              <span class="who"><b>Incoming call</b><span>+1 (312) ••• ••74 · 9:12 PM</span></span>
+              <span class="timer sg">00:58</span>
+            </div>
+            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="transcript">
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Hi — roughly how much is an implant?</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">A single implant runs <em>$1,900 to $2,600</em>, depending on the fixture and whether bone grafting is needed. The exact price is confirmed after an exam and X-ray — shall I book one?</span></div>
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Actually, my tooth is killing me right now.</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">That sounds urgent — please hold one moment, I’m putting you through to our <em>on-call line</em> now.</span></div>
+            </div>
+          </div>
+          <div class="resultrow"><span class="rchip">✓ CRM updated · routed to on-call, record created</span></div>
+        </div>
+
+        <div data-callscene="venues" hidden>
+          <div class="callcard">
+            <div class="callhead">
+              <span class="avatar av-c">EJ</span>
+              <span class="who"><b>Incoming call</b><span>+1 (615) ••• ••21 · 8:40 PM</span></span>
+              <span class="timer sg">01:34</span>
+            </div>
+            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="transcript">
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">We’re planning for about 120 guests in October — any Saturdays still open?</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">Yes — October 12 and 26 are open. Weekend receptions start at <em>$9,800</em> for up to 150 guests, dinner included. Would you like to see the hall?</span></div>
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Can you guarantee the 12th for us right now?</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">Holding a date needs a person — I’ve booked you a <em>tour for Saturday at 11</em>, and our events manager will call you in the morning to talk dates.</span></div>
+            </div>
+          </div>
+          <div class="resultrow"><span class="rchip">✓ CRM updated · tour booked Sat 11:00</span></div>
+        </div>
+
+      </div></div></div>
+      <div class="stagehint">Same brain, out loud — the AI speaks in a natural voice on your existing number and routes emergencies to a person in real time.</div>
+
+      <!-- ── what the call produced — switches with the scenario chips above ── -->
+      <div class="outcome tight" data-callscene="home">
+        <div class="oh">
+          <span class="ol">The caller hung up. The job already exists.</span>
+          <span class="ot">Call ended 02:48 AM · record written <b>02:48 AM</b></span>
+        </div>
+        <div class="ogrid">
+          <div class="obox">
+            <span class="obl"><em>01</em>Pipeline card + dispatch<i></i></span>
+            <div class="appwin tight">
+              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
+              <div class="body">
+                <div class="pipeboard" style="grid-template-columns:1fr;">
+                  <div class="pipecol s2"><h4><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
+                    <div class="pcard"><div class="who"><span class="ini">MR</span><span class="nm">M. R.</span></div>
+                      <div class="mt">Emergency AC call-out — on-call tech dispatched, gas smell flagged</div>
+                      <div class="ft"><span class="tag hot">Safety</span><span class="tag ai">AI logged</span><span class="amt">$180</span></div></div>
+                  </div>
+                </div>
+                <p style="margin-top:12px;font-size:11px;color:var(--app-tx3);font-weight:600;line-height:1.6;">The guardrail fired before the booking did: gas smell → step away, call your local emergency number, route to a human. The card records that it happened.</p>
+              </div>
+            </div>
+          </div>
+          <div class="obox">
+            <span class="obl"><em>02</em>Customer record written<i></i></span>
+            <div class="custcard">
+              <div class="ch"><span class="ini">MR</span>
+                <span><b>M. R.</b><span>First contact — phone, 2:47 AM</span></span>
+                <span class="stg">Dispatched</span>
+              </div>
+              <div class="crow"><span class="k">Summary</span><span class="v">AC failed overnight in 95°F (35°C) heat. Quoted the $180 after-hours call-out, accepted. Reported a gas smell mid-call.<span class="aibadge">AI written</span></span></div>
+              <div class="crow"><span class="k">Collected</span><span class="v">Address · fault · urgency · access instructions</span></div>
+              <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti warm"><i></i>Stressed, urgent</span></span></div>
+              <div class="crow"><span class="k">Next action</span><span class="v">On-call tech notified — safety escalation logged<span class="aibadge">Auto</span></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="ocap">Product illustration with sample data. Fields, stages and guardrails are configured per trade.</p>
+      </div>
+
+      <div class="outcome tight" data-callscene="dental" hidden>
+        <div class="oh">
+          <span class="ol">The caller hung up. The patient already exists.</span>
+          <span class="ot">Call ended 9:13 PM · record written <b>9:13 PM</b></span>
+        </div>
+        <div class="ogrid">
+          <div class="obox">
+            <span class="obl"><em>01</em>Pipeline card + routing<i></i></span>
+            <div class="appwin tight">
+              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
+              <div class="body">
+                <div class="pipeboard" style="grid-template-columns:1fr;">
+                  <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
+                    <div class="pcard"><div class="who"><span class="ini">SK</span><span class="nm">S. K.</span></div>
+                      <div class="mt">Implant price asked, then reported acute pain — routed to on-call</div>
+                      <div class="ft"><span class="tag hot">Urgent</span><span class="tag ai">AI logged</span><span class="chan">Phone · 9:12 PM</span></div></div>
+                  </div>
+                </div>
+                <p style="margin-top:12px;font-size:11px;color:var(--app-tx3);font-weight:600;line-height:1.6;">No clinical advice was given, because the guardrail forbids it. The pain report became a routing decision, not an answer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="obox">
+            <span class="obl"><em>02</em>Customer record written<i></i></span>
+            <div class="custcard">
+              <div class="ch"><span class="ini">SK</span>
+                <span><b>S. K.</b><span>First contact — phone, 9:12 PM</span></span>
+                <span class="stg">Routed to on-call</span>
+              </div>
+              <div class="crow"><span class="k">Summary</span><span class="v">Asked the implant range; quoted $1,900–$2,600 from the fee guide with the exam caveat. Then reported acute pain.<span class="aibadge">AI written</span></span></div>
+              <div class="crow"><span class="k">Collected</span><span class="v">Insurer · pain level · new or recall · callback number</span></div>
+              <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti warm"><i></i>In pain, price-aware</span></span></div>
+              <div class="crow"><span class="k">Next action</span><span class="v">On-call line connected live — exam slot offered at 8:30 AM<span class="aibadge">Auto</span></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="ocap">Product illustration with sample data. Fields, stages and guardrails are configured per trade.</p>
+      </div>
+
+      <div class="outcome tight" data-callscene="venues" hidden>
+        <div class="oh">
+          <span class="ol">The caller hung up. The tour is on the calendar.</span>
+          <span class="ot">Call ended 8:42 PM · quote sent <b>8:46 PM</b></span>
+        </div>
+        <div class="ogrid">
+          <div class="obox">
+            <span class="obl"><em>01</em>Pipeline card + tour hold<i></i></span>
+            <div class="appwin tight">
+              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
+              <div class="body">
+                <div class="pipeboard" style="grid-template-columns:1fr;">
+                  <div class="pipecol s2"><h4><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
+                    <div class="pcard"><div class="who"><span class="ini">EJ</span><span class="nm">E. J.</span></div>
+                      <div class="mt">Tour held Sat 11:00 — October date handed to the events manager</div>
+                      <div class="ft"><span class="tag">Calendar</span><span class="tag hot">Hot</span><span class="amt">$9,800</span></div></div>
+                  </div>
+                </div>
+                <p style="margin-top:12px;font-size:11px;color:var(--app-tx3);font-weight:600;line-height:1.6;">The guardrail holds a tour but never confirms a date. The card carries the request so a person can.</p>
+              </div>
+            </div>
+          </div>
+          <div class="obox">
+            <span class="obl"><em>02</em>Quote built from your price list<i></i></span>
+            <div class="quotedoc">
+              <div class="qh">
+                <div><b>Estimate #2461</b><div class="qm">Prepared automatically · 4 minutes after the call ended</div></div>
+                <span class="qs">Sent</span>
+              </div>
+              <div class="qline"><span class="d">Base package</span><span class="s">Sat · 120 guests</span><span class="v">$3,600</span></div>
+              <div class="qline"><span class="d">Extended hours</span><span class="s">+2 h</span><span class="v">$480</span></div>
+              <div class="qline"><span class="d">Add-on — premium set</span><span class="s">from price list</span><span class="v">$620</span></div>
+              <div class="qline disc"><span class="d">Off-peak discount</span><span class="s">rule: March weekday</span><span class="v">−$420</span></div>
+              <div class="qline tot"><span class="d">Total</span><span class="v">$4,280</span></div>
+              <p class="qf">Generated from your own price list, option matrix and discount rules.</p>
+            </div>
+          </div>
+        </div>
+        <p class="ocap">Product illustration with sample data. Fields, stages and guardrails are configured per trade.</p>
+      </div>
+    </div>
+
+    <!-- ── PANEL: WHATSAPP ── -->
+    <div data-panel="wa" role="tabpanel" aria-label="WhatsApp demo" hidden>
+      <div class="wagrid">
+        <div class="shell"><div class="core" style="padding:0;">
+          <div class="walab">Scenario · Stays — late check-in</div>
+          <div class="msgthread" style="border:0;border-radius:0;">
+            <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:11px;">S</span>
+              <span><b>Saleringo · your inn</b><br><span>WhatsApp Business · online</span></span></div>
+            <div class="mbody">
+              <div class="m in">Hi! Do you have a double room this Friday? We land at 11 pm — late check-in ok?</div>
+              <div class="m out">Yes — late check-in is self-service after 10 pm, and a double is open Friday at $320 including breakfast. Want me to hold it?<span class="tick">✓✓</span></div>
+              <div class="m in">Yes please!</div>
+              <div class="m out">Done — held until noon tomorrow. Our manager confirms before any payment.<span class="tick">✓✓</span></div>
+            </div>
+          </div>
+          <div class="resultrow"><span class="rchip">✓ CRM updated · guest record created, hold logged</span></div>
+        </div></div>
+
+        <div class="shell"><div class="core" style="padding:0;">
+          <div class="walab">Scenario · Wedding &amp; Venues — inquiry</div>
+          <div class="msgthread" style="border:0;border-radius:0;">
+            <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:11px;">S</span>
+              <span><b>Saleringo · your venue</b><br><span>WhatsApp Business · online</span></span></div>
+            <div class="mbody">
+              <div class="m in">Hi! Do you host weddings for around 120 guests? What would October cost?</div>
+              <div class="m out">We do — Saturday receptions start at $9,800 for up to 150 guests, dinner included. October 12 and 26 are still open.<span class="tick">✓✓</span></div>
+              <div class="m in">Great — could we come see the hall this weekend?</div>
+              <div class="m out">Of course. Saturday tour slots: 11:00 or 14:00 — which suits you? I’ll send a calendar invite.<span class="tick">✓✓</span></div>
+            </div>
+          </div>
+          <div class="resultrow"><span class="rchip">✓ CRM updated · tour booked</span></div>
+        </div></div>
+      </div>
+      <div class="stagehint">Official WhatsApp Business API — your number, approved templates, and every thread in the same inbox as calls and chats.</div>
+
+      <!-- ── what the two threads produced ── -->
+      <div class="outcome tight">
+        <div class="oh">
+          <span class="ol">Two threads. Two rooms held, two records written.</span>
+          <span class="ot">Both while the desk was closed. <b>0 staff minutes.</b></span>
+        </div>
+        <div class="ogrid">
+          <div class="obox">
+            <span class="obl"><em>01</em>Both cards on the board<i></i></span>
+            <div class="appwin tight">
+              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
+              <div class="body">
+                <div class="pipeboard" style="grid-template-columns:1fr;">
+                  <div class="pipecol s2"><h4><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
+                    <div class="pcard"><div class="who"><span class="ini">LA</span><span class="nm">Late arrival · double</span></div>
+                      <div class="mt">Friday, $320 incl. breakfast — held until noon, no payment taken</div>
+                      <div class="ft"><span class="tag">Calendar</span><span class="tag ai">AI logged</span><span class="chan">WhatsApp · 11:04 PM</span></div></div>
+                    <div class="pcard"><div class="who"><span class="ini">EJ</span><span class="nm">E. &amp; J.</span></div>
+                      <div class="mt">Hall tour, Saturday 11:00 — calendar invite sent</div>
+                      <div class="ft"><span class="tag hot">Hot</span><span class="amt">$9,800</span></div></div>
+                  </div>
+                </div>
+                <p style="margin-top:12px;font-size:11px;color:var(--app-tx3);font-weight:600;line-height:1.6;">Same board as the phone and web-chat cards. One person writing from two channels merges into one record.</p>
+              </div>
+            </div>
+          </div>
+          <div class="obox">
+            <span class="obl"><em>02</em>Guest record written<i></i></span>
+            <div class="custcard">
+              <div class="ch"><span class="ini">LA</span>
+                <span><b>Late arrival · double</b><span>First contact — WhatsApp, 11:04 PM</span></span>
+                <span class="stg">Hold logged</span>
+              </div>
+              <div class="crow"><span class="k">Summary</span><span class="v">Landing 11 PM Friday, asked about late check-in. Quoted the $320 direct rate including breakfast; room held until noon.<span class="aibadge">AI written</span></span></div>
+              <div class="crow"><span class="k">Collected</span><span class="v">Dates · guests · arrival time · language</span></div>
+              <div class="crow"><span class="k">Guardrail</span><span class="v">No payment taken — your manager confirms availability first</span></div>
+              <div class="crow"><span class="k">Next action</span><span class="v">Confirmation reminder at 9:00 AM if not yet actioned<span class="aibadge">Auto</span></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="ocap">Product illustration with sample data. Booking a room is a hold, never a charge — that rule is set by you, not by us.</p>
+      </div>
+    </div>
+
+    <!-- ── SHARED: what just happened + CRM ── -->
+    <div class="aside-grid reveal">
+      <div class="shell wh acard"><div class="core">
+        <div class="k">WHAT JUST HAPPENED</div>
+        <div class="t">Three moments worth noticing.</div>
+        <div class="item">
+          <span class="vchip">✓ Verified · 2 sources</span>
+          <p>The teal chip means the answer came from facts your team approved — each with a source, a version, and an expiry date. No approved fact, no answer.</p>
+        </div>
+        <div class="item">
+          <span class="hchip">→ Handing to your team</span>
+          <p>The amber chip is the handoff. Holding a date, clinical questions, promises about results — the AI passes these to a person with full context instead of improvising.</p>
+        </div>
+        <div class="item">
+          <span class="rchip">✓ CRM updated · next step booked</span>
+          <p>The green chip is the point. The conversation became a pipeline card, a held slot, a priced quote and a written record — which is the difference between a chatbot and a front desk.</p>
+        </div>
+        <a class="linkcta" href="./platform.html">What happens after the answer&nbsp;&nbsp;→</a>
+      </div></div>
+
+      <div class="shell crm2 acard"><div class="core">
+        <div class="k">MEANWHILE, IN YOUR CRM</div>
+        <div class="nm">Emma &amp; James<span class="time sg">2:47 AM</span></div>
+        <div class="row" style="margin-top:8px;"><span class="rk">Date</span><span class="rv">Oct 12 (Sat)</span></div>
+        <div class="row"><span class="rk">Guests</span><span class="rv">120</span></div>
+        <div class="row"><span class="rk">Quote</span><span class="rv">$9,800 sent</span></div>
+        <div class="row"><span class="rk">Owner</span><span class="rv">Your team · handoff</span></div>
+        <span class="slot">Venue tour · Sat 11:00</span>
+        <div class="mut">Sample record from the venues conversation — created and logged while the chat happened, reminder queued.</div>
+      </div></div>
+    </div>
+
+    <div class="scripted reveal">
+      <span class="ic">i</span>
+      <div>
+        <b>Straight about what this is: the conversations here are scripted, and the CRM screens are illustrations with sample data.</b>
+        <p>They replay representative cases so you can see the pattern end to end — a grounded answer, a clean handoff, and the four objects it leaves behind. What we will not do is fake a live answer to your question and let you assume it came from your business. If you want it answered against <em style="font-style:normal;color:#fff;">your</em> prices, your calendar and your rules, that is exactly what the 20-minute session is for — bring your hardest customer question. Nothing goes live until your team signs off on every fact.</p>
+        <p style="margin-top:12px;"><a class="linkcta" data-book data-fallback="./index.html#early-access" href="./index.html#early-access" style="font-size:12.5px;color:#fff;border-bottom-color:var(--hair2);">Book 20 minutes and bring your question&nbsp;&nbsp;→</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ TRADES — the chips above, photographed ═══════ -->
+<section class="tradesec sec-dark bg-grid t-sm">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="secrule"><span class="eyebrow"><i></i>Eight trades, one set of rules</span><span class="line"></span></div>
+        <h2 class="h2 onDark" style="margin-top:8px;">Every chip above is<br>somebody&rsquo;s Tuesday night.</h2>
+      </div>
+      <p class="lead onDark" style="max-width:380px;margin:0;">The script changes with the trade. What never changes: an approved fact, or a person.</p>
+    </div>
+    <div class="audgrid reveal">
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" srcset="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:620px) 92vw, (max-width:1000px) 46vw, 23vw"
+             alt="A courtyard reception set for dinner at night under warm string lights"
+             loading="lazy" decoding="async" width="800" height="533">
+        <div><b>Wedding &amp; venues</b><span>Date holds, guest counts, catering minimums — asked at 23:04</span></div>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" srcset="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:620px) 92vw, (max-width:1000px) 46vw, 23vw"
+             alt="A technician working on an air-conditioning unit with a gauge set"
+             loading="lazy" decoding="async" width="800" height="568">
+        <div><b>Home services</b><span>Emergency call-outs priced from your rate card, dispatch logged</span></div>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" srcset="https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:620px) 92vw, (max-width:1000px) 46vw, 23vw"
+             alt="A dentist in scrubs going through a treatment plan with a patient"
+             loading="lazy" decoding="async" width="800" height="533">
+        <div><b>Dental &amp; clinics</b><span>Ranges from your fee guide — pain and coverage go to a person</span></div>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" srcset="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:620px) 92vw, (max-width:1000px) 46vw, 23vw"
+             alt="The seating area of a modern boutique hotel lobby"
+             loading="lazy" decoding="async" width="800" height="1200">
+        <div><b>Boutique stays</b><span>Late arrivals, direct rates, room questions — in the guest&rsquo;s language</span></div>
+      </div>
+    </div>
+    <p class="photocap reveal">Photography is illustrative — the kinds of business these scripts were written for, not named customers and not testimonials.</p>
+  </div>
+</section>
+
+<!-- ═══════ START IN THREE STEPS ═══════ -->
+<section class="startsec sec-light bg-clinical t-xl">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>Start in three steps</span>
+      <h2 class="h2" style="margin-top:24px;">From your website<br>to a working<br>front desk.</h2>
+      <p class="lead">No code, no migration. Start on website chat, then add WhatsApp and AI Phone when you are ready.</p>
+      <a class="linkcta" href="./platform.html">See the CRM behind the answers&nbsp;&nbsp;→</a>
+    </div>
+    <div class="steps reveal">
+      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Import your website</b><span>We draft your first knowledge base from pages you already have</span></span><span class="tail pilltag pt-line">No code</span></div>
+      <div class="step"><span class="num">02</span><span class="tx"><b>Approve what it may say</b><span>Edit, set expiry, publish — nothing answers until you sign off</span></span><span class="tail pilltag pt-teal">✓ Approved</span></div>
+      <div class="step"><span class="num">03</span><span class="tx"><b>Go live, channel by channel</b><span>Web chat first, then WhatsApp and phone — one inbox for all of it</span></span><span class="tail pilltag pt-dark">Live</span></div>
+    </div>
+  </div></div>
+
+  <div class="wrap startscene reveal"><div class="scene-frame light">
+<svg viewBox="0 0 1000 380" role="img" aria-label="Three panels: your existing website page, the facts drafted from it awaiting a human tick, and the same site with the chat widget answering live">
+  <defs>
+    <linearGradient id="dsvWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7FAFC"/><stop offset="1" stop-color="#E7EFF5"/></linearGradient>
+    <linearGradient id="dsvPane" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F5F9FC"/></linearGradient>
+    <radialGradient id="dsvGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".22"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1000" height="380" fill="url(#dsvWall)"/>
+  <ellipse cx="820" cy="200" rx="260" ry="200" fill="url(#dsvGlow)"/>
+
+  <!-- 01 · your website, as it is today -->
+  <g transform="translate(44,58)">
+    <rect width="272" height="238" rx="12" fill="url(#dsvPane)" stroke="#DCE5ED" stroke-width="1.5"/>
+    <rect width="272" height="30" rx="12" fill="#EDF3F8"/><rect y="18" width="272" height="12" fill="#EDF3F8"/>
+    <circle cx="20" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="33" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="46" cy="15" r="3.5" fill="#C9D6E2"/>
+    <rect x="88" y="9" width="140" height="12" rx="6" fill="#DEE7EF"/>
+    <rect x="22" y="52" width="150" height="14" rx="7" fill="#0B1B33" opacity=".75"/>
+    <rect x="22" y="78" width="228" height="8" rx="4" fill="#C4D0DC"/>
+    <rect x="22" y="94" width="196" height="8" rx="4" fill="#C4D0DC"/>
+    <rect x="22" y="124" width="104" height="8" rx="4" fill="#0FA3A3" opacity=".55"/>
+    <rect x="22" y="142" width="228" height="8" rx="4" fill="#C4D0DC"/>
+    <rect x="22" y="158" width="172" height="8" rx="4" fill="#C4D0DC"/>
+    <rect x="22" y="188" width="228" height="8" rx="4" fill="#C4D0DC"/>
+    <rect x="22" y="204" width="140" height="8" rx="4" fill="#C4D0DC"/>
+    <text x="0" y="-16" font-family="Space Grotesk,sans-serif" font-size="11" fill="#7C8DA0" letter-spacing="2.4">01 · YOUR SITE TODAY</text>
+  </g>
+  <path d="M330 177 H366" stroke="#B4C6D2" stroke-width="1.6" stroke-dasharray="4 5"/>
+  <path d="M360 172 l8 5 l-8 5" fill="#B4C6D2"/>
+
+  <!-- 02 · drafted facts awaiting sign-off -->
+  <g transform="translate(380,58)">
+    <rect width="240" height="238" rx="12" fill="url(#dsvPane)" stroke="#DCE5ED" stroke-width="1.5"/>
+    <text x="0" y="-16" font-family="Space Grotesk,sans-serif" font-size="11" fill="#7C8DA0" letter-spacing="2.4">02 · YOU APPROVE</text>
+    <g>
+      <rect x="16" y="20" width="208" height="48" rx="9" fill="#F0F7F8" stroke="#CFEAEA"/>
+      <circle cx="40" cy="44" r="11" fill="#0FA3A3"/>
+      <path d="M35 44 l4 4 l7 -8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="60" y="33" width="120" height="8" rx="4" fill="#0B1B33"/>
+      <rect x="60" y="49" width="86" height="7" rx="3.5" fill="#93A3B4"/>
+    </g>
+    <g>
+      <rect x="16" y="78" width="208" height="48" rx="9" fill="#F0F7F8" stroke="#CFEAEA"/>
+      <circle cx="40" cy="102" r="11" fill="#0FA3A3"/>
+      <path d="M35 102 l4 4 l7 -8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="60" y="91" width="104" height="8" rx="4" fill="#0B1B33"/>
+      <rect x="60" y="107" width="128" height="7" rx="3.5" fill="#93A3B4"/>
+    </g>
+    <g>
+      <rect x="16" y="136" width="208" height="48" rx="9" fill="#FFFDF6" stroke="#EFE0C2"/>
+      <circle cx="40" cy="160" r="11" fill="none" stroke="#E8A44C" stroke-width="2" stroke-dasharray="3 3"/>
+      <rect x="60" y="149" width="92" height="8" rx="4" fill="#0B1B33"/>
+      <rect x="60" y="165" width="112" height="7" rx="3.5" fill="#B89A6A"/>
+    </g>
+    <rect x="16" y="196" width="208" height="26" rx="13" fill="#0B1B33"/>
+    <text x="120" y="213" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">Publish 2 approved facts</text>
+  </g>
+  <path d="M634 177 H670" stroke="#B4C6D2" stroke-width="1.6" stroke-dasharray="4 5"/>
+  <path d="M664 172 l8 5 l-8 5" fill="#B4C6D2"/>
+
+  <!-- 03 · same site, now answering -->
+  <g transform="translate(684,58)">
+    <rect width="272" height="238" rx="12" fill="url(#dsvPane)" stroke="#CFEAEA" stroke-width="1.5"/>
+    <rect width="272" height="30" rx="12" fill="#EDF3F8"/><rect y="18" width="272" height="12" fill="#EDF3F8"/>
+    <circle cx="20" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="33" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="46" cy="15" r="3.5" fill="#C9D6E2"/>
+    <rect x="88" y="9" width="140" height="12" rx="6" fill="#DEE7EF"/>
+    <rect x="22" y="52" width="150" height="14" rx="7" fill="#0B1B33" opacity=".28"/>
+    <rect x="22" y="78" width="228" height="8" rx="4" fill="#DDE6EE"/>
+    <rect x="22" y="94" width="196" height="8" rx="4" fill="#DDE6EE"/>
+    <rect x="22" y="124" width="104" height="8" rx="4" fill="#DDE6EE"/>
+    <text x="0" y="-16" font-family="Space Grotesk,sans-serif" font-size="11" fill="#0A7F7F" letter-spacing="2.4">03 · LIVE THE SAME DAY</text>
+    <!-- widget -->
+    <g transform="translate(56,96)">
+      <rect width="200" height="128" rx="14" fill="#fff" stroke="#CFEAEA" stroke-width="1.5"/>
+      <rect width="200" height="30" rx="14" fill="#0B1B33"/><rect y="18" width="200" height="12" fill="#0B1B33"/>
+      <circle cx="20" cy="15" r="5" fill="#17BDBD"/>
+      <rect x="34" y="11" width="76" height="8" rx="4" fill="#3E5D82"/>
+      <rect x="16" y="44" width="118" height="26" rx="9" fill="#EEF3F8"/>
+      <rect x="26" y="53" width="94" height="7" rx="3.5" fill="#93A3B4"/>
+      <rect x="52" y="78" width="132" height="34" rx="9" fill="#E3F5F5"/>
+      <rect x="62" y="87" width="112" height="7" rx="3.5" fill="#0A7F7F"/>
+      <rect x="62" y="99" width="70" height="6" rx="3" fill="#5FA9A9"/>
+    </g>
+  </g>
+  <text x="500" y="348" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#7C8DA0" text-anchor="middle" font-weight="600">Nothing answers a customer until somebody ticks it.</text>
+</svg>
+  </div></div>
+</section>
+
+<!-- ═══════ CLOSER + BIG FOOTER ═══════ -->
+<section class="closer bg-spot" id="closer">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="reveal">Liked the answers?<br><em>Make them yours.</em></h2>
+    <p class="lead onDark reveal">The real product runs on your facts, your calendar and your price list — and files every conversation into your own pipeline. Join the founding cohort, or book 20 minutes and bring your hardest customer questions.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="./index.html#early-access">Watch it answer my questions<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" data-book data-fallback="./index.html#early-access" href="./index.html#early-access">Ask for a 20-min call — we propose times<span class="cir">↗</span></a>
+    </div>
+    <div class="trust">Wondering what it costs? <a href="./pricing.html" style="color:var(--tx2);">See pricing ↗</a></div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+        <p>AI receptionist for phone, chat &amp; messenger — plus the industry CRM that turns each conversation into a booking, a quote and a customer record.</p>
+        <p style="margin-top:10px;">hello@saleringo.com</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a class="lnk" href="./voice.html">AI Phone</a>
+        <a class="lnk" href="./webchat.html">Chatbot</a>
+        <a class="lnk" href="./whatsapp.html">WhatsApp &amp; Messenger</a>
+        <a class="lnk" href="./platform.html">Platform &amp; CRM</a>
+      <a class="lnk" href="./integrations.html">Integrations</a>
+      <a class="lnk" href="./ai-answering-service.html">Buyer's guide</a>
+        <a class="lnk" href="./verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="./demo.html">See a full conversation</a>
+        <a class="lnk" href="./pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Industries</h4>
+      <a class="lnk" href="./examples.html">Worked examples</a>
+        <a class="lnk" href="./industries/home-services.html">Home Services</a>
+        <a class="lnk" href="./industries/dental.html">Dental</a>
+        <a class="lnk" href="./industries/venues.html">Wedding &amp; Venues</a>
+        <a class="lnk" href="./industries/stays.html">Boutique Stays</a>
+      <a class="lnk" href="./industries/clinics.html">Clinics</a>
+      <a class="lnk" href="./industries/veterinary.html">Veterinary</a>
+      <a class="lnk" href="./industries/franchise.html">Franchise</a>
+      <a class="lnk" href="./industries/academies.html">Academies</a>
+        <a class="lnk" href="./industries.html">All industries</a>
+        <a class="lnk" href="./cross-border.html">Cross-border</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a class="lnk" href="./about.html">About</a>
+        <a class="lnk" href="./security.html">Security &amp; Trust</a>
+        <a class="lnk" href="./privacy.html">Privacy Policy</a>
+        <a class="lnk" href="./terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Saleringo · Honest Marketing Co., Ltd. — registered in South Korea, serving customers worldwide</span>
+      <span class="r"><span>English · serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+</main>
+
+<!-- sticky conversion bar -->
+<div class="stickycta">
+  <div class="wrap">
+    <span class="msg"><b>Bring your own question.</b> Book 20 minutes and we will run it against your prices, your calendar and your rules.</span>
+    <a class="btn btn-teal" data-book data-fallback="./index.html#early-access" href="./index.html#early-access">Ask for a 20-min call — we propose times<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../assets/js/site.js?v=4.4"></script>
+<script src="../assets/js/play.js?v=4.4"></script>
+<script>
+(function () {
+  'use strict';
+  /* channel tab switcher */
+  var tabs = document.querySelectorAll('.chtab');
+  function pick(name) {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-tab') === name;
+      t.classList.toggle('on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('[data-panel]').forEach(function (p) {
+      p.hidden = p.getAttribute('data-panel') !== name;
+    });
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { pick(t.getAttribute('data-tab')); });
+  });
+  /* phone call scenario switcher */
+  document.querySelectorAll('[data-call]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-call]').forEach(function (c) { c.classList.remove('on'); });
+      b.classList.add('on');
+      var k = b.getAttribute('data-call');
+      document.querySelectorAll('[data-callscene]').forEach(function (s) {
+        s.hidden = s.getAttribute('data-callscene') !== k;
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

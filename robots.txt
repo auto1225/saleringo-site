@@ -1,0 +1,11 @@
+# Review subdomain (claude.saleringo.com) — kept out of search so it never
+# competes with the production site. Remove these two lines to go live.
+User-agent: *
+Disallow: /
+
+# --- original ---
+# User-agent: *
+# Allow: /
+# 
+# Sitemap: https://saleringo.com/sitemap.xml
+# 
