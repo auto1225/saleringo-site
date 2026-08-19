@@ -1620,3 +1620,33 @@ html .hero-panel.lt :focus-visible{
   outline-color:#0B1B33;
   box-shadow:0 0 0 6px rgba(255,255,255,.92);
 }
+
+/* ── narrow-width corrections, last on purpose ─────────────────────────────
+   Media queries carry no specificity, so between two rules that both match,
+   the one written later wins. Several narrow-width rules in this file sit
+   ABOVE the wider ones they were meant to override, and lost:
+
+     .plans      max-900 "1fr"        lost to max-1180 "repeat(2,1fr)"
+                 -> three pricing cards rendered 154px wide side by side on a
+                    375px screen instead of stacking.
+     hero gap    max-620 "24px"       lost to max-900 "126px"
+                 -> the comment above that block says "the mobile block below
+                    still overrides it", but that block is above, not below.
+                    Measured on a 375x812 phone: the h1 sat 275-306px down,
+                    a third of the fold empty before the first word.
+
+   Restated here rather than moved, so the original blocks stay readable next
+   to the reasoning that produced them. */
+@media (max-width:900px){
+  .plans{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  .hero-inner,.hero-split,.gshero,.inthero,.exhero,.dhero-inner,.dochero,
+  .heroinner,.herogrid,.herostage,
+  .phero .hcap,.gshero > .wrap,.inthero > .wrap,.exhero > .wrap,.dochero > .wrap{
+    padding-top:24px !important;
+  }
+  .photohero,.phero,.gshero,.inthero,.exhero,.dochero{padding-top:104px !important;}
+  /* the homepage alone earns a tighter fold: its product surface must clear 812px */
+  .hero.photohero{padding-top:68px !important;}
+}

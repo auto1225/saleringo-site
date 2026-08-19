@@ -110,9 +110,17 @@ window.SR_CONFIG = window.SR_CONFIG || {
     if (CFG.formEndpoint) return;
     var LEAD = 'One tap writes your message and opens it in your mail app, ' +
                'Gmail or Outlook — you press send. ';
-    var notes = document.querySelectorAll('.eanote, .sp-fine');
-    Array.prototype.forEach.call(notes, function (el) {
-      if (el.getAttribute('data-ea-told') !== null) return;
+    /* Only the fine print that sits under a lead form's own submit button.
+       The first version matched every .eanote and .sp-fine on the page, which
+       put the sentence in three wrong places: the post-submit success message,
+       where it told someone who had already sent it how to send it; a .leadbox
+       note that has nothing to do with the form, where it shoved the "Verified
+       answers only" badge out of line; and the tour step, where the button it
+       describes is still a screen away. */
+    var forms = document.querySelectorAll('form[data-earlyaccess]');
+    Array.prototype.forEach.call(forms, function (form) {
+      var el = form.querySelector('.eanote:not([hidden]):not([data-ea-done])');
+      if (!el || el.getAttribute('data-ea-told') !== null) return;
       el.setAttribute('data-ea-told', '');
       var b = document.createElement('b');
       b.className = 'eanote-how';

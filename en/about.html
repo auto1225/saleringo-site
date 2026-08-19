@@ -29,14 +29,18 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "About Saleringo \u2014 A Company You Can Reach", "description": "Honest Marketing Co., Ltd. \u2014 a small company you can actually reach. Who builds Saleringo, what we promise, and what we refuse to promise yet.", "url": "https://claude.saleringo.com/en/about.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=12.6">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=12.6">
+<link rel="stylesheet" href="../assets/css/site.css?v=13.4">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=13.4">
 <style>
   /* the hero is a full-bleed photograph; block layout overrides .photohero's flex */
   .hero{position:relative;overflow:hidden;padding-bottom:100px;display:block;}
   .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
   .hero-inner{position:relative;text-align:center;padding:180px clamp(22px,4.6vw,56px) 0;z-index:2;max-width:900px;margin:0 auto;}
   .hero .hero-panel{padding:48px 52px;}
+  /* a media query adds no specificity, so the shared mobile rule in
+     site.css cannot beat the selector above; it is repeated here at the
+     same weight, or the panel keeps 52px of side padding on a phone */
+  @media (max-width:620px){.hero .hero-panel{padding:24px 18px;}}
   /* type scale is owned by site.css (--fs-h1/--fs-h2); only its voice lives here */
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#fff;max-width:16ch;margin-left:auto;margin-right:auto;}
   .hero h1 em{font-style:normal;color:var(--teal);}
@@ -181,7 +185,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v12.6">v12.6</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v13.4">v13.4</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -198,7 +202,7 @@
   <div class="wrap hero-inner">
     <div class="hero-panel">
       <span class="eyebrow"><i></i>About Saleringo</span>
-      <h1 style="margin-top:28px;">A small&nbsp;company<br><em>you can actually&nbsp;reach.</em></h1>
+      <h1 style="margin-top:28px;">A small company<br><em>you can actually reach.</em></h1>
       <p class="sub">Saleringo answers your phone, website chat and messenger — then books the appointment, builds the quote from your price list, files the customer and shows you what it earned. This page is about the people behind it: who we are, what our support covers, and which of those answers we have not earned the right to publish yet.</p>
       <p class="whotxt">Built for the people who answer the phone themselves — <b>founding cohort now open</b></p>
     </div>
@@ -323,7 +327,7 @@
   <div class="wrap"><div class="cols">
     <div class="reveal">
       <span class="eyebrow"><i></i>Why we built this</span>
-      <h2 class="h2 onDark" style="margin-top:22px;">Night inquiries&nbsp;were<br>dying in the&nbsp;inbox.</h2>
+      <h2 class="h2 onDark" style="margin-top:22px;">Night&nbsp;inquiries<br>were dying in the&nbsp;inbox.</h2>
       <p class="story">Saleringo started with a venue owner's morning routine. Every day she opened her inbox to the same scene: messages sent at 11 PM, 1 AM, 2:47 AM — couples asking about dates, travelers asking about rooms, homeowners asking if anyone could come tonight. By the time she replied at nine, most had already booked with whoever answered first. <b>Nothing was wrong with her business. Something was wrong with the hours.</b> So we built the employee she couldn't hire: one that answers every inquiry the minute it arrives, says only what she approved, and wakes a human when it matters.</p>
       <figure class="phframe dark" style="margin-top:34px;">
         <img class="ph" src="https://images.pexels.com/photos/17735127/pexels-photo-17735127.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
@@ -382,7 +386,7 @@
     <div class="peopleband reveal">
       <div class="ph-head">
         <span class="eyebrow light"><i></i>Who the principles are for</span>
-        <h3>Three rules, written&nbsp;for<br>the people we build&nbsp;for.</h3>
+        <h3>Three rules,&nbsp;written<br>for the people we build&nbsp;for.</h3>
         <p class="lead">Not a boardroom. A tech in a truck, a dentist between patients, a florist with one hand free, a boutique manager closing up. Every guardrail above exists because getting it wrong costs one of them a customer.</p>
       </div>
       <div class="audgrid">
@@ -445,8 +449,8 @@
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow light"><i></i>Who you’d actually be dealing with</span>
-      <h2 class="h2" style="margin-top:22px;margin-left:auto;margin-right:auto;">No customer logos&nbsp;yet.<br>So here is who actually does&nbsp;the&nbsp;work.</h2>
-      <p class="lead">We have no case studies to show you and we are not going to borrow anyone else’s. What we can tell you is how small this is. Three roles cover everything you would touch — and on most days that is fewer than three people. When you email, one of them reads it.</p>
+      <h2 class="h2" style="margin-top:22px;margin-left:auto;margin-right:auto;">No logo&nbsp;wall.<br>So here is who actually does&nbsp;the&nbsp;work.</h2>
+      <p class="lead">We are not going to borrow anyone else’s credibility. The proof we do have is on the <a href="./index.html#pilot">home page</a> — six weeks of logs from one venue, and <a href="./index.html#call-them">six numbers you can dial</a>. Past that, what we can tell you is how small this is. Three roles cover everything you would touch — and on most days that is fewer than three people. When you email, one of them reads it.</p>
     </div>
 
     <div class="pgrid reveal">
@@ -537,7 +541,7 @@
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow light"><i></i>Founding cohort</span>
-      <h2 class="h2" style="margin-top:22px;margin-left:auto;margin-right:auto;">Tell us what&nbsp;your<br>front desk&nbsp;drops.</h2>
+      <h2 class="h2" style="margin-top:22px;margin-left:auto;margin-right:auto;">Tell us&nbsp;what<br>your front desk&nbsp;drops.</h2>
       <p class="lead">Two fields are required. We come back with a setup plan for your trade: which questions the AI answers on day one, what your pipeline stages should be, and what it costs — written by a person, not generated.</p>
     </div>
     <form class="eaform reveal" data-earlyaccess>
@@ -595,7 +599,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v12.6</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v13.4</span>
         <p>AI answering on phone, web chat and messenger — plus the CRM that books it, quotes it, files it and reports on it.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -650,7 +654,7 @@
 
 <div class="stickycta"><div class="wrap"><span class="msg">Small company, real phone. <b>Point it at your price list and judge the output.</b></span><a class="btn btn-teal" href="./get-started.html">Get my plan<span class="cir">↗</span></a></div></div>
 
-<script src="../assets/js/site.js?v=12.6"></script>
-<script src="../assets/js/guide.js?v=12.6"></script>
+<script src="../assets/js/site.js?v=13.4"></script>
+<script src="../assets/js/guide.js?v=13.4"></script>
 </body>
 </html>

@@ -128,7 +128,7 @@
   color:#63E0E0;background:rgba(23,189,189,.14);border:1px solid rgba(23,189,189,.3);border-radius:6px;padding:4px 8px;}
 .crow{display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid var(--app-line);font-size:var(--fs-2xs);}
 .crow:last-child{border-bottom:0;}
-.crow .k{width:88px;flex:none;color:var(--app-tx3);font-weight:800;letter-spacing:.04em;
+.crow .k{width:96px;flex:none;color:var(--app-tx3);font-weight:800;letter-spacing:.04em;
   font-size:var(--fs-label);text-transform:uppercase;padding-top:2px;}
 .crow .v{color:var(--app-tx);font-weight:500;line-height:1.6;min-width:0;}
 .crow .v em{font-style:normal;color:var(--teal);font-weight:700;}
