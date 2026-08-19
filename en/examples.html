@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex,nofollow">
-<!-- Review subdomain. The canonical tags below still point at the production
-     domain on purpose, so this copy never competes with it in search.
-     To make this the live site: delete this meta and the Disallow in robots.txt. -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Worked Examples in Eight Trades | Saleringo</title>
 <meta name="description" content="Real inquiries in eight trades, the exact exchange, and what each one produced: the slot held, the quote priced, the customer filed. Pick your industry.">
-<link rel="canonical" href="https://saleringo.com/en/examples.html">
+<link rel="canonical" href="https://claude.saleringo.com/en/examples.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://saleringo.com/en/examples.html">
+<meta property="og:url" content="https://claude.saleringo.com/en/examples.html">
 <meta property="og:title" content="Worked Examples in Eight Trades">
 <meta property="og:description" content="Real inquiries in eight trades, the exact exchange, and what each one produced.">
 <meta property="og:image" content="https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
@@ -26,6 +22,7 @@
 <link rel="alternate" hreflang="en" href="./examples.html">
 <link rel="alternate" hreflang="x-default" href="./examples.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,71 +30,70 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the first consultation cost?","acceptedAnswer":{"@type":"Answer","text":"Quotes the approved fee and whether it credits against treatment."}},{"@type":"Question","name":"Do you have Saturday appointments?","acceptedAnswer":{"@type":"Answer","text":"Reads the live calendar and offers real slots."}},{"@type":"Question","name":"Do you speak Portuguese?","acceptedAnswer":{"@type":"Answer","text":"Continues in Portuguese from wording approved in Portuguese."}},{"@type":"Question","name":"How long is recovery?","acceptedAnswer":{"@type":"Answer","text":"Gives the clinic's approved general guidance, then offers a consultation for anything specific."}},{"@type":"Question","name":"Can I get a refund on my package?","acceptedAnswer":{"@type":"Answer","text":"States the published policy, then hands to a person for the decision."}},{"@type":"Question","name":"Will this work for my skin type?","acceptedAnswer":{"@type":"Answer","text":"Refused. Routed to clinical staff with the question intact."}},{"@type":"Question","name":"Is it safe with my medication?","acceptedAnswer":{"@type":"Answer","text":"Refused. Routed to clinical staff immediately."}},{"@type":"Question","name":"What do you think this rash is?","acceptedAnswer":{"@type":"Answer","text":"Refused. No diagnosis is ever offered, in any wording."}}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=4.4">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=4.4">
-<link rel="stylesheet" href="../assets/css/crm.css?v=4.4">
-<link rel="stylesheet" href="../assets/css/examples.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/site.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/crm.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/examples.css?v=11.3">
 <style>
   .exhero{padding:172px 0 0;position:relative;overflow:hidden;isolation:isolate;}
   .exhero .aur{position:absolute;left:50%;top:-190px;width:1200px;height:700px;transform:translateX(-50%);
     background:radial-gradient(closest-side,rgba(23,189,189,.15),transparent 72%);z-index:-1;pointer-events:none;}
-  .exhero .sub{margin-top:20px;font-size:17px;line-height:1.75;color:var(--tx2);font-weight:500;max-width:58ch;}
+  .exhero .sub{margin-top:20px;font-size:var(--fs-lead);line-height:1.75;color:var(--tx2);font-weight:500;max-width:58ch;}
   .exsection{padding-top:14px;}
   .exsection > .ind{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;
     padding-bottom:20px;margin-bottom:26px;border-bottom:1px solid var(--hair);}
-  .exsection > .ind h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.8vw,34px);
+  .exsection > .ind h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);
     font-weight:600;letter-spacing:-.03em;color:#fff;max-width:none;}
-  .exsection > .ind p{font-size:14px;line-height:1.65;color:var(--tx2);font-weight:500;max-width:52ch;}
-  .exsection > .ind .go{margin-left:auto;font-size:13px;font-weight:700;color:var(--accent);
+  .exsection > .ind p{font-size:var(--fs-sm);line-height:1.65;color:var(--tx2);font-weight:500;max-width:52ch;}
+  .exsection > .ind .go{margin-left:auto;font-size:var(--fs-xs);font-weight:700;color:var(--accent);
     border-bottom:1.5px solid currentColor;padding-bottom:3px;white-space:nowrap;}
   .blockhead{max-width:640px;}
-  .blockhead h3{margin-top:16px;font-family:'Space Grotesk',sans-serif;font-size:clamp(21px,2.2vw,28px);
+  .blockhead h3{margin-top:16px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
     font-weight:600;letter-spacing:-.028em;color:#fff;}
   .sec-light .blockhead h3{color:var(--l-ink);}
-  .blockhead p{margin-top:12px;font-size:14.5px;line-height:1.72;color:var(--tx2);font-weight:500;}
+  .blockhead p{margin-top:12px;font-size:var(--fs-sm);line-height:1.72;color:var(--tx2);font-weight:500;}
   .sec-light .blockhead p{color:var(--l-mut);}
 </style>
 </head>
 <body data-grade="trust">
 
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
   <span class="links">
-    <a href="./voice.html">AI Phone</a>
-    <a href="./webchat.html">Chatbot</a>
-    <a href="./whatsapp.html">WhatsApp</a>
-    <a href="./platform.html">Platform</a>
-    <a href="./industries.html">Industries</a>
-    <a href="./examples.html" aria-current="page" style="color:#fff;">Examples</a>
+    <a href="./platform.html">How it works</a>
+    <a href="./demo.html">See it work</a>
+    <a href="./industries.html">Your trade</a>
     <a href="./pricing.html">Pricing</a>
+    <a href="./security.html">Security</a>
   </span>
-  <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">✆</span><b data-tel-label>+82 70-5277-0820</b></a>
   <span class="sep"></span>
-  <a class="btn btn-white" href="./get-started.html">Get started<span class="cir">↗</span></a>
+  <a class="btn btn-white" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
   <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav></div>
 
 <main>
 
-<section class="exhero bg-grid">
+<section id="pick-a-trade" class="exhero bg-grid">
   <div class="aur"></div>
   <div class="wrap">
     <span class="eyebrow"><i></i>Worked examples</span>
-    <h1>Nobody buys from a demo.<br>They buy from <em style="font-style:normal;color:var(--teal);">their own Tuesday.</em></h1>
+    <h1>Nobody buys from a&nbsp;demo.<br>They buy from <em style="font-style:normal;color:var(--teal);">their own&nbsp;Tuesday.</em></h1>
     <p class="sub">So here is the same product doing the same job in eight different trades — the actual
       inquiry that arrives, the exact words back, and the thing it left behind: a slot held, a quote priced
       off the owner's list, a customer filed with the next action already set.</p>
+      <p class="heroscroll"><a href="./index.html#start-here">New here? Start with the three-step tour &mdash; about two minutes&nbsp;&nbsp;&rarr;</a></p>
 
     <div class="exfilter" role="tablist" aria-label="Choose your trade">
-      <button class="on" data-ex="all">All trades</button>
-      <button data-ex="dental">Dental</button>
-      <button data-ex="clinics">Clinics</button>
-      <button data-ex="venues">Venues &amp; events</button>
-      <button data-ex="home">Home services</button>
-      <button data-ex="stays">Boutique stays</button>
-      <button data-ex="academies">Academies</button>
-      <button data-ex="veterinary">Veterinary</button>
-      <button data-ex="franchise">Franchise</button>
+      <button class="on" data-ex="all" role="tab" aria-selected="false">All trades</button>
+      <button data-ex="dental" role="tab" aria-selected="false">Dental</button>
+      <button data-ex="clinics" role="tab" aria-selected="false">Clinics</button>
+      <button data-ex="venues" role="tab" aria-selected="false">Venues &amp; events</button>
+      <button data-ex="home" role="tab" aria-selected="false">Home services</button>
+      <button data-ex="stays" role="tab" aria-selected="false">Boutique stays</button>
+      <button data-ex="academies" role="tab" aria-selected="false">Academies</button>
+      <button data-ex="veterinary" role="tab" aria-selected="false">Veterinary</button>
+      <button data-ex="franchise" role="tab" aria-selected="false">Franchise</button>
     </div>
     <p class="exlabel" style="margin-top:14px;">Every scenario below is a worked illustration of how the
       product behaves, built from the price lists and rules a business of that type would load. They are not
@@ -193,7 +189,7 @@
 
     <div class="blockhead" style="margin-top:52px;">
       <span class="eyebrow"><i></i>The week it handles</span>
-      <h3>A normal week at a two-chair practice.</h3>
+      <h3>A normal week at a two-chair&nbsp;practice.</h3>
       <p>Not a record week. An ordinary one — with the after-hours share marked, because that is the part
         currently going to voicemail.</p>
     </div>
@@ -212,10 +208,11 @@
         <ul><li><i>·</i>5 booked</li><li><i>·</i><b>closed all day</b></li></ul></div>
       <div class="weekday"><span class="d">Sun</span><div class="n">6<small> inq</small></div>
         <ul><li><i>·</i>3 booked</li><li><i>·</i><b>closed all day</b></li></ul></div>
-    </div>
+    
+  </div>
     <p class="exlabel" style="margin-top:12px;">Illustrative volumes for a two-chair practice. <b>23 of 82 inquiries
       arrive when the practice is shut</b> — that is the share this is bought for. Your own call log is the number
-      that matters; the calculator on the <a href="./pricing.html#calculator" style="color:var(--teal);font-weight:700;">homepage</a>
+      that matters; the calculator on the <a href="./pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">homepage</a>
       takes it.</p>
   </div>
 </section>
@@ -225,7 +222,7 @@
   <div class="wrap">
     <div class="ind" style="border-color:var(--l-hair);">
       <div>
-        <h2 style="color:var(--l-ink);">Clinics &amp; medical</h2>
+        <h2 style="color:var(--l-ink);">Clinics &amp;&nbsp;medical</h2>
         <p style="color:var(--l-mut);">Aesthetic, dermatology, physio, fertility, dental-adjacent. Patients ask in
           whichever language they think in, and half the questions are ones you must never answer.</p>
       </div>
@@ -304,7 +301,7 @@
 
     <div class="blockhead" style="margin-top:52px;">
       <span class="eyebrow light"><i></i>What it will and won't answer</span>
-      <h3>The line, written down before you go live.</h3>
+      <h3>The line, written down before you&nbsp;go&nbsp;live.</h3>
       <p>You approve every row of this before a patient hears anything. The third column is the one to read twice.</p>
     </div>
     <div class="qbank reveal">
@@ -325,7 +322,10 @@
         <span class="qa">Refused. Routed to clinical staff immediately.</span><span class="qs never">Never</span></div>
       <div class="qrow"><span class="qq">What do you think this rash is?</span>
         <span class="qa">Refused. No diagnosis is ever offered, in any wording.</span><span class="qs never">Never</span></div>
-    </div>
+    
+    
+  </div>
+      <p class="seccap">The column on the right is the one worth reading twice. A receptionist that never guesses about a symptom is worth more to a clinic than one that answers everything.</p>
   </div>
 </section>
 
@@ -334,7 +334,7 @@
   <div class="wrap">
     <div class="ind reveal">
       <div>
-        <h2>Wedding &amp; event venues</h2>
+        <h2>Wedding &amp; event&nbsp;venues</h2>
         <p>The longest sale on this list. An inquiry at 2 AM, a site visit three weeks later, a decision six
           months out — and a quote with more moving parts than any other trade here.</p>
       </div>
@@ -415,7 +415,7 @@
 
     <div class="blockhead" style="margin-top:52px;">
       <span class="eyebrow"><i></i>What one date is worth</span>
-      <h3>The arithmetic on a single recovered Saturday.</h3>
+      <h3>The arithmetic on a single recovered&nbsp;Saturday.</h3>
       <p>Using the venue figures published on this site and the plan a venue would actually be on. Your own
         numbers will differ — that is the point of showing the working.</p>
     </div>
@@ -424,7 +424,7 @@
       <div class="mathrow"><span class="lbl"><b>Saleringo Scale</b><span class="sub">the plan a venue answering calls would be on</span></span><span class="val">−$599</span></div>
       <div class="mathrow"><span class="lbl"><b>Voice minutes</b><span class="sub">≈ 180 calls × 4 min × $0.14</span></span><span class="val">−$101</span></div>
       <div class="mathrow total"><span class="lbl"><b>One recovered date, against a full month</b></span><span class="val">14× the bill</span></div>
-      <p class="mathnote">Rates are the published ones on the <a href="./pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>.
+      <p class="mathnote">Rates are the published ones on the <a href="./pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing page</a>.
         This says nothing about how many dates you would recover — only what one is worth against the cost. Set your
         own recovery rate on the homepage calculator; it defaults sceptical.</p>
     </div>
@@ -434,14 +434,14 @@
 
 <section class="photo-scrim" style="min-height:320px;display:flex;align-items:flex-end;">
   <img class="ph" src="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="100vw"
-       alt="A courtyard event set at night under warm string lights" loading="eager" fetchpriority="high" decoding="async" width="1600" height="900">
+       alt="A courtyard reception set for dinner at night under warm string lights" loading="eager" fetchpriority="high" decoding="async" width="1600" height="900">
   <div class="wrap" style="padding-bottom:34px;">
-    <p class="display reveal" style="font-size:clamp(30px,4.6vw,64px);max-width:18ch;">Eight trades.<br>One machine.</p>
-    <p class="reveal" style="margin-top:12px;font-size:14px;color:rgba(255,255,255,.78);font-weight:600;max-width:52ch;">The same product, the same refusals, the same records — configured for what each trade actually asks.</p>
+    <p class="display reveal" style="font-size:var(--fs-h1);max-width:18ch;">Eight trades.<br>One machine.</p>
+    <p class="reveal" style="margin-top:12px;font-size:var(--fs-sm);color:rgba(255,255,255,.78);font-weight:600;max-width:52ch;">The same product, the same refusals, the same records — configured for what each trade actually asks.</p>
   </div>
 </section>
 <!-- ══════════ HOME SERVICES ══════════ -->
-<section class="t-md sec-dark bg-spot exsection" data-ind="home" id="home">
+<section class="t-md sec-dark exsection" data-ind="home" id="home">
   <div class="wrap">
     <div class="ind reveal">
       <div>
@@ -495,7 +495,7 @@
         <div class="exbody">
           <p class="exq">How much to replace a 40-gallon water heater? I'm out past the ring road.</p>
           <div class="exturn"><span class="who">Saleringo</span>A 40-gallon replacement runs <b>$1,250 to $1,700</b>
-            fitted, depending on the unit. Your postcode is in zone 3, which adds a <b>$45 travel charge</b>. I can hold
+            fitted, depending on the unit. Your ZIP code is in zone 3, which adds a <b>$45 travel charge</b>. I can hold
             Tuesday morning and the technician will confirm the final figure on sight.</div>
           <div class="exout">
             <h5>What it left behind</h5>
@@ -616,7 +616,7 @@
   <div class="wrap">
     <div class="ind reveal">
       <div>
-        <h2>Academies &amp; tutoring</h2>
+        <h2>Academies &amp;&nbsp;tutoring</h2>
         <p>Language schools, test prep, music, coding, sports. Parents ask in the evening, decide in a week,
           and enrol in two spikes a year — so the follow-up matters more than the answer.</p>
       </div>
@@ -701,12 +701,12 @@
   <img class="ph" src="https://images.pexels.com/photos/19061187/pexels-photo-19061187.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/19061187/pexels-photo-19061187.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/19061187/pexels-photo-19061187.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/19061187/pexels-photo-19061187.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="100vw"
        alt="A person at a lit payphone at night" loading="lazy" decoding="async" width="1600" height="900">
   <div class="wrap" style="padding-bottom:34px;">
-    <p class="display reveal" style="font-size:clamp(30px,4.6vw,64px);max-width:18ch;">Every one of these<br>arrived after hours.</p>
-    <p class="reveal" style="margin-top:12px;font-size:14px;color:rgba(255,255,255,.78);font-weight:600;max-width:52ch;">That is not a coincidence in the writing. It is when the inquiries actually come.</p>
+    <p class="display reveal" style="font-size:var(--fs-h1);max-width:18ch;">Every one of these<br>arrived after hours.</p>
+    <p class="reveal" style="margin-top:12px;font-size:var(--fs-sm);color:rgba(255,255,255,.78);font-weight:600;max-width:52ch;">That is not a coincidence in the writing. It is when the inquiries actually come.</p>
   </div>
 </section>
 <!-- ══════════ VETERINARY ══════════ -->
-<section class="t-md sec-dark bg-dusk exsection" data-ind="veterinary" id="veterinary">
+<section class="t-md sec-dark exsection" data-ind="veterinary" id="veterinary">
   <div class="wrap">
     <div class="ind reveal">
       <div>
@@ -795,7 +795,7 @@
   <div class="wrap">
     <div class="ind" style="border-color:var(--l-hair);">
       <div>
-        <h2 style="color:var(--l-ink);">Franchise &amp; multi-site</h2>
+        <h2 style="color:var(--l-ink);">Franchise &amp;&nbsp;multi-site</h2>
         <p style="color:var(--l-mut);">Two problems at once: customers who must reach the right location, and
           candidates asking what it costs to open one. Both arrive on the same number.</p>
       </div>
@@ -883,7 +883,7 @@
   <div class="wrap">
     <div class="blockhead">
       <span class="eyebrow"><i></i>How any of this gets built</span>
-      <h3>None of the above needed a developer.</h3>
+      <h3>None of the above needed a&nbsp;developer.</h3>
       <p>Every example on this page runs off the same four things, taken from what the business already has.
         This is the whole setup — there is no fifth thing.</p>
     </div>
@@ -916,31 +916,49 @@
     </div>
     <p class="exlabel" style="margin-top:16px;">Roughly thirty minutes of your attention across the first few days,
       spread over reviewing answers. We do the building.
-      <a href="./get-started.html" style="color:var(--teal);font-weight:700;">See the first week →</a></p>
+      <a href="./get-started.html" style="color:var(--teal-ink);font-weight:700;">See the first week →</a></p>
   </div>
 </section>
 
-<section class="closer t-md sec-dark">
-  <div class="wrap" style="text-align:center;">
-    <span class="eyebrow"><i></i>Your trade, your prices</span>
-    <h2 class="h2 onDark reveal" style="margin-top:20px;max-width:24ch;margin-left:auto;margin-right:auto;">
-      Stop reading examples.<br><span class="gradtext">Make one with your own price list.</span></h2>
-    <p class="lead onDark" style="margin:18px auto 0;max-width:54ch;">Send us your website and your prices. We'll
-      come back with the AI answering the ten questions your customers actually ask — in your words, at your
-      rates. Free, and yours to keep whatever you decide.</p>
-    <div style="margin-top:30px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;">
-      <a class="btn btn-teal" href="./get-started.html">Make one for my business<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="./pricing.html">See what it costs<span class="cir">↗</span></a>
+<!-- CONCLUSION: every path names what it taught and where it goes next -->
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have read thirty-two worked conversations</span>
+        <p class="cnp">Eight of them end with the AI refusing and handing to a person, because that is the half you cannot judge from a feature list. Reading is one thing &mdash; the demo lets you pick the trade and the question yourself, and shows the six objects that come out.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="./index.html#yourprices">Try it on your own numbers<span class="cir">&#8599;</span></a>
     </div>
   </div>
 </section>
 
+<section id="closer" class="closer t-md sec-dark">
+  <div class="wrap" style="text-align:center;">
+    <span class="eyebrow"><i></i>Your trade, your prices</span>
+    <h2 class="h2 onDark reveal" style="margin-top:20px;max-width:24ch;margin-left:auto;margin-right:auto;">
+ Stop reading&nbsp;examples.<br><span class="gradtext">Make one with your own price&nbsp;list.</span></h2>
+    <p class="lead onDark" style="margin:18px auto 0;max-width:54ch;">Send us your website and your prices. We'll
+      come back with the AI answering the ten questions your customers actually ask — in your words, at your
+      rates. Free, and yours to keep whatever you decide.</p>
+    <div style="margin-top:30px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn btn-teal" href="./get-started.html">Get the plan for my trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="./pricing.html">See what it costs for my size<span class="cir">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<nav data-end="#closer" data-end-label="Get my plan" data-startpath data-compact aria-hidden="true" data-title="What to read here">
+  <ol>
+    <li data-step="#dental" data-short="Pick a trade" data-next="jump to your trade" data-focus=".exfilter" data-cue="Pick your trade" data-sub="Thirty-two worked conversations. Eight of them end with it refusing."><a href="#dental"><b>Pick a trade</b></a></li>
+  </ol>
+</nav>
 </main>
 
 <footer class="bigfooter"><div class="wrap">
   <div class="cols">
     <div class="brand">
-      <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+      <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
       <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
       <p style="margin-top:10px;">hello@saleringo.com</p>
     </div>
@@ -953,6 +971,7 @@
       <a class="lnk" href="./integrations.html">Integrations</a>
       <a class="lnk" href="./ai-answering-service.html">Buyer's guide</a>
       <a class="lnk" href="./pricing.html">Pricing</a>
+        <a class="lnk" href="./get-started.html">Get my plan</a>
     </div>
     <div>
       <h4>Industries</h4>
@@ -962,7 +981,7 @@
       <a class="lnk" href="./industries/venues.html">Wedding &amp; Venues</a>
       <a class="lnk" href="./industries/stays.html">Boutique Stays</a>
       <a class="lnk" href="./industries/veterinary.html">Veterinary</a>
-      <a class="lnk" href="./industries/franchise.html">Franchise</a>
+      <a class="lnk" href="./industries/franchise.html">Franchise <i class="rmtag">Roadmap</i></a>
       <a class="lnk" href="./industries.html">All industries</a>
     </div>
     <div>
@@ -983,11 +1002,12 @@
 <div class="stickycta">
   <div class="wrap">
     <span class="msg">These are our examples. <b>The one that matters is the one built from your price list.</b></span>
-    <a class="btn btn-teal" href="./get-started.html">Make mine<span class="cir">↗</span></a>
+    <a class="btn btn-teal" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=4.4"></script>
+<script src="../assets/js/site.js?v=11.3"></script>
+<script src="../assets/js/guide.js?v=11.3"></script>
 <script>
 /* Trade filter. Progressive enhancement: with JS off, every trade is visible,
    which is also the right default for crawlers. */

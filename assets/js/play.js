@@ -547,11 +547,52 @@ window.SR_PLAY = {
     return '<div class="obox-empty"><span class="ox">&rarr;</span><p>' + why + '</p></div>';
   }
 
+
+  /* ── the two outputs a competitor's chat log cannot produce ── */
+  function stafftask(t) {
+    return '<div class="tasklet"><div class="th"><span class="ini">' + t.ini + '</span>' +
+      '<span><b>' + t.who + '</b><span>' + t.role + '</span></span>' +
+      '<span class="due">' + t.due + '</span></div>' +
+      '<p class="tbody">' + t.what + '</p></div>';
+  }
+  function followup(f) {
+    return '<div class="folw"><div class="fh"><span class="fwhen">' + f.when + '</span>' +
+      '<span class="fstate">' + f.state + '</span></div>' +
+      '<p class="fmsg">&ldquo;' + f.msg + '&rdquo;</p></div>';
+  }
+
+  /* Derived, not authored twice: if the branch booked something a person owns
+     it and a reminder is scheduled; if it handed off, a named person owns it
+     now and nothing automated goes out. */
+  function deriveTask(ask) {
+    var p = ask.produces;
+    if (p.booking) {
+      return { ini: 'ST', who: 'Front desk', role: 'Owner of this booking',
+               due: 'Before 10:00', what: 'Confirm the slot held overnight and check anything the quote left open.' };
+    }
+    return { ini: 'ON', who: 'On-call', role: 'Named handover',
+             due: 'Now', what: 'This one was routed to a person on purpose. The full conversation is attached.' };
+  }
+  function deriveFollow(ask) {
+    var p = ask.produces;
+    if (p.booking) {
+      return { when: 'Day 1 after the visit', state: 'Scheduled',
+               msg: 'Thanks for coming in — here is what we agreed, and who to reply to if anything changed.' };
+    }
+    if (p.quote) {
+      return { when: 'Day 3, if no reply', state: 'Scheduled',
+               msg: 'Just checking the quote reached you — happy to go through any line on it.' };
+    }
+    return null;
+  }
+
   var ART = [
-    ['pipeline', 'Pipeline',        pipeline, null],
-    ['booking',  'Calendar',        booking,  'bookingWhy'],
-    ['quote',    'Quote',           quote,    'quoteWhy'],
-    ['record',   'Customer record', record,   null]
+    ['pipeline',  'Pipeline',        pipeline,  null],
+    ['booking',   'Calendar',        booking,   'bookingWhy'],
+    ['quote',     'Quote',           quote,     'quoteWhy'],
+    ['record',    'Customer record', record,    null],
+    ['stafftask', 'Staff task',      stafftask, null],
+    ['followup',  'Follow-up',       followup,  'followupWhy']
   ];
 
   function renderAsks(t) {
@@ -610,6 +651,14 @@ window.SR_PLAY = {
       });
     });
 
+    /* Derived outputs are attached here rather than written into all 24
+       branches by hand — they follow from what the branch already produced. */
+    ask.produces.stafftask = deriveTask(ask);
+    ask.produces.followup  = deriveFollow(ask);
+    if (!ask.produces.followup) {
+      ask.produces.followupWhy = 'No automated follow-up — a person owns this one now.';
+    }
+
     /* the artefacts fill in causal order — including the ones that stay empty */
     var summary = [];
     ART.forEach(function (a) {
@@ -651,6 +700,47 @@ window.SR_PLAY = {
     reset(t);
   }
 
+
+  /* ── channel ──
+     The competitive point is not that we answer three channels; it is that all
+     three land on one record. So the channel changes the chrome and the phrasing
+     of the opening line, and deliberately changes nothing downstream — the same
+     pipeline card, booking, quote, task and follow-up come out either way. That
+     sameness IS the argument, so it has to be visible. */
+  var CHANNELS = {
+    phone:  { label: 'Phone',      badge: 'voice', chrome: 'Your line, after hours',
+              seedPrefix: '' , note: 'Spoken. Transcribed as it goes.' },
+    web:    { label: 'Web chat',   badge: 'chat',  chrome: 'Widget on your site',
+              seedPrefix: '', note: 'Typed on your website, 11pm.' },
+    msg:    { label: 'Messenger',  badge: 'wa',    chrome: 'WhatsApp · Messenger · KakaoTalk',
+              seedPrefix: '', note: 'From the app they already have open.' }
+  };
+  var channel = 'phone';
+
+  function applyChannel() {
+    var c = CHANNELS[channel] || CHANNELS.phone;
+    var badge = root.querySelector('[data-play-chan]');
+    if (badge) {
+      badge.textContent = c.chrome;
+      badge.className = 'chanbadge ' + c.badge;
+    }
+    var note = root.querySelector('[data-play-channote]');
+    if (note) note.textContent = c.note;
+    root.querySelectorAll('[data-playchan]').forEach(function (b) {
+      var on = b.getAttribute('data-playchan') === channel;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  root.querySelectorAll('[data-playchan]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      channel = b.getAttribute('data-playchan');
+      applyChannel();
+      load(trade);   /* reset the stage so the same record is rebuilt from this door */
+    });
+  });
+
   root.querySelectorAll('[data-playtrade]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       root.querySelectorAll('[data-playtrade]').forEach(function (b) {
@@ -683,5 +773,6 @@ window.SR_PLAY = {
     startBtn.classList.add('on');
     startBtn.setAttribute('aria-selected', 'true');
   }
+  applyChannel();
   load(trade);
 })();

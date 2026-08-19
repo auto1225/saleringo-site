@@ -1,0 +1,429 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   guide.js — where the visitor is, and what to press next
+
+   Measured problem: index.html offers 96 distinct labels across 35 destinations
+   and 20 sections, and the first thing a reader can touch sits five screens
+   down. Nothing told them where to begin, and nothing pointed at the control.
+
+   Three things, and nothing else:
+     1. .startpath   — marks which step the reader is in.
+     2. .guiderail   — a fixed rail of the same steps, always reachable, showing
+                       done / here / ahead. Desktop only; the sticky bar already
+                       does this job on narrow screens.
+     3. focus ring   — on arriving at a step, the ACTUAL control gets a ring and
+                       a short label ("Pick a trade", "Paste here", "Drag me").
+                       Pointing at the section is not enough; the reader has to
+                       know which thing responds.
+
+   DEV_SPEC 5.4 forbids window scroll listeners outright, so every state change
+   comes from an IntersectionObserver. Nothing here reads layout on scroll.
+   ═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var path = document.querySelector('[data-startpath]');
+  if (!path || !('IntersectionObserver' in window)) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Steps are declared in the markup so the copy stays with the copy.
+     data-focus  — the control the reader is meant to press
+     data-cue    — what to call it */
+  var steps = [].slice.call(path.querySelectorAll('[data-step]')).map(function (el) {
+    return {
+      el: el,
+      id: el.getAttribute('data-step'),
+      next: el.getAttribute('data-next') || (el.querySelector('b') || {textContent:''}).textContent.trim(),
+      short: el.getAttribute('data-short') || (el.querySelector('b') || {textContent:''}).textContent.trim(),
+      focusSel: el.getAttribute('data-focus') || null,
+      cue: el.getAttribute('data-cue') || 'Start here',
+      sub: el.getAttribute('data-sub') || '',
+      target: document.querySelector(el.getAttribute('data-step')),
+      seen: false
+    };
+  }).filter(function (s) { return s.target; });
+
+  if (!steps.length) return;
+
+  /* ── 1 · the rail ─────────────────────────────────────────────────────── */
+  var rail = document.createElement('nav');
+  rail.className = 'guiderail';
+  rail.setAttribute('aria-label', 'Tour progress');
+  var railHead = document.createElement('p');
+  railHead.className = 'gr-head';
+  railHead.textContent = path.getAttribute('data-title') || 'Your 2-minute tour';
+  rail.appendChild(railHead);
+  var railList = document.createElement('ol');
+
+  steps.forEach(function (s, i) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = s.id;
+    a.setAttribute('data-rail', String(i));
+    var dot = document.createElement('span');
+    dot.className = 'gr-dot';
+    dot.textContent = String(i + 1);
+    var lab = document.createElement('span');
+    lab.className = 'gr-lab';
+    lab.textContent = s.short;
+    a.appendChild(dot);
+    a.appendChild(lab);
+    li.appendChild(a);
+    railList.appendChild(li);
+    s.railItem = li;
+  });
+
+  /* the tour ends at the form, so the rail shows it as the last stop */
+  var endTarget = document.querySelector(path.getAttribute('data-end') || '#early-access');
+  var endItem = null;
+  if (endTarget) {
+    endItem = document.createElement('li');
+    endItem.className = 'gr-end';
+    var ea = document.createElement('a');
+    ea.href = path.getAttribute('data-end') || '#early-access';
+    var ed = document.createElement('span');
+    ed.className = 'gr-dot';
+    ed.textContent = '✓';
+    var el2 = document.createElement('span');
+    el2.className = 'gr-lab';
+    el2.textContent = path.getAttribute('data-end-label') || 'Get my plan';
+    ea.appendChild(ed);
+    ea.appendChild(el2);
+    endItem.appendChild(ea);
+    railList.appendChild(endItem);
+  }
+  rail.appendChild(railList);
+
+  /* ── 2 · the focus ring ───────────────────────────────────────────────── */
+  var ring = document.createElement('div');
+  ring.className = 'focusring';
+  ring.setAttribute('aria-hidden', 'true');
+  var cueEl = document.createElement('span');
+  cueEl.className = 'fr-cue';
+  ring.appendChild(cueEl);
+  var subEl = document.createElement('span');
+  subEl.className = 'fr-sub';
+  ring.appendChild(subEl);
+  var closeEl = document.createElement('button');
+  closeEl.className = 'fr-x';
+  closeEl.type = 'button';
+  closeEl.setAttribute('aria-label', 'Dismiss this hint');
+  closeEl.textContent = '\u00d7';
+  ring.appendChild(closeEl);
+  document.body.appendChild(ring);
+
+  var ringTimer = null, ringTarget = null, ringRaf = null, ringWatch = null;
+  closeEl.addEventListener('click', function (ev) {
+    ev.preventDefault(); ev.stopPropagation(); clearRing();
+  });
+
+  /* Does this floating caption sit on top of anything a reader needs?
+     Point-sampling missed it: the caption is 420x64 and the hero price is a
+     16px-tall strip, so five sample points can straddle it and report clear.
+     Rectangle intersection against real text elements is deterministic. */
+  function overlapsText(el) {
+    var b = el.getBoundingClientRect();
+    if (!b.width || !b.height) return false;
+    var nodes = document.querySelectorAll('h1,h2,h3,h4,p,li,span,b,a,button,label');
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (ring.contains(n)) continue;
+      if (ringTarget && (n === ringTarget || ringTarget.contains(n) || n.contains(ringTarget))) continue;
+      if (n.closest('.guiderail, .stickycta, .navwrap')) continue;
+      var own = '';
+      for (var k = 0; k < n.childNodes.length; k++) {
+        if (n.childNodes[k].nodeType === 3) own += n.childNodes[k].nodeValue;
+      }
+      if (own.trim().length < 3) continue;
+      var r = n.getBoundingClientRect();
+      if (!r.width || !r.height) continue;
+      if (r.bottom < 0 || r.top > window.innerHeight) continue;
+      if (r.left < b.right && r.right > b.left && r.top < b.bottom && r.bottom > b.top) return true;
+    }
+    return false;
+  }
+
+  function placeRing() {
+    if (!ringTarget) return;
+    var r = ringTarget.getBoundingClientRect();
+    ring.style.transform = 'translate(' + Math.round(r.left + window.scrollX - 8) + 'px,' +
+                           Math.round(r.top + window.scrollY - 8) + 'px)';
+    ring.style.width = Math.round(r.width + 16) + 'px';
+    ring.style.height = Math.round(r.height + 16) + 'px';
+
+    /* Put the caption where it does not land on anything. "Is there room below"
+       was the wrong test — on the hero there was plenty of room below and the
+       price line was sitting in it. Test for actual overlap with real text. */
+    ring.classList.remove('cue-above');
+    if (overlapsText(subEl)) {
+      ring.classList.add('cue-above');
+      if (overlapsText(subEl)) ring.classList.remove('cue-above');   /* worse — put it back */
+    }
+
+    /* and keep it inside the viewport horizontally — it was rendering at x=-6 */
+    subEl.style.left = '50%';
+    subEl.style.transform = 'translate(-50%,100%)';
+    var sr = subEl.getBoundingClientRect();
+    var over = 0;
+    if (sr.left < 12) over = 12 - sr.left;
+    else if (sr.right > window.innerWidth - 12) over = (window.innerWidth - 12) - sr.right;
+    if (over) subEl.style.transform = 'translate(calc(-50% + ' + Math.round(over) + 'px),100%)';
+  }
+
+  function clearRing() {
+    ring.classList.remove('on');
+    ringTarget = null;
+    if (ringTimer) { clearTimeout(ringTimer); ringTimer = null; }
+    if (ringRaf) { cancelAnimationFrame(ringRaf); ringRaf = null; }
+    if (ringWatch) { ringWatch.disconnect(); ringWatch = null; }
+  }
+
+  /* Point at one control. Takes the element directly so the landing pointer and
+     the per-step pointer go through exactly the same path — the earlier version
+     called this and then reassigned ringTarget from outside, which raced with
+     its own clearRing(). */
+  function pointAt(t, cue, sub) {
+    clearRing();
+    if (!t || !t.getBoundingClientRect().width) return;
+    ringTarget = t;
+    cueEl.textContent = cue;
+    subEl.textContent = sub || '';
+    subEl.style.display = sub ? '' : 'none';
+    placeRing();
+    ring.classList.add('on');
+
+    /* the target can move while the smooth scroll is still running, so follow
+       it for a moment rather than pinning it once */
+    var until = Date.now() + 1600;
+    (function follow() {
+      placeRing();
+      if (Date.now() < until) ringRaf = requestAnimationFrame(follow);
+    }());
+
+    /* It has done its job the moment the reader touches the thing — or anything
+       else in the same section. Listening only on the ringed control meant that
+       clicking a demo question left the page dimmed while the answer played. */
+    var scope = t.closest('section') || t;
+    ['pointerdown', 'keydown', 'input'].forEach(function (ev) {
+      scope.addEventListener(ev, clearRing, { once: true });
+    });
+
+    /* A pointer that times out is a hint you can miss, which is what happened:
+       it "blinked and vanished" and the reader was no better off. It now stays
+       until the reader either uses the control or scrolls it out of view. */
+    if (ringWatch) { ringWatch.disconnect(); ringWatch = null; }
+    var wasSeen = false;
+    ringWatch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { wasSeen = true; return; }
+        /* only dismiss something the reader actually had on screen — the first
+           callback can report "not intersecting" before anything has scrolled */
+        if (wasSeen && ringTarget === t) clearRing();
+      });
+    }, { threshold: 0 });
+    ringWatch.observe(t);
+  }
+
+  /* ── 3 · state ────────────────────────────────────────────────────────── */
+  var bar = document.querySelector('.stickycta');
+  /* Dock the rail inside the bar rather than floating it over the page. Three
+     pages ship no .stickycta at all, and the old fallback dropped the rail on
+     top of the content — the exact failure this docking was meant to end. If
+     there is no bar, build one. */
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.className = 'stickycta';
+    var w = document.createElement('div');
+    w.className = 'wrap';
+    var m = document.createElement('span');
+    m.className = 'msg';
+    var b = document.createElement('a');
+    b.className = 'btn btn-teal';
+    b.setAttribute('href', path.getAttribute('data-end') || '#early-access');
+    b.textContent = path.getAttribute('data-end-label') || 'Get my plan';
+    w.appendChild(m);
+    w.appendChild(b);
+    bar.appendChild(w);
+    document.body.appendChild(bar);
+  }
+  bar.querySelector('.wrap').insertBefore(rail, bar.querySelector('.wrap').firstChild);
+  bar.classList.add('hasguide');
+  var barMsg = bar && bar.querySelector('.msg');
+  var barBtn = bar && bar.querySelector('a.btn');
+  var barHomeHref = barBtn ? barBtn.getAttribute('href') : '';
+  var barHomeLabel = barBtn ? barBtn.cloneNode(true).childNodes : null;
+  var current = -1, atEnd = false;
+
+  function setBtn(label, href) {
+    barBtn.setAttribute('href', href);
+    barBtn.textContent = label;
+    var cir = document.createElement('span');
+    cir.className = 'cir';
+    cir.textContent = '↗';
+    barBtn.appendChild(cir);
+  }
+
+  function setMsg(parts) {
+    barMsg.textContent = '';
+    parts.forEach(function (p) {
+      var n = p.tag ? document.createElement(p.tag) : document.createTextNode(p.text);
+      if (p.tag) { n.textContent = p.text; if (p.cls) n.className = p.cls; }
+      barMsg.appendChild(n);
+    });
+  }
+
+  function render() {
+    steps.forEach(function (s, i) {
+      s.el.classList.toggle('is-now', i === current);
+      s.el.classList.toggle('is-done', s.seen && i !== current);
+      if (s.railItem) {
+        s.railItem.classList.toggle('is-now', i === current);
+        s.railItem.classList.toggle('is-done', s.seen && i !== current);
+      }
+    });
+
+    var nextIdx = -1;
+    for (var i = 0; i < steps.length; i++) {
+      if (!steps[i].seen) { nextIdx = i; break; }
+    }
+    /* the last stop lights up when the reader is actually AT the form, not the
+       moment the third step has been seen — otherwise two dots read as "now" */
+    if (endItem) endItem.classList.toggle('is-now', atEnd);
+    /* The rail is the answer to "where do I click", so it cannot wait until the
+       reader has already found a step. It is visible from the moment the page
+       loads; before any step is reached it simply shows the first one as next. */
+    rail.classList.add('show');
+    if (current < 0 && !steps.some(function (s) { return s.seen; })) {
+      steps[0].railItem.classList.add('is-next');
+    } else {
+      steps.forEach(function (s) { s.railItem.classList.remove('is-next'); });
+    }
+
+    if (!bar || !barMsg || !barBtn) return;
+
+    if (nextIdx === -1) {
+      setMsg([
+        { tag: 'b', text: 'That is the whole product.' },
+        { text: ' You have tried it, priced it, and seen what it refuses to do.' }
+      ]);
+      barBtn.setAttribute('href', barHomeHref || '#early-access');
+      barBtn.textContent = '';
+      if (barHomeLabel) {
+        [].slice.call(barHomeLabel).forEach(function (n) { barBtn.appendChild(n.cloneNode(true)); });
+      }
+      bar.setAttribute('data-guide', 'done');
+      return;
+    }
+
+    var s = steps[nextIdx];
+    setMsg([
+      { tag: 'span', cls: 'stepnum', text: (nextIdx + 1) + ' of ' + steps.length },
+      { text: ' Next: ' },
+      { tag: 'b', text: s.next }
+    ]);
+    setBtn('Take me there', s.id);
+    bar.setAttribute('data-guide', 'step');
+  }
+
+  /* A step is "current" while any part of it sits in the middle band of the
+     viewport. The band is generous on the top edge so that a scrollIntoView
+     landing — which puts the section top at y=0 — registers immediately;
+     the earlier -20% top margin made that landing fall outside the root. */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var i = -1;
+      steps.forEach(function (s, k) { if (s.target === e.target) i = k; });
+      if (i < 0) return;
+      if (e.isIntersecting) {
+        steps[i].seen = true;
+        current = i;
+      } else if (current === i) {
+        current = -1;
+      }
+    });
+    render();
+  }, { threshold: 0, rootMargin: '0px 0px -55% 0px' });
+
+  steps.forEach(function (s) { io.observe(s.target); });
+
+  /* the form is its own stop, so the rail's last dot tracks it directly */
+  if (endTarget) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { atEnd = e.isIntersecting; });
+      render();
+    }, { threshold: 0, rootMargin: '0px 0px -40% 0px' }).observe(endTarget);
+  }
+
+  /* ── 4 · jumping ──────────────────────────────────────────────────────── */
+  function jump(href) {
+    var t = document.querySelector(href);
+    if (!t) return false;
+    /* A smooth scroll across thirteen screens is a long ride that tells the
+       reader nothing on the way. Animate short hops, cut straight for long ones. */
+    var far = Math.abs(t.getBoundingClientRect().top) > window.innerHeight * 2.5;
+    t.scrollIntoView({ behavior: (reduce || far) ? 'auto' : 'smooth', block: 'start' });
+    t.setAttribute('tabindex', '-1');
+    t.focus({ preventScroll: true });
+    var step = null;
+    steps.forEach(function (s) { if (s.id === href) step = s; });
+    /* jumping anywhere that is not a step means the previous pointer is stale */
+    if (!step) clearRing();
+    else setTimeout(function () {
+      pointAt(document.querySelector(step.focusSel), step.cue, step.sub);
+    }, (reduce || far) ? 80 : 480);
+    return true;
+  }
+
+  function wire(root) {
+    root.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+      if (!a || !root.contains(a)) return;
+      if (jump(a.getAttribute('href'))) ev.preventDefault();
+    });
+  }
+  wire(path);
+  /* the rail now lives inside the bar, so wiring both would run jump() twice on
+     a single click — two scrollIntoView calls in one tick, and the state read
+     afterwards was whatever the second one left behind */
+  if (bar && bar.contains(rail)) wire(bar);
+  else { wire(rail); if (bar) wire(bar); }
+
+  /* the hero button and any other in-page link to a step gets the same
+     treatment, so the pointer appears however the reader arrived */
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if (!a || path.contains(a) || rail.contains(a) || (bar && bar.contains(a))) return;
+    var href = a.getAttribute('href');
+    var isStep = false;
+    steps.forEach(function (s) { if (s.id === href) isStep = true; });
+    if (!isStep) return;
+    if (jump(href)) ev.preventDefault();
+  });
+
+  /* arriving with a hash from another page should point too */
+  if (location.hash) {
+    var h = location.hash;
+    steps.forEach(function (s) {
+      if (s.id === h) setTimeout(function () {
+        pointAt(document.querySelector(s.focusSel), s.cue, s.sub);
+      }, 700);
+    });
+  } else {
+    /* Landing cold, the first question is "where do I click?" — so the pointer
+       answers it before the reader has done anything, on the hero's own tour
+       button. It clears the moment they press it, or after a few seconds. */
+    var heroBtn = document.querySelector('.hero .ctas a.btn[href="#start-here"], header .ctas a.btn[href="#start-here"]');
+    if (heroBtn) {
+      setTimeout(function () {
+        if (window.scrollY > 40) return;      /* they already started reading */
+        /* cue only — a caption here would land on the price line or the
+           sub-headline whichever way it flips, and the tour band repeats
+           the same sentence one screen down */
+        pointAt(heroBtn, 'Start here — 2 min');
+      }, 1400);
+    }
+  }
+
+  window.addEventListener('resize', function () { if (ringTarget) placeRing(); });
+  render();
+}());

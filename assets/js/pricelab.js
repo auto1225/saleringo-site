@@ -93,12 +93,41 @@
      so "crown" outranks an incidental "the". Deliberately not a fuzzy library
      and not a model: an owner can read this rule in one sentence and predict
      what it will do, which is the point of showing it at all. */
+  /* Words that carry no meaning about WHICH line is being asked for. The old
+     filter only skipped words under three letters, so "and", "the", "can" and
+     "you" all scored — and because matching was a raw substring, "can" also
+     matched "root canal". The result was that "Is there parking and is it
+     free?" quoted a check-up, and "Can I pay in instalments?" quoted a root
+     canal, each under a READY TO SEND badge. That is precisely the borrowing
+     the section beneath the widget promises never happens. */
+  var STOP = (' a an and any are as at be but by can could do does for from get ' +
+    'give got had has have how i if in into is it its just me my no not of off ' +
+    'on or our out please she that the their them then there these they this ' +
+    'those to too us was we were what when where which who why will with would ' +
+    'you your yours does did done also much many about ').split(' ');
+
+  function isStop(w) { return STOP.indexOf(w) >= 0; }
+
+  /* Whole-word match only. "can" must not match "canal", "own" must not match
+     "crown". A trailing-s/es plural still counts, because "crowns" is the same
+     line as "crown". */
+  function hasWord(hay, w) {
+    var i = hay.indexOf(w);
+    while (i >= 0) {
+      var before = i === 0 ? ' ' : hay.charAt(i - 1);
+      var after  = hay.charAt(i + w.length) || ' ';
+      if (!/[a-z0-9]/.test(before) && !/[a-z0-9]/.test(after)) return true;
+      i = hay.indexOf(w, i + 1);
+    }
+    return false;
+  }
+
   function score(item, words) {
     var hay = item.key, s = 0;
     words.forEach(function (w) {
-      if (w.length < 3) return;
-      if (hay.indexOf(w) >= 0) s += w.length;
-      else if (w.length > 4 && hay.indexOf(w.slice(0, w.length - 1)) >= 0) s += w.length - 2;
+      if (w.length < 3 || isStop(w)) return;
+      if (hasWord(hay, w)) s += w.length;
+      else if (w.length > 4 && hasWord(hay, w.slice(0, w.length - 1))) s += w.length - 2;
     });
     return s;
   }
@@ -136,7 +165,9 @@
     var words  = q.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
     var ranked = items
       .map(function (i) { return { i: i, s: score(i, words) }; })
-      .filter(function (r) { return r.s > 0; })
+      /* one short incidental word is not a match — the question has to name
+         the line, not merely share a syllable with it */
+      .filter(function (r) { return r.s >= 4; })
       .sort(function (a, b) { return b.s - a.s; });
 
     /* Nothing in the list covers the question. This branch has to stay: an

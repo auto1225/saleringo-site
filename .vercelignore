@@ -1,0 +1,5 @@
+# Internal SVG scene library — a development reference, not a page. It was being
+# served publicly at 200 OK with zero inbound links. Kept in the repo, kept out
+# of production.
+assets/svg-scenes.html
+DEV_SPEC.md

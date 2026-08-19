@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Saleringo — SVG Scene Library (internal)</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/scenes.css">
+<style>
+  body{padding:60px 0;}
+  .lab{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);margin:60px 0 14px;}
+  .note{font-size:12.5px;color:var(--tx3);margin-bottom:18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 style="font-family:'Space Grotesk';font-size:34px;color:#fff;">SVG scene library</h1>
+  <p class="note">Copy the whole <code>&lt;svg&gt;</code> block into a page. Wrap in
+    <code>&lt;div class="scene-frame"&gt;</code>. IDs are namespaced per scene — if you use the same scene twice on
+    one page, suffix the ids (e.g. <code>nhSky2</code>).</p>
+
+<!-- ══════════ SCENE 1 · NIGHT HOUSE (Home Services) ══════════ -->
+<div class="lab">scene-night-house — home services, after-hours call</div>
+<div class="scene-frame">
+<svg viewBox="0 0 1000 600" role="img" aria-label="A suburban house at night with one lit window while a call comes in">
+  <defs>
+    <linearGradient id="nhSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040A16"/><stop offset=".5" stop-color="#0A1A31"/><stop offset="1" stop-color="#16324F"/>
+    </linearGradient>
+    <radialGradient id="nhMoonG"><stop offset="0" stop-color="#DCE9FF" stop-opacity=".55"/><stop offset="1" stop-color="#DCE9FF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="nhWin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE0AE"/><stop offset="1" stop-color="#F2A254"/></linearGradient>
+    <radialGradient id="nhWinG"><stop offset="0" stop-color="#FFC178" stop-opacity=".55"/><stop offset="1" stop-color="#FFC178" stop-opacity="0"/></radialGradient>
+    <linearGradient id="nhRoof" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22374F"/><stop offset="1" stop-color="#12202F"/></linearGradient>
+    <linearGradient id="nhBody" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B2C40"/><stop offset="1" stop-color="#101C2A"/></linearGradient>
+    <linearGradient id="nhGround" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A29"/><stop offset="1" stop-color="#050D16"/></linearGradient>
+    <radialGradient id="nhRing"><stop offset="0" stop-color="#17BDBD" stop-opacity=".45"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#nhSky)"/>
+  <g fill="#EAF2FF" opacity=".7">
+    <circle cx="90" cy="60" r="1.5"/><circle cx="190" cy="120" r="1"/><circle cx="300" cy="52" r="1.2"/>
+    <circle cx="420" cy="96" r="1"/><circle cx="540" cy="44" r="1.4"/><circle cx="640" cy="118" r="1"/>
+    <circle cx="760" cy="66" r="1.2"/><circle cx="900" cy="140" r="1"/><circle cx="960" cy="52" r="1.5"/>
+    <circle cx="140" cy="190" r="1"/><circle cx="360" cy="176" r="1.1"/><circle cx="700" cy="196" r="1"/>
+  </g>
+  <circle cx="812" cy="118" r="130" fill="url(#nhMoonG)"/>
+  <circle cx="812" cy="118" r="36" fill="#E9F1FF" opacity=".92"/>
+  <circle cx="826" cy="106" r="30" fill="#0A1A31" opacity=".55"/>
+  <!-- distant treeline -->
+  <path d="M0 430 L60 392 L96 430 L150 380 L196 430 L250 400 L300 430 L1000 430 L1000 600 L0 600 Z" fill="#08131F" opacity=".85"/>
+  <!-- ground -->
+  <path d="M0 452 Q500 424 1000 452 L1000 600 L0 600 Z" fill="url(#nhGround)"/>
+  <!-- house glow on lawn -->
+  <ellipse cx="470" cy="512" rx="230" ry="46" fill="url(#nhWinG)" opacity=".5"/>
+  <!-- house -->
+  <g>
+    <path d="M300 300 L470 196 L640 300 Z" fill="url(#nhRoof)"/>
+    <rect x="330" y="300" width="280" height="182" fill="url(#nhBody)"/>
+    <rect x="330" y="300" width="280" height="5" fill="#2B4055" opacity=".7"/>
+    <!-- lit window -->
+    <rect x="366" y="336" width="86" height="70" rx="4" fill="url(#nhWin)"/>
+    <path d="M409 336 V406 M366 371 H452" stroke="#0E1B28" stroke-width="4" opacity=".55"/>
+    <circle cx="409" cy="371" r="86" fill="url(#nhWinG)"/>
+    <!-- dark window -->
+    <rect x="500" y="336" width="86" height="70" rx="4" fill="#0C1826" stroke="#26394E" stroke-width="2"/>
+    <path d="M543 336 V406 M500 371 H586" stroke="#26394E" stroke-width="3"/>
+    <!-- door -->
+    <rect x="440" y="418" width="62" height="64" rx="3" fill="#0E1C2B" stroke="#2B4055" stroke-width="2"/>
+    <circle cx="492" cy="452" r="3" fill="#F2A254"/>
+  </g>
+  <!-- AC condenser unit -->
+  <g transform="translate(660,404)">
+    <rect width="86" height="78" rx="6" fill="#152436" stroke="#2B4055" stroke-width="2"/>
+    <circle cx="43" cy="39" r="24" fill="none" stroke="#3A5570" stroke-width="3"/>
+    <path d="M43 20 A19 19 0 0 1 62 39" stroke="#D96A5E" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <rect x="12" y="66" width="62" height="4" rx="2" fill="#2B4055"/>
+    <text x="43" y="-10" font-family="Space Grotesk,sans-serif" font-size="15" fill="#E58C81" text-anchor="middle" font-weight="700">✕ DEAD</text>
+  </g>
+  <!-- incoming call pulse -->
+  <g transform="translate(184,300)">
+    <circle cx="0" cy="0" r="96" fill="url(#nhRing)"/>
+    <circle cx="0" cy="0" r="46" fill="none" stroke="#17BDBD" stroke-width="1.5" opacity=".55"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#17BDBD" stroke-width="1" opacity=".3"/>
+    <rect x="-30" y="-52" width="60" height="104" rx="12" fill="#0B1B2C" stroke="#17BDBD" stroke-width="2"/>
+    <rect x="-22" y="-42" width="44" height="76" rx="4" fill="#0F2A38"/>
+    <path d="M-9 -18 c0-3 3-6 6-6 h4 c3 0 5 2 6 5 l1 6 c0 3-1 5-4 6 l-3 1 c2 6 6 10 12 12 l1-3 c1-3 3-4 6-4 l6 1 c3 1 5 3 5 6 v4 c0 3-3 6-6 6 -18 0-34-16-34-34 z" fill="#17BDBD"/>
+    <text x="0" y="72" font-family="Space Grotesk,sans-serif" font-size="15" fill="#17BDBD" text-anchor="middle" font-weight="700">2:47 AM</text>
+  </g>
+</svg>
+</div>
+
+<!-- ══════════ SCENE 2 · HOTEL DUSK (Stays) ══════════ -->
+<div class="lab">scene-hotel-dusk — boutique stays, late arrival</div>
+<div class="scene-frame">
+<svg viewBox="0 0 1000 600" role="img" aria-label="A boutique hotel facade at dusk with warm lit windows">
+  <defs>
+    <linearGradient id="hdSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#120B22"/><stop offset=".45" stop-color="#2A2140"/><stop offset=".78" stop-color="#6B3B4E"/><stop offset="1" stop-color="#A85B47"/>
+    </linearGradient>
+    <linearGradient id="hdBuild" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1A1526"/><stop offset="1" stop-color="#0E0B16"/></linearGradient>
+    <linearGradient id="hdWin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE2B0"/><stop offset="1" stop-color="#F0A05B"/></linearGradient>
+    <radialGradient id="hdLamp"><stop offset="0" stop-color="#FFCB8A" stop-opacity=".65"/><stop offset="1" stop-color="#FFCB8A" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#hdSky)"/>
+  <circle cx="180" cy="150" r="2" fill="#fff" opacity=".7"/><circle cx="320" cy="90" r="1.5" fill="#fff" opacity=".6"/>
+  <circle cx="620" cy="70" r="1.8" fill="#fff" opacity=".5"/><circle cx="880" cy="130" r="1.4" fill="#fff" opacity=".6"/>
+  <!-- distant skyline -->
+  <g fill="#150F20" opacity=".8">
+    <rect x="0" y="330" width="90" height="270"/><rect x="96" y="368" width="70" height="232"/>
+    <rect x="840" y="352" width="80" height="248"/><rect x="926" y="316" width="74" height="284"/>
+  </g>
+  <!-- hotel body -->
+  <rect x="210" y="200" width="580" height="400" fill="url(#hdBuild)"/>
+  <rect x="196" y="186" width="608" height="22" rx="4" fill="#241B33"/>
+  <!-- window grid -->
+  <g>
+    <g fill="url(#hdWin)">
+      <rect x="252" y="238" width="52" height="60" rx="3"/><rect x="420" y="238" width="52" height="60" rx="3"/>
+      <rect x="588" y="238" width="52" height="60" rx="3"/><rect x="336" y="330" width="52" height="60" rx="3"/>
+      <rect x="504" y="330" width="52" height="60" rx="3"/><rect x="672" y="330" width="52" height="60" rx="3"/>
+      <rect x="252" y="422" width="52" height="60" rx="3"/><rect x="588" y="422" width="52" height="60" rx="3"/>
+    </g>
+    <g fill="#0B0814" stroke="#2E2440" stroke-width="1.5">
+      <rect x="336" y="238" width="52" height="60" rx="3"/><rect x="504" y="238" width="52" height="60" rx="3"/>
+      <rect x="672" y="238" width="52" height="60" rx="3"/><rect x="252" y="330" width="52" height="60" rx="3"/>
+      <rect x="420" y="330" width="52" height="60" rx="3"/><rect x="588" y="330" width="52" height="60" rx="3"/>
+      <rect x="336" y="422" width="52" height="60" rx="3"/><rect x="504" y="422" width="52" height="60" rx="3"/>
+      <rect x="672" y="422" width="52" height="60" rx="3"/>
+    </g>
+  </g>
+  <!-- entrance canopy + lamp glow -->
+  <ellipse cx="500" cy="560" rx="200" ry="52" fill="url(#hdLamp)"/>
+  <rect x="424" y="496" width="152" height="104" fill="#0A0712"/>
+  <rect x="410" y="484" width="180" height="16" rx="4" fill="#3A2B4E"/>
+  <rect x="452" y="520" width="96" height="80" rx="2" fill="url(#hdWin)" opacity=".85"/>
+  <circle cx="404" cy="500" r="7" fill="#FFCB8A"/><circle cx="596" cy="500" r="7" fill="#FFCB8A"/>
+  <!-- palm silhouettes -->
+  <g stroke="#0C0914" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M120 600 V500"/><path d="M120 500 q-36-26-62-16"/><path d="M120 500 q34-30 66-18"/><path d="M120 500 q-10-38 6-58"/>
+    <path d="M886 600 V516"/><path d="M886 516 q-32-22-56-14"/><path d="M886 516 q30-26 58-16"/>
+  </g>
+  <!-- 11 PM arrival chip -->
+  <g transform="translate(760,436)">
+    <rect x="-96" y="-30" width="192" height="60" rx="16" fill="rgba(8,7,18,.86)" stroke="#17BDBD" stroke-width="1.5"/>
+    <circle cx="-64" cy="0" r="12" fill="#34D186" opacity=".9"/>
+    <text x="-44" y="-4" font-family="Plus Jakarta Sans,sans-serif" font-size="14" fill="#fff" font-weight="700">Arriving 11 PM</text>
+    <text x="-44" y="16" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#94A2B8">Room held · answered</text>
+  </g>
+</svg>
+</div>
+
+<!-- ══════════ SCENE 3 · VENUE HALL (Wedding & Events) ══════════ -->
+<div class="lab">scene-venue-hall — wedding &amp; event venues</div>
+<div class="scene-frame">
+<svg viewBox="0 0 1000 600" role="img" aria-label="An empty banquet hall lit for an evening event">
+  <defs>
+    <linearGradient id="vhWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141026"/><stop offset="1" stop-color="#241B33"/></linearGradient>
+    <linearGradient id="vhFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2039"/><stop offset="1" stop-color="#120D1D"/></linearGradient>
+    <radialGradient id="vhChand"><stop offset="0" stop-color="#FFE3B0" stop-opacity=".85"/><stop offset="1" stop-color="#FFE3B0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="vhArch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17BDBD" stop-opacity=".5"/><stop offset="1" stop-color="#17BDBD" stop-opacity=".05"/></linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#vhWall)"/>
+  <rect y="430" width="1000" height="170" fill="url(#vhFloor)"/>
+  <!-- arched windows -->
+  <g>
+    <path d="M120 430 V250 a60 60 0 0 1 120 0 V430 Z" fill="url(#vhArch)" stroke="#3B2F52" stroke-width="2"/>
+    <path d="M760 430 V250 a60 60 0 0 1 120 0 V430 Z" fill="url(#vhArch)" stroke="#3B2F52" stroke-width="2"/>
+  </g>
+  <!-- chandeliers -->
+  <g>
+    <path d="M340 0 V96" stroke="#4A3A63" stroke-width="2"/>
+    <circle cx="340" cy="120" r="80" fill="url(#vhChand)"/>
+    <path d="M304 96 h72 l-14 34 h-44 z" fill="#FFD9A0" opacity=".85"/>
+    <circle cx="316" cy="146" r="5" fill="#FFE3B0"/><circle cx="340" cy="156" r="5" fill="#FFE3B0"/><circle cx="364" cy="146" r="5" fill="#FFE3B0"/>
+  </g>
+  <g>
+    <path d="M660 0 V96" stroke="#4A3A63" stroke-width="2"/>
+    <circle cx="660" cy="120" r="80" fill="url(#vhChand)"/>
+    <path d="M624 96 h72 l-14 34 h-44 z" fill="#FFD9A0" opacity=".85"/>
+    <circle cx="636" cy="146" r="5" fill="#FFE3B0"/><circle cx="660" cy="156" r="5" fill="#FFE3B0"/><circle cx="684" cy="146" r="5" fill="#FFE3B0"/>
+  </g>
+  <!-- round tables -->
+  <g>
+    <ellipse cx="300" cy="470" rx="86" ry="30" fill="#3A2E4E"/><ellipse cx="300" cy="462" rx="86" ry="30" fill="#EDE3F2" opacity=".9"/>
+    <ellipse cx="300" cy="458" rx="20" ry="8" fill="#17BDBD" opacity=".5"/>
+    <ellipse cx="700" cy="470" rx="86" ry="30" fill="#3A2E4E"/><ellipse cx="700" cy="462" rx="86" ry="30" fill="#EDE3F2" opacity=".9"/>
+    <ellipse cx="700" cy="458" rx="20" ry="8" fill="#17BDBD" opacity=".5"/>
+    <ellipse cx="500" cy="546" rx="104" ry="34" fill="#3A2E4E"/><ellipse cx="500" cy="536" rx="104" ry="34" fill="#F4ECF7" opacity=".95"/>
+    <ellipse cx="500" cy="532" rx="24" ry="9" fill="#17BDBD" opacity=".5"/>
+  </g>
+  <!-- string lights -->
+  <path d="M0 130 Q250 210 500 150 Q750 90 1000 170" stroke="#4A3A63" stroke-width="1.5" fill="none"/>
+  <g fill="#FFE3B0">
+    <circle cx="140" cy="176" r="4"/><circle cx="290" cy="192" r="4"/><circle cx="440" cy="164" r="4"/>
+    <circle cx="600" cy="132" r="4"/><circle cx="760" cy="126" r="4"/><circle cx="900" cy="150" r="4"/>
+  </g>
+  <!-- inquiry chip -->
+  <g transform="translate(500,250)">
+    <rect x="-150" y="-42" width="300" height="84" rx="18" fill="rgba(10,8,20,.86)" stroke="#17BDBD" stroke-width="1.5"/>
+    <text x="-124" y="-12" font-family="Plus Jakarta Sans,sans-serif" font-size="14" fill="#fff" font-weight="700">"120 guests, October?"</text>
+    <text x="-124" y="12" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#94A2B8">Answered · tour held Sat 11:00</text>
+    <circle cx="-136" cy="26" r="4" fill="#17BDBD"/>
+    <text x="-124" y="30" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#17BDBD" font-weight="700">Verified · 2 sources</text>
+  </g>
+</svg>
+</div>
+
+<!-- ══════════ SCENE 4 · CLINIC DESK (Clinics / Dental) ══════════ -->
+<div class="lab">scene-clinic-desk — clinic reception, empty desk</div>
+<div class="scene-frame light">
+<svg viewBox="0 0 1000 600" role="img" aria-label="A clinic reception desk after hours with the phone ringing">
+  <defs>
+    <linearGradient id="cdWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFF5F8"/><stop offset="1" stop-color="#DDE8EE"/></linearGradient>
+    <linearGradient id="cdDesk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9E4EB"/></linearGradient>
+    <radialGradient id="cdGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".28"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cdPlant" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3E9E7C"/><stop offset="1" stop-color="#1F6B52"/></linearGradient>
+  </defs>
+  <rect width="1000" height="600" fill="url(#cdWall)"/>
+  <!-- back wall panel + logo mark -->
+  <rect x="180" y="90" width="640" height="250" rx="10" fill="#F7FBFD"/>
+  <circle cx="500" cy="180" r="34" fill="#17BDBD" opacity=".18"/>
+  <path d="M500 160 V200 M480 180 H520" stroke="#0FA3A3" stroke-width="9" stroke-linecap="round"/>
+  <text x="500" y="248" font-family="Space Grotesk,sans-serif" font-size="19" fill="#5A6779" text-anchor="middle" letter-spacing="4">CLINIC</text>
+  <!-- floor -->
+  <rect y="470" width="1000" height="130" fill="#C9D8E1"/>
+  <path d="M0 470 H1000" stroke="#B4C6D2" stroke-width="2"/>
+  <!-- empty chair (behind the desk) -->
+  <g transform="translate(430,372)" opacity=".55">
+    <rect x="-34" y="-56" width="68" height="48" rx="10" fill="#9DB1C0"/>
+    <rect x="-38" y="-6" width="76" height="16" rx="8" fill="#8FA4B4"/>
+    <rect x="-6" y="10" width="12" height="52" fill="#8FA4B4"/>
+    <path d="M-34 62 h68" stroke="#8FA4B4" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- reception desk (occludes the chair) -->
+  <path d="M240 386 h520 v84 h-520 z" fill="url(#cdDesk)"/>
+  <rect x="240" y="372" width="520" height="18" rx="4" fill="#EAF2F6"/>
+  <rect x="240" y="452" width="520" height="18" fill="#B9CAD6"/>
+  <!-- monitor on the desk -->
+  <g transform="translate(624,300)">
+    <rect width="120" height="72" rx="6" fill="#0B1B33"/>
+    <rect x="8" y="8" width="104" height="56" rx="3" fill="#12294A"/>
+    <rect x="16" y="18" width="60" height="6" rx="3" fill="#17BDBD" opacity=".8"/>
+    <rect x="16" y="32" width="80" height="5" rx="2.5" fill="#3E5D82"/>
+    <rect x="16" y="44" width="46" height="5" rx="2.5" fill="#3E5D82"/>
+  </g>
+  <!-- plant -->
+  <g transform="translate(858,392)">
+    <path d="M-26 78 h52 l-8 -56 h-36 z" fill="#B9CAD6"/>
+    <path d="M0 22 q-40 -30 -30 -74 q30 12 30 74" fill="url(#cdPlant)"/>
+    <path d="M0 22 q40 -26 32 -70 q-32 14 -32 70" fill="url(#cdPlant)" opacity=".85"/>
+    <path d="M0 22 q6 -46 -4 -78 q-14 40 4 78" fill="url(#cdPlant)" opacity=".7"/>
+  </g>
+  <!-- ringing phone sitting on the desk top -->
+  <g transform="translate(322,338)">
+    <circle cx="0" cy="10" r="92" fill="url(#cdGlow)"/>
+    <rect x="-34" y="-2" width="68" height="36" rx="6" fill="#0B1B33"/>
+    <rect x="-24" y="-20" width="48" height="22" rx="10" fill="#0B1B33"/>
+    <rect x="-26" y="6" width="52" height="20" rx="3" fill="#17BDBD" opacity=".85"/>
+    <g stroke="#0FA3A3" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M-50 -16 q-10 -10 -8 -24"/><path d="M50 -16 q10 -10 8 -24"/>
+      <path d="M-64 -10 q-16 -16 -12 -38" opacity=".5"/><path d="M64 -10 q16 -16 12 -38" opacity=".5"/>
+    </g>
+  </g>
+  <!-- captions, clear of the furniture -->
+  <text x="322" y="452" font-family="Space Grotesk,sans-serif" font-size="15" fill="#0FA3A3" text-anchor="middle" font-weight="700">Answered anyway</text>
+  <text x="500" y="556" font-family="Plus Jakarta Sans,sans-serif" font-size="14" fill="#7C8DA0" text-anchor="middle" font-weight="600">Nobody at the desk. The phone still gets picked up.</text>
+</svg>
+</div>
+
+<!-- ══════════ SCENE 5 · WORLD ARCS (Global / cross-border) ══════════ -->
+<div class="lab">scene-world-arcs — global coverage, time zones</div>
+<div class="scene-frame">
+<svg viewBox="0 0 1000 520" role="img" aria-label="A dotted world map with conversation arcs between regions">
+  <defs>
+    <radialGradient id="waGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".9"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+    <linearGradient id="waArc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#17BDBD" stop-opacity=".1"/><stop offset=".5" stop-color="#17BDBD" stop-opacity=".9"/><stop offset="1" stop-color="#5B9DFF" stop-opacity=".1"/></linearGradient>
+    <pattern id="waDots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#2A4763"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="520" fill="#050B16"/>
+  <!-- continents as dotted blocks -->
+  <g fill="url(#waDots)">
+    <path d="M120 130 q60-40 130-26 q60 12 84 54 q10 40-24 66 q-50 34-110 22 q-60-14-84-54 q-14-36 4-62 z"/>
+    <path d="M250 300 q40-16 66 10 q26 28 12 78 q-14 52-48 74 q-30 18-42-16 q-14-44 0-96 q8-34 12-50 z"/>
+    <path d="M470 96 q70-34 150-16 q60 14 78 50 q14 32-18 52 q-56 32-124 22 q-64-10-90-48 q-14-32 4-60 z"/>
+    <path d="M470 210 q54-18 92 10 q34 26 26 78 q-8 54-44 78 q-34 22-52-12 q-20-42-30-92 q-6-38 8-62 z"/>
+    <path d="M640 200 q80-24 150 0 q64 22 86 66 q16 34-16 54 q-64 34-140 18 q-72-16-96-56 q-14-34 16-82 z"/>
+    <path d="M790 380 q42-14 68 10 q24 22 12 52 q-14 32-48 32 q-34 0-44-30 q-8-34 12-64 z"/>
+  </g>
+  <!-- arcs -->
+  <g fill="none" stroke="url(#waArc)" stroke-width="2">
+    <path d="M210 190 Q420 40 700 250"/>
+    <path d="M700 250 Q620 420 330 400"/>
+    <path d="M210 190 Q500 300 840 420"/>
+    <path d="M540 170 Q700 90 850 260"/>
+  </g>
+  <!-- city nodes -->
+  <g>
+    <g transform="translate(210,190)"><circle r="26" fill="url(#waGlow)" opacity=".5"/><circle r="5" fill="#17BDBD"/>
+      <text x="12" y="-10" font-family="Space Grotesk,sans-serif" font-size="11" fill="#94A2B8">DALLAS · 2:47 AM</text></g>
+    <g transform="translate(540,170)"><circle r="26" fill="url(#waGlow)" opacity=".5"/><circle r="5" fill="#17BDBD"/>
+      <text x="12" y="-10" font-family="Space Grotesk,sans-serif" font-size="11" fill="#94A2B8">LONDON · 8:47 AM</text></g>
+    <g transform="translate(700,250)"><circle r="26" fill="url(#waGlow)" opacity=".5"/><circle r="5" fill="#17BDBD"/>
+      <text x="12" y="-10" font-family="Space Grotesk,sans-serif" font-size="11" fill="#94A2B8">DUBAI · 11:47 AM</text></g>
+    <g transform="translate(850,260)"><circle r="26" fill="url(#waGlow)" opacity=".5"/><circle r="5" fill="#17BDBD"/>
+      <text x="12" y="-10" font-family="Space Grotesk,sans-serif" font-size="11" fill="#94A2B8">SINGAPORE · 3:47 PM</text></g>
+    <g transform="translate(840,420)"><circle r="26" fill="url(#waGlow)" opacity=".5"/><circle r="5" fill="#17BDBD"/>
+      <text x="12" y="-10" font-family="Space Grotesk,sans-serif" font-size="11" fill="#94A2B8">SYDNEY · 5:47 PM</text></g>
+    <g transform="translate(330,400)"><circle r="26" fill="url(#waGlow)" opacity=".5"/><circle r="5" fill="#17BDBD"/>
+      <text x="12" y="-10" font-family="Space Grotesk,sans-serif" font-size="11" fill="#94A2B8">SÃO PAULO · 5:47 AM</text></g>
+  </g>
+  <text x="500" y="496" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#5E6C82" text-anchor="middle" font-weight="600">Somewhere, it is always business hours.</text>
+</svg>
+</div>
+
+<!-- ══════════ SCENE 6 · SKYLINE CALLS (hero / general) ══════════ -->
+<div class="lab">scene-skyline — night city, inbound conversations</div>
+<div class="scene-frame">
+<svg viewBox="0 0 1000 480" role="img" aria-label="A night skyline with inbound conversation signals">
+  <defs>
+    <linearGradient id="skSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04080F"/><stop offset="1" stop-color="#0D2038"/></linearGradient>
+    <linearGradient id="skB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16283D"/><stop offset="1" stop-color="#081422"/></linearGradient>
+    <radialGradient id="skHalo"><stop offset="0" stop-color="#17BDBD" stop-opacity=".5"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1000" height="480" fill="url(#skSky)"/>
+  <g fill="#EAF2FF" opacity=".55">
+    <circle cx="140" cy="50" r="1.2"/><circle cx="380" cy="86" r="1"/><circle cx="700" cy="42" r="1.3"/><circle cx="900" cy="96" r="1"/>
+  </g>
+  <!-- buildings -->
+  <g fill="url(#skB)">
+    <rect x="40" y="250" width="90" height="230"/><rect x="146" y="190" width="72" height="290"/>
+    <rect x="234" y="290" width="104" height="190"/><rect x="354" y="160" width="86" height="320"/>
+    <rect x="456" y="240" width="120" height="240"/><rect x="592" y="200" width="76" height="280"/>
+    <rect x="684" y="280" width="110" height="200"/><rect x="810" y="170" width="80" height="310"/>
+    <rect x="906" y="260" width="84" height="220"/>
+  </g>
+  <!-- lit windows -->
+  <g fill="#F2C480" opacity=".85">
+    <rect x="58" y="272" width="10" height="14"/><rect x="82" y="300" width="10" height="14"/><rect x="106" y="272" width="10" height="14"/>
+    <rect x="164" y="214" width="10" height="14"/><rect x="188" y="250" width="10" height="14"/><rect x="164" y="300" width="10" height="14"/>
+    <rect x="256" y="316" width="10" height="14"/><rect x="300" y="344" width="10" height="14"/>
+    <rect x="372" y="188" width="10" height="14"/><rect x="404" y="230" width="10" height="14"/><rect x="372" y="290" width="10" height="14"/>
+    <rect x="480" y="270" width="10" height="14"/><rect x="524" y="306" width="10" height="14"/><rect x="480" y="350" width="10" height="14"/>
+    <rect x="610" y="230" width="10" height="14"/><rect x="638" y="272" width="10" height="14"/>
+    <rect x="704" y="308" width="10" height="14"/><rect x="756" y="340" width="10" height="14"/>
+    <rect x="828" y="200" width="10" height="14"/><rect x="860" y="248" width="10" height="14"/><rect x="828" y="308" width="10" height="14"/>
+    <rect x="926" y="288" width="10" height="14"/><rect x="956" y="330" width="10" height="14"/>
+  </g>
+  <!-- inbound signals -->
+  <g>
+    <g transform="translate(190,120)"><circle r="34" fill="url(#skHalo)"/>
+      <rect x="-42" y="-16" width="84" height="32" rx="16" fill="rgba(8,18,31,.9)" stroke="#17BDBD" stroke-width="1.2"/>
+      <text x="0" y="5" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#17BDBD" text-anchor="middle" font-weight="800">CALL</text></g>
+    <g transform="translate(500,90)"><circle r="34" fill="url(#skHalo)"/>
+      <rect x="-46" y="-16" width="92" height="32" rx="16" fill="rgba(8,18,31,.9)" stroke="#5B9DFF" stroke-width="1.2"/>
+      <text x="0" y="5" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#5B9DFF" text-anchor="middle" font-weight="800">WEB CHAT</text></g>
+    <g transform="translate(812,124)"><circle r="34" fill="url(#skHalo)"/>
+      <rect x="-52" y="-16" width="104" height="32" rx="16" fill="rgba(8,18,31,.9)" stroke="#34D186" stroke-width="1.2"/>
+      <text x="0" y="5" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#34D186" text-anchor="middle" font-weight="800">WHATSAPP</text></g>
+  </g>
+  <g stroke="#17BDBD" stroke-width="1.2" fill="none" opacity=".45" stroke-dasharray="4 6">
+    <path d="M190 152 V250"/><path d="M500 122 V240"/><path d="M812 156 V262"/>
+  </g>
+</svg>
+</div>
+
+<!-- ══════════ SCENE 7 · INBOX DEVICE STACK (product proof) ══════════ -->
+<div class="lab">scene-device-stack — product on desktop + phone</div>
+<div class="scene-frame">
+<svg viewBox="0 0 1000 560" role="img" aria-label="The Saleringo inbox shown on a laptop with a phone beside it">
+  <defs>
+    <linearGradient id="dsBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08121F"/><stop offset="1" stop-color="#0D2038"/></linearGradient>
+    <linearGradient id="dsScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF3F8"/></linearGradient>
+    <radialGradient id="dsGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".35"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1000" height="560" fill="url(#dsBg)"/>
+  <ellipse cx="470" cy="300" rx="360" ry="220" fill="url(#dsGlow)"/>
+  <!-- laptop -->
+  <g transform="translate(150,90)">
+    <rect width="600" height="368" rx="14" fill="#0B1B2C" stroke="#2A4763" stroke-width="2"/>
+    <rect x="14" y="14" width="572" height="340" rx="8" fill="url(#dsScreen)"/>
+    <!-- app chrome -->
+    <rect x="14" y="14" width="572" height="34" rx="8" fill="#F4F7FA"/>
+    <circle cx="36" cy="31" r="4.5" fill="#D96A5E"/><circle cx="52" cy="31" r="4.5" fill="#E8C34C"/><circle cx="68" cy="31" r="4.5" fill="#5FC48A"/>
+    <rect x="200" y="23" width="200" height="16" rx="8" fill="#E4EBF2"/>
+    <!-- sidebar -->
+    <rect x="14" y="48" width="120" height="306" fill="#F7FAFC"/>
+    <rect x="28" y="66" width="70" height="8" rx="4" fill="#C9D6E2"/>
+    <rect x="28" y="92" width="92" height="22" rx="6" fill="#DFF3F3"/><rect x="36" y="99" width="52" height="8" rx="4" fill="#0FA3A3"/>
+    <rect x="28" y="124" width="80" height="8" rx="4" fill="#D5DFE9"/>
+    <rect x="28" y="148" width="86" height="8" rx="4" fill="#D5DFE9"/>
+    <rect x="28" y="172" width="72" height="8" rx="4" fill="#D5DFE9"/>
+    <!-- conversation list -->
+    <g>
+      <rect x="146" y="60" width="240" height="60" rx="8" fill="#F0F7F8"/>
+      <circle cx="172" cy="90" r="14" fill="#24518F"/><text x="172" y="94" font-size="10" fill="#fff" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">MR</text>
+      <rect x="196" y="76" width="110" height="9" rx="4.5" fill="#0B1B33"/>
+      <rect x="196" y="94" width="160" height="7" rx="3.5" fill="#93A3B4"/>
+      <rect x="340" y="76" width="34" height="14" rx="7" fill="#DFF3F3"/>
+      <rect x="146" y="128" width="240" height="60" rx="8" fill="#FFFFFF"/>
+      <circle cx="172" cy="158" r="14" fill="#7A5CC7"/><text x="172" y="162" font-size="10" fill="#fff" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">EJ</text>
+      <rect x="196" y="144" width="120" height="9" rx="4.5" fill="#0B1B33"/>
+      <rect x="196" y="162" width="150" height="7" rx="3.5" fill="#93A3B4"/>
+      <rect x="336" y="144" width="42" height="14" rx="7" fill="#FAF0E1"/>
+      <rect x="146" y="196" width="240" height="60" rx="8" fill="#FFFFFF"/>
+      <circle cx="172" cy="226" r="14" fill="#0FA3A3"/><text x="172" y="230" font-size="10" fill="#fff" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">LP</text>
+      <rect x="196" y="212" width="104" height="9" rx="4.5" fill="#0B1B33"/>
+      <rect x="196" y="230" width="146" height="7" rx="3.5" fill="#93A3B4"/>
+      <rect x="340" y="212" width="34" height="14" rx="7" fill="#DFF3F3"/>
+    </g>
+    <!-- right detail -->
+    <rect x="398" y="60" width="174" height="280" rx="8" fill="#FBFDFE" stroke="#E4EBF2"/>
+    <rect x="414" y="78" width="90" height="10" rx="5" fill="#0B1B33"/>
+    <rect x="414" y="102" width="140" height="7" rx="3.5" fill="#B9C6D3"/>
+    <rect x="414" y="118" width="120" height="7" rx="3.5" fill="#B9C6D3"/>
+    <rect x="414" y="146" width="142" height="34" rx="8" fill="#EFF7F7"/>
+    <rect x="426" y="158" width="80" height="10" rx="5" fill="#0FA3A3"/>
+    <rect x="414" y="196" width="142" height="34" rx="8" fill="#F5F8FB"/>
+    <rect x="426" y="208" width="96" height="10" rx="5" fill="#8FA0B2"/>
+    <rect x="414" y="252" width="142" height="30" rx="15" fill="#0FA3A3"/>
+    <text x="485" y="272" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">Take over</text>
+    <!-- base -->
+    <rect x="-40" y="368" width="680" height="16" rx="8" fill="#16324B"/>
+  </g>
+  <!-- phone -->
+  <g transform="translate(766,178)">
+    <rect width="160" height="300" rx="26" fill="#0B1B2C" stroke="#2A4763" stroke-width="2"/>
+    <rect x="10" y="10" width="140" height="280" rx="20" fill="#0F2438"/>
+    <rect x="54" y="14" width="52" height="10" rx="5" fill="#08131F"/>
+    <rect x="24" y="46" width="70" height="8" rx="4" fill="#3E5D82"/>
+    <rect x="24" y="72" width="112" height="40" rx="10" fill="rgba(255,255,255,.08)"/>
+    <rect x="34" y="84" width="80" height="7" rx="3.5" fill="#8FA0B2"/>
+    <rect x="34" y="98" width="60" height="6" rx="3" fill="#5E6C82"/>
+    <rect x="34" y="124" width="112" height="44" rx="10" fill="rgba(23,189,189,.16)"/>
+    <rect x="44" y="138" width="84" height="7" rx="3.5" fill="#9BE7E7"/>
+    <rect x="44" y="152" width="64" height="6" rx="3" fill="#5FA9A9"/>
+    <rect x="24" y="180" width="112" height="40" rx="10" fill="rgba(255,255,255,.08)"/>
+    <rect x="34" y="192" width="76" height="7" rx="3.5" fill="#8FA0B2"/>
+    <rect x="34" y="206" width="52" height="6" rx="3" fill="#5E6C82"/>
+    <rect x="24" y="238" width="112" height="30" rx="15" fill="#17BDBD"/>
+    <text x="80" y="258" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#032222" text-anchor="middle" font-weight="800">Answered</text>
+  </g>
+</svg>
+</div>
+
+<p class="note" style="margin-top:80px;">End of library.</p>
+</div>
+</body>
+</html>

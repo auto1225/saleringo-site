@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex,nofollow">
-<!-- Review subdomain. The canonical tags below still point at the production
-     domain on purpose, so this copy never competes with it in search.
-     To make this the live site: delete this meta and the Disallow in robots.txt. -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The CRM Behind the Call — Bookings &amp; Quotes | Saleringo</title>
 <meta name="description" content="The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports — built for your trade.">
-<link rel="canonical" href="https://saleringo.com/en/platform.html">
+<link rel="canonical" href="https://claude.saleringo.com/en/platform.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://saleringo.com/en/platform.html">
+<meta property="og:url" content="https://claude.saleringo.com/en/platform.html">
 <meta property="og:title" content="The CRM Behind the Call — Booking, Quotes, Pipeline">
 <meta property="og:description" content="The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports — built for your trade.">
 <meta property="og:image" content="https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
@@ -26,16 +22,17 @@
 <link rel="alternate" hreflang="en" href="./platform.html">
 <link rel="alternate" hreflang="x-default" href="./platform.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "The CRM Behind the Call \u2014 Bookings & Quotes | Saleringo", "description": "The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports \u2014 built for your trade.", "url": "https://saleringo.com/en/platform.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "The CRM Behind the Call \u2014 Bookings & Quotes | Saleringo", "description": "The CRM behind the answering: pipeline, automatic booking, quotes from your own price list, customer records and revenue reports \u2014 built for your trade.", "url": "https://claude.saleringo.com/en/platform.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=4.4">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=4.4">
-<link rel="stylesheet" href="../assets/css/crm.css?v=4.4">
+<link rel="stylesheet" href="../assets/css/site.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/crm.css?v=11.3">
 <style>
   /* ── HERO: headline over a dark field, product window bleeding out the bottom ──
      Deliberately NOT the site's usual left-copy / right-scene hero — this page's
@@ -47,7 +44,7 @@
   .phero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.03;
     letter-spacing:-.042em;font-weight:600;color:#fff;margin-top:22px;}
   .phero h1 em{font-style:normal;color:var(--teal);}
-  .phero .sub{margin:22px auto 0;max-width:600px;font-size:16.5px;line-height:1.75;color:var(--tx2);font-weight:500;}
+  .phero .sub{margin:22px auto 0;max-width:600px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
   .phero .ctas{margin-top:30px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
   .herowin{margin-top:56px;position:relative;}
   .herowin::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:190px;
@@ -55,7 +52,7 @@
 
   .sechead{max-width:660px;}
   .sechead .h2{margin-top:20px;}
-  .sechead p{margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;}
+  .sechead p{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
   .sec-light .sechead p{color:var(--l-mut);}
 
   .duo{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
@@ -64,10 +61,10 @@
 
   .ptlist{margin-top:24px;}
   .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:14px;line-height:1.65;color:var(--tx2);font-weight:500;}
+    font-size:var(--fs-sm);line-height:1.65;color:var(--tx2);font-weight:500;}
   .ptlist li:last-child{border-bottom:0;}
   .ptlist li b{color:#fff;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:13px;padding-top:1px;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
   .sec-light .ptlist li{border-color:var(--l-hair);color:var(--l-mut);}
   .sec-light .ptlist li b{color:var(--l-ink);}
   .sec-light .ptlist li i{color:var(--teal-deep);}
@@ -76,34 +73,32 @@
   .packgrid.bento > *{min-width:0;}
   @media(max-width:900px){.packgrid{grid-template-columns:1fr;}}
   .pack{border:1px solid var(--l-hair);border-radius:16px;padding:22px;background:#fff;}
-  .pack h4{font-size:15px;color:var(--l-ink);letter-spacing:-.015em;}
+  .pack h4{font-size:var(--fs-body);color:var(--l-ink);letter-spacing:-.015em;}
   .pack .fields{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
-  .pack .fields span{font-size:10.5px;font-weight:700;letter-spacing:.02em;color:#4A5666;
+  .pack .fields span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:#4A5666;
     background:#F1F4F8;border-radius:6px;padding:4px 8px;}
   .pack .auto{margin-top:14px;padding-top:12px;border-top:1px dashed var(--l-hair);
-    font-size:12.5px;line-height:1.6;color:var(--l-mut);font-weight:500;}
+    font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:500;}
   .pack .auto b{color:var(--teal-deep);font-weight:800;}
 
-  .mockcap{margin-top:12px;font-size:11px;color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .sec-light .mockcap{color:#8A94A3;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .sec-light .mockcap{color:#656D78;}
 </style>
 </head>
 <body data-grade="trust">
 
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
   <span class="links">
-    <a href="./voice.html">AI Phone</a>
-    <a href="./webchat.html">Chatbot</a>
-    <a href="./whatsapp.html">WhatsApp</a>
-    <a href="./platform.html" aria-current="page" style="color:#fff;">Platform</a>
-    <a href="./industries.html">Industries</a>
-    <a href="./examples.html">Examples</a>
+    <a href="./platform.html">How it works</a>
+    <a href="./demo.html">See it work</a>
+    <a href="./industries.html">Your trade</a>
     <a href="./pricing.html">Pricing</a>
+    <a href="./security.html">Security</a>
   </span>
-  <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">✆</span><b data-tel-label>+82 70-5277-0820</b></a>
   <span class="sep"></span>
-  <a class="btn btn-white" href="./get-started.html">Get started<span class="cir">↗</span></a>
+  <a class="btn btn-white" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
   <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav></div>
 
@@ -115,14 +110,15 @@
   <div class="wrap">
     <div class="hcap">
       <span class="eyebrow"><i></i>The half nobody shows you</span>
-      <h1>Answering is the easy part.<br><em>Running the business</em> is the product.</h1>
+      <h1>Answering is the easy&nbsp;part.<br><em>Running the business</em> is the&nbsp;product.</h1>
       <p class="sub">Anyone can put a robot on your phone line. Saleringo turns that conversation into a
         booked appointment, a priced quote, a customer record and a revenue report — inside a CRM
         already shaped for your industry.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="./get-started.html">See it on your business<span class="cir">↗</span></a>
+        <a class="btn btn-teal" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
         <a class="btn btn-ghostd" href="./pricing.html">What it costs<span class="cir">↗</span></a>
       </div>
+      <p class="heroscroll"><a href="./index.html#start-here">New here? Start with the three-step tour &mdash; about two minutes&nbsp;&nbsp;&rarr;</a></p>
     </div>
 
     <div class="herowin reveal">
@@ -193,12 +189,12 @@
   <div class="wrap">
     <div class="sechead reveal" style="max-width:760px;">
       <span class="eyebrow"><i></i>What actually happens to an inquiry</span>
-      <h2 class="h2 onDark">A question came in.<br>Where did it go?</h2>
+      <h2 class="h2 onDark">A question came&nbsp;in.<br>Where did it&nbsp;go?</h2>
       <p>Most businesses lose money not because nobody answered, but because what was said
         never became anything. A sticky note. A memory. A number nobody called back.</p>
     </div>
 
-    <div class="reveal" style="margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+    <div class="reveal whophotos" style="margin-top:38px;">
       <div class="audcard"><img class="ph" src="https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
                srcset="https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
                sizes="(max-width:900px) 100vw, 32vw"
@@ -247,7 +243,7 @@
   <div class="wrap">
     <div class="sechead reveal" style="max-width:700px;">
       <span class="eyebrow"><i></i>One conversation · four outputs</span>
-      <h2 class="h2 onDark">The call ends.<br>The work is already done.</h2>
+      <h2 class="h2 onDark">The call&nbsp;ends.<br>The work is already&nbsp;done.</h2>
     </div>
     <div class="flowline reveal">
       <div class="fnode done"><span class="bul">01</span><b>Answered</b>
@@ -268,8 +264,8 @@
     <div class="duo">
       <div class="reveal">
         <span class="eyebrow"><i></i>Automatic booking</span>
-        <h2 class="h2 onDark" style="margin-top:20px;">It doesn't offer to book.<br>It books.</h2>
-        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
+        <h2 class="h2 onDark" style="margin-top:20px;">It doesn't offer to&nbsp;book.<br>It books.</h2>
+        <p style="margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
           The AI collects what a booking actually needs — date, time, service, party size, which
           room or which practitioner — checks it against your live calendar, and holds the slot
           while the customer is still talking.</p>
@@ -293,7 +289,7 @@
                 <div class="slot free">15:30</div><div class="slot free">15:30</div><div class="slot new">15:30</div><div class="slot free">15:30</div><div class="slot free">15:30</div>
                 <div class="slot">17:00</div><div class="slot">17:00</div><div class="slot">17:00</div><div class="slot">17:00</div><div class="slot">17:00</div>
               </div>
-              <p style="margin-top:13px;font-size:11.5px;color:var(--app-tx3);font-weight:600;">
+              <p style="margin-top:13px;font-size:var(--fs-2xs);color:var(--app-tx3);font-weight:600;">
                 Marked <b style="color:#5FE3E3;">AI</b> — booked from a conversation, no staff involved.</p>
             </div>
           </div>
@@ -324,8 +320,8 @@
       </div>
       <div class="reveal">
         <span class="eyebrow light"><i></i>Automatic quoting</span>
-        <h2 class="h2" style="margin-top:20px;">The quote that used to<br>take two days.</h2>
-        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--l-mut);font-weight:500;max-width:520px;">
+        <h2 class="h2" style="margin-top:20px;">The quote that used&nbsp;to<br>take two&nbsp;days.</h2>
+        <p style="margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--l-mut);font-weight:500;max-width:520px;">
           Your prices, your options, your discount logic. The AI takes what the customer asked for,
           runs it through the rules you set, and produces a real estimate — ready to send, or ready
           for you to check first if that's how you'd rather work.</p>
@@ -346,8 +342,8 @@
     <div class="duo">
       <div class="reveal">
         <span class="eyebrow"><i></i>Customer records &amp; analysis</span>
-        <h2 class="h2 onDark" style="margin-top:20px;">Nobody types this.<br>It types itself.</h2>
-        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
+        <h2 class="h2 onDark" style="margin-top:20px;">Nobody types&nbsp;this.<br>It types&nbsp;itself.</h2>
+        <p style="margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
           The part your staff never has time for. Every conversation is summarized, the customer's
           intent classified, their tone read, and the next action assigned — so the record is
           complete before anyone opens it.</p>
@@ -378,11 +374,88 @@
 </section>
 
 <!-- ══════════ DASHBOARD & REPORTS ══════════ -->
+<!-- ═══════ WHO TO CALL NEXT — scoring, follow-up, attribution ═══════ -->
+<section class="sec-dark bg-grid t-md" id="who-next">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:740px;">
+      <div class="secrule"><span class="eyebrow"><i></i>The part after the answer</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Once you have a hundred&nbsp;inquiries,<br>the question stops being
+ &ldquo;who&nbsp;asked?&rdquo;</h2>
+      <p class="lead onDark" style="margin-top:16px;">It becomes &ldquo;who do I call right now?&rdquo; A list of
+        conversations cannot answer that. A pipeline that scores, flags and attributes them can &mdash; and that is
+        the half of this product an answering service does not have.</p>
+    </div>
+
+    <div class="pipefull reveal">
+      <div class="pipecolx s1"><h5>New inquiry<b>114</b></h5>
+        <div class="pchip">Arrived overnight</div><div class="pchip">Web chat</div></div>
+      <div class="pipecolx s2"><h5>In conversation<b>12</b></h5>
+        <div class="pchip">Answering now</div></div>
+      <div class="pipecolx s3"><h5>Visit booked<b>21</b></h5>
+        <div class="pchip">On the calendar</div><div class="pchip hot">Hot</div></div>
+      <div class="pipecolx s4"><h5>Visit done<b>15</b></h5>
+        <div class="pchip">Awaiting quote</div></div>
+      <div class="pipecolx s5"><h5>Quote out<b>5</b></h5>
+        <div class="pchip warm">Warm &middot; 3 days</div></div>
+      <div class="pipecolx s6"><h5>Won<b>21</b></h5>
+        <div class="pchip">Closed</div></div>
+    </div>
+    <p class="pipecap">Six stages, not two. The stage a customer is stuck in is the whole point &mdash;
+      &ldquo;visit done, no quote yet&rdquo; is a different job from &ldquo;quote out, no answer.&rdquo;
+      Product illustration with sample data.</p>
+
+    <div class="whogrid reveal">
+      <div class="whocard">
+        <span class="wl">Lead score</span>
+        <b>Hot, Warm or Cold &mdash; and why</b>
+        <p>Scored on what they actually did: how many times they came back, whether they asked a price,
+          whether they left a number, how recently. You can see the reason, so you can disagree with it.</p>
+      </div>
+      <div class="whocard">
+        <span class="wl">Needs re&#8209;contact</span>
+        <b>The list your staff keep in their heads</b>
+        <p>Everyone who has gone quiet past the interval you set, surfaced as a queue rather than a memory.
+          This is where most bookings are lost, and it costs nothing to fix.</p>
+      </div>
+      <div class="whocard">
+        <span class="wl">Where they came from</span>
+        <b>Attribution back to the ad, the page or the call</b>
+        <p>Every customer carries the channel and source that produced them, so you can see which spend
+          turned into booked work rather than which spend turned into clicks.</p>
+      </div>
+      <div class="whocard">
+        <span class="wl">What the AI contributed</span>
+        <b>Its bookings counted separately from yours</b>
+        <p>Conversations, bookings and quotes the AI produced on its own, reported apart from the ones your
+          staff handled. It is the only honest way to judge whether it earned its subscription.</p>
+      </div>
+    </div>
+
+    <div class="ctrlrail reveal">
+      <h3 class="crh">Three controls that decide whether you can leave&nbsp;it&nbsp;alone</h3>
+      <div class="ctrls">
+        <div class="ctrl"><span class="cn">01</span>
+          <b>Test an answer before a customer sees it</b>
+          <p>Type the question you dread. Read what it would have said. Change the underlying fact if you
+            do not like it &mdash; before it is ever spoken to anyone.</p></div>
+        <div class="ctrl"><span class="cn">02</span>
+          <b>Require sign&#8209;off before a quote goes out</b>
+          <p>Quotes can be set to wait for a person. The AI drafts from your price list; a human presses send.
+            You choose which of your services need that gate and which do not.</p></div>
+        <div class="ctrl"><span class="cn">03</span>
+          <b>Your staff change it, not us</b>
+          <p>Greeting, transfer number, who gets notified, the install snippet, roles and permissions, your
+            own usage and billing &mdash; all in your admin, no support ticket, no waiting on our roadmap.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec-dark bg-aurora t-xl">
   <div class="wrap">
     <div class="sechead reveal" style="max-width:720px;">
       <span class="eyebrow"><i></i>Statistics &amp; revenue</span>
-      <h2 class="h2 onDark">Monday morning, one screen,<br>and no guessing.</h2>
+      <h2 class="h2 onDark">Monday morning, one&nbsp;screen,<br>and no&nbsp;guessing.</h2>
       <p>How many people asked. How many the AI handled alone. How many became appointments,
         quotes, customers. Which channel earns, and which one only costs.</p>
     </div>
@@ -418,7 +491,7 @@
               <div class="fstep f3"><b>12</b><span>Quoted</span></div>
               <div class="fstep f4"><b>8</b><span>Won</span></div>
             </div>
-            <p style="margin-top:16px;font-size:12.5px;line-height:1.65;color:var(--app-tx2);font-weight:500;">
+            <p style="margin-top:16px;font-size:var(--fs-xs);line-height:1.65;color:var(--app-tx2);font-weight:500;">
               Every stage is a real number you can click into and see the names behind.
               Export the whole view to PDF or Excel for your accountant, your board, or your own Monday.</p>
             <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
@@ -435,11 +508,78 @@
 </section>
 
 <!-- ══════════ INDUSTRY PACKS ══════════ -->
+<!-- ═══════ WHAT RUNS INSIDE + THE DENY LIST + THE RECIPES ═══════ -->
+<section class="sec-dark bg-aurora t-md" id="inside">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:740px;">
+      <div class="secrule"><span class="eyebrow"><i></i>What is actually running</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Five parts. The fourth one<br>is the one nobody else&nbsp;has.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most AI receptionists are the first three boxes. They hear you,
+        they work out what you meant, they answer from a document. Then they stop. The fourth box is what turns a
+        conversation into work, and the fifth is what makes that work findable on Monday.</p>
+    </div>
+
+    <div class="stackrow reveal">
+      <div class="stk"><span class="sn">01</span><b>It hears the call</b>
+        <p>Speech becomes text you can search, with the caller's own words kept.
+          <i>Speech recognition.</i></p></div>
+      <div class="stk"><span class="sn">02</span><b>It works out what they want</b>
+        <p>Date, budget, purpose, how urgent, and whether a person is needed &mdash; pulled out and ranked.
+          <i>Language understanding.</i></p></div>
+      <div class="stk"><span class="sn">03</span><b>It answers from your facts only</b>
+        <p>Your prices, your booking rules, your FAQ, and your deny list. Nothing else is in scope.
+          <i>Retrieval-grounded answering.</i></p></div>
+      <div class="stk hi"><span class="sn">04</span><b>It turns the conversation into work</b>
+        <p>A booking on the calendar, a quote drafted, a follow-up scheduled, a person paged.
+          <i>Workflow engine.</i></p></div>
+      <div class="stk"><span class="sn">05</span><b>It files the customer</b>
+        <p>Summary, conditions, sentiment, where they came from and what happens next &mdash; on one card.
+          <i>CRM sync.</i></p></div>
+    </div>
+
+    <div class="denyblock reveal">
+      <div class="dl-copy">
+        <h3>The list of things it is <em>not</em> allowed to say</h3>
+        <p>Trust in an AI receptionist is not a feeling, it is a file. Alongside the knowledge base sits a
+          deny list: subjects on which the AI must hand over rather than answer, however confidently it
+          could. You write it, you can count it, and you can change it at 11pm without asking us.</p>
+        <p class="dl-note">Typical starting set &mdash; you edit it before go-live:</p>
+      </div>
+      <div class="dl-rules">
+        <span class="drule">Discounts not in your price list</span>
+        <span class="drule">Refunds and cancellations</span>
+        <span class="drule">Anything clinical or diagnostic</span>
+        <span class="drule">Legal advice</span>
+        <span class="drule">Personal data about another customer</span>
+        <span class="drule">Contract terms and liability</span>
+        <span class="drule">Dates your calendar has not confirmed</span>
+        <span class="drule">Promises about a result</span>
+      </div>
+    </div>
+
+    <div class="recipes reveal">
+      <h3 class="rch">Three things it does without being asked</h3>
+      <div class="rcgrid">
+        <div class="rc"><span class="rt">Day 1</span><b>After the appointment</b>
+          <p>A short message goes out the day after &mdash; what was agreed, what happens next, who to
+            reply to. The message you meant to send and did not.</p></div>
+        <div class="rc"><span class="rt">Immediately</span><b>When the lead is worth interrupting you</b>
+          <p>A high-scoring inquiry pages the owner or the on-call person while the customer is still
+            warm, instead of waiting for someone to read the inbox.</p></div>
+        <div class="rc"><span class="rt">Day 3</span><b>When they go quiet</b>
+          <p>Anyone who asked and never came back gets one follow-up. This is the queue every business
+            keeps in its head and never works through.</p></div>
+      </div>
+      <p class="rcnote">The intervals are yours &mdash; these are the defaults we ship, not a fixed schedule.</p>
+    </div>
+  </div>
+</section>
+
 <section class="sec-light t-sm">
   <div class="wrap">
     <div class="sechead reveal">
       <span class="eyebrow light"><i></i>Industry packs</span>
-      <h2 class="h2">A generic CRM asks for a name.<br>Yours asks the right questions.</h2>
+      <h2 class="h2">A generic CRM asks for&nbsp;a&nbsp;name.<br>Yours asks the right&nbsp;questions.</h2>
       <p>This is the difference between software you configure for six months and software that
         already knows your trade. Each pack ships with the fields, stages, pricing logic and
         follow-up rhythm that industry actually runs on.</p>
@@ -497,8 +637,8 @@
     <div class="duo">
       <div class="reveal">
         <span class="eyebrow"><i></i>You may already have a CRM</span>
-        <h2 class="h2 onDark" style="margin-top:20px;">Then keep it.<br>We'll keep it fed.</h2>
-        <p style="margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
+        <h2 class="h2 onDark" style="margin-top:20px;">Then keep&nbsp;it.<br>We'll keep it&nbsp;fed.</h2>
+        <p style="margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:520px;">
           Saleringo's CRM is there for businesses who never got one to stick. If you already run
           something you like, the answering layer writes into it instead — same records, same
           bookings, your existing system of record.</p>
@@ -507,7 +647,7 @@
           <li><i>→</i><span><b>Records:</b> push contacts, conversation summaries and stage changes into your CRM.</span></li>
           <li><i>→</i><span><b>No migration project.</b> Nothing is ripped out. Start with answering, adopt the CRM only if it earns it.</span></li>
         </ul>
-        <p style="margin-top:22px;font-size:12.5px;color:var(--tx3);font-weight:600;line-height:1.6;">
+        <p style="margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:600;line-height:1.6;">
           Integrations are configured during onboarding. Tell us what you run and we'll tell you
           honestly whether it connects today or needs work.</p>
       </div>
@@ -518,7 +658,7 @@
                sizes="(max-width:940px) 100vw, 46vw"
                alt="A shop owner standing with folded arms in his own shop" loading="lazy" decoding="async" width="900" height="1350">
           <span class="kicker">Who this is for</span>
-          <h3>Owners who are also the front desk</h3>
+          <h3>Owners who are also the&nbsp;front&nbsp;desk</h3>
           <p>If the phone rings and it's your problem — during dinner, on a Sunday, in the middle of
             a job — this is the half of the product that gives you the evening back and still shows
             you the numbers on Monday.</p>
@@ -530,27 +670,45 @@
 </section>
 
 <!-- ══════════ CLOSER ══════════ -->
+<!-- CONCLUSION: every path names what it taught and where it goes next -->
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have seen what happens after the conversation</span>
+        <p class="cnp">Six stages, lead scoring, the deny list, the three controls and the automations. That is the half an answering service does not have. What it costs is published, per plan, with the limits printed.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="./pricing.html">What it costs<span class="cir">&#8599;</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="closer sec-dark t-xl">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow"><i></i>Start where it hurts most</span>
-    <h2 class="h2 onDark reveal" style="margin-top:22px;font-size:clamp(30px,3.6vw,46px);">
-      Answer the phone first.<br><span class="gradtext">Then watch what it turns into.</span></h2>
-    <p style="margin:20px auto 0;max-width:560px;font-size:16px;line-height:1.75;color:var(--tx2);font-weight:500;">
+    <h2 class="h2 onDark reveal" style="margin-top:22px;font-size:var(--fs-h2);">
+ Answer the phone&nbsp;first.<br><span class="gradtext">Then watch what it turns&nbsp;into.</span></h2>
+    <p style="margin:20px auto 0;max-width:560px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;">
       Most businesses start with one channel and one industry pack. The pipeline, quotes and
       reporting come with it — you simply stop needing to do them by hand.</p>
     <div style="margin-top:32px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;">
-      <a class="btn btn-teal" href="./get-started.html">See it on your business<span class="cir">↗</span></a>
+      <a class="btn btn-teal" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
       <a class="btn btn-ghostd" href="./demo.html">Watch a call first<span class="cir">↗</span></a>
     </div>
   </div>
 </section>
 
+<nav data-startpath data-compact aria-hidden="true" data-title="What to look at" data-end="#who-next" data-end-label="Where to next">
+  <ol>
+    <li data-step="#inside" data-short="Inside the CRM" data-next="see what it files"><a href="#inside"><b>Inside the CRM</b></a></li>
+  </ol>
+</nav>
 </main>
 
 <footer class="bigfooter"><div class="wrap">
   <div class="cols">
     <div class="brand">
-      <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+      <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
       <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
       <p style="margin-top:10px;">hello@saleringo.com</p>
     </div>
@@ -564,6 +722,7 @@
       <a class="lnk" href="./ai-answering-service.html">Buyer's guide</a>
       <a class="lnk" href="./demo.html">See a conversation</a>
       <a class="lnk" href="./pricing.html">Pricing</a>
+        <a class="lnk" href="./get-started.html">Get my plan</a>
     </div>
     <div>
       <h4>Industries</h4>
@@ -574,8 +733,8 @@
       <a class="lnk" href="./industries/stays.html">Boutique Stays</a>
       <a class="lnk" href="./industries/clinics.html">Clinics</a>
       <a class="lnk" href="./industries/veterinary.html">Veterinary</a>
-      <a class="lnk" href="./industries/franchise.html">Franchise</a>
-      <a class="lnk" href="./industries/academies.html">Academies</a>
+      <a class="lnk" href="./industries/franchise.html">Franchise <i class="rmtag">Roadmap</i></a>
+      <a class="lnk" href="./industries/academies.html">Academies <i class="rmtag">Roadmap</i></a>
       <a class="lnk" href="./industries.html">All industries</a>
       <a class="lnk" href="./cross-border.html">Cross-border</a>
     </div>
@@ -597,10 +756,11 @@
 <div class="stickycta">
   <div class="wrap">
     <span class="msg">Answering is where it starts. <b>Booking, quoting and reporting are where it pays.</b></span>
-    <a class="btn btn-teal" href="./get-started.html">See it on your business<span class="cir">↗</span></a>
+    <a class="btn btn-teal" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=4.4"></script>
+<script src="../assets/js/site.js?v=11.3"></script>
+<script src="../assets/js/guide.js?v=11.3"></script>
 </body>
 </html>

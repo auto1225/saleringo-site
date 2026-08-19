@@ -1,0 +1,228 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/en/index",
+      "destination": "/en/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.svg",
+      "permanent": false
+    },
+    {
+      "source": "/industries",
+      "destination": "/en/industries.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/",
+      "destination": "/en/industries.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/about",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/ai-answering-service",
+      "destination": "/en/ai-answering-service.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/cross-border",
+      "destination": "/en/cross-border.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/demo",
+      "destination": "/en/demo.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/examples",
+      "destination": "/en/examples.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/get-started",
+      "destination": "/en/get-started.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries",
+      "destination": "/en/industries.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/academies",
+      "destination": "/en/industries/academies.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/clinics",
+      "destination": "/en/industries/clinics.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/dental",
+      "destination": "/en/industries/dental.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/franchise",
+      "destination": "/en/industries/franchise.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/home-services",
+      "destination": "/en/industries/home-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/stays",
+      "destination": "/en/industries/stays.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/venues",
+      "destination": "/en/industries/venues.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/veterinary",
+      "destination": "/en/industries/veterinary.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/integrations",
+      "destination": "/en/integrations.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/platform",
+      "destination": "/en/platform.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/pricing",
+      "destination": "/en/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/en/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/security",
+      "destination": "/en/security.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/terms",
+      "destination": "/en/terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/verified-ai",
+      "destination": "/en/verified-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/voice",
+      "destination": "/en/voice.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/webchat",
+      "destination": "/en/webchat.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/whatsapp",
+      "destination": "/en/whatsapp.html",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/en/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/platform",
+      "destination": "/en/platform.html",
+      "permanent": true
+    },
+    {
+      "source": "/demo",
+      "destination": "/en/demo.html",
+      "permanent": true
+    },
+    {
+      "source": "/examples",
+      "destination": "/en/examples.html",
+      "permanent": true
+    },
+    {
+      "source": "/voice",
+      "destination": "/en/voice.html",
+      "permanent": true
+    },
+    {
+      "source": "/webchat",
+      "destination": "/en/webchat.html",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "/en/whatsapp.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/security",
+      "destination": "/en/security.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/en/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/en/terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/integrations",
+      "destination": "/en/integrations.html",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/en/get-started.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

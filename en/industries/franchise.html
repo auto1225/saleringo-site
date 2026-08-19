@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex,nofollow">
-<!-- Review subdomain. The canonical tags below still point at the production
-     domain on purpose, so this copy never competes with it in search.
-     To make this the live site: delete this meta and the Disallow in robots.txt. -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Receptionist for Multi-Site &amp; Franchise | Saleringo</title>
 <meta name="description" content="An AI phone agent for franchise brands. Routes callers to the right location, quotes that site's own prices, and captures candidates without an earnings claim.">
-<link rel="canonical" href="https://saleringo.com/en/industries/franchise.html">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/franchise.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://saleringo.com/en/industries/franchise.html">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/franchise.html">
 <meta property="og:title" content="AI Receptionist for Multi-Site &amp; Franchise">
 <meta property="og:description" content="An AI phone agent for franchise brands. Routes callers to the right location, quotes that site's own prices, and captures candidates without an earnings claim.">
 <meta property="og:image" content="https://images.pexels.com/photos/36729739/pexels-photo-36729739.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
@@ -26,17 +22,18 @@
 <link rel="alternate" hreflang="en" href="./franchise.html">
 <link rel="alternate" hreflang="x-default" href="./franchise.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Franchise & Multi-Site Brands","item":"https://saleringo.com/en/industries/franchise.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Franchise & Multi-Site Brands","item":"https://claude.saleringo.com/en/industries/franchise.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=4.4">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=4.4">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=4.4">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=4.4">
+<link rel="stylesheet" href="../../assets/css/site.css?v=11.3">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=11.3">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=11.3">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=11.3">
 <style>
   /* ── FRANCHISE · archetype: THE SPLIT LINE ─────────────────────
      the page is built around one structural fact: two completely
@@ -48,33 +45,33 @@
     linear-gradient(100deg, rgba(4,10,20,.96) 0%, rgba(4,10,20,.86) 44%, rgba(4,10,20,.24) 82%),
     linear-gradient(180deg, transparent 40%, rgba(5,11,22,.88) 82%, #050B16 100%);}
   .hero.photohero .tint{opacity:.42;background:radial-gradient(50% 58% at 82% 28%, rgba(23,189,189,.24), transparent 70%);}
-  .hero-inner{position:relative;z-index:2;padding:168px 0 0;display:grid;
+  .hero-inner{position:relative;z-index:2;padding:168px clamp(22px,4.6vw,56px) 0;display:grid;
     grid-template-columns:1.18fr .82fr;gap:56px;align-items:end;}
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.03;
     letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:26px;}
   .hero h1 em{font-style:normal;color:var(--teal);}
-  .hero .sub{margin-top:24px;font-size:16.5px;line-height:1.75;color:var(--tx2);font-weight:500;max-width:540px;}
+  .hero .sub{margin-top:24px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;max-width:540px;}
   .hero .ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .hero .micro{margin-top:18px;font-size:12.5px;color:var(--tx3);font-weight:500;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .herofacts{display:grid;gap:12px;padding-bottom:8px;}
   .hfact{background:rgba(255,255,255,.045);border:1px solid var(--hair2);border-radius:16px;padding:16px 18px;
     backdrop-filter:blur(8px);}
-  .hfact b{display:block;font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:-.03em;color:#fff;}
-  .hfact span{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:var(--tx2);font-weight:600;}
-  .heroscene{position:relative;z-index:2;margin:54px auto 0;max-width:1400px;padding:0 32px;}
+  .hfact b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);letter-spacing:-.03em;color:#fff;}
+  .hfact span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.55;color:var(--tx2);font-weight:600;}
+  .heroscene{position:relative;z-index:2;margin:54px auto 0;max-width:1240px;padding:0 56px;}
 
   /* ── the reality band ── */
-  .reality .cols{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start;}
-  .secintro{margin-top:16px;font-size:15.5px;line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
+  .reality .cols{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:stretch;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
   .nots{margin-top:34px;display:grid;gap:12px;}
   .notrow{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--hair);border-radius:16px;
     padding:18px 20px;background:rgba(255,255,255,.03);}
   .notrow i{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(217,106,94,.14);
-    border:1px solid rgba(217,106,94,.35);color:#E58C81;font-size:12px;font-weight:800;font-style:normal;
+    border:1px solid rgba(217,106,94,.35);color:#E58C81;font-size:var(--fs-xs);font-weight:800;font-style:normal;
     display:flex;align-items:center;justify-content:center;}
   .notrow.good i{background:rgba(58,201,138,.14);border-color:rgba(58,201,138,.35);color:#6FE3B0;}
-  .notrow b{display:block;font-size:14px;color:#fff;}
-  .notrow span{display:block;margin-top:4px;font-size:12.5px;line-height:1.6;color:var(--tx2);font-weight:500;}
+  .notrow b{display:block;font-size:var(--fs-sm);color:#fff;}
+  .notrow span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:500;}
 
   /* ── storefront photograph band ── */
   .openband{background:#FDFDFE;}
@@ -83,36 +80,36 @@
 
   /* ── CRM: two boards, stated as two ── */
   .boardlabel{display:flex;align-items:center;gap:14px;margin:0 0 16px;}
-  .boardlabel b{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#fff;letter-spacing:-.01em;}
-  .boardlabel i{font-style:normal;font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  .boardlabel b{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:#fff;letter-spacing:-.01em;}
+  .boardlabel i{font-style:normal;font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
     color:var(--teal);border:1px solid rgba(23,189,189,.34);border-radius:5px;padding:3px 7px;}
   .boardlabel i.hq{color:#E8A44C;border-color:rgba(232,164,76,.4);}
   .boardlabel span{flex:1;height:1px;background:var(--hair);}
-  .crmduo{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+  .crmduo{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
   @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}}
   .ptlist{margin-top:24px;}
   .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:14px;line-height:1.68;color:var(--tx2);font-weight:500;}
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
   .ptlist li:last-child{border-bottom:0;}
   .ptlist li b{color:#fff;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:13px;padding-top:1px;}
-  .mockcap{margin-top:12px;font-size:11px;color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
   .kpiwrap{margin-top:34px;}
 
   /* ── scenarios / question bank ── */
   .blockhead{max-width:720px;margin-bottom:34px;}
-  .blockhead h3{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.6vw,34px);
+  .blockhead h3{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);
     font-weight:600;letter-spacing:-.03em;line-height:1.12;}
-  .blockhead p{margin-top:14px;font-size:15px;line-height:1.75;font-weight:500;}
+  .blockhead p{margin-top:14px;font-size:var(--fs-body);line-height:1.75;font-weight:500;}
   .sec-light .blockhead h3{color:var(--l-ink);} .sec-light .blockhead p{color:var(--l-mut);}
   .sec-dark .blockhead h3{color:#fff;} .sec-dark .blockhead p{color:var(--tx2);}
-  .qnote{margin-top:20px;font-size:12.5px;line-height:1.75;font-weight:600;color:var(--tx3);max-width:760px;}
+  .qnote{margin-top:20px;font-size:var(--fs-xs);line-height:1.75;font-weight:600;color:var(--tx3);max-width:760px;}
 
   /* three-state integration status */
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
   .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
-  .statcol h4{display:flex;align-items:center;gap:9px;font-size:10.5px;font-weight:800;
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
   .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
@@ -121,59 +118,59 @@
   .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
   .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
   .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:13px;line-height:1.6;color:#DCE6F2;
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
     font-weight:700;border-bottom:1px solid var(--hair);}
   .statcol li:last-child{border-bottom:0;}
-  .statcol li span{display:block;margin-top:4px;font-size:11.5px;font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:12.5px;line-height:1.75;color:var(--tx3);font-weight:600;max-width:740px;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;max-width:740px;}
 
   /* multi-site */
   .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
   @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
   .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
-  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:16px;color:#fff;letter-spacing:-.014em;}
-  .mlcard p{margin-top:9px;font-size:13.5px;line-height:1.72;color:var(--tx2);font-weight:500;}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
   .mlsites{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:34px;}
   @media(max-width:960px){.mlsites{grid-template-columns:repeat(2,minmax(0,1fr));}}
   @media(max-width:600px){.mlsites{grid-template-columns:1fr;}}
   .mlsite{border:1px solid var(--app-line,rgba(255,255,255,.09));border-radius:13px;padding:15px 16px;
     background:var(--app-panel,#0E1B2E);}
-  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:#fff;}
+  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#fff;}
   .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
   .mlsite .h i.hq{background:#E8A44C;}
   .mlsite dl{margin-top:11px;}
-  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:11.5px;border-top:1px solid rgba(255,255,255,.07);}
+  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(255,255,255,.07);}
   .mlsite .r:first-of-type{border-top:0;}
-  .mlsite .r dt{width:74px;flex:none;color:var(--tx3);font-weight:800;font-size:9.5px;
+  .mlsite .r dt{width:74px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
     letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
   .mlsite .r dd{color:#DCE6F2;font-weight:600;margin:0;}
 
   /* faq + closer */
   .faqsec .head{text-align:center;margin-bottom:46px;}
-  .closer{position:relative;padding:118px 0 0;text-align:center;overflow:hidden;}
+  .closer{position:relative;text-align:center;overflow:hidden;}
   .closer .riskrow{margin-bottom:74px;text-align:left;}
   .closer .riskrow.short{grid-template-columns:repeat(2,1fr);max-width:660px;margin-left:auto;margin-right:auto;}
   .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
     letter-spacing:-.045em;color:#fff;line-height:1.05;}
   .closer .lead{margin:22px auto 0;max-width:540px;}
   .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-  .closer .more{margin-top:26px;font-size:12.5px;color:var(--tx3);font-weight:500;}
+  .closer .more{margin-top:26px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .closer .more a{color:var(--tx2);}
 
   /* inline lead form */
   .leadbox{max-width:660px;margin:0 auto;text-align:left;}
-  .leadbox .lh{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
     color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:14.5px;
+  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:var(--fs-sm);
     line-height:1.72;color:var(--tx2);font-weight:500;}
   .leadbox .eaform{max-width:100%;}
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-  .badgerow span{font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--tx2);
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
     border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
 
   @media (max-width:900px){
-    .hero-inner{grid-template-columns:1fr;gap:34px;padding-top:150px;}
+    .hero-inner{grid-template-columns:1fr;gap:34px;}
     .heroscene{padding:0 18px;}
     .reality .cols{grid-template-columns:1fr;gap:44px;}
     .closer .riskrow{margin-bottom:54px;}
@@ -194,31 +191,30 @@
   <div class="tint" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="../index.html">Saleringo<b>.</b></a><span class="ver" title="Site build v4.4">v4.4</span>
+    <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
     <span class="links">
-      <a href="../voice.html">AI Phone</a>
-      <a href="../webchat.html">Chatbot</a>
-      <a href="../whatsapp.html">WhatsApp</a>
-      <a href="../platform.html">Platform</a>
-      <a class="on" href="../industries.html">Industries</a>
-      <a href="../examples.html">Examples</a>
-      <a href="../pricing.html">Pricing</a>
-    </span>
-    <a class="telcta" data-tel href="#"><span aria-hidden="true">✆</span><b data-tel-label></b></a>
+    <a href="../platform.html">How it works</a>
+    <a href="../demo.html">See it work</a>
+    <a href="../industries.html">Your trade</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../security.html">Security</a>
+  </span>
+    <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">✆</span><b data-tel-label>+82 70-5277-0820</b></a>
     <span class="sep"></span>
-    <a class="btn btn-white" href="../get-started.html">Get started<span class="cir">↗</span></a>
+    <a class="btn btn-white" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav></div>
 
   <div class="wrap hero-inner">
     <div>
       <span class="eyebrow"><i></i>For Franchise &amp; Multi-Site Brands</span>
-      <h1>Both came in at 9:40 PM.<br><em>One is booked at Northgate. One is a franchise candidate.</em></h1>
+      <h1>Both came in at&nbsp;9:40&nbsp;PM.<br><em>One is booked at Northgate. One is a franchise&nbsp;candidate.</em></h1>
       <p class="sub">A franchise line carries two businesses down one wire. Customers who must reach the right location, at that location's hours and that location's prices — and candidates asking what it costs to open one, where a careless sentence is a legal problem rather than a service one. Saleringo answers both, keeps them in separate pipelines, and refuses the questions that belong to your franchise team.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#early-access">Watch it answer my questions<span class="cir">↗</span></a>
-        <a class="btn btn-ghostd" href="../demo.html">Watch it answer — 2 min</a>
+        <a class="btn btn-teal" href="../demo.html">Read a full call, start to finish<span class="cir">&#8599;</span></a>
+        <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a>
       </div>
+      <p class="heroscroll"><a href="../index.html#start-here">New here? Start with the three-step tour &mdash; about two minutes&nbsp;&nbsp;&rarr;</a></p>
       <div class="micro">Founding cohort open · start on website chat, add WhatsApp &amp; voice when ready</div>
       <p class="photocap">Photography is illustrative — the kind of operator Saleringo is built for, not named customers and not testimonials.</p>
     </div>
@@ -251,7 +247,7 @@
     <rect x="-22" y="-40" width="44" height="72" rx="4" fill="#0F2A38"/>
     <path d="M-9 -16 c0-3 3-6 6-6 h4 c3 0 5 2 6 5 l1 6 c0 3-1 5-4 6 l-3 1 c2 6 6 10 12 12 l1-3 c1-3 3-4 6-4 l6 1 c3 1 5 3 5 6 v4 c0 3-3 6-6 6 -18 0-34-16-34-34 z" fill="#17BDBD"/>
     <text x="0" y="72" font-family="Space Grotesk,sans-serif" font-size="14" fill="#17BDBD" text-anchor="middle" font-weight="700">One number</text>
-    <text x="0" y="92" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#7C8DA0" text-anchor="middle" font-weight="600">9:40 PM</text>
+    <text x="0" y="92" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#7C8DA0" text-anchor="middle" font-weight="600">9:40 PM</text>
   </g>
 
   <!-- split -->
@@ -260,47 +256,47 @@
 
   <!-- customer side -->
   <g transform="translate(440,72)">
-    <text x="0" y="0" font-family="Space Grotesk,sans-serif" font-size="11" fill="#17BDBD" letter-spacing="2.6">CUSTOMER · TO THE RIGHT LOCATION</text>
+    <text x="0" y="0" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" letter-spacing="2.6">CUSTOMER · TO THE RIGHT LOCATION</text>
     <g font-family="Plus Jakarta Sans,sans-serif">
       <g transform="translate(0,18)">
         <rect width="122" height="58" rx="10" fill="#0E1B2E" stroke="#1E3350" stroke-width="1.5"/>
         <rect x="12" y="14" width="7" height="7" rx="2" fill="#17BDBD"/>
-        <text x="28" y="21" font-size="11.5" fill="#DCE6F2" font-weight="700">Northgate</text>
-        <text x="12" y="40" font-size="10" fill="#7C8DA0" font-weight="600">to 20:00 · $68</text>
+        <text x="28" y="21" font-size="12.5" fill="#DCE6F2" font-weight="700">Northgate</text>
+        <text x="12" y="40" font-size="12" fill="#7C8DA0" font-weight="600">to 20:00 · $68</text>
       </g>
       <g transform="translate(134,18)">
         <rect width="122" height="58" rx="10" fill="#0E1B2E" stroke="#1E3350" stroke-width="1.5"/>
         <rect x="12" y="14" width="7" height="7" rx="2" fill="#17BDBD"/>
-        <text x="28" y="21" font-size="11.5" fill="#DCE6F2" font-weight="700">Downtown</text>
-        <text x="12" y="40" font-size="10" fill="#7C8DA0" font-weight="600">to 18:00 · $74</text>
+        <text x="28" y="21" font-size="12.5" fill="#DCE6F2" font-weight="700">Downtown</text>
+        <text x="12" y="40" font-size="12" fill="#7C8DA0" font-weight="600">to 18:00 · $74</text>
       </g>
       <g transform="translate(268,18)">
         <rect width="122" height="58" rx="10" fill="#0E1B2E" stroke="#1E3350" stroke-width="1.5"/>
         <rect x="12" y="14" width="7" height="7" rx="2" fill="#17BDBD"/>
-        <text x="28" y="21" font-size="11.5" fill="#DCE6F2" font-weight="700">Riverside</text>
-        <text x="12" y="40" font-size="10" fill="#7C8DA0" font-weight="600">own hours</text>
+        <text x="28" y="21" font-size="12.5" fill="#DCE6F2" font-weight="700">Riverside</text>
+        <text x="12" y="40" font-size="12" fill="#7C8DA0" font-weight="600">own hours</text>
       </g>
       <g transform="translate(402,18)">
         <rect width="122" height="58" rx="10" fill="#0E1B2E" stroke="#1E3350" stroke-width="1.5"/>
         <rect x="12" y="14" width="7" height="7" rx="2" fill="#17BDBD"/>
-        <text x="28" y="21" font-size="11.5" fill="#DCE6F2" font-weight="700">Westgate</text>
-        <text x="12" y="40" font-size="10" fill="#7C8DA0" font-weight="600">own price list</text>
+        <text x="28" y="21" font-size="12.5" fill="#DCE6F2" font-weight="700">Westgate</text>
+        <text x="12" y="40" font-size="12" fill="#7C8DA0" font-weight="600">own price list</text>
       </g>
     </g>
-    <text x="0" y="106" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#7C8DA0" font-weight="600">Each site's manager sees only its own column.</text>
+    <text x="0" y="106" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#7C8DA0" font-weight="600">Each site's manager sees only its own column.</text>
   </g>
 
   <!-- candidate side -->
   <g transform="translate(440,352)">
     <ellipse cx="270" cy="60" rx="290" ry="96" fill="url(#frAmb)"/>
-    <text x="0" y="0" font-family="Space Grotesk,sans-serif" font-size="11" fill="#E8A44C" letter-spacing="2.6">CANDIDATE · TO HEAD OFFICE ONLY</text>
+    <text x="0" y="0" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#E8A44C" letter-spacing="2.6">CANDIDATE · TO HEAD OFFICE ONLY</text>
     <g transform="translate(0,18)">
       <rect width="524" height="94" rx="12" fill="#131C2B" stroke="#3A3020" stroke-width="1.5"/>
-      <text x="18" y="28" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#DCE6F2" font-weight="700">From the disclosure document · fee $35,000 · build-out $150,000–$180,000</text>
+      <text x="18" y="28" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#DCE6F2" font-weight="700">From the disclosure document · fee $35,000 · build-out $150,000–$180,000</text>
       <rect x="18" y="42" width="488" height="36" rx="9" fill="#1E1710" stroke="#5A4423" stroke-width="1.5"/>
-      <text x="32" y="65" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#F0BE7C" font-weight="700">✕ "What would I earn a month?" — refused, handed to the franchise team</text>
+      <text x="32" y="65" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#F0BE7C" font-weight="700">✕ "What would I earn a month?" — refused, handed to the franchise team</text>
     </g>
-    <text x="0" y="134" font-family="Plus Jakarta Sans,sans-serif" font-size="11.5" fill="#7C8DA0" font-weight="600">No location manager ever sees this pipeline.</text>
+    <text x="0" y="134" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#7C8DA0" font-weight="600">No location manager ever sees this pipeline.</text>
   </g>
 </svg>
       <div class="scene-overlay tl">
@@ -321,14 +317,14 @@
     </div>
     <div class="cols">
       <div class="reveal">
-        <h2 class="h2 onDark">The group number is<br>answering for a business<br><em style="font-style:normal;color:var(--teal);">it cannot see.</em></h2>
+        <h2 class="h2 onDark">The group number&nbsp;is<br>answering for a&nbsp;business<br><em style="font-style:normal;color:var(--teal);">it cannot&nbsp;see.</em></h2>
         <p class="secintro">Whoever picks up your central line is being asked about a store they have never stood in.
           Different opening hours, a different price list, a different manager, sometimes a different owner. Then the
           next caller is not a customer at all — they want to buy a territory, and the honest answer to their second
           question is a regulated one. Most answering services treat all of this as a single inbox. It is two
           businesses, and running them through one queue is how a group loses walk-ins on Saturday and gets a letter
           on Monday.</p>
-        <a class="linkcta" style="margin-top:30px;color:#fff;border-color:rgba(255,255,255,.4);" href="../security.html">Guardrails &amp; Trust Center&nbsp;&nbsp;→</a>
+        <a class="linkcta" style="margin-top:30px;color:#fff;border-color:rgba(255,255,255,.4);" href="../security.html">Guardrails &amp; security&nbsp;&nbsp;→</a>
       </div>
       <div class="reveal">
         <div class="nots">
@@ -345,11 +341,11 @@
   <div class="wrap">
     <div style="border:1px solid rgba(232,164,76,.34);background:rgba(232,164,76,.06);
          border-radius:16px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
-      <span style="font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+      <span style="font-size:var(--fs-label);font-weight:800;letter-spacing:.13em;text-transform:uppercase;
             color:#F0BE7C;border:1px solid rgba(232,164,76,.4);border-radius:6px;padding:5px 9px;
             white-space:nowrap;">Roadmap pack</span>
-      <p style="flex:1;min-width:260px;font-size:14px;line-height:1.7;color:var(--tx2);font-weight:500;margin:0;">
-        This multi-site pack is on the roadmap — it is not live yet. Everything below describes what it is being built to do, and the order we build in is decided by which customers actually need it. Nothing here is a shipped feature you can buy today. <a href="../industries.html#waitlist" style="color:var(--teal);font-weight:700;">See which packs are live →</a></p>
+      <p style="flex:1;min-width:260px;font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:500;margin:0;">
+        This multi-site pack is on the roadmap — it is not live yet. Everything below describes what it is being built to do, and the order we build in is decided by which customers actually need it. Nothing here is a shipped feature you can buy today. <a href="../industries.html#waitlist" style="color:var(--teal-ink);font-weight:700;">See which packs are live →</a></p>
     </div>
   </div>
 </section>
@@ -367,7 +363,7 @@
     </div>
     <div class="copy reveal">
       <span class="eyebrow light"><i></i>Every site is somebody's whole business</span>
-      <h2 class="h2" style="margin-top:22px">The group owns the<br>brand. The franchisee<br>owns the Saturday.</h2>
+      <h2 class="h2" style="margin-top:22px">The group owns&nbsp;the<br>brand. The&nbsp;franchisee<br>owns the&nbsp;Saturday.</h2>
       <p class="lead" style="margin-top:18px;">A franchisee does not care about the group's aggregate answer rate. They care that the call about their store reached their calendar, at their price, and that their manager saw it before the group did. Saleringo sets each location up as its own business inside one account — own number, own hours, own price list, own inbox — and gives the owner a single report across all of them.</p>
       <a class="linkcta" style="margin-top:28px;" href="../demo.html">Watch it route a call to a location&nbsp;&nbsp;→</a>
     </div>
@@ -379,7 +375,7 @@
   <div class="wrap">
     <div class="head reveal" style="max-width:780px;">
       <span class="eyebrow"><i></i>The franchise CRM pack</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Every other pack has one pipeline.<br>This trade has <em style="font-style:normal;color:var(--teal);">two, and they must never touch.</em></h2>
+      <h2 class="h2 onDark" style="margin-top:20px;">Every other pack has one&nbsp;pipeline.<br>This trade has <em style="font-style:normal;color:var(--teal);">two, and they must never&nbsp;touch.</em></h2>
       <p class="secintro">Customer bookings move along one board, per location, visible to that location. Franchise
         candidates move along a second board that lives at head office and that no store manager can open. The
         duality is the whole trade — so it is drawn as two boards, not one board with a filter.</p>
@@ -549,14 +545,14 @@
 
     <div class="reveal" style="margin-top:52px;max-width:760px;">
       <span class="eyebrow"><i></i>Why two boards and not one</span>
-      <h3 class="h2 onDark" style="margin-top:18px;">A filter can be removed.<br>A separate pipeline cannot.</h3>
+      <h3 class="h2 onDark" style="margin-top:18px;">A filter can be&nbsp;removed.<br>A separate pipeline&nbsp;cannot.</h3>
       <ul class="ptlist">
         <li><i>→</i><span><b>Location is resolved before anything is quoted.</b> The AI does not answer a price question until it knows which site it is answering for — and if the caller is ambiguous, it asks rather than picks.</span></li>
         <li><i>→</i><span><b>Candidates never appear in a store's inbox.</b> Your franchisees do not need to know who is asking about a territory near them, and in most groups it is actively unhelpful that they do.</span></li>
         <li><i>→</i><span><b>The refusals are structural, not tone.</b> Earnings, territory availability and contract terms are not phrased carefully — they are not answered, and the candidate is handed to your franchise team with the question intact.</span></li>
         <li><i>→</i><span><b>One report, every site in the same row.</b> Inquiries, handled without staff, booked, missed during opening hours — per location and combined, exportable to PDF or Excel for the Monday meeting.</span></li>
       </ul>
-      <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the whole platform&nbsp;&nbsp;→</a>
+      <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the pipeline it fills</a>
     </div>
   </div>
 </section>
@@ -564,9 +560,9 @@
   <img class="ph" src="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
          alt="Two cafe owners standing together behind their counter" loading="lazy" decoding="async" width="1600" height="1068">
   <div class="wrap" style="padding-bottom:30px;">
-    <p style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3.4vw,44px);font-weight:600;
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
        letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">One brand.<br>Many front desks.</p>
-    <p style="margin-top:10px;font-size:13.5px;color:rgba(255,255,255,.76);font-weight:600;max-width:50ch;">Each location keeps its own number, its own hours and its own price list — and the group report puts them side by side.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:50ch;">Each location keeps its own number, its own hours and its own price list — and the group report puts them side by side.</p>
   </div>
 </section>
 <p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a named customer, and not a testimonial.</p>
@@ -576,7 +572,7 @@
   <div class="wrap">
     <div class="blockhead reveal">
       <span class="eyebrow light"><i></i>Six worked examples</span>
-      <h3>What it says, and what<br>it leaves behind.</h3>
+      <h3>What it says, and&nbsp;what<br>it leaves&nbsp;behind.</h3>
       <p>Six conversations a multi-site brand has every week, written out in full — including the two where the
         right answer is a refusal. These are worked illustrations, not customer stories: no named brand, no invented
         outcome, no testimonial. Four more franchise scenarios sit on the
@@ -703,7 +699,7 @@
   <div class="wrap">
     <div class="blockhead reveal">
       <span class="eyebrow"><i></i>What it will and won't answer</span>
-      <h3>The line, written down<br>before you go live.</h3>
+      <h3>The line, written&nbsp;down<br>before you go&nbsp;live.</h3>
       <p>Your team approves every row of this before a caller hears anything. The red rows are the ones your
         franchise counsel will want to read — they are refusals, not carefully worded answers.</p>
     </div>
@@ -749,7 +745,7 @@
   <div class="wrap">
     <div class="head reveal" style="max-width:760px;">
       <span class="eyebrow"><i></i>Four locations. Fourteen. Forty.</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">Downtown does not quote<br><em style="font-style:normal;color:var(--teal);">Northgate's</em> price list.</h2>
+      <h2 class="h2 onDark" style="margin-top:18px;">Downtown does not&nbsp;quote<br><em style="font-style:normal;color:var(--teal);">Northgate's</em> price list.</h2>
       <p class="secintro">Every site is set up as its own business inside one account. That is not a preference —
         in a franchise the sites often have different owners, and one confident answer about the wrong location is
         somebody else's refund.</p>
@@ -799,21 +795,20 @@
   <img class="ph" src="https://images.pexels.com/photos/8201198/pexels-photo-8201198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/8201198/pexels-photo-8201198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8201198/pexels-photo-8201198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8201198/pexels-photo-8201198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
          alt="An older shopkeeper leaning on his counter" loading="lazy" decoding="async" width="1600" height="1068">
   <div class="wrap" style="padding-bottom:30px;">
-    <p style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3.4vw,44px);font-weight:600;
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
        letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">The candidate and the customer<br>arrive on the same line.</p>
-    <p style="margin-top:10px;font-size:13.5px;color:rgba(255,255,255,.76);font-weight:600;max-width:50ch;">One asks to book. One asks what it costs to open a store. They are never confused for each other.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:50ch;">One asks to book. One asks what it costs to open a store. They are never confused for each other.</p>
   </div>
 </section>
-<p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a named customer, and not a testimonial.</p>
 
 <!-- ═══════ INTEGRATION HONESTY ═══════ -->
 <section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#050B16,#081426);">
   <div class="wrap">
     <div class="head reveal" style="max-width:720px;">
       <span class="eyebrow"><i></i>Your existing systems, honestly</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">Three columns.<br>No logo wall.</h2>
+      <h2 class="h2 onDark" style="margin-top:18px;">Three columns.<br>No logo&nbsp;wall.</h2>
       <p class="secintro">This answer normally hides in an FAQ, which is exactly where a franchisor finds it after
-        the contract is signed. Here it is where you can see it — and the middle column is empty on purpose.</p>
+        the contract is signed. Here it is where you can see it — and the middle column names what is not there rather than listing something aspirational.</p>
     </div>
     <div class="statgrid reveal">
       <div class="statcol now"><h4><i></i>Live today</h4>
@@ -841,16 +836,16 @@
     <p class="statnote">We are not going to tell you a franchise system is connected when it is not, and we are not
       going to name a month. If your group cannot run without a two-way write into your field-management software today,
       say so on the call and we will tell you to wait. We would rather lose the month than the trust —
-      <a href="../integrations.html" style="color:var(--teal);font-weight:700;">the full integration list is here</a>.</p>
+      <a href="../integrations.html" style="color:var(--teal-ink);font-weight:700;">the full integration list is here</a>.</p>
   </div>
 </section>
 
 <!-- ═══════ FAQ ═══════ -->
-<section class="faqsec bg-clinical t-md">
+<section class="faqsec bg-paper t-md">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow light"><i></i>FAQ</span>
-      <h2 class="h2" style="margin-top:20px">Franchise groups ask us</h2>
+      <h2 class="h2" style="margin-top:20px">Franchise groups ask&nbsp;us</h2>
     </div>
     <div class="faq reveal">
       <details>
@@ -883,7 +878,7 @@
       </details>
       <details>
         <summary>What does it cost across a dozen locations?</summary>
-        <p>The published plans: <b>Start $79/mo</b> covers one location, <b>Grow $249/mo</b> up to three, and <b>Scale from $599/mo</b> up to ten and calendars, Zapier, webhooks and CSV — direct syncs on the roadmap. AI Phone starts at Scale, and voice usage is billed on top from $0.14/min in the US. Locations and channels are separate limits, which catches multi-site buyers out constantly — the <a href="../pricing.html">pricing page</a> works a real month through in full. Beyond ten locations, ask us on the call. Founding cohort is 50% off for three months.</p>
+        <p>The published plans: <b>Start $79/mo</b> covers one location, <b>Grow $249/mo</b> up to three, and <b>Scale from $599/mo</b> up to ten locations. Calendars, Zapier, webhooks and CSV are included; direct syncs are on the roadmap. AI Phone starts at Scale, and voice usage is billed on top from $0.14/min in the US. Locations and channels are separate limits, which catches multi-site buyers out constantly — the <a href="../pricing.html">pricing page</a> works a real month through in full. Beyond ten locations, ask us on the call. Founding cohort is 50% off for three months.</p>
       </details>
     </div>
   </div>
@@ -891,16 +886,68 @@
 <section class="t-sm sec-dark"><div class="wrap" style="max-width:760px;margin:0 auto;">
   <div class="quotecard light pending">
         <div class="mark">“</div>
-        <p>This space is held for a founding hotelier. We are in early access, so there is no customer quote here yet — when a partner stay agrees to be named, their words go in this card. We would rather leave it empty than invent one.</p>
+        <p>This space is held for a founding group. We are in early access, so there is no customer quote here yet — when a partner group agrees to be named, their words go in this card. We would rather leave it empty than invent one.</p>
         <div class="by">
           <span class="avatar av-b" style="opacity:.5;">?</span>
-          <span><b>Reserved · founding boutique stay</b><span>Multi-site retail · United States</span></span>
+          <span><b>Reserved · founding multi-site group</b><span>Multi-site retail · United States</span></span>
         </div>
-        <div class="metric">Want this to be your quote? <a href="../index.html#early-access" style="color:#0A7F7F;">Watch it answer my questions ↗</a></div>
+        <div class="metric">Want this to be your quote? <a href="../index.html#early-access" style="color:#0A7F7F;">Get the plan for my trade</a></div>
       </div>
 </div></section>
 
 <!-- ═══════ CLOSER ═══════ -->
+<!-- PACK: the actual per-trade configuration, not a re-skinned page -->
+<section class="packsec sec-dark bg-grid t-md" id="the-pack">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:760px;">
+      <div class="secrule"><span class="eyebrow"><i></i>Not a skin &mdash; a different object model</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Six fields, three rules,<br>and one thing it will not&nbsp;do.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most industry pages change a photograph and a noun. This is the
+        configuration itself: the fields the record carries, the rules the calendar enforces, the lines a quote is built
+        from, who ends up with the task, and the subject the AI is not allowed to touch.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the record carries</span>
+        <div class="pkfields"><div class="pkf"><b>Customer name and number</b><span>one record across every site</span></div><div class="pkf"><b>Which location</b><span>or the nearest one</span></div><div class="pkf"><b>Service requested</b><span>from the group catalogue</span></div><div class="pkf"><b>Preferred time</b><span>against that site&rsquo;s hours</span></div><div class="pkf"><b>How they found the group</b><span>attribution rolls up</span></div><div class="pkf"><b>New or existing</b><span>decides the routing</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the calendar enforces</span>
+        <ol class="pkrules"><li>Group pricing is the floor; a site may price above the group floor, never below it, unless the group approves.</li><li>A booking is held against that site&rsquo;s own calendar and staff, not a group average.</li><li>A customer who contacted one site is not a stranger to the next one.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a quote is built from</span>
+        <ul class="pkq"><li>Group price for the service</li><li>Site-level adjustment, if approved</li><li>Any local promotion in force</li><li>Total, with the site named on the document</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with the work</span>
+        <p class="pktask">The site manager owns the booking &mdash; and head office can see it.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Approving a discount outside group policy, or committing another site&rsquo;s calendar.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Inquiries answered per site after hours</span><span class="pkk">Site-level conversion, compared</span><span class="pkk">Group revenue by source</span><span class="pkk">Sites below the group answer rate</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Location availability, slot length and pricing all come from your own setup. Product illustration &mdash; the fields and rules are the real ones.</span>Inquiries answered per site, conversion compared site by site, and one group view over both. The comparison is the point: until every site answers, you cannot tell a weak location from an unanswered phone.</p>
+  </div>
+</section>
+
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have seen the group view</span>
+        <p class="cnp">Every site answers, every site is measured the same way, and one price floor holds across all of them. What this page cannot tell you is which of your locations is weak and which is simply unanswered &mdash; that is the first thing the comparison shows you.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="../pricing.html">See what it costs per site<span class="cir">&#8599;</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="closer bg-aurora">
   <div class="wrap">
     <div class="riskrow short reveal">
@@ -908,11 +955,11 @@
       <div class="riskitem"><div class="ic">%</div><b>Founding pricing</b><span>50% off for 3 months, locked before general availability.</span></div>
     </div>
 
-    <h2 class="reveal">The customer reaches<br>their store. The candidate<br>reaches <em>your team.</em></h2>
+    <h2 class="reveal">The customer&nbsp;reaches<br>their store. The&nbsp;candidate<br>reaches <em>your team.</em></h2>
     <p class="lead onDark reveal">Import each location's hours and price list, hand us the disclosure document, and let Saleringo take the next call nobody in any store is free to answer.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Watch it answer my questions<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" data-book data-fallback="../index.html#early-access" href="../index.html#early-access">Ask for a 20-min call — we propose times<span class="cir">↗</span></a>
+      <a class="btn btn-teal" href="#early-access">Get the plan for my trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="../demo.html">Read a full call, start to finish<span class="cir">↗</span></a>
     </div>
 
     <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
@@ -948,7 +995,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo">Saleringo<b>.</b></span><span class="ver ver-f">v4.4</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer record.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -963,6 +1010,7 @@
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../examples.html#franchise">Worked examples</a>
         <a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a>
       </div>
       <div>
         <h4>Industries</h4>
@@ -987,15 +1035,21 @@
     </div>
   </div></footer>
 </section>
+<nav data-startpath data-compact aria-hidden="true" data-title="What to check here" data-end="#early-access" data-end-label="Get my plan">
+  <ol>
+    <li data-step="#the-pack" data-short="The pack" data-next="see the six fields and three rules"><a href="#the-pack"><b>The pack</b></a></li>
+  </ol>
+</nav>
 </main>
 
 <div class="stickycta" data-sticky>
   <div class="wrap">
     <span class="msg">Two pipelines, one line. <b>The right location, the right price, no earnings claim.</b></span>
-    <a class="btn btn-teal" href="#early-access">Get the Franchise setup plan<span class="cir">↗</span></a>
+    <a class="btn btn-teal" href="#early-access">Get my plan<span class="cir">↗</span></a>
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=4.4"></script>
+<script src="../../assets/js/site.js?v=11.3"></script>
+<script src="../../assets/js/guide.js?v=11.3"></script>
 </body>
 </html>

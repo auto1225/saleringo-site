@@ -72,10 +72,16 @@ window.SR_CONFIG = window.SR_CONFIG || {
         el.setAttribute('target', '_blank');
         el.setAttribute('rel', 'noopener');
       } else {
-        /* No external scheduler: send them to the on-site flow, which collects
-           preferred times itself. A CTA must always land somewhere real. */
-        var depth = /\/en\/industries\//.test(location.pathname) ? '../' : './';
-        el.setAttribute('href', depth + (CFG.bookingPage || 'get-started.html'));
+        /* No external scheduler. The author may have named a destination on the
+           element itself — honour that before falling back to the generic flow,
+           otherwise data-fallback is markup that lies about what will happen. */
+        var fb = el.getAttribute('data-fallback');
+        if (fb) {
+          el.setAttribute('href', fb);
+        } else {
+          var depth = /\/en\/industries\//.test(location.pathname) ? '../' : './';
+          el.setAttribute('href', depth + (CFG.bookingPage || 'get-started.html'));
+        }
       }
     });
     document.querySelectorAll('[data-tel]').forEach(function (el) {
@@ -90,6 +96,31 @@ window.SR_CONFIG = window.SR_CONFIG || {
     });
   }
   wireConfigCTAs();
+
+  /* ── say what the button does, before it is pressed ──
+     With no formEndpoint provisioned the submit handler does not post: it
+     writes the message and hands the visitor four ways to send it. The fine
+     print beside all 37 lead forms promised "a person replies within one
+     business day" and said nothing about that, so a visitor pressed the
+     button believing they had submitted, and only then met a send step. The
+     promise is true — the missing fact was who presses send. Stated here at
+     runtime rather than in the markup, so the day an endpoint is configured
+     every page silently goes back to the direct-submit wording. */
+  function tellTheTruthAboutForms() {
+    if (CFG.formEndpoint) return;
+    var LEAD = 'One tap writes your message and opens it in your mail app, ' +
+               'Gmail or Outlook — you press send. ';
+    var notes = document.querySelectorAll('.eanote, .sp-fine');
+    Array.prototype.forEach.call(notes, function (el) {
+      if (el.getAttribute('data-ea-told') !== null) return;
+      el.setAttribute('data-ea-told', '');
+      var b = document.createElement('b');
+      b.className = 'eanote-how';
+      b.textContent = LEAD;
+      el.insertBefore(b, el.firstChild);
+    });
+  }
+  tellTheTruthAboutForms();
 
   /* ── lead capture ──
      v2 posted nothing: it fired a mailto: and printed a copy-paste box.
@@ -313,6 +344,53 @@ window.SR_CONFIG = window.SR_CONFIG || {
       }, { threshold: 0 });
       quiet.forEach(function (el) { qo.observe(el); });
     }
+  })();
+
+
+  /* ── back to top ──
+     These pages run to 27,000px. Once a reader is three screens down there is
+     no way back but a long drag, so the button appears then and not before —
+     showing it at the top would just be furniture.
+
+     DEV_SPEC 5.4 forbids window scroll listeners, so a 1px sentinel pinned two
+     viewports down does the deciding: while it is still ahead of you the page
+     is short enough to scroll by hand, and once you pass it the button arrives.
+     The markup is injected rather than repeated across 26 files — it is chrome,
+     it carries no content, and one definition cannot drift out of sync. ── */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (document.querySelector('.totop')) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'totop';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+                    '<path d="M12 19V6M12 6l-6 6M12 6l6 6" fill="none" stroke="currentColor" ' +
+                    'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    var mark = document.createElement('span');
+    mark.className = 'totop-mark';
+    mark.setAttribute('aria-hidden', 'true');
+
+    document.body.appendChild(mark);
+    document.body.appendChild(btn);
+
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        /* past the mark means it has left the top of the viewport */
+        btn.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0);
+      });
+    }, { threshold: 0 }).observe(mark);
+
+    btn.addEventListener('click', function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      /* Send focus somewhere sensible, or a keyboard user is left stranded at
+         the bottom of the document with the page visually at the top. */
+      var first = document.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
+      if (first) first.focus({ preventScroll: true });
+    });
   })();
 
 })();
