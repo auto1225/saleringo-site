@@ -97,6 +97,27 @@ window.SR_CONFIG = window.SR_CONFIG || {
   }
   wireConfigCTAs();
 
+  /* ── reserve the sticky bar's height ──
+     It is fixed, so the document does not account for it, and once the guide
+     docks into it the bar is 165px tall on a phone. Measured and published as
+     --stickycta-h; the stylesheet pads the body by it so the footer clears,
+     and the hero adds it to its own bottom padding so the buttons are not
+     underneath the bar at first paint. */
+  function stickyctaHeight() {
+    var bar = document.querySelector('.stickycta');
+    var h = bar ? Math.round(bar.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty('--stickycta-h', h + 'px');
+  }
+  stickyctaHeight();
+  if (window.ResizeObserver) {
+    var bar = document.querySelector('.stickycta');
+    if (bar) new ResizeObserver(stickyctaHeight).observe(bar);
+  }
+  window.addEventListener('resize', stickyctaHeight);
+  /* the guide rail is inserted after this file runs */
+  setTimeout(stickyctaHeight, 0);
+  setTimeout(stickyctaHeight, 400);
+
   /* ── say what the button does, before it is pressed ──
      With no formEndpoint provisioned the submit handler does not post: it
      writes the message and hands the visitor four ways to send it. The fine

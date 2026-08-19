@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=13.4">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=13.4">
-<link rel="stylesheet" href="../assets/css/crm.css?v=13.4">
+<link rel="stylesheet" href="../assets/css/site.css?v=14.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=14.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=14.0">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -76,6 +76,27 @@
   .hero .sub{margin-top:22px;max-width:520px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
   .hero .ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero .specstrip{margin-top:30px;justify-content:flex-start;gap:22px;}
+  /* the three products, named, in the opening screen. Rows, not cards: in a
+     180px column the sentences wrapped to five lines and became something to
+     read rather than something to take in. */
+  .chan3{margin-top:26px;display:flex;flex-direction:column;gap:2px;
+    border-top:1px solid var(--hair);padding-top:4px;}
+  .c3{display:grid;grid-template-columns:9px 108px minmax(0,1fr);gap:11px;
+    align-items:baseline;padding:9px 8px;border-radius:9px;
+    transition:background .3s var(--ease);}
+  .c3:hover{background:rgba(255,255,255,.05);}
+  .c3 i{width:7px;height:7px;border-radius:50%;transform:translateY(-2px);}
+  .c3 b{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.11em;
+    text-transform:uppercase;white-space:nowrap;}
+  .c3 span{font-size:var(--fs-xs);line-height:1.55;color:var(--tx2);font-weight:500;}
+  .c3:hover span{color:var(--tx);}
+  .c3.voice b{color:var(--chan-voice);} .c3.voice i{background:var(--chan-voice);}
+  .c3.chat  b{color:var(--chan-chat);}  .c3.chat  i{background:var(--chan-chat);}
+  .c3.msg   b{color:var(--chan-msg);}   .c3.msg   i{background:var(--chan-msg);}
+  @media (max-width:620px){
+    .c3{grid-template-columns:9px minmax(0,1fr);gap:9px;padding:7px 6px;}
+    .c3 b{grid-column:2;} .c3 span{grid-column:2;margin-top:2px;}
+  }
   /* right column: the product, frozen at the moment that matters. Motion lives
      below the fold in #try — a hero must be readable in three seconds, and a
      playing demo competes with the headline it exists to prove. */
@@ -131,7 +152,7 @@
     .hero .eyebrow{order:1;} .hero h1{order:2;} .hero .sub{order:3;}
     .hero .ctas{order:4;} .heroprice{order:5;}
     .herowin{order:6;margin-top:4px;}
-    .hero .specstrip{order:7;} .whofor{order:8;}
+    .chan3{order:7;} .chan3end{order:8;} .whofor{order:9;}
     .herowin .qmini{margin-top:10px;}
     /* the rail costs 52px a phone does not have; the times go inline */
     .herowin .nl{grid-template-columns:1fr;gap:4px;}
@@ -331,7 +352,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v13.4">v13.4</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v14.0">v14.0</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -356,11 +377,23 @@
         <a class="btn btn-ghostd" href="#early-access">I know what I need &mdash; get my plan</a>
       </div>
     <p class="heroprice"><b>From $79/mo.</b> Phone answering from $599. <i>14-day refund · cancel anytime · no setup fee</i></p>
-      <div class="specstrip">
-        <span><i>●</i><b>3 channels</b>, one inbox</span>
-        <span><i>●</i><b>Books &amp; quotes</b> by itself</span>
-        <span><i>●</i><b>Pipeline &amp; reports</b> built in</span>
+      <div class="chan3">
+        <a class="c3 voice" href="./voice.html">
+          <i></i><b>AI&nbsp;Phone</b>
+          <span>Picks up on the second ring &mdash; you get the&nbsp;number.</span>
+        </a>
+        <a class="c3 chat" href="./webchat.html">
+          <i></i><b>Web&nbsp;chat</b>
+          <span>Answers on your site &mdash; you get the name and&nbsp;email.</span>
+        </a>
+        <a class="c3 msg" href="./whatsapp.html">
+          <i></i><b>Messenger</b>
+          <span>WhatsApp and Instagram &mdash; the contact comes with the&nbsp;thread.</span>
+        </a>
       </div>
+      <p class="chan3end">Three front doors, one customer record &mdash;
+        <a href="./platform.html#who-next">and a person you can call, message or email
+        tomorrow&nbsp;&nbsp;&rarr;</a></p>
       <div class="whofor">
         <span class="whotxt">Built for the people who answer the phone themselves — <b>founding cohort now open</b></span>
       </div>
@@ -407,79 +440,6 @@
 </header>
 
 <main>
-
-<!-- ═══════════ 2 · THREE CHANNELS — tilted product cards (sec-dark) ═══════════ -->
-<section class="nightsec t-xl bg-dusk">
-  <div class="wrap">
-    <div class="photosplit reveal">
-      <div class="media">
-        <img class="ph" src="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-             alt="A technician on a rooftop working inside an opened air-conditioning unit"
-             loading="lazy" decoding="async" width="1200" height="992"
-     srcset="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
-      </div>
-      <div class="copy">
-        <div class="secrule"><span class="eyebrow"><i></i>The 2:47 AM problem</span></div>
-        <h2 class="h2 onDark">The furnace&nbsp;dies<br>at 2:47&nbsp;AM.<br><span class="gradtext warm">Your competitor picks&nbsp;up.</span></h2>
-        <p class="lead onDark" style="margin-top:20px;">Nobody schedules an emergency. The AC quits on the hottest night, the pipe bursts on a Sunday, the guest lands at 11 PM. Whoever answers first gets the job — and it is almost never the business that was asleep.</p>
-        <p style="margin-top:28px;"><a class="linkcta" style="color:#fff;border-bottom-color:var(--hair2);" href="./industries/home-services.html">How the home-services pack takes a night call&nbsp;&nbsp;→</a></p>
-      </div>
-    </div>
-
-          <!-- The claim above is arithmetic, not a survey: a nine-to-six desk is
-           shut for fifteen of the day's twenty-four hours. The dial draws that,
-           and marks the hour named in the headline. -->
-      <div class="nightfig scenefig reveal">
-        <div class="scenebox" data-scene="nightclock"></div>
-        <div>
-          <p class="scenecap"><b>A nine-to-six desk is closed for 15 of the day&rsquo;s
-            24 hours</b> &mdash; then both weekend days on top of that. Across a full
-            week the phone is answered for <span class="num">45 of 168 hours</span>.
-            Every hour in the lit part of that dial is an hour a customer can still
-            decide to call somebody, and 2:47&nbsp;AM is one of them.</p>
-          <p class="scenecap" style="margin-top:12px;">This is not a statistic we
-            collected. It is what a nine-to-six week divides into.</p>
-        </div>
-      </div>
-
-<div class="midscene reveal">
-      <div class="scene-frame">
-        <div class="photo-scrim" style="aspect-ratio:3/2;">
-          <img class="ph" src="https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-               srcset="https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-               sizes="(max-width:1240px) 100vw, 1160px" alt="A modern house at night, the upper-floor windows glowing warm against a black sky"
-               loading="lazy" decoding="async" width="1600" height="1068">
-        </div>
-          <span class="caption">The lights are on upstairs. The call still lands in voicemail.</span>
-      </div>
-    </div>
-
-    <div class="baGrid reveal">
-      <div class="baCol before">
-        <h4 role="heading" aria-level="3">Tonight, without Saleringo</h4>
-        <ul>
-          <li><i>✕</i>Voicemail answers. Most callers never leave one.</li>
-          <li><i>✕</i>They dial the next business on the search results.</li>
-          <li><i>✕</i>Your web chat sits unread until 9 AM.</li>
-          <li><i>✕</i>The WhatsApp from a traveller in another timezone goes cold.</li>
-          <li><i>✕</i>You find out you lost the job — if you ever find out.</li>
-        </ul>
-      </div>
-      <div class="baArrow" aria-hidden="true">→</div>
-      <div class="baCol after">
-        <h4>Tonight, with Saleringo</h4>
-        <ul>
-          <li><i>✓</i>Second ring. Answered in the caller's own language.</li>
-          <li><i>✓</i>Quotes the after-hours rate from your approved price list.</li>
-          <li><i>✓</i>Books the slot in your calendar, timezone-safe.</li>
-          <li><i>✓</i>Texts your on-call tech when it is a real emergency.</li>
-          <li><i>✓</i>You wake up to a booked job and a full transcript.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="foot"><span class="capnote">Every scenario above is a scripted illustration of how the product behaves.</span><br>The difference between the two columns is not effort or price. It is whether anything picks up on the second ring. <a href="./demo.html">Walk through the full demo ↗</a></p>
-  </div>
-</section>
 
 <section class="chanband t-md sec-dark">
   <div class="wrap">
@@ -554,6 +514,81 @@
   </div>
   </div>
 </section>
+
+<!-- ═══════════ 2 · THREE CHANNELS — tilted product cards (sec-dark) ═══════════ -->
+<section class="nightsec t-xl bg-dusk">
+  <div class="wrap">
+    <div class="photosplit reveal">
+      <div class="media">
+        <img class="ph" src="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+             alt="A technician on a rooftop working inside an opened air-conditioning unit"
+             loading="lazy" decoding="async" width="1200" height="992"
+     srcset="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
+      </div>
+      <div class="copy">
+        <div class="secrule"><span class="eyebrow"><i></i>The 2:47 AM problem</span></div>
+        <h2 class="h2 onDark">The furnace&nbsp;dies<br>at 2:47&nbsp;AM.<br><span class="gradtext warm">Your competitor picks&nbsp;up.</span></h2>
+        <p class="lead onDark" style="margin-top:20px;">Nobody schedules an emergency. The AC quits on the hottest night, the pipe bursts on a Sunday, the guest lands at 11 PM. Whoever answers first gets the job — and it is almost never the business that was asleep.</p>
+        <p style="margin-top:28px;"><a class="linkcta" style="color:#fff;border-bottom-color:var(--hair2);" href="./industries/home-services.html">How the home-services pack takes a night call&nbsp;&nbsp;→</a></p>
+      </div>
+    </div>
+
+          <!-- The claim above is arithmetic, not a survey: a nine-to-six desk is
+           shut for fifteen of the day's twenty-four hours. The dial draws that,
+           and marks the hour named in the headline. -->
+      <div class="nightfig scenefig reveal">
+        <div class="scenebox" data-scene="nightclock"></div>
+        <div>
+          <p class="scenecap"><b>A nine-to-six desk is closed for 15 of the day&rsquo;s
+            24 hours</b> &mdash; then both weekend days on top of that. Across a full
+            week the phone is answered for <span class="num">45 of 168 hours</span>.
+            Every hour in the lit part of that dial is an hour a customer can still
+            decide to call somebody, and 2:47&nbsp;AM is one of them.</p>
+          <p class="scenecap" style="margin-top:12px;">This is not a statistic we
+            collected. It is what a nine-to-six week divides into.</p>
+        </div>
+      </div>
+
+<div class="midscene reveal">
+      <div class="scene-frame">
+        <div class="photo-scrim" style="aspect-ratio:3/2;">
+          <img class="ph" src="https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+               srcset="https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+               sizes="(max-width:1240px) 100vw, 1160px" alt="A modern house at night, the upper-floor windows glowing warm against a black sky"
+               loading="lazy" decoding="async" width="1600" height="1068">
+        </div>
+          <span class="caption">The lights are on upstairs. The call still lands in voicemail.</span>
+      </div>
+    </div>
+
+    <div class="baGrid reveal">
+      <div class="baCol before">
+        <h4 role="heading" aria-level="3">Tonight, without Saleringo</h4>
+        <ul>
+          <li><i>✕</i>Voicemail answers. Most callers never leave one.</li>
+          <li><i>✕</i>They dial the next business on the search results.</li>
+          <li><i>✕</i>Your web chat sits unread until 9 AM.</li>
+          <li><i>✕</i>The WhatsApp from a traveller in another timezone goes cold.</li>
+          <li><i>✕</i>You find out you lost the job — if you ever find out.</li>
+        </ul>
+      </div>
+      <div class="baArrow" aria-hidden="true">→</div>
+      <div class="baCol after">
+        <h4>Tonight, with Saleringo</h4>
+        <ul>
+          <li><i>✓</i>Second ring. Answered in the caller's own language.</li>
+          <li><i>✓</i>Quotes the after-hours rate from your approved price list.</li>
+          <li><i>✓</i>Books the slot in your calendar, timezone-safe.</li>
+          <li><i>✓</i>Texts your on-call tech when it is a real emergency.</li>
+          <li><i>✓</i>You wake up to a booked job and a full transcript.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot"><span class="capnote">Every scenario above is a scripted illustration of how the product behaves.</span><br>The difference between the two columns is not effort or price. It is whether anything picks up on the second ring. <a href="./demo.html">Walk through the full demo ↗</a></p>
+  </div>
+</section>
+
+
 
 
 <!-- ══════════ THE PLAYABLE DEMO ══════════
@@ -1732,7 +1767,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v13.4</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v14.0</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -1787,12 +1822,12 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=13.4"></script>
-<script src="../assets/js/canvas.js?v=13.4" defer></script>
-<script src="../assets/js/scenes.js?v=13.4" defer></script>
-<script src="../assets/js/play.js?v=13.4"></script>
-<script src="../assets/js/guide.js?v=13.4"></script>
-<script src="../assets/js/pricelab.js?v=13.4"></script>
+<script src="../assets/js/site.js?v=14.0"></script>
+<script src="../assets/js/canvas.js?v=14.0" defer></script>
+<script src="../assets/js/scenes.js?v=14.0" defer></script>
+<script src="../assets/js/play.js?v=14.0"></script>
+<script src="../assets/js/guide.js?v=14.0"></script>
+<script src="../assets/js/pricelab.js?v=14.0"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {

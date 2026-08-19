@@ -1650,3 +1650,18 @@ html .hero-panel.lt :focus-visible{
   /* the homepage alone earns a tighter fold: its product surface must clear 812px */
   .hero.photohero{padding-top:68px !important;}
 }
+
+
+/* ── clearance for the fixed sticky bar ───────────────────────────────────
+   site.js measures the bar and sets --stickycta-h. Without this the footer's
+   last two lines sat under the bar at every scroll position and could not be
+   read, and on a phone the bar covered the hero's buttons at first paint. */
+/* Reserve the height only while the bar is actually up. It steps aside at the
+   closer, and padding held open for a bar that is not there reads as a dead
+   band above the footer. */
+body:has(.stickycta.show){padding-bottom:var(--stickycta-h,0px);}
+
+/* Gating .hasguide on .show was tried and reverted: the observer that sets
+   .show never fired on these pages, so the guide disappeared entirely on
+   phones. The bar stays up; the heroes that put their buttons underneath it
+   are shortened instead. */
