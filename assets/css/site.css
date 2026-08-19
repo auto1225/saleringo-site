@@ -2040,3 +2040,28 @@ html .bigfooter .brand{
   --fs-xs:13px;
   --fs-label:13px;
 }
+
+/* ── the same slack rule, on the column grids that were left out ──────────
+   The pattern above already exists for .crmduo / .crmtrio / .duo / .pairgrid:
+   a stretched grid track does nothing unless the card inside it is told to
+   fill, so the mock takes the slack and both columns finish on one line.
+   Six more grids of the same shape were only ever given `min-width:0`.
+
+   Measured at 1440 before this: the last mark inside one column landed ahead
+   of the other by 247px on webchat .thinkcols, 343px on clinics .cols, 268px
+   on stays .cols, 250px on academies .cols, 248px on franchise .split and
+   213px on voice .faqcols.
+
+   `flex:1 0 auto` and not `flex:1`, for the reason recorded above: basis 0
+   sizes the window from the grid instead of from its contents, and .appwin
+   clips, which cost the WhatsApp mock 107px of its own pipeline. */
+.thinkcols > div,.faqcols > div,.cols > div,.split > div,
+.grid > div,.reqwrap > div,.reqwrap > aside{
+  display:flex;flex-direction:column;
+}
+.thinkcols > div > .appwin,.thinkcols > div > .gradborder,
+.faqcols > div > .appwin,.cols > div > .appwin,.split > div > .appwin,
+.grid > div > .appwin,.reqwrap > div > .appwin,
+.thinkcols > div > .tsteps,.faqcols > div > .faq{
+  flex:1 0 auto;
+}
