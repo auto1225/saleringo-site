@@ -469,6 +469,345 @@ window.SR_PLAY = {
             rows:[['Summary','Asked whether a named city is still open.'],
                   ['Not done','No availability confirmed or denied. No expectation set.'],
                   ['Next action','Franchise team confirms in writing']]}}}
+    ]},
+
+  property: {
+    label: 'Property Management',
+    seed: 'The office is closed — I can still raise a works order.',
+    asks: [
+      { id:'leak', chip:'“Water’s coming through the kitchen ceiling”', risk:'normal',
+        turns:[
+          {who:'user', text:'Water is coming through the kitchen ceiling at Flat 4. It’s getting worse.'},
+          {who:'ai',   text:'Turn the stopcock off — it’s usually under the kitchen sink — and don’t use the kitchen lights or sockets until someone has looked at it. Uncontained water is on this property’s emergency list, so I can dispatch tonight rather than log it for Monday.'},
+          {who:'verify', text:'✓ From this property’s management agreement · 1 source'},
+          {who:'user', text:'It’s off. There’s a key safe.'},
+          {who:'result', text:'✓ Approved contractor booked · landlord notified'}],
+        why:'Make safe first, then dispatch. It read the emergency definition out of that property’s own agreement rather than deciding for itself what counts as urgent.',
+        produces:{
+          pipeline:{stage:'Contractor booked', ini:'A4', nm:'Ashcroft Ct · Flat 4',
+            mt:'Water through the kitchen ceiling — made safe, Redway booked 07:00', tag:'Urgent', chan:'Phone · 1:15 AM'},
+          booking:{title:'Out-of-hours attendance', slot:'07:00', note:'Key safe C4417 on the order; tenant home until 09:00.'},
+          quote:{ref:'Works order — make safe', lines:[['Out-of-hours attendance','approved contractor rate','—'],['Authorised up to','landlord’s ceiling on this property','$250']],
+            total:'Up to $250', foot:'Nothing above the ceiling without a person.'},
+          record:{name:'Flat 4, Ashcroft Court', sub:'Phone, 1:15 AM',
+            rows:[['From the record','Emergency definition read from this property’s management agreement'],
+                  ['Collected','Unit · tenancy · access · isolation times'],
+                  ['Next action','Landlord notified 01:36; manager reviews at 08:30']]}}},
+
+      { id:'whopays', chip:'“Who’s paying for this — me or the landlord?”', risk:'trap',
+        turns:[
+          {who:'user', text:'So who’s paying for this — me or the landlord?'},
+          {who:'handoff', text:'→ I’m not going to answer that. Who bears a repair cost depends on the tenancy and on what caused it, and that is a decision for your property manager, not for me. I’ve written your question down as you asked it and attached your tenancy to it.'},
+          {who:'result', text:'✓ Question recorded · tenancy attached · queued'}],
+        why:'Liability under a specific tenancy is a person’s decision. A wrong answer at 1 AM is a dispute in the morning and a deduction that will not stand.',
+        produces:{
+          pipeline:{stage:'Waiting on a person', ini:'A4', nm:'Ashcroft Ct · Flat 4',
+            mt:'Asked who bears the cost — refused, routed to the property manager', tag:'Refused', chan:'Phone · 1:22 AM'},
+          booking:null, bookingWhy:'No booking — nothing was being scheduled.',
+          quote:null,   quoteWhy:'No quote — it does not price a liability decision.',
+          record:{name:'Flat 4, Ashcroft Court', sub:'Phone, 1:22 AM',
+            rows:[['Recorded verbatim','The question in the tenant’s own words, with the tenancy attached'],
+                  ['Not done','No liability decided. No “usually the landlord”. No tenancy read back as an answer.'],
+                  ['Next action','Property manager answers it in writing at 08:30']]}}},
+
+      { id:'rent', chip:'“Can the landlord raise my rent by that much?”', risk:'trap',
+        turns:[
+          {who:'user', text:'I’ve had a notice. Can the landlord actually raise my rent by that much?'},
+          {who:'handoff', text:'→ That’s tenancy law and I don’t give views on it, in any wording. I’ve logged it against your tenancy so the manager has it, and our published advice line is on the notice you were sent.'},
+          {who:'result', text:'✓ Logged against the tenancy · routed'}],
+        why:'Every wording of a tenancy-law answer is still advice, and it is still the agency that gave it.',
+        produces:{
+          pipeline:{stage:'Waiting on a person', ini:'??', nm:'Tenant',
+            mt:'Asked whether a rent increase is lawful — refused, logged', tag:'Refused', chan:'Web chat · 9:05 PM'},
+          booking:null, bookingWhy:'No booking — nothing to schedule.',
+          quote:null,   quoteWhy:'No quote — this is not a priced question.',
+          record:{name:'Tenant', sub:'Web chat, 9:05 PM',
+            rows:[['Logged','Against the tenancy, with the notice date as given'],
+                  ['Not done','No view on lawfulness. No figure. No “that sounds about right”.'],
+                  ['Next action','Property manager responds; published advice line offered']]}}}
+    ]},
+
+  restaurants: {
+    label: 'Restaurants',
+    seed: 'We’ve finished service — I can still take a function inquiry.',
+    asks: [
+      { id:'function', chip:'“24 people, a Friday in December — minimum spend?”', risk:'normal',
+        turns:[
+          {who:'user', text:'24 people, a Friday in December, for the office party. What’s the minimum spend?'},
+          {who:'ai',   text:'On a December Friday the private room is $300 hire with an $1,800 minimum spend, and the set menu is $68 a head — so 24 covers clears it. That is one sitting; we don’t turn the room on that date.'},
+          {who:'verify', text:'✓ From your function sheet · 2 sources'},
+          {who:'user', text:'Hold the 12th.'},
+          {who:'result', text:'✓ Date held 72 hours · deposit link sent'}],
+        why:'It quoted the peak-date minimum rather than the everyday one, and said out loud that the room is not turned — the two things an organiser finds out too late.',
+        produces:{
+          pipeline:{stage:'Date held', ini:'NB', nm:'N. B. · office party',
+            mt:'24 covers, Fri 12 Dec dinner, private room — held 72 h', tag:'AI logged', chan:'Phone · 10:40 PM'},
+          booking:{title:'Private room, dinner', slot:'Fri 12 Dec · 19:30', note:'Single sitting on this date — the room is not turned.'},
+          quote:{ref:'Function — private room', lines:[['Room hire','private room','$300'],['Minimum spend','December Friday, peak','$1,800'],['Set menu','per head, 24 covers','$68']],
+            total:'$1,800 min', foot:'From your function sheet. No package improvised, no discount.'},
+          record:{name:'N. B. (organiser)', sub:'Phone, 10:40 PM',
+            rows:[['Collected','Date · service · covers · occasion · arrival and turn'],
+                  ['Deposit','$300, 14-day terms — payment link sent, no card touched'],
+                  ['Next action','Date releases automatically if the deposit is unpaid']]}}},
+
+      { id:'allergy', chip:'“One guest has a severe nut allergy — is it safe?”', risk:'trap',
+        turns:[
+          {who:'user', text:'One of the guests has a severe nut allergy. Is the set menu safe for her?'},
+          {who:'handoff', text:'→ I’m not going to tell you that. Only the kitchen can answer what a dish contains and what it is prepared beside, so I’ve written the allergy down exactly as you said it and sent the head chef the question tonight. The date stays held, but it is not confirmed until he answers.'},
+          {who:'result', text:'✓ Allergy recorded verbatim · chef asked · booking left unconfirmed'}],
+        why:'“Should be fine” is the sentence that ends restaurants. The booking is deliberately left in an unconfirmed state so the question cannot be quietly dropped.',
+        produces:{
+          pipeline:{stage:'Held — waiting on the kitchen', ini:'NB', nm:'N. B. · office party',
+            mt:'Severe nut allergy declared — recorded, not answered; chef asked', tag:'Urgent', chan:'Phone · 10:46 PM'},
+          booking:{title:'Private room, dinner', slot:'Fri 12 Dec · 19:30', note:'Held, not confirmed. It stays that way until the kitchen answers.'},
+          quote:null, quoteWhy:'No quote — the booking cannot be confirmed on this point.',
+          record:{name:'N. B. (organiser)', sub:'Phone, 10:46 PM',
+            rows:[['Recorded verbatim','The allergy in the organiser’s words, attached to the booking'],
+                  ['Not done','No “should be fine”. No “the kitchen is careful”. No dish called free of anything.'],
+                  ['Next action','Head chef answers in writing before the date is confirmed']]}}},
+
+      { id:'squeeze', chip:'“Can you just squeeze us in at 8 on Saturday?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Can you just squeeze us in at 8 on Saturday? It’s only six of us.'},
+          {who:'handoff', text:'→ I can’t overbook the floor — eight o’clock on a Saturday is full on the plan in front of me, and a table that exists only in a booking system is worse than no table. 6:15 and 9:30 are genuinely free. I’ll put you on the waitlist for 8 as well.'},
+          {who:'result', text:'✓ Second sitting booked · waitlisted for 8'}],
+        why:'It offers the sittings that exist on the floor plan instead of the one the caller wants. Overbooking is the one favour that costs the restaurant the evening.',
+        produces:{
+          pipeline:{stage:'Booked · second sitting', ini:'??', nm:'Caller · 6 covers',
+            mt:'Asked to be squeezed in at 8 — refused; 9:30 taken, waitlisted for 8', tag:'AI logged', chan:'Web chat · 8:20 PM'},
+          booking:{title:'Dining room', slot:'Sat · 21:30', note:'From the real floor plan. Waitlisted for 20:00 if a table drops.'},
+          quote:null, quoteWhy:'No quote — an à la carte cover is not a priced function.',
+          record:{name:'Caller · 6 covers', sub:'Web chat, 8:20 PM',
+            rows:[['Offered','6:15 and 9:30 — the sittings that are actually free'],
+                  ['Not done','No table created that the floor plan does not have.'],
+                  ['Next action','Waitlist alert if 20:00 releases']]}}}
+    ]},
+
+  salons: {
+    label: 'Salons &amp; Barbers',
+    seed: 'The salon’s closed — I can still book you in.',
+    asks: [
+      { id:'balayage', chip:'“How much for a full balayage?”', risk:'normal',
+        turns:[
+          {who:'user', text:'How much for a full balayage, and do you have a Saturday? My hair’s past my shoulders.'},
+          {who:'ai',   text:'On our menu a full-head balayage is $180–$260, and at that length the $30 long-hair surcharge is already inside the band — I’d rather you heard that now than at the chair. It’s a double slot, so I need two together.'},
+          {who:'verify', text:'✓ From your service menu · 2 sources'},
+          {who:'user', text:'Marta if she’s free. Saturday.'},
+          {who:'result', text:'✓ Two slots held in Marta’s column · deposit link sent'}],
+        why:'It quoted the band, not a flat number, and named the length surcharge out loud — because a flat number on Sunday night is an argument at the chair on Saturday.',
+        produces:{
+          pipeline:{stage:'Held · deposit pending', ini:'EM', nm:'E. M.',
+            mt:'Full-head balayage, past-shoulder length — asked for Marta by name', tag:'AI logged', chan:'Instagram · 9:35 PM'},
+          booking:{title:'Marta’s column — Saturday', slot:'Sat 10:00 + 10:30', note:'Double slot held together. Held, not confirmed, until the deposit clears.'},
+          quote:{ref:'Colour booking', lines:[['Full-head balayage','your service menu','$180–$260'],['Long-hair surcharge','already inside the band','+$30'],['Deposit to hold','your payment link','$40']],
+            total:'$180–$260', foot:'Built from the salon’s own menu. The surcharge is named before the slot is offered, never after.'},
+          record:{name:'E. M.', sub:'Instagram DM, 9:35 PM Sunday',
+            rows:[['Collected','Service · length and current colour · stylist requested by name'],
+                  ['Calendar','Double slot — two consecutive gaps in one column, never one gap and a hope'],
+                  ['Next action','Deposit link sent on the same thread; added to the cancellation list']]}}},
+
+      { id:'photo', chip:'“Will it come out like this photo?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Will it come out like this photo?'},
+          {who:'handoff', text:'→ I can’t tell you that, and I won’t guess at it — what a colour does depends on what’s already on the hair, and only somebody looking at it can say. I’ve saved the photo to your record so the stylist has it in front of her. The colour consultation is $35 and it comes off whatever we book after it.'},
+          {who:'result', text:'✓ Consultation booked · reference image saved'}],
+        why:'“Yes, that’s achievable” is the single most expensive sentence an answering service can say in this trade. It is a permanent refusal, not a confidence threshold.',
+        produces:{
+          pipeline:{stage:'Consultation booked', ini:'EM', nm:'E. M.',
+            mt:'Sent a reference photo — no result promised, consultation booked instead', tag:'AI logged', chan:'WhatsApp · 10:14 PM'},
+          booking:{title:'Colour consultation', slot:'Thu 18:00', note:'The appointment that produces the real answer and the real price.'},
+          quote:null, quoteWhy:'No quote — it will not price a colour nobody has looked at.',
+          record:{name:'E. M.', sub:'WhatsApp, 10:14 PM',
+            rows:[['Saved','Reference image attached to the record before the stylist arrived'],
+                  ['Not done','No result promised. No “that should be achievable”. No hedge.'],
+                  ['Next action','Stylist sees the image before the client sits down']]}}},
+
+      { id:'patchtest', chip:'“Can I skip the patch test?”', risk:'trap',
+        turns:[
+          {who:'user', text:'I reacted a bit last time — itchy for a day. Can I just skip the patch test?'},
+          {who:'handoff', text:'→ No. Our rule is a patch test at least 48 hours before any colour service, with no exceptions, and I have no authority to move it — there is genuinely no colour date inside that window for me to offer you. I’m not going to judge what you’ve described either; I’ve written it down in your words and a stylist will call you.'},
+          {who:'result', text:'✓ Colour dates suppressed · stylist called · test offered'}],
+        why:'This is a calendar rule, not a script. Inside the window the colour dates do not exist, so there is nothing for a caller to talk it past.',
+        produces:{
+          pipeline:{stage:'Awaiting a person', ini:'??', nm:'Client',
+            mt:'Asked to skip the patch test and reported a past reaction — refused, routed to a stylist', tag:'Urgent', chan:'Phone · 7:48 PM'},
+          booking:null, bookingWhy:'No colour date exists inside the 48-hour window. A patch test was offered instead.',
+          quote:null,   quoteWhy:'No quote — nothing may be booked until the test clears.',
+          record:{name:'Client', sub:'Phone, 7:48 PM',
+            rows:[['Recorded verbatim','“Reacted a bit last time — itchy for a day.” In her words, not a paraphrase.'],
+                  ['Not done','No view on the reaction. No “that sounds mild”. No exception granted.'],
+                  ['Next action','Named stylist calls tomorrow; patch test offered Saturday, which clears Monday']]}}}
+    ]},
+
+  auto: {
+    label: 'Auto Repair',
+    seed: 'Shop’s shut — I can still book the ramp.',
+    asks: [
+      { id:'diagnostic', chip:'“How much to look at the engine light?”', risk:'normal',
+        turns:[
+          {who:'user', text:'Engine light came on — how much to look at it, and can you take it tomorrow?'},
+          {who:'ai',   text:'The diagnostic is $95, and it comes off the repair if we do the work. Our labour rate is $145 an hour. What I can’t do is tell you what the repair costs before it’s on the ramp. Ramp 1 has 8:00 or 11:30 — can I take the plate?'},
+          {who:'verify', text:'✓ From your rate card · 2 sources'},
+          {who:'user', text:'Eight. And I need it back for a 6 AM shift Thursday.'},
+          {who:'result', text:'✓ Ramp booked · job card written · ceiling agreed'}],
+        why:'It quoted the two figures that exist before anyone looks at the car — the diagnostic and the hourly rate — and took the authorisation ceiling on the call, so the morning starts with work instead of a phone call.',
+        produces:{
+          pipeline:{stage:'Ramp booked', ini:'RC', nm:'2017 1.5 petrol',
+            mt:'“Hesitates under acceleration” · light on · drivable · needed back Thursday 6 AM', tag:'AI logged', chan:'Phone · 6:48 PM'},
+          booking:{title:'Ramp 1 — tomorrow', slot:'Wed 08:00', note:'From the real workshop diary. Courtesy car held against the job card.'},
+          quote:{ref:'Job card', lines:[['Diagnostic','your rate card','$95'],['Labour, per hour','published rate','$145'],['Courtesy car, per day','held against the job','$25']],
+            total:'$95 to start', foot:'The diagnostic and the labour rate only. The repair is quoted on the ramp and approved before anything is touched.'},
+          record:{name:'2017 1.5 petrol', sub:'Phone, 6:48 PM',
+            rows:[['Collected','Plate → year, make, model and engine → guide time. The VIN is asked for when the plate is not enough.'],
+                  ['Authorisation','$250 ceiling agreed on the call. Under it work starts at eight; over it somebody rings first.'],
+                  ['Next action','Job card on the bench before the car is through the door']]}}},
+
+      { id:'ballpark', chip:'“It grinds when I brake — what’ll that cost?”', risk:'trap',
+        turns:[
+          {who:'user', text:'It grinds when I brake. Roughly what’s that going to cost?'},
+          {who:'handoff', text:'→ I’m not going to put a number on that. Grinding under braking could be three different jobs at three very different prices, and guessing at it on the phone only means you get a different number when it’s up on the ramp. The $95 diagnostic and the $145 hourly rate are what I can quote. I’ve written “grinding under braking” on the card in your words and flagged it as safety-related.'},
+          {who:'result', text:'✓ Ramp booked · words recorded verbatim · flagged'}],
+        why:'A shop owner will trust this page or dismiss it on this one sentence. It will not price a repair before the car is on the ramp — not as a range, not as a “usually around”, and not on the second ask.',
+        produces:{
+          pipeline:{stage:'Ramp booked', ini:'??', nm:'Caller',
+            mt:'“Grinding under braking” — refused a price, flagged safety-related, ramp booked', tag:'Urgent', chan:'Phone · 7:02 PM'},
+          booking:{title:'Ramp 1 — diagnostic', slot:'Wed 11:30', note:'The refusal did not end the conversation. The ramp was booked anyway.'},
+          quote:null, quoteWhy:'No quote — it will not price a repair before the car is on the ramp.',
+          record:{name:'Caller', sub:'Phone, 7:02 PM',
+            rows:[['Recorded verbatim','“Grinding under braking.” In the caller’s words, not a paraphrase.'],
+                  ['Not done','No price after being asked twice. No diagnosis. No “sounds like your pads”.'],
+                  ['Next action','Flagged as a safety-related complaint so it is looked at first']]}}},
+
+      { id:'safe', chip:'“Is it safe for me to drive it in?”', risk:'trap',
+        turns:[
+          {who:'user', text:'There’s a burning smell and the steering’s gone heavy. Is it safe for me to drive it in tomorrow?'},
+          {who:'handoff', text:'→ I can’t tell you that and I won’t — nobody has seen the car and I’m not going to be the reason you set off in it. Our own wording is: if there’s a burning smell or the steering has changed, don’t drive it. Recovery within ten miles is $120 and I can book it to land before the ramp opens. I’ve paged the owner and he’ll ring you directly.'},
+          {who:'result', text:'✓ Recovery offered · owner paged · escalation logged'}],
+        why:'Roadworthiness on an unseen vehicle is never judged, in any wording. Brakes, steering, smoke and a fuel smell are keywords that stop the booking script cold and page a person.',
+        produces:{
+          pipeline:{stage:'Safety route — owner paged', ini:'??', nm:'Caller',
+            mt:'Burning smell and heavy steering — no roadworthiness judgement given, recovery offered', tag:'Urgent', chan:'Phone · 9:14 PM'},
+          booking:null, bookingWhy:'No ramp slot — the car should not be driven, so a recovery is offered instead.',
+          quote:{ref:'Recovery, not a repair', lines:[['Recovery, within 10 miles','your rate card','$120']],
+            total:'$120', foot:'A tow is a different job from a slot. Nothing about the repair is priced.'},
+          record:{name:'Caller', sub:'Phone, 9:14 PM',
+            rows:[['Reported','Burning smell and a change in the steering. Safety keywords both.'],
+                  ['Not done','No roadworthiness judgement. No “a couple of miles should be alright”. Ever.'],
+                  ['Next action','Owner paged in parallel and ringing directly; flagged for the morning review']]}}}
+    ]},
+
+  funeral: {
+    label: 'Funeral Homes',
+    seed: 'You’ve reached the funeral home. Our director is on call — how can I help?',
+    asks: [
+      { id:'firstcall', chip:'“My mother passed at home an hour ago”', risk:'normal',
+        turns:[
+          {who:'user', text:'My mother died at home about an hour ago. I don’t know what we’re supposed to do now.'},
+          {who:'ai',   text:'I’m very sorry. Our director is on call and I’m paging him now. Can I take your name and how you’re related to her, the address, and whether a doctor or nurse has already attended — those are the three things he needs before he sets off.'},
+          {who:'user', text:'Her son. She’s at home, the hospice nurse came at three.'},
+          {who:'ai',   text:'Thank you. He’ll ring you on this number within a few minutes. If it helps to know now, a direct cremation is $1,395 on our General Price List — I’ll send you the whole list either way.'},
+          {who:'verify', text:'✓ From your General Price List · 1 source'},
+          {who:'result', text:'✓ Director paged · arrangement conference held'}],
+        why:'It established who was entitled to instruct before arranging anything, routed on place of death, and read the price list only because it was useful — never to sell from.',
+        produces:{
+          pipeline:{stage:'Transfer into care', ini:'JM', nm:'J. M. — son',
+            mt:'Death at home · hospice nurse attended · authority confirmed', tag:'Director paged', chan:'Phone · 3:40 AM'},
+          booking:{title:'Arrangement conference', slot:'Wed 10:00', note:'Director paged at 03:41 with address and certification status attached.'},
+          quote:{ref:'General Price List v4', lines:[['Direct cremation','GPL line 1','$1,395'],['Cash-advance items','itemised, not estimated','—']],
+            total:'$1,395', foot:'Read as published. The full list was sent in writing; the total is signed by the director.'},
+          record:{name:'J. M. — son', sub:'Phone, 3:40 AM · 4 minutes',
+            rows:[['Collected','Authority to instruct · place of death · certification status · disposition'],
+                  ['Pre-need','Checked — none on file under that name'],
+                  ['Next action','Director confirms the transfer; arranger confirms every figure in writing']]}}},
+
+      { id:'steer', chip:'“Which package do you think we should have?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Which one do you think we should have? What do most families choose?'},
+          {who:'handoff', text:'→ I read the price list, I don’t recommend from it — and I’m not going to tell you what most families choose, because that isn’t a reason to choose anything. The director will sit down with you and go through the options properly. I’ve sent you the whole list so you have it before he calls.'},
+          {who:'result', text:'✓ Full price list sent · nothing recommended'}],
+        why:'The quote builder has no upgrade path in it at all. A system that can nudge a grieving family toward a costlier line has no business on a funeral home’s main line.',
+        produces:{
+          pipeline:{stage:'First call', ini:'??', nm:'Caller',
+            mt:'Asked for a recommendation — declined; full price list sent instead', tag:'Refused', chan:'Phone · 10:50 PM'},
+          booking:null, bookingWhy:'No booking — nothing was chosen, so nothing was scheduled.',
+          quote:null,   quoteWhy:'No quote — it will not build one around an option it suggested.',
+          record:{name:'Caller', sub:'Phone, 10:50 PM',
+            rows:[['Summary','Asked which package to take. Price list sent in full, unedited.'],
+                  ['Not done','No recommendation. No upgrade. No “most families choose”.'],
+                  ['Next action','Director calls to go through the options with them']]}}},
+
+      { id:'coroner', chip:'“Does this have to go to the coroner?”', risk:'trap',
+        turns:[
+          {who:'user', text:'She died at home on her own. Does this have to go to the coroner?'},
+          {who:'handoff', text:'→ That’s not a question I can answer, and I’m not going to guess at it. It depends on the circumstances and it’s decided by a doctor or the coroner’s office, not by us. I’ve written your question down exactly as you asked it and the director is being paged now.'},
+          {who:'result', text:'✓ Recorded verbatim · director paged'}],
+        why:'Reportability, post-mortems and certificates are three of the questions most likely to be asked at midnight and least safe for software to answer. All three are a permanent handoff.',
+        produces:{
+          pipeline:{stage:'Waiting on a person', ini:'??', nm:'Caller',
+            mt:'Asked whether the coroner must be involved — recorded, not answered', tag:'Urgent', chan:'Phone · 11:30 PM'},
+          booking:null, bookingWhy:'No transfer scheduled until a person confirms it may proceed.',
+          quote:null,   quoteWhy:'No quote — nothing has been decided and nothing was asked for.',
+          record:{name:'Caller', sub:'Phone, 11:30 PM',
+            rows:[['Summary','Death at home, unattended. Question preserved word for word.'],
+                  ['Not done','No medical, legal or coroner determination. No “probably not”. No hedge.'],
+                  ['Next action','Director paged; attending physician noted as the other party to contact']]}}}
+    ]},
+
+  legal: {
+    label: 'Law Firms',
+    seed: 'You’ve reached the office — we’re closed, but I can take the details.',
+    asks: [
+      { id:'intake', chip:'“Do you handle landlord disputes?”', risk:'normal',
+        turns:[
+          {who:'user', text:'I was served with papers this afternoon by my landlord. Do you deal with this kind of thing, and what does a first consultation cost?'},
+          {who:'ai',   text:'We do — landlord and tenant is on the firm’s practice list, and a first consultation is $250 for an hour. Before I can offer you a time I need the name on the other side, because we run a conflict check before anything is booked.'},
+          {who:'verify', text:'✓ From your practice list and fee schedule · 2 sources'},
+          {who:'user', text:'It’s the management company that handles the block.'},
+          {who:'ai',   text:'Noted, with the landlord’s name as well. The check runs first thing and a solicitor clears it — I’m holding Tuesday 14:00 provisionally. To be clear: nothing you’ve told me tonight makes us your solicitors.'},
+          {who:'result', text:'✓ Matter opened · slot held, not confirmed'}],
+        why:'Practice list, then opposing party, then a provisional hold. The conflict check is wired into the calendar, so software cannot confirm a time — only a person can.',
+        produces:{
+          pipeline:{stage:'Conflict check', ini:'DR', nm:'D. R.',
+            mt:'Landlord dispute · served today · opposing party taken', tag:'Gate', chan:'Phone · 11:20 PM'},
+          booking:{title:'Consultation — held only', slot:'Tue 14:00 (provisional)', note:'Confirms automatically once a solicitor clears the conflict check.'},
+          quote:{ref:'Fee schedule', lines:[['First consultation','one hour','$250'],['Total for the matter','engagement letter','—']],
+            total:'$250', foot:'Published fee basis only. The total belongs in the engagement letter, from a solicitor.'},
+          record:{name:'D. R.', sub:'Phone, 11:20 PM',
+            rows:[['Collected','Matter type · opposing party · jurisdiction · key dates · safe-to-contact'],
+                  ['Account','Preserved word for word, not summarised'],
+                  ['Next action','Solicitor clears the conflict check before the slot is confirmed']]}}},
+
+      { id:'merits', chip:'“Do I actually have a case?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Off the record — do I actually have a case here?'},
+          {who:'handoff', text:'→ I can’t answer that, and I’d rather say so plainly than give you something vague you’d then rely on. Whether there’s a case is a solicitor’s judgement on the papers. What I can do is make sure they read your account in your own words rather than a summary of it.'},
+          {who:'result', text:'✓ Account preserved verbatim · consultation kept'}],
+        why:'A hedge is the dangerous answer here, not the safe one — “it might be worth pursuing” is still an opinion on the merits, and it is still the firm that said it. So the refusal is categorical.',
+        produces:{
+          pipeline:{stage:'Waiting on a lawyer', ini:'DR', nm:'D. R.',
+            mt:'Asked for a view on the merits — declined; account kept verbatim', tag:'Refused', chan:'Phone · 11:26 PM'},
+          booking:null, bookingWhy:'No booking added — the consultation already held is where the answer comes from.',
+          quote:null,   quoteWhy:'No quote — it will not price an outcome it refuses to predict.',
+          record:{name:'D. R.', sub:'Phone, 11:26 PM',
+            rows:[['Summary','Asked whether there is a case. Account preserved word for word.'],
+                  ['Not done','No merits opinion. No “that sounds strong”. No hedge that implies one.'],
+                  ['Next action','Solicitor reads the account before the consultation']]}}},
+
+      { id:'deadline', chip:'“How long do I have to file?”', risk:'trap',
+        turns:[
+          {who:'user', text:'How long have I got to file a response? Is it 14 days or 28?'},
+          {who:'handoff', text:'→ I’m not going to give you a number for that. A date you act on has to come from a solicitor who has seen the papers, and a wrong one from me could cost you the matter. I’ve recorded the dates you gave me and marked this urgent so it’s the first thing seen in the morning.'},
+          {who:'result', text:'✓ Dates captured · matter flagged urgent'}],
+        why:'Time limits are the most tempting question for a chatbot, because a general answer is often published somewhere. The general answer is also the one that does not apply to this person.',
+        produces:{
+          pipeline:{stage:'Waiting on a lawyer', ini:'??', nm:'Caller',
+            mt:'Asked for a filing deadline — refused; dates recorded as given', tag:'Urgent', chan:'Web chat · 7:45 PM'},
+          booking:null, bookingWhy:'No booking — the conflict check has not been run on this one yet.',
+          quote:null,   quoteWhy:'No quote — nothing has been accepted and no fee basis was asked for.',
+          record:{name:'Caller', sub:'Web chat, 7:45 PM',
+            rows:[['Collected','Served the 12th · hearing listed for the 30th — recorded, not interpreted'],
+                  ['Not done','No limitation period. No filing deadline. No “usually it’s 14 days”.'],
+                  ['Next action','Sorts to the top of Monday morning; solicitor confirms the date']]}}}
     ]}
 };
 
