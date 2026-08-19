@@ -134,7 +134,12 @@
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
       if (ring.contains(n)) continue;
-      if (ringTarget && (n === ringTarget || ringTarget.contains(n) || n.contains(ringTarget))) continue;
+      /* The target's own label counts. It used to be skipped on the reasoning
+         that the target is the point — but a hint laid across the words on the
+         button it is pointing at hides the one thing the reader needs to read.
+         Only the target's ancestors are skipped, since a hint inside a section
+         necessarily sits within that section's box. */
+      if (ringTarget && n.contains(ringTarget) && n !== ringTarget) continue;
       if (n.closest('.guiderail, .stickycta, .navwrap')) continue;
       var own = '';
       for (var k = 0; k < n.childNodes.length; k++) {
