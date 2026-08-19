@@ -1,4 +1,259 @@
 /* ═══════════════════════════════════════════════════════════════════════════
+   PART 1 — the header menus
+   ───────────────────────────────────────────────────────────────────────────
+   The header carried five links; the footer carried twenty-six. Twenty-one
+   destinations were reachable only from the bottom of a thirteen-screen page,
+   which is to say not reachable. Each top-level item is now a disclosure
+   button over a panel of the pages beneath it.
+
+   Everything here is click and keyboard. There is deliberately no hover
+   trigger: a hover menu cannot be opened from a keyboard and misfires on
+   touch, and this site is majority-mobile.
+
+     button      Enter / Space   toggle (native <button>, no script needed)
+                 ArrowDown       open and land on the first link
+                 Escape          close
+     panel       ArrowDown/Up    move between links
+                 Home / End      first / last link
+                 Escape          close and return focus to the button
+                 Tab past end    closes on its way out (focusout)
+   ═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  var items = [].slice.call(nav.querySelectorAll('.navitem'));
+  if (!items.length) return;
+
+  var open = null;
+  var burger = nav.querySelector('.burger');
+
+  function panelOf(btn) { return document.getElementById(btn.getAttribute('aria-controls')); }
+  function linksIn(p) {
+    return [].slice.call(p.querySelectorAll('a[href]')).filter(function (a) {
+      return a.getClientRects().length > 0;
+    });
+  }
+
+  function close(btn, refocus) {
+    if (!btn) return;
+    var p = panelOf(btn);
+    btn.setAttribute('aria-expanded', 'false');
+    if (p) p.hidden = true;
+    if (open === btn) open = null;
+    if (refocus) btn.focus();
+  }
+  function closeAll() {
+    items.forEach(function (it) { close(it.querySelector('.navtop'), false); });
+  }
+
+  function show(btn) {
+    if (open && open !== btn) close(open, false);
+    var p = panelOf(btn);
+    if (!p) return;
+    p.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    open = btn;
+  }
+
+  items.forEach(function (item) {
+    var btn = item.querySelector('.navtop');
+    if (!btn || !panelOf(btn)) return;
+
+    btn.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      if (btn.getAttribute('aria-expanded') === 'true') close(btn, false);
+      else show(btn);
+    });
+
+    btn.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowDown') {
+        ev.preventDefault();
+        show(btn);
+        var l = linksIn(panelOf(btn));
+        if (l.length) l[0].focus();
+      } else if (ev.key === 'Escape') {
+        close(btn, true);
+      }
+    });
+
+    panelOf(btn).addEventListener('keydown', function (ev) {
+      var l = linksIn(this), i = l.indexOf(document.activeElement);
+      if (ev.key === 'Escape') { ev.preventDefault(); close(btn, true); }
+      else if (ev.key === 'ArrowDown') { ev.preventDefault(); if (l.length) l[(i + 1 + l.length) % l.length].focus(); }
+      else if (ev.key === 'ArrowUp')   { ev.preventDefault(); if (l.length) l[(i - 1 + l.length) % l.length].focus(); }
+      else if (ev.key === 'Home')      { ev.preventDefault(); if (l.length) l[0].focus(); }
+      else if (ev.key === 'End')       { ev.preventDefault(); if (l.length) l[l.length - 1].focus(); }
+    });
+
+    /* Tabbing out the far end of a panel has to close it, or the reader is
+       left with an open overlay they can no longer see the focus inside. */
+    item.addEventListener('focusout', function (ev) {
+      if (!ev.relatedTarget) return;               /* focus left the document */
+      if (item.contains(ev.relatedTarget)) return;
+      close(btn, false);
+    });
+  });
+
+  document.addEventListener('click', function (ev) {
+    if (!open) return;
+    if (ev.target.closest && ev.target.closest('.navitem')) return;
+    close(open, false);
+  });
+
+  /* site.js owns the .open class on the mobile sheet and is not ours to edit,
+     so this only reports the state it sets. site.js registers its click
+     handler first (its script tag comes first), so by the time this one runs
+     the class is already correct. */
+  function syncBurger() {
+    if (!burger) return;
+    var links = nav.querySelector('.links');
+    var isOpen = !!(links && links.classList.contains('open'));
+    burger.setAttribute('aria-expanded', String(isOpen));
+    if (!isOpen) closeAll();
+  }
+  if (burger) {
+    burger.addEventListener('click', syncBurger);
+    syncBurger();
+  }
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key !== 'Escape') return;
+    if (open) { close(open, true); return; }
+    /* Escape also shuts the mobile sheet — the burger has no other way out. */
+    var links = nav.querySelector('.links');
+    if (links && links.classList.contains('open')) {
+      links.classList.remove('open');
+      syncBurger();
+      if (burger) burger.focus();
+    }
+  });
+
+  /* A resize across the 900px line swaps the panel between overlay and inline
+     accordion; anything left open ends up in the wrong idiom. */
+  var wasNarrow = window.matchMedia('(max-width:900px)').matches;
+  window.addEventListener('resize', function () {
+    var now = window.matchMedia('(max-width:900px)').matches;
+    if (now !== wasNarrow) { wasNarrow = now; closeAll(); }
+  });
+}());
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PART 2a — the subject tours: the table, and which one is running
+   ───────────────────────────────────────────────────────────────────────────
+   The in-page tour further down walks one page. A subject tour walks the
+   SITE: a reader picks a theme and is carried across the pages and anchors
+   that answer it, using the same rail, docked in the same .stickycta, showing
+   done / here / ahead.
+
+   A tour is a query parameter (?tour=costs) remembered in sessionStorage so
+   it survives every navigation until the reader ends it. ?tour=off ends it.
+   Nothing is written to disk and nothing is sent anywhere.
+
+   A step is { u: page, h: '#anchor', lab: rail label }. A step may instead
+   carry sel — a CSS selector — for anchors whose id differs by page: the
+   trade pages name their CRM section #dental-crm, #clinic-crm, #trades-crm,
+   #stay-crm, #venue-crm and so on, so that step is written [id$="-crm"] and
+   resolves on arrival. The six trade pages still being written will resolve
+   the same way whatever they end up calling it.
+   ═══════════════════════════════════════════════════════════════════════════ */
+var SR_TOURS = {
+  refuses: {
+    title: 'What it refuses to do',
+    steps: [
+      { u: 'verified-ai.html', h: '#life',        lab: 'One answer' },
+      { u: 'verified-ai.html', h: '#audit',       lab: 'The audit trail' },
+      { u: 'index.html',       h: '#what-to-ask', lab: 'What to ask' },
+      { u: 'pricing.html',     h: '#not-paying',  lab: 'Not paying for' },
+      { u: 'security.html',    h: '#measures',    lab: 'The measures' },
+      { u: 'privacy.html',     h: '#your-rights', lab: 'Your rights' }
+    ]
+  },
+  keeps: {
+    title: 'What it captures and keeps',
+    steps: [
+      { u: 'index.html',        h: '#what-it-keeps',    lab: 'What it keeps' },
+      { u: 'platform.html',     h: '#inside',           lab: 'Inside one answer' },
+      { u: 'voice.html',        h: '#after-the-call',   lab: 'After the call' },
+      { u: 'webchat.html',      h: '#where-chats-land', lab: 'Where chats land' },
+      { u: 'whatsapp.html',     h: '#one-inbox',        lab: 'One inbox' },
+      { u: 'integrations.html', h: '#live-today',       lab: 'Where it syncs' },
+      { u: 'privacy.html',      h: '#your-rights',      lab: 'And deletes' }
+    ]
+  },
+  costs: {
+    title: 'What it costs',
+    steps: [
+      { u: 'pricing.html',      h: '#alternatives',   lab: 'Compared to' },
+      { u: 'pricing.html',      h: '#plans',          lab: 'The plans' },
+      { u: 'pricing.html',      h: '#channels',       lab: 'Per channel' },
+      { u: 'pricing.html',      h: '#calculator',     lab: 'Your number' },
+      { u: 'pricing.html',      h: '#not-paying',     lab: 'Not paying for' },
+      { u: 'pricing.html',      h: '#countries',      lab: 'Your currency' },
+      { u: 'cross-border.html', h: '#both-timezones', lab: 'Two timezones' }
+    ]
+  },
+  proof: {
+    title: 'Prove it works',
+    steps: [
+      { u: 'demo.html',     h: '#yourprices',   lab: 'Your prices' },
+      { u: 'index.html',    h: '#try',          lab: 'Try it here' },
+      { u: 'index.html',    h: '#call-them',    lab: 'Call our AI' },
+      { u: 'examples.html', h: '#pick-a-trade', lab: 'A real call' },
+      { u: 'index.html',    h: '#calculator',   lab: 'The arithmetic' },
+      { u: 'about.html',    h: '#people',       lab: 'Who built it' }
+    ]
+  },
+  trade: {
+    title: 'How it works in my trade',
+    build: function (t) {
+      var p = 'industries/' + (t || 'dental') + '.html';
+      return [
+        { u: 'industries.html', h: '#what-a-pack-is', lab: 'What a pack is' },
+        { u: p, sel: '[id$="-crm"]',                  lab: 'Your CRM' },
+        { u: p, h: '#worked-examples',                lab: 'Worked examples' },
+        { u: p, h: '#the-pack',                       lab: 'In the pack' },
+        { u: 'examples.html', h: '#pick-a-trade',     lab: 'A real call' },
+        { u: 'pricing.html',  h: '#plans',            lab: 'What it costs' }
+      ];
+    }
+  }
+};
+
+/* Which tour is running, if any. Read before anything else, because the
+   in-page tour stands down while a subject tour is on: two rails docked in
+   one .stickycta is two answers to "where am I". */
+var SR_TOUR = (function () {
+  function get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  function del(k) { try { sessionStorage.removeItem(k); } catch (e) {} }
+
+  var q = {};
+  location.search.replace(/^\?/, '').split('&').forEach(function (kv) {
+    if (!kv) return;
+    var i = kv.indexOf('='); if (i < 0) return;
+    q[decodeURIComponent(kv.slice(0, i))] = decodeURIComponent(kv.slice(i + 1));
+  });
+
+  var id = q.tour;
+  if (id === 'off') { del('sr.tour'); del('sr.t'); del('sr.seen'); return null; }
+  if (id && SR_TOURS[id]) { set('sr.tour', id); if (q.t) set('sr.t', q.t); }
+  else id = get('sr.tour');
+  if (!id || !SR_TOURS[id]) return null;
+
+  var t = q.t || get('sr.t') || null;
+  /* landing on a trade page mid-tour without having named a trade: the page
+     IS the answer, so take it rather than sending the reader to pick again */
+  if (!t) {
+    var m = location.pathname.match(/\/industries\/([a-z0-9-]+)\.html/i);
+    if (m) { t = m[1]; set('sr.t', t); }
+  }
+  return { id: id, t: t, get: get, set: set, del: del };
+}());
+window.__SR_TOUR = SR_TOUR;
+
+/* ═══════════════════════════════════════════════════════════════════════════
    guide.js — where the visitor is, and what to press next
 
    Measured problem: index.html offers 96 distinct labels across 35 destinations
@@ -20,6 +275,9 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
+
+  /* a subject tour owns the bar while it runs — see PART 2 */
+  if (window.__SR_TOUR) return;
 
   var path = document.querySelector('[data-startpath]');
   if (!path || !('IntersectionObserver' in window)) return;
@@ -483,5 +741,224 @@
   }
 
   window.addEventListener('resize', function () { if (ringTarget) placeRing(); });
+  render();
+}());
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PART 2b — the subject tour runtime
+   ───────────────────────────────────────────────────────────────────────────
+   Reuses everything the in-page tour already established: the .guiderail
+   markup, the done / here / ahead classes, and the dock inside .stickycta. It
+   does not build a second, competing widget — it builds the SAME widget over a
+   cross-page step list instead of a within-page one.
+
+   DEV_SPEC 5.4: no window scroll listener. Progress on the current page is
+   read by an IntersectionObserver, exactly as the in-page tour reads it.
+   ═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  var T = window.__SR_TOUR;
+  if (!T) return;
+  var def = SR_TOURS[T.id];
+  if (!def) return;
+
+  var steps = def.build ? def.build(T.t) : def.steps;
+  if (!steps || !steps.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── where am I ─────────────────────────────────────────────────────────
+     Pages live at /en/x.html and /en/industries/x.html, so a step's page is
+     stored relative to /en/ and resolved against the current depth. */
+  var here = location.pathname.replace(/^.*\/en\//, '');
+  if (!here || /\/$/.test(here)) here = 'index.html';
+  var deep = here.indexOf('/') > -1;
+  var base = deep ? '../' : './';
+
+  function hrefOf(s) {
+    return base + s.u + '?tour=' + T.id + (T.t ? '&t=' + T.t : '') + (s.h || '');
+  }
+  function targetOf(s) {
+    if (s.h) return document.querySelector(s.h);
+    if (s.sel) return document.querySelector(s.sel);
+    return null;
+  }
+  function onThisPage(s) { return s.u === here; }
+
+  /* ── what have I already seen ───────────────────────────────────────────
+     Keyed by page+anchor so a reload does not un-tick a step. */
+  function key(s, i) { return T.id + ':' + i; }
+  var seen = {};
+  try { seen = JSON.parse(T.get('sr.seen') || '{}') || {}; } catch (e) { seen = {}; }
+  function markSeen(i) {
+    if (seen[key(steps[i], i)]) return;
+    seen[key(steps[i], i)] = 1;
+    T.set('sr.seen', JSON.stringify(seen));
+  }
+  function isSeen(i) { return !!seen[key(steps[i], i)]; }
+
+  /* ── the rail ───────────────────────────────────────────────────────────
+     Same element, same classes, same CSS as the in-page rail. */
+  var rail = document.createElement('nav');
+  rail.className = 'guiderail tourrail';
+  rail.setAttribute('aria-label', 'Site tour: ' + def.title);
+
+  var head = document.createElement('p');
+  head.className = 'gr-head';
+  head.textContent = def.title;
+  rail.appendChild(head);
+
+  var list = document.createElement('ol');
+  var railItems = [];
+  steps.forEach(function (s, i) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = hrefOf(s);
+    var dot = document.createElement('span');
+    dot.className = 'gr-dot';
+    dot.textContent = String(i + 1);
+    var lab = document.createElement('span');
+    lab.className = 'gr-lab';
+    lab.textContent = s.lab;
+    a.appendChild(dot); a.appendChild(lab);
+    /* the rail is the only place the full sentence exists on a phone, where
+       .gr-lab is hidden and the dot is all that is left */
+    a.setAttribute('aria-label', 'Step ' + (i + 1) + ' of ' + steps.length + ': ' + s.lab);
+    li.appendChild(a);
+    list.appendChild(li);
+    railItems.push(li);
+  });
+  rail.appendChild(list);
+
+  /* ending the tour has to be one press away, and has to be a real control */
+  var stop = document.createElement('a');
+  stop.className = 'gr-stop';
+  stop.href = base + here + '?tour=off';
+  stop.textContent = 'End tour';
+  rail.appendChild(stop);
+
+  /* ── dock it, exactly where the in-page rail docks ──────────────────────
+     Three pages ship no .stickycta, so one is built, same as the in-page
+     tour does — otherwise the rail would float over the content. */
+  var bar = document.querySelector('.stickycta');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.className = 'stickycta';
+    var w = document.createElement('div');
+    w.className = 'wrap';
+    var m = document.createElement('span');
+    m.className = 'msg';
+    w.appendChild(m);
+    var b = document.createElement('a');
+    b.className = 'btn btn-teal';
+    b.href = base + 'get-started.html';
+    b.textContent = 'Get my plan';
+    w.appendChild(b);
+    bar.appendChild(w);
+    document.body.appendChild(bar);
+  }
+  var wrap = bar.querySelector('.wrap');
+  wrap.insertBefore(rail, wrap.firstChild);
+  bar.classList.add('hasguide', 'hastour');
+
+  var barBtn = wrap.querySelector('a.btn');
+
+  /* ── state ──────────────────────────────────────────────────────────────
+     "Current" is the step whose section is in the middle band of the
+     viewport — an IntersectionObserver, never a scroll listener. */
+  var current = -1;
+
+  function render() {
+    steps.forEach(function (s, i) {
+      railItems[i].classList.toggle('is-now', i === current);
+      railItems[i].classList.toggle('is-done', isSeen(i) && i !== current);
+    });
+    var next = -1;
+    for (var i = 0; i < steps.length; i++) if (!isSeen(i)) { next = i; break; }
+    railItems.forEach(function (li) { li.classList.remove('is-next'); });
+    if (next > -1 && next !== current) railItems[next].classList.add('is-next');
+
+    if (!barBtn) return;
+    if (next === -1) {
+      barBtn.setAttribute('href', base + 'get-started.html');
+      barBtn.textContent = 'That is the whole subject — get my plan';
+      bar.setAttribute('data-tour', 'done');
+    } else {
+      barBtn.setAttribute('href', hrefOf(steps[next]));
+      barBtn.textContent = (next + 1) + ' of ' + steps.length + ' · ' + steps[next].lab;
+      bar.setAttribute('data-tour', 'step');
+    }
+    var cir = document.createElement('span');
+    cir.className = 'cir';
+    cir.textContent = '→';
+    barBtn.appendChild(cir);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var i = Number(e.target.getAttribute('data-tourstep'));
+        if (isNaN(i)) return;
+        if (e.isIntersecting) { markSeen(i); current = i; }
+        else if (current === i) { current = -1; }
+      });
+      render();
+    }, { threshold: 0, rootMargin: '0px 0px -55% 0px' });
+
+    steps.forEach(function (s, i) {
+      if (!onThisPage(s)) return;
+      var t = targetOf(s);
+      if (!t) return;
+      t.setAttribute('data-tourstep', String(i));
+      io.observe(t);
+    });
+  } else {
+    steps.forEach(function (s, i) { if (onThisPage(s) && targetOf(s)) markSeen(i); });
+  }
+
+  /* ── moving between stops on the same page ──────────────────────────────
+     A same-page step is a scroll, not a page load; anything else is a normal
+     link and the browser handles it. */
+  function goto(i) {
+    var s = steps[i];
+    var t = targetOf(s);
+    if (!t) return false;
+    var far = Math.abs(t.getBoundingClientRect().top) > window.innerHeight * 2.5;
+    t.scrollIntoView({ behavior: (reduce || far) ? 'auto' : 'smooth', block: 'start' });
+    t.setAttribute('tabindex', '-1');
+    t.focus({ preventScroll: true });
+    markSeen(i);
+    render();
+    return true;
+  }
+
+  bar.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href]');
+    if (!a || !bar.contains(a)) return;
+    if (a === stop) return;                       /* let ?tour=off navigate */
+    for (var i = 0; i < steps.length; i++) {
+      if (a.getAttribute('href') !== hrefOf(steps[i])) continue;
+      if (!onThisPage(steps[i])) return;          /* real navigation */
+      if (goto(i)) ev.preventDefault();
+      return;
+    }
+  });
+
+  /* ── arriving ───────────────────────────────────────────────────────────
+     A step written as a selector rather than an anchor has no hash for the
+     browser to act on, so the landing is done here. A step that DOES have a
+     hash the browser already handled; it only needs ticking off. */
+  var landed = -1;
+  for (var i = 0; i < steps.length; i++) {
+    if (!onThisPage(steps[i])) continue;
+    if (steps[i].h && location.hash === steps[i].h) { landed = i; break; }
+    if (steps[i].sel && !location.hash) { landed = i; break; }
+  }
+  if (landed > -1) {
+    var st = steps[landed];
+    if (st.sel && !location.hash) setTimeout(function () { goto(landed); }, reduce ? 0 : 220);
+    else { markSeen(landed); current = landed; }
+  }
+
   render();
 }());

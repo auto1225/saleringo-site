@@ -2065,3 +2065,224 @@ html .bigfooter .brand{
 .thinkcols > div > .tsteps,.faqcols > div > .faq{
   flex:1 0 auto;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HEADER MENUS — the 21 destinations that only the footer knew about
+   ───────────────────────────────────────────────────────────────────────────
+   Measured problem: the header carried 5 links, the footer 26. Twenty-one
+   destinations existed only below a page that is thirteen screens tall, so in
+   practice they did not exist. Each top-level item is now a disclosure button
+   that opens a panel of the pages underneath it, grouped by what a buyer is
+   trying to do rather than by filename.
+
+   Constraints this is built against:
+     • the header already overflows its budget at 375 — so nothing new is added
+       to the nav ROW. The panels are overlays that cost the row zero pixels,
+       and below 900px the whole .links group is already display:none and folds
+       into the existing burger.
+     • 44px minimum on every target, panel links included.
+     • click to open, never hover — a hover menu is unusable by keyboard and
+       hostile on touch.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.navitem{position:static;display:inline-flex;}
+
+/* The top-level control is a real <button>, so Enter and Space work without a
+   single line of script, and assistive tech is told it is a disclosure. */
+.nav .navtop{
+  display:inline-flex;align-items:center;gap:6px;
+  min-height:44px;padding:0 2px;
+  background:none;border:0;cursor:pointer;
+  font:inherit;font-size:var(--fs-xs);font-weight:600;
+  color:var(--tx2);letter-spacing:inherit;white-space:nowrap;
+}
+.nav .navtop:hover,.nav .navtop[aria-expanded="true"]{color:#fff;}
+.nav .navtop.on{color:#fff;}
+.navwrap.onlight .nav .navtop{color:var(--l-mut);}
+.navwrap.onlight .nav .navtop:hover,
+.navwrap.onlight .nav .navtop.on,
+.navwrap.onlight .nav .navtop[aria-expanded="true"]{color:var(--l-ink);}
+
+/* the chevron is drawn, not typed — a glyph would inherit the 13px floor and
+   render as text to a screen reader that ignores aria-hidden on ::before */
+.nav .navtop .cv{
+  width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);opacity:.55;transition:transform .25s var(--ease),opacity .25s;
+}
+.nav .navtop[aria-expanded="true"] .cv{transform:translateY(1px) rotate(-135deg);opacity:1;}
+
+/* ── the panel ──────────────────────────────────────────────────────────────
+   .navwrap is the containing block (left:0;right:0), so centring inside it can
+   never exceed the viewport: the width is clamped to 100vw minus the gutters
+   before the translate is applied. This is what keeps document overflow at 0. */
+.navpanel{
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
+  width:min(1060px,calc(100vw - 32px));
+  background:rgba(7,14,28,.975);border:1px solid var(--hair2);border-radius:22px;
+  padding:26px 28px 20px;backdrop-filter:blur(20px);
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
+  z-index:30;
+  color:#F2F6FB;--tx:#F2F6FB;--tx2:#94A2B8;--tx3:#8793A5;
+}
+.navpanel[hidden]{display:none;}
+.np-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:8px 26px;}
+.np-col{min-width:0;}
+.np-h{
+  margin:0 0 6px;font-size:var(--fs-label);font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tx3);
+}
+.np-col ul{list-style:none;margin:0;padding:0;}
+.np-col a{
+  display:flex;align-items:center;min-height:44px;padding:4px 10px;
+  margin-left:-10px;border-radius:10px;
+  font-size:var(--fs-xs);font-weight:600;color:var(--tx2);line-height:1.35;
+}
+.np-col a:hover,.np-col a:focus-visible{background:rgba(255,255,255,.07);color:#fff;}
+.np-col a.np-here{color:#fff;box-shadow:inset 2px 0 0 var(--teal);}
+
+/* the tour handoff — every panel offers the subject tour that covers it */
+.np-foot{
+  grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;
+  margin:14px 0 0;padding-top:14px;border-top:1px solid var(--hair2);
+}
+.np-foot a{display:inline-flex;align-items:center;min-height:44px;font-size:var(--fs-xs);font-weight:700;}
+.np-tour{color:var(--teal);}
+.np-tour:hover{color:#fff;}
+.np-all{color:var(--tx3);margin-left:auto;font-weight:600;}
+.np-all:hover{color:#fff;}
+@media (prefers-reduced-motion:reduce){.nav .navtop .cv{transition:none;}}
+
+/* ── mobile: fold into the burger that already exists ───────────────────────
+   Below 900px .nav .links is display:none until site.js adds .open. The panels
+   become inline accordions inside that same sheet — one pattern, not two. */
+@media (max-width:900px){
+  .nav .links.open{max-height:calc(100vh - 96px);overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  .nav .links.open .navitem{display:block;width:100%;}
+  .nav .links.open .navtop{
+    width:100%;justify-content:space-between;padding:0 16px;min-height:52px;
+    font-size:var(--fs-body);color:#fff;border-bottom:1px solid var(--hair2);
+  }
+  .nav .links.open .navitem:last-child .navtop{border-bottom:0;}
+  .navpanel{
+    position:static;transform:none;width:auto;
+    background:rgba(255,255,255,.03);border:0;border-radius:0;
+    padding:8px 16px 14px;box-shadow:none;backdrop-filter:none;
+  }
+  .np-in{grid-template-columns:1fr;gap:2px;}
+  .np-h{margin-top:12px;}
+  .np-foot{margin-top:10px;padding-top:10px;}
+  .np-all{margin-left:0;}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOOTER — one canonical footer, fourteen trades, grouped
+   The industries column used to differ on 10 of 26 pages (three of them had no
+   Clinics link at all) because each page carried its own copy. It is now
+   generated from one table, and the trades are grouped with the same four
+   headings the header uses, so the structure is learned once.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.bigfooter .cols{grid-template-columns:1.35fr 1fr 2.05fr 1fr 1fr;gap:44px;}
+.bigfooter .fcol{min-width:0;}
+.bigfooter .ftgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 22px;}
+.bigfooter .fgrp{min-width:0;}
+.bigfooter h5{
+  margin:0 0 2px;font-size:var(--fs-label);font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tx3);
+}
+.bigfooter .fgrp + .fgrp h5{margin-top:12px;}
+/* Footer links measured 31px tall against the site's own 44px rule. */
+.bigfooter .lnk{display:flex;align-items:center;min-height:44px;padding:2px 0;}
+.bigfooter .lnk[aria-current="page"]{color:var(--tx);}
+.bigfooter .fmail{margin-top:10px;}
+.bigfooter .fmap{
+  margin-top:8px;font-weight:700;color:var(--teal);
+}
+.bigfooter .fmap:hover{color:#fff;}
+.bigfooter .base .r{align-items:center;gap:20px;flex-wrap:wrap;}
+.bigfooter .base .r .lnk{min-height:44px;}
+@media (max-width:1180px){
+  .bigfooter .cols{grid-template-columns:1fr 1fr 1fr;gap:34px;}
+  .bigfooter .ftrades{grid-column:1/-1;}
+}
+@media (max-width:900px){
+  .bigfooter .cols{grid-template-columns:1fr 1fr;gap:30px;}
+  .bigfooter .ftrades{grid-column:1/-1;}
+  .bigfooter .brand{grid-column:1/-1;}
+}
+
+/* ── the subject tour, in the rail that already exists ──────────────────────
+   A cross-page tour renders as .guiderail.tourrail — same dots, same done /
+   here / ahead states, same dock. The only additions are a way out and the
+   next-stop button, which is the bar's own .btn retargeted. */
+.gr-stop{
+  flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;
+  font-size:var(--fs-label);font-weight:700;color:var(--tx3);
+  border:1px solid var(--hair2);border-radius:999px;white-space:nowrap;
+}
+.gr-stop:hover{color:#fff;border-color:rgba(255,255,255,.3);}
+.stickycta.hastour .btn{white-space:nowrap;}
+@media (max-width:900px){
+  .gr-stop{padding:0 10px;font-size:var(--fs-label);}
+}
+
+/* ── sitemap.html ───────────────────────────────────────────────────────────
+   The human sitemap: every page, grouped, with a line of orientation and the
+   anchors worth landing on. */
+.smhero{padding:150px 0 40px;}
+.smgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;align-items:start;}
+.smcard{
+  border:1px solid var(--hair);border-radius:20px;padding:22px 24px 18px;
+  background:rgba(255,255,255,.02);min-width:0;
+}
+.smcard > h3{font-size:var(--fs-lead);margin:0 0 4px;}
+.smcard > p.smlede{margin:0 0 14px;font-size:var(--fs-sm);color:var(--tx3);line-height:1.6;}
+.smpage{padding-top:14px;border-top:1px solid var(--hair);}
+.smcard > .smpage:first-of-type{border-top:0;padding-top:0;}
+.smpage + .smpage{margin-top:12px;}
+.smpage > a.smt{
+  display:flex;align-items:center;min-height:44px;
+  font-size:var(--fs-body);font-weight:700;color:var(--tx);
+}
+.smpage > a.smt:hover{color:var(--teal);}
+.smpage > p{margin:0 0 6px;font-size:var(--fs-sm);color:var(--tx3);line-height:1.6;}
+.smanch{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;}
+.smanch a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 12px;
+  border:1px solid var(--hair);border-radius:999px;
+  font-size:var(--fs-label);font-weight:600;color:var(--tx3);
+}
+.smanch a:hover{color:#fff;border-color:var(--hair2);background:rgba(255,255,255,.05);}
+.tourcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.tourcard{
+  display:flex;flex-direction:column;gap:8px;
+  border:1px solid var(--hair2);border-radius:20px;padding:22px 24px;
+  background:rgba(23,189,189,.05);min-width:0;
+}
+.tourcard h3{margin:0;font-size:var(--fs-lead);}
+.tourcard p{margin:0;font-size:var(--fs-sm);color:var(--tx3);line-height:1.65;}
+.tourcard .stops{margin:0;font-size:var(--fs-label);color:var(--tx3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+.tourcard .linkcta{margin-top:auto;align-self:flex-start;}
+.tradetour{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.tradetour a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 14px;
+  border:1px solid var(--hair2);border-radius:999px;
+  font-size:var(--fs-xs);font-weight:600;color:var(--tx2);
+}
+.tradetour a:hover{color:#fff;background:rgba(23,189,189,.12);border-color:rgba(23,189,189,.42);}
+
+/* A subject tour has six or seven stops where the in-page tour has three, and
+   at seven the rail scrolled: stops 5-7 existed but were off the end of the
+   bar. Only the stop you are on and the one you are going to need their words
+   — the rest are dots, which is all a progress rail ever needed to be. */
+.tourrail li:not(.is-now):not(.is-next) .gr-lab{display:none;}
+.tourrail li:not(.is-now):not(.is-next) > a{padding-right:7px;}
+
+/* The wordmark is a link home and measured 22px — half the site's own touch
+   minimum, and the one control on every page that a lost reader reaches for.
+   It is given the height without changing the nav row, which already sits at
+   46px because of the button beside it. */
+.nav .logo{display:inline-flex;align-items:center;min-height:44px;}
+/* Fourteen trade chips in a one-quarter column stacked fourteen rows deep and
+   made the card three times the height of the four beside it. Given the full
+   width they lay out as one band. */
+.tourcard-wide{grid-column:1/-1;}

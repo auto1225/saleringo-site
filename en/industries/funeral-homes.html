@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI First-Call Answering for Funeral Homes | Saleringo</title>
+<meta name="description" content="An AI that answers a funeral home's first call at any hour, reads your General Price List as written, pages the director on call — and never steers a family toward a costlier option.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/funeral-homes.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/funeral-homes.html">
+<meta property="og:title" content="AI First-Call Answering for Funeral Homes">
+<meta property="og:description" content="An AI that answers a funeral home's first call at any hour, reads your General Price List as written, pages the director on call — and never steers a family toward a costlier option.">
+<meta property="og:image" content="https://images.pexels.com/photos/12534775/pexels-photo-12534775.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI First-Call Answering for Funeral Homes">
+<meta name="twitter:description" content="An AI that answers a funeral home's first call at any hour, reads your General Price List as written, pages the director on call — and never steers a family toward a costlier option.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/12534775/pexels-photo-12534775.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./funeral-homes.html">
+<link rel="alternate" hreflang="x-default" href="./funeral-homes.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this help us comply with the FTC Funeral Rule?","acceptedAnswer":{"@type":"Answer","text":"In the United States the Funeral Rule requires a provider to give accurate price information from its General Price List to anyone who telephones and asks. Saleringo answers the phone at any hour and reads the GPL line the caller asked for, as written, then sends the full list. That is the mechanism the rule is about. It is not a compliance certification, and it is not legal advice — your own counsel signs off your General Price List and your disclosures. Outside the United States the Funeral Rule does not apply and your local price-transparency rules govern; the AI still reads only the price list you published."}},{"@type":"Question","name":"Will it try to sell a family a more expensive service?","acceptedAnswer":{"@type":"Answer","text":"No, and the restriction is built in rather than configured. It reads the figure the family asked for, in the order they asked, from your General Price List. It never suggests a costlier option, never says “most families choose”, and never volunteers an item nobody asked about. If a family asks which package they should have, it declines and says the director will go through the options with them."}},{"@type":"Question","name":"What happens on a first call in the middle of the night?","acceptedAnswer":{"@type":"Answer","text":"It answers, establishes who is calling and whether they are entitled to instruct, records the place of death and whether the death has been certified, and pages your director on call with those details already written down. It gives the family your own out-of-hours number, unedited. It does not make a medical, legal or coroner determination, and it does not counsel."}},{"@type":"Question","name":"How is family information handled?","acceptedAnswer":{"@type":"Answer","text":"Conversations capture contact and arrangement details — caller, relationship and authority to instruct, place of death, disposition type, service type, pre-need status, preferred conference time. Records are kept separate from every other firm, encrypted in transit and at rest, with retention and deletion controls your firm operates. Full details, including data regions and subprocessors, are in Security & data."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI First-Call Answering for Funeral Homes","item":"https://claude.saleringo.com/en/industries/funeral-homes.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=20.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=20.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=20.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=20.0">
+<style>
+  /* ── FUNERAL HOMES · archetype: THE FIRST CALL ───────────── */
+  /* the quietest page on the site. no urgency furniture, no
+     "don't lose the lead", no revenue above the fold. the whole
+     argument is: a family calling at 3:40 AM deserves a plain
+     answer, in the United States the law says they must get one,
+     and nobody should have to be at the desk for that to happen. */
+
+  .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:104px;display:block;background:#070C14;}
+  /* 1600x2400 portrait of a residential street at night: bias low so the lit
+     house sits under the copy panel rather than behind the headline. */
+  .hero.photohero .bgimg img{filter:brightness(1.05) saturate(.86) contrast(1.02);object-position:center 74%;}
+  .hero.photohero .scrim{background:
+    linear-gradient(94deg, rgba(4,7,13,.92) 0%, rgba(4,7,13,.74) 46%, rgba(4,7,13,.42) 82%),
+    linear-gradient(180deg, rgba(4,7,13,.74) 0%, rgba(4,7,13,.24) 34%, rgba(4,8,15,.96) 100%);}
+  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(23,189,189,.16), transparent 74%);}
+  .navwrap .nav{background:rgba(8,15,26,.9);border-color:rgba(255,255,255,.12);}
+  .hero-inner{position:relative;z-index:2;padding:170px clamp(22px,4.6vw,56px) 0;display:grid;
+    grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:530px;}
+  /* the trade's own vocabulary, used as the headline furniture */
+  .tradewords{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
+  .tradewords span{font-size:var(--fs-xs);font-weight:700;border-radius:999px;padding:8px 15px;
+    border:1px solid var(--hair2);background:rgba(255,255,255,.06);color:var(--tx2);}
+  .tradewords span.hi{color:var(--teal);border-color:rgba(23,189,189,.45);background:rgba(23,189,189,.12);}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .whofor{margin-top:24px;padding-top:22px;border-top:1px solid var(--hair);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;max-width:340px;}
+  .whotxt b{color:#fff;}
+
+  .roomband{background:#FDFDFE;}
+  .roomband .photosplit{min-height:500px;}
+  .audgrid.three{grid-template-columns:repeat(3,1fr);}
+  .audgrid.three .audcard{min-height:300px;}
+  .audnote{margin-top:14px;text-align:center;}
+  @media (max-width:900px){.audgrid.three{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.audgrid.three{grid-template-columns:1fr;}}
+
+  /* ── the regulator's own measurement (dark) ── */
+  .sweep{position:relative;background:#040910;}
+  .sweep .head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .sweep .head .lead{margin-top:18px;}
+  .sweepgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  @media (max-width:900px){.sweepgrid{grid-template-columns:1fr;}}
+  .sweepcard{border:1px solid var(--hair);border-radius:20px;padding:28px 28px 30px;background:rgba(255,255,255,.03);}
+  .sweepcard .lb{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);}
+  .sweepcard .big{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);
+    font-weight:600;letter-spacing:-.04em;line-height:1;color:#fff;}
+  .sweepcard.after .big{color:var(--teal);}
+  .sweepcard p{margin-top:12px;font-size:var(--fs-sm);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .sweep .src{margin-top:30px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
+  .sweep .src a{color:var(--teal);font-weight:700;}
+  .sweep .kpiband{margin-top:56px;}
+  .sweep .note{margin-top:28px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:500;max-width:820px;margin-left:auto;margin-right:auto;}
+
+  /* ── paired threads (dark grid) ── */
+  .pairs{position:relative;background:#050B16;}
+  .pairs .head{text-align:center;max-width:680px;margin:0 auto 56px;}
+  .pairs .head .lead{margin-top:18px;}
+  .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  .pairwrap .plabel{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .pairwrap .plabel b{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+  .pairwrap .plabel span{font-size:var(--fs-xs);color:var(--tx3);font-weight:600;}
+  .pairwrap .after{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;}
+  .pairs .note{margin-top:30px;text-align:center;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  /* ── boundaries (paper) ── */
+  .nogo{color:var(--l-ink);}
+  .nogo .cols{display:grid;grid-template-columns:1fr 1.12fr;gap:80px;align-items:stretch;}
+  .nogo .lead{margin-top:20px;max-width:400px;}
+  .ngrow{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #E9E2D6;}
+  .ngrow:last-of-type{border-bottom:0;}
+  .ngrow .x{flex:none;width:34px;height:34px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
+    color:var(--red);font-size:var(--fs-sm);font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .ngrow b{display:block;font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:var(--l-ink);}
+  .ngrow span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
+  .ngseal{margin-top:26px;font-size:var(--fs-sm);font-weight:700;color:#0A7F7F;background:#E3F5F5;border:1px solid #BFE7E7;
+    border-radius:999px;padding:14px 28px;display:inline-block;}
+
+  /* ── jurisdiction (dark aurora) ── */
+  .world{position:relative;overflow:hidden;}
+  .world .head{text-align:center;max-width:680px;margin:0 auto 50px;}
+  .world .head .lead{margin-top:18px;}
+  .world .tzcards{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .world .glass{padding:22px 24px;}
+  .world .glass b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);color:#fff;}
+  .world .glass span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .world .out{margin-top:34px;text-align:center;}
+  .world .out a{font-size:var(--fs-xs);font-weight:700;color:var(--teal);}
+
+  /* ── start (bright) ── */
+  .start{background:#FDFDFE;}
+  .start .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
+  .start .lead{margin-top:22px;max-width:400px;}
+  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:22px 24px;max-width:400px;
+    box-shadow:0 20px 48px rgba(11,27,51,.07);}
+  .langnote .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0A7F7F;}
+  .langnote p{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  .langnote .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .start .browserframe{margin-top:54px;}
+  .start .cap{margin-top:15px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+    color:#6F767F;font-weight:700;}
+
+  .faqsec{background:var(--l-bg);}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;}
+  .closer .riskrow{margin-bottom:72px;text-align:left;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer .lead{margin:22px auto 0;max-width:540px;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;}
+    .pairgrid,.world .tzcards{grid-template-columns:1fr;}
+    .nogo .cols,.start .cols{grid-template-columns:1fr;gap:46px;}
+    .closer .riskrow{margin-bottom:52px;}
+  }
+
+  /* ══ CRM surface, honest integrations, multi-site, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
+
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.build h4{color:#8A9BB4;} .statcol.build h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;max-width:760px;}
+
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+</style>
+</head>
+<body data-grade="trust">
+
+<!-- ═══════ HERO · one first call, with a clock time on it ═══════ -->
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/12534775/pexels-photo-12534775.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+           srcset="https://images.pexels.com/photos/12534775/pexels-photo-12534775.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/12534775/pexels-photo-12534775.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/12534775/pexels-photo-12534775.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="100vw"
+         alt="" width="1600" height="2400" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v20.0">v20.0</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="../industries/dental.html">Dental</a></li><li><a href="../industries/clinics.html">Clinics &amp; med-spa</a></li><li><a href="../industries/veterinary.html">Veterinary</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home, property &amp; vehicle</p><ul aria-labelledby="nh-trade-1"><li><a href="../industries/home-services.html">Home services</a></li><li><a href="../industries/auto-repair.html">Auto repair</a></li><li><a href="../industries/property-management.html">Property management</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Booked by appointment</p><ul aria-labelledby="nh-trade-2"><li><a href="../industries/salons.html">Salons &amp; barbers</a></li><li><a href="../industries/academies.html">Tutoring &amp; academies</a></li><li><a href="../industries/legal.html">Legal</a></li><li><a href="../industries/funeral-homes.html" aria-current="page" class="np-here">Funeral homes</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-3"><li><a href="../industries/stays.html">Boutique stays</a></li><li><a href="../industries/venues.html">Wedding &amp; venues</a></li><li><a href="../industries/restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Many locations, or many countries</p><ul aria-labelledby="nh-trade-4"><li><a href="../industries/franchise.html">Franchise &amp; multi-site</a></li><li><a href="../cross-border.html">Cross-border</a></li><li><a href="../industries.html">All fourteen trades</a></li><li><a href="../examples.html">Worked examples</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-panel">
+      <span class="eyebrow"><i></i>For&nbsp;funeral homes &amp; cremation providers · the&nbsp;first call</span>
+      <h1>3:40 AM. A&nbsp;death at&nbsp;home.<br><em>The&nbsp;director is on&nbsp;the&nbsp;road by&nbsp;four.</em></h1>
+      <p class="sub">A&nbsp;son rings forty minutes after his&nbsp;mother died in&nbsp;her&nbsp;own bed. He needs to&nbsp;know what happens in&nbsp;the&nbsp;next two hours — and, quietly, what it is going to&nbsp;cost. Saleringo answers, establishes who is entitled to&nbsp;instruct, takes the&nbsp;place of&nbsp;death, reads your&nbsp;General Price List exactly as&nbsp;you published it, and pages the&nbsp;director on&nbsp;call with&nbsp;all of&nbsp;it already written down.</p>
+      <div class="tradewords" aria-label="The words this trade actually uses">
+        <span class="hi">the&nbsp;first call</span><span class="hi">General Price List</span><span class="hi">transfer into&nbsp;care</span>
+        <span>direct cremation</span><span>at-need</span><span>pre-need</span>
+        <span>place of&nbsp;death</span><span>arrangement conference</span><span>director on&nbsp;call</span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
+        <a class="btn btn-ghostl" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+      </div>
+      <p class="heroscroll"><a href="../index.html#start-here">New here? Start with&nbsp;the three-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
+      <div class="micro">Founding cohort open · your&nbsp;price list is read as&nbsp;written, never summarised</div>
+      <div class="whofor">
+        <span class="whotxt">For&nbsp;family-owned homes where the&nbsp;first call and the&nbsp;director on&nbsp;call are the&nbsp;same&nbsp;person — <b>founding cohort now open</b></span>
+      </div>
+    </div>
+
+    <!-- ── scene: the room that is ready, and the desk that is not staffed ── -->
+    <div>
+    <div class="scene-frame light tiltcard rev">
+<div class="photo-scrim" style="height:clamp(300px,34vw,470px);">
+  <img class="ph" src="https://images.pexels.com/photos/34688847/pexels-photo-34688847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+       srcset="https://images.pexels.com/photos/34688847/pexels-photo-34688847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/34688847/pexels-photo-34688847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/34688847/pexels-photo-34688847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+       sizes="(max-width:900px) 100vw, 50vw" alt="A small, plainly furnished waiting room with wooden chairs, a window and nobody in it"
+       loading="lazy" decoding="async" width="1600" height="2000">
+</div>
+      <div class="scene-overlay tl">
+        <b>Place of&nbsp;death: home</b>
+        <span>Certification status recorded before anyone is dispatched</span>
+      </div>
+      <div class="scene-overlay br">
+        <b>Director paged · 3:41 AM</b>
+        <span>Arrangement conference offered for&nbsp;10:00</span>
+      </div>
+    </div>
+    <p class="photocap">3:40 AM — the&nbsp;office is dark and the&nbsp;call still gets a&nbsp;person's&nbsp;answer.
+      Illustrative photography; not a&nbsp;Saleringo customer firm.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════ THE ROOM · full-bleed photograph ═══════ -->
+<section class="roomband">
+  <div class="photosplit rev">
+    <div class="media">
+      <img class="ph" src="https://images.pexels.com/photos/36721147/pexels-photo-36721147.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+           srcset="https://images.pexels.com/photos/36721147/pexels-photo-36721147.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/36721147/pexels-photo-36721147.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/36721147/pexels-photo-36721147.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/36721147/pexels-photo-36721147.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="(max-width:900px) 100vw, 50vw"
+           alt="A quiet memorial room, late sunlight crossing a wall of named niches and a small vase of flowers on the sill" loading="lazy" decoding="async" width="1200" height="1800">
+    </div>
+    <div class="copy reveal">
+      <span class="eyebrow light"><i></i>You are on&nbsp;call. The&nbsp;phone isn't always answered.</span>
+      <h2 class="h2" style="margin-top:22px">A&nbsp;family only&nbsp;makes<br>this&nbsp;call&nbsp;once.</h2>
+      <p class="lead" style="margin-top:18px;max-width:440px;">Everything a&nbsp;family sees when they walk in was decided with&nbsp;care — the&nbsp;light, the&nbsp;quiet, the&nbsp;way they are met at&nbsp;the&nbsp;door. The&nbsp;call that&nbsp;comes at&nbsp;3:40 in&nbsp;the&nbsp;morning deserves the&nbsp;same care, and it should not depend on&nbsp;whether anyone was awake to&nbsp;hear the&nbsp;ring.</p>
+      <a class="linkcta" style="margin-top:28px;" href="../demo.html">See how it answers a&nbsp;first call&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- The page opens on a call that arrived out of hours. This is the arithmetic
+     underneath it — the same block on every trade page, never re-derived. -->
+<section class="dialsec t-md sec-dark bg-grid">
+  <div class="wrap">
+    <div class="nightfig scenefig reveal">
+      <div class="scenebox" data-scene="nightclock"></div>
+      <div>
+        <p class="scenecap"><b>A&nbsp;nine-to-six office is closed for&nbsp;15 of&nbsp;the&nbsp;day&rsquo;s&nbsp;24 hours</b> &mdash; and both weekend days after that. Across&nbsp;a&nbsp;full week
+          the&nbsp;office phone is staffed for&nbsp;<span class="num">45 of&nbsp;168 hours</span>.
+          A&nbsp;death does not consult that&nbsp;timetable, and the&nbsp;call in&nbsp;the&nbsp;headline above arrived in&nbsp;the&nbsp;other 123.</p>
+        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
+          collected. It is what an&nbsp;ordinary working week divides into.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHAT A REGULATOR MEASURED · the one hard number on this site ═══════ -->
+<!-- Class-A evidence. FTC staff report, undercover Funeral Rule phone sweep,
+     calls placed across 2023, report published November 2024. Nothing here is
+     rounded, restated or extrapolated: the figures are the sweep's own. -->
+<section class="sweep grain t-xl">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>Measured by&nbsp;a&nbsp;regulator, not by&nbsp;us</span></div>
+      <h2 class="h2 onDark">In&nbsp;the&nbsp;United States, telephone price&nbsp;disclosure<br>is not a&nbsp;courtesy. It is <em style="font-style:normal;color:var(--teal);">the&nbsp;law.</em></h2>
+      <p class="lead onDark">The&nbsp;FTC&rsquo;s&nbsp;<b>Funeral Rule</b> requires a&nbsp;provider to&nbsp;give accurate price information from&nbsp;its&nbsp;General Price List to&nbsp;anyone who telephones and asks. In&nbsp;2023 the&nbsp;Commission ran its&nbsp;first undercover phone sweep to&nbsp;find out whether that&nbsp;actually happens — and it called during business hours and outside them, which is the&nbsp;part that&nbsp;matters here.</p>
+    </div>
+
+    <div class="sweepgrid reveal">
+      <div class="sweepcard">
+        <span class="lb">Calling during business hours</span>
+        <div class="big">7%</div>
+        <p>Staff could not obtain price information from&nbsp;<b>21 of&nbsp;the&nbsp;278 providers</b> called. Most homes, most of&nbsp;the&nbsp;time, answer the&nbsp;question properly when someone is at&nbsp;the&nbsp;desk.</p>
+      </div>
+      <div class="sweepcard after">
+        <span class="lb">Calling outside business hours</span>
+        <div class="big">26%</div>
+        <p>The&nbsp;same request, after hours, failed at&nbsp;<b>73 of&nbsp;the&nbsp;278 providers</b>. Nothing about&nbsp;those homes changed between the&nbsp;two calls except who was there to&nbsp;pick up.</p>
+      </div>
+    </div>
+
+    <p class="src reveal">FTC staff called <b>278 randomly selected funeral providers</b> between February and December&nbsp;2023, in&nbsp;metropolitan and micropolitan areas, asking for&nbsp;prices for&nbsp;direct cremation, cremation with&nbsp;a&nbsp;memorial, and cremation with&nbsp;a&nbsp;viewing. After hours, staff had to&nbsp;call more than once or wait for&nbsp;a&nbsp;callback at&nbsp;<b>nearly 70%</b> of&nbsp;providers. <b>39</b> funeral homes received warning letters.<br>
+      Source: <a href="https://www.ftc.gov/news-events/news/press-releases/2024/11/ftc-staff-issues-report-undercover-funeral-rule-phone-sweep" target="_blank" rel="noopener">FTC staff report on&nbsp;the&nbsp;undercover Funeral Rule phone sweep</a> — calls placed 2023, report published&nbsp;2024.</p>
+
+    <div class="kpiband reveal">
+      <div class="kpi"><div class="n">278</div><div class="l">providers called at&nbsp;random by&nbsp;FTC staff across&nbsp;2023</div></div>
+      <div class="kpi"><div class="n">26<em>%</em></div><div class="l">could not give price information when called after hours</div></div>
+      <div class="kpi"><div class="n">7<em>%</em></div><div class="l">the&nbsp;same failure during business hours</div></div>
+      <div class="kpi"><div class="n">0</div><div class="l">options the&nbsp;AI is allowed to&nbsp;recommend from&nbsp;your&nbsp;list</div></div>
+    </div>
+
+    <p class="note reveal">We are not going to&nbsp;dress this&nbsp;up as&nbsp;a&nbsp;marketing statistic, because it is better than one. It is a&nbsp;regulator publishing a&nbsp;method, a&nbsp;sample size and a&nbsp;result: the&nbsp;same question, asked of&nbsp;the&nbsp;same homes, fails almost four times as&nbsp;often once the&nbsp;office is closed. That&nbsp;gap is not a&nbsp;failure of&nbsp;intent. It is a&nbsp;failure of&nbsp;staffing at&nbsp;two in&nbsp;the&nbsp;morning, and it is the&nbsp;one thing on&nbsp;this&nbsp;page a&nbsp;piece of&nbsp;software can actually fix.<br><br>
+      <b>The&nbsp;Funeral Rule is United States law.</b> It does not apply outside the&nbsp;United States, and this&nbsp;page does not claim otherwise. Elsewhere, Saleringo reads the&nbsp;price list your&nbsp;firm published and your&nbsp;own local price-transparency rules govern what that&nbsp;list must contain. Nothing here is legal advice, and nothing here is a&nbsp;compliance certification — your&nbsp;counsel signs off your&nbsp;General Price List, exactly as&nbsp;they do today.</p>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ TWO CALLS, ONE NIGHT ═══════ -->
+<section class="pairs bg-grid grain t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>The&nbsp;same night, two&nbsp;different questions</span></div>
+      <h2 class="h2 onDark">One family needs a&nbsp;director.<br>One family needs a&nbsp;number.</h2>
+      <p class="lead onDark">Both are the&nbsp;first call, and both arrive at&nbsp;an&nbsp;hour nobody is at&nbsp;the&nbsp;desk. The&nbsp;first is answered by&nbsp;waking a&nbsp;person. The&nbsp;second is answered by&nbsp;reading a&nbsp;line off the&nbsp;General Price List, out loud, without&nbsp;editing it.</p>
+    </div>
+
+    <div class="pairgrid reveal">
+      <div class="pairwrap">
+        <div class="plabel"><b>03:40 · the&nbsp;transfer</b><span>place of&nbsp;death: home</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;firm</b><br><span>Main line · 3:40 AM</span></span></div>
+          <div class="mbody">
+            <div class="m in">My&nbsp;mother died at&nbsp;home about&nbsp;an&nbsp;hour ago. I don't know what we're&nbsp;supposed to&nbsp;do.</div>
+            <div class="m out">I'm&nbsp;very sorry. I'll&nbsp;get our&nbsp;director to&nbsp;you — he's&nbsp;on&nbsp;call tonight. Can I take three things first: your&nbsp;name and your&nbsp;relationship to&nbsp;her, the&nbsp;address she is at, and whether a&nbsp;doctor or a&nbsp;nurse has already been.<span class="tick">✓✓</span></div>
+            <div class="m in">Her&nbsp;son. She's&nbsp;at&nbsp;home. The&nbsp;hospice nurse came at&nbsp;three and she's&nbsp;still here.</div>
+            <div class="m out">Thank you. I've&nbsp;paged the&nbsp;director with&nbsp;that&nbsp;and he'll&nbsp;ring you within&nbsp;a&nbsp;few minutes on&nbsp;this&nbsp;number. Our&nbsp;out-of-hours number is on&nbsp;its&nbsp;way to&nbsp;you as&nbsp;well. I'm&nbsp;staying on&nbsp;the&nbsp;line until he picks up.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="hchip">→ Director on&nbsp;call paged in&nbsp;40&nbsp;seconds</span>
+          <span class="rchip">✓ Transfer details written down once</span>
+        </div>
+      </div>
+
+      <div class="pairwrap">
+        <div class="plabel"><b>04:15 · the&nbsp;price question</b><span>source: General Price List</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;firm</b><br><span>Main line · 4:15 AM</span></span></div>
+          <div class="mbody">
+            <div class="m in">Before I agree to&nbsp;anything — what does a&nbsp;direct cremation cost with&nbsp;you?</div>
+            <div class="m out">Direct cremation is <b>$1,395</b> on&nbsp;our&nbsp;General Price List. That&nbsp;is the&nbsp;figure as&nbsp;published; I'll&nbsp;send you the&nbsp;whole list in&nbsp;writing now so you have every&nbsp;line in&nbsp;front of&nbsp;you.<span class="tick">✓✓</span></div>
+            <div class="m in">And what would you recommend we do?</div>
+            <div class="m out">I read the&nbsp;list, I don't recommend from&nbsp;it. The&nbsp;director will sit with&nbsp;you and go through&nbsp;the&nbsp;options properly, at&nbsp;whatever pace suits you.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="vchip">✓ Read from&nbsp;the&nbsp;GPL, unedited</span>
+          <span class="rchip">✕ No&nbsp;recommendation, no&nbsp;upgrade offered</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- who is actually on the other end of those two calls -->
+    <div class="audgrid three reveal" style="margin-top:64px;">
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/6862857/pexels-photo-6862857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/6862857/pexels-photo-6862857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/6862857/pexels-photo-6862857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/6862857/pexels-photo-6862857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/6862857/pexels-photo-6862857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A woman standing in a lamplit room at home, making a phone call" loading="lazy" decoding="async" width="800" height="1200">
+        <b>Rings at&nbsp;3:40 AM</b>
+        <span>Needs a&nbsp;person, tonight, and needs to&nbsp;be told plainly what happens next</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A man sitting at home in the evening on the phone, papers on the table in front of him" loading="lazy" decoding="async" width="1200" height="800">
+        <b>Rings before dawn, about&nbsp;money</b>
+        <span>Asks the&nbsp;price first, because he is the&nbsp;one who has to&nbsp;find&nbsp;it</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/13983398/pexels-photo-13983398.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/13983398/pexels-photo-13983398.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/13983398/pexels-photo-13983398.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/13983398/pexels-photo-13983398.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/13983398/pexels-photo-13983398.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A person on a sofa in a dim room at night, holding a phone" loading="lazy" decoding="async" width="1200" height="675">
+        <b>Writes instead of&nbsp;ringing</b>
+        <span>Answered on&nbsp;the&nbsp;channel she used, with&nbsp;the&nbsp;same list and the&nbsp;same&nbsp;refusals</span>
+      </div>
+    </div>
+    <p class="photocap audnote">Illustrative photography — these are not Saleringo customers, and no&nbsp;photograph on&nbsp;this&nbsp;page depicts a&nbsp;real&nbsp;bereavement.</p>
+
+    <div class="note reveal">Both threads above are worked illustrations. The&nbsp;<b>$1,395</b> is the&nbsp;sample General Price List figure this&nbsp;page publishes and uses consistently; your&nbsp;own list supplies the&nbsp;real one.</div>
+  </div>
+</section>
+
+<!-- ═══════ THE FUNERAL HOME CRM ═══════ -->
+<section class="crmsec sec-dark bg-spot t-xl" id="funeral-crm">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:760px;">
+      <span class="eyebrow"><i></i>The&nbsp;funeral home CRM</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Most AI receptionists hand you a&nbsp;transcript.<br>This&nbsp;one hands you <em style="font-style:normal;color:var(--teal);">a&nbsp;first call already written&nbsp;up.</em></h2>
+      <p class="secintro">A&nbsp;polite answer is not a&nbsp;system. The&nbsp;other half of&nbsp;Saleringo is a&nbsp;CRM built around&nbsp;the&nbsp;first call — authority to&nbsp;instruct, place of&nbsp;death, certification status, disposition, pre-need — moving through&nbsp;the&nbsp;stages your&nbsp;directors already work in.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>First calls</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">On&nbsp;call</div>
+          <span class="it on"><span class="dot"></span>First calls<span class="n">9</span></span>
+          <span class="it"><span class="dot"></span>Transfers<span class="n">4</span></span>
+          <span class="it"><span class="dot"></span>Conferences<span class="n">6</span></span>
+          <span class="it"><span class="dot"></span>Pre-need on&nbsp;file<span class="n">3</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>Price questions</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>General Price List</span>
+          <span class="it"><span class="dot"></span>On-call rota</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>First call<span class="ct">4</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">JM</span><span class="nm">J. M. — son</span></div>
+                <div class="mt">Death at&nbsp;home · hospice nurse attended · authority confirmed</div>
+                <div class="ft"><span class="tag hot">Director paged</span><span class="chan">Phone · 3:40 AM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">RD</span><span class="nm">R. D. — daughter</span></div>
+                <div class="mt">Asked the&nbsp;direct cremation figure before anything else</div>
+                <div class="ft"><span class="tag ai">GPL read</span><span class="chan">Phone · 4:15 AM</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Transfer into&nbsp;care<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">AL</span><span class="nm">A. L. — spouse</span></div>
+                <div class="mt">Care home · release confirmed by&nbsp;staff before the&nbsp;vehicle left</div>
+                <div class="ft"><span class="tag">Logged</span><span class="chan">01:52</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">TF</span><span class="nm">T. F. — brother</span></div>
+                <div class="mt">Faith requirement: burial within&nbsp;24 hours — file marked urgent</div>
+                <div class="ft"><span class="tag hot">Urgent</span><span class="chan">Phone · 1:20 AM</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Arrangement conference<span class="ct">6</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">MK</span><span class="nm">M. K. — daughter</span></div>
+                <div class="mt">Wed 10:00 with&nbsp;the&nbsp;director · full price list already sent</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">Booked overnight</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">PS</span><span class="nm">P. S. — executor</span></div>
+                <div class="mt">Pre-need contract found on&nbsp;file — terms to&nbsp;be read by&nbsp;a&nbsp;person</div>
+                <div class="ft"><span class="tag">Pre-need</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Waiting on&nbsp;a&nbsp;person<span class="ct">2</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">??</span><span class="nm">Caller</span></div>
+                <div class="mt">Asked whether the&nbsp;coroner has to&nbsp;be involved — recorded, not answered</div>
+                <div class="ft"><span class="tag hot">Refused</span><span class="chan">To&nbsp;the&nbsp;director</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">GN</span><span class="nm">G. N. — nephew</span></div>
+                <div class="mt">Authority to&nbsp;instruct not&nbsp;established — nothing arranged</div>
+                <div class="ft"><span class="tag">Gate</span><span class="chan">Held</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stages, fields, price list and on-call rota are configured for&nbsp;your&nbsp;firm during onboarding. No&nbsp;family shown here is real.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div>
+        <span class="eyebrow"><i></i>Eight fields, and one of&nbsp;them is a&nbsp;gate</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">A&nbsp;generic CRM asks who is calling.<br>This&nbsp;one asks whether they may&nbsp;instruct.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Authority to&nbsp;instruct is a&nbsp;gate, not a&nbsp;field.</b> Relationship to&nbsp;the&nbsp;deceased is established first, and nothing is arranged with&nbsp;someone who is not entitled to&nbsp;instruct. A&nbsp;grandson may be the&nbsp;one who calls; he is not automatically the&nbsp;one who decides.</span></li>
+          <li><i>→</i><span><b>Place of&nbsp;death routes the&nbsp;transfer.</b> Home, hospital, hospice or care home decides the&nbsp;procedure, which vehicle goes, and whether a&nbsp;release is needed before anyone can attend at&nbsp;all.</span></li>
+          <li><i>→</i><span><b>Certification status decides tonight or tomorrow.</b> Whether a&nbsp;death has been pronounced or certified is captured as&nbsp;a&nbsp;fact from&nbsp;the&nbsp;family, never as&nbsp;a&nbsp;judgment made on&nbsp;the&nbsp;call.</span></li>
+          <li><i>→</i><span><b>Pre-need is checked before any figure is spoken.</b> If a&nbsp;pre-paid contract exists on&nbsp;file, the&nbsp;AI says so and stops — an&nbsp;existing contract governs, and a&nbsp;person reads its&nbsp;terms.</span></li>
+          <li><i>→</i><span><b>The&nbsp;quote builder cannot upsell.</b> It reads the&nbsp;General Price List line that&nbsp;was asked for, in&nbsp;the&nbsp;order asked. There is no&nbsp;path in&nbsp;the&nbsp;configuration for&nbsp;it to&nbsp;offer a&nbsp;costlier option.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;record it fills</a>
+      </div>
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">JM</span>
+            <span><b>J. M. — first call</b><span>Main line, 3:40 AM · 4 minutes</span></span>
+            <span class="stg">Transfer into&nbsp;care</span>
+          </div>
+          <div class="crow"><span class="k">Caller &amp; authority</span><span class="v">Son · entitled to&nbsp;instruct <em>— confirmed before anything was arranged</em></span></div>
+          <div class="crow"><span class="k">Place of&nbsp;death</span><span class="v">Home — home transfer procedure, not the&nbsp;hospital one</span></div>
+          <div class="crow"><span class="k">Certified?</span><span class="v">Hospice nurse attended 03:00 — as&nbsp;stated by&nbsp;the&nbsp;family</span></div>
+          <div class="crow"><span class="k">Disposition</span><span class="v">Cremation — the&nbsp;first fork; nothing quotable before it</span></div>
+          <div class="crow"><span class="k">Service type</span><span class="v">Not&nbsp;decided — left open for&nbsp;the&nbsp;conference</span></div>
+          <div class="crow"><span class="k">Faith / timing</span><span class="v">None&nbsp;stated<span class="aibadge">Asked</span></span></div>
+          <div class="crow"><span class="k">Pre-need on&nbsp;file</span><span class="v">Checked — none found under that&nbsp;name</span></div>
+          <div class="crow"><span class="k">Conference</span><span class="v">Family at&nbsp;home; can come in&nbsp;Wed morning — 10:00 held</span></div>
+          <div class="crow"><span class="k">Guardrail</span><span class="v">No&nbsp;recommendation, no&nbsp;upgrade, no&nbsp;coroner or medical determination</span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;family, not a&nbsp;death.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WORKED EXAMPLES · six first calls, start to finish ═══════ -->
+<section class="sec-dark bg-grid t-md" id="worked-examples">
+  <div class="wrap">
+    <div class="reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Worked examples · funeral homes</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Six calls a&nbsp;small&nbsp;firm&nbsp;takes&nbsp;—<br>and what each&nbsp;one left&nbsp;behind.</h2>
+      <p class="lead onDark" style="margin-top:18px;">Not a&nbsp;demo script. Six ordinary calls: the&nbsp;hour they arrive,
+        the&nbsp;channel they arrive on, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;one produced — a&nbsp;director paged, a&nbsp;price list read as&nbsp;written, a&nbsp;question refused and recorded. Every&nbsp;figure below is the&nbsp;<b>$1,395</b> this&nbsp;page publishes; nothing is imported from&nbsp;anywhere else.</p>
+    </div>
+
+    <div class="exgrid" style="margin-top:38px;">
+
+      <div class="excard">
+        <div class="exhead"><span class="when">03:40</span><span class="via">Phone</span><span class="tag human">Director paged</span></div>
+        <div class="exbody">
+          <p class="exq">My&nbsp;mother died at&nbsp;home about&nbsp;an&nbsp;hour ago. I don't know what we're&nbsp;supposed to&nbsp;do now.</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;very sorry. Our&nbsp;director is on&nbsp;call and I'm&nbsp;paging him now.
+            Can I take your&nbsp;name and how you're&nbsp;related to&nbsp;her, the&nbsp;address, and whether a&nbsp;doctor or a&nbsp;nurse has already
+            attended — those are the&nbsp;three things he'll&nbsp;need before he sets off.</div>
+          <div class="exturn"><span class="who">Caller</span>Her&nbsp;son. She's&nbsp;at&nbsp;home, the&nbsp;hospice nurse came at&nbsp;three.</div>
+          <div class="exturn"><span class="who">Saleringo</span>Thank you. He'll&nbsp;ring you on&nbsp;this&nbsp;number within&nbsp;a&nbsp;few minutes,
+            and I'm&nbsp;sending you our&nbsp;out-of-hours number as&nbsp;well. I'll&nbsp;stay on&nbsp;the&nbsp;line with&nbsp;you until he picks&nbsp;up.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Director on&nbsp;call paged at&nbsp;<b>03:41</b>, with&nbsp;address and certification status attached</span></div>
+            <div class="exrow"><i>✓</i><span>Authority to&nbsp;instruct established before anything was arranged</span></div>
+            <div class="exrow"><i>✓</i><span>Your&nbsp;own out-of-hours number given, unedited</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;price mentioned. He didn't ask, so it wasn't raised.</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration of&nbsp;how the&nbsp;product behaves — not a&nbsp;customer story and not a&nbsp;real family.
+            The&nbsp;only thing being sold in&nbsp;this&nbsp;example is that&nbsp;the&nbsp;phone was answered by&nbsp;something that&nbsp;knew which
+            three facts the&nbsp;director needed.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">04:15</span><span class="via">Phone</span><span class="tag solved">Read from&nbsp;your&nbsp;GPL</span></div>
+        <div class="exbody">
+          <p class="exq">Before I agree to&nbsp;anything — what does a&nbsp;direct cremation actually cost with&nbsp;you?</p>
+          <div class="exturn"><span class="who">Saleringo</span>Direct cremation is <b>$1,395</b> on&nbsp;our&nbsp;General Price List.
+            That's&nbsp;the&nbsp;figure as&nbsp;published. I'm&nbsp;sending you the&nbsp;full list now in&nbsp;writing, so you have every&nbsp;line
+            in&nbsp;front of&nbsp;you before you speak to&nbsp;anybody.</div>
+          <div class="exturn"><span class="who">Caller</span>Is there anything else on&nbsp;top of&nbsp;that?</div>
+          <div class="exturn"><span class="who">Saleringo</span>There can be cash-advance items — things we pay out on&nbsp;your&nbsp;behalf,
+            like a&nbsp;crematorium fee or certified copies. They're&nbsp;itemised on&nbsp;the&nbsp;list I've&nbsp;sent, and the&nbsp;director confirms
+            the&nbsp;final figures with&nbsp;you in&nbsp;writing. I'm&nbsp;not going to&nbsp;estimate them at&nbsp;four in&nbsp;the&nbsp;morning.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="4">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Price question answered in&nbsp;full, on&nbsp;the&nbsp;call, at&nbsp;4:15 AM</span><span class="amt">$1,395</span></div>
+            <div class="exrow"><i>✓</i><span>General Price List sent in&nbsp;writing, unedited, with&nbsp;the&nbsp;version logged</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;package suggested. No&nbsp;"most families choose". No&nbsp;cash-advance figure guessed.</span></div>
+            <div class="exrow"><i>✓</i><span>Record shows a&nbsp;<b>price question answered</b>, with&nbsp;the&nbsp;line quoted and its&nbsp;source</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. In&nbsp;the&nbsp;United States this&nbsp;is the&nbsp;exact interaction
+            the&nbsp;Funeral Rule is about, and the&nbsp;exact interaction the&nbsp;FTC&rsquo;s&nbsp;2023 sweep found failing at&nbsp;26% of&nbsp;providers
+            after hours. The&nbsp;$1,395 is this&nbsp;page's&nbsp;own published sample figure.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Sat 22:50</span><span class="via">Phone</span><span class="tag human">Refused · no&nbsp;steering</span></div>
+        <div class="exbody">
+          <p class="exq">Which one do you think we should have? What do most people do?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I read the&nbsp;price list, I don't recommend from&nbsp;it — and I'm&nbsp;not
+            going to&nbsp;tell you what most families choose, because that's&nbsp;not a&nbsp;reason to&nbsp;choose anything. The&nbsp;director will
+            sit down with&nbsp;you and go through&nbsp;the&nbsp;options properly. I've&nbsp;sent you the&nbsp;whole list so you have it in&nbsp;front
+            of&nbsp;you before he calls.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Full General Price List sent, every&nbsp;line, in&nbsp;the&nbsp;family's&nbsp;hands first</span></div>
+            <div class="exrow"><i>✓</i><span>Arrangement conference offered, so the&nbsp;choice is made with&nbsp;a&nbsp;person</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;recommendation. No&nbsp;upgrade. No&nbsp;social proof used as&nbsp;a&nbsp;nudge.</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;quote produced — nothing was chosen, so nothing was priced</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. This&nbsp;is the&nbsp;refusal the&nbsp;whole page rests on.
+            A&nbsp;system that&nbsp;can nudge a&nbsp;grieving family toward&nbsp;a&nbsp;costlier line has no&nbsp;business being on&nbsp;a&nbsp;funeral home's&nbsp;main
+            line, and that&nbsp;is why the&nbsp;quote builder has no&nbsp;upgrade path in&nbsp;it at&nbsp;all.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">23:30</span><span class="via">Phone</span><span class="tag human">Refused · recorded</span></div>
+        <div class="exbody">
+          <p class="exq">She died at&nbsp;home on&nbsp;her&nbsp;own. Does this&nbsp;have to&nbsp;go to&nbsp;the&nbsp;coroner?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>That's&nbsp;not a&nbsp;question I can answer, and I'm&nbsp;not going to&nbsp;guess
+            at&nbsp;it. It depends on&nbsp;the&nbsp;circumstances and it is decided by&nbsp;a&nbsp;doctor or the&nbsp;coroner's&nbsp;office, not by&nbsp;us.
+            I've&nbsp;written your&nbsp;question down exactly as&nbsp;you asked it and the&nbsp;director is being paged now — he'll&nbsp;tell you
+            where you stand.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Question recorded <b>verbatim</b>, so the&nbsp;family is not asked to&nbsp;repeat it</span></div>
+            <div class="exrow"><i>✓</i><span>Director paged; the&nbsp;attending physician noted as&nbsp;the&nbsp;other party to&nbsp;contact</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;medical, legal or coroner determination. No&nbsp;"probably not". No&nbsp;hedge.</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;transfer scheduled until a&nbsp;person confirms it may proceed</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Reportability, post-mortems and certificates are
+            three of&nbsp;the&nbsp;questions most likely to&nbsp;be asked at&nbsp;midnight and least safe for&nbsp;software to&nbsp;answer. All three
+            are a&nbsp;permanent handoff, not a&nbsp;confidence threshold.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">01:20</span><span class="via">Phone</span><span class="tag solved">Urgent · scheduled</span></div>
+        <div class="exbody">
+          <p class="exq">We're&nbsp;Muslim. The&nbsp;burial has to&nbsp;be within&nbsp;twenty-four hours. Can that&nbsp;be done?</p>
+          <div class="exturn"><span class="who">Saleringo</span>I've&nbsp;put that&nbsp;on&nbsp;the&nbsp;file as&nbsp;a&nbsp;twenty-four-hour requirement and marked
+            it urgent, which means the&nbsp;director sees it before anything else tonight. He is being paged now. I've&nbsp;also held
+            the&nbsp;<b>first</b> conference slot of&nbsp;the&nbsp;morning — 7:30 — rather than the&nbsp;next free one, because that's&nbsp;what
+            the&nbsp;deadline needs.</div>
+          <div class="exturn"><span class="who">Caller</span>And the&nbsp;washing — can that&nbsp;happen at&nbsp;your&nbsp;premises?</div>
+          <div class="exturn hand"><span class="who">Saleringo</span>The&nbsp;director will answer that&nbsp;one directly rather than me
+            reading you a&nbsp;general line. I've&nbsp;recorded the&nbsp;question with&nbsp;the&nbsp;rest of&nbsp;the&nbsp;file so he has it in&nbsp;front of&nbsp;him.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Faith requirement and its&nbsp;<b>timing</b> captured as&nbsp;a&nbsp;scheduling constraint, not a&nbsp;note</span></div>
+            <div class="exrow"><i>✓</i><span>Conference moved to&nbsp;the&nbsp;first slot that&nbsp;meets the&nbsp;deadline, at&nbsp;1:20 in&nbsp;the&nbsp;morning</span></div>
+            <div class="exrow"><i>✓</i><span>Director paged with&nbsp;the&nbsp;deadline at&nbsp;the&nbsp;top of&nbsp;the&nbsp;card</span></div>
+            <div class="exrow"><i>✕</i><span>Nothing said about&nbsp;religious practice on&nbsp;the&nbsp;firm's&nbsp;behalf — that&nbsp;is a&nbsp;person</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Several faiths require burial inside a&nbsp;fixed
+            window. That&nbsp;field decides the&nbsp;entire schedule rather than decorating it, which is why it is a&nbsp;calendar rule
+            in&nbsp;this&nbsp;pack and not a&nbsp;free-text note somebody has to&nbsp;read in&nbsp;time.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Tue 09:05</span><span class="via">Web chat</span><span class="tag solved">Pre-need found</span></div>
+        <div class="exbody">
+          <p class="exq">I think my&nbsp;father took out a&nbsp;plan with&nbsp;you years ago. Does that&nbsp;still stand, and what would we owe?</p>
+          <div class="exturn"><span class="who">Saleringo</span>There is a&nbsp;pre-need contract on&nbsp;file in&nbsp;that&nbsp;name — I can see
+            that&nbsp;much. What it covers is set by&nbsp;the&nbsp;contract itself, not by&nbsp;our&nbsp;current price list, so I'm&nbsp;not going to&nbsp;quote
+            you a&nbsp;figure against it. Our&nbsp;arranger will read the&nbsp;terms with&nbsp;you. I have Wednesday 11:00 or Thursday 09:30.</div>
+          <div class="exturn"><span class="who">Visitor</span>Wednesday, please.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Pre-need contract confirmed as&nbsp;existing before a&nbsp;single price was spoken</span></div>
+            <div class="exrow"><i>✓</i><span>Arrangement conference held for&nbsp;Wednesday 11:00 with&nbsp;the&nbsp;arranger</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;figure quoted against a&nbsp;contract the&nbsp;AI has not read and will not interpret</span></div>
+            <div class="exrow"><i>✓</i><span>Pipeline: <b>First call → Arrangement conference</b>, flagged <b>pre-need</b></span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Pre-need is the&nbsp;field that&nbsp;decides whether
+            a&nbsp;price may be quoted at&nbsp;all. Getting it wrong means quoting a&nbsp;family for&nbsp;something their&nbsp;father already
+            paid for, which is why the&nbsp;check runs before the&nbsp;price list does.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>What it will and won’t answer</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">The&nbsp;line, written&nbsp;down<br>before&nbsp;a&nbsp;family hears&nbsp;anything.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Your&nbsp;firm approves every&nbsp;row of&nbsp;this&nbsp;during onboarding. The&nbsp;third
+        column is the&nbsp;one to&nbsp;read twice — the&nbsp;<b style="color:#F09186;">Never</b> rows are what make this&nbsp;safe on&nbsp;a&nbsp;funeral home's&nbsp;main line at&nbsp;all.</p>
+    </div>
+    <div class="qbank">
+      <div class="qrow hd"><span>A&nbsp;family asks</span><span>What happens</span><span>Handled by</span></div>
+      <div class="qrow"><span class="qq">What does a&nbsp;direct cremation cost?</span>
+        <span class="qa">Reads the&nbsp;General Price List line as&nbsp;published — $1,395 — and sends the&nbsp;full list in&nbsp;writing.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can someone come tonight?</span>
+        <span class="qa">Takes the&nbsp;place of&nbsp;death and certification status, then pages the&nbsp;director on&nbsp;call with&nbsp;both attached.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can you send me the&nbsp;price list?</span>
+        <span class="qa">Sends it in&nbsp;full, unedited, with&nbsp;the&nbsp;version logged against the&nbsp;record.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Is there a&nbsp;plan in&nbsp;my&nbsp;father's&nbsp;name?</span>
+        <span class="qa">Checks whether a&nbsp;pre-need contract is on&nbsp;file and says so. The&nbsp;terms are read by&nbsp;a&nbsp;person.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">We need burial within&nbsp;24 hours.</span>
+        <span class="qa">Records the&nbsp;requirement and its&nbsp;deadline, marks the&nbsp;file urgent, and schedules to&nbsp;meet it.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Where do we come in, and when?</span>
+        <span class="qa">Books the&nbsp;arrangement conference from&nbsp;your&nbsp;own diary and confirms it in&nbsp;writing.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">What is the&nbsp;total going to&nbsp;be?</span>
+        <span class="qa">Reads each&nbsp;line asked for. The&nbsp;full estimate is signed by&nbsp;the&nbsp;director, in&nbsp;writing, not by&nbsp;the&nbsp;AI.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Can we pay in&nbsp;instalments?</span>
+        <span class="qa">States your&nbsp;published terms and hands the&nbsp;decision to&nbsp;a&nbsp;person. It does not negotiate.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Which package do you think we should have?</span>
+        <span class="qa">Refused. It reads the&nbsp;list; it does not recommend from&nbsp;it, in&nbsp;any wording.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Would the&nbsp;better casket be nicer for&nbsp;her?</span>
+        <span class="qa">Refused. No&nbsp;upgrade is suggested, implied or offered — the&nbsp;quote builder has no&nbsp;path for&nbsp;it.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">What do most families choose?</span>
+        <span class="qa">Refused. Social proof is a&nbsp;sales technique, and it is not used on&nbsp;this&nbsp;call.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Does this&nbsp;have to&nbsp;go to&nbsp;the&nbsp;coroner?</span>
+        <span class="qa">Refused. No&nbsp;medical, legal or coroner determination. Recorded verbatim and routed to&nbsp;the&nbsp;director.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Can we go ahead? I'm&nbsp;her&nbsp;nephew.</span>
+        <span class="qa">Refused. Authority to&nbsp;instruct is never assumed. Nothing is arranged until it is established.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Did she suffer? Did we do the&nbsp;right thing?</span>
+        <span class="qa">Refused. It does not counsel and does not comfort in&nbsp;your&nbsp;voice. It says a&nbsp;person is coming, and stays on&nbsp;the&nbsp;line.</span><span class="qs never">Never</span></div>
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">An&nbsp;ordinary&nbsp;week<br>at a&nbsp;firm with&nbsp;two&nbsp;directors.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Not a&nbsp;busy one. An&nbsp;ordinary one — with&nbsp;the&nbsp;share arriving while
+        the&nbsp;office is closed marked, because that&nbsp;is the&nbsp;part currently reaching an&nbsp;answering machine or a&nbsp;phone in&nbsp;somebody's&nbsp;bedroom.</p>
+    </div>
+    <div class="weekstrip">
+      <div class="weekday"><span class="d">Mon</span><div class="n">6<small> calls</small></div>
+        <ul><li><i>·</i>2 first calls</li><li><i>·</i>4 office closed</li><li><i>·</i>3 price questions</li></ul></div>
+      <div class="weekday"><span class="d">Tue</span><div class="n">5<small> calls</small></div>
+        <ul><li><i>·</i>1 first call</li><li><i>·</i>3 office closed</li></ul></div>
+      <div class="weekday peak"><span class="d">Wed</span><div class="n">8<small> calls</small></div>
+        <ul><li><i>·</i>3 first calls</li><li><i>·</i>5 office closed</li><li><i>·</i>busiest night</li></ul></div>
+      <div class="weekday"><span class="d">Thu</span><div class="n">6<small> calls</small></div>
+        <ul><li><i>·</i>2 first calls</li><li><i>·</i>4 office closed</li><li><i>·</i>1 refused &amp; routed</li></ul></div>
+      <div class="weekday"><span class="d">Fri</span><div class="n">6<small> calls</small></div>
+        <ul><li><i>·</i>2 first calls</li><li><i>·</i>4 office closed</li></ul></div>
+      <div class="weekday peak"><span class="d">Sat</span><div class="n">5<small> calls</small></div>
+        <ul><li><i>·</i>2 first calls</li><li><i>·</i><b>closed all day</b></li></ul></div>
+      <div class="weekday"><span class="d">Sun</span><div class="n">4<small> calls</small></div>
+        <ul><li><i>·</i>2 first calls</li><li><i>·</i><b>closed all day</b></li></ul></div>
+    </div>
+    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;two-director firm — the&nbsp;shape of&nbsp;a&nbsp;week,
+      not a&nbsp;measurement and not a&nbsp;promise. On&nbsp;this&nbsp;shape <b>29 of&nbsp;40 calls arrive while the&nbsp;office is closed</b>.
+      That&nbsp;proportion is a&nbsp;property of&nbsp;the&nbsp;clock, not a&nbsp;claim about&nbsp;your&nbsp;firm; the&nbsp;only number that&nbsp;matters is
+      in&nbsp;your&nbsp;own call log, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a> takes it.</p>
+
+    <div class="reveal" style="max-width:680px;margin-top:62px;">
+      <span class="eyebrow"><i></i>The&nbsp;arithmetic, because you will be&nbsp;asked&nbsp;for&nbsp;it</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">What it costs,<br>set&nbsp;against what this&nbsp;page already&nbsp;publishes.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Writing this&nbsp;block for&nbsp;this&nbsp;trade sat badly with&nbsp;us, and we thought
+        about&nbsp;leaving it out. It is here because a&nbsp;business decision needs a&nbsp;number, and because the&nbsp;honest version is
+        a&nbsp;small one. Using only figures already published: the&nbsp;$1,395 sample line on&nbsp;this&nbsp;page, and the&nbsp;plan a&nbsp;firm
+        answering calls would be on.</p>
+    </div>
+    <div class="mathbox" style="max-width:680px;margin-top:26px;">
+      <div class="mathrow"><span class="lbl"><b>Saleringo Scale, plan base</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone</span></span><span class="val">$599</span></div>
+      <div class="mathrow"><span class="lbl"><b>AI Phone minutes</b><span class="sub">1,200 min × $0.14/min, as&nbsp;on&nbsp;the&nbsp;published sample invoice</span></span><span class="val">$168</span></div>
+      <div class="mathrow"><span class="lbl"><b>Your&nbsp;month, all&nbsp;in</b><span class="sub">$599 + $168</span></span><span class="val">$767</span></div>
+      <div class="mathrow"><span class="lbl"><b>One direct cremation</b><span class="sub">the&nbsp;sample General Price List figure published on&nbsp;this&nbsp;page</span></span><span class="val">$1,395</span></div>
+      <div class="mathrow total"><span class="lbl"><b>First calls a&nbsp;month it has to&nbsp;keep</b><span class="sub">$767 ÷ $1,395, rounded up</span></span><span class="val">1</span></div>
+      <p class="mathnote">Every&nbsp;rate here is published on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing page</a>; the&nbsp;$1,395 is published on&nbsp;this&nbsp;one. We are not going to&nbsp;tell you how many
+        first calls you currently lose, because we do not know your&nbsp;call log and we are not going to&nbsp;invent one for&nbsp;a&nbsp;trade
+        like this. A&nbsp;firm starting on&nbsp;website chat rather than voice is on&nbsp;a&nbsp;$79/mo plan, and the&nbsp;arithmetic changes
+        accordingly. Put your&nbsp;own numbers into&nbsp;the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator</a>;
+        it defaults sceptical on&nbsp;purpose.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHERE IT STOPS · paper ═══════ -->
+<section class="nogo bg-clinical t-xl">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>Where it stops</span>
+      <h2 class="h2" style="margin-top:22px">What it will <em style="font-style:normal;color:var(--red);">never</em>&nbsp;do.</h2>
+      <p class="lead">On&nbsp;this&nbsp;trade the&nbsp;refusals are not a&nbsp;safety feature bolted to&nbsp;a&nbsp;sales tool. They are the&nbsp;product.
+        These&nbsp;boundaries are built in — not configured, not optional, and they do not soften at&nbsp;three in&nbsp;the&nbsp;morning.</p>
+      <span class="ngseal">It reads your&nbsp;list. It never sells from&nbsp;it.</span>
+
+      <div class="quotecard light pending" style="margin-top:38px;">
+        <div class="mark">”</div>
+        <p>A&nbsp;founding firm’s&nbsp;words belong here. We are onboarding the&nbsp;first cohort now, so there is nothing to&nbsp;quote yet — and on&nbsp;this&nbsp;page of&nbsp;all pages, an&nbsp;invented testimonial would undo the&nbsp;exact thing it is about.</p>
+        <div class="by">
+          <span class="avatar av-b" style="opacity:.4;">?</span>
+          <span><b>Founding firm · seat open</b><span>Reserved for&nbsp;the&nbsp;first funeral home live</span></span>
+        </div>
+        <div class="metric">Founding cohort · 50% off for&nbsp;3 months</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Steer, upsell or recommend</b><span>It reads the&nbsp;General Price List line that&nbsp;was asked for, in&nbsp;the&nbsp;order asked. It never suggests a&nbsp;costlier option, never says “most families choose”, and never volunteers an&nbsp;item nobody raised.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Assume authority to&nbsp;instruct</b><span>Whoever is on&nbsp;the&nbsp;phone is not automatically the&nbsp;person entitled to&nbsp;instruct. Relationship is established first, and nothing is arranged until it is.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Make a&nbsp;medical, legal or coroner determination</b><span>Whether a&nbsp;death must be reported, whether a&nbsp;post-mortem is needed, whether a&nbsp;certificate can be issued — every&nbsp;one of&nbsp;those is a&nbsp;person, and the&nbsp;question is recorded word for&nbsp;word so it is not asked twice.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Counsel a&nbsp;grieving family</b><span>Grief, faith, “did she suffer”, “did we do the&nbsp;right thing” — it does not answer, does not comfort in&nbsp;your&nbsp;firm’s&nbsp;voice and does not hedge. It says a&nbsp;person is coming to&nbsp;the&nbsp;phone, and it stays on&nbsp;the&nbsp;line until one does.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Quote against a&nbsp;contract it has not read</b><span>If a&nbsp;pre-need plan is on&nbsp;file, the&nbsp;contract governs, not today’s&nbsp;price list. It says the&nbsp;plan exists and hands the&nbsp;terms to&nbsp;your&nbsp;arranger.</span></span>
+      </div>
+      <a class="linkcta" style="margin-top:26px;" href="../security.html">Guardrails &amp; security&nbsp;&nbsp;→</a>
+    </div>
+  </div></div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/17572904/pexels-photo-17572904.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/17572904/pexels-photo-17572904.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/17572904/pexels-photo-17572904.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/17572904/pexels-photo-17572904.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="The entrance of an ordinary apartment building at night, lit by a single lamp above the door" loading="lazy" decoding="async" width="1600" height="2400">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:22ch;line-height:1.1;">Place of&nbsp;death decides<br>what can happen&nbsp;tonight.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">Home, hospital, hospice or care home — it changes the&nbsp;procedure, the&nbsp;vehicle, and whether a&nbsp;release is needed before anyone can attend at&nbsp;all.</p>
+  </div>
+</section>
+<p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a&nbsp;named customer, not a&nbsp;testimonial, and not a&nbsp;real&nbsp;address.</p>
+
+<!-- ═══════ WHERE THE RULE APPLIES · dark aurora ═══════ -->
+<section class="world bg-aurora t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><i></i>One product, several&nbsp;jurisdictions</span>
+      <h2 class="h2 onDark" style="margin-top:20px">The&nbsp;Funeral&nbsp;Rule is <em style="font-style:normal;color:var(--teal);">United&nbsp;States</em> law.<br>This&nbsp;page is read&nbsp;everywhere.</h2>
+      <p class="lead onDark">So it is worth being exact about&nbsp;what applies where. What Saleringo does is the&nbsp;same everywhere: it reads the&nbsp;price list your&nbsp;firm published, as&nbsp;published. What that&nbsp;list must contain, and who may demand it over the&nbsp;telephone, is a&nbsp;matter for&nbsp;your&nbsp;jurisdiction and your&nbsp;own advisers.</p>
+    </div>
+
+    <div class="tzcards reveal">
+      <div class="glass"><b>In&nbsp;the&nbsp;United States</b><span>The&nbsp;FTC Funeral Rule makes telephone price disclosure from&nbsp;the&nbsp;General Price List a&nbsp;legal duty. Answering the&nbsp;phone at&nbsp;4 AM and reading the&nbsp;line asked for&nbsp;is that&nbsp;duty being met, not a&nbsp;convenience.</span></div>
+      <div class="glass"><b>Everywhere&nbsp;else</b><span>No&nbsp;equivalent federal rule is assumed. The&nbsp;AI reads the&nbsp;price list you published under whatever local price-transparency rules govern it — and it will not read a&nbsp;figure that&nbsp;is not on&nbsp;that&nbsp;list.</span></div>
+      <div class="glass"><b>In&nbsp;every&nbsp;case</b><span>This&nbsp;is not legal advice and it is not a&nbsp;compliance certification. Your&nbsp;counsel signs off your&nbsp;price list and your&nbsp;disclosures, exactly as&nbsp;they do today. We are supplying the&nbsp;phone, not the&nbsp;opinion.</span></div>
+    </div>
+    <div class="out reveal"><a href="../security.html#regulated">How regulated firms are onboarded ↗</a></div>
+  </div>
+</section>
+
+<!-- ═══════ HOW TO START · bright + product UI ═══════ -->
+<section class="start t-md">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>How to&nbsp;start</span>
+      <h2 class="h2" style="margin-top:22px">Live<br>before tonight's&nbsp;first&nbsp;call.</h2>
+      <p class="lead">Start with&nbsp;your&nbsp;General Price List and your&nbsp;on-call rota. Add website chat and messenger when your&nbsp;team is ready.</p>
+      <p class="lead" style="margin-top:16px;font-size:var(--fs-sm);">Keep your&nbsp;systems — <b style="color:var(--l-ink);">Zapier</b> and <b style="color:var(--l-ink);">CSV export</b> are live today; funeral management software is on&nbsp;the&nbsp;roadmap, and founding customers vote on&nbsp;what ships next.</p>
+      <div class="langnote">
+        <div class="ty">THE PRICE LIST IS THE SOURCE</div>
+        <p>Your&nbsp;General Price List is imported once and read as&nbsp;written. Every&nbsp;figure the&nbsp;AI speaks traces back to&nbsp;a&nbsp;line on&nbsp;it, with&nbsp;a&nbsp;version and a&nbsp;date. A&nbsp;figure that&nbsp;is not on&nbsp;the&nbsp;list is not estimated — it becomes a&nbsp;handoff to&nbsp;your&nbsp;arranger.</p>
+        <div class="tags"><span class="pilltag pt-teal">GPL v4 · approved</span><span class="pilltag pt-teal">Casket list · approved</span><span class="pilltag pt-line">Cash advances · itemised</span></div>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Import your&nbsp;General Price List</b><span>Every&nbsp;line becomes a&nbsp;quotable fact with&nbsp;a&nbsp;version and a&nbsp;date</span></span><span class="tail pilltag pt-line">~1 hour</span></div>
+      <div class="step"><span class="num">02</span><span class="tx"><b>Approve what it may say</b><span>Your&nbsp;director signs off the&nbsp;answer set, including the&nbsp;refusals</span></span><span class="tail pilltag pt-teal">✓ Approved</span></div>
+      <div class="step"><span class="num">03</span><span class="tx"><b>Point the&nbsp;out-of-hours line at&nbsp;it</b><span>First calls answered, directors paged, records written from&nbsp;night one</span></span><span class="tail pilltag pt-dark">Tonight</span></div>
+      <div class="step"><span class="num">04</span><span class="tx"><b>Add chat and messenger</b><span>Same list, same refusals, on&nbsp;whichever channel a&nbsp;family reaches for</span></span><span class="tail pilltag pt-amber">When ready</span></div>
+    </div>
+  </div>
+
+  <!-- product UI: the overnight log -->
+  <div class="browserframe light reveal">
+    <div class="bar"><i></i><i></i><i></i><span class="url">app.saleringo.com/first-calls?range=overnight</span></div>
+    <div class="inboxmock">
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">OVERNIGHT</div>
+        <div class="convrow on"><span class="chanmini cm-v">A</span><span class="cv"><b>All calls</b></span><span class="st st-ai">7</span></div>
+        <div class="convrow"><span class="chanmini cm-c">FC</span><span class="cv"><b>First calls</b></span><span class="st st-ai">3</span></div>
+        <div class="convrow"><span class="chanmini cm-m">£</span><span class="cv"><b>Price questions</b></span><span class="st st-ai">2</span></div>
+        <div class="convrow"><span class="chanmini cm-c">!</span><span class="cv"><b>Refused &amp; routed</b></span><span class="st st-hu">2</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">LAST NIGHT</div>
+        <div class="convrow on"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">JM</span><span class="cv"><b>J. M. · phone · 03:40</b><span>Director paged 03:41</span></span><span class="st st-hu">Human</span></div>
+        <div class="convrow"><span class="avatar av-a" style="width:30px;height:30px;font-size:var(--fs-2xs);">RD</span><span class="cv"><b>R. D. · phone · 04:15</b><span>$1,395 read · list sent</span></span><span class="st st-ai">AI</span></div>
+        <div class="convrow"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">??</span><span class="cv"><b>Caller · phone · 23:30</b><span>Refused · recorded</span></span><span class="st st-hu">Human</span></div>
+        <div class="convrow"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">TF</span><span class="cv"><b>T. F. · phone · 01:20</b><span>24-hour rule · 7:30 held</span></span><span class="st st-ai">AI</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">ANSWER TRACE</div>
+        <div style="font-size:var(--fs-sm);font-weight:800;color:var(--l-ink);">Direct cremation · $1,395</div>
+        <div style="margin-top:6px;font-size:var(--fs-2xs);color:var(--l-mut);font-weight:600;">General Price List v4 · effective 2026-01-01</div>
+        <div style="margin-top:16px;display:grid;gap:8px;">
+          <span class="pilltag pt-teal" style="justify-self:start;">✓ Source: General Price List, line 1</span>
+          <span class="pilltag pt-line" style="justify-self:start;">Read verbatim · not summarised</span>
+          <span class="pilltag pt-dark" style="justify-self:start;">Approved by: funeral director</span>
+        </div>
+        <div style="margin-top:18px;font-size:var(--fs-2xs);line-height:1.7;color:var(--l-mut);font-weight:500;">
+          Full list sent to&nbsp;the&nbsp;caller in&nbsp;writing at&nbsp;04:16, version stamped against the&nbsp;record.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cap reveal">Every&nbsp;figure traces back to&nbsp;a&nbsp;line on&nbsp;the&nbsp;list it came from</div>
+  </div>
+</section>
+
+<!-- ═══════ MORE THAN ONE LOCATION ═══════ -->
+<section class="sec-dark bg-grid t-xl" id="multi-location">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Two chapels. Three. A&nbsp;group.</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">One home's price&nbsp;list<br>is&nbsp;not <em style="font-style:normal;color:var(--teal);">another home's.</em></h2>
+      <p class="secintro">If you run more than one location, a&nbsp;confident figure from&nbsp;the&nbsp;wrong General Price List is worse than no&nbsp;figure at&nbsp;all — in&nbsp;the&nbsp;United States it is also a&nbsp;disclosure problem. Each&nbsp;location is set up as&nbsp;its&nbsp;own firm inside a&nbsp;single account.</p>
+    </div>
+    <div class="mlgrid reveal">
+      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own number, hours and General Price List</b>
+        <p>Each&nbsp;location answers on&nbsp;its&nbsp;own line with&nbsp;its&nbsp;own list, its&nbsp;own casket list and its&nbsp;own cash-advance
+          items. A&nbsp;family asking about&nbsp;one location never hears another's&nbsp;figures.</p></div>
+      <div class="mlcard"><span class="n">02</span><b>Its&nbsp;own on-call rota</b>
+        <p>The&nbsp;director paged is the&nbsp;director on&nbsp;call for&nbsp;that&nbsp;location tonight — not a&nbsp;central rota that&nbsp;sends
+          somebody ninety minutes away.</p></div>
+      <div class="mlcard"><span class="n">03</span><b>Each&nbsp;manager sees only their&nbsp;own location</b>
+        <p>A&nbsp;location manager opens the&nbsp;board and sees their&nbsp;first calls, their&nbsp;transfers, their&nbsp;conferences —
+          not the&nbsp;group's.</p></div>
+      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
+        <p>One report puts every&nbsp;location in&nbsp;the&nbsp;same row: first calls, how many were answered on&nbsp;the&nbsp;first ring,
+          price questions answered in&nbsp;full, time to&nbsp;director paged. Exportable to&nbsp;PDF or Excel.</p></div>
+    </div>
+    <p class="statnote">Locations, numbers, price lists, rotas and who-sees-what are configured with&nbsp;you during
+      onboarding — not through&nbsp;a&nbsp;self-serve wizard we would have to&nbsp;invent a&nbsp;timescale for.</p>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faqsec t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow light"><i></i>Questions funeral directors ask</span>
+      <h2 class="h2" style="margin-top:20px">Asked by&nbsp;firms like&nbsp;yours.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Does this&nbsp;help us comply with&nbsp;the&nbsp;FTC Funeral Rule?</summary>
+        <p>In&nbsp;the&nbsp;United States the&nbsp;Funeral Rule requires a&nbsp;provider to&nbsp;give accurate price information from&nbsp;its&nbsp;General Price List to&nbsp;anyone who telephones and asks. Saleringo answers the&nbsp;phone at&nbsp;any hour and reads the&nbsp;GPL line the&nbsp;caller asked for, as&nbsp;written, then sends the&nbsp;full list. That&nbsp;is the&nbsp;mechanism the&nbsp;rule is about. It is not a&nbsp;compliance certification and it is not legal advice — your&nbsp;own counsel signs off your&nbsp;price list and your&nbsp;disclosures. Outside the&nbsp;United States the&nbsp;Funeral Rule does not apply and your&nbsp;local rules govern; the&nbsp;AI still reads only the&nbsp;list you published.</p>
+      </details>
+      <details>
+        <summary>Will it try to&nbsp;sell a&nbsp;family a&nbsp;more expensive service?</summary>
+        <p>No, and the&nbsp;restriction is built in&nbsp;rather than configured. It reads the&nbsp;figure the&nbsp;family asked for, in&nbsp;the&nbsp;order they asked, from&nbsp;your&nbsp;General Price List. It never suggests a&nbsp;costlier option, never says “most families choose”, and never volunteers an&nbsp;item nobody asked about. If a&nbsp;family asks which package they should have, it declines and says the&nbsp;director will go through&nbsp;the&nbsp;options with&nbsp;them.</p>
+      </details>
+      <details>
+        <summary>What happens on&nbsp;a&nbsp;first call in&nbsp;the&nbsp;middle of&nbsp;the&nbsp;night?</summary>
+        <p>It answers, establishes who is calling and whether they are entitled to&nbsp;instruct, records the&nbsp;place of&nbsp;death and whether the&nbsp;death has been certified, and pages your&nbsp;director on&nbsp;call with&nbsp;those details already written down. It gives the&nbsp;family your&nbsp;own out-of-hours number, unedited. It does not make a&nbsp;medical, legal or coroner determination, and it does not counsel.</p>
+      </details>
+      <details>
+        <summary>How is family information handled?</summary>
+        <p>Conversations capture contact and arrangement details — caller, relationship and authority to&nbsp;instruct, place of&nbsp;death, disposition, service type, pre-need status, preferred conference time. Records are kept separate from&nbsp;every&nbsp;other firm, encrypted in&nbsp;transit and at&nbsp;rest, with&nbsp;retention and deletion controls your&nbsp;firm operates. Full details, including data regions and subprocessors, are in&nbsp;the&nbsp;<a href="../security.html" style="color:var(--teal-deep);font-weight:700;">Security &amp; data</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/10347148/pexels-photo-10347148.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/10347148/pexels-photo-10347148.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/10347148/pexels-photo-10347148.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/10347148/pexels-photo-10347148.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A plain black desk telephone on a wooden desk beside a tray of papers" loading="lazy" decoding="async" width="1600" height="1067">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">The&nbsp;list is read.<br>It is never&nbsp;sold&nbsp;from.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">Recommendation, upselling and “most families choose” are absent from&nbsp;the&nbsp;configuration, not merely discouraged in&nbsp;it.</p>
+  </div>
+</section>
+
+<!-- ═══════ WHAT IT CONNECTS TO ═══════ -->
+<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#050B16,#081426);">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:700px;">
+      <span class="eyebrow"><i></i>Your&nbsp;existing systems, honestly</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Three columns.<br>No&nbsp;logo&nbsp;wall.</h2>
+      <p class="secintro">Normally this&nbsp;answer is buried in&nbsp;an&nbsp;FAQ. A&nbsp;funeral director deserves to&nbsp;see it before
+        they decide, not after.</p>
+    </div>
+    <div class="statgrid reveal">
+      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+        <ul>
+          <li>Zapier<span>Push first calls and stage changes into&nbsp;the&nbsp;systems you already run</span></li>
+          <li>CSV export<span>First calls, transfers, conferences and the&nbsp;whole board, whenever you ask</span></li>
+          <li>Saleringo's&nbsp;own board &amp; scheduler<span>Enough on&nbsp;its&nbsp;own if you would rather start light</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>Bridge for&nbsp;now</h4>
+        <ul>
+          <li>Your&nbsp;funeral management software<span>No&nbsp;direct link. Records reach it through&nbsp;Zapier or a&nbsp;CSV import</span></li>
+          <li>Your&nbsp;existing answering service<span>Runs alongside during the&nbsp;first weeks if you would rather overlap than switch</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>In&nbsp;build</h4>
+        <ul>
+          <li>Funeral management systems<span>On&nbsp;the&nbsp;roadmap; founding customers vote on&nbsp;what ships next. We will not name a&nbsp;month we cannot stand behind</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="statnote">If the&nbsp;system you run is not on&nbsp;this&nbsp;page, ask on&nbsp;the&nbsp;call. "Not yet" now is cheaper
+      for&nbsp;both of&nbsp;us than "not yet" after you have paid.</p>
+  </div>
+</section>
+
+<!-- PACK: the actual per-trade configuration, not a re-skinned page -->
+<section class="packsec sec-dark bg-grid t-md" id="the-pack">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:780px;">
+      <div class="secrule"><span class="eyebrow"><i></i>Not a&nbsp;skin &mdash; a&nbsp;different object model</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Six fields, three&nbsp;rules,<br>and one thing it will not&nbsp;do.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most industry pages change a&nbsp;photograph and a&nbsp;noun. This&nbsp;is the&nbsp;configuration
+        itself: the&nbsp;fields the&nbsp;record carries, the&nbsp;rules the&nbsp;calendar enforces, the&nbsp;lines a&nbsp;figure may be read from, who ends
+        up with&nbsp;the&nbsp;work, and the&nbsp;subjects the&nbsp;AI is not allowed to&nbsp;touch.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;record carries</span>
+        <div class="pkfields"><div class="pkf"><b>Caller &amp; authority to&nbsp;instruct</b><span>a&nbsp;gate, not a&nbsp;data point</span></div><div class="pkf"><b>Place of&nbsp;death</b><span>routes the&nbsp;transfer procedure</span></div><div class="pkf"><b>Certified or pronounced</b><span>decides tonight or tomorrow</span></div><div class="pkf"><b>Burial or cremation</b><span>the&nbsp;first fork in&nbsp;the&nbsp;price list</span></div><div class="pkf"><b>Service type</b><span>which GPL package is read</span></div><div class="pkf"><b>Pre-need on&nbsp;file</b><span>decides whether a&nbsp;price is quoted at&nbsp;all</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;calendar enforces</span>
+        <ol class="pkrules"><li>Nothing is arranged until authority to&nbsp;instruct is established. The&nbsp;gate is on&nbsp;the&nbsp;calendar, not on&nbsp;a&nbsp;checklist somebody remembers.</li><li>Place of&nbsp;death decides which transfer may be offered, and whether tonight is possible at&nbsp;all.</li><li>A&nbsp;faith deadline moves the&nbsp;arrangement conference to&nbsp;the&nbsp;first slot that&nbsp;meets it — not the&nbsp;next free one.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;figure is read from</span>
+        <ul class="pkq"><li>The&nbsp;General Price List line asked for</li><li>Casket &amp; outer container lists, on&nbsp;request</li><li>Cash-advance items &mdash; itemised, never estimated</li><li>The&nbsp;total &mdash; signed by&nbsp;the&nbsp;director, not the&nbsp;AI</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">The&nbsp;director on&nbsp;call takes the&nbsp;transfer. The&nbsp;arranger confirms every&nbsp;figure in&nbsp;writing before the&nbsp;conference.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Recommending, upgrading, counselling, and any coroner, medical or legal determination. Every&nbsp;one of&nbsp;those is a&nbsp;person.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">First calls answered on&nbsp;the&nbsp;first ring</span><span class="pkk">Minutes from&nbsp;call to&nbsp;director paged</span><span class="pkk">Price questions answered in&nbsp;full</span><span class="pkk">Conferences booked out of&nbsp;hours</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Price list, rota and conference lengths all come from&nbsp;your&nbsp;own setup. Product illustration &mdash; the&nbsp;fields and rules are the&nbsp;real ones.</span>Calls answered on&nbsp;the&nbsp;first ring, minutes to&nbsp;a&nbsp;director, price questions answered rather than deferred. Those are things a&nbsp;funeral director already cares about; the&nbsp;only thing that&nbsp;changes is who was awake when the&nbsp;phone rang.</p>
+  </div>
+</section>
+
+<section class="t-sm sec-dark"><div class="wrap" style="text-align:center;"><p style="font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:600;max-width:72ch;margin:0 auto;"><b style="color:#fff;">A&nbsp;note on&nbsp;what this&nbsp;page is not. </b>Nothing here is legal advice, and nothing here certifies your&nbsp;firm as&nbsp;compliant with&nbsp;the&nbsp;Funeral Rule or with&nbsp;any other jurisdiction's&nbsp;price-transparency rules. Your&nbsp;counsel signs off your&nbsp;price list. What we supply is a&nbsp;line that&nbsp;is answered and a&nbsp;list that&nbsp;is read as&nbsp;written. <a href="../security.html#regulated" style="color:var(--teal-ink);font-weight:700;">Where we stand →</a></p></div></section>
+
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have seen where it stops</span>
+        <p class="cnp">A&nbsp;director paged in&nbsp;under a&nbsp;minute, a&nbsp;price list read as&nbsp;written at&nbsp;four in&nbsp;the&nbsp;morning, and a&nbsp;refusal line that&nbsp;does not move: it never recommends, and it never counsels. What sits behind all of&nbsp;it is the&nbsp;record on&nbsp;the&nbsp;director's&nbsp;desk in&nbsp;the&nbsp;morning.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="closer bg-spot">
+  <div class="wrap">
+    <div class="riskrow reveal">
+      <div class="riskitem"><div class="ic">✓</div><b>Your&nbsp;list, as&nbsp;written</b><span>Every&nbsp;figure traces to&nbsp;a&nbsp;line, a&nbsp;version and a&nbsp;date.</span></div>
+      <div class="riskitem"><div class="ic">→</div><b>Judgment calls leave</b><span>Coroner, medical, legal and grief all reach a&nbsp;person.</span></div>
+      <div class="riskitem"><div class="ic">◷</div><b>Month to&nbsp;month</b><span>No&nbsp;annual lock-in. Stop whenever it stops earning its&nbsp;place.</span></div>
+      <div class="riskitem"><div class="ic">%</div><b>Founding pricing</b><span>50% off for&nbsp;3 months, locked before general availability.</span></div>
+    </div>
+
+    <h2 class="reveal">Somebody is going&nbsp;to&nbsp;ring<br>at&nbsp;<em>four in&nbsp;the&nbsp;morning.</em></h2>
+    <p class="lead onDark reveal">Import your&nbsp;General Price List, approve what it may say, and let the&nbsp;next first call be answered by&nbsp;something that&nbsp;knows what to&nbsp;ask and what never to&nbsp;offer.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
+    </div>
+
+    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
+      <div class="lh">Get your&nbsp;firm's&nbsp;setup plan</div>
+      <p class="lsub">Tell us how your&nbsp;out-of-hours line works today and who is on&nbsp;call. We reply with&nbsp;the&nbsp;stages, intake fields and price-list rules we would set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
+      <form class="eaform" data-earlyaccess>
+        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
+        <input type="text" name="business" placeholder="Firm name" aria-label="Firm name">
+        <input type="text" name="country" placeholder="Country" aria-label="Country">
+        <input type="hidden" name="industry" required value="Funeral home">
+        <input type="hidden" name="context" value="Funeral homes industry page">
+        <select name="locations" aria-label="How many locations">
+          <option value="">How many locations?</option>
+          <option>One</option><option>Two or three</option><option>Four or more</option>
+        </select>
+        <select name="channel" aria-label="Out-of-hours today">
+          <option value="">Out of&nbsp;hours today…</option>
+          <option>Diverts to&nbsp;a&nbsp;director's&nbsp;mobile</option><option>An&nbsp;answering service</option>
+          <option>Voicemail</option><option>Honestly, it varies</option>
+        </select>
+        <button class="btn btn-teal" type="submit">Get the&nbsp;Funeral Home setup plan →</button>
+        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
+        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
+        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
+      </form>
+      <p class="eanote" style="margin-top:18px;"><span class="pilltag pt-teal">✓ Reads your&nbsp;price list — no&nbsp;recommendation, no&nbsp;upgrade, no&nbsp;improvised figure</span></p>
+    </div>
+    <div class="trust">Security or procurement questions? <a href="../security.html" style="color:var(--tx2);">See where your&nbsp;data lives ↗</a> · Also relevant: <a href="./legal.html" style="color:var(--tx2);">Law Firms</a></div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v20.0</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4>The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a></div><div class="fgrp"><h5>Home, property &amp; vehicle</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/property-management.html">Property management</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html" aria-current="page">Funeral homes</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Many locations</h5><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a><a class="lnk" href="../cross-border.html">Cross-border</a><a class="lnk" href="../industries.html">All fourteen trades</a><a class="lnk" href="../examples.html">Worked examples</a></div></div></div>
+      <div class="fcol"><h4>Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4>Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+<nav data-startpath data-compact aria-hidden="true" data-title="What to check here" data-end="#early-access" data-end-label="Get my plan">
+  <ol>
+    <li data-step="#the-pack" data-short="The pack" data-next="see the six fields and three rules"><a href="#the-pack"><b>The&nbsp;pack</b></a></li>
+  </ol>
+</nav>
+</main>
+
+<div class="stickycta" data-sticky>
+  <div class="wrap">
+    <span class="msg">Answered at&nbsp;3:40 AM, your&nbsp;price list read as&nbsp;written, <b>the&nbsp;director paged in&nbsp;under a&nbsp;minute.</b></span>
+    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=20.0"></script>
+<script src="../../assets/js/canvas.js?v=20.0" defer></script>
+<script src="../../assets/js/scenes.js?v=20.0" defer></script>
+<script src="../../assets/js/guide.js?v=20.0"></script>
+</body>
+</html>

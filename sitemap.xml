@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://claude.saleringo.com/en/index.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://claude.saleringo.com/en/about.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/ai-answering-service.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/cross-border.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/demo.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/examples.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://claude.saleringo.com/en/get-started.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://claude.saleringo.com/en/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/academies.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/clinics.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/dental.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/franchise.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/home-services.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/stays.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/venues.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/industries/veterinary.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/integrations.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/platform.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://claude.saleringo.com/en/pricing.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://claude.saleringo.com/en/privacy.html</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://claude.saleringo.com/en/security.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://claude.saleringo.com/en/terms.html</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://claude.saleringo.com/en/verified-ai.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/platform.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://claude.saleringo.com/en/demo.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://claude.saleringo.com/en/get-started.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://claude.saleringo.com/en/examples.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://claude.saleringo.com/en/sitemap.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://claude.saleringo.com/en/voice.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://claude.saleringo.com/en/webchat.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://claude.saleringo.com/en/whatsapp.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/integrations.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/verified-ai.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/security.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/about.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/ai-answering-service.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/cross-border.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/privacy.html</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://claude.saleringo.com/en/terms.html</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/dental.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/clinics.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/veterinary.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/home-services.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/auto-repair.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/property-management.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/salons.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/academies.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/legal.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/funeral-homes.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/stays.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/venues.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/restaurants.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude.saleringo.com/en/industries/franchise.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

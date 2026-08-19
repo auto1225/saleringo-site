@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Intake for Small Law Firms &amp; Solo Practices | Saleringo</title>
+<meta name="description" content="An AI that answers a law firm's phone after hours, takes the matter and the opposing party, runs the conflict check before anything is scheduled — and never gives advice, a deadline or a case value.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/legal.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/legal.html">
+<meta property="og:title" content="AI Intake for Small Law Firms &amp; Solo Practices">
+<meta property="og:description" content="An AI that answers a law firm's phone after hours, takes the matter and the opposing party, runs the conflict check before anything is scheduled — and never gives advice, a deadline or a case value.">
+<meta property="og:image" content="https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Intake for Small Law Firms &amp; Solo Practices">
+<meta name="twitter:description" content="An AI that answers a law firm's phone after hours, takes the matter and the opposing party, runs the conflict check before anything is scheduled — and never gives advice, a deadline or a case value.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./legal.html">
+<link rel="alternate" hreflang="x-default" href="./legal.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the AI give legal advice?","acceptedAnswer":{"@type":"Answer","text":"No, and the refusal is categorical rather than a confidence threshold. It does not opine on the merits, does not state a limitation period or filing deadline, does not estimate what a matter is worth, and does not predict an outcome — not even as a hedge. It states on the call, in your firm's own approved wording, that no lawyer–client relationship is formed by the conversation. What it does is capture the account word for word, book the consultation once the conflict check clears, and put the whole thread in front of a lawyer."}},{"@type":"Question","name":"How does the conflict check work if a machine is answering?","acceptedAnswer":{"@type":"Answer","text":"The AI collects the opposing party and any related names and runs them against your firm's own conflicts list. It does not exercise the judgement — a person clears or declines the check. Until it is cleared, nothing may be scheduled: the gate sits on the calendar itself, not on a checklist somebody remembers. If the check does not clear, the AI says only that the firm is not able to act, offers your referral list, and never explains why."}},{"@type":"Question","name":"Are records from different matters kept apart?","acceptedAnswer":{"@type":"Answer","text":"Yes. Matter records are walled from each other rather than sitting in one shared list the way a clinic's patient list does. A record opened on one matter is not visible from another, and access is set per matter during onboarding. Data is encrypted in transit and at rest, kept separate from every other firm, with retention and deletion controls your firm operates."}},{"@type":"Question","name":"How does this sit with bar advertising rules?","acceptedAnswer":{"@type":"Answer","text":"Most jurisdictions prohibit outcome claims, guarantees and unqualified specialisation claims in what a firm says to a prospective client. The never-list on this page maps to those prohibitions one-to-one: no merits opinion, no predicted outcome, no case value, no superiority claim. The specific rules differ by jurisdiction and your firm approves every line of the answer set before it goes live. Nothing on this page is legal advice about your own advertising obligations."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Intake for Small Law Firms","item":"https://claude.saleringo.com/en/industries/legal.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=20.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=20.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=20.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=20.0">
+<style>
+  /* ── LEGAL · archetype: THE GATE ─────────────────────────── */
+  /* the only pack in the product where a check blocks scheduling
+     itself. the page's argument is not "answer first, win the
+     client" — it is that a frightened person at 11 PM is
+     answered, told plainly what happens next, and given no
+     advice whatsoever.                                          */
+
+  .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:104px;display:block;background:#0A0C10;}
+  /* 1600x2400 portrait of a small practice desk: bias to the lamp and the files. */
+  .hero.photohero .bgimg img{filter:brightness(1.02) saturate(.82) contrast(1.04);object-position:center 58%;}
+  .hero.photohero .scrim{background:
+    linear-gradient(94deg, rgba(5,8,14,.93) 0%, rgba(5,8,14,.76) 46%, rgba(5,8,14,.44) 82%),
+    linear-gradient(180deg, rgba(5,8,14,.72) 0%, rgba(5,8,14,.24) 34%, rgba(5,9,16,.96) 100%);}
+  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(23,189,189,.15), transparent 74%);}
+  .navwrap .nav{background:rgba(9,13,22,.9);border-color:rgba(255,255,255,.12);}
+  .hero-inner{position:relative;z-index:2;padding:170px clamp(22px,4.6vw,56px) 0;display:grid;
+    grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:530px;}
+  .tradewords{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
+  .tradewords span{font-size:var(--fs-xs);font-weight:700;border-radius:999px;padding:8px 15px;
+    border:1px solid var(--hair2);background:rgba(255,255,255,.06);color:var(--tx2);}
+  .tradewords span.hi{color:var(--teal);border-color:rgba(23,189,189,.45);background:rgba(23,189,189,.12);}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .whofor{margin-top:24px;padding-top:22px;border-top:1px solid var(--hair);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;max-width:340px;}
+  .whotxt b{color:#fff;}
+
+  .roomband{background:#FDFDFE;}
+  .roomband .photosplit{min-height:500px;}
+  .audgrid.three{grid-template-columns:repeat(3,1fr);}
+  .audgrid.three .audcard{min-height:300px;}
+  .audnote{margin-top:14px;text-align:center;}
+  @media (max-width:900px){.audgrid.three{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.audgrid.three{grid-template-columns:1fr;}}
+
+  /* ── the gate (dark) — the one thing no other pack has ── */
+  .gate{position:relative;background:#04070D;}
+  .gate .head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .gate .head .lead{margin-top:18px;}
+  .gatesteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+  @media (max-width:980px){.gatesteps{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.gatesteps{grid-template-columns:1fr;}}
+  .gstep{border:1px solid var(--hair);border-radius:18px;padding:22px 22px 24px;background:rgba(255,255,255,.028);}
+  .gstep .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .gstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;line-height:1.3;}
+  .gstep p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .gstep.stop{border-color:rgba(240,145,134,.34);background:rgba(240,145,134,.055);}
+  .gstep.stop .n{color:#F09186;}
+  .gate .kpiband{margin-top:56px;}
+  .gate .note{margin-top:28px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:500;max-width:820px;margin-left:auto;margin-right:auto;}
+
+  /* ── paired threads (dark grid) ── */
+  .pairs{position:relative;background:#050B16;}
+  .pairs .head{text-align:center;max-width:680px;margin:0 auto 56px;}
+  .pairs .head .lead{margin-top:18px;}
+  .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  .pairwrap .plabel{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .pairwrap .plabel b{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+  .pairwrap .plabel span{font-size:var(--fs-xs);color:var(--tx3);font-weight:600;}
+  .pairwrap .after{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;}
+  .pairs .note{margin-top:30px;text-align:center;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  /* ── boundaries (paper) ── */
+  .nogo{color:var(--l-ink);}
+  .nogo .cols{display:grid;grid-template-columns:1fr 1.12fr;gap:80px;align-items:stretch;}
+  .nogo .lead{margin-top:20px;max-width:400px;}
+  .ngrow{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #E9E2D6;}
+  .ngrow:last-of-type{border-bottom:0;}
+  .ngrow .x{flex:none;width:34px;height:34px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
+    color:var(--red);font-size:var(--fs-sm);font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .ngrow b{display:block;font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:var(--l-ink);}
+  .ngrow span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
+  .ngseal{margin-top:26px;font-size:var(--fs-sm);font-weight:700;color:#0A7F7F;background:#E3F5F5;border:1px solid #BFE7E7;
+    border-radius:999px;padding:14px 28px;display:inline-block;}
+
+  /* ── jurisdiction (dark aurora) ── */
+  .world{position:relative;overflow:hidden;}
+  .world .head{text-align:center;max-width:680px;margin:0 auto 50px;}
+  .world .head .lead{margin-top:18px;}
+  .world .tzcards{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .world .glass{padding:22px 24px;}
+  .world .glass b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);color:#fff;}
+  .world .glass span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .world .out{margin-top:34px;text-align:center;}
+  .world .out a{font-size:var(--fs-xs);font-weight:700;color:var(--teal);}
+
+  /* ── start (bright) ── */
+  .start{background:#FDFDFE;}
+  .start .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
+  .start .lead{margin-top:22px;max-width:400px;}
+  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:22px 24px;max-width:400px;
+    box-shadow:0 20px 48px rgba(11,27,51,.07);}
+  .langnote .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0A7F7F;}
+  .langnote p{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  .langnote .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .start .browserframe{margin-top:54px;}
+  .start .cap{margin-top:15px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+    color:#6F767F;font-weight:700;}
+
+  .faqsec{background:var(--l-bg);}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;}
+  .closer .riskrow{margin-bottom:72px;text-align:left;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer .lead{margin:22px auto 0;max-width:540px;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;}
+    .pairgrid,.world .tzcards{grid-template-columns:1fr;}
+    .nogo .cols,.start .cols{grid-template-columns:1fr;gap:46px;}
+    .closer .riskrow{margin-bottom:52px;}
+  }
+
+  /* ══ CRM surface, honest integrations, multi-office, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
+
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.build h4{color:#8A9BB4;} .statcol.build h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;max-width:760px;}
+
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+</style>
+</head>
+<body data-grade="trust">
+
+<!-- ═══════ HERO · one after-hours call, with a clock time on it ═══════ -->
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+           srcset="https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="100vw"
+         alt="" width="1600" height="2400" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v20.0">v20.0</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="../industries/dental.html">Dental</a></li><li><a href="../industries/clinics.html">Clinics &amp; med-spa</a></li><li><a href="../industries/veterinary.html">Veterinary</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home, property &amp; vehicle</p><ul aria-labelledby="nh-trade-1"><li><a href="../industries/home-services.html">Home services</a></li><li><a href="../industries/auto-repair.html">Auto repair</a></li><li><a href="../industries/property-management.html">Property management</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Booked by appointment</p><ul aria-labelledby="nh-trade-2"><li><a href="../industries/salons.html">Salons &amp; barbers</a></li><li><a href="../industries/academies.html">Tutoring &amp; academies</a></li><li><a href="../industries/legal.html" aria-current="page" class="np-here">Legal</a></li><li><a href="../industries/funeral-homes.html">Funeral homes</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-3"><li><a href="../industries/stays.html">Boutique stays</a></li><li><a href="../industries/venues.html">Wedding &amp; venues</a></li><li><a href="../industries/restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Many locations, or many countries</p><ul aria-labelledby="nh-trade-4"><li><a href="../industries/franchise.html">Franchise &amp; multi-site</a></li><li><a href="../cross-border.html">Cross-border</a></li><li><a href="../industries.html">All fourteen trades</a></li><li><a href="../examples.html">Worked examples</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-panel">
+      <span class="eyebrow"><i></i>For&nbsp;small law firms &amp; solo practices · intake</span>
+      <h1>He was served at&nbsp;four. He called at&nbsp;11:20 PM.<br><em>The&nbsp;consultation is Tuesday — the&nbsp;conflict&nbsp;check cleared&nbsp;first.</em></h1>
+      <p class="sub">Somebody ringing a&nbsp;solicitor at&nbsp;eleven at&nbsp;night is frightened, and what they need in&nbsp;the&nbsp;first
+        minute is not an&nbsp;opinion. It is to&nbsp;be answered, told plainly what happens next, and taken seriously enough that&nbsp;their
+        account is written down word for&nbsp;word. Saleringo takes the&nbsp;matter type and the&nbsp;opposing party, runs the&nbsp;conflict
+        check against your&nbsp;own list, and books nothing until it clears. It gives no&nbsp;advice, no&nbsp;deadline and no&nbsp;case value.</p>
+      <div class="tradewords" aria-label="The words this trade actually uses">
+        <span class="hi">matter</span><span class="hi">conflict check</span><span class="hi">intake</span>
+        <span>opposing party</span><span>jurisdiction</span><span>retainer</span>
+        <span>engagement letter</span><span>consultation fee</span><span>client screening</span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
+        <a class="btn btn-ghostl" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+      </div>
+      <p class="heroscroll"><a href="../index.html#start-here">New here? Start with&nbsp;the three-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
+      <div class="micro">Founding cohort open · every&nbsp;line of&nbsp;the&nbsp;answer set approved by&nbsp;your&nbsp;firm first</div>
+      <div class="whofor">
+        <span class="whotxt">For&nbsp;solo and two-partner practices where the&nbsp;person who takes intake is also the&nbsp;person in&nbsp;court — <b>founding cohort now open</b></span>
+      </div>
+    </div>
+
+    <!-- ── scene: matter files, walled from one another ── -->
+    <div>
+    <div class="scene-frame light tiltcard rev">
+<div class="photo-scrim" style="height:clamp(300px,34vw,470px);">
+  <img class="ph" src="https://images.pexels.com/photos/34293526/pexels-photo-34293526.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+       srcset="https://images.pexels.com/photos/34293526/pexels-photo-34293526.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/34293526/pexels-photo-34293526.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/34293526/pexels-photo-34293526.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+       sizes="(max-width:900px) 100vw, 50vw" alt="Shelves of labelled ring binders in a small office, each file separate from the next"
+       loading="lazy" decoding="async" width="1600" height="2400">
+</div>
+      <div class="scene-overlay tl">
+        <b>Conflict check: running</b>
+        <span>Opposing party taken · nothing scheduled yet</span>
+      </div>
+      <div class="scene-overlay br">
+        <b>Cleared 08:12 · consultation Tue 14:00</b>
+        <span>Cleared by&nbsp;a&nbsp;person, not by&nbsp;the&nbsp;AI</span>
+      </div>
+    </div>
+    <p class="photocap">11:20 PM — the&nbsp;office is dark and the&nbsp;call is still answered, and still not advised.
+      Illustrative photography; not a&nbsp;Saleringo customer firm.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════ THE ROOM · full-bleed photograph ═══════ -->
+<section class="roomband">
+  <div class="photosplit rev">
+    <div class="media">
+      <img class="ph" src="https://images.pexels.com/photos/8872665/pexels-photo-8872665.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+           srcset="https://images.pexels.com/photos/8872665/pexels-photo-8872665.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/8872665/pexels-photo-8872665.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/8872665/pexels-photo-8872665.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/8872665/pexels-photo-8872665.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="(max-width:900px) 100vw, 50vw"
+           alt="A small practice desk after hours, a lamp still on over stacked files and an empty chair" loading="lazy" decoding="async" width="1200" height="800">
+    </div>
+    <div class="copy reveal">
+      <span class="eyebrow light"><i></i>Intake is the&nbsp;product. It also closes at&nbsp;six.</span>
+      <h2 class="h2" style="margin-top:22px">Two rooms, a&nbsp;shared&nbsp;printer,<br>and&nbsp;a&nbsp;phone nobody&nbsp;can&nbsp;reach.</h2>
+      <p class="lead" style="margin-top:18px;max-width:440px;">A&nbsp;solo practice does not have an&nbsp;intake team. It has
+        whoever is not in&nbsp;court. The&nbsp;call that&nbsp;comes at&nbsp;11:20 PM is the&nbsp;same call you would have taken carefully
+        at&nbsp;eleven in&nbsp;the&nbsp;morning — and there is no&nbsp;reason it should be answered any less carefully because of&nbsp;the&nbsp;hour.</p>
+      <a class="linkcta" style="margin-top:28px;" href="../demo.html">See how it answers after hours&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- The page opens on a call that arrived out of hours. This is the arithmetic
+     underneath it — the same block on every trade page, never re-derived. -->
+<section class="dialsec t-md sec-dark bg-grid">
+  <div class="wrap">
+    <div class="nightfig scenefig reveal">
+      <div class="scenebox" data-scene="nightclock"></div>
+      <div>
+        <p class="scenecap"><b>A&nbsp;nine-to-six practice is closed for&nbsp;15 of&nbsp;the&nbsp;day&rsquo;s&nbsp;24 hours</b> &mdash; and both weekend days after that. Across&nbsp;a&nbsp;full week
+          the&nbsp;line is staffed for&nbsp;<span class="num">45 of&nbsp;168 hours</span>.
+          A&nbsp;person served with&nbsp;proceedings on&nbsp;a&nbsp;Friday afternoon spends the&nbsp;weekend inside the&nbsp;other 123.</p>
+        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
+          collected. It is what an&nbsp;ordinary working week divides into.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ THE GATE · the conflict check blocks scheduling itself ═══════ -->
+<section class="gate grain t-xl">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>The&nbsp;only gate in&nbsp;the&nbsp;product</span></div>
+      <h2 class="h2 onDark">Every&nbsp;other trade books first.<br>This&nbsp;one <em style="font-style:normal;color:var(--teal);">checks first.</em></h2>
+      <p class="lead onDark">In&nbsp;a&nbsp;clinic or a&nbsp;garage the&nbsp;calendar is the&nbsp;point. In&nbsp;a&nbsp;law firm the&nbsp;calendar is
+        downstream of&nbsp;a&nbsp;question that&nbsp;has to&nbsp;be answered first: may this&nbsp;firm act at&nbsp;all? So the&nbsp;conflict check is not
+        a&nbsp;box on&nbsp;an&nbsp;intake form here. It is wired into&nbsp;the&nbsp;calendar, and until it clears there is no&nbsp;slot to&nbsp;offer.</p>
+    </div>
+
+    <div class="gatesteps reveal">
+      <div class="gstep"><span class="n">01</span><b>The&nbsp;matter type is checked against your&nbsp;practice list</b>
+        <p>An&nbsp;inquiry your&nbsp;firm does not take never reaches the&nbsp;diary at&nbsp;all. It becomes a&nbsp;referral, with&nbsp;the&nbsp;reason
+          attached, instead of&nbsp;a&nbsp;consultation nobody wanted.</p></div>
+      <div class="gstep"><span class="n">02</span><b>The&nbsp;opposing party is taken, by&nbsp;name</b>
+        <p>Plus any related names the&nbsp;caller mentions. This&nbsp;is the&nbsp;field the&nbsp;whole gate runs on, and it is asked for
+          before anything is offered.</p></div>
+      <div class="gstep stop"><span class="n">03</span><b>Nothing may be scheduled until it clears</b>
+        <p>The&nbsp;AI runs the&nbsp;names against your&nbsp;firm's&nbsp;own conflicts list. It does not exercise the&nbsp;judgement —
+          <b>a&nbsp;person clears or declines it.</b> Until then the&nbsp;calendar has nothing to&nbsp;show.</p></div>
+      <div class="gstep"><span class="n">04</span><b>If it does not clear, it says so and stops</b>
+        <p>"We're&nbsp;not able to&nbsp;act on&nbsp;this" — and nothing more. It never explains why, because the&nbsp;reason belongs
+          to&nbsp;somebody else. Your&nbsp;referral list goes out instead.</p></div>
+    </div>
+
+    <div class="kpiband reveal">
+      <div class="kpi"><div class="n">1</div><div class="l">gate that&nbsp;blocks scheduling — no&nbsp;other trade pack has one</div></div>
+      <div class="kpi"><div class="n">0</div><div class="l">opinions on&nbsp;the&nbsp;merits the&nbsp;AI is allowed to&nbsp;give</div></div>
+      <div class="kpi"><div class="n">0</div><div class="l">deadlines or limitation periods it will ever state</div></div>
+      <div class="kpi"><div class="n">45<em>/168</em></div><div class="l">hours a&nbsp;nine-to-six practice answers its&nbsp;own phone</div></div>
+    </div>
+
+    <p class="note reveal">Those four figures are definitions and arithmetic, not measurements. This&nbsp;page publishes no&nbsp;statistic
+      about&nbsp;how many calls law firms miss, because the&nbsp;numbers in&nbsp;circulation are published by&nbsp;companies selling
+      the&nbsp;same product we are, and we are not going to&nbsp;launder one of&nbsp;those through&nbsp;a&nbsp;chart. The&nbsp;argument on&nbsp;this&nbsp;page
+      stands without&nbsp;a&nbsp;percentage: your&nbsp;own call log already knows how many rang after six.</p>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ TWO CALLS, ONE EVENING ═══════ -->
+<section class="pairs bg-grid grain t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>The&nbsp;same evening, two&nbsp;different questions</span></div>
+      <h2 class="h2 onDark">One is answered.<br>One&nbsp;is refused — and still&nbsp;answered.</h2>
+      <p class="lead onDark">The&nbsp;difference between these&nbsp;two threads is the&nbsp;whole page. A&nbsp;fee, a&nbsp;practice area and
+        a&nbsp;date are facts your&nbsp;firm published. Whether somebody has a&nbsp;case is not a&nbsp;fact, and no&nbsp;wording — not even
+        a&nbsp;careful one — makes it safe for&nbsp;software to&nbsp;say.</p>
+    </div>
+
+    <div class="pairgrid reveal">
+      <div class="pairwrap">
+        <div class="plabel"><b>23:20 · the&nbsp;intake</b><span>source: practice list · fee schedule</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;firm</b><br><span>Main line · 11:20 PM</span></span></div>
+          <div class="mbody">
+            <div class="m in">I was served with&nbsp;papers this&nbsp;afternoon by&nbsp;my&nbsp;landlord. Do you deal with&nbsp;this&nbsp;kind of&nbsp;thing?</div>
+            <div class="m out">We do — landlord and tenant disputes are on&nbsp;the&nbsp;firm's&nbsp;practice list. A&nbsp;first consultation is <b>$250</b>, and it lasts an&nbsp;hour. Before I can offer you a&nbsp;time I need the&nbsp;name on&nbsp;the&nbsp;other side, so we can run our&nbsp;conflict check.<span class="tick">✓✓</span></div>
+            <div class="m in">It's&nbsp;the&nbsp;management company, Brightwater.</div>
+            <div class="m out">Thank you. The&nbsp;check runs first thing and a&nbsp;solicitor clears it — I'm&nbsp;holding Tuesday 14:00 <b>provisionally</b>, and you'll&nbsp;get a&nbsp;confirmation once it's&nbsp;cleared. Nothing you've&nbsp;told me makes us your&nbsp;solicitors yet.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="vchip">✓ Fee quoted from&nbsp;your&nbsp;published schedule</span>
+          <span class="hchip">→ Conflict check queued · slot held, not confirmed</span>
+        </div>
+      </div>
+
+      <div class="pairwrap">
+        <div class="plabel"><b>23:26 · the&nbsp;refusal</b><span>no&nbsp;merits opinion, in&nbsp;any wording</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;firm</b><br><span>Main line · 11:26 PM</span></span></div>
+          <div class="mbody">
+            <div class="m in">Off the&nbsp;record — do I actually have a&nbsp;case here? And how long have I got to&nbsp;respond?</div>
+            <div class="m out">I can't answer either of&nbsp;those, and I'd&nbsp;rather say so plainly than give you something vague. Whether you have a&nbsp;case is a&nbsp;solicitor's&nbsp;judgement, and I'm&nbsp;not going to&nbsp;guess at&nbsp;a&nbsp;deadline you'd&nbsp;then rely on.<span class="tick">✓✓</span></div>
+            <div class="m in">So what happens now?</div>
+            <div class="m out">I've&nbsp;written down every&nbsp;date you gave me — served today, tenancy from&nbsp;March — and marked the&nbsp;matter urgent, which means a&nbsp;solicitor sees it before anything else in&nbsp;the&nbsp;morning. They'll&nbsp;confirm the&nbsp;date you're&nbsp;working to.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="rchip">✕ No&nbsp;merits opinion · no&nbsp;deadline stated</span>
+          <span class="hchip">→ Marked urgent · dates preserved verbatim</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- who is actually on the other end of those two calls -->
+    <div class="audgrid three reveal" style="margin-top:64px;">
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/7606050/pexels-photo-7606050.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/7606050/pexels-photo-7606050.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7606050/pexels-photo-7606050.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7606050/pexels-photo-7606050.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7606050/pexels-photo-7606050.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A woman making a phone call at home, visibly worried" loading="lazy" decoding="async" width="1200" height="800">
+        <b>Calls the&nbsp;evening it happens</b>
+        <span>Frightened, and asking for&nbsp;an&nbsp;opinion nobody should give her&nbsp;on&nbsp;the&nbsp;phone</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/7014593/pexels-photo-7014593.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/7014593/pexels-photo-7014593.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7014593/pexels-photo-7014593.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7014593/pexels-photo-7014593.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7014593/pexels-photo-7014593.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A person at a kitchen counter, taking a phone call with a cup of tea in front of them" loading="lazy" decoding="async" width="800" height="1200">
+        <b>Rings four firms in&nbsp;an&nbsp;hour</b>
+        <span>Wants to&nbsp;know the&nbsp;consultation fee and whether you take this&nbsp;kind of&nbsp;matter</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/6611926/pexels-photo-6611926.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/6611926/pexels-photo-6611926.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/6611926/pexels-photo-6611926.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/6611926/pexels-photo-6611926.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/6611926/pexels-photo-6611926.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="Someone sitting on a sofa in the evening, typing a message on a phone" loading="lazy" decoding="async" width="1200" height="800">
+        <b>Writes instead of&nbsp;ringing</b>
+        <span>Because a&nbsp;family matter is not something you say out loud in&nbsp;a&nbsp;shared house</span>
+      </div>
+    </div>
+    <p class="photocap audnote">Illustrative photography — these are not Saleringo customers and not real clients.</p>
+
+    <div class="note reveal">Both threads above are worked illustrations. The&nbsp;<b>$250</b> is the&nbsp;sample consultation fee this&nbsp;page
+      publishes and uses consistently; your&nbsp;own fee schedule supplies the&nbsp;real one. "Brightwater" is an&nbsp;invented name and
+      not a&nbsp;real company.</div>
+  </div>
+</section>
+
+<!-- ═══════ THE LEGAL CRM ═══════ -->
+<section class="crmsec sec-dark bg-spot t-xl" id="legal-crm">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:760px;">
+      <span class="eyebrow"><i></i>The&nbsp;legal CRM</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Most AI receptionists hand you a&nbsp;transcript.<br>This&nbsp;one hands you <em style="font-style:normal;color:var(--teal);">a&nbsp;matter, screened.</em></h2>
+      <p class="secintro">A&nbsp;message taken is not intake. The&nbsp;other half of&nbsp;Saleringo is a&nbsp;CRM built around&nbsp;a&nbsp;matter —
+        matter type, opposing party, jurisdiction, key dates, fee basis — moving through&nbsp;the&nbsp;stages your&nbsp;practice already
+        works in, with&nbsp;each&nbsp;record walled from&nbsp;the&nbsp;next.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Matter intake</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Intake</div>
+          <span class="it on"><span class="dot"></span>New inquiries<span class="n">14</span></span>
+          <span class="it"><span class="dot"></span>Conflict checks<span class="n">6</span></span>
+          <span class="it"><span class="dot"></span>Consultations<span class="n">8</span></span>
+          <span class="it"><span class="dot"></span>Referred out<span class="n">4</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>By&nbsp;practice area</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Practice list</span>
+          <span class="it"><span class="dot"></span>Conflicts list</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">5</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Landlord dispute · served today · account taken verbatim</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 11:20 PM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">SW</span><span class="nm">S. W.</span></div>
+                <div class="mt">Employment · asked the&nbsp;consultation fee before anything else</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Conflict check<span class="ct">4</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Opposing party taken · running against the&nbsp;firm's&nbsp;list</div>
+                <div class="ft"><span class="tag hot">Gate</span><span class="chan">Nothing booked</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">HN</span><span class="nm">H. N.</span></div>
+                <div class="mt">Not&nbsp;cleared — firm unable to&nbsp;act · referral list sent</div>
+                <div class="ft"><span class="tag">Declined</span><span class="chan">Reason not&nbsp;disclosed</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Consultation booked<span class="ct">8</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Tue 14:00 · confirmed after clearance at&nbsp;08:12</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">$250 fee basis</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">MV</span><span class="nm">M. V.</span></div>
+                <div class="mt">Family matter · contact rules recorded: no&nbsp;voicemail, text only</div>
+                <div class="ft"><span class="tag">Safety</span><span class="chan">Channel set</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Waiting on&nbsp;a&nbsp;lawyer<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">??</span><span class="nm">Caller</span></div>
+                <div class="mt">Asked for&nbsp;a&nbsp;filing deadline — recorded, refused, flagged urgent</div>
+                <div class="ft"><span class="tag hot">Refused</span><span class="chan">First thing</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">JB</span><span class="nm">J. B.</span></div>
+                <div class="mt">Already represented on&nbsp;this&nbsp;matter — stopped, not progressed</div>
+                <div class="ft"><span class="tag">Held</span><span class="chan">To&nbsp;a&nbsp;solicitor</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stages, practice list, conflicts list and fee basis are configured for&nbsp;your&nbsp;firm during onboarding. No&nbsp;matter or party shown here is real.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div>
+        <span class="eyebrow"><i></i>Eight fields, and one of&nbsp;them stops the&nbsp;calendar</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">A&nbsp;generic CRM asks for&nbsp;a&nbsp;name.<br>This&nbsp;one asks&nbsp;who is on&nbsp;the&nbsp;other&nbsp;side.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Matter type, from&nbsp;your&nbsp;own practice list.</b> Most inquiries fail here, and the&nbsp;ones that&nbsp;fail late are the&nbsp;expensive ones. A&nbsp;matter you do not take becomes a&nbsp;referral card with&nbsp;the&nbsp;reason attached.</span></li>
+          <li><i>→</i><span><b>Opposing party — the&nbsp;field that&nbsp;runs the&nbsp;gate.</b> Taken by&nbsp;name, with&nbsp;related parties, before a&nbsp;slot is offered. No&nbsp;other pack in&nbsp;the&nbsp;product has a&nbsp;check that&nbsp;blocks scheduling.</span></li>
+          <li><i>→</i><span><b>Key dates, captured and never interpreted.</b> Incident, service, hearing. The&nbsp;record holds them exactly as&nbsp;given; what they mean for&nbsp;a&nbsp;deadline is a&nbsp;solicitor's&nbsp;answer, not the&nbsp;AI's.</span></li>
+          <li><i>→</i><span><b>Already represented?</b> If they are, the&nbsp;conversation stops there and goes to&nbsp;a&nbsp;person — whether the&nbsp;firm may communicate with&nbsp;them at&nbsp;all is not a&nbsp;machine's&nbsp;call.</span></li>
+          <li><i>→</i><span><b>Safe to&nbsp;leave a&nbsp;message?</b> In&nbsp;family and domestic matters this&nbsp;is a&nbsp;safety field, not a&nbsp;convenience one. It is asked, recorded, and followed without&nbsp;exception.</span></li>
+          <li><i>→</i><span><b>Matter-walled records.</b> A&nbsp;record opened on&nbsp;one matter is not visible from&nbsp;another. Nothing here works like a&nbsp;clinic's&nbsp;single patient list, and that&nbsp;was the&nbsp;most expensive part to&nbsp;build.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;record it fills</a>
+      </div>
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">DR</span>
+            <span><b>D. R. — new matter</b><span>First contact — phone, 11:20 PM</span></span>
+            <span class="stg">Conflict check</span>
+          </div>
+          <div class="crow"><span class="k">Matter type</span><span class="v">Landlord &amp; tenant <em>— on&nbsp;the&nbsp;firm's&nbsp;practice list</em></span></div>
+          <div class="crow"><span class="k">Opposing party</span><span class="v">Named · conflict check queued<span class="aibadge">Gate</span></span></div>
+          <div class="crow"><span class="k">Jurisdiction</span><span class="v">Captured — whether the&nbsp;firm is admitted is confirmed by&nbsp;a&nbsp;person</span></div>
+          <div class="crow"><span class="k">Key dates</span><span class="v">Served today; tenancy from&nbsp;March — recorded, not interpreted</span></div>
+          <div class="crow"><span class="k">Represented</span><span class="v">No&nbsp;— asked explicitly, answered explicitly</span></div>
+          <div class="crow"><span class="k">Fee basis</span><span class="v">Consultation, $250 — the&nbsp;only figure the&nbsp;AI may say</span></div>
+          <div class="crow"><span class="k">Referral source</span><span class="v">Search · captured for&nbsp;the&nbsp;follow-up path</span></div>
+          <div class="crow"><span class="k">Safe to&nbsp;contact</span><span class="v">This&nbsp;number, any time — confirmed on&nbsp;the&nbsp;call</span></div>
+          <div class="crow"><span class="k">Account</span><span class="v">Preserved word for&nbsp;word, not summarised<span class="aibadge">Verbatim</span></span></div>
+          <div class="crow"><span class="k">Guardrail</span><span class="v">No&nbsp;advice, no&nbsp;deadline, no&nbsp;valuation · no&nbsp;retainer formed</span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;client and not a&nbsp;real matter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WORKED EXAMPLES · six intake calls, start to finish ═══════ -->
+<section class="sec-dark bg-grid t-md" id="worked-examples">
+  <div class="wrap">
+    <div class="reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Worked examples · law firms</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Six calls a&nbsp;small&nbsp;practice&nbsp;takes&nbsp;—<br>and what each&nbsp;one left&nbsp;behind.</h2>
+      <p class="lead onDark" style="margin-top:18px;">Not a&nbsp;demo script. Six ordinary intake calls: the&nbsp;hour they arrive,
+        the&nbsp;channel they arrive on, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;one produced — a&nbsp;matter screened, a&nbsp;fee
+        quoted from&nbsp;your&nbsp;schedule, an&nbsp;opinion refused and recorded. Every&nbsp;figure below is the&nbsp;<b>$250</b> this&nbsp;page publishes.</p>
+    </div>
+
+    <div class="exgrid" style="margin-top:38px;">
+
+      <div class="excard">
+        <div class="exhead"><span class="when">23:20</span><span class="via">Phone</span><span class="tag solved">Screened · slot held</span></div>
+        <div class="exbody">
+          <p class="exq">I was served with&nbsp;papers this&nbsp;afternoon by&nbsp;my&nbsp;landlord's&nbsp;management company. Do you deal with&nbsp;this?</p>
+          <div class="exturn"><span class="who">Saleringo</span>We do — landlord and tenant is on&nbsp;the&nbsp;firm's&nbsp;practice list, and
+            a&nbsp;first consultation is <b>$250</b> for&nbsp;an&nbsp;hour. Before I can offer a&nbsp;time I need the&nbsp;name on&nbsp;the&nbsp;other side,
+            because we run a&nbsp;conflict check before anything is booked.</div>
+          <div class="exturn"><span class="who">Caller</span>It's&nbsp;the&nbsp;management company that&nbsp;handles the&nbsp;block.</div>
+          <div class="exturn"><span class="who">Saleringo</span>Noted, with&nbsp;the&nbsp;landlord's&nbsp;name as&nbsp;well. The&nbsp;check runs first
+            thing and a&nbsp;solicitor clears it — I'm&nbsp;holding Tuesday 14:00 <b>provisionally</b> and you'll&nbsp;have a&nbsp;confirmation
+            once it's&nbsp;cleared. To&nbsp;be clear: nothing you've&nbsp;told me tonight makes us your&nbsp;solicitors.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Matter type confirmed against the&nbsp;practice list before a&nbsp;fee was mentioned</span></div>
+            <div class="exrow"><i>✓</i><span>Opposing party and related names taken — the&nbsp;gate's&nbsp;only input</span><span class="amt">$250 fee basis</span></div>
+            <div class="exrow"><i>✓</i><span>Tuesday 14:00 <b>held, not confirmed</b> — the&nbsp;calendar will not confirm before clearance</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;retainer formed, and the&nbsp;caller was told so in&nbsp;your&nbsp;own approved wording</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration of&nbsp;how the&nbsp;product behaves — not a&nbsp;customer story and not a&nbsp;real matter.
+            The&nbsp;order of&nbsp;operations is the&nbsp;point: practice list, then opposing party, then a&nbsp;provisional hold. Nothing is
+            confirmed by&nbsp;software.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">23:26</span><span class="via">Phone</span><span class="tag human">Refused · no&nbsp;merits</span></div>
+        <div class="exbody">
+          <p class="exq">Off the&nbsp;record — do I actually have a&nbsp;case here?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I can't answer that, and I'd&nbsp;rather say so plainly than
+            give you something vague you'd&nbsp;then rely on. Whether there is a&nbsp;case is a&nbsp;solicitor's&nbsp;judgement on&nbsp;the&nbsp;papers.
+            What I can do is make sure they read your&nbsp;account in&nbsp;your&nbsp;own words rather than a&nbsp;summary of&nbsp;it — I've&nbsp;kept
+            every&nbsp;line of&nbsp;what you told me.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="4">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Account preserved <b>verbatim</b> on&nbsp;the&nbsp;matter, not paraphrased</span></div>
+            <div class="exrow"><i>✓</i><span>Consultation kept in&nbsp;place so the&nbsp;answer comes from&nbsp;a&nbsp;person, this&nbsp;week</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;merits opinion. No&nbsp;"that&nbsp;sounds strong". No&nbsp;hedge that&nbsp;implies one.</span></div>
+            <div class="exrow"><i>✕</i><span>Nothing said that&nbsp;a&nbsp;bar advertising rule prohibits a&nbsp;firm from&nbsp;saying</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. A&nbsp;hedge is the&nbsp;dangerous answer here, not
+            the&nbsp;safe one: "it might be worth pursuing" is still an&nbsp;opinion on&nbsp;the&nbsp;merits, and it is still the&nbsp;firm that&nbsp;said it.
+            So the&nbsp;refusal is categorical rather than a&nbsp;confidence threshold.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Fri 19:45</span><span class="via">Web chat</span><span class="tag human">Refused · flagged urgent</span></div>
+        <div class="exbody">
+          <p class="exq">How long have I got to&nbsp;file a&nbsp;response? Is it 14 days or 28?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;not going to&nbsp;give you a&nbsp;number for&nbsp;that. A&nbsp;date you
+            act on&nbsp;has to&nbsp;come from&nbsp;a&nbsp;solicitor who has seen the&nbsp;papers, and a&nbsp;wrong one from&nbsp;me could cost you
+            the&nbsp;matter. What I've&nbsp;done instead is record the&nbsp;dates you gave me — served the&nbsp;12th, hearing listed
+            for&nbsp;the&nbsp;30th — and marked this&nbsp;urgent so it is the&nbsp;first thing seen on&nbsp;Monday.</div>
+          <div class="exturn"><span class="who">Visitor</span>Monday's&nbsp;not too late?</div>
+          <div class="exturn hand"><span class="who">Saleringo</span>I can't tell you that&nbsp;either. If you think it may already
+            be too late, our&nbsp;out-of-hours number is on&nbsp;its&nbsp;way to&nbsp;you now — use it tonight rather than wait for&nbsp;me.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Every&nbsp;date captured as&nbsp;given, on&nbsp;the&nbsp;matter, before the&nbsp;weekend closed in</span></div>
+            <div class="exrow"><i>✓</i><span>Matter flagged <b>urgent</b> — it sorts to&nbsp;the&nbsp;top on&nbsp;Monday morning</span></div>
+            <div class="exrow"><i>✓</i><span>Your&nbsp;own out-of-hours instruction given, unedited</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;limitation period. No&nbsp;filing deadline. No&nbsp;"usually it's&nbsp;14 days".</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Time limits are the&nbsp;single most tempting question
+            for&nbsp;a&nbsp;chatbot to&nbsp;answer, because the&nbsp;general answer is often published somewhere. The&nbsp;general answer is also
+            the&nbsp;one that&nbsp;does not apply to&nbsp;this&nbsp;person, which is why it is a&nbsp;permanent refusal.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Mon 08:12</span><span class="via">Automatic</span><span class="tag human">Not&nbsp;cleared · referred out</span></div>
+        <div class="exbody">
+          <p class="exq">— conflict check run against the&nbsp;firm's&nbsp;own list; the&nbsp;firm already acts on&nbsp;the&nbsp;other side —</p>
+          <div class="exturn hand"><span class="who">Saleringo, after a&nbsp;solicitor declined the&nbsp;check</span>Good morning. I'm&nbsp;sorry
+            — we're&nbsp;not able to&nbsp;act for&nbsp;you on&nbsp;this&nbsp;matter, and the&nbsp;Tuesday time I held has been released. I can't go
+            into&nbsp;why. I'm&nbsp;sending you the&nbsp;firm's&nbsp;referral list so you're&nbsp;not starting from&nbsp;nothing.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Declined <b>before</b> a&nbsp;consultation happened, not after one was paid for</span></div>
+            <div class="exrow"><i>✓</i><span>Provisional hold released automatically — the&nbsp;diary never carried a&nbsp;matter it couldn't take</span></div>
+            <div class="exrow"><i>✓</i><span>Referral list sent, so the&nbsp;person has somewhere to&nbsp;go the&nbsp;same morning</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;reason given, implied or hinted at. Not&nbsp;one word about&nbsp;the&nbsp;other side.</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. This&nbsp;is the&nbsp;example that&nbsp;justifies putting
+            the&nbsp;gate on&nbsp;the&nbsp;calendar rather than on&nbsp;a&nbsp;checklist. A&nbsp;conflicted matter that&nbsp;reaches a&nbsp;consultation is
+            a&nbsp;professional problem; a&nbsp;conflicted matter that&nbsp;never reached the&nbsp;diary is an&nbsp;administrative one.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Tue 20:05</span><span class="via">Phone</span><span class="tag solved">Fee basis quoted</span></div>
+        <div class="exbody">
+          <p class="exq">What's&nbsp;this&nbsp;going to&nbsp;cost me in&nbsp;total? I can't sign up to&nbsp;something open-ended.</p>
+          <div class="exturn"><span class="who">Saleringo</span>I can give you the&nbsp;published basis, and I'll&nbsp;be straight about&nbsp;where
+            it stops. The&nbsp;consultation is <b>$250</b>. A&nbsp;fixed-fee will and LPA package is on&nbsp;the&nbsp;firm's&nbsp;list at&nbsp;a&nbsp;set price,
+            and contentious work is charged at&nbsp;the&nbsp;firm's&nbsp;published hourly rate. Disbursements are separate and itemised.</div>
+          <div class="exturn hand"><span class="who">Saleringo</span>What the&nbsp;whole matter comes to&nbsp;is not something I'll&nbsp;estimate
+            — that&nbsp;figure belongs in&nbsp;the&nbsp;engagement letter, from&nbsp;the&nbsp;solicitor who has seen the&nbsp;papers. I've&nbsp;noted that
+            a&nbsp;total matters to&nbsp;you so it's&nbsp;the&nbsp;first thing they address.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Published fee basis given in&nbsp;full, on&nbsp;the&nbsp;call, at&nbsp;eight in&nbsp;the&nbsp;evening</span><span class="amt">$250</span></div>
+            <div class="exrow"><i>✓</i><span>Cost sensitivity recorded on&nbsp;the&nbsp;matter, so the&nbsp;engagement letter leads with&nbsp;it</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;total estimated. No&nbsp;range invented. No&nbsp;"probably around".</span></div>
+            <div class="exrow"><i>✓</i><span>Pipeline: <b>New inquiry → Conflict check</b></span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Fee basis is a&nbsp;published fact and a&nbsp;total is
+            a&nbsp;professional judgement. The&nbsp;line between them is exactly where the&nbsp;engagement letter sits, and the&nbsp;AI
+            does not cross it to&nbsp;sound helpful.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">22:40</span><span class="via">Messenger</span><span class="tag solved">Contact rules set</span></div>
+        <div class="exbody">
+          <p class="exq">I need to&nbsp;talk to&nbsp;someone about&nbsp;leaving my&nbsp;husband. Please don't ring the&nbsp;house.</p>
+          <div class="exturn"><span class="who">Saleringo</span>Understood, and I've&nbsp;put that&nbsp;on&nbsp;the&nbsp;file as&nbsp;a&nbsp;rule rather than
+            a&nbsp;note: no&nbsp;calls to&nbsp;that&nbsp;number, no&nbsp;voicemail, this&nbsp;channel only. Can I ask what times are safe for&nbsp;you,
+            so nobody in&nbsp;the&nbsp;office gets it wrong.</div>
+          <div class="exturn"><span class="who">Visitor</span>Weekdays between ten and two.</div>
+          <div class="exturn"><span class="who">Saleringo</span>Recorded. Family matters are on&nbsp;the&nbsp;firm's&nbsp;practice list and
+            a&nbsp;first consultation is <b>$250</b>. I need the&nbsp;other party's&nbsp;name for&nbsp;the&nbsp;conflict check before I hold anything —
+            and I won't send a&nbsp;confirmation to&nbsp;any address you haven't approved.</div>
+          <div class="exout">
+            <h5>What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Contact restriction stored as&nbsp;an&nbsp;<b>enforced rule</b>, applied to&nbsp;every&nbsp;later message</span></div>
+            <div class="exrow"><i>✓</i><span>Safe window recorded, so the&nbsp;callback does not arrive at&nbsp;the&nbsp;wrong hour</span></div>
+            <div class="exrow"><i>✓</i><span>Conflict check started before any time was offered, as&nbsp;on&nbsp;every&nbsp;other matter</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;advice about&nbsp;leaving, staying, or what she is entitled to. None.</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. In&nbsp;domestic matters "how may we contact you"
+            is a&nbsp;safety field. Treating it as&nbsp;a&nbsp;preference is how a&nbsp;confirmation email arrives on&nbsp;a&nbsp;shared account,
+            which is why it is stored as&nbsp;a&nbsp;rule the&nbsp;system enforces rather than a&nbsp;line somebody has to&nbsp;read.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>What it will and won’t answer</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">The&nbsp;line, written&nbsp;down<br>before&nbsp;a&nbsp;caller hears&nbsp;anything.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Your&nbsp;firm approves every&nbsp;row of&nbsp;this&nbsp;during onboarding. The&nbsp;third
+        column is the&nbsp;one to&nbsp;read twice — the&nbsp;<b style="color:#F09186;">Never</b> rows map, one for&nbsp;one, onto the&nbsp;things
+        bar advertising rules prohibit a&nbsp;firm from&nbsp;saying to&nbsp;a&nbsp;prospective client.</p>
+    </div>
+    <div class="qbank">
+      <div class="qrow hd"><span>A&nbsp;caller asks</span><span>What happens</span><span>Handled by</span></div>
+      <div class="qrow"><span class="qq">Do you handle landlord disputes?</span>
+        <span class="qa">Answers from&nbsp;your&nbsp;own practice list. A&nbsp;matter you don't take becomes a&nbsp;referral, not a&nbsp;booking.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">What does a&nbsp;first consultation cost?</span>
+        <span class="qa">Quotes the&nbsp;published fee — $250 — and what the&nbsp;hour covers.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Are you admitted where this&nbsp;happened?</span>
+        <span class="qa">Answers from&nbsp;your&nbsp;own admissions list. Anything ambiguous is recorded for&nbsp;a&nbsp;solicitor.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can I get an&nbsp;appointment this&nbsp;week?</span>
+        <span class="qa">Offers real openings — held provisionally, and confirmed only after the&nbsp;conflict check clears.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">What do I need to&nbsp;bring?</span>
+        <span class="qa">Sends your&nbsp;own intake list, in&nbsp;writing, on&nbsp;the&nbsp;channel they used.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Please don't ring the&nbsp;house.</span>
+        <span class="qa">Stores it as&nbsp;an&nbsp;enforced contact rule and applies it to&nbsp;every&nbsp;later message. A&nbsp;safety field, not a&nbsp;preference.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">What will the&nbsp;whole thing cost?</span>
+        <span class="qa">States the&nbsp;published fee basis. The&nbsp;estimate belongs in&nbsp;the&nbsp;engagement letter, from&nbsp;a&nbsp;solicitor.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">I already have a&nbsp;solicitor — can you take over?</span>
+        <span class="qa">Records it and stops. Whether the&nbsp;firm may act, or communicate at&nbsp;all, is a&nbsp;solicitor's&nbsp;decision.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Do I actually have a&nbsp;case?</span>
+        <span class="qa">Refused. No&nbsp;opinion on&nbsp;the&nbsp;merits, in&nbsp;any wording — including a&nbsp;hedge that&nbsp;implies one.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">How long do I have to&nbsp;file?</span>
+        <span class="qa">Refused. No&nbsp;limitation period, no&nbsp;deadline, no&nbsp;time limit. The&nbsp;dates are recorded and a&nbsp;solicitor confirms them.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">What's&nbsp;a&nbsp;claim like this&nbsp;worth?</span>
+        <span class="qa">Refused. No&nbsp;valuation, no&nbsp;settlement range, no&nbsp;outcome predicted.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Should I sign this&nbsp;before Friday?</span>
+        <span class="qa">Refused. That&nbsp;is advice. The&nbsp;document is attached to&nbsp;the&nbsp;matter and a&nbsp;solicitor reads it.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Are you the&nbsp;best firm for&nbsp;this?</span>
+        <span class="qa">Refused. No&nbsp;superiority claim, no&nbsp;guarantee, no&nbsp;unqualified specialisation claim.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Why won't you act for&nbsp;me?</span>
+        <span class="qa">Refused. A&nbsp;declined conflict check is never explained — the&nbsp;reason belongs to&nbsp;somebody else.</span><span class="qs never">Never</span></div>
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">An&nbsp;ordinary&nbsp;week<br>at a&nbsp;practice with&nbsp;two&nbsp;partners.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Not a&nbsp;record week. A&nbsp;dull one — with&nbsp;the&nbsp;share arriving while
+        the&nbsp;office is closed marked, because that&nbsp;is the&nbsp;part currently reaching voicemail and then reaching somebody&nbsp;else.</p>
+    </div>
+    <div class="weekstrip">
+      <div class="weekday"><span class="d">Mon</span><div class="n">14<small> inq</small></div>
+        <ul><li><i>·</i>6 screened in</li><li><i>·</i>8 office closed</li><li><i>·</i>3 referred out</li></ul></div>
+      <div class="weekday"><span class="d">Tue</span><div class="n">12<small> inq</small></div>
+        <ul><li><i>·</i>5 screened in</li><li><i>·</i>7 office closed</li></ul></div>
+      <div class="weekday peak"><span class="d">Wed</span><div class="n">16<small> inq</small></div>
+        <ul><li><i>·</i>7 screened in</li><li><i>·</i>10 office closed</li><li><i>·</i>busiest evening</li></ul></div>
+      <div class="weekday"><span class="d">Thu</span><div class="n">13<small> inq</small></div>
+        <ul><li><i>·</i>5 screened in</li><li><i>·</i>8 office closed</li><li><i>·</i>1 conflict declined</li></ul></div>
+      <div class="weekday peak"><span class="d">Fri</span><div class="n">15<small> inq</small></div>
+        <ul><li><i>·</i>6 screened in</li><li><i>·</i>10 office closed</li><li><i>·</i>service-of-papers day</li></ul></div>
+      <div class="weekday"><span class="d">Sat</span><div class="n">7<small> inq</small></div>
+        <ul><li><i>·</i>3 screened in</li><li><i>·</i><b>closed all day</b></li></ul></div>
+      <div class="weekday"><span class="d">Sun</span><div class="n">5<small> inq</small></div>
+        <ul><li><i>·</i>2 screened in</li><li><i>·</i><b>closed all day</b></li></ul></div>
+    </div>
+    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;two-partner practice — the&nbsp;shape of&nbsp;a&nbsp;week,
+      not a&nbsp;measurement and not a&nbsp;promise. On&nbsp;this&nbsp;shape <b>55 of&nbsp;82 inquiries arrive while the&nbsp;office is closed</b>,
+      which is a&nbsp;property of&nbsp;the&nbsp;clock rather than a&nbsp;claim about&nbsp;your&nbsp;practice. The&nbsp;only number that&nbsp;matters is in&nbsp;your&nbsp;own
+      call log, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a> takes it.</p>
+
+    <div class="reveal" style="max-width:680px;margin-top:62px;">
+      <span class="eyebrow"><i></i>What one recovered consultation is worth</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">The&nbsp;arithmetic<br>on&nbsp;one recovered&nbsp;consultation.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Using only figures already published: the&nbsp;$250 consultation on&nbsp;this&nbsp;page,
+        and the&nbsp;plan a&nbsp;firm answering calls would be on. Shown the&nbsp;sceptical way round — how many recovered consultations
+        it takes to&nbsp;cover the&nbsp;bill, rather than a&nbsp;return you did not ask for.</p>
+    </div>
+    <div class="mathbox" style="max-width:680px;margin-top:26px;">
+      <div class="mathrow"><span class="lbl"><b>One recovered first consultation</b><span class="sub">the&nbsp;figure published on&nbsp;this&nbsp;page — and the&nbsp;floor, since a&nbsp;retained matter is worth more</span></span><span class="val">$250</span></div>
+      <div class="mathrow"><span class="lbl"><b>Saleringo Scale, plan base</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone</span></span><span class="val">$599</span></div>
+      <div class="mathrow"><span class="lbl"><b>AI Phone minutes</b><span class="sub">1,200 min × $0.14/min, as&nbsp;on&nbsp;the&nbsp;published sample invoice</span></span><span class="val">$168</span></div>
+      <div class="mathrow"><span class="lbl"><b>Your&nbsp;month, all&nbsp;in</b><span class="sub">$599 + $168</span></span><span class="val">$767</span></div>
+      <div class="mathrow total"><span class="lbl"><b>Consultations needed to&nbsp;cover it</b><span class="sub">$767 ÷ $250, rounded up</span></span><span class="val">4</span></div>
+      <p class="mathnote">Every&nbsp;rate here is published on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing page</a>; the&nbsp;$250 is published on&nbsp;this&nbsp;one. Four recovered consultations in&nbsp;a&nbsp;month is
+        the&nbsp;break-even on&nbsp;the&nbsp;phone bill — we are not going to&nbsp;tell you whether you would recover four, forty or none,
+        because we do not know your&nbsp;call log, and the&nbsp;figures that&nbsp;circulate for&nbsp;this&nbsp;trade come from&nbsp;companies selling
+        what we sell. A&nbsp;practice starting on&nbsp;website chat rather than voice is on&nbsp;a&nbsp;$79/mo plan, and the&nbsp;arithmetic changes
+        accordingly. Put your&nbsp;own numbers into&nbsp;the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator</a>;
+        it defaults sceptical on&nbsp;purpose.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHERE IT STOPS · paper ═══════ -->
+<section class="nogo bg-clinical t-xl">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>Where it stops</span>
+      <h2 class="h2" style="margin-top:22px">What it will <em style="font-style:normal;color:var(--red);">never</em>&nbsp;do.</h2>
+      <p class="lead">In&nbsp;a&nbsp;law firm, the&nbsp;answers software refuses to&nbsp;give matter more than the&nbsp;ones it gives.
+        These&nbsp;boundaries are built in — not configured, not optional, and they do not soften because the&nbsp;caller
+        is upset or the&nbsp;question is asked twice.</p>
+      <span class="ngseal">It takes the&nbsp;matter. It never advises on&nbsp;it.</span>
+
+      <div class="quotecard light pending" style="margin-top:38px;">
+        <div class="mark">”</div>
+        <p>A&nbsp;founding firm’s&nbsp;words belong here. We are onboarding the&nbsp;first cohort now, so there is nothing to&nbsp;quote yet — and an&nbsp;invented testimonial would undo the&nbsp;exact thing this&nbsp;page is about.</p>
+        <div class="by">
+          <span class="avatar av-b" style="opacity:.4;">?</span>
+          <span><b>Founding practice · seat open</b><span>Reserved for&nbsp;the&nbsp;first small firm live</span></span>
+        </div>
+        <div class="metric">Founding cohort · 50% off for&nbsp;3 months</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Give legal advice or an&nbsp;opinion on&nbsp;the&nbsp;merits</b><span>Not “you probably have a&nbsp;case”, not “that&nbsp;sounds strong”, and not a&nbsp;hedge that&nbsp;implies either. It books the&nbsp;consultation and preserves the&nbsp;caller’s&nbsp;own account word for&nbsp;word.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>State a&nbsp;limitation period or filing deadline</b><span>No&nbsp;time limit is ever given, in&nbsp;any jurisdiction, even where the&nbsp;general rule is published. The&nbsp;dates are recorded as&nbsp;given, the&nbsp;matter is flagged urgent, and a&nbsp;solicitor confirms the&nbsp;date.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Estimate what a&nbsp;matter is worth</b><span>No&nbsp;case value, no&nbsp;settlement range, no&nbsp;predicted outcome. It states the&nbsp;published fee basis and hands the&nbsp;valuation question to&nbsp;a&nbsp;solicitor.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Schedule anything before the&nbsp;conflict check clears</b><span>A&nbsp;time may be held provisionally; it is never confirmed. The&nbsp;gate is wired into&nbsp;the&nbsp;calendar, and a&nbsp;person — not the&nbsp;AI — clears or declines it.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Explain why the&nbsp;firm cannot act</b><span>A&nbsp;declined check produces one sentence and a&nbsp;referral list. It never hints at&nbsp;the&nbsp;reason, because the&nbsp;reason is somebody else’s&nbsp;confidence to&nbsp;keep.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Imply that&nbsp;the&nbsp;conversation retained you</b><span>It says, in&nbsp;your&nbsp;firm’s&nbsp;own approved wording, that&nbsp;no&nbsp;lawyer–client relationship is formed by&nbsp;the&nbsp;call. Nothing binds the&nbsp;firm until a&nbsp;solicitor signs the&nbsp;engagement letter.</span></span>
+      </div>
+      <a class="linkcta" style="margin-top:26px;" href="../security.html">Guardrails &amp; security&nbsp;&nbsp;→</a>
+    </div>
+  </div></div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/12837026/pexels-photo-12837026.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/12837026/pexels-photo-12837026.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/12837026/pexels-photo-12837026.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/12837026/pexels-photo-12837026.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A lit window in an office building at night, showing rows of empty chairs inside" loading="lazy" decoding="async" width="1600" height="2400">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:22ch;line-height:1.1;">Answered at&nbsp;11:20 PM.<br>Advised at&nbsp;no&nbsp;point.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">Merits, deadlines and value are a&nbsp;permanent handoff, not a&nbsp;confidence threshold that&nbsp;a&nbsp;persistent caller can move.</p>
+  </div>
+</section>
+<p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a&nbsp;named customer, not a&nbsp;real firm, and not a&nbsp;testimonial.</p>
+
+<!-- ═══════ WHAT IT SAYS OUT LOUD · dark aurora ═══════ -->
+<section class="world bg-aurora t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><i></i>Two things it says out&nbsp;loud</span>
+      <h2 class="h2 onDark" style="margin-top:20px">The&nbsp;disclaimers are not <em style="font-style:normal;color:var(--teal);">in&nbsp;the&nbsp;footer.</em><br>They&nbsp;are in&nbsp;the&nbsp;call.</h2>
+      <p class="lead onDark">Two of&nbsp;these are said on&nbsp;the&nbsp;call itself, in&nbsp;your&nbsp;firm's&nbsp;own approved wording, rather than
+        buried where nobody reads them. The&nbsp;third is a&nbsp;property of&nbsp;how the&nbsp;records are built.</p>
+    </div>
+
+    <div class="tzcards reveal">
+      <div class="glass"><b>“This&nbsp;doesn't make us your&nbsp;solicitors.”</b><span>Said on&nbsp;the&nbsp;call, in&nbsp;wording your&nbsp;firm approved. No&nbsp;lawyer–client relationship is formed by&nbsp;the&nbsp;conversation, and nothing binds the&nbsp;firm until a&nbsp;solicitor signs the&nbsp;engagement letter.</span></div>
+      <div class="glass"><b>“I need the&nbsp;other side's&nbsp;name first.”</b><span>The&nbsp;conflict check runs before anything is scheduled, and a&nbsp;person clears it. A&nbsp;time can be held; it cannot be confirmed. If the&nbsp;check is declined, no&nbsp;reason is ever given.</span></div>
+      <div class="glass"><b>Records are matter-walled</b><span>Not one shared list. A&nbsp;record opened on&nbsp;one matter is not visible from&nbsp;another, and access is set per&nbsp;matter during onboarding.</span></div>
+    </div>
+
+    <p class="lead onDark reveal" style="max-width:820px;margin:34px auto 0;text-align:center;font-size:var(--fs-sm);">Most jurisdictions'&nbsp;bar advertising rules prohibit outcome claims, guarantees and unqualified specialisation
+      claims in&nbsp;what a&nbsp;firm says to&nbsp;a&nbsp;prospective client. The&nbsp;<b>Never</b> rows above map onto those prohibitions one for&nbsp;one.
+      The&nbsp;specific rules differ by&nbsp;jurisdiction, your&nbsp;firm approves every&nbsp;line before it goes live, and nothing on&nbsp;this&nbsp;page
+      is legal advice about&nbsp;your&nbsp;own obligations.</p>
+    <div class="out reveal"><a href="../security.html#regulated">How regulated firms are onboarded ↗</a></div>
+  </div>
+</section>
+
+<!-- ═══════ HOW TO START · bright + product UI ═══════ -->
+<section class="start t-md">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>How to&nbsp;start</span>
+      <h2 class="h2" style="margin-top:22px">Live<br>before Friday&nbsp;evening.</h2>
+      <p class="lead">Start with&nbsp;your&nbsp;practice list, your&nbsp;conflicts list and your&nbsp;fee schedule. Add website chat and messenger when you are ready.</p>
+      <p class="lead" style="margin-top:16px;font-size:var(--fs-sm);">Keep your&nbsp;systems — <b style="color:var(--l-ink);">Zapier</b> and <b style="color:var(--l-ink);">CSV export</b> are live today; practice-management tools are on&nbsp;the&nbsp;roadmap, and founding customers vote on&nbsp;what ships next.</p>
+      <div class="langnote">
+        <div class="ty">THE ANSWER SET IS APPROVED, LINE BY&nbsp;LINE</div>
+        <p>Every&nbsp;sentence the&nbsp;AI may say about&nbsp;your&nbsp;firm is reviewed by&nbsp;a&nbsp;solicitor before it goes live — including the&nbsp;refusals and the&nbsp;no-retainer wording. Anything outside the&nbsp;approved set becomes a&nbsp;handoff, not an&nbsp;improvisation.</p>
+        <div class="tags"><span class="pilltag pt-teal">Practice list · approved</span><span class="pilltag pt-teal">Fee schedule · approved</span><span class="pilltag pt-line">Conflicts list · yours</span></div>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Import your&nbsp;practice list &amp; fee schedule</b><span>Matter types and published fees become quotable facts</span></span><span class="tail pilltag pt-line">~1 hour</span></div>
+      <div class="step"><span class="num">02</span><span class="tx"><b>Connect your&nbsp;conflicts list</b><span>The&nbsp;gate is wired to&nbsp;the&nbsp;calendar; a&nbsp;solicitor still clears every&nbsp;check</span></span><span class="tail pilltag pt-teal">✓ Gate live</span></div>
+      <div class="step"><span class="num">03</span><span class="tx"><b>Approve what it may say</b><span>Including the&nbsp;refusals and the&nbsp;no-retainer wording, line by&nbsp;line</span></span><span class="tail pilltag pt-dark">Signed off</span></div>
+      <div class="step"><span class="num">04</span><span class="tx"><b>Point the&nbsp;after-hours line at&nbsp;it</b><span>Matters screened, dates preserved, records written from&nbsp;night one</span></span><span class="tail pilltag pt-amber">This&nbsp;week</span></div>
+    </div>
+  </div>
+
+  <!-- product UI: the intake queue -->
+  <div class="browserframe light reveal">
+    <div class="bar"><i></i><i></i><i></i><span class="url">app.saleringo.com/matters?stage=intake</span></div>
+    <div class="inboxmock">
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">INTAKE</div>
+        <div class="convrow on"><span class="chanmini cm-v">A</span><span class="cv"><b>All inquiries</b></span><span class="st st-ai">14</span></div>
+        <div class="convrow"><span class="chanmini cm-c">CC</span><span class="cv"><b>Conflict pending</b></span><span class="st st-hu">6</span></div>
+        <div class="convrow"><span class="chanmini cm-m">CB</span><span class="cv"><b>Consultations</b></span><span class="st st-ai">8</span></div>
+        <div class="convrow"><span class="chanmini cm-c">RO</span><span class="cv"><b>Referred out</b></span><span class="st st-hu">4</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">LAST NIGHT</div>
+        <div class="convrow on"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">DR</span><span class="cv"><b>D. R. · phone · 23:20</b><span>Tue 14:00 · held only</span></span><span class="st st-hu">Gate</span></div>
+        <div class="convrow"><span class="avatar av-a" style="width:30px;height:30px;font-size:var(--fs-2xs);">??</span><span class="cv"><b>Caller · chat · 19:45</b><span>Deadline refused · urgent</span></span><span class="st st-hu">Human</span></div>
+        <div class="convrow"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">MV</span><span class="cv"><b>M. V. · messenger · 22:40</b><span>No&nbsp;voicemail · this&nbsp;channel</span></span><span class="st st-ai">AI</span></div>
+        <div class="convrow"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">SW</span><span class="cv"><b>S. W. · chat · 20:05</b><span>Fee basis given · no&nbsp;total</span></span><span class="st st-ai">AI</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">ANSWER TRACE</div>
+        <div style="font-size:var(--fs-sm);font-weight:800;color:var(--l-ink);">First consultation · $250</div>
+        <div style="margin-top:6px;font-size:var(--fs-2xs);color:var(--l-mut);font-weight:600;">Fee schedule · approved 2026-01-08</div>
+        <div style="margin-top:16px;display:grid;gap:8px;">
+          <span class="pilltag pt-teal" style="justify-self:start;">✓ Source: published fee schedule</span>
+          <span class="pilltag pt-line" style="justify-self:start;">No&nbsp;total estimated</span>
+          <span class="pilltag pt-dark" style="justify-self:start;">Approved by: partner</span>
+        </div>
+        <div style="margin-top:18px;font-size:var(--fs-2xs);line-height:1.7;color:var(--l-mut);font-weight:500;">
+          Conflict check queued at&nbsp;23:22. Calendar shows the&nbsp;slot as&nbsp;<b>held</b> until a&nbsp;solicitor clears it.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cap reveal">Every&nbsp;figure traces back to&nbsp;the&nbsp;schedule it came from</div>
+  </div>
+</section>
+
+<!-- ═══════ MORE THAN ONE OFFICE ═══════ -->
+<section class="sec-dark bg-grid t-xl" id="multi-location">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Two offices. Three. A&nbsp;group.</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">One office's practice&nbsp;list<br>is&nbsp;not <em style="font-style:normal;color:var(--teal);">another office's.</em></h2>
+      <p class="secintro">If you run more than one office, the&nbsp;conflicts list is the&nbsp;thing that&nbsp;must not fragment — and the&nbsp;practice list is the&nbsp;thing that&nbsp;must not merge. Each&nbsp;office is set up as&nbsp;its&nbsp;own practice inside a&nbsp;single account.</p>
+    </div>
+    <div class="mlgrid reveal">
+      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own number, hours and fee schedule</b>
+        <p>Each&nbsp;office answers on&nbsp;its&nbsp;own line with&nbsp;its&nbsp;own published fees, its&nbsp;own practice areas and its&nbsp;own
+          admissions. A&nbsp;caller asking about&nbsp;one office never hears another's&nbsp;figures.</p></div>
+      <div class="mlcard"><span class="n">02</span><b>One conflicts list, checked across&nbsp;all of&nbsp;them</b>
+        <p>The&nbsp;gate runs against the&nbsp;firm, not the&nbsp;branch — a&nbsp;matter one office cannot take is not one another&nbsp;office
+          can take by&nbsp;accident.</p></div>
+      <div class="mlcard"><span class="n">03</span><b>Matters stay walled, per&nbsp;office and per&nbsp;matter</b>
+        <p>A&nbsp;fee-earner opens the&nbsp;board and sees the&nbsp;matters they are on. Access is set during onboarding, not
+          inherited from&nbsp;a&nbsp;shared inbox.</p></div>
+      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
+        <p>One report puts every&nbsp;office in&nbsp;the&nbsp;same row: inquiries, screened in, referred out, conflicts declined,
+          consultations booked out of&nbsp;hours. Exportable to&nbsp;PDF or Excel.</p></div>
+    </div>
+    <p class="statnote">Offices, numbers, practice lists, conflicts lists and who-sees-what are configured with&nbsp;you
+      during onboarding — not through&nbsp;a&nbsp;self-serve wizard we would have to&nbsp;invent a&nbsp;timescale for.</p>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faqsec t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow light"><i></i>Questions solicitors ask</span>
+      <h2 class="h2" style="margin-top:20px">Asked by&nbsp;practices like&nbsp;yours.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Does the&nbsp;AI give legal advice?</summary>
+        <p>No, and the&nbsp;refusal is categorical rather than a&nbsp;confidence threshold. It does not opine on&nbsp;the&nbsp;merits, does not state a&nbsp;limitation period or filing deadline, does not estimate what a&nbsp;matter is worth, and does not predict an&nbsp;outcome — not even as&nbsp;a&nbsp;hedge. It states on&nbsp;the&nbsp;call, in&nbsp;your&nbsp;firm's&nbsp;own approved wording, that&nbsp;no&nbsp;lawyer–client relationship is formed by&nbsp;the&nbsp;conversation. What it does is capture the&nbsp;account word for&nbsp;word, book the&nbsp;consultation once the&nbsp;conflict check clears, and put the&nbsp;whole thread in&nbsp;front of&nbsp;a&nbsp;solicitor.</p>
+      </details>
+      <details>
+        <summary>How does the&nbsp;conflict check work if a&nbsp;machine is answering?</summary>
+        <p>The&nbsp;AI collects the&nbsp;opposing party and any related names and runs them against your&nbsp;firm's&nbsp;own conflicts list. It does not exercise the&nbsp;judgement — a&nbsp;person clears or declines the&nbsp;check. Until it is cleared, nothing may be scheduled: the&nbsp;gate sits on&nbsp;the&nbsp;calendar itself, not on&nbsp;a&nbsp;checklist somebody remembers. If the&nbsp;check does not clear, the&nbsp;AI says only that&nbsp;the&nbsp;firm is not able to&nbsp;act, offers your&nbsp;referral list, and never explains why.</p>
+      </details>
+      <details>
+        <summary>Are records from&nbsp;different matters kept apart?</summary>
+        <p>Yes. Matter records are walled from&nbsp;each&nbsp;other rather than sitting in&nbsp;one shared list the&nbsp;way a&nbsp;clinic's&nbsp;patient list does. A&nbsp;record opened on&nbsp;one matter is not visible from&nbsp;another, and access is set per&nbsp;matter during onboarding. Data is encrypted in&nbsp;transit and at&nbsp;rest, kept separate from&nbsp;every&nbsp;other firm, with&nbsp;retention and deletion controls your&nbsp;firm operates — see <a href="../security.html" style="color:var(--teal-deep);font-weight:700;">Security &amp; data</a>.</p>
+      </details>
+      <details>
+        <summary>How does this&nbsp;sit with&nbsp;bar advertising rules?</summary>
+        <p>Most jurisdictions prohibit outcome claims, guarantees and unqualified specialisation claims in&nbsp;what a&nbsp;firm says to&nbsp;a&nbsp;prospective client. The&nbsp;never-list on&nbsp;this&nbsp;page maps to&nbsp;those prohibitions one for&nbsp;one: no&nbsp;merits opinion, no&nbsp;predicted outcome, no&nbsp;case value, no&nbsp;superiority claim. The&nbsp;specific rules differ by&nbsp;jurisdiction and your&nbsp;firm approves every&nbsp;line of&nbsp;the&nbsp;answer set before it goes live. Nothing on&nbsp;this&nbsp;page is legal advice about&nbsp;your&nbsp;own advertising obligations.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/6538582/pexels-photo-6538582.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/6538582/pexels-photo-6538582.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6538582/pexels-photo-6538582.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/6538582/pexels-photo-6538582.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A hand reaching into a box of document files on a desk" loading="lazy" decoding="async" width="1600" height="2400">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">One matter.<br>One wall around&nbsp;it.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">Records are separated per&nbsp;matter rather than pooled in&nbsp;one list — the&nbsp;single most expensive difference between this&nbsp;pack and every&nbsp;other.</p>
+  </div>
+</section>
+
+<!-- ═══════ WHAT IT CONNECTS TO ═══════ -->
+<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#050B16,#081426);">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:700px;">
+      <span class="eyebrow"><i></i>Your&nbsp;existing systems, honestly</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Three columns.<br>No&nbsp;logo&nbsp;wall.</h2>
+      <p class="secintro">Normally this&nbsp;answer is buried in&nbsp;an&nbsp;FAQ. A&nbsp;partner deserves to&nbsp;see it before they decide,
+        not after.</p>
+    </div>
+    <div class="statgrid reveal">
+      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+        <ul>
+          <li>Zapier<span>Push matters and stage changes into&nbsp;the&nbsp;systems you already run</span></li>
+          <li>CSV export<span>Inquiries, conflict outcomes, consultations and referrals, whenever you ask</span></li>
+          <li>Saleringo's&nbsp;own board &amp; scheduler<span>Enough on&nbsp;its&nbsp;own if you would rather start light</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>Bridge for&nbsp;now</h4>
+        <ul>
+          <li>Your&nbsp;practice-management system<span>No&nbsp;direct link. Matters reach it through&nbsp;Zapier or a&nbsp;CSV import</span></li>
+          <li>Your&nbsp;conflicts list<span>Imported and re-imported on&nbsp;a&nbsp;schedule you set. It stays yours; we do not become the&nbsp;system of&nbsp;record for&nbsp;it</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>In&nbsp;build</h4>
+        <ul>
+          <li>Practice-management &amp; case-management tools<span>On&nbsp;the&nbsp;roadmap; founding customers vote on&nbsp;what ships next. We will not name a&nbsp;month we cannot stand behind</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="statnote">If the&nbsp;system you run is not on&nbsp;this&nbsp;page, ask on&nbsp;the&nbsp;call. "Not yet" now is cheaper
+      for&nbsp;both of&nbsp;us than "not yet" after you have paid.</p>
+  </div>
+</section>
+
+<!-- PACK: the actual per-trade configuration, not a re-skinned page -->
+<section class="packsec sec-dark bg-grid t-md" id="the-pack">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:780px;">
+      <div class="secrule"><span class="eyebrow"><i></i>Not a&nbsp;skin &mdash; a&nbsp;different object model</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Six fields, three&nbsp;rules,<br>and one thing it will not&nbsp;do.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most industry pages change a&nbsp;photograph and a&nbsp;noun. This&nbsp;is the&nbsp;configuration
+        itself: the&nbsp;fields the&nbsp;matter carries, the&nbsp;rules the&nbsp;calendar enforces, the&nbsp;lines a&nbsp;figure may be quoted from, who
+        ends up with&nbsp;the&nbsp;work, and the&nbsp;subjects the&nbsp;AI is not allowed to&nbsp;touch.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;matter carries</span>
+        <div class="pkfields"><div class="pkf"><b>Matter type</b><span>from&nbsp;your&nbsp;own practice list</span></div><div class="pkf"><b>Opposing party</b><span>runs the&nbsp;conflict check</span></div><div class="pkf"><b>Jurisdiction</b><span>decides whether you may act</span></div><div class="pkf"><b>Key dates</b><span>captured, never interpreted</span></div><div class="pkf"><b>Already represented?</b><span>decides whether you may communicate</span></div><div class="pkf"><b>Safe to&nbsp;contact</b><span>a&nbsp;safety field, not a&nbsp;preference</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;calendar enforces</span>
+        <ol class="pkrules"><li>Nothing is confirmed until the&nbsp;conflict check clears. A&nbsp;time may be held; the&nbsp;gate is on&nbsp;the&nbsp;calendar, not on&nbsp;a&nbsp;checklist.</li><li>A&nbsp;matter type that&nbsp;is not on&nbsp;the&nbsp;practice list never reaches the&nbsp;diary — it becomes a&nbsp;referral with&nbsp;the&nbsp;reason attached.</li><li>Matters are walled: a&nbsp;record opened on&nbsp;one matter is not visible from&nbsp;another.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;figure is quoted from</span>
+        <ul class="pkq"><li>Consultation fee</li><li>Fixed-fee service from&nbsp;your&nbsp;list</li><li>Hourly rate, as&nbsp;published</li><li>Disbursements &mdash; named, never estimated</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">A&nbsp;solicitor clears the&nbsp;conflict check and signs the&nbsp;engagement letter. Nothing binds the&nbsp;firm until they do.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Merits, deadlines, valuations, and anything that&nbsp;would amount to&nbsp;advice. Every&nbsp;one of&nbsp;those is a&nbsp;person.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Conflict checks run before first contact</span><span class="pkk">Consultations booked out of&nbsp;hours</span><span class="pkk">Declined-and-referred rate</span><span class="pkk">Time to&nbsp;first response</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Practice list, conflicts list, fees and consultation lengths all come from&nbsp;your&nbsp;own setup. Product illustration &mdash; the&nbsp;fields and rules are the&nbsp;real ones.</span>Checks run before contact, consultations recovered after hours, and how many inquiries you correctly turned away. Those are numbers a&nbsp;partner already watches; the&nbsp;only thing that&nbsp;changes is who was at&nbsp;the&nbsp;desk when the&nbsp;phone rang.</p>
+  </div>
+</section>
+
+<section class="t-sm sec-dark"><div class="wrap" style="text-align:center;"><p style="font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:600;max-width:72ch;margin:0 auto;"><b style="color:#fff;">A&nbsp;note on&nbsp;what this&nbsp;page is not. </b>Nothing on&nbsp;this&nbsp;page is legal advice, to&nbsp;you or to&nbsp;anyone who calls you, and nothing here certifies your&nbsp;firm as&nbsp;compliant with&nbsp;its&nbsp;professional conduct or advertising rules. Those are yours and your&nbsp;regulator's. What we supply is a&nbsp;line that&nbsp;is answered, a&nbsp;gate that&nbsp;holds, and an&nbsp;answer set your&nbsp;firm signed. <a href="../security.html#regulated" style="color:var(--teal-ink);font-weight:700;">Where we stand →</a></p></div></section>
+
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have seen where it stops</span>
+        <p class="cnp">A&nbsp;matter screened before anyone opened the&nbsp;diary, a&nbsp;fee quoted from&nbsp;your&nbsp;own schedule, and a&nbsp;refusal line that&nbsp;does not move: no&nbsp;merits, no&nbsp;deadline, no&nbsp;value. What sits behind all of&nbsp;it is the&nbsp;matter waiting on&nbsp;a&nbsp;solicitor's&nbsp;desk on&nbsp;Monday morning, already screened.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="closer bg-spot">
+  <div class="wrap">
+    <div class="riskrow reveal">
+      <div class="riskitem"><div class="ic">✓</div><b>Approved line by&nbsp;line</b><span>Nothing goes live that&nbsp;a&nbsp;solicitor at&nbsp;your&nbsp;firm hasn't signed off.</span></div>
+      <div class="riskitem"><div class="ic">→</div><b>Judgement leaves</b><span>Merits, deadlines and value reach a&nbsp;person, thread attached.</span></div>
+      <div class="riskitem"><div class="ic">◷</div><b>Month to&nbsp;month</b><span>No&nbsp;annual lock-in. Stop whenever it stops paying for&nbsp;itself.</span></div>
+      <div class="riskitem"><div class="ic">%</div><b>Founding pricing</b><span>50% off for&nbsp;3 months, locked before general availability.</span></div>
+    </div>
+
+    <h2 class="reveal">Somebody&nbsp;was&nbsp;served<br>at&nbsp;<em>four this&nbsp;afternoon.</em></h2>
+    <p class="lead onDark reveal">Import your&nbsp;practice list, connect your&nbsp;conflicts list, approve what it may say — and let tonight's&nbsp;11 PM call be answered, screened, and left entirely un-advised.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
+    </div>
+
+    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
+      <div class="lh">Get your&nbsp;practice's&nbsp;setup plan</div>
+      <p class="lsub">Tell us which matter types you take and how your&nbsp;conflicts list is held today. We reply with&nbsp;the&nbsp;intake fields, the&nbsp;gate configuration and the&nbsp;refusal set we would build for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
+      <form class="eaform" data-earlyaccess>
+        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
+        <input type="text" name="business" placeholder="Firm name" aria-label="Firm name">
+        <input type="text" name="country" placeholder="Country / jurisdiction" aria-label="Country or jurisdiction">
+        <input type="hidden" name="industry" required value="Law firm">
+        <input type="hidden" name="context" value="Legal industry page">
+        <select name="locations" aria-label="How many fee-earners">
+          <option value="">How many fee-earners?</option>
+          <option>Just me</option><option>Two or three</option><option>Four or more</option>
+        </select>
+        <select name="channel" aria-label="Where inquiries land now">
+          <option value="">Where inquiries land now…</option>
+          <option>Phone</option><option>Website form or chat</option>
+          <option>Messenger / WhatsApp</option><option>All of&nbsp;them, unevenly</option>
+        </select>
+        <button class="btn btn-teal" type="submit">Get the&nbsp;Law Firm setup plan →</button>
+        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
+        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
+        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
+      </form>
+      <p class="eanote" style="margin-top:18px;"><span class="pilltag pt-teal">✓ No&nbsp;advice, no&nbsp;deadline, no&nbsp;case value — and nothing booked before the&nbsp;check clears</span></p>
+    </div>
+    <div class="trust">Security or procurement questions? <a href="../security.html" style="color:var(--tx2);">See where your&nbsp;data lives ↗</a> · Also relevant: <a href="./funeral-homes.html" style="color:var(--tx2);">Funeral Homes</a></div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v20.0</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4>The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a></div><div class="fgrp"><h5>Home, property &amp; vehicle</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/property-management.html">Property management</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/legal.html" aria-current="page">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Many locations</h5><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a><a class="lnk" href="../cross-border.html">Cross-border</a><a class="lnk" href="../industries.html">All fourteen trades</a><a class="lnk" href="../examples.html">Worked examples</a></div></div></div>
+      <div class="fcol"><h4>Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4>Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+<nav data-startpath data-compact aria-hidden="true" data-title="What to check here" data-end="#early-access" data-end-label="Get my plan">
+  <ol>
+    <li data-step="#the-pack" data-short="The pack" data-next="see the six fields and three rules"><a href="#the-pack"><b>The&nbsp;pack</b></a></li>
+  </ol>
+</nav>
+</main>
+
+<div class="stickycta" data-sticky>
+  <div class="wrap">
+    <span class="msg">Answered at&nbsp;11:20 PM, the&nbsp;conflict check run before anything was booked, <b>filed as&nbsp;a&nbsp;matter.</b></span>
+    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=20.0"></script>
+<script src="../../assets/js/canvas.js?v=20.0" defer></script>
+<script src="../../assets/js/scenes.js?v=20.0" defer></script>
+<script src="../../assets/js/guide.js?v=20.0"></script>
+</body>
+</html>
