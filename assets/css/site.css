@@ -2286,3 +2286,16 @@ html .bigfooter .brand{
    made the card three times the height of the four beside it. Given the full
    width they lay out as one band. */
 .tourcard-wide{grid-column:1/-1;}
+
+/* ── a floor under the narrowest phones ───────────────────────────────────
+   375px is this site's tested floor and headings sit inside their boxes there.
+   At 320 — an iPhone SE, below the floor but a real device — a heading whose
+   &nbsp; chain has no break opportunity left hangs out of its own column;
+   measured worst case, 263px past a 306px box, which clips.
+
+   `overflow-wrap:anywhere` is a safety net rather than a style: it only breaks
+   inside a word when there is no other opportunity at all. It is scoped to
+   360px and below so it can never touch a width anyone composes for. */
+@media (max-width:360px){
+  h1,h2,h3,h4,.h1,.h2{overflow-wrap:anywhere;}
+}
