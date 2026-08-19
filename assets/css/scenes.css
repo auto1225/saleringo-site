@@ -485,7 +485,9 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 @media (max-width:620px){
   .stickycta{padding-top:10px;padding-bottom:10px;}
   .stickycta .wrap{flex-direction:row;align-items:center;flex-wrap:nowrap;gap:10px;}
-  .stickycta .msg{display:none;}
+  /* .stickycta.hasguide .msg is re-shown at 720px with three class selectors,
+     so a two-class rule loses to it however late it is declared. */
+  .stickycta .msg,.stickycta.hasguide .msg{display:none;}
   .stickycta .guiderail{flex:1 1 auto;min-width:0;overflow-x:auto;
     scrollbar-width:none;-ms-overflow-style:none;}
   .stickycta .guiderail::-webkit-scrollbar{display:none;}
@@ -499,3 +501,36 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 
 /* same floor on wide screens, where the rail carries its labels */
 .stickycta .guiderail a{min-height:44px;display:flex;align-items:center;}
+
+/* ── the hero on a phone: the action before the essay ─────────────────────
+   Measured on the trade pages at 375x812: kicker 145, headline 208-458, then
+   an explanatory paragraph running 7-8 lines (212px) before the first button,
+   which therefore started at 728 against a docked bar beginning at 732. On
+   eight of the highest-intent pages on the site, the thing a reader came to
+   press was not on the screen.
+
+   The paragraph is not cut and not shortened — it moves directly beneath the
+   action, which is where a reader who wants more reads it anyway. Two pages
+   (webchat, cross-border) already did this by hand; this states it once, by
+   structure rather than by page name: the element that directly holds both the
+   headline and the button row is the hero's copy column, whatever it is called
+   on that page. */
+@media (max-width:620px){
+  header *:has(> h1):has(> .ctas),
+  .hero  *:has(> h1):has(> .ctas){display:flex;flex-direction:column;}
+  /* declared first so the named children below win at equal specificity */
+  header *:has(> h1):has(> .ctas) > *,
+  .hero  *:has(> h1):has(> .ctas) > *{order:6;}
+  header *:has(> h1):has(> .ctas) > .kicker,
+  header *:has(> h1):has(> .ctas) > .eyebrow,
+  .hero  *:has(> h1):has(> .ctas) > .kicker,
+  .hero  *:has(> h1):has(> .ctas) > .eyebrow{order:1;}
+  header *:has(> h1):has(> .ctas) > h1,
+  .hero  *:has(> h1):has(> .ctas) > h1{order:2;}
+  header *:has(> h1):has(> .ctas) > .ctas,
+  .hero  *:has(> h1):has(> .ctas) > .ctas{order:3;margin-top:26px;}
+  header *:has(> h1):has(> .ctas) > .heroscroll,
+  .hero  *:has(> h1):has(> .ctas) > .heroscroll{order:4;}
+  header *:has(> h1):has(> .ctas) > .sub,
+  .hero  *:has(> h1):has(> .ctas) > .sub{order:5;margin-top:22px;}
+}

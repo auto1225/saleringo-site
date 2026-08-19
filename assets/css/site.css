@@ -263,7 +263,29 @@ a{text-decoration:none;color:inherit;}
   .igrid{grid-template-columns:1fr;grid-auto-rows:170px;}
   .igrid > *{grid-column:span 1 !important;grid-row:span 1 !important;}
   .plans{grid-template-columns:1fr;}
-  .h2{font-size:var(--fs-h2);}
+  /* h1 has balanced since it was written; h2 did not, and at 375px that is where
+   the damage showed. A heading is authored with &nbsp; so the pairs that belong
+   together stay together on a wide screen; on a narrow one the bound pair no
+   longer fits the remaining space and drops whole, stranding whatever preceded
+   it. Measured at 375: "Nine rooms. One product. / Eight / different
+   vocabularies.", "and one thing it will / not do.", "your language. Your /
+   AI does." Balancing distributes the words across the lines it is going to
+   use anyway, which is what the author meant in the first place. */
+/* Section headings are composed for a wide measure: the author's <br> puts the
+   break at the sentence seam and &nbsp; holds the pairs that belong together.
+   At 375px the measure is a third as wide, so the forced break is followed by a
+   second, natural one, and that one lands wherever it falls — measured:
+   "Nine rooms. One product. / Eight / different vocabularies.",
+   "and one thing it will / not do.", "your language. Your / AI does."
+
+   Dropping the authored break on a phone lets the same words find their own
+   lines, with the &nbsp; pairs still intact. Same heading, measured after:
+   "Nine rooms. / One product. / Eight different vocabularies."
+
+   h1 is left alone — hero headlines carry colour changes across the break, and
+   each one is composed and measured by hand. */
+@media (max-width:620px){ h2 br,.h2 br{display:none;} }
+.h2{font-size:var(--fs-h2);}
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -534,7 +556,11 @@ a{text-decoration:none;color:inherit;}
   --fs-num:     var(--fs-display);           /* alias — was identical at 128px */
   /* The nav is fixed at a constant height, so the gap beneath it is one number,
      not the thirteen that had accumulated across eleven class names. */
-  --pad-hero:   172px;
+  /* 172px left 81px of air between the nav and the hero panel on a 900px
+     screen, and pushed the second call to action under the docked bar on
+     several pages. 144px keeps 53px of clearance — still deliberate space,
+     28px of it returned to the part of the page that has to sell. */
+  --pad-hero:   144px;
   /* three tempos so the page can inhale and exhale */
   --pad-xl:184px; --pad-md:112px; --pad-sm:56px;
   /* page accent — overridden per channel below */
@@ -553,7 +579,13 @@ a{text-decoration:none;color:inherit;}
 .display{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-display);
   font-weight:600;letter-spacing:-.055em;line-height:.92;color:#fff;}
 h1{font-size:var(--fs-h1);font-family:'Space Grotesk',sans-serif;font-weight:600;
-  letter-spacing:-.045em;line-height:1.03;max-width:17ch;text-wrap:balance;}
+  /* 17ch was tighter than a display face needs. Measured across all 26 pages
+     with the webfonts loaded, 20ch costs one line on five of them and adds one
+     on none: cross-border 3->2, examples 4->3, industries 3->2, integrations
+     3->2, verified-ai 5->4. On verified-ai that is 171px, which is the
+     difference between opening with a button in view and without one. No page
+     overflows its column and nothing changes below 620px. */
+  letter-spacing:-.045em;line-height:1.03;max-width:20ch;text-wrap:balance;}
 h1 .quiet{color:var(--tx2);font-weight:500;}
 h1 .huge{display:block;font-size:1.42em;letter-spacing:-.06em;}
 .h2{max-width:21ch;}

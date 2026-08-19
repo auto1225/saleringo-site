@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=17.3">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=17.3">
-<link rel="stylesheet" href="../assets/css/crm.css?v=17.3">
+<link rel="stylesheet" href="../assets/css/site.css?v=18.3">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=18.3">
+<link rel="stylesheet" href="../assets/css/crm.css?v=18.3">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -76,7 +76,9 @@
      Same words, same size, given the full width: two lines, 158px. The
      headline gets the measure, and the proof becomes a shelf underneath
      rather than a column beside. */
-  .hero-inner{position:relative;z-index:2;padding:112px clamp(22px,4.6vw,56px) 0;
+  /* padding-top is set by --pad-hero in site.css, which carries !important
+     across all eleven hero class names — a value written here would be dead. */
+  .hero-inner{position:relative;z-index:2;padding:0 clamp(22px,4.6vw,56px) 0;
     display:block;}
   .heroband{max-width:none;}
   .heroshelf{margin-top:30px;display:grid;grid-template-columns:1.62fr 1fr;
@@ -402,7 +404,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v17.3">v17.3</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v18.3">v18.3</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -478,7 +480,7 @@
     <div class="head reveal">
       <div>
         <div class="secrule"><span class="eyebrow"><i></i>Three channels · one brain</span><span class="line"></span></div>
-        <h2 class="h2 onDark" style="font-size:var(--fs-h2);">Sell where your&nbsp;customers<br>already are.</h2>
+        <h2 class="h2 onDark" style="font-size:var(--fs-h2);">Sell where&nbsp;your customers<br>already are.</h2>
       </div>
       <p class="lead onDark" style="max-width:340px;">Same knowledge, same guardrails, same inbox — whether it arrives as a ring, a chat bubble, or a message.</p>
     </div>
@@ -682,7 +684,7 @@
   <div class="wrap">
     <div class="head reveal" style="max-width:700px;">
       <span class="eyebrow"><i></i>Twenty seconds, nothing to install</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 1 &middot; click anything below</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Ask it one&nbsp;question.<br>Watch six jobs get&nbsp;done.</h2>
+      <h2 class="h2 onDark" style="margin-top:20px;">Ask&nbsp;it one question.<br>Watch six jobs get&nbsp;done.</h2>
       <p class="lead onDark" style="margin-top:16px;">Take your customer's side of the conversation.
         Ask about a price, a slot, a booking. In the time it takes to answer, the pipeline moves, the
         calendar fills, the quote is written, the customer is on file, a task lands on someone’s desk
@@ -1153,7 +1155,7 @@
   <div class="wrap">
     <div class="head reveal" style="max-width:760px;">
       <div class="secrule"><span class="eyebrow"><i></i>One venue &middot; six weeks &middot; our own logs</span><span class="line"></span></div>
-      <h2 class="h2 onDark" style="margin-top:16px;">We ran it somewhere&nbsp;real,<br>and counted what&nbsp;happened.</h2>
+      <h2 class="h2 onDark" style="margin-top:16px;">We ran it&nbsp;somewhere real,<br>and counted what&nbsp;happened.</h2>
       <p class="lead onDark" style="margin-top:16px;">Everything else on this site is an argument. This is the one
         section with measurements in it &mdash; taken from a single venue running Saleringo between 1 July and
         13 August 2026. It is a small sample and we print the denominator beside every figure so you can judge
@@ -1862,7 +1864,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v17.3</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v18.3</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -1917,12 +1919,12 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=17.3"></script>
-<script src="../assets/js/canvas.js?v=17.3" defer></script>
-<script src="../assets/js/scenes.js?v=17.3" defer></script>
-<script src="../assets/js/play.js?v=17.3"></script>
-<script src="../assets/js/guide.js?v=17.3"></script>
-<script src="../assets/js/pricelab.js?v=17.3"></script>
+<script src="../assets/js/site.js?v=18.3"></script>
+<script src="../assets/js/canvas.js?v=18.3" defer></script>
+<script src="../assets/js/scenes.js?v=18.3" defer></script>
+<script src="../assets/js/play.js?v=18.3"></script>
+<script src="../assets/js/guide.js?v=18.3"></script>
+<script src="../assets/js/pricelab.js?v=18.3"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {
