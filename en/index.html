@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=12.1">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=12.1">
-<link rel="stylesheet" href="../assets/css/crm.css?v=12.1">
+<link rel="stylesheet" href="../assets/css/site.css?v=12.4">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=12.4">
+<link rel="stylesheet" href="../assets/css/crm.css?v=12.4">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -89,6 +89,36 @@
     margin-top:9px;padding-top:9px;border-top:2px solid #0B1B33;}
   .herowin .qmini .tot b{font-size:var(--fs-xs);} .herowin .qmini .tot span{
     font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;}
+  /* the night, in order: a time rail and what was said next to it */
+  .herowin .bar .closed{margin-left:auto;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--amber);}
+  .herowin .nightline{display:flex;flex-direction:column;gap:12px;padding:16px 16px 18px;}
+  .herowin .nl{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:start;}
+  .herowin .nl .t{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);
+    font-weight:600;color:var(--tx3);line-height:1.25;padding-top:11px;text-align:right;}
+  .herowin .nl .t i{display:block;font-style:normal;font-size:9px;letter-spacing:.08em;
+    color:var(--tx3);opacity:.75;}
+  .herowin .nl .bub{max-width:none;align-self:auto;margin:0;}
+  .herowin .nl .bub b{color:#fff;font-weight:700;}
+  /* The shared .bub separates speakers by 10% white against 4.3% — enough in a
+     scrolled transcript, not enough in a hero that has to be read in three
+     seconds. Teal is already the site's mark for "this is Saleringo talking":
+     the call waveform on the voice page uses the same two-colour key. */
+  .herowin .nl .bub.ai{background:rgba(23,189,189,.13);
+    border-color:rgba(23,189,189,.34);color:#DDF4F4;}
+  .herowin .nl .bub.ai b{color:#8FF0F0;}
+  .herowin .nl.us .t{color:var(--tx2);}
+  .herowin .nl.sr .t{color:var(--teal);}
+  .herowin .nl .t em{display:block;font-style:normal;font-size:9px;font-weight:800;
+    letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px;}
+  /* the morning: the only light surface in the hero, because it is the payoff */
+  .herowin .qmini.woke .qh2{display:block;}
+  .herowin .wokerow{display:flex;gap:10px;align-items:baseline;justify-content:space-between;
+    margin-top:9px;padding-top:9px;border-top:1px solid rgba(11,27,51,.12);
+    font-size:var(--fs-2xs);line-height:1.5;}
+  .herowin .wokerow:first-of-type{border-top:2px solid #0B1B33;}
+  .herowin .wokerow b{font-size:var(--fs-xs);font-weight:800;color:#0B1B33;flex:none;}
+  .herowin .wokerow span{color:#656D78;font-weight:600;text-align:right;}
   .heroprice{margin-top:16px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;}
   .heroprice b{color:#fff;} .heroprice i{font-style:normal;color:var(--tx3);}
   @media(max-width:1000px){.hero-inner{grid-template-columns:1fr;gap:32px;padding-left:32px;padding-right:32px;}
@@ -102,9 +132,15 @@
     .hero .ctas{order:4;} .heroprice{order:5;}
     .herowin{order:6;margin-top:4px;}
     .hero .specstrip{order:7;} .whofor{order:8;}
-    .herowin .pipeboard{grid-template-columns:1fr !important;}
-    .herowin .pipecol:nth-child(1){display:none;}
     .herowin .qmini{margin-top:10px;}
+    /* the rail costs 52px a phone does not have; the times go inline */
+    .herowin .nl{grid-template-columns:1fr;gap:4px;}
+    .herowin .nl .t{text-align:left;padding-top:0;display:flex;gap:5px;align-items:baseline;}
+    .herowin .nl .t i{display:inline;}
+    /* label and value side by side leaves the value two ragged right-aligned
+       lines at this width; stack them instead */
+    .herowin .wokerow{flex-direction:column;gap:2px;}
+    .herowin .wokerow span{text-align:left;}
   }
 
   /* ── CHANNEL BAND (tilted cards) ── */
@@ -295,7 +331,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v12.1">v12.1</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v12.4">v12.4</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -331,29 +367,41 @@
     </div>
 
     <div class="herowin">
+      <!-- One customer, one night, in order. The headline claims it books the
+           job; this shows the booking happening, which a pipeline screenshot
+           cannot. The price in the answer and the price on the estimate are the
+           same number for the same person, so the three panels are one story
+           rather than three samples. -->
       <div class="appwin">
-        <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span>
-          <span class="live">Live</span></div>
-        <div class="body" style="padding:14px;">
-          <div class="pipeboard" style="grid-template-columns:1fr 1fr;">
-            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
-              <div class="pcard"><div class="who"><span class="ini">RT</span><span class="nm">R. Tanaka</span></div>
-                <div class="mt">Crown replacement, asked about payment plans</div>
-                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">11:42 PM</span></div></div>
-            </div>
-            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Booked<span class="ct">4</span></h4>
-              <div class="pcard"><div class="who"><span class="ini">DK</span><span class="nm">D. Karlsson</span></div>
-                <div class="mt">Consultation — Thu 10:30</div>
-                <div class="ft"><span class="tag">Calendar</span><span class="chan">While you slept</span></div></div>
-            </div>
+        <div class="bar"><i></i><i></i><i></i>
+          <span class="tt">R. Tanaka &mdash; <b>Tuesday night</b></span>
+          <span class="closed">You were closed</span></div>
+        <div class="body nightline">
+          <div class="nl us">
+            <span class="t"><em>Customer</em>11:42<i>PM</i></span>
+            <div class="bub user">Do you do crown replacements? And is there any
+              way to pay it off monthly?</div>
+          </div>
+          <div class="nl sr">
+            <span class="t"><em>Saleringo</em>+38<i>SEC</i></span>
+            <div class="bub ai">Yes &mdash; a crown is <b>$4,280</b>, and we split that
+              over three months. <b>Thursday 10:30</b> is open. Shall I hold it for you?</div>
+          </div>
+          <div class="nl us">
+            <span class="t"><em>Customer</em>11:47<i>PM</i></span>
+            <div class="bub user">Please do.</div>
           </div>
         </div>
       </div>
-      <div class="qmini">
-        <div class="qh2"><span>Estimate #2461</span><span>sent 4 min after the call</span></div>
-        <div class="tot"><b>Total, from your own price list</b><span>$4,280</span></div>
+
+      <div class="qmini woke">
+        <div class="qh2"><span>7:04 AM &mdash; what you woke up to</span></div>
+        <div class="wokerow"><b>Booked</b><span>Thu 10:30, in your calendar</span></div>
+        <div class="wokerow"><b>Estimate #2461</b><span>$4,280, from your own price list</span></div>
+        <div class="wokerow"><b>Customer filed</b><span>Thread, quote and next step attached</span></div>
       </div>
-      <p class="photocap" style="margin-top:10px;">Product illustration with sample data.</p>
+      <p class="photocap" style="margin-top:10px;">Nobody was awake for any of it.
+        Illustration with sample data &mdash; the sequence is the claim, not the figures.</p>
     </div>
   </div>
 </header>
@@ -1684,7 +1732,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v12.1</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v12.4</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -1739,12 +1787,12 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=12.1"></script>
-<script src="../assets/js/canvas.js?v=12.1" defer></script>
-<script src="../assets/js/scenes.js?v=12.1" defer></script>
-<script src="../assets/js/play.js?v=12.1"></script>
-<script src="../assets/js/guide.js?v=12.1"></script>
-<script src="../assets/js/pricelab.js?v=12.1"></script>
+<script src="../assets/js/site.js?v=12.4"></script>
+<script src="../assets/js/canvas.js?v=12.4" defer></script>
+<script src="../assets/js/scenes.js?v=12.4" defer></script>
+<script src="../assets/js/play.js?v=12.4"></script>
+<script src="../assets/js/guide.js?v=12.4"></script>
+<script src="../assets/js/pricelab.js?v=12.4"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {
