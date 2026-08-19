@@ -121,9 +121,15 @@
      Point-sampling missed it: the caption is 420x64 and the hero price is a
      16px-tall strip, so five sample points can straddle it and report clear.
      Rectangle intersection against real text elements is deterministic. */
-  function overlapsText(el) {
+  function overlapsText(el) { return overlapArea(el) > 0; }
+
+  /* How much of a reader's text this floater covers, in square pixels. A
+     boolean was enough while there were two placements to choose between; with
+     three, "which is least bad" needs a number. */
+  function overlapArea(el) {
     var b = el.getBoundingClientRect();
-    if (!b.width || !b.height) return false;
+    if (!b.width || !b.height) return 0;
+    var area = 0;
     var nodes = document.querySelectorAll('h1,h2,h3,h4,p,li,span,b,a,button,label');
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
@@ -138,9 +144,11 @@
       var r = n.getBoundingClientRect();
       if (!r.width || !r.height) continue;
       if (r.bottom < 0 || r.top > window.innerHeight) continue;
-      if (r.left < b.right && r.right > b.left && r.top < b.bottom && r.bottom > b.top) return true;
+      var ox = Math.min(r.right, b.right) - Math.max(r.left, b.left);
+      var oy = Math.min(r.bottom, b.bottom) - Math.max(r.top, b.top);
+      if (ox > 0 && oy > 0) area += ox * oy;
     }
-    return false;
+    return area;
   }
 
   function placeRing() {
@@ -151,23 +159,68 @@
     ring.style.width = Math.round(r.width + 16) + 'px';
     ring.style.height = Math.round(r.height + 16) + 'px';
 
-    /* Put the caption where it does not land on anything. "Is there room below"
-       was the wrong test — on the hero there was plenty of room below and the
-       price line was sitting in it. Test for actual overlap with real text. */
-    ring.classList.remove('cue-above');
-    if (overlapsText(subEl)) {
-      ring.classList.add('cue-above');
-      if (overlapsText(subEl)) ring.classList.remove('cue-above');   /* worse — put it back */
-    }
+    /* Put the hint where it does not land on anything. Both floaters count:
+       the cue is the one that was covering the hero's sub-headline, and only
+       the caption was ever being tested. Three placements are tried in order
+       of preference and the first clear one wins; if none is clear, the one
+       that covers the least text does. */
+    var sideLeft = (r.left + r.width / 2) > window.innerWidth / 2;
 
-    /* and keep it inside the viewport horizontally — it was rendering at x=-6 */
-    subEl.style.left = '50%';
-    subEl.style.transform = 'translate(-50%,100%)';
-    var sr = subEl.getBoundingClientRect();
-    var over = 0;
-    if (sr.left < 12) over = 12 - sr.left;
-    else if (sr.right > window.innerWidth - 12) over = (window.innerWidth - 12) - sr.right;
-    if (over) subEl.style.transform = 'translate(calc(-50% + ' + Math.round(over) + 'px),100%)';
+    /* "Beside the control" has to mean beside the control CLUSTER. The hero's
+       two buttons sit on one row, so anchoring to the target's own edge put the
+       cue straight on top of the button next to it and the side placement lost
+       to one that covered the price line instead. Clear the whole row. */
+    var side = 0, row = ringTarget.parentElement;
+    if (row) Array.prototype.forEach.call(row.children, function (c) {
+      var cr = c.getBoundingClientRect();
+      if (!cr.width || cr.top >= r.bottom || cr.bottom <= r.top) return;
+      side = Math.max(side, sideLeft ? (r.left - cr.left) : (cr.right - r.right));
+    });
+    ring.style.setProperty('--fr-side', Math.round(Math.max(0, side)) + 'px');
+
+    var best = null, bestCost = Infinity;
+    ring.classList.remove('cue-hide');
+    for (var pi = 0; pi < 3; pi++) {
+      ring.classList.toggle('cue-above', pi === 1);
+      ring.classList.toggle('cue-side',  pi === 2);
+      ring.classList.toggle('side-left', pi === 2 && sideLeft);
+      nudge();
+      var cost = overlapArea(cueEl) + overlapArea(subEl) + offscreen(cueEl) + offscreen(subEl);
+      if (cost === 0) { best = pi; bestCost = 0; break; }
+      if (best === null || cost < bestCost) { best = pi; bestCost = cost; }
+    }
+    ring.classList.toggle('cue-above', best === 1);
+    ring.classList.toggle('cue-side',  best === 2);
+    ring.classList.toggle('side-left', best === 2 && sideLeft);
+    nudge();
+    /* A 20x20 nick on a descender is not worth suppressing a hint over; a
+       placement that lies across a sentence is. */
+    ring.classList.toggle('cue-hide', bestCost > 400);
+  }
+
+  /* Anything pushed past the edge is as unreadable as anything covered, so it
+     is priced the same way and competes in the same comparison. */
+  function offscreen(el) {
+    var r = el.getBoundingClientRect();
+    if (!r.width || !r.height) return 0;
+    var dx = Math.max(0, 12 - r.left) + Math.max(0, r.right - (window.innerWidth - 12));
+    return dx * Math.max(1, r.height);
+  }
+
+  /* Keep both floaters inside the viewport. This writes a custom property that
+     the stylesheet folds into its own transform, so it no longer overrides the
+     placement class it is supposed to cooperate with. */
+  function nudge() {
+    [cueEl, subEl].forEach(function (el) {
+      if (!el) return;
+      el.style.setProperty('--fr-dx', '0px');
+      var r = el.getBoundingClientRect();
+      if (!r.width) return;
+      var d = 0;
+      if (r.left < 12) d = 12 - r.left;
+      else if (r.right > window.innerWidth - 12) d = (window.innerWidth - 12) - r.right;
+      if (d) el.style.setProperty('--fr-dx', Math.round(d) + 'px');
+    });
   }
 
   function clearRing() {

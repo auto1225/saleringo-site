@@ -1566,12 +1566,44 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
 .whophotos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 @media (max-width:900px){.whophotos{grid-template-columns:1fr;gap:18px;}}
 
-/* the caption flips above the ring when there is no room below — on the hero it
-   was landing on the price line, which is the sentence a buyer most needs */
-.focusring.cue-above .fr-sub{bottom:auto;top:-16px;transform:translate(-50%,-100%);}
-.focusring.cue-above .fr-cue{top:auto;bottom:-14px;transform:translate(-50%,100%);}
+/* ── where the hint goes ──────────────────────────────────────────────────
+   Three placements, not two. The hero has a paragraph above the buttons and
+   the price line below them, so "flip it to the other side" had nowhere to
+   land: measured at 1440x900 the cue sat on top of the sub-headline. The copy
+   column is narrow relative to the band, so there is always room beside it.
+
+   The horizontal clamp is a variable rather than an inline `transform`.
+   It used to be written straight onto style.transform, which is an inline
+   declaration and therefore beat .cue-above's transform — the flip set the
+   right `top` and then had its translate overwritten, so the class silently
+   did nothing. */
+.fr-cue,.fr-sub{--fr-dx:0px;}
+.fr-cue{transform:translate(calc(-50% + var(--fr-dx)),-100%);}
+.fr-sub{transform:translate(calc(-50% + var(--fr-dx)),100%);}
+
+.focusring.cue-above .fr-sub{bottom:auto;top:-16px;
+  transform:translate(calc(-50% + var(--fr-dx)),-100%);}
+.focusring.cue-above .fr-cue{top:auto;bottom:-14px;
+  transform:translate(calc(-50% + var(--fr-dx)),100%);}
 .focusring.cue-above .fr-cue::after{top:-6px;bottom:auto;
   border-top-color:transparent;border-bottom-color:var(--teal);border-top:0;border-bottom-width:6px;}
+
+/* beside the control: the pointer turns to face it */
+.focusring.cue-side .fr-cue{left:auto;right:calc(-16px - var(--fr-side,0px));
+  top:50%;bottom:auto;transform:translate(calc(100% + var(--fr-dx)),-50%);}
+.focusring.cue-side .fr-cue::after{left:-6px;right:auto;bottom:auto;top:50%;
+  transform:translateY(-50%);
+  border:6px solid transparent;border-right-color:var(--teal);border-left:0;}
+.focusring.cue-side .fr-sub{left:auto;right:calc(-16px - var(--fr-side,0px));
+  top:calc(50% + 22px);bottom:auto;
+  transform:translate(calc(100% + var(--fr-dx)),0);text-align:left;max-width:min(46vw,360px);}
+/* mirrored when the control sits in the right half of the screen */
+.focusring.cue-side.side-left .fr-cue{right:auto;left:calc(-16px - var(--fr-side,0px));
+  transform:translate(calc(-100% + var(--fr-dx)),-50%);}
+.focusring.cue-side.side-left .fr-cue::after{left:auto;right:-6px;
+  border:6px solid transparent;border-left-color:var(--teal);border-right:0;}
+.focusring.cue-side.side-left .fr-sub{right:auto;left:calc(-16px - var(--fr-side,0px));
+  transform:translate(calc(-100% + var(--fr-dx)),0);text-align:right;}
 /* a hint you cannot switch off is an obstruction, not a guide */
 .fr-x{position:absolute;right:-13px;top:-13px;width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer;
@@ -1807,3 +1839,9 @@ body:has(.stickycta) .totop{bottom:calc(22px + var(--stickycta-h,0px));}
 @media (max-width:620px){
   body:has(.stickycta) .totop{bottom:calc(14px + var(--stickycta-h,0px));}
 }
+
+/* A hint that cannot be placed without sitting on the reader's own words is an
+   obstruction, not a hint. When all three placements collide — which happens on
+   a phone, where the copy fills the column — the ring still points at the
+   control and the docked guide bar still names the step. */
+.focusring.cue-hide .fr-cue,.focusring.cue-hide .fr-sub{display:none;}

@@ -425,4 +425,117 @@
       }
     };
   });
+
+  /* ── 5 · the page they are already reading ────────────────────────────────
+     The web-chat page argues that one script tag turns a page a visitor is
+     already on into a conversation. Its hero sat on flat white, which said
+     nothing. This draws the thing the sentence is about: the faint wireframe
+     of a site — masthead, hero block, columns of text, an image well — with
+     the widget arriving in the corner. It is a drawing of where the product
+     lives, not a chart, so it carries no numbers and claims none. Kept at very
+     low contrast: it is a ground, and the copy on top of it has to win. */
+  window.SR_SCENE('sitewire', function (env) {
+    var K = env.ink;
+    var seed = 21;
+    function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+    var lines = [];
+    for (var i = 0; i < 30; i++) lines.push(0.40 + rnd() * 0.60);
+
+    return {
+      settleSeconds: 3.4,
+      frame: function (c, W, H, t) {
+        var p = Math.min(1, t / 2.2);
+        var light = K.onLight;
+        var ink = light ? 'rgba(11,27,51,' : 'rgba(242,246,251,';
+
+        /* One page, drawn as a page: a card with an edge, set off to the side
+           and running past the bottom so it reads as a browser window sitting
+           behind this one rather than as marks under the headline. */
+        /* Big enough to read as a page and offset up-left of the code window,
+           so its masthead and left edge stay visible behind it rather than
+           being covered entirely. */
+        var pw = Math.min(W * 0.62, 820);
+        var ph = pw * 0.80;
+        var x0 = W * 0.40;
+        var y0 = H * 0.14;
+        var u = pw / 26;
+
+        c.save();
+        c.globalAlpha = p;
+
+        /* the page itself */
+        /* a real card: it needs an edge and a shadow or it is just a wash */
+        c.shadowColor = light ? 'rgba(11,27,51,.10)' : 'rgba(0,0,0,.5)';
+        c.shadowBlur = 40; c.shadowOffsetY = 18;
+        c.fillStyle = light ? 'rgba(255,255,255,.92)' : 'rgba(255,255,255,.04)';
+        c.strokeStyle = ink + (light ? '0.14' : '0.11') + ')';
+        c.lineWidth = 1;
+        c.beginPath();
+        if (c.roundRect) c.roundRect(x0, y0, pw, ph, 16); else c.rect(x0, y0, pw, ph);
+        c.fill();
+        c.shadowColor = 'transparent'; c.shadowBlur = 0; c.shadowOffsetY = 0;
+        c.stroke();
+
+        /* browser chrome */
+        c.fillStyle = ink + '0.05)';
+        c.beginPath();
+        if (c.roundRect) c.roundRect(x0, y0, pw, u * 1.5, [16, 16, 0, 0]);
+        else c.rect(x0, y0, pw, u * 1.5);
+        c.fill();
+        for (var k = 0; k < 3; k++) {
+          c.fillStyle = ink + '0.18)';
+          c.beginPath(); c.arc(x0 + u * (0.8 + k * 0.5), y0 + u * 0.75, 2.6, 0, Math.PI * 2); c.fill();
+        }
+        c.fillStyle = ink + '0.09)';
+        c.beginPath();
+        if (c.roundRect) c.roundRect(x0 + u * 3, y0 + u * 0.4, pw * 0.42, u * 0.7, 5);
+        else c.rect(x0 + u * 3, y0 + u * 0.4, pw * 0.42, u * 0.7);
+        c.fill();
+
+        function bar(x, y, w, h, a, r) {
+          c.fillStyle = ink + a + ')';
+          c.beginPath();
+          if (c.roundRect) c.roundRect(x, y, w, h, r === undefined ? 3 : r);
+          else c.rect(x, y, w, h);
+          c.fill();
+        }
+
+        /* the imagined page's own hero */
+        bar(x0 + u * 1.4, y0 + u * 3.0, pw * 0.40, u * 0.62, 0.16, 4);
+        bar(x0 + u * 1.4, y0 + u * 4.0, pw * 0.31, u * 0.62, 0.16, 4);
+        bar(x0 + u * 1.4, y0 + u * 5.3, pw * 0.26, u * 0.28, 0.09, 3);
+        bar(x0 + u * 1.4, y0 + u * 5.9, pw * 0.21, u * 0.28, 0.09, 3);
+        bar(x0 + u * 1.4, y0 + u * 7.0, u * 4.0, u * 0.9, 0.15, 8);
+        bar(x0 + pw * 0.60, y0 + u * 3.0, pw * 0.34, u * 5.0, 0.08, 10);
+
+        /* body columns */
+        for (var col = 0; col < 2; col++) {
+          for (var L = 0; L < 12; L++) {
+            bar(x0 + u * 1.4 + col * (pw * 0.46),
+                y0 + u * 9.6 + L * u * 0.62,
+                (pw * 0.40) * lines[col * 12 + L], u * 0.22, 0.08, 3);
+          }
+        }
+
+        /* the widget, arriving where it actually sits */
+        var q = Math.max(0, Math.min(1, (t - 1.3) / 0.9));
+        if (q > 0) {
+          var bw = u * 4.6, bh = u * 2.0;
+          var bx = x0 + pw - u * 1.3 - bw, by = y0 + ph - u * 1.3 - bh + (1 - q) * 12;
+          c.globalAlpha = p * q * 0.26; c.fillStyle = K.accent;
+          c.beginPath();
+          if (c.roundRect) c.roundRect(bx, by, bw, bh, 12); else c.rect(bx, by, bw, bh);
+          c.fill();
+          c.globalAlpha = p * q * 0.75; c.strokeStyle = K.accent; c.lineWidth = 1.4; c.stroke();
+          c.globalAlpha = p * q * 0.6; c.fillStyle = K.accent;
+          for (var d2 = 0; d2 < 3; d2++) {
+            c.beginPath();
+            c.arc(bx + bw / 2 - 9 + d2 * 9, by + bh / 2, 2.4, 0, Math.PI * 2); c.fill();
+          }
+        }
+        c.restore();
+        return t < 3.4;
+      }
+    };
+  });
 })();

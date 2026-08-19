@@ -472,3 +472,30 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .scene-frame:has(.caption) .scene-overlay.bl{bottom:calc(18px + 4.4em);}
 /* 2.6em cleared a one-line caption; at 375px the caption wraps to two and
    the panel still sat 50px into it. */
+
+/* ── the docked bar on a phone ───────────────────────────────────
+   The guard above stacks the rail, the message and the button into a column:
+   165px of an 812px screen, permanently, on every page. Measured across the
+   site, 19 hero buttons landed inside that band — including primary ones, so
+   a phone visitor arrived at a page with nothing to press in view.
+
+   One row instead: step dots on the left, button on the right, message
+   dropped because the dots already say where the reader is. This has to sit
+   after the 820px guard, not in site.css — that sheet loads first and loses. */
+@media (max-width:620px){
+  .stickycta{padding-top:10px;padding-bottom:10px;}
+  .stickycta .wrap{flex-direction:row;align-items:center;flex-wrap:nowrap;gap:10px;}
+  .stickycta .msg{display:none;}
+  .stickycta .guiderail{flex:1 1 auto;min-width:0;overflow-x:auto;
+    scrollbar-width:none;-ms-overflow-style:none;}
+  .stickycta .guiderail::-webkit-scrollbar{display:none;}
+  .stickycta .btn{margin-left:auto;flex:0 0 auto;white-space:nowrap;}
+  /* the row is compact now, so the step targets can keep the 44px the rest of
+     the site holds to — they were 37px once the labels were dropped */
+  .stickycta .guiderail a{min-height:44px;display:flex;align-items:center;}
+  /* no rail on this page — the button is the whole row */
+  .stickycta:not(.hasguide) .btn{flex:1 1 auto;justify-content:center;}
+}
+
+/* same floor on wide screens, where the rail carries its labels */
+.stickycta .guiderail a{min-height:44px;display:flex;align-items:center;}
