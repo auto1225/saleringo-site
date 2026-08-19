@@ -154,7 +154,7 @@
 .baCol li{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:500;display:flex;gap:10px;}
 .baCol li i{flex:none;font-style:normal;font-weight:800;}
 .baCol.before li i{color:#E58C81;} .baCol.after li i{color:var(--teal);}
-.baArrow{align-self:center;color:var(--tx3);font-size:var(--fs-h3);}
+.baArrow{align-self:center;color:var(--tx3);font-size:var(--fs-h3);text-align:center;}
 @media (max-width:900px){.baGrid{grid-template-columns:1fr;}.baArrow{transform:rotate(90deg);}}
 
 /* ROI calculator shell */
@@ -398,7 +398,10 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
    block inherited the dark theme's #FFF and rendered white on a #F6F8FA
    section — the whole "first week, honestly" story was invisible. Four equal
    columns that fold to two and then one, with the day marker as the anchor. */
-.tl{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:stretch;}
+/* Renamed from .tl: that also matched .scene-overlay.tl, the top-left chip
+   used on ten pages, and turned each of them into a four-column grid 44px
+   below where it belonged. */
+.tline{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:stretch;}
 .tlstep{display:flex;flex-direction:column;background:#fff;border:1px solid var(--l-hair);
   border-radius:18px;padding:24px 22px 22px;box-shadow:0 16px 40px rgba(11,27,51,.05);
   position:relative;overflow:hidden;}
@@ -460,3 +463,12 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
   margin-right:7px;vertical-align:-1px;}
 .wavelegend .c{background:rgba(242,246,251,.55);}
 .wavelegend .a{background:var(--teal);}
+
+/* A bottom-right overlay panel and the frame's own caption both sit at the
+   foot of the frame, and the panel is painted above it: 298px of the caption
+   "One window still lit at 2:47 AM…" was behind the panel. The panel lifts
+   clear of the caption line. */
+.scene-frame:has(.caption) .scene-overlay.br,
+.scene-frame:has(.caption) .scene-overlay.bl{bottom:calc(18px + 4.4em);}
+/* 2.6em cleared a one-line caption; at 375px the caption wraps to two and
+   the panel still sat 50px into it. */

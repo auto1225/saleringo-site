@@ -785,8 +785,11 @@ section,header{overflow-x:clip;}
     padding-top:24px !important;
   }
   .photohero,.phero,.gshero,.inthero,.exhero,.dochero{padding-top:104px !important;}
-  /* the homepage alone earns a tighter fold: its product surface must clear 812px */
-  .hero.photohero{padding-top:68px !important;}
+  /* This was tuned for the home page, but every hero header carries both
+     classes, so it applied to eight pages at once and put the first line
+     of six of them at y=92 with the fixed nav ending at 93. 96px plus the
+     inner 24px starts content at 120 — clear of the nav, still tight. */
+  .hero.photohero{padding-top:96px !important;}
   .hero .sub{margin-top:14px;} .hero .ctas{margin-top:20px;} .heroprice{margin-top:12px;}
   .hero-panel{padding:22px 18px;}
 }
@@ -1647,8 +1650,11 @@ html .hero-panel.lt :focus-visible{
     padding-top:24px !important;
   }
   .photohero,.phero,.gshero,.inthero,.exhero,.dochero{padding-top:104px !important;}
-  /* the homepage alone earns a tighter fold: its product surface must clear 812px */
-  .hero.photohero{padding-top:68px !important;}
+  /* This was tuned for the home page, but every hero header carries both
+     classes, so it applied to eight pages at once and put the first line
+     of six of them at y=92 with the fixed nav ending at 93. 96px plus the
+     inner 24px starts content at 120 — clear of the nav, still tight. */
+  .hero.photohero{padding-top:96px !important;}
 }
 
 
@@ -1665,3 +1671,139 @@ body:has(.stickycta.show){padding-bottom:var(--stickycta-h,0px);}
    .show never fired on these pages, so the guide disappeared entirely on
    phones. The bar stays up; the heroes that put their buttons underneath it
    are shortened instead. */
+
+/* ── measured corrections from a full-site visual pass ─────────────────────
+   Every number below was measured at 375x812 and 1440x900 before it was
+   changed; each one is a control a reader has to hit or a word they have to
+   read, so none of them is cosmetic. */
+
+/* The header call-to-action wrapped to two lines on every page at 375px:
+   "Get my / plan" plus the arrow chip inside a 134x50 box. */
+.nav .btn{white-space:nowrap;}
+
+/* The burger is the only way into the menu on a phone and measured 38x32 —
+   twelve pixels under the 44px minimum, in both dimensions. */
+.nav .burger{min-width:44px;min-height:44px;align-items:center;justify-content:center;}
+
+/* Full-width plan buttons measured 41.4px tall: wide, but still short of a
+   comfortable target. */
+.plan .cta{min-height:44px;align-items:center;}
+
+/* Eyebrow pills wrapped leaving one word alone and centred on a second line —
+   "…dealing / with", "…selling / happens", "…no / vaporware". Headings on this
+   site already balance; these did not. */
+.eyebrow{text-wrap:balance;}
+
+/* Below 900px the before/after arrow is rotated a quarter turn while it is
+   still a full-width grid item: a 339x29 box paints as 29x339 and bled about
+   155px into the card above and the card below, dropping the glyph on top of
+   the sentence inside them. Rotating a square instead keeps the paint inside
+   the layout. */
+@media (max-width:900px){
+  .baArrow{width:44px;height:44px;margin-inline:auto;display:flex;
+    align-items:center;justify-content:center;}
+}
+
+/* Legal pages ran 113-119 characters per line at 1440. The paragraphs were
+   capped and the list items were not, so the two disagreed inside the same
+   section. */
+.dsec p,.dsec li,.dsec dd{max-width:68ch;}
+
+/* The knowledge-base tab strip needs 370px and its frame is 338px wide on a
+   phone, with overflow hidden: the fifth tab was rendered completely off the
+   edge. It scrolls now rather than disappearing. */
+@media (max-width:900px){
+  .ktabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .ktabs::-webkit-scrollbar{display:none;}
+  .ktabs > span{flex:none;}
+}
+
+/* ── content that was being cut off ────────────────────────────────────────
+   Each of these was measured: scrollHeight against clientHeight, or a painted
+   rect against the box that was supposed to contain it. */
+
+/* .bento fixes its row height, so any card whose content is taller either
+   spills past its own rounded border onto the section behind it, or — where
+   the card clips — simply loses the rest. Measured on platform: cards of
+   190px holding 198, 219, 270 and 368px of content; the "Boutique stays" card
+   lost 155px, every field chip and the whole "Automates:" line, leaving a
+   photo and an orphan title. Rows size to content once the grid is a single
+   column, where a fixed height buys nothing anyway. */
+@media (max-width:900px){
+  .bento{grid-auto-rows:auto;}
+  .bento > *{min-height:190px;}
+}
+/* the same overflow at full width, where the row height is 200px */
+.bento > *{overflow:visible;}
+.bento > * > *{min-width:0;}
+
+/* The "try it" badge sits after a section eyebrow in a nowrap row and was
+   pushed off the right edge — 197px of it gone on demo, nearly half the
+   badge. It wraps to its own line on narrow screens instead. */
+@media (max-width:768px){
+  .secrule{flex-wrap:wrap;}
+}
+
+/* The eyebrow's dot is 5px and was allowed to shrink; inside a squeezed pill
+   it rendered 1.6px wide and read as a stray apostrophe. */
+.eyebrow i{flex:none;}
+
+/* Range inputs painted 4px tall — the whole control, not the track. The thumb
+   is what you grab, so the input itself needs a real target height. */
+input[type=range]{min-height:44px;}
+
+/* The nav is a fixed-width island: logo 107 + button 144 + burger 44 + two
+   30px gaps + 35px of padding needs 390px, and the phone it has to fit on is
+   375. It used to squeeze by letting the button wrap to two lines and the
+   burger sit at 38px, both of which were the defects fixed above. The room
+   comes out of the gaps and the padding instead. */
+@media (max-width:620px){
+  .navwrap .nav{gap:12px;padding-left:14px;padding-right:8px;}
+  .nav .btn{padding-left:15px;}
+}
+
+/* The lead-form submit measured 37px at desktop on nine pages: the mobile
+   block gave .btn a minimum height and the base rule never did. */
+.btn{min-height:44px;}
+
+/* .bento fixes its row height at 200px on the desktop grid too, and a card
+   whose content is 20px taller printed that last line below its own rounded
+   border, on the section behind it. minmax keeps the bento rhythm and lets a
+   card grow rather than spill. */
+.bento{grid-auto-rows:minmax(200px,auto);}
+
+/* The back-to-top button stepped aside for the sticky bar only when the bar
+   carried .show, and a bar holding the guide never gets it — so on a phone the
+   42px button sat on the bar's own call to action with a 37x31 overlap and
+   took the tap. */
+body:has(.stickycta.hasguide) .totop{bottom:calc(22px + var(--stickycta-h,124px));}
+@media (max-width:620px){
+  body:has(.stickycta.hasguide) .totop{bottom:calc(14px + var(--stickycta-h,124px));}
+}
+
+/* Controls that were still under the touch minimum: the header phone link
+   (17-19px), FAQ disclosure rows (21px) and inline arrow links (25-27px). */
+/* Reach the target height with padding, not by setting display: these
+   elements are hidden with display:none at some widths and forcing a display
+   value brought the header phone link back on a phone, which pushed the nav
+   8px past the screen. */
+.nav .telcta{padding-block:calc((44px - 1.2em) / 2);}
+/* the disclosure rows are .faq summary, not .faq details summary. They are
+   already display:flex, so a minimum height is enough and cannot resurrect
+   anything a display:none was hiding. */
+.faq summary,details.voicefold > summary{min-height:44px;align-items:center;}
+.linkcta{padding-block:calc((44px - 1.3em) / 2);}
+
+/* The submit sat 11px shorter than the inputs beside it in the same form. */
+.eaform .btn{min-height:48px;}
+
+/* A caption chip is a label, not a panel: unconstrained it grew to 84-98% of
+   the illustration it labels and buried the artwork's own text. */
+.scene-overlay{max-width:min(62%,340px);}
+@media (max-width:620px){.scene-overlay{max-width:100%;}}
+
+/* Any page with a sticky bar, guide or not: the back-to-top button clears it. */
+body:has(.stickycta) .totop{bottom:calc(22px + var(--stickycta-h,0px));}
+@media (max-width:620px){
+  body:has(.stickycta) .totop{bottom:calc(14px + var(--stickycta-h,0px));}
+}

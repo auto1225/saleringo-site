@@ -105,7 +105,14 @@ window.SR_CONFIG = window.SR_CONFIG || {
      underneath the bar at first paint. */
   function stickyctaHeight() {
     var bar = document.querySelector('.stickycta');
-    var h = bar ? Math.round(bar.getBoundingClientRect().height) : 0;
+    var h = 0;
+    if (bar) {
+      var r = bar.getBoundingClientRect();
+      /* the bar slides out of view rather than unmounting, so a bar that is
+         translated past the bottom edge reserves nothing and the back-to-top
+         button should sit at its normal height */
+      h = r.top < window.innerHeight ? Math.round(r.height) : 0;
+    }
     document.documentElement.style.setProperty('--stickycta-h', h + 'px');
   }
   stickyctaHeight();
@@ -117,6 +124,12 @@ window.SR_CONFIG = window.SR_CONFIG || {
   /* the guide rail is inserted after this file runs */
   setTimeout(stickyctaHeight, 0);
   setTimeout(stickyctaHeight, 400);
+  var _bar = document.querySelector('.stickycta');
+  if (_bar) _bar.addEventListener('transitionend', stickyctaHeight);
+  if (window.MutationObserver && _bar) {
+    new MutationObserver(stickyctaHeight)
+      .observe(_bar, { attributes: true, attributeFilter: ['class'] });
+  }
 
   /* ── say what the button does, before it is pressed ──
      With no formEndpoint provisioned the submit handler does not post: it

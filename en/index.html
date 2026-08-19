@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=14.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=14.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=14.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=15.6">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=15.6">
+<link rel="stylesheet" href="../assets/css/crm.css?v=15.6">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -147,7 +147,10 @@
   @media(max-width:620px){
     /* On a phone the booked job is worth more than a second button, so it
      comes up past it and the pipeline stacks to one column. */
-    .hero .hcopy{display:contents;}
+    /* display:contents discards the panel's own scrim, blur, radius and
+       border, and the lead paragraph then sat straight on the city photo.
+       Keep the box; order its children instead. */
+    .hero .hcopy{display:flex;flex-direction:column;}
     .hero-inner{gap:20px;padding-left:22px;padding-right:22px;}
     .hero .eyebrow{order:1;} .hero h1{order:2;} .hero .sub{order:3;}
     .hero .ctas{order:4;} .heroprice{order:5;}
@@ -352,7 +355,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v14.0">v14.0</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v15.6">v15.6</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -1756,7 +1759,7 @@
 <section class="closer bg-spot" id="closer">
   <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="reveal">Tonight, someone will&nbsp;call.<br>Let's make sure <em>someone answers.</em></h2>
+    <h2 class="reveal">Tonight, someone will&nbsp;call.<br>Let's make&nbsp;sure<br><em>someone&nbsp;answers.</em></h2>
     <p class="lead onDark reveal">Join the founding cohort — 50% off for 3 months, onboarding with a human, answers your customers can trust.</p>
     <div class="ctas reveal">
       <a class="btn btn-teal" href="#early-access">Get the plan for my trade<span class="cir">↗</span></a>
@@ -1767,7 +1770,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v14.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v15.6</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -1822,12 +1825,12 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=14.0"></script>
-<script src="../assets/js/canvas.js?v=14.0" defer></script>
-<script src="../assets/js/scenes.js?v=14.0" defer></script>
-<script src="../assets/js/play.js?v=14.0"></script>
-<script src="../assets/js/guide.js?v=14.0"></script>
-<script src="../assets/js/pricelab.js?v=14.0"></script>
+<script src="../assets/js/site.js?v=15.6"></script>
+<script src="../assets/js/canvas.js?v=15.6" defer></script>
+<script src="../assets/js/scenes.js?v=15.6" defer></script>
+<script src="../assets/js/play.js?v=15.6"></script>
+<script src="../assets/js/guide.js?v=15.6"></script>
+<script src="../assets/js/pricelab.js?v=15.6"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {
