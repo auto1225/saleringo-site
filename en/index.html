@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/crm.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/site.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/crm.css?v=11.7">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -295,7 +295,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.7">v11.7</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -336,12 +336,12 @@
           <span class="live">Live</span></div>
         <div class="body" style="padding:14px;">
           <div class="pipeboard" style="grid-template-columns:1fr 1fr;">
-            <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
+            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
               <div class="pcard"><div class="who"><span class="ini">RT</span><span class="nm">R. Tanaka</span></div>
                 <div class="mt">Crown replacement, asked about payment plans</div>
                 <div class="ft"><span class="tag ai">AI logged</span><span class="chan">11:42 PM</span></div></div>
             </div>
-            <div class="pipecol s2"><h4><span class="sw"></span>Booked<span class="ct">4</span></h4>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Booked<span class="ct">4</span></h4>
               <div class="pcard"><div class="who"><span class="ini">DK</span><span class="nm">D. Karlsson</span></div>
                 <div class="mt">Consultation — Thu 10:30</div>
                 <div class="ft"><span class="tag">Calendar</span><span class="chan">While you slept</span></div></div>
@@ -392,7 +392,7 @@
 
     <div class="baGrid reveal">
       <div class="baCol before">
-        <h4>Tonight, without Saleringo</h4>
+        <h4 role="heading" aria-level="3">Tonight, without Saleringo</h4>
         <ul>
           <li><i>✕</i>Voicemail answers. Most callers never leave one.</li>
           <li><i>✕</i>They dial the next business on the search results.</li>
@@ -616,7 +616,7 @@
 
     <div class="labwrap reveal">
       <div class="labpane">
-        <h4>1 &middot; Your price list</h4>
+        <h4 role="heading" aria-level="3">1 &middot; Your price list</h4>
         <div class="labsamples" role="group" aria-label="Load a sample price list">
           <button class="chip" type="button" data-lab-sample="dental" aria-pressed="false">Dental</button>
           <button class="chip" type="button" data-lab-sample="home" aria-pressed="false">Home Services</button>
@@ -625,7 +625,7 @@
         </div>
         <label class="sronly" for="labinput">Your price list, one item and one price per line</label>
         <textarea id="labinput" data-lab-input spellcheck="false"
-          placeholder="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work."></textarea>
+          placeholder="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work." aria-label="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work."></textarea>
         <div class="lablist" data-lab-list aria-live="polite"></div>
       </div>
 
@@ -634,7 +634,7 @@
         <div class="labask">
           <label class="sronly" for="labask">The question a customer would ask</label>
           <input id="labask" data-lab-ask type="text" autocomplete="off"
-                 placeholder="How much is a crown?">
+                 placeholder="How much is a crown?" aria-label="How much is a crown?">
           <button type="button" data-lab-go>Ask&nbsp;it</button>
         </div>
         <div class="labout" data-lab-out>
@@ -755,7 +755,7 @@
       <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
       <div class="body">
         <div class="pipeboard">
-          <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
+          <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
             <div class="pcard"><div class="who"><span class="ini">RT</span><span class="nm">R. Tanaka</span></div>
               <div class="mt">Crown replacement, asked about payment plans</div>
               <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 11:42 PM</span></div></div>
@@ -763,7 +763,7 @@
               <div class="mt">Wants a Saturday slot for two people</div>
               <div class="ft"><span class="tag ai">AI logged</span><span class="chan">WhatsApp</span></div></div>
           </div>
-          <div class="pipecol s2"><h4><span class="sw"></span>Booked<span class="ct">4</span></h4>
+          <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Booked<span class="ct">4</span></h4>
             <div class="pcard"><div class="who"><span class="ini">DK</span><span class="nm">D. Karlsson</span></div>
               <div class="mt">Consultation — Thu 10:30</div>
               <div class="ft"><span class="tag">Calendar</span><span class="chan">Web chat</span></div></div>
@@ -771,7 +771,7 @@
               <div class="mt">Site visit — Fri 14:00</div>
               <div class="ft"><span class="tag hot">Hot</span><span class="chan">Phone</span></div></div>
           </div>
-          <div class="pipecol s3"><h4><span class="sw"></span>Quote sent<span class="ct">5</span></h4>
+          <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Quote sent<span class="ct">5</span></h4>
             <div class="pcard"><div class="who"><span class="ini">LB</span><span class="nm">L. Bianchi</span></div>
               <div class="mt">Full package + weekend surcharge</div>
               <div class="ft"><span class="tag">Auto-quote</span><span class="amt">$4,280</span></div></div>
@@ -779,7 +779,7 @@
               <div class="mt">Two options sent, awaiting choice</div>
               <div class="ft"><span class="tag">Follow-up d+2</span><span class="amt">$1,950</span></div></div>
           </div>
-          <div class="pipecol s4"><h4><span class="sw"></span>Won<span class="ct">3</span></h4>
+          <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Won<span class="ct">3</span></h4>
             <div class="pcard"><div class="who"><span class="ini">MH</span><span class="nm">M. Haddad</span></div>
               <div class="mt">Signed — deposit received</div>
               <div class="ft"><span class="tag">Closed</span><span class="amt">$6,100</span></div></div>
@@ -804,7 +804,7 @@
 
     <div class="reveal" style="margin-top:52px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:stretch;">
       <div class="repcard">
-        <h5>Your dashboard · Monday morning</h5>
+        <h5 role="heading" aria-level="3">Your dashboard · Monday morning</h5>
         <div class="kpitiles" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px;">
           <div class="kpitile"><div class="lb">Conversations</div><div class="vl">142</div><div class="dl">▲ 18% vs last month</div></div>
           <div class="kpitile hi"><div class="lb">Handled by AI alone</div><div class="vl">73%</div><div class="dl">27% passed to a person</div></div>
@@ -1133,7 +1133,7 @@
     </div>
     <div class="altgrid five reveal">
       <div class="altcol">
-        <h4>Miss the call</h4>
+        <h4 role="heading" aria-level="3">Miss the call</h4>
         <div class="cost">$0<small> /mo</small></div>
         <ul>
           <li><i>✕</i>Voicemail is the whole answer</li>
@@ -1313,7 +1313,7 @@
     <div class="proofgrid reveal">
       <div class="proofcard">
         <span class="num">01</span>
-        <h4>Make it answer your own questions</h4>
+        <h4 role="heading" aria-level="3">Make it answer your own questions</h4>
         <p>Send us your website and your price list. We'll come back with the AI answering the ten
           questions your customers ask most — using your prices, not ours. Keep the recording either
           way, and judge it before you talk to us about money.</p>
@@ -1604,9 +1604,9 @@
         <p style="margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;">A human reads every one of these. Tell us the channel that hurts most and we'll start there.</p>
         <form class="eaform" data-earlyaccess style="margin-top:22px;">
           <input type="hidden" name="context" value="Homepage early access">
-          <input class="full" type="email" name="email" placeholder="Work email" required>
-          <input type="text" name="business" placeholder="Business name">
-          <input type="text" name="country" placeholder="Country">
+          <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
+          <input type="text" name="business" placeholder="Business name" aria-label="Business name">
+          <input type="text" name="country" placeholder="Country" aria-label="Country">
           <select name="industry" aria-label="Industry">
             <option value="">Industry…</option>
             <option>Home services</option><option>Dental</option><option>Wedding &amp; venues</option>
@@ -1668,12 +1668,12 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.7</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h4 role="heading" aria-level="3">Product</h4>
         <a class="lnk" href="./voice.html">AI Phone</a>
         <a class="lnk" href="./webchat.html">Chatbot</a>
         <a class="lnk" href="./whatsapp.html">WhatsApp</a>
@@ -1723,10 +1723,10 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=11.3"></script>
-<script src="../assets/js/play.js?v=11.3"></script>
-<script src="../assets/js/guide.js?v=11.3"></script>
-<script src="../assets/js/pricelab.js?v=11.3"></script>
+<script src="../assets/js/site.js?v=11.7"></script>
+<script src="../assets/js/play.js?v=11.7"></script>
+<script src="../assets/js/guide.js?v=11.7"></script>
+<script src="../assets/js/pricelab.js?v=11.7"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {

@@ -30,9 +30,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it slow my site down?","acceptedAnswer":{"@type":"Answer","text":"No. The widget loads asynchronously after your page renders, weighs about 40KB, and never blocks your content. If our CDN were unreachable, your site loads without the widget \u2014 nothing breaks and nothing errors on your page."}},{"@type":"Question","name":"Does it detect the visitor's language?","acceptedAnswer":{"@type":"Answer","text":"Yes. It detects the language a visitor writes in and replies in that language. Your approved facts stay in one source language; translations are generated per conversation, and the lead record notes which language was used so your reply can match."}},{"@type":"Question","name":"How does the handoff to a human work?","acceptedAnswer":{"@type":"Answer","text":"When a question falls outside your approved facts \u2014 or hits a topic you flagged, like contracts, payments, or medical advice \u2014 the widget tells the visitor a person will follow up, collects their contact details, and notifies your team by email and in the Saleringo inbox with the full transcript. During business hours, your team can also take over the chat live."}},{"@type":"Question","name":"What data does it store, and where?","acceptedAnswer":{"@type":"Answer","text":"Conversation transcripts and the lead fields you configure. No cookie is set for visitors who never open the widget. You choose the data region at setup, you can delete a conversation or a whole lead record from the dashboard, and deletion removes it from the knowledge base too. Full detail is on our Security & Trust and Privacy pages."}},{"@type":"Question","name":"Can it run alongside my existing chat widget?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set Saleringo to the opposite corner and run both while you evaluate \u2014 many teams do this for a couple of weeks. When you switch, removing the old widget is the only change; your Saleringo install stays the same three lines."}}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/crm.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/site.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/crm.css?v=11.7">
 <style>
   /* ═══ PRODUCT-UI SHOWCASE — light-first page ═══ */
   body{background:#F4F8FB;}
@@ -300,7 +300,7 @@
   <div class="heroground" aria-hidden="true"></div>
 
   <div class="navwrap onlight"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.7">v11.7</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -918,7 +918,7 @@
         </div>
         <div class="pane">
           <div class="pipeboard">
-            <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">6</span></h4>
+            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">6</span></h4>
               <div class="pcard"><div class="who"><span class="ini">JD</span><span class="nm">J. Delacroix</span></div>
                 <div class="mt">Read the pricing page twice, then asked about lead times</div>
                 <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat &middot; 23:14</span></div></div>
@@ -926,7 +926,7 @@
                 <div class="mt">Wants to know if you cover the next town over</div>
                 <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
             </div>
-            <div class="pipecol s2"><h4><span class="sw"></span>Booked<span class="ct">4</span></h4>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Booked<span class="ct">4</span></h4>
               <div class="pcard"><div class="who"><span class="ini">SK</span><span class="nm">S. Kowalski</span></div>
                 <div class="mt">Consultation &mdash; Thu 10:30</div>
                 <div class="ft"><span class="tag">Calendar</span><span class="chan">Web chat</span></div></div>
@@ -934,7 +934,7 @@
                 <div class="mt">Site visit &mdash; Fri 14:00</div>
                 <div class="ft"><span class="tag hot">Hot</span><span class="chan">Web chat</span></div></div>
             </div>
-            <div class="pipecol s3"><h4><span class="sw"></span>Quote sent<span class="ct">5</span></h4>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Quote sent<span class="ct">5</span></h4>
               <div class="pcard"><div class="who"><span class="ini">RB</span><span class="nm">R. Berger</span></div>
                 <div class="mt">Two options sent, awaiting a choice</div>
                 <div class="ft"><span class="tag">Auto-quote</span><span class="amt">$1,840</span></div></div>
@@ -942,7 +942,7 @@
                 <div class="mt">Asked to be reminded next week</div>
                 <div class="ft"><span class="tag">Follow-up d+7</span><span class="amt">$620</span></div></div>
             </div>
-            <div class="pipecol s4"><h4><span class="sw"></span>Won<span class="ct">3</span></h4>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Won<span class="ct">3</span></h4>
               <div class="pcard"><div class="who"><span class="ini">LF</span><span class="nm">L. Ferreira</span></div>
                 <div class="mt">Signed &mdash; deposit received</div>
                 <div class="ft"><span class="tag">Closed</span><span class="amt">$2,970</span></div></div>
@@ -1173,7 +1173,7 @@
           your pages, how your calendar and price list get connected, and what the first month costs. A person writes it.</p>
         <form class="eaform" data-earlyaccess>
           <input type="hidden" name="context" value="Website chat page">
-          <input class="full" type="email" name="email" placeholder="Work email" required>
+          <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
           <select name="industry" aria-label="Industry" required>
             <option value="">Industry…</option>
             <option>Home services</option><option>Dental</option><option>Wedding &amp; venues</option>
@@ -1184,8 +1184,8 @@
             <option value="">Main channel…</option>
             <option>Phone</option><option selected>Website chat</option><option>WhatsApp / messenger</option><option>All of them</option>
           </select>
-          <input type="text" name="business" placeholder="Business name (optional)">
-          <input type="url" name="country" placeholder="Your website (optional)">
+          <input type="text" name="business" placeholder="Business name (optional)" aria-label="Business name (optional)">
+          <input type="url" name="country" placeholder="Your website (optional)" aria-label="Your website (optional)">
           <button class="btn btn-teal" type="submit">Get my plan<span class="cir">→</span></button>
           <p class="badgerow full"><span>14-day refund</span><i>·</i><span>Cancel anytime</span><i>·</i><span>No lock-in</span></p>
           <p class="eanote full">A person replies within one business day. No newsletter, no spam.
@@ -1199,7 +1199,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.7</span>
         <p>An AI receptionist and the CRM behind it — phone, web chat and messenger, one customer record, one dashboard.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -1259,7 +1259,7 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=11.3"></script>
-<script src="../assets/js/guide.js?v=11.3"></script>
+<script src="../assets/js/site.js?v=11.7"></script>
+<script src="../assets/js/guide.js?v=11.7"></script>
 </body>
 </html>

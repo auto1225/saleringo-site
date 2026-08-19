@@ -30,9 +30,9 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "See a Full Conversation, and What It Filed | Saleringo", "description": "See a full conversation on phone, chat and messenger \u2014 and what it produced: the booking held, the quote built, the customer record written.", "url": "https://claude.saleringo.com/en/demo.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/crm.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/site.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/crm.css?v=11.7">
 <style>
   /* hero — a photograph carries it; .photohero's flex centring is not wanted here
      because the header also holds the nav and the night-timeline strip */
@@ -169,7 +169,7 @@
   <div class="stars" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.7">v11.7</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -388,7 +388,7 @@
               <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
               <div class="body">
                 <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s2"><h4><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
+                  <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
                     <div class="pcard"><div class="who"><span class="ini">MR</span><span class="nm">M. R.</span></div>
                       <div class="mt">Emergency AC call-out — on-call tech dispatched, gas smell flagged</div>
                       <div class="ft"><span class="tag hot">Safety</span><span class="tag ai">AI logged</span><span class="amt">$180</span></div></div>
@@ -427,7 +427,7 @@
               <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
               <div class="body">
                 <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s1"><h4><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
+                  <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">7</span></h4>
                     <div class="pcard"><div class="who"><span class="ini">SK</span><span class="nm">S. K.</span></div>
                       <div class="mt">Implant price asked, then reported acute pain — routed to on-call</div>
                       <div class="ft"><span class="tag hot">Urgent</span><span class="tag ai">AI logged</span><span class="chan">Phone · 9:12 PM</span></div></div>
@@ -466,7 +466,7 @@
               <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
               <div class="body">
                 <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s2"><h4><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
+                  <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
                     <div class="pcard"><div class="who"><span class="ini">EJ</span><span class="nm">E. J.</span></div>
                       <div class="mt">Tour held Sat 11:00 — October date handed to the events manager</div>
                       <div class="ft"><span class="tag">Calendar</span><span class="tag hot">Hot</span><span class="amt">$9,800</span></div></div>
@@ -544,7 +544,7 @@
               <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
               <div class="body">
                 <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s2"><h4><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
+                  <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Consultation booked<span class="ct">4</span></h4>
                     <div class="pcard"><div class="who"><span class="ini">LA</span><span class="nm">Late arrival · double</span></div>
                       <div class="mt">Friday, $320 incl. breakfast — held until noon, no payment taken</div>
                       <div class="ft"><span class="tag">Calendar</span><span class="tag ai">AI logged</span><span class="chan">WhatsApp · 11:04 PM</span></div></div>
@@ -634,7 +634,7 @@
 
     <div class="labwrap reveal">
       <div class="labpane">
-        <h4>1 &middot; Your price list</h4>
+        <h4 role="heading" aria-level="3">1 &middot; Your price list</h4>
         <div class="labsamples" role="group" aria-label="Load a sample price list">
           <button class="chip" type="button" data-lab-sample="dental" aria-pressed="false">Dental</button>
           <button class="chip" type="button" data-lab-sample="home" aria-pressed="false">Home Services</button>
@@ -643,7 +643,7 @@
         </div>
         <label class="sronly" for="labinput">Your price list, one item and one price per line</label>
         <textarea id="labinput" data-lab-input spellcheck="false"
-          placeholder="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work."></textarea>
+          placeholder="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work." aria-label="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work."></textarea>
         <div class="lablist" data-lab-list aria-live="polite"></div>
       </div>
 
@@ -652,7 +652,7 @@
         <div class="labask">
           <label class="sronly" for="labask">The question a customer would ask</label>
           <input id="labask" data-lab-ask type="text" autocomplete="off"
-                 placeholder="How much is a crown?">
+                 placeholder="How much is a crown?" aria-label="How much is a crown?">
           <button type="button" data-lab-go>Ask&nbsp;it</button>
         </div>
         <div class="labout" data-lab-out>
@@ -851,12 +851,12 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.7</span>
         <p>AI receptionist for phone, chat &amp; messenger — plus the industry CRM that turns each conversation into a booking, a quote and a customer record.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h4 role="heading" aria-level="3">Product</h4>
         <a class="lnk" href="./voice.html">AI Phone</a>
         <a class="lnk" href="./webchat.html">Chatbot</a>
         <a class="lnk" href="./whatsapp.html">WhatsApp &amp; Messenger</a>
@@ -912,10 +912,10 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=11.3"></script>
-<script src="../assets/js/guide.js?v=11.3"></script>
-<script src="../assets/js/play.js?v=11.3"></script>
-<script src="../assets/js/pricelab.js?v=11.3"></script>
+<script src="../assets/js/site.js?v=11.7"></script>
+<script src="../assets/js/guide.js?v=11.7"></script>
+<script src="../assets/js/play.js?v=11.7"></script>
+<script src="../assets/js/pricelab.js?v=11.7"></script>
 <script>
 (function () {
   'use strict';

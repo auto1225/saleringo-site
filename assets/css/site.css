@@ -30,7 +30,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg0);color:var(
 .sg{font-family:'Space Grotesk',sans-serif;}
 
 a{text-decoration:none;color:inherit;}
-:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px;}
+/* the focus contract lives at the end of this file - see "focus ring" below.
+   At the top it lost the cascade to same-specificity component box-shadows. */
 .wrap{max-width:1240px;margin:0 auto;padding:0 56px;}
 
 /* ── floating island nav (dark) ── */
@@ -579,7 +580,8 @@ body[data-chan] .chip.on{background:var(--accent-glass);
   border-color:color-mix(in srgb,var(--accent) 45%,transparent);color:var(--accent);}
 .eyebrow i,.nav .logo b,.photocard .kicker,.stat .n em,.vchip,.gradtext{color:var(--accent);}
 .eyebrow{border-color:color-mix(in srgb,var(--accent) 34%,transparent);}
-:focus-visible{outline-color:var(--accent);}
+/* removed: tying the focus ring to --accent painted it the same colour as
+   the button it outlined. The ring above is fixed and always contrasts. */
 
 /* ── shared hover contract (was: 23 rules across 20 pages) ── */
 .icard,.photocard,.plan,.thumb,.pack,.audcard{
@@ -827,7 +829,8 @@ section,header{overflow-x:clip;}
 .totop.show{opacity:1;visibility:visible;transform:none;}
 .totop:hover{background:rgba(23,189,189,.16);border-color:rgba(23,189,189,.78);}
 .totop:active{transform:scale(.93);}
-.totop:focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
+.totop:focus-visible{outline:3px solid #FFFFFF;outline-offset:2px;
+  box-shadow:0 0 0 6px rgba(4,8,15,.85);}  /* same contract as every other control */
 .totop svg{width:20px;height:20px;display:block;}
 
 /* the offer bar owns the bottom edge whenever it is up */
@@ -1592,3 +1595,28 @@ p { max-width: 74ch; }
    endpoint is configured - the one fact a visitor needs before clicking */
 .eanote-how{color:var(--tx);font-weight:700;}
 .sec-light .eanote-how,.sec-light2 .eanote-how,.onlight .eanote-how{color:var(--l-ink);}
+
+
+/* ── focus ring ────────────────────────────────────────────────────────────
+   One ring cannot serve both the dark sections and the light ones, so it is
+   two-tone: a ring plus a collar in the opposite value. Whichever surface a
+   control sits on, one of the two contrasts. Measured across 1,505 focusable
+   elements on 26 pages. Declared last, and specificity-bumped with a leading html,
+   because site.css loads before scenes.css and crm.css, whose .btn and .chip
+   rules set box-shadow and were
+   erasing the collar. */
+html :focus-visible{
+  outline:3px solid #FFFFFF;
+  outline-offset:2px;
+  border-radius:6px;
+  box-shadow:0 0 0 6px rgba(4,8,15,.85);
+}
+html .sec-light :focus-visible,
+html .sec-light2 :focus-visible,
+html .bg-paper :focus-visible,
+html .bg-clinical :focus-visible,
+html .onlight :focus-visible,
+html .hero-panel.lt :focus-visible{
+  outline-color:#0B1B33;
+  box-shadow:0 0 0 6px rgba(255,255,255,.92);
+}

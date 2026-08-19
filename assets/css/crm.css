@@ -319,7 +319,8 @@
   border:1px solid var(--hair);border-radius:12px;padding:13px 14px;color:#fff;
   font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:var(--fs-xs);line-height:1.85;
   letter-spacing:.01em;}
-.labpane textarea:focus{outline:none;border-color:rgba(23,189,189,.55);
+.labpane textarea:focus:not(:focus-visible){outline:none;}
+.labpane textarea:focus{border-color:rgba(23,189,189,.55);
   box-shadow:0 0 0 3px rgba(23,189,189,.12);}
 .labpane textarea::placeholder{color:rgba(255,255,255,.3);}
 
@@ -334,7 +335,8 @@
 .labask{display:flex;gap:9px;margin-top:14px;}
 .labask input{flex:1;min-width:0;background:rgba(0,0,0,.28);border:1px solid var(--hair);
   border-radius:11px;padding:12px 14px;color:#fff;font-size:var(--fs-sm);font-weight:600;font-family:inherit;}
-.labask input:focus{outline:none;border-color:rgba(23,189,189,.55);
+.labask input:focus:not(:focus-visible){outline:none;}
+.labask input:focus{border-color:rgba(23,189,189,.55);
   box-shadow:0 0 0 3px rgba(23,189,189,.12);}
 .labask input::placeholder{color:rgba(255,255,255,.34);font-weight:500;}
 .labask button{flex:none;border:0;border-radius:11px;padding:12px 20px;font-weight:800;

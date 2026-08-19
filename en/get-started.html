@@ -30,9 +30,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it sound like a robot and embarrass me in front of my customers?","acceptedAnswer":{"@type":"Answer","text":"It's the first thing you should test, and we won't ask you to take our word for it. Call our own line outside office hours and you'll hear exactly what your customers would hear \u2014 we run it on ourselves. In the free build we send back, you also get a recording of it handling your ten most-asked questions. If it isn't good enough for your business, that will be obvious in about ninety seconds, and you'll have lost nothing."}},{"@type":"Question","name":"What happens when it doesn't know the answer?","acceptedAnswer":{"@type":"Answer","text":"It stops and gets a person, with the whole conversation attached so your team isn't starting cold. It answers from the facts you approved and nothing else \u2014 it does not improvise a price, a date, or a promise. That restraint is the reason it can be trusted on your main line at all. How that works \u2192"}},{"@type":"Question","name":"How much of my week does setup take?","acceptedAnswer":{"@type":"Answer","text":"About thirty minutes of your attention, spread across the first few days \u2014 reviewing answers and correcting them. We do the building. There is no setup wizard to sit through and no configuration project. Setup itself is free on every plan; if you'd rather we sat with your office manager and built the knowledge base together, that's an optional service we quote before any work starts."}},{"@type":"Question","name":"Will it work with the software I already run?","acceptedAnswer":{"@type":"Answer","text":"Sometimes fully, sometimes partly, sometimes not yet \u2014 and we'll tell you which one you are before you pay, not after. Calendars are the most reliable connection; industry practice-management and booking systems vary a great deal. See the honest status list \u2192"}},{"@type":"Question","name":"Almost nobody uses this yet. Why would I be early?","acceptedAnswer":{"@type":"Answer","text":"You'd be early, and we're not going to dress that up. What we can do is make being early cost you less than it costs us: the founding cohort gets 50% off for three months, the 14-day refund applies to the plan fee, and there is no contract to exit. When the first customers agree to be named, their names and their numbers get published \u2014 not before. Until then, judge us on the build we do for your business, which costs you nothing."}},{"@type":"Question","name":"What if I want to stop?","acceptedAnswer":{"@type":"Answer","text":"You cancel, monthly, without a call. Your data exports on the way out \u2014 conversations, customers, bookings, everything. Turning off call forwarding takes one dial code on your carrier and your phones behave exactly as they did before us; we'll show whoever runs your front desk how to do that during setup, so it never depends on reaching us."}},{"@type":"Question","name":"Where are you, and who would I be dealing with?","acceptedAnswer":{"@type":"Answer","text":"Honest Marketing Co., Ltd., registered in South Korea and building for customers worldwide. The number on this page is our real main line. Email reaches a person, not a queue. More about us \u2192"}}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=11.3">
-<link rel="stylesheet" href="../assets/css/crm.css?v=11.3">
+<link rel="stylesheet" href="../assets/css/site.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=11.7">
+<link rel="stylesheet" href="../assets/css/crm.css?v=11.7">
 <style>
   /* Type-led hero. 17 of 17 pages opened with the same photo-hero primitive;
      the page that closes the sale should not look like the pages that opened it. */
@@ -116,7 +116,7 @@
 <body data-grade="trust">
 
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.3">v11.3</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v11.7">v11.7</span>
   <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -149,7 +149,7 @@
     <div class="doors reveal">
       <div class="door lead">
         <span class="tag">Most people start here</span>
-        <h3>Watch it answer your own&nbsp;questions</h3>
+        <h3 role="heading" aria-level="2">Watch it answer your own&nbsp;questions</h3>
         <p>Send us your website and your price list. We build a working answer set from your real
           information and send back a recording of the AI handling the ten questions your customers
           actually ask — with your prices, your hours, your rules. Yours to keep, whatever you decide next.</p>
@@ -214,7 +214,7 @@
           <div class="two">
             <div class="fld">
               <label for="gEmail">Work email</label>
-              <input id="gEmail" name="email" type="email" required autocomplete="email" placeholder="you@yourbusiness.com">
+              <input id="gEmail" name="email" type="email" required autocomplete="email" placeholder="you@yourbusiness.com" aria-label="you@yourbusiness.com">
             </div>
             <div class="fld">
               <label for="gIndustry">What kind of business</label>
@@ -235,16 +235,16 @@
           <div class="two">
             <div class="fld">
               <label for="gBiz">Business name <span class="opt">— optional</span></label>
-              <input id="gBiz" name="business" type="text" autocomplete="organization" placeholder="So we can look at your site">
+              <input id="gBiz" name="business" type="text" autocomplete="organization" placeholder="So we can look at your site" aria-label="So we can look at your site">
             </div>
             <div class="fld">
               <label for="gCountry">Country <span class="opt">— optional</span></label>
-              <input id="gCountry" name="country" type="text" autocomplete="country-name" placeholder="Where your customers are">
+              <input id="gCountry" name="country" type="text" autocomplete="country-name" placeholder="Where your customers are" aria-label="Where your customers are">
             </div>
           </div>
           <div class="fld">
             <label for="gSite">Your website or price list <span class="opt">— optional, but this is what we work from</span></label>
-            <input id="gSite" name="website" type="text" placeholder="yourbusiness.com — or paste your price list below">
+            <input id="gSite" name="website" type="text" placeholder="yourbusiness.com — or paste your price list below" aria-label="yourbusiness.com — or paste your price list below">
           </div>
           <div class="fld">
             <label for="gChannel">Where inquiries arrive now <span class="opt">— optional</span></label>
@@ -272,7 +272,7 @@
 
           <div class="fld">
             <label for="gNote">Anything we should know <span class="opt">— optional</span></label>
-            <textarea id="gNote" name="note" placeholder="How many calls you miss, what you've already tried, what would have to be true for this to be worth it."></textarea>
+            <textarea id="gNote" name="note" placeholder="How many calls you miss, what you've already tried, what would have to be true for this to be worth it." aria-label="How many calls you miss, what you've already tried, what would have to be true for this to be worth it."></textarea>
           </div>
 
           <button class="btn btn-teal" type="submit" style="justify-self:start;margin-top:6px;">Send it<span class="cir">↗</span></button>
@@ -283,7 +283,7 @@
       </div>
 
       <aside class="aside">
-        <h4>What actually happens next</h4>
+        <h4 role="heading" aria-level="3">What actually happens next</h4>
         <ul style="margin-top:14px;">
           <li><i>1</i><span>A person reads it — there is no sequence, no drip, no chasing.</span></li>
           <li><i>2</i><span>We look at your site and your prices before we reply, so the first
@@ -316,7 +316,7 @@
     <div class="tl">
       <div class="tlstep">
         <span class="d">Day 1</span>
-        <h4>We read your business</h4>
+        <h4 role="heading" aria-level="3">We read your business</h4>
         <p>Your website, your price list, your FAQ. We build the first answer set from what you
           already publish — nothing invented, nothing guessed.</p>
         <span class="who">Your time: none</span>
@@ -433,12 +433,12 @@
 <footer class="bigfooter"><div class="wrap">
   <div class="cols">
     <div class="brand">
-      <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.3</span>
+      <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v11.7</span>
       <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
       <p style="margin-top:10px;">hello@saleringo.com</p>
     </div>
     <div>
-      <h4>Product</h4>
+      <h4 role="heading" aria-level="3">Product</h4>
       <a class="lnk" href="./voice.html">AI Phone</a>
       <a class="lnk" href="./webchat.html">Chatbot</a>
       <a class="lnk" href="./whatsapp.html">WhatsApp &amp; Messenger</a>
@@ -477,8 +477,8 @@
   </div>
 </div></footer>
 
-<script src="../assets/js/site.js?v=11.3"></script>
-<script src="../assets/js/guide.js?v=11.3"></script>
+<script src="../assets/js/site.js?v=11.7"></script>
+<script src="../assets/js/guide.js?v=11.7"></script>
 <script>
 /* Show the visitor their own timezone, so "we'll propose times" is a real
    statement rather than a vague one. Fails silent on old browsers. */
