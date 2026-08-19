@@ -534,7 +534,7 @@ window.SR_PLAY = {
       { id:'function', chip:'“24 people, a Friday in December — minimum spend?”', risk:'normal',
         turns:[
           {who:'user', text:'24 people, a Friday in December, for the office party. What’s the minimum spend?'},
-          {who:'ai',   text:'On a December Friday the private room is $300 hire with an $1,800 minimum spend, and the set menu is $68 a head — so 24 covers clears it. That is one sitting; we don’t turn the room on that date.'},
+          {who:'ai',   text:'On a December Friday the private room is $300 hire with an $1,800 minimum spend, and the set menu is $68 a head. Twenty-four covers on that menu is $1,632, so you would be about $170 under the minimum — a drink each closes it. That is one sitting; we don’t turn the room on that date.'},
           {who:'verify', text:'✓ From your function sheet · 2 sources'},
           {who:'user', text:'Hold the 12th.'},
           {who:'result', text:'✓ Date held 72 hours · deposit link sent'}],
@@ -544,7 +544,7 @@ window.SR_PLAY = {
             mt:'24 covers, Fri 12 Dec dinner, private room — held 72 h', tag:'AI logged', chan:'Phone · 10:40 PM'},
           booking:{title:'Private room, dinner', slot:'Fri 12 Dec · 19:30', note:'Single sitting on this date — the room is not turned.'},
           quote:{ref:'Function — private room', lines:[['Room hire','private room','$300'],['Minimum spend','December Friday, peak','$1,800'],['Set menu','per head, 24 covers','$68']],
-            total:'$1,800 min', foot:'From your function sheet. No package improvised, no discount.'},
+            total:'$1,800 min', foot:'From your function sheet. 24 covers at $68 is $1,632 — the gap to the minimum is named on the call, not discovered on the invoice.'},
           record:{name:'N. B. (organiser)', sub:'Phone, 10:40 PM',
             rows:[['Collected','Date · service · covers · occasion · arrival and turn'],
                   ['Deposit','$300, 14-day terms — payment link sent, no card touched'],
