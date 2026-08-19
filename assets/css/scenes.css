@@ -372,9 +372,16 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 /* colour returns on hover — the photo "wakes up" under the cursor */
 .photocard:hover > img.ph,
 .photosplit .media:hover img.ph,
+.photo-scrim:hover > img.ph,
 .audcard:hover > img.ph{
   filter:grayscale(.12) sepia(.06) saturate(1.14) contrast(1.03);
 }
+/* .photo-scrim was the one wrapper listed for the grade above but left out of
+   the wake-up below, so those photographs stayed fully desaturated at all
+   times. On an exposure that is already a night shot that reads as a black
+   rectangle, which is exactly what it looked like. */
+.photo-scrim > img.ph{filter:grayscale(.55) sepia(calc(var(--gradeSep) * .5))
+  hue-rotate(var(--gradeH)) saturate(1.06) contrast(1.04) brightness(1.12);}
 @media (prefers-reduced-motion:reduce){
   .photocard > img.ph,.photosplit .media img.ph,.photo-scrim > img.ph,.audcard > img.ph{transition:none;}
 }
@@ -453,6 +460,37 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .wakenum{display:block;font-family:'Space Grotesk',sans-serif;
   font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--teal);
   line-height:1;margin-bottom:8px;}
+
+/* The capture fan. The page's own <style> block sets .fanfig .scenebox and is
+   written after this file, so the override has to out-specify it rather than
+   merely follow it. The figure needs real height because it now carries type
+   at 14–21px rather than 8px marks, and it re-stacks vertically once the
+   canvas is narrower than 620px — which is why the breakpoint here is 760px
+   viewport: the taller box has to be reserved BEFORE the layout flips, never
+   after. */
+.fanfig.scenefig .scenebox{--sh:270px;}
+@media (max-width:760px){ .fanfig.scenefig .scenebox{--sh:352px;} }
+
+/* one question → six finished objects. Flips to 2×3 tiles under 700px of
+   canvas; the box grows at 820px viewport so the flip never lands in a box
+   that is too short for it. */
+.jobsfig .scenebox{--sh:250px;}
+@media (max-width:820px){ .jobsfig .scenebox{--sh:372px;} }
+
+/* the price trace: a list on the left, the verdict on the right */
+.tracefig .scenebox{--sh:320px;}
+@media (max-width:840px){ .tracefig .scenebox{--sh:424px;} }
+
+/* the channel key: three doors over one record */
+.chankeyfig .scenebox{--sh:300px;}
+@media (max-width:600px){ .chankeyfig .scenebox{--sh:274px;} }
+
+/* These four figures argue in full sentences under themselves, so the caption
+   is allowed the full measure rather than the 60ch a marginal note gets. */
+.jobsfig .scenecap,.tracefig .scenecap,.chankeyfig .scenecap,
+.fanfig .scenecap{max-width:76ch;}
+.jobsfig,.tracefig{margin:0 0 26px;}
+.chankeyfig{margin:34px 0 0;}
 
 /* the call waveform */
 .wavefig .scenebox{--sh:104px;}

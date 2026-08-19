@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=18.4">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=18.4">
-<link rel="stylesheet" href="../assets/css/crm.css?v=18.4">
+<link rel="stylesheet" href="../assets/css/site.css?v=19.1">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=19.1">
+<link rel="stylesheet" href="../assets/css/crm.css?v=19.1">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -219,7 +219,14 @@
   .nightsec .photosplit h2{font-size:var(--fs-h2);}
   /* grade the daylight frame down so it belongs in the dusk section (filters only —
      mix-blend-mode against these layers crushes the photo to black) */
-  .nightsec .photosplit .media img.ph{filter:brightness(.68) saturate(.84) contrast(1.12);}
+  /* The old photograph was shot in daylight and was dimmed to .68 to imply
+     night. The new one is genuinely night, so it only needs grading, not
+     burying. The hover state has to be written here rather than in scenes.css:
+     that rule is `.photosplit .media:hover img.ph` at 0,3,1 and this selector
+     is 0,4,1 in a <style> block parsed after it, so it won the hover too and
+     the photograph never woke under the cursor. */
+  .nightsec .photosplit .media img.ph{filter:brightness(.94) saturate(.92) contrast(1.06);}
+  .nightsec .photosplit .media:hover img.ph{filter:brightness(1.1) saturate(1.16) contrast(1.02);}
   .nightsec .photosplit .media::after{content:"";position:absolute;inset:0;
     background:linear-gradient(118deg, rgba(6,20,38,.55), rgba(4,10,22,.22) 62%, rgba(23,189,189,.12));}
   .nightsec .midscene{max-width:760px;margin:78px auto 0;}
@@ -404,31 +411,30 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v18.4">v18.4</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v19.1">v19.1</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
-    <a href="./industries.html">Your trade</a>
+    <a href="./industries.html">Your&nbsp;trade</a>
     <a href="./pricing.html">Pricing</a>
     <a href="./security.html">Security</a>
   </span>
     <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">✆</span><b data-tel-label>+82 70-5277-0820</b></a>
     <span class="sep"></span>
-    <a class="btn btn-white" href="./get-started.html">Get my plan<span class="cir">↗</span></a>
+    <a class="btn btn-white" href="./get-started.html">Get my&nbsp;plan<span class="cir">↗</span></a>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav></div>
 
   <div class="wrap hero-inner">
     <div class="heroband hero-panel">
-      <span class="eyebrow"><i></i>AI receptionist + the CRM for your trade</span>
+      <span class="eyebrow"><i></i>AI receptionist + the&nbsp;CRM for&nbsp;your&nbsp;trade</span>
       <h1>Most AI answers the&nbsp;call.<br><span style="color:var(--teal);">Ours books the&nbsp;job.</span></h1>
-      <p class="sub">It picks up your phone, your website chat and your messages — in your customer's
-        language — then books the time and writes up the customer.</p>
+      <p class="sub">It picks up your&nbsp;phone, your&nbsp;website chat and your&nbsp;messages — in your&nbsp;customer's language — then books the&nbsp;time and writes up the&nbsp;customer.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#start-here">Start the 3-step tour &middot; 2 min<span class="cir">&darr;</span></a>
-        <a class="btn btn-ghostd" href="#early-access">I know what I need &mdash; get my plan</a>
+        <a class="btn btn-teal" href="#start-here">Start the&nbsp;3-step tour &middot; 2 min<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="#early-access">I know what I need &mdash; get my&nbsp;plan</a>
       </div>
-    <p class="heroprice"><b>From $79/mo.</b> Phone answering from $599. <i>14-day refund · cancel anytime · no setup fee</i></p>
+    <p class="heroprice"><b>From&nbsp;$79/mo.</b> Phone answering from&nbsp;$599. <i>14-day refund · cancel anytime · no&nbsp;setup fee</i></p>
 </div>
 
     <div class="heroshelf">
@@ -446,12 +452,11 @@
           <div class="nl us">
             <span class="t"><em>Customer</em>11:42<i>PM</i></span>
             <div class="bub user">Do you do crown replacements? And is there any
-              way to pay it off monthly?</div>
+              way to&nbsp;pay it off monthly?</div>
           </div>
           <div class="nl sr">
             <span class="t"><em>Saleringo</em>+38<i>SEC</i></span>
-            <div class="bub ai">Yes &mdash; a crown is <b>$4,280</b>, and we split that
-              over three months. <b>Thursday 10:30</b> is open. Shall I hold it for you?</div>
+            <div class="bub ai">Yes &mdash; a&nbsp;crown is <b>$4,280</b>, and we split that&nbsp;over&nbsp;three months. <b>Thursday 10:30</b> is open. Shall I hold it for&nbsp;you?</div>
           </div>
           <div class="nl us">
             <span class="t"><em>Customer</em>11:47<i>PM</i></span>
@@ -462,13 +467,11 @@
 
       <div class="qmini woke">
         <div class="qh2"><span>7:04 AM &mdash; what you woke up to</span></div>
-        <div class="wokerow"><b>Booked</b><span>Thu 10:30, in your calendar</span></div>
-        <div class="wokerow"><b>Estimate #2461</b><span>$4,280, from your own price list</span></div>
+        <div class="wokerow"><b>Booked</b><span>Thu 10:30, in&nbsp;your&nbsp;calendar</span></div>
+        <div class="wokerow"><b>Estimate #2461</b><span>$4,280, from&nbsp;your&nbsp;own price list</span></div>
         <div class="wokerow"><b>Customer filed</b><span>Thread, quote and next step attached</span></div>
       </div>
-      <p class="photocap">Nobody was awake for any of it. The sequence is the
-        claim, not the figures &mdash; your own prices and calendar go in the
-        place of&nbsp;these.</p>
+      <p class="photocap">Nobody was awake for&nbsp;any of&nbsp;it. The&nbsp;sequence is the&nbsp;claim, not the&nbsp;figures &mdash; your&nbsp;own prices and calendar go in&nbsp;the&nbsp;place of&nbsp;these.</p>
     </div>
   </div>
 </header>
@@ -482,10 +485,10 @@
         <div class="secrule"><span class="eyebrow"><i></i>Three channels · one brain</span><span class="line"></span></div>
         <h2 class="h2 onDark" style="font-size:var(--fs-h2);">Sell where&nbsp;your customers<br>already are.</h2>
       </div>
-      <p class="lead onDark" style="max-width:340px;">Same knowledge, same guardrails, same inbox — whether it arrives as a ring, a chat bubble, or a message.</p>
+      <p class="lead onDark" style="max-width:340px;">Same knowledge, same guardrails, same inbox — whether it arrives as a&nbsp;ring, a&nbsp;chat bubble, or a&nbsp;message.</p>
     </div>
 
-    <p class="castag">One conversation, three front doors. You can <a href="#try" style="color:var(--teal-ink);font-weight:700;">try it yourself further down</a> &mdash; pick your trade and ask it something hard.</p>
+    <p class="castag">One conversation, three front doors. You can <a href="#try" style="color:var(--teal-ink);font-weight:700;">try it yourself further down</a> &mdash; pick your&nbsp;trade and ask it something hard.</p>
 
     <div class="cascade reveal">
       <div class="cas-glow" aria-hidden="true"></div>
@@ -501,8 +504,8 @@
           </div>
           <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <div class="transcript">
-            <div class="line"><span class="spk cu">CALLER</span><span class="tx">My AC died and it's 95°F (35°C). Can anyone come tonight?</span></div>
-            <div class="line"><span class="spk ai">AI</span><span class="tx">I can hold tomorrow's first slot at 8 AM, or book an emergency visit tonight — the after-hours call-out is <em>$180</em>. Which works?</span></div>
+            <div class="line"><span class="spk cu">CALLER</span><span class="tx">My&nbsp;AC died and it's&nbsp;95°F (35°C). Can anyone come tonight?</span></div>
+            <div class="line"><span class="spk ai">AI</span><span class="tx">I can hold tomorrow's&nbsp;first slot at&nbsp;8 AM, or book an&nbsp;emergency visit tonight — the&nbsp;after-hours call-out is <em>$180</em>. Which works?</span></div>
           </div>
         </div>
         <div class="resultrow"><span class="rchip">✓ Job booked · tech notified</span></div>
@@ -510,41 +513,52 @@
 
       <div class="cas-mid"><div class="shell"><div class="core">
         <div class="demo-head"><span class="dot"></span><span>Web chat — Wedding &amp; Venues</span>
-          <span class="chanbadge chat" data-play-chan style="margin-left:auto;">Widget on your site</span></div>
+          <span class="chanbadge chat" data-play-chan style="margin-left:auto;">Widget on&nbsp;your&nbsp;site</span></div>
         <div class="demo-body">
-          <div class="bub user">Do you have availability for 120 guests in October?</div>
-          <div class="bub ai">Yes — Saturday openings on Oct 12 and 26. Weekend receptions start at $9,800 for up to 150 guests, dinner included.</div>
+          <div class="bub user">Do you have availability for&nbsp;120 guests in&nbsp;October?</div>
+          <div class="bub ai">Yes — Saturday openings on&nbsp;Oct 12 and 26. Weekend receptions start at&nbsp;$9,800 for&nbsp;up to&nbsp;150 guests, dinner included.</div>
           <span class="vchip">✓ Verified · 2 sources</span>
-          <div class="bub user">Can you lock in Oct 12 right now?</div>
-          <span class="hchip">→ Handing to your team — date confirmation needs a person</span>
-          <span class="rchip">✓ CRM updated · Tour held for Sat 11:00</span>
+          <div class="bub user">Can you lock in&nbsp;Oct 12 right now?</div>
+          <span class="hchip">→ Handing to&nbsp;your&nbsp;team — date confirmation needs a&nbsp;person</span>
+          <span class="rchip">✓ CRM updated · Tour held for&nbsp;Sat 11:00</span>
         </div>
       </div></div></div>
 
       <div class="cas-side right tiltcard rev"><div class="shell"><div class="core" style="padding:0;">
         <div class="msgthread" style="border:0;border-radius:0;">
           <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
-            <span><b>Saleringo · your business</b><br><span>WhatsApp Business · online</span></span></div>
+            <span><b>Saleringo · your&nbsp;business</b><br><span>WhatsApp Business · online</span></span></div>
           <div class="mbody">
-            <div class="m in">Hi! Do you have a double room this Friday? We land at 11 pm — late check-in ok?</div>
-            <div class="m out">Yes — late check-in is self-service after 10 pm, and a double is open Friday at $320 including breakfast. Want me to hold it?<span class="tick">✓✓</span></div>
+            <div class="m in">Hi! Do you have a&nbsp;double room this&nbsp;Friday? We land at&nbsp;11 pm — late check-in&nbsp;ok?</div>
+            <div class="m out">Yes — late check-in is self-service after 10 pm, and a&nbsp;double is open Friday at&nbsp;$320 including breakfast. Want me to&nbsp;hold it?<span class="tick">✓✓</span></div>
             <div class="m in">Yes please!</div>
-            <div class="m out">Done — held until noon tomorrow. Our manager confirms before any payment.<span class="tick">✓✓</span></div>
+            <div class="m out">Done — held until noon tomorrow. Our&nbsp;manager confirms before any payment.<span class="tick">✓✓</span></div>
           </div>
         </div>
         <div class="resultrow"><span class="rchip">✓ Guest record created</span></div>
       </div></div></div>
     </div>
 
+    <figure class="chankeyfig scenefig reveal">
+      <div class="scenebox" data-scene="chankey"></div>
+      <figcaption class="scenecap"><b>Three doors, and a colour that tells you which
+        one you are looking at.</b> The AI phone is teal and arrives as a ring; the
+        web chat is blue and arrives as typing on a page you already own; the
+        messenger is green and arrives as a message with two delivery ticks against
+        an account. Those three colours mean the same three things everywhere else on
+        this site. Underneath all of them is the single thing they share: one record,
+        one inbox, whichever door the customer used.</figcaption>
+    </figure>
+
     <div class="chanlinks reveal">
       <a class="chanlink" href="./voice.html"><span class="chanbadge voice">Voice</span>
-        <span class="tx"><b>AI Phone</b><i>Forward your number — nights only or always</i></span><span class="go">→</span></a>
+        <span class="tx"><b>AI Phone</b><i>Forward your&nbsp;number — nights only or always</i></span><span class="go">→</span></a>
       <a class="chanlink" href="./webchat.html"><span class="chanbadge chat">Chat</span>
-        <span class="tx"><b>Website Chatbot</b><i>One line of code, live the same day</i></span><span class="go">→</span></a>
+        <span class="tx"><b>Website Chatbot</b><i>One line of&nbsp;code, live the&nbsp;same day</i></span><span class="go">→</span></a>
       <a class="chanlink" href="./whatsapp.html"><span class="chanbadge msg">Msg</span>
-        <span class="tx"><b>WhatsApp</b><i>Official Business API, your number</i></span><span class="go">→</span></a>
+        <span class="tx"><b>WhatsApp</b><i>Official Business API, your&nbsp;number</i></span><span class="go">→</span></a>
     
-    <p class="seccap">Phone, chat and WhatsApp are three doors into the same room. Which door a customer used stops mattering the moment the record is written.</p>
+    <p class="seccap">Phone, chat and WhatsApp are three doors into&nbsp;the&nbsp;same room. Which door a&nbsp;customer used stops mattering the&nbsp;moment the&nbsp;record is written.</p>
   </div>
   </div>
 </section>
@@ -554,16 +568,16 @@
   <div class="wrap">
     <div class="photosplit reveal">
       <div class="media">
-        <img class="ph" src="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-             alt="A technician on a rooftop working inside an opened air-conditioning unit"
+        <img class="ph" src="https://images.pexels.com/photos/15845455/pexels-photo-15845455.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+             alt="A trade van parked outside a house on a dark street at night, the doorway lit above the step"
              loading="lazy" decoding="async" width="1200" height="992"
-     srcset="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
+     srcset="https://images.pexels.com/photos/15845455/pexels-photo-15845455.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/15845455/pexels-photo-15845455.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/15845455/pexels-photo-15845455.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
       </div>
       <div class="copy">
-        <div class="secrule"><span class="eyebrow"><i></i>The 2:47 AM problem</span></div>
-        <h2 class="h2 onDark">The furnace&nbsp;dies<br>at 2:47&nbsp;AM.<br><span class="gradtext warm">Your competitor picks&nbsp;up.</span></h2>
-        <p class="lead onDark" style="margin-top:20px;">Nobody schedules an emergency. The AC quits on the hottest night, the pipe bursts on a Sunday, the guest lands at 11 PM. Whoever answers first gets the job — and it is almost never the business that was asleep.</p>
-        <p style="margin-top:28px;"><a class="linkcta" style="color:#fff;border-bottom-color:var(--hair2);" href="./industries/home-services.html">How the home-services pack takes a night call&nbsp;&nbsp;→</a></p>
+        <div class="secrule"><span class="eyebrow"><i></i>The&nbsp;2:47 AM problem</span></div>
+        <h2 class="h2 onDark">The&nbsp;furnace&nbsp;dies<br>at&nbsp;2:47&nbsp;AM.<br><span class="gradtext warm">Your&nbsp;competitor picks&nbsp;up.</span></h2>
+        <p class="lead onDark" style="margin-top:20px;">Nobody schedules an&nbsp;emergency. The&nbsp;AC quits on&nbsp;the&nbsp;hottest night, the&nbsp;pipe bursts on&nbsp;a&nbsp;Sunday, the&nbsp;guest lands at&nbsp;11 PM. Whoever answers first gets the&nbsp;job — and it is almost never the&nbsp;business that was asleep.</p>
+        <p style="margin-top:28px;"><a class="linkcta" style="color:#fff;border-bottom-color:var(--hair2);" href="./industries/home-services.html">How the&nbsp;home-services pack takes a&nbsp;night call&nbsp;&nbsp;→</a></p>
       </div>
     </div>
 
@@ -573,13 +587,12 @@
       <div class="nightfig scenefig reveal">
         <div class="scenebox" data-scene="nightclock"></div>
         <div>
-          <p class="scenecap"><b>A nine-to-six desk is closed for 15 of the day&rsquo;s
-            24 hours</b> &mdash; then both weekend days on top of that. Across a full
-            week the phone is answered for <span class="num">45 of 168 hours</span>.
-            Every hour in the lit part of that dial is an hour a customer can still
-            decide to call somebody, and 2:47&nbsp;AM is one of them.</p>
-          <p class="scenecap" style="margin-top:12px;">This is not a statistic we
-            collected. It is what a nine-to-six week divides into.</p>
+          <p class="scenecap"><b>A&nbsp;nine-to-six desk is closed for&nbsp;15 of&nbsp;the&nbsp;day&rsquo;s&nbsp;24 hours</b> &mdash; then both weekend days on&nbsp;top of&nbsp;that. Across&nbsp;a&nbsp;full
+            week the&nbsp;phone is answered for&nbsp;<span class="num">45 of&nbsp;168 hours</span>.
+            Every&nbsp;hour in&nbsp;the&nbsp;lit part of&nbsp;that&nbsp;dial is an&nbsp;hour a&nbsp;customer can still
+            decide to&nbsp;call somebody, and 2:47&nbsp;AM is one of&nbsp;them.</p>
+          <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
+            collected. It is what a&nbsp;nine-to-six week divides into.</p>
         </div>
       </div>
 
@@ -591,34 +604,34 @@
                sizes="(max-width:1240px) 100vw, 1160px" alt="A modern house at night, the upper-floor windows glowing warm against a black sky"
                loading="lazy" decoding="async" width="1600" height="1068">
         </div>
-          <span class="caption">The lights are on upstairs. The call still lands in voicemail.</span>
+          <span class="caption">The&nbsp;lights are on&nbsp;upstairs. The&nbsp;call still lands in&nbsp;voicemail.</span>
       </div>
     </div>
 
     <div class="baGrid reveal">
       <div class="baCol before">
-        <h4 role="heading" aria-level="3">Tonight, without Saleringo</h4>
+        <h4 role="heading" aria-level="3">Tonight, without&nbsp;Saleringo</h4>
         <ul>
           <li><i>✕</i>Voicemail answers. Most callers never leave one.</li>
-          <li><i>✕</i>They dial the next business on the search results.</li>
-          <li><i>✕</i>Your web chat sits unread until 9 AM.</li>
-          <li><i>✕</i>The WhatsApp from a traveller in another timezone goes cold.</li>
-          <li><i>✕</i>You find out you lost the job — if you ever find out.</li>
+          <li><i>✕</i>They dial the&nbsp;next business on&nbsp;the&nbsp;search results.</li>
+          <li><i>✕</i>Your&nbsp;web chat sits unread until 9 AM.</li>
+          <li><i>✕</i>The&nbsp;WhatsApp from&nbsp;a&nbsp;traveller in&nbsp;another&nbsp;timezone goes cold.</li>
+          <li><i>✕</i>You find out you lost the&nbsp;job — if you ever find out.</li>
         </ul>
       </div>
       <div class="baArrow" aria-hidden="true">→</div>
       <div class="baCol after">
-        <h4>Tonight, with Saleringo</h4>
+        <h4>Tonight, with&nbsp;Saleringo</h4>
         <ul>
-          <li><i>✓</i>Second ring. Answered in the caller's own language.</li>
-          <li><i>✓</i>Quotes the after-hours rate from your approved price list.</li>
-          <li><i>✓</i>Books the slot in your calendar, timezone-safe.</li>
-          <li><i>✓</i>Texts your on-call tech when it is a real emergency.</li>
-          <li><i>✓</i>You wake up to a booked job and a full transcript.</li>
+          <li><i>✓</i>Second ring. Answered in&nbsp;the&nbsp;caller's&nbsp;own language.</li>
+          <li><i>✓</i>Quotes the&nbsp;after-hours rate from&nbsp;your&nbsp;approved price list.</li>
+          <li><i>✓</i>Books the&nbsp;slot in&nbsp;your&nbsp;calendar, timezone-safe.</li>
+          <li><i>✓</i>Texts your&nbsp;on-call tech when it is a&nbsp;real emergency.</li>
+          <li><i>✓</i>You wake up to&nbsp;a&nbsp;booked job and a&nbsp;full transcript.</li>
         </ul>
       </div>
     </div>
-    <p class="foot"><span class="capnote">Every scenario above is a scripted illustration of how the product behaves.</span><br>The difference between the two columns is not effort or price. It is whether anything picks up on the second ring. <a href="./demo.html">Walk through the full demo ↗</a></p>
+    <p class="foot"><span class="capnote">Every&nbsp;scenario above is a&nbsp;scripted illustration of&nbsp;how the&nbsp;product behaves.</span><br>The&nbsp;difference between the&nbsp;two columns is not effort or price. It is whether anything picks up on&nbsp;the&nbsp;second ring. <a href="./demo.html">Walk through&nbsp;the&nbsp;full demo ↗</a></p>
   </div>
 </section>
 
@@ -635,16 +648,16 @@
 <section class="pathsec t-sm sec-dark" id="start-here">
   <div class="wrap">
     <nav class="startpath reveal" data-startpath aria-label="Try it in three steps">
-      <p class="sp-lead"><b>First time here?</b> Three things, about two minutes, nothing to install
-        and no email needed. Everything below happens on this page.</p>
+      <p class="sp-lead"><b>First time here?</b> Three things, about&nbsp;two minutes, nothing to&nbsp;install
+        and no&nbsp;email needed. Everything below happens on&nbsp;this&nbsp;page.</p>
       <ol class="sp-steps">
         <li data-step="#try" data-next="ask it a question" data-focus=".chiprow" data-short="Ask a question" data-cue="Pick your trade" data-sub="Pick a trade, then one of its questions. Six things get filed while you watch.">
           <a href="#try">
             <span class="sp-n">1</span>
             <span class="sp-b">
-              <b>Ask it a question</b>
-              <span class="sp-d">Pick your trade, then pick a question a customer would really ask. Watch six
-                things get filed &mdash; not a reply, the work.</span>
+              <b>Ask it a&nbsp;question</b>
+              <span class="sp-d">Pick your&nbsp;trade, then pick a&nbsp;question a&nbsp;customer would really ask. Watch six
+                things get filed &mdash; not a&nbsp;reply, the&nbsp;work.</span>
               <span class="sp-t">20 seconds</span>
               <span class="sp-go">Try it now&nbsp;&nbsp;&rarr;</span>
             </span>
@@ -654,11 +667,11 @@
           <a href="#yourprices">
             <span class="sp-n">2</span>
             <span class="sp-b">
-              <b>Paste your own price list</b>
-              <span class="sp-d">Your numbers, not ours. See what it quotes &mdash; and what it
-                refuses to quote because your list does not say.</span>
+              <b>Paste your&nbsp;own price list</b>
+              <span class="sp-d">Your&nbsp;numbers, not ours. See what it quotes &mdash; and what it
+                refuses to&nbsp;quote because your&nbsp;list does not say.</span>
               <span class="sp-t">1 minute</span>
-              <span class="sp-go">Open the price lab&nbsp;&nbsp;&rarr;</span>
+              <span class="sp-go">Open the&nbsp;price lab&nbsp;&nbsp;&rarr;</span>
             </span>
           </a>
         </li>
@@ -666,16 +679,16 @@
           <a href="#calculator">
             <span class="sp-n">3</span>
             <span class="sp-b">
-              <b>See what a month costs you</b>
-              <span class="sp-d">Four sliders, your own call volume. It runs in your browser and
+              <b>See what a&nbsp;month costs you</b>
+              <span class="sp-d">Four sliders, your&nbsp;own call volume. It runs in&nbsp;your&nbsp;browser and
                 nothing is sent anywhere.</span>
               <span class="sp-t">30 seconds</span>
-              <span class="sp-go">Run the numbers&nbsp;&nbsp;&rarr;</span>
+              <span class="sp-go">Run the&nbsp;numbers&nbsp;&nbsp;&rarr;</span>
             </span>
           </a>
         </li>
       </ol>
-      <p class="sp-end">Only then, if it holds up: <a href="#early-access">get the plan for your trade&nbsp;&nbsp;&rarr;</a><span class="sp-fine">Five fields &mdash; email, business, country, trade, and the channel that hurts most. A person replies inside one business day with a setup plan for your trade. No newsletter.</span></p>
+      <p class="sp-end">Only then, if it holds up: <a href="#early-access">get the&nbsp;plan for&nbsp;your&nbsp;trade&nbsp;&nbsp;&rarr;</a><span class="sp-fine">Five fields &mdash; email, business, country, trade, and the&nbsp;channel that&nbsp;hurts most. A&nbsp;person replies inside one business day with&nbsp;a&nbsp;setup plan for&nbsp;your&nbsp;trade. No&nbsp;newsletter.</span></p>
     </nav>
   </div>
 </section>
@@ -683,16 +696,15 @@
 <section class="playsec t-xl sec-dark bg-grid" id="try" data-play data-play-trade="dental">
   <div class="wrap">
     <div class="head reveal" style="max-width:700px;">
-      <span class="eyebrow"><i></i>Twenty seconds, nothing to install</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 1 &middot; click anything below</span>
+      <span class="eyebrow"><i></i>Twenty seconds, nothing to&nbsp;install</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 1 &middot; click anything below</span>
       <h2 class="h2 onDark" style="margin-top:20px;">Ask&nbsp;it one question.<br>Watch six jobs get&nbsp;done.</h2>
-      <p class="lead onDark" style="margin-top:16px;">Take your customer's side of the conversation.
-        Ask about a price, a slot, a booking. In the time it takes to answer, the pipeline moves, the
-        calendar fills, the quote is written, the customer is on file, a task lands on someone’s desk
-        and the follow-up is scheduled — with nobody at the desk.</p>
+      <p class="lead onDark" style="margin-top:16px;">Take your&nbsp;customer's&nbsp;side of&nbsp;the&nbsp;conversation.
+        Ask about&nbsp;a&nbsp;price, a&nbsp;slot, a&nbsp;booking. In&nbsp;the&nbsp;time it takes to&nbsp;answer, the&nbsp;pipeline moves, the&nbsp;calendar fills, the&nbsp;quote is written, the&nbsp;customer is on&nbsp;file, a&nbsp;task lands on&nbsp;someone’s&nbsp;desk
+        and the&nbsp;follow-up is scheduled — with&nbsp;nobody at&nbsp;the&nbsp;desk.</p>
     </div>
 
     <div class="chanpick reveal" role="tablist" aria-label="Choose the channel they came in on">
-      <span class="cpl">They came in on</span>
+      <span class="cpl">They came in&nbsp;on</span>
       <button class="chip" role="tab" aria-selected="true" data-playchan="phone" type="button">Phone</button>
       <button class="chip" role="tab" aria-selected="false" data-playchan="web" type="button">Web chat</button>
       <button class="chip" role="tab" aria-selected="false" data-playchan="msg" type="button">Messenger</button>
@@ -709,11 +721,22 @@
       <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="franchise" type="button">Franchise</button>
     </div>
 
+    <figure class="jobsfig scenefig reveal">
+      <div class="scenebox" data-scene="sixjobs"></div>
+      <figcaption class="scenecap"><b>One question in, six finished objects out.</b>
+        The map above is not a picture of the demo &mdash; it is wired to it. Ask
+        something below and it counts, live, how many of the six the answer actually
+        built: the pipeline card, the calendar slot, the quote, the customer record,
+        the staff task and the scheduled follow-up. The ones that stay empty are
+        marked <b>empty on purpose</b>, because refusing to invent a booking or a
+        price is the same product decision as making one.</figcaption>
+    </figure>
+
     <div class="playwrap reveal" id="playstage" role="tabpanel">
       <div class="shell"><div class="core" style="padding:0;overflow:hidden;">
         <div class="demo-head" style="padding:14px 18px;"><span class="dot"></span>
           <span data-play-label>Scripted demo — Dental</span>
-          <span class="chanbadge voice" data-play-chan style="margin-left:auto;">Your line, after hours</span></div>
+          <span class="chanbadge voice" data-play-chan style="margin-left:auto;">Your&nbsp;line, after hours</span></div>
         <div class="demo-body" data-play-body aria-live="polite" style="min-height:250px;padding:18px;"></div>
         <div class="askrow" data-play-asks role="group" aria-label="You are the customer. Ask a question."></div>
         <p class="playwhy" data-play-why hidden></p>
@@ -722,15 +745,14 @@
       <div>
         <div class="ogrid" data-play-out></div>
         <p class="sronly" data-play-sr aria-live="polite"></p>
-        <p class="playcap"><span class="capnote">Product illustration with sample data — no named customers, no invented outcomes.</span><br>
-          <b>These six are the product.</b> Every other AI receptionist stops at the conversation; this one keeps going until the work is filed. Ask it one more question and watch the same six objects rebuild themselves — that repetition is the product.</p>
+        <p class="playcap"><span class="capnote">Product illustration with&nbsp;sample data — no&nbsp;named customers, no&nbsp;invented outcomes.</span><br>
+          <b>These&nbsp;six are the&nbsp;product.</b> Every&nbsp;other AI receptionist stops at&nbsp;the&nbsp;conversation; this&nbsp;one keeps going until the&nbsp;work is filed. Ask it one more question and watch the&nbsp;same six objects rebuild themselves — that&nbsp;repetition is the&nbsp;product.</p>
       </div>
     </div>
 
     <noscript>
-      <p class="lead onDark" style="margin-top:22px;">This demo needs JavaScript. The same conversations,
-        written out in full — the booking, the quote and the customer record each one produces — are on the
-        <a href="./examples.html" style="color:var(--teal-ink);font-weight:700;">worked examples page</a>.</p>
+      <p class="lead onDark" style="margin-top:22px;">This&nbsp;demo needs JavaScript. The&nbsp;same conversations,
+        written out in&nbsp;full — the&nbsp;booking, the&nbsp;quote and the&nbsp;customer record each&nbsp;one produces — are on&nbsp;the&nbsp;<a href="./examples.html" style="color:var(--teal-ink);font-weight:700;">worked examples page</a>.</p>
     </noscript>
   </div>
 </section>
@@ -739,52 +761,60 @@
 <section class="labsec t-md sec-dark bg-spot" id="yourprices" data-lab>
   <div class="wrap">
     <div class="head reveal" style="max-width:760px;">
-      <div class="secrule"><span class="eyebrow"><i></i>Not a script &mdash; your numbers</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 2 &middot; type your own prices</span><span class="line"></span></div>
-      <h2 class="h2 onDark" style="margin-top:16px;">Paste your price&nbsp;list.<br>Watch it quote from&nbsp;it.</h2>
-      <p class="lead onDark" style="margin-top:16px;">The demo above replays conversations we wrote, so
-        you are right to discount it. This one does not: paste the prices you actually charge, ask what a
-        customer would ask, and read the answer it gives back. It runs entirely in your browser &mdash;
+      <div class="secrule"><span class="eyebrow"><i></i>Not a&nbsp;script &mdash; your&nbsp;numbers</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 2 &middot; type your&nbsp;own prices</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Paste your&nbsp;price&nbsp;list.<br>Watch it quote from&nbsp;it.</h2>
+      <p class="lead onDark" style="margin-top:16px;">The&nbsp;demo above replays conversations we wrote, so
+        you are right to&nbsp;discount it. This&nbsp;one does not: paste the&nbsp;prices you actually charge, ask what a&nbsp;customer would ask, and read the&nbsp;answer it gives back. It runs entirely in&nbsp;your&nbsp;browser &mdash;
         nothing you type here is sent anywhere.</p>
     </div>
 
     <div class="labwrap reveal">
       <div class="labpane">
-        <h4 role="heading" aria-level="3">1 &middot; Your price list</h4>
+        <h4 role="heading" aria-level="3">1 &middot; Your&nbsp;price list</h4>
         <div class="labsamples" role="group" aria-label="Load a sample price list">
           <button class="chip" type="button" data-lab-sample="dental" aria-pressed="false">Dental</button>
           <button class="chip" type="button" data-lab-sample="home" aria-pressed="false">Home Services</button>
           <button class="chip" type="button" data-lab-sample="venues" aria-pressed="false">Venues</button>
           <button class="chip" type="button" data-lab-sample="stays" aria-pressed="false">Stays</button>
         </div>
-        <label class="sronly" for="labinput">Your price list, one item and one price per line</label>
+        <label class="sronly" for="labinput">Your&nbsp;price list, one item and one price per&nbsp;line</label>
         <textarea id="labinput" data-lab-input spellcheck="false"
           placeholder="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work." aria-label="Consultation  45&#10;Porcelain crown  1100&#10;Emergency after-hours visit  240&#10;&#10;One item and one number per line. Tabs, dashes, colons and $ all work."></textarea>
         <div class="lablist" data-lab-list aria-live="polite"></div>
       </div>
 
       <div class="labpane">
-        <h4>2 &middot; What a customer asks</h4>
+        <h4>2 &middot; What a&nbsp;customer asks</h4>
         <div class="labask">
-          <label class="sronly" for="labask">The question a customer would ask</label>
+          <label class="sronly" for="labask">The&nbsp;question a&nbsp;customer would ask</label>
           <input id="labask" data-lab-ask type="text" autocomplete="off"
                  placeholder="How much is a crown?" aria-label="How much is a crown?">
           <button type="button" data-lab-go>Ask&nbsp;it</button>
         </div>
         <div class="labout" data-lab-out>
-          <div class="labmsg">Load a sample on the left, or paste your own list &mdash; then ask it something.</div>
+          <div class="labmsg">Load a&nbsp;sample on&nbsp;the&nbsp;left, or paste your&nbsp;own list &mdash; then ask it something.</div>
         </div>
         <p class="sronly" data-lab-sr aria-live="polite"></p>
       </div>
     </div>
 
-    <p class="labfoot reveal"><b>Ask it something that is not on your list.</b> It will not estimate,
-      round up, or borrow a number from a similar line &mdash; it says a person will confirm, and files
-      the question so you answer it once. That is the difference between a receptionist you can leave
-      alone with a customer and one you cannot.</p>
+    <figure class="tracefig scenefig reveal">
+      <div class="scenebox" data-scene="pricetrace"></div>
+      <figcaption class="scenecap"><b>Every figure traces back to a line you typed.</b>
+        The panel lists the prices read out of your box; the lines the answer used
+        light up and are traced across to it, and the lines it did not use stay dark.
+        The count reads <b>from N of M lines you typed</b> and the total underneath it
+        is <b>0 numbers invented</b>. Ask something your list does not cover and the
+        trace ends in no number at all &mdash; handed to a person instead.</figcaption>
+    </figure>
+
+    <p class="labfoot reveal"><b>Ask it something that is not on&nbsp;your&nbsp;list.</b> It will not estimate,
+      round up, or borrow a&nbsp;number from&nbsp;a&nbsp;similar line &mdash; it says a&nbsp;person will confirm, and files
+      the&nbsp;question so you answer it once. That is the&nbsp;difference between a&nbsp;receptionist you can leave
+      alone with&nbsp;a&nbsp;customer and one you cannot.</p>
 
     <noscript>
-      <p class="lead onDark" style="margin-top:20px;">This one needs JavaScript &mdash; it does the
-        parsing in your browser rather than on a server.</p>
+      <p class="lead onDark" style="margin-top:20px;">This&nbsp;one needs JavaScript &mdash; it does the&nbsp;parsing in&nbsp;your&nbsp;browser rather than on&nbsp;a&nbsp;server.</p>
     </noscript>
   </div>
 </section>
@@ -793,9 +823,9 @@
 <section class="inboxsec t-md sec-dark bg-spot">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><i></i>One inbox · every channel</span>
-      <h2 class="h2 onDark" style="margin-top:22px;">Calls, chats, and&nbsp;messages<br>land in one&nbsp;place.</h2>
-      <p class="lead onDark" style="margin-top:16px;">Your team sees every conversation — who the AI handled, who needs a human, and what got booked.</p>
+      <span class="eyebrow"><i></i>One inbox · every&nbsp;channel</span>
+      <h2 class="h2 onDark" style="margin-top:22px;">Calls, chats, and&nbsp;messages<br>land in&nbsp;one&nbsp;place.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Your&nbsp;team sees every&nbsp;conversation — who the&nbsp;AI handled, who needs a&nbsp;human, and what got booked.</p>
     </div>
 
     <div class="browserframe light reveal">
@@ -828,13 +858,13 @@
     <div class="cols">
       <div class="reveal">
         <span class="eyebrow"><i></i>Answer → booking → CRM</span>
-        <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">It doesn't&nbsp;stop<br>at the&nbsp;answer.</h2>
-        <p class="lead onDark" style="margin-top:16px;max-width:400px;">Answering is the easy part. Saleringo finishes the job: qualified lead, booked slot, sent quote, updated record — while you sleep.</p>
-        <a class="linkcta" style="margin-top:30px;" href="./demo.html">Read a full call, start to finish</a>
+        <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">It doesn't&nbsp;stop<br>at&nbsp;the&nbsp;answer.</h2>
+        <p class="lead onDark" style="margin-top:16px;max-width:400px;">Answering is the&nbsp;easy part. Saleringo finishes the&nbsp;job: qualified lead, booked slot, sent quote, updated record — while you sleep.</p>
+        <a class="linkcta" style="margin-top:30px;" href="./demo.html">Read a&nbsp;full call, start to&nbsp;finish</a>
       </div>
       <div class="steps reveal">
         <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Inquiry arrives</b><span>Phone, web chat, WhatsApp — one inbox</span></span><span class="tail pilltag pt-dark">2:47 AM</span></div>
-        <div class="step"><span class="num">02</span><span class="tx"><b>AI answers from approved facts</b><span>It says only what you signed off — or hands over</span></span><span class="tail pilltag pt-teal">✓ Verified</span></div>
+        <div class="step"><span class="num">02</span><span class="tx"><b>AI answers from&nbsp;approved facts</b><span>It says only what you signed off — or hands over</span></span><span class="tail pilltag pt-teal">✓ Verified</span></div>
         <div class="step"><span class="num">03</span><span class="tx"><b>Lead qualified</b><span>Name, need, budget — captured automatically</span></span><span class="tail pilltag pt-line">3 fields</span></div>
         <div class="step"><span class="num">04</span><span class="tx"><b>Next step booked</b><span>Appointment, visit, or job — timezone-safe</span></span><span class="tail pilltag pt-teal">Sat 11:00</span></div>
         <div class="step"><span class="num">05</span><span class="tx"><b>CRM updated, follow-up queued</b><span>Quote sent, reminders on, nothing forgotten</span></span><span class="tail pilltag pt-amber">Quote opened</span></div>
@@ -842,8 +872,8 @@
     </div>
 
     <div class="stackband reveal">
-      <span class="eyebrow"><i></i>Works with your stack</span>
-      <h2 class="h2 onDark" style="margin-top:20px;font-size:var(--fs-h2);">Keep your CRM. We'll keep it&nbsp;updated.</h2>
+      <span class="eyebrow"><i></i>Works with&nbsp;your&nbsp;stack</span>
+      <h2 class="h2 onDark" style="margin-top:20px;font-size:var(--fs-h2);">Keep your&nbsp;CRM. We'll keep it&nbsp;updated.</h2>
       <div class="grplabel">Live today</div>
       <div class="intwall">
         <span class="intchip"><i style="background:#0FA3A3;"></i>Google Calendar</span>
@@ -853,7 +883,7 @@
         <span class="intchip"><i style="background:#0FA3A3;"></i>CSV export</span>
         <span class="intchip"><i style="background:#0FA3A3;"></i>Zapier</span>
       </div>
-      <div class="grplabel">On the roadmap — founding customers vote</div>
+      <div class="grplabel">On&nbsp;the&nbsp;roadmap — founding customers vote</div>
       <div class="intwall">
         <span class="intchip"><i style="background:#C6CEDA;"></i>ServiceTitan</span>
         <span class="intchip"><i style="background:#C6CEDA;"></i>Jobber</span>
@@ -865,7 +895,7 @@
         <span class="intchip"><i style="background:#C6CEDA;"></i>HubSpot</span>
         <span class="intchip"><i style="background:#C6CEDA;"></i>Salesforce</span>
       </div>
-      <p class="stackfoot">Today that means calendars, webhooks, Zapier and CSV &mdash; enough to feed most systems, and not the same thing as writing directly into your CRM. If yours is in the grey row, ask us where it sits before you buy rather than after.</p>
+      <p class="stackfoot">Today that&nbsp;means calendars, webhooks, Zapier and CSV &mdash; enough to&nbsp;feed most systems, and not the&nbsp;same thing as writing directly into&nbsp;your&nbsp;CRM. If yours is in&nbsp;the&nbsp;grey row, ask us where it sits before you buy rather than after.</p>
     </div>
   </div>
 </section>
@@ -877,11 +907,10 @@
 <section class="aftersec t-xl sec-dark bg-grid">
   <div class="wrap">
     <div class="head reveal" style="max-width:720px;">
-      <span class="eyebrow"><i></i>Answering is the easy part</span>
-      <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">The call&nbsp;ends.<br>The work is already&nbsp;done.</h2>
-      <p class="lead onDark" style="margin-top:16px;">Every other AI receptionist hands you a message. Saleringo hands you a booked
-        appointment, a priced quote, a customer record and a Monday-morning number — because the
-        CRM underneath it was built for your trade, not for a software company.</p>
+      <span class="eyebrow"><i></i>Answering is the&nbsp;easy part</span>
+      <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">The&nbsp;call&nbsp;ends.<br>The&nbsp;work is already&nbsp;done.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Every&nbsp;other AI receptionist hands you a&nbsp;message. Saleringo hands you a&nbsp;booked
+        appointment, a&nbsp;priced quote, a&nbsp;customer record and a&nbsp;Monday-morning number — because the&nbsp;CRM underneath it was built for&nbsp;your&nbsp;trade, not for&nbsp;a&nbsp;software company.</p>
     </div>
 
     <div class="appwin reveal" style="margin-top:44px;">
@@ -893,7 +922,7 @@
               <div class="mt">Chipped front tooth, asked if today is possible</div>
               <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 07:20 AM</span></div></div>
             <div class="pcard"><div class="who"><span class="ini">AM</span><span class="nm">A. Moreau</span></div>
-              <div class="mt">Wants a Saturday slot for two people</div>
+              <div class="mt">Wants a&nbsp;Saturday slot for&nbsp;two people</div>
               <div class="ft"><span class="tag ai">AI logged</span><span class="chan">WhatsApp</span></div></div>
           </div>
           <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Booked<span class="ct">4</span></h4>
@@ -917,7 +946,7 @@
               <div class="mt">Signed — deposit received</div>
               <div class="ft"><span class="tag">Closed</span><span class="amt">$6,100</span></div></div>
             <div class="pcard"><div class="who"><span class="ini">EV</span><span class="nm">E. Vargas</span></div>
-              <div class="mt">Confirmed for next month</div>
+              <div class="mt">Confirmed for&nbsp;next month</div>
               <div class="ft"><span class="tag">Closed</span><span class="amt">$2,340</span></div></div>
           </div>
         </div>
@@ -926,21 +955,21 @@
 
     <div class="flowline reveal">
       <div class="fnode done"><span class="bul">01</span><b>Booked</b>
-        <span>Held in your calendar, confirmation sent, no double-booking.</span></div>
+        <span>Held in&nbsp;your&nbsp;calendar, confirmation sent, no&nbsp;double-booking.</span></div>
       <div class="fnode done"><span class="bul">02</span><b>Quoted</b>
-        <span>Priced from your list — your options, your discount rules. Never invented.</span></div>
+        <span>Priced from&nbsp;your&nbsp;list — your&nbsp;options, your&nbsp;discount rules. Never invented.</span></div>
       <div class="fnode done"><span class="bul">03</span><b>Filed</b>
-        <span>Summary, what they wanted, how they sounded, what to do next. Written for you.</span></div>
+        <span>Summary, what they wanted, how they sounded, what to&nbsp;do next. Written for&nbsp;you.</span></div>
       <div class="fnode done"><span class="bul">04</span><b>Reported</b>
-        <span>One dashboard: inquiries, AI-handled rate, conversion by channel, revenue. PDF or Excel.</span></div>
+        <span>One dashboard: inquiries, AI-handled rate, conversion by&nbsp;channel, revenue. PDF or Excel.</span></div>
     </div>
 
     <div class="reveal" style="margin-top:52px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:stretch;">
       <div class="repcard">
-        <h5 role="heading" aria-level="3">Your dashboard · Monday morning</h5>
+        <h5 role="heading" aria-level="3">Your&nbsp;dashboard · Monday morning</h5>
         <div class="kpitiles" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px;">
           <div class="kpitile"><div class="lb">Conversations</div><div class="vl">142</div><div class="dl">▲ 18% vs last month</div></div>
-          <div class="kpitile hi"><div class="lb">Handled by AI alone</div><div class="vl">73%</div><div class="dl">27% passed to a person</div></div>
+          <div class="kpitile hi"><div class="lb">Handled by&nbsp;AI alone</div><div class="vl">73%</div><div class="dl">27% passed to&nbsp;a&nbsp;person</div></div>
           <div class="kpitile"><div class="lb">Booked</div><div class="vl">31</div><div class="dl">14 outside office hours</div></div>
         </div>
         <div class="funnelrow">
@@ -951,19 +980,19 @@
         </div>
       </div>
       <div class="quotedoc">
-        <div class="qh"><div><b>Estimate #2461</b><div class="qm">Built automatically, 4 minutes after the call</div></div><span class="qs">Sent</span></div>
+        <div class="qh"><div><b>Estimate #2461</b><div class="qm">Built automatically, 4 minutes after the&nbsp;call</div></div><span class="qs">Sent</span></div>
         <div class="qline"><span class="d">Base package</span><span class="s">Sat · 120 guests</span><span class="v">$3,600</span></div>
         <div class="qline"><span class="d">Extended hours</span><span class="s">+2 h</span><span class="v">$480</span></div>
-        <div class="qline"><span class="d">Premium add-on</span><span class="s">from price list</span><span class="v">$620</span></div>
-        <div class="qline disc"><span class="d">Off-peak discount</span><span class="s">your rule</span><span class="v">−$420</span></div>
+        <div class="qline"><span class="d">Premium add-on</span><span class="s">from&nbsp;price list</span><span class="v">$620</span></div>
+        <div class="qline disc"><span class="d">Off-peak discount</span><span class="s">your&nbsp;rule</span><span class="v">−$420</span></div>
         <div class="qline tot"><span class="d">Total</span><span class="v">$4,280</span></div>
-        <p class="qf">Your prices, your options, your discount logic. The system never invents a number — anything outside your rules goes to a person.</p>
+        <p class="qf">Your&nbsp;prices, your&nbsp;options, your&nbsp;discount logic. The&nbsp;system never invents a&nbsp;number — anything outside your&nbsp;rules goes to&nbsp;a&nbsp;person.</p>
       </div>
     </div>
-    <p class="mockcap" style="margin-top:14px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;">Product illustration with sample data. Stages, fields and pricing rules are configured per business.</p>
+    <p class="mockcap" style="margin-top:14px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;">Product illustration with&nbsp;sample data. Stages, fields and pricing rules are configured per&nbsp;business.</p>
 
     <div class="reveal" style="margin-top:40px;text-align:center;">
-      <a class="btn btn-teal" href="./platform.html">See the whole platform<span class="cir">↗</span></a>
+      <a class="btn btn-teal" href="./platform.html">See the&nbsp;whole platform<span class="cir">↗</span></a>
     </div>
   </div>
 </section>
@@ -975,58 +1004,56 @@
 <section class="keepsec t-xl sec-dark bg-spot" id="what-it-keeps">
   <div class="wrap">
     <div class="head reveal" style="max-width:720px;">
-      <span class="eyebrow"><i></i>What the conversation leaves behind</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">A booking is one&nbsp;night.
-        <span class="gradtext">A contact is next&nbsp;year.</span></h2>
-      <p class="lead onDark" style="margin-top:18px;">Answering wins you the job in
-        front of you. What you still have in March is the person &mdash; the number
-        that rang at 2:47&nbsp;AM, the email typed into your web chat, the account
-        behind the WhatsApp thread. Saleringo keeps all three in one record,
-        because that record is the part that compounds.</p>
+      <span class="eyebrow"><i></i>What the&nbsp;conversation leaves behind</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">A&nbsp;booking is one&nbsp;night.
+        <span class="gradtext">A&nbsp;contact is next&nbsp;year.</span></h2>
+      <p class="lead onDark" style="margin-top:18px;">Answering wins you the&nbsp;job in&nbsp;front of&nbsp;you. What you still have in&nbsp;March is the&nbsp;person &mdash; the&nbsp;number
+        that&nbsp;rang at&nbsp;2:47&nbsp;AM, the&nbsp;email typed into&nbsp;your&nbsp;web chat, the&nbsp;account
+        behind the&nbsp;WhatsApp thread. Saleringo keeps all three in&nbsp;one record,
+        because that&nbsp;record is the&nbsp;part that&nbsp;compounds.</p>
     </div>
 
     <div class="keepgrid reveal">
       <div class="keepcol voice">
         <span class="kh"><i></i>AI Phone</span>
-        <b>The number arrives with the&nbsp;call</b>
-        <p>Caller ID is on every call, so the contact costs nothing to collect. If
-          the job needs a name &mdash; and most do &mdash; it asks for one, and
-          writes down the answer rather than guessing at&nbsp;it.</p>
-        <span class="kgot">Number &middot; name &middot; what they wanted &middot; the recording</span>
+        <b>The&nbsp;number arrives with&nbsp;the&nbsp;call</b>
+        <p>Caller ID is on&nbsp;every&nbsp;call, so the&nbsp;contact costs nothing to&nbsp;collect. If
+          the&nbsp;job needs a&nbsp;name &mdash; and most do &mdash; it asks for&nbsp;one, and
+          writes down the&nbsp;answer rather than guessing at&nbsp;it.</p>
+        <span class="kgot">Number &middot; name &middot; what they wanted &middot; the&nbsp;recording</span>
       </div>
       <div class="keepcol chat">
         <span class="kh"><i></i>Web chat</span>
         <b>It asks before it&nbsp;books</b>
-        <p>A slot is not held on an anonymous visitor. The widget takes a name and
-          one way to reach them &mdash; email or mobile, your choice &mdash; and it
-          asks in the language the visitor is already&nbsp;typing&nbsp;in.</p>
-        <span class="kgot">Name &middot; email or mobile &middot; the thread</span>
+        <p>A&nbsp;slot is not held on&nbsp;an&nbsp;anonymous visitor. The&nbsp;widget takes a&nbsp;name and
+          one way to&nbsp;reach them &mdash; email or mobile, your&nbsp;choice &mdash; and it
+          asks in&nbsp;the&nbsp;language the&nbsp;visitor is already&nbsp;typing&nbsp;in.</p>
+        <span class="kgot">Name &middot; email or mobile &middot; the&nbsp;thread</span>
       </div>
       <div class="keepcol msg">
         <span class="kh"><i></i>Messenger</span>
-        <b>The account comes&nbsp;attached</b>
-        <p>On WhatsApp, Instagram or KakaoTalk the contact is the conversation:
-          there is nothing to ask for. Two threads from one person merge into one
-          record instead of two half&#8209;customers.</p>
-        <span class="kgot">Verified account &middot; every message &middot; one record</span>
+        <b>The&nbsp;account comes&nbsp;attached</b>
+        <p>On&nbsp;WhatsApp, Instagram or KakaoTalk the&nbsp;contact is the&nbsp;conversation:
+          there is nothing to&nbsp;ask for. Two threads from&nbsp;one person merge into&nbsp;one
+          record instead of&nbsp;two half&#8209;customers.</p>
+        <span class="kgot">Verified account &middot; every&nbsp;message &middot; one record</span>
       </div>
     </div>
 
     <figure class="fanfig scenefig reveal">
       <div class="scenebox" data-scene="capturefan"></div>
       <figcaption class="scenecap">
-        <b>Three front doors, one record, and a way back to the person.</b>
-        From there you can send the confirmation, follow up the quote nobody
-        answered, or put the whole segment into next month&rsquo;s offer &mdash;
-        by trade, by suburb, by what they asked about. Marketing consent is asked
-        for and stored per contact, and the export is yours to take with you.
+        <b>Three front doors, one record, and a&nbsp;way back to&nbsp;the&nbsp;person.</b>
+        From&nbsp;there you can send the&nbsp;confirmation, follow up the&nbsp;quote nobody
+        answered, or put the&nbsp;whole segment into&nbsp;next month&rsquo;s&nbsp;offer &mdash;
+        by&nbsp;trade, by&nbsp;suburb, by&nbsp;what they asked about. Marketing consent is asked
+        for and stored per&nbsp;contact, and the&nbsp;export is yours to&nbsp;take with&nbsp;you.
       </figcaption>
     </figure>
 
-    <p class="seccap reveal">Every AI receptionist can hand you a transcript.
-      The question worth asking is what you are still holding six months later.
-      <a class="linkcta" href="./platform.html#who-next">See what the CRM does with
-        it&nbsp;&nbsp;&rarr;</a></p>
+    <p class="seccap reveal">Every&nbsp;AI receptionist can hand you a&nbsp;transcript.
+      The&nbsp;question worth asking is what you are still holding six months later.
+      <a class="linkcta" href="./platform.html#who-next">See what the&nbsp;CRM does with&nbsp;it&nbsp;&nbsp;&rarr;</a></p>
   </div>
 </section>
 
@@ -1039,7 +1066,7 @@
         <div class="secrule"><span class="eyebrow"><i></i>Who this is built for</span><span class="line"></span></div>
         <h2 class="h2 onDark" style="font-size:var(--fs-h2);">Who answers for&nbsp;you<br>tonight?</h2>
       </div>
-      <p class="lead onDark" style="max-width:360px;">Right now the answer is you, your voicemail, or nobody. These are the desks Saleringo was built to cover.</p>
+      <p class="lead onDark" style="max-width:360px;">Right now the&nbsp;answer is you, your&nbsp;voicemail, or nobody. These are the&nbsp;desks Saleringo was built to&nbsp;cover.</p>
     </div>
 
     <div class="audgrid reveal">
@@ -1048,31 +1075,31 @@
              alt="A cafe owner holding a phone to her ear with a tablet in the other hand"
              loading="lazy" decoding="async" width="800" height="1200"
      srcset="https://images.pexels.com/photos/6612701/pexels-photo-6612701.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6612701/pexels-photo-6612701.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/6612701/pexels-photo-6612701.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
-        <div><b>The owner who is also the phone</b><span>Local shops, delis &amp; trades</span></div>
+        <div><b>The&nbsp;owner who is also the&nbsp;phone</b><span>Local shops, delis &amp; trades</span></div>
       </div>
       <div class="audcard">
         <img class="ph" src="https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
              alt="A florist standing at the entrance of her flower shop"
              loading="lazy" decoding="async" width="800" height="534"
      srcset="https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
-        <div><b>The one-person front desk</b><span>Florists, studios &amp; boutiques</span></div>
+        <div><b>The&nbsp;one-person front desk</b><span>Florists, studios &amp; boutiques</span></div>
       </div>
       <div class="audcard">
         <img class="ph" src="https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
              alt="A dentist in scrubs going through a treatment plan with a patient"
              loading="lazy" decoding="async" width="800" height="533"
      srcset="https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/6627325/pexels-photo-6627325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
-        <div><b>The chair nobody can interrupt</b><span>Dental &amp; medical clinics</span></div>
+        <div><b>The&nbsp;chair nobody can interrupt</b><span>Dental &amp; medical clinics</span></div>
       </div>
       <div class="audcard">
         <img class="ph" src="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
              alt="A modern hotel lobby at night, warm lamplight over cosy seating"
              loading="lazy" decoding="async" width="800" height="1200"
      srcset="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
-        <div><b>The lobby after midnight</b><span>Boutique stays &amp; event venues</span></div>
+        <div><b>The&nbsp;lobby after midnight</b><span>Boutique stays &amp; event venues</span></div>
       </div>
     </div>
-    <p class="photocap"><span class="capnote">Photography is illustrative. These are the kinds of businesses Saleringo is built for — not named customers, and not testimonials.</span>Tonight, in every one of them, the answer is voicemail. That is the only thing on this page we are proposing to change.</p>
+    <p class="photocap"><span class="capnote">Photography is illustrative. These are the&nbsp;kinds of&nbsp;businesses Saleringo is built for — not named customers, and not testimonials.</span>Tonight, in&nbsp;every&nbsp;one of&nbsp;them, the&nbsp;answer is voicemail. That is the&nbsp;only thing on&nbsp;this&nbsp;page we are proposing to&nbsp;change.</p>
   </div>
 </section>
 
@@ -1080,11 +1107,11 @@
 <section class="todaysec t-md sec-dark bg-grid" id="today">
   <div class="wrap">
     <div class="head reveal" style="max-width:760px;">
-      <div class="secrule"><span class="eyebrow"><i></i>The screen you open first</span><span class="line"></span></div>
-      <h2 class="h2 onDark" style="margin-top:16px;">Not &ldquo;how many messages&rdquo;.<br>What has to happen&nbsp;today.</h2>
-      <p class="lead onDark" style="margin-top:16px;">Every AI receptionist can tell you it answered 40 conversations.
-        None of them can tell you which four need you before lunch. This is the difference between a chat log
-        and a business you can run from one screen.</p>
+      <div class="secrule"><span class="eyebrow"><i></i>The&nbsp;screen you open first</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Not &ldquo;how many messages&rdquo;.<br>What has to&nbsp;happen&nbsp;today.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Every&nbsp;AI receptionist can tell you it answered 40 conversations.
+        None of&nbsp;them can tell you which four need you before lunch. This is the&nbsp;difference between a&nbsp;chat log
+        and a&nbsp;business you can run from&nbsp;one screen.</p>
     </div>
 
     <div class="todaywrap reveal">
@@ -1096,29 +1123,29 @@
             <div class="tdcard"><span class="tdl">New inquiries</span><b class="tdv">7</b>
               <span class="tds">5 arrived after you closed</span></div>
             <div class="tdcard ok"><span class="tdl">Bookings confirmed</span><b class="tdv">4</b>
-              <span class="tds">Taken by AI, nobody at the desk</span></div>
-            <div class="tdcard warn"><span class="tdl">Quotes waiting on you</span><b class="tdv">2</b>
-              <span class="tds">Drafted &mdash; needs your sign&#8209;off to send</span></div>
-            <div class="tdcard"><span class="tdl">Assigned to staff</span><b class="tdv">6</b>
-              <span class="tds">3 to Marcus, 2 to Dana, 1 unclaimed</span></div>
-            <div class="tdcard hot"><span class="tdl">Go back to these</span><b class="tdv">9</b>
-              <span class="tds">Quiet 3+ days after a quote</span></div>
-            <div class="tdcard"><span class="tdl">Booked value, this week</span><b class="tdv">$11,240</b>
-              <span class="tds">From confirmed jobs only</span></div>
+              <span class="tds">Taken by&nbsp;AI, nobody at&nbsp;the&nbsp;desk</span></div>
+            <div class="tdcard warn"><span class="tdl">Quotes waiting on&nbsp;you</span><b class="tdv">2</b>
+              <span class="tds">Drafted &mdash; needs your&nbsp;sign&#8209;off to&nbsp;send</span></div>
+            <div class="tdcard"><span class="tdl">Assigned to&nbsp;staff</span><b class="tdv">6</b>
+              <span class="tds">3 to&nbsp;Marcus, 2 to&nbsp;Dana, 1 unclaimed</span></div>
+            <div class="tdcard hot"><span class="tdl">Go back to&nbsp;these</span><b class="tdv">9</b>
+              <span class="tds">Quiet 3+ days after a&nbsp;quote</span></div>
+            <div class="tdcard"><span class="tdl">Booked value, this&nbsp;week</span><b class="tdv">$11,240</b>
+              <span class="tds">From&nbsp;confirmed jobs only</span></div>
           </div>
 
           <div class="todolist">
             <div class="tdrow"><span class="tdw">1</span>
               <b>Sign off two quotes before 10am</b>
-              <span class="tdm">$1,195 &middot; $2,860 &mdash; both from your price list, both waiting since last night</span>
+              <span class="tdm">$1,195 &middot; $2,860 &mdash; both from&nbsp;your&nbsp;price list, both waiting since last night</span>
               <span class="tdt hot">Blocks revenue</span></div>
             <div class="tdrow"><span class="tdw">2</span>
-              <b>One booking has no owner</b>
-              <span class="tdm">Fri 09:00 &mdash; taken at 02:14, nobody assigned yet</span>
+              <b>One booking has no&nbsp;owner</b>
+              <span class="tdm">Fri 09:00 &mdash; taken at&nbsp;02:14, nobody assigned yet</span>
               <span class="tdt warn">Unclaimed</span></div>
             <div class="tdrow"><span class="tdw">3</span>
-              <b>Nine people went quiet after a quote</b>
-              <span class="tdm">The follow-up messages are drafted; you decide whether they go</span>
+              <b>Nine people went quiet after a&nbsp;quote</b>
+              <span class="tdm">The&nbsp;follow-up messages are drafted; you decide whether they go</span>
               <span class="tdt">Queued</span></div>
           </div>
         </div>
@@ -1128,25 +1155,22 @@
         <div class="tscard">
           <span class="tsl">What it is</span>
           <b>Six numbers, then three decisions</b>
-          <p>The counts come from the same records the AI wrote &mdash; inquiries, bookings, quotes,
+          <p>The&nbsp;counts come from&nbsp;the&nbsp;same records the&nbsp;AI wrote &mdash; inquiries, bookings, quotes,
             staff assignment, pipeline stage, booked value. Nothing is re-keyed, so nothing drifts.</p>
         </div>
         <div class="tscard">
-          <span class="tsl">Why it is not a chat dashboard</span>
-          <b>Every tile opens into names</b>
-          <p>&ldquo;Nine to go back to&rdquo; is a list of nine people with what they asked and when.
-            &ldquo;We had a good week&rdquo; becomes a queue you can work through.</p>
+          <span class="tsl">Why it is not a&nbsp;chat dashboard</span>
+          <b>Every&nbsp;tile opens into&nbsp;names</b>
+          <p>&ldquo;Nine to&nbsp;go back to&rdquo; is a&nbsp;list of&nbsp;nine people with&nbsp;what they asked and when.
+            &ldquo;We had a&nbsp;good week&rdquo; becomes a&nbsp;queue you can work through.</p>
         </div>
         <div class="tscard">
-          <span class="tsl">Where the stages come from</span>
-          <b>New &rarr; contacted &rarr; visit booked &rarr; visited &rarr; quote out &rarr; won</b>
-          <p>Six live stages plus cancelled &mdash; the same set the product runs on, not a
-            marketing simplification of it.</p>
+          <span class="tsl">Where the&nbsp;stages come from</span>&nbsp;<b>New &rarr; contacted &rarr; visit booked &rarr; visited &rarr; quote out &rarr; won</b>
+          <p>Six live stages plus cancelled &mdash; the&nbsp;same set the&nbsp;product runs on, not a&nbsp;marketing simplification of&nbsp;it.</p>
         </div>
       </div>
     </div>
-    <p class="todaycap">Product illustration with sample data. The tiles, stages and fields are the
-      real ones; the numbers are examples.</p>
+    <p class="todaycap">Product illustration with&nbsp;sample data. The&nbsp;tiles, stages and fields are the&nbsp;real ones; the&nbsp;numbers are examples.</p>
   </div>
 </section>
 
@@ -1154,11 +1178,11 @@
 <section class="proofsec t-md sec-dark bg-grid" id="pilot">
   <div class="wrap">
     <div class="head reveal" style="max-width:760px;">
-      <div class="secrule"><span class="eyebrow"><i></i>One venue &middot; six weeks &middot; our own logs</span><span class="line"></span></div>
+      <div class="secrule"><span class="eyebrow"><i></i>One venue &middot; six weeks &middot; our&nbsp;own logs</span><span class="line"></span></div>
       <h2 class="h2 onDark" style="margin-top:16px;">We ran it&nbsp;somewhere real,<br>and counted what&nbsp;happened.</h2>
-      <p class="lead onDark" style="margin-top:16px;">Everything else on this site is an argument. This is the one
-        section with measurements in it &mdash; taken from a single venue running Saleringo between 1 July and
-        13 August 2026. It is a small sample and we print the denominator beside every figure so you can judge
+      <p class="lead onDark" style="margin-top:16px;">Everything else on&nbsp;this&nbsp;site is an&nbsp;argument. This is the&nbsp;one
+        section with&nbsp;measurements in&nbsp;it &mdash; taken from&nbsp;a&nbsp;single venue running Saleringo between 1 July and
+        13 August 2026. It is a&nbsp;small sample and we print the&nbsp;denominator beside every&nbsp;figure so you can judge
         it yourself.</p>
     </div>
 
@@ -1166,84 +1190,82 @@
       <div class="statcard">
         <span class="sl">After&#8209;hours consultations</span>
         <b class="sv">61%</b>
-        <span class="sd">14 of 23 sessions</span>
-        <p class="sn">Most of the conversations happened when nobody was at the desk.</p>
+        <span class="sd">14 of&nbsp;23 sessions</span>
+        <p class="sn">Most of&nbsp;the&nbsp;conversations happened when nobody was at&nbsp;the&nbsp;desk.</p>
       </div>
       <div class="statcard">
-        <span class="sl">Conversations at night</span>
+        <span class="sl">Conversations at&nbsp;night</span>
         <b class="sv">58%</b>
-        <span class="sd">of 158 conversations, 18:00&ndash;09:00</span>
-        <p class="sn">Not a trickle after closing &mdash; the majority of the talking.</p>
+        <span class="sd">of&nbsp;158 conversations, 18:00&ndash;09:00</span>
+        <p class="sn">Not a&nbsp;trickle after closing &mdash; the&nbsp;majority of&nbsp;the&nbsp;talking.</p>
       </div>
       <div class="statcard hi">
-        <span class="sl">Concentrated in two hours</span>
+        <span class="sl">Concentrated in&nbsp;two hours</span>
         <b class="sv">39%</b>
         <span class="sd">62 conversations, 18:00&ndash;20:00</span>
-        <p class="sn">The hour after your customer leaves work is the busiest hour you are closed.</p>
+        <p class="sn">The&nbsp;hour after your&nbsp;customer leaves work is the&nbsp;busiest hour you are closed.</p>
       </div>
       <div class="statcard">
         <span class="sl">Contact details captured</span>
         <b class="sv">64%</b>
-        <span class="sd">9 of 14 web&#8209;chat sessions</span>
-        <p class="sn">An answered question became a name and a number someone could call back.</p>
+        <span class="sd">9 of&nbsp;14 web&#8209;chat sessions</span>
+        <p class="sn">An&nbsp;answered question became a&nbsp;name and a&nbsp;number someone could call back.</p>
       </div>
       <div class="statcard">
         <span class="sl">High&#8209;intent, after hours</span>
-        <b class="sv">4 of 5</b>
+        <b class="sv">4 of&nbsp;5</b>
         <span class="sd">high&#8209;intent, counted conservatively</span>
         <p class="sn">Quote, booking and availability questions &mdash; not idle browsing.</p>
       </div>
       <div class="statcard">
         <span class="sl">Daily inquiries, July &rarr; August</span>
         <b class="sv">&times;3.7</b>
-        <span class="sd">0.29 &rarr; 1.08 per day</span>
-        <p class="sn">We are not claiming we caused this. See the note below.</p>
+        <span class="sd">0.29 &rarr; 1.08 per&nbsp;day</span>
+        <p class="sn">We are not claiming we caused this. See the&nbsp;note below.</p>
       </div>
     </div>
 
     <div class="caselog reveal">
-      <h3 class="ch">Four conversations from the&nbsp;log</h3>
+      <h3 class="ch">Four conversations from&nbsp;the&nbsp;log</h3>
       <div class="cases">
         <div class="case">
           <span class="ct">Phone &middot; 27 turns</span>
-          <b>Asked for one specific room at one specific time.</b>
-          <p>When that slot turned out to be past the cut&#8209;off, it offered an alternative rather than
-            ending the call. Twenty&#8209;seven turns is not a deflection.</p>
+          <b>Asked for&nbsp;one specific room at&nbsp;one specific time.</b>
+          <p>When that&nbsp;slot turned out to&nbsp;be past the&nbsp;cut&#8209;off, it offered an&nbsp;alternative rather than
+            ending the&nbsp;call. Twenty&#8209;seven turns is not a&nbsp;deflection.</p>
         </div>
         <div class="case">
           <span class="ct">Web chat &middot; 3 separate visits</span>
-          <b>The same person came back three times.</b>
-          <p>Quote, then availability, then the room again. Without a record joining those three visits
-            into one customer, that is three strangers instead of one warm lead.</p>
+          <b>The&nbsp;same person came back three times.</b>
+          <p>Quote, then availability, then the&nbsp;room again. Without&nbsp;a&nbsp;record joining those&nbsp;three visits
+            into&nbsp;one customer, that is three strangers instead of&nbsp;one warm lead.</p>
         </div>
         <div class="case">
           <span class="ct">02:00</span>
-          <b>Pricing and room details, at two in the morning.</b>
-          <p>Nobody was going to answer this. It is the clearest argument for a quote the visitor can
-            get without waiting for opening time.</p>
+          <b>Pricing and room details, at&nbsp;two in&nbsp;the&nbsp;morning.</b>
+          <p>Nobody was going to&nbsp;answer this. It is the&nbsp;clearest argument for&nbsp;a&nbsp;quote the&nbsp;visitor can
+            get without&nbsp;waiting for&nbsp;opening time.</p>
         </div>
         <div class="case">
           <span class="ct">07:00</span>
-          <b>A booking request before the doors opened.</b>
-          <p>Intent arrives before your staff do. It went onto the calendar and waited for a human
-            to confirm it.</p>
+          <b>A&nbsp;booking request before the&nbsp;doors opened.</b>
+          <p>Intent arrives before your&nbsp;staff do. It went onto&nbsp;the&nbsp;calendar and waited for&nbsp;a&nbsp;human
+            to&nbsp;confirm it.</p>
         </div>
       </div>
     </div>
 
     <div class="proofnote reveal">
-      <p><b>What this is, precisely.</b> One venue. Six weeks &mdash; 1 July to 13 August 2026.
-        23 sessions and 158 conversations, with our own test traffic excluded. That is a pilot, not a
-        customer base, and we have not published it as anything else.</p>
-      <p><b>What we will not claim.</b> The &times;3.7 rise in daily inquiries is an observation from
-        that period. Advertising, seasonality and search volume all moved during the same weeks, and we
-        have not separated them &mdash; so we are not telling you Saleringo caused it. The figures we do
-        stand behind are the time&#8209;of&#8209;day ones, because those describe when people asked, not
+      <p><b>What this is, precisely.</b> One venue. Six weeks &mdash; 1 July to&nbsp;13 August 2026.
+        23 sessions and 158 conversations, with&nbsp;our&nbsp;own test traffic excluded. That is a&nbsp;pilot, not a&nbsp;customer base, and we have not published it as anything else.</p>
+      <p><b>What we will not claim.</b> The &times;3.7 rise in&nbsp;daily inquiries is an&nbsp;observation from&nbsp;that&nbsp;period. Advertising, seasonality and search volume all moved during the&nbsp;same weeks, and we
+        have not separated them &mdash; so we are not telling you Saleringo caused it. The&nbsp;figures we do
+        stand behind are the&nbsp;time&#8209;of&#8209;day ones, because those&nbsp;describe when people asked, not
         how many.</p>
-      <p><b>What is missing.</b> No conversion&#8209;to&#8209;contract figure, because six weeks is not
-        long enough to have one worth printing. When there is, it will appear here with its denominator
+      <p><b>What is missing.</b> No&nbsp;conversion&#8209;to&#8209;contract figure, because six weeks is not
+        long enough to&nbsp;have one worth printing. When there is, it will appear here with&nbsp;its&nbsp;denominator
         beside it like everything above.</p>
-      <p><b>What it does establish.</b> In six weeks at one venue, most of the conversations happened while the desk was empty &mdash; 58% of 158 between 18:00 and 09:00, and 62 of them inside the two hours after your customer leaves work. That is not a claim about revenue. It is a claim about when your customers talk to you, and it is the only number on this site we measured ourselves.</p>
+      <p><b>What it does establish.</b> In&nbsp;six weeks at&nbsp;one venue, most of&nbsp;the&nbsp;conversations happened while the&nbsp;desk was empty &mdash; 58% of&nbsp;158 between 18:00 and 09:00, and 62 of&nbsp;them inside the&nbsp;two hours after your&nbsp;customer leaves work. That is not a&nbsp;claim about&nbsp;revenue. It is a&nbsp;claim about&nbsp;when your&nbsp;customers talk to&nbsp;you, and it is the&nbsp;only number on&nbsp;this&nbsp;site we measured ourselves.</p>
     </div>
   </div>
 </section>
@@ -1252,12 +1274,12 @@
 <section class="livesec t-md sec-dark bg-spot" id="call-them">
   <div class="wrap">
     <div class="head reveal" style="max-width:780px;">
-      <div class="secrule"><span class="eyebrow"><i></i>Not a demo &mdash; production lines</span><span class="tryme"><i aria-hidden="true">⬤</i>Live numbers &middot; dial one now</span><span class="line"></span></div>
-      <h2 class="h2 onDark" style="margin-top:16px;">Don&rsquo;t take our word for it.<br>Ring one of them yourself.</h2>
+      <div class="secrule"><span class="eyebrow"><i></i>Not a&nbsp;demo &mdash; production lines</span><span class="tryme"><i aria-hidden="true">⬤</i>Live numbers &middot; dial one now</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Don&rsquo;t take our&nbsp;word for&nbsp;it.<br>Ring one of&nbsp;them yourself.</h2>
       <p class="lead onDark" style="margin-top:16px;">These are real businesses running Saleringo today. Dial any
-        number below and an AI answers &mdash; theirs, not ours, with their prices, their calendar and their rules.
-        Ask it something awkward. Compare how differently a clinic and a wedding venue handle the same question.
-        It answers in the language you speak to it in.</p>
+        number below and an&nbsp;AI answers &mdash; theirs, not ours, with&nbsp;their&nbsp;prices, their&nbsp;calendar and their&nbsp;rules.
+        Ask it something awkward. Compare how differently a&nbsp;clinic and a&nbsp;wedding venue handle the&nbsp;same question.
+        It answers in&nbsp;the&nbsp;language you speak to&nbsp;it in.</p>
     </div>
 
     <div class="livegrid reveal">
@@ -1265,55 +1287,55 @@
         <span class="lt">Wedding venue &middot; Jeju</span>
         <b>H&eacute;ritique Jeju</b>
         <a class="lnum" href="tel:+827052770821">+82 70&#8209;5277&#8209;0821</a>
-        <p>Ask about available ceremony dates, the halls, a quote, or booking a tour.</p>
+        <p>Ask about&nbsp;available ceremony dates, the&nbsp;halls, a&nbsp;quote, or booking a&nbsp;tour.</p>
       </div>
       <div class="livecard">
         <span class="lt">Clinic</span>
         <b>Songjeong Saebom Clinic</b>
         <a class="lnum" href="tel:+827052770825">+82 70&#8209;5277&#8209;0825</a>
-        <p>Ask about consulting hours, which clinic handles what, or booking an appointment.
-          Watch where it stops and hands you to a person.</p>
+        <p>Ask about&nbsp;consulting hours, which clinic handles what, or booking an&nbsp;appointment.
+          Watch where it stops and hands you to&nbsp;a&nbsp;person.</p>
       </div>
       <div class="livecard">
         <span class="lt">National industry association</span>
-        <b>Korea Association for ICT Promotion</b>
+        <b>Korea Association for&nbsp;ICT Promotion</b>
         <a class="lnum" href="tel:+827052770824">+82 70&#8209;5277&#8209;0824</a>
-        <p>A public-facing enquiry line: identity-theft checks, certification exams, telecoms complaints.
-          Higher stakes than a booking, same rules.</p>
+        <p>A&nbsp;public-facing enquiry line: identity-theft checks, certification exams, telecoms complaints.
+          Higher stakes than a&nbsp;booking, same rules.</p>
       </div>
       <div class="livecard">
         <span class="lt">Contact-centre operator</span>
-        <b>The M Company</b>
+        <b>The&nbsp;M Company</b>
         <a class="lnum" href="tel:+827052770823">+82 70&#8209;5277&#8209;0823</a>
-        <p>High-frequency questions &mdash; store locations, opening hours. The boring volume
-          that eats a team&rsquo;s day.</p>
+        <p>High-frequency questions &mdash; store locations, opening hours. The&nbsp;boring volume
+          that&nbsp;eats a&nbsp;team&rsquo;s&nbsp;day.</p>
       </div>
       <div class="livecard ours">
-        <span class="lt">Our own line</span>
+        <span class="lt">Our&nbsp;own line</span>
         <b>Saleringo</b>
         <a class="lnum" href="tel:+827052770820">+82 70&#8209;5277&#8209;0820</a>
-        <p>Ask it what we cost, how long a build takes, or whether it fits your trade.
-          We sell an AI that answers the phone, so ours had better.</p>
+        <p>Ask it what we cost, how long a&nbsp;build takes, or whether it fits your&nbsp;trade.
+          We sell an&nbsp;AI that&nbsp;answers the&nbsp;phone, so ours had better.</p>
       </div>
       <div class="livecard ours">
-        <span class="lt">Our own line &middot; golf</span>
+        <span class="lt">Our&nbsp;own line &middot; golf</span>
         <b>Saleringo Golf CC</b>
         <a class="lnum" href="tel:+827052770822">+82 70&#8209;5277&#8209;0822</a>
-        <p>A demonstration tenant, not a customer &mdash; built so you can hear a tee-time
-          booking without troubling a real club.</p>
+        <p>A&nbsp;demonstration tenant, not a&nbsp;customer &mdash; built so you can hear a&nbsp;tee-time
+          booking without&nbsp;troubling a&nbsp;real club.</p>
       </div>
     </div>
 
     <div class="livenote reveal">
-      <p><b>Two of the six are ours, and they are labelled.</b> H&eacute;ritique Jeju, Songjeong Saebom,
-        KAIT and The M Company are customers. Saleringo and Saleringo Golf CC are our own lines. We would
+      <p><b>Two of&nbsp;the&nbsp;six are ours, and they are labelled.</b> H&eacute;ritique Jeju, Songjeong Saebom,
+        KAIT and The&nbsp;M Company are customers. Saleringo and Saleringo Golf CC are our&nbsp;own lines. We would
         rather tell you which is which than let you find out.</p>
-      <p><b>What you are calling.</b> Korean numbers, answered by the same AI that handles these businesses'
-        real customers. It replies in the language you use &mdash; try it in English, Spanish, Japanese or
-        anything else. Calls are charged at your international rate, and the recordings are used to improve
+      <p><b>What you are calling.</b> Korean numbers, answered by&nbsp;the&nbsp;same AI that&nbsp;handles these&nbsp;businesses'
+        real customers. It replies in&nbsp;the&nbsp;language you use &mdash; try it in&nbsp;English, Spanish, Japanese or
+        anything else. Calls are charged at&nbsp;your&nbsp;international rate, and the&nbsp;recordings are used to&nbsp;improve
         answer quality.</p>
-      <p><b>What we still will not publish.</b> No conversion figures, no revenue claims, no testimonials.
-        Six phone numbers you can dial without asking us first is a harder kind of proof than a quote we
+      <p><b>What we still will not publish.</b> No&nbsp;conversion figures, no&nbsp;revenue claims, no&nbsp;testimonials.
+        Six phone numbers you can dial without&nbsp;asking us first is a&nbsp;harder kind of&nbsp;proof than a&nbsp;quote we
         typed ourselves.</p>
     </div>
   </div>
@@ -1323,23 +1345,23 @@
 <section class="altsec t-md sec-light bg-paper">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow light"><i></i>What else could you do at 2:47 AM?</span>
-      <h2 class="h2" style="margin-top:22px;">Five honest&nbsp;options.<br>Only one of them runs the&nbsp;pipeline.</h2>
-      <p class="lead" style="margin-top:16px;">Including the one you probably have open in another tab.</p>
+      <span class="eyebrow light"><i></i>What else could you do at&nbsp;2:47 AM?</span>
+      <h2 class="h2" style="margin-top:22px;">Five honest&nbsp;options.<br>Only one of&nbsp;them runs the&nbsp;pipeline.</h2>
+      <p class="lead" style="margin-top:16px;">Including the&nbsp;one you probably have open in&nbsp;another&nbsp;tab.</p>
     </div>
     <div class="altgrid five reveal">
       <div class="altcol">
-        <h4 role="heading" aria-level="3">Miss the call</h4>
+        <h4 role="heading" aria-level="3">Miss the&nbsp;call</h4>
         <div class="cost">$0<small> /mo</small></div>
         <ul>
-          <li><i>✕</i>Voicemail is the whole answer</li>
-          <li><i>✕</i>The caller phones the next listing</li>
-          <li><i>✕</i>No record, no follow-up</li>
-          <li><i>✕</i>Real cost: the revenue you never see</li>
+          <li><i>✕</i>Voicemail is the&nbsp;whole answer</li>
+          <li><i>✕</i>The&nbsp;caller phones the&nbsp;next listing</li>
+          <li><i>✕</i>No&nbsp;record, no&nbsp;follow-up</li>
+          <li><i>✕</i>Real cost: the&nbsp;revenue you never see</li>
         </ul>
       </div>
       <div class="altcol">
-        <h4>Hire a receptionist</h4>
+        <h4>Hire a&nbsp;receptionist</h4>
         <div class="cost">$3,000+<small> /mo</small></div>
         <ul>
           <li><i>✕</i>One person, one timezone, one language</li>
@@ -1352,35 +1374,35 @@
         <h4>Answering service</h4>
         <div class="cost">$300–800<small> /mo</small></div>
         <ul>
-          <li><i>✓</i>A human picks up around the clock</li>
-          <li><i>✕</i>Takes a message — that is the product</li>
-          <li><i>✕</i>Does not know your prices or calendar</li>
+          <li><i>✓</i>A&nbsp;human picks up around the&nbsp;clock</li>
+          <li><i>✕</i>Takes a&nbsp;message — that is the&nbsp;product</li>
+          <li><i>✕</i>Does not know your&nbsp;prices or calendar</li>
           <li><i>✕</i>You still call everyone back tomorrow</li>
         </ul>
       </div>
       <div class="altcol">
-        <h4>Another AI receptionist</h4>
+        <h4>Another&nbsp;AI receptionist</h4>
         <div class="cost">$50–300<small> /mo</small></div>
         <ul>
-          <li><i>✓</i>Answers around the clock</li>
-          <li><i>✓</i>Books into a connected calendar</li>
-          <li><i>✕</i>Quoting from your own price list is rarely part of it</li>
-          <li><i>✕</i>Hands you a transcript, not a pipeline</li>
+          <li><i>✓</i>Answers around the&nbsp;clock</li>
+          <li><i>✓</i>Books into&nbsp;a&nbsp;connected calendar</li>
+          <li><i>✕</i>Quoting from&nbsp;your&nbsp;own price list is rarely part of&nbsp;it</li>
+          <li><i>✕</i>Hands you a&nbsp;transcript, not a&nbsp;pipeline</li>
         </ul>
       </div>
       <div class="altcol win">
         <h4>Saleringo</h4>
         <div class="cost">$79–599<small> /mo</small></div>
         <ul>
-          <li><i>✓</i>Phone, web chat and messenger, 24/7, your customer&rsquo;s language</li>
-          <li><i>✓</i>Books the slot <b>and</b> prices the quote from your own list</li>
-          <li><i>✓</i>Pipeline stages, customer records, follow-ups — built for your trade</li>
-          <li><i>✓</i>A Monday report: what came in, what converted, what it earned</li>
+          <li><i>✓</i>Phone, web chat and messenger, 24/7, your&nbsp;customer&rsquo;s&nbsp;language</li>
+          <li><i>✓</i>Books the&nbsp;slot <b>and</b> prices the&nbsp;quote from&nbsp;your&nbsp;own list</li>
+          <li><i>✓</i>Pipeline stages, customer records, follow-ups — built for&nbsp;your&nbsp;trade</li>
+          <li><i>✓</i>A&nbsp;Monday report: what came in, what converted, what it earned</li>
         </ul>
       </div>
     </div>
-    <p class="note"><span class="capnote">Receptionist, answering-service and AI-receptionist figures are typical market ranges, not quotes from any specific vendor — check the one you are comparing against, since features differ. Voice and messaging usage is billed on top of the Saleringo plan — <a href="./pricing.html" style="color:#0A7F7F;font-weight:700;">see the full pricing ↗</a></span>Four of the five stop at the conversation. The fifth is the only one that still has work to show you on Monday morning.</p>
-    <p class="guidelink"><a href="./ai-answering-service.html">The long version of this comparison &mdash; answering service vs AI receptionist vs AI front office&nbsp;&nbsp;&rarr;</a></p>
+    <p class="note"><span class="capnote">Receptionist, answering-service and AI-receptionist figures are typical market ranges, not quotes from&nbsp;any specific vendor — check the&nbsp;one you are comparing against, since features differ. Voice and messaging usage is billed on&nbsp;top of&nbsp;the&nbsp;Saleringo plan — <a href="./pricing.html" style="color:#0A7F7F;font-weight:700;">see the&nbsp;full pricing ↗</a></span>Four of&nbsp;the&nbsp;five stop at&nbsp;the&nbsp;conversation. The&nbsp;fifth is the&nbsp;only one that&nbsp;still has work to&nbsp;show you on&nbsp;Monday morning.</p>
+    <p class="guidelink"><a href="./ai-answering-service.html">The&nbsp;long version of&nbsp;this&nbsp;comparison &mdash; answering service vs AI receptionist vs AI front office&nbsp;&nbsp;&rarr;</a></p>
   </div>
 </section>
 
@@ -1388,45 +1410,45 @@
 <section class="calcsec t-xl bg-grid" id="calculator">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><i></i>Run your own numbers</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 3 &middot; drag the sliders</span>
-      <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">How much is&nbsp;leaking<br>out of your&nbsp;business?</h2>
-      <p class="lead onDark" style="margin-top:16px;">Four sliders. Your numbers, not ours. Nothing is sent anywhere — this runs in your browser.</p>
+      <span class="eyebrow"><i></i>Run your&nbsp;own numbers</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 3 &middot; drag the&nbsp;sliders</span>
+      <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">How much is&nbsp;leaking<br>out of&nbsp;your&nbsp;business?</h2>
+      <p class="lead onDark" style="margin-top:16px;">Four sliders. Your&nbsp;numbers, not ours. Nothing is sent anywhere — this&nbsp;runs in&nbsp;your&nbsp;browser.</p>
     </div>
 
     <div class="calcshell reveal">
       <div class="calcin">
         <div class="calcrow">
-          <label for="cMissed">Inquiries you miss every month <b class="val sg" id="vMissed">60</b></label>
+          <label for="cMissed">Inquiries you miss every&nbsp;month <b class="val sg" id="vMissed">60</b></label>
           <input id="cMissed" type="range" min="10" max="300" step="5" value="60">
         </div>
         <div class="calcrow">
-          <label for="cValue">Average value of one won inquiry <b class="val sg" id="vValue">$400</b></label>
+          <label for="cValue">Average value of&nbsp;one won inquiry <b class="val sg" id="vValue">$400</b></label>
           <input id="cValue" type="range" min="50" max="2000" step="50" value="400">
         </div>
         <div class="calcrow">
-          <label for="cConv">Share of inquiries you normally win <b class="val sg" id="vConv">30%</b></label>
+          <label for="cConv">Share of&nbsp;inquiries you normally win <b class="val sg" id="vConv">30%</b></label>
           <input id="cConv" type="range" min="10" max="60" step="1" value="30">
         </div>
         <div class="calcrow">
-          <label for="cSave">Share of the missed ones you think we'd recover <b class="val sg" id="vSave">25%</b></label>
+          <label for="cSave">Share of&nbsp;the&nbsp;missed ones you think we'd recover <b class="val sg" id="vSave">25%</b></label>
           <input id="cSave" type="range" min="5" max="60" step="1" value="25">
         </div>
-        <p class="calcnote">A "missed inquiry" is any call that hit voicemail, any chat nobody answered, any message that sat overnight. Most owners underestimate this number — check your call log before you set the slider.</p>
-        <p class="calcnote"><b style="color:var(--tx2);">Why that last slider is yours, not ours.</b> We haven't published a recovery
-          figure because we don't yet have one we could stand behind. Set it to 10% if you're sceptical —
-          the arithmetic still works, and you'll know the number came from you.</p>
+        <p class="calcnote">A&nbsp;"missed inquiry" is any call that&nbsp;hit voicemail, any chat nobody answered, any message that&nbsp;sat overnight. Most owners underestimate this&nbsp;number — check your&nbsp;call log before you set the&nbsp;slider.</p>
+        <p class="calcnote"><b style="color:var(--tx2);">Why that&nbsp;last slider is yours, not ours.</b> We haven't published a&nbsp;recovery
+          figure because we don't yet have one we could stand behind. Set it to&nbsp;10% if you're sceptical —
+          the&nbsp;arithmetic still works, and you'll know the&nbsp;number came from&nbsp;you.</p>
       </div>
       <div class="calcout">
         <div class="top">Estimated monthly leak</div>
         <div class="big sg" id="oLeak">$7,200</div>
-        <div class="lbl">of revenue you would have won if someone had answered</div>
+        <div class="lbl">of&nbsp;revenue you would have won if someone had answered</div>
         <div class="split">
-          <div><span>Recovered at <b id="oPct" style="color:var(--teal);">25%</b></span><b id="oBack">$1,800</b></div>
-          <div><span>Saleringo Scale (from $599/mo) + metered voice, at your volume</span><b id="oCost">−$633</b></div>
-          <div><span>Left over, every month</span><b id="oNet">$1,167</b></div>
+          <div><span>Recovered at&nbsp;<b id="oPct" style="color:var(--teal);">25%</b></span><b id="oBack">$1,800</b></div>
+          <div><span>Saleringo Scale (from&nbsp;$599/mo) + metered voice, at&nbsp;your&nbsp;volume</span><b id="oCost">−$633</b></div>
+          <div><span>Left over, every&nbsp;month</span><b id="oNet">$1,167</b></div>
         </div>
-        <div class="verdict" id="oVerdict">At the rate you set, that covers the whole bill about 3× over — voice minutes included.</div>
-        <p class="calcnote" style="margin-top:16px;">Illustration only — an estimate built from the numbers you entered. Voice minutes are billed on usage; see <a href="./pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing</a>.</p>
+        <div class="verdict" id="oVerdict">At&nbsp;the&nbsp;rate you set, that&nbsp;covers the&nbsp;whole bill about&nbsp;3× over — voice minutes included.</div>
+        <p class="calcnote" style="margin-top:16px;">Illustration only — an&nbsp;estimate built from&nbsp;the&nbsp;numbers you entered. Voice minutes are billed on&nbsp;usage; see <a href="./pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing</a>.</p>
       </div>
     </div>
   </div>
@@ -1440,11 +1462,11 @@
   <div class="wrap">
     <div class="top reveal">
       <div>
-        <div class="secrule"><span class="eyebrow light"><i></i>Built for inquiry businesses</span><span class="line"></span></div>
-        <h2 class="h2">Your industry,<br>already spoken&nbsp;here.</h2>
-        <p class="lead" style="margin-top:16px;max-width:430px;">Each pack ships the fields, workflows, and guardrails of your trade.</p>
+        <div class="secrule"><span class="eyebrow light"><i></i>Built for&nbsp;inquiry businesses</span><span class="line"></span></div>
+        <h2 class="h2">Your&nbsp;industry,<br>already spoken&nbsp;here.</h2>
+        <p class="lead" style="margin-top:16px;max-width:430px;">Each&nbsp;pack ships the&nbsp;fields, workflows, and guardrails of&nbsp;your&nbsp;trade.</p>
       </div>
-      <div class="count sg"><b>4 live</b>+ expanding<br>every month</div>
+      <div class="count sg"><b>4 live</b>+ expanding<br>every&nbsp;month</div>
     </div>
     <div class="igrid reveal">
       <a class="icard photocard ga g1" href="./industries/venues.html">
@@ -1455,7 +1477,7 @@
         <span class="rank">LIVE</span><span class="arr">→</span>
         <span class="lab" style="font-size:var(--fs-h3);">Wedding &amp; Event Venues</span>
         <span class="s">Tours, quotes, catering</span>
-        <span class="istat"><b>2/3</b>of inquiries arrive after hours</span></a>
+        <span class="istat"><b>2/3</b>of&nbsp;inquiries arrive after hours</span></a>
       <a class="icard photocard gb2 g2" href="./industries/home-services.html">
         <img class="ph" src="https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
              alt="A technician checking manifold gauges on an outdoor air-conditioning unit"
@@ -1476,21 +1498,33 @@
              loading="lazy" decoding="async" width="800" height="533"
      srcset="https://images.pexels.com/photos/34607320/pexels-photo-34607320.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/34607320/pexels-photo-34607320.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/34607320/pexels-photo-34607320.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
         <span class="rank">LIVE</span><span class="arr">→</span>
-        <span class="lab">Boutique Stays</span><span class="s">Direct bookings, no OTA fee</span></a>
-      <a class="icard ge4 g3" href="./industries/clinics.html"><span class="rank">ONBOARDING</span><span class="arr">→</span>
-        <svg class="ghosticon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 25 L50 75 M25 50 L75 50" stroke-width="6"/></svg>
+        <span class="lab">Boutique Stays</span><span class="s">Direct bookings, no&nbsp;OTA fee</span></a>
+      <a class="icard photocard ge4 g3" href="./industries/clinics.html">
+        <img class="ph" src="https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+             alt="The reception of a small clinic, empty between appointments"
+             loading="lazy" decoding="async" width="800" height="533"
+             srcset="https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank">ONBOARDING</span><span class="arr">→</span>
         <span class="lab">Clinics</span><span class="s">Appointments · multilingual · regulation-safe</span></a>
-      <a class="icard gf4 g5" href="./industries/academies.html"><span class="rank">ROADMAP</span><span class="arr">→</span>
-        <svg class="ghosticon" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 75 L25 40 L45 40 L45 75 M55 75 L55 30 L75 30 L75 75 M15 75 L85 75"/></svg>
+      <a class="icard photocard gf4 g5" href="./industries/academies.html">
+        <img class="ph" src="https://images.pexels.com/photos/16125015/pexels-photo-16125015.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+             alt="An empty classroom still lit in the evening, rows of desks after the last class"
+             loading="lazy" decoding="async" width="800" height="533"
+             srcset="https://images.pexels.com/photos/16125015/pexels-photo-16125015.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/16125015/pexels-photo-16125015.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/16125015/pexels-photo-16125015.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank">ROADMAP</span><span class="arr">→</span>
         <span class="lab">Tutoring &amp; Academies</span><span class="s">Placement tests, parent leads</span></a>
-      <a class="icard gg4 g7" href="./industries.html"><span class="rank">ROADMAP</span><span class="arr">→</span>
-        <svg class="ghosticon" viewBox="0 0 100 100" aria-hidden="true"><path d="M35 45 A8 8 0 1 1 35 44 M65 45 A8 8 0 1 1 65 44 M50 55 Q35 55 33 70 Q40 80 50 78 Q60 80 67 70 Q65 55 50 55"/></svg>
-        <span class="lab">Franchise &amp; 20 more trades</span><span class="s">Tell us your trade and we&rsquo;ll build the pack</span></a>
-      <a class="icard gh4 g8" href="./cross-border.html"><span class="rank">CROSS-BORDER</span><span class="arr">→</span>
-        <svg class="ghosticon" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="30"/><path d="M20 50 L80 50 M50 20 Q65 50 50 80 Q35 50 50 20"/></svg>
-        <span class="lab">Selling across time zones?</span><span class="s">Multilingual, 24/7 — built for it</span></a>
+      <a class="icard photocard gg4 g7" href="./industries.html">
+        <img class="ph" src="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+             alt="Two cafe owners standing together behind their counter"
+             loading="lazy" decoding="async" width="800" height="533"
+             srcset="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank">ROADMAP</span><span class="arr">→</span>
+        <span class="lab">Franchise &amp; 20 more trades</span><span class="s">Tell us your&nbsp;trade and we&rsquo;ll build the&nbsp;pack</span></a>
+      <a class="icard photocard gh4 g8" href="./cross-border.html">
+        <img class="ph" src="https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+             alt="City towers glowing after dark, seen from the air"
+             loading="lazy" decoding="async" width="800" height="533"
+             srcset="https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank">CROSS-BORDER</span><span class="arr">→</span>
+        <span class="lab">Selling across&nbsp;time zones?</span><span class="s">Multilingual, 24/7 — built for&nbsp;it</span></a>
     
-    <p class="seccap">Four of these answer live today. The rest are the ones customers asked for, in the order they asked &mdash; which is why the list is short and named rather than long and aspirational.</p>
+    <p class="seccap">Four of&nbsp;these&nbsp;answer live today. The&nbsp;rest are the&nbsp;ones customers asked for, in&nbsp;the&nbsp;order they asked &mdash; which is why the&nbsp;list is short and named rather than long and aspirational.</p>
   </div>
   </div>
 </section>
@@ -1501,64 +1535,64 @@
 <section class="trustsec t-sm sec-light bg-paper">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow light"><i></i>No borrowed credibility</span>
-      <h2 class="h2" style="margin-top:22px;">No logo&nbsp;wall. Here&rsquo;s what you can check&nbsp;instead.</h2>
-      <p class="lead" style="margin-top:16px;">We won't rent someone else's credibility. So instead of a logo wall,
-        here are three things you can verify yourself before you spend a cent.</p>
+      <span class="eyebrow light"><i></i>No&nbsp;borrowed credibility</span>
+      <h2 class="h2" style="margin-top:22px;">No&nbsp;logo&nbsp;wall. Here&rsquo;s what you can check&nbsp;instead.</h2>
+      <p class="lead" style="margin-top:16px;">We won't rent someone else's&nbsp;credibility. So instead of&nbsp;a&nbsp;logo wall,
+        here are three things you can verify yourself before you spend a&nbsp;cent.</p>
     </div>
     <div class="proofgrid reveal">
       <div class="proofcard">
         <span class="num">01</span>
-        <h4 role="heading" aria-level="3">Make it answer your own questions</h4>
-        <p>Send us your website and your price list. We'll come back with the AI answering the ten
-          questions your customers ask most — using your prices, not ours. Keep the recording either
-          way, and judge it before you talk to us about money.</p>
-        <div class="lnkrow"><a href="#early-access">Send us your price list ↗</a></div>
+        <h4 role="heading" aria-level="3">Make it answer your&nbsp;own questions</h4>
+        <p>Send us your&nbsp;website and your&nbsp;price list. We'll come back with&nbsp;the&nbsp;AI answering the&nbsp;ten
+          questions your&nbsp;customers ask most — using your&nbsp;prices, not ours. Keep the&nbsp;recording either
+          way, and judge it before you talk to&nbsp;us about&nbsp;money.</p>
+        <div class="lnkrow"><a href="#early-access">Send us your&nbsp;price list ↗</a></div>
       </div>
       <div class="proofcard">
         <span class="num">02</span>
-        <h4>Read the whole contract first</h4>
-        <p>Every number is published before you speak to anyone — plan prices, per-minute voice rates
-          by country, what counts as a conversation, what happens when you go over, and how refunds
-          work. There is no "contact us for pricing" anywhere on this site.</p>
+        <h4>Read the&nbsp;whole contract first</h4>
+        <p>Every&nbsp;number is published before you speak to&nbsp;anyone — plan prices, per-minute voice rates
+          by&nbsp;country, what counts as a&nbsp;conversation, what happens when you go over, and how refunds
+          work. There is no&nbsp;"contact us for&nbsp;pricing" anywhere on&nbsp;this&nbsp;site.</p>
         <div class="lnkrow"><a href="./pricing.html">Pricing ↗</a><a href="./terms.html">Terms ↗</a><a href="./security.html">Security ↗</a></div>
       </div>
       <div class="proofcard">
         <span class="num">03</span>
         <h4>Check who you'd be dealing with</h4>
-        <p>Built by Honest Marketing Co., Ltd., registered in South Korea and serving customers
-          worldwide. One address, one team, one email that a person reads: hello@saleringo.com.
-          Four customers already publish their lines on this site. What is still missing is a written quote we can attribute &mdash; when the first five agree to that, it goes here.</p>
-        <div class="lnkrow"><a href="./about.html">About us ↗</a></div>
+        <p>Built by&nbsp;Honest Marketing Co., Ltd., registered in&nbsp;South Korea and serving customers
+          worldwide. One address, one team, one email that&nbsp;a&nbsp;person reads: hello@saleringo.com.
+          Four customers already publish their&nbsp;lines on&nbsp;this&nbsp;site. What is still missing is a&nbsp;written quote we can attribute &mdash; when the&nbsp;first five agree to&nbsp;that, it goes here.</p>
+        <div class="lnkrow"><a href="./about.html">About&nbsp;us ↗</a></div>
       </div>
     </div>
 
     <div class="quotes reveal">
       <div class="quotecard light pending">
         <div class="mark">“</div>
-        <p>Still reserved for a founding customer's own words &mdash; a written quote we can attribute. What we do have is better than a quote: <a href="#call-them" style="color:var(--teal-ink);font-weight:700;">four customer lines you can dial right now</a> and hear the product answer for yourself.</p>
+        <p>Still reserved for&nbsp;a&nbsp;founding customer's&nbsp;own words &mdash; a&nbsp;written quote we can attribute. What we do have is better than a&nbsp;quote: <a href="#call-them" style="color:var(--teal-ink);font-weight:700;">four customer lines you can dial right now</a> and hear the&nbsp;product answer for&nbsp;yourself.</p>
         <div class="by"><span><b>Reserved · founding cohort</b><span>Home services · United States</span></span></div>
-        <div class="metric">Metric to be published with the quote</div>
+        <div class="metric">Metric to&nbsp;be published with&nbsp;the&nbsp;quote</div>
       </div>
       <div class="quotecard light pending">
         <div class="mark">“</div>
-        <p>Same rule for the second slot. No stock photos, no invented initials, no "results may vary" testimonial written by us. Real customers, or an honest blank.</p>
+        <p>Same rule for&nbsp;the&nbsp;second slot. No&nbsp;stock photos, no&nbsp;invented initials, no&nbsp;"results may vary" testimonial written by&nbsp;us. Real customers, or an&nbsp;honest blank.</p>
         <div class="by"><span><b>Reserved · founding cohort</b><span>Boutique stays · Europe</span></span></div>
-        <div class="metric">Metric to be published with the quote</div>
+        <div class="metric">Metric to&nbsp;be published with&nbsp;the&nbsp;quote</div>
       </div>
     </div>
 
     <div class="riskrow reveal">
-      <div class="riskitem light"><div class="ic">↩</div><b>14-day refund</b><span>Not the right fit in the first two weeks? We refund the plan fee.</span></div>
-      <div class="riskitem light"><div class="ic">✕</div><b>Cancel anytime</b><span>Monthly billing. No lock-in contract, no exit call required.</span></div>
-      <div class="riskitem light"><div class="ic">⊘</div><b>No setup fee</b><span>Setup is self-service on every plan. Guided onboarding is optional and quoted before any work starts.</span></div>
-      <div class="riskitem light"><div class="ic">🔒</div><b>Your data, your rules</b><span>Export or delete your conversations whenever you want.</span></div>
+      <div class="riskitem light"><div class="ic">↩</div><b>14-day refund</b><span>Not the&nbsp;right fit in&nbsp;the&nbsp;first two weeks? We refund the&nbsp;plan fee.</span></div>
+      <div class="riskitem light"><div class="ic">✕</div><b>Cancel anytime</b><span>Monthly billing. No&nbsp;lock-in&nbsp;contract, no&nbsp;exit call required.</span></div>
+      <div class="riskitem light"><div class="ic">⊘</div><b>No&nbsp;setup fee</b><span>Setup is self-service on&nbsp;every&nbsp;plan. Guided onboarding is optional and quoted before any work starts.</span></div>
+      <div class="riskitem light"><div class="ic">🔒</div><b>Your&nbsp;data, your&nbsp;rules</b><span>Export or delete your&nbsp;conversations whenever you want.</span></div>
     </div>
 
     <div class="verified reveal">
-      <a class="linkcta" href="./platform.html">See the pipeline, quotes and reports&nbsp;&nbsp;→</a>
+      <a class="linkcta" href="./platform.html">See the&nbsp;pipeline, quotes and reports&nbsp;&nbsp;→</a>
       <span style="display:inline-block;margin-left:22px;"><a class="linkcta" href="./security.html">Security &amp; trust&nbsp;&nbsp;→</a></span>
-      <p style="margin-top:20px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;">It answers only from facts you approved — anything else goes to a person, never invented. <a href="./verified-ai.html" style="color:var(--teal-deep);font-weight:700;">How that works&nbsp;→</a></p>
+      <p style="margin-top:20px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;">It answers only from&nbsp;facts you approved — anything else goes to&nbsp;a&nbsp;person, never invented. <a href="./verified-ai.html" style="color:var(--teal-deep);font-weight:700;">How that&nbsp;works&nbsp;→</a></p>
     </div>
   </div>
 </section>
@@ -1567,8 +1601,8 @@
 <section class="globalsec t-md sec-dark">
   <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="eyebrow reveal"><i></i>Global by default</span>
-    <h2 class="h2 onDark reveal" style="margin-top:22px;font-size:var(--fs-h2);">Your customers don't all&nbsp;speak<br>your language. Your AI&nbsp;does.</h2>
+    <span class="eyebrow reveal"><i></i>Global by&nbsp;default</span>
+    <h2 class="h2 onDark reveal" style="margin-top:22px;font-size:var(--fs-h2);">Your&nbsp;customers don't all&nbsp;speak<br>your&nbsp;language. Your&nbsp;AI&nbsp;does.</h2>
 
     <div class="scene-frame reveal">
 <svg viewBox="0 0 1000 520" role="img" aria-label="A dotted world map with conversation arcs between regions">
@@ -1610,14 +1644,14 @@
   </g>
   <text x="500" y="496" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#5E6C82" text-anchor="middle" font-weight="600">Somewhere, it is always business hours.</text>
 </svg>
-      <span class="caption">One knowledge base. Every timezone your customers live in.</span>
+      <span class="caption">One knowledge base. Every&nbsp;timezone your&nbsp;customers live in.</span>
     </div>
 
     <div class="kpiband reveal">
       <div class="kpi"><div class="n">30<em>+</em></div><div class="l">languages answered, automatically detected</div></div>
-      <div class="kpi"><div class="n">24/7</div><div class="l">across every time zone — 2:47 AM is a business hour</div></div>
+      <div class="kpi"><div class="n">24/7</div><div class="l">across&nbsp;every&nbsp;time zone — 2:47 AM is a&nbsp;business hour</div></div>
       <div class="kpi"><div class="n">3</div><div class="l">channels — phone, web chat, WhatsApp — one inbox</div></div>
-      <div class="kpi"><div class="n"><em>$</em>·€·£</div><div class="l">quotes in your currency, taxes on your invoice by country</div></div>
+      <div class="kpi"><div class="n"><em>$</em>·€·£</div><div class="l">quotes in&nbsp;your&nbsp;currency, taxes on&nbsp;your&nbsp;invoice by&nbsp;country</div></div>
     </div>
     <div class="langrow reveal">
       <span class="langchip hi">English</span><span class="langchip hi">Español</span><span class="langchip hi">Français</span>
@@ -1625,9 +1659,9 @@
       <span class="langchip">日本語</span><span class="langchip">한국어</span><span class="langchip">中文</span>
       <span class="langchip">العربية</span><span class="langchip">हिन्दी</span><span class="langchip">+ 20 more</span>
     
-    <p class="seccap">You do not get to choose the language a customer writes to you in. This is the part of the product that means you do not have to.</p>
+    <p class="seccap">You do not get to&nbsp;choose the&nbsp;language a&nbsp;customer writes to&nbsp;you in. This is the&nbsp;part of&nbsp;the&nbsp;product that&nbsp;means you do not have to.</p>
   </div>
-    <p style="margin-top:30px;font-size:var(--fs-xs);"><a class="linkcta" style="border-color:#fff;color:#fff;" href="./cross-border.html">Selling across borders?&nbsp;&nbsp;→</a></p>
+    <p style="margin-top:30px;font-size:var(--fs-xs);"><a class="linkcta" style="border-color:#fff;color:#fff;" href="./cross-border.html">Selling across&nbsp;borders?&nbsp;&nbsp;→</a></p>
   </div>
 </section>
 
@@ -1637,7 +1671,7 @@
     <div class="head reveal">
       <span class="eyebrow light"><i></i>Pricing</span>
       <h2 class="h2" style="margin-top:22px;font-size:var(--fs-h2);">Simple plans.<br>Honest usage&nbsp;limits.</h2>
-      <p class="lead" style="margin-top:16px;">Voice and messaging are billed by usage — because they cost us by usage. No fake flat-rate tricks.</p>
+      <p class="lead" style="margin-top:16px;">Voice and messaging are billed by&nbsp;usage — because they cost us by&nbsp;usage. No&nbsp;fake flat-rate tricks.</p>
     </div>
     <div class="plans reveal">
       <div class="ptray"><div class="plan">
@@ -1650,17 +1684,17 @@
         <span class="pop">POPULAR</span>
         <div class="nm">Grow</div>
         <div class="pr sg">$249<small> /mo</small></div>
-        <ul><li>Everything in Start</li><li><b>+ WhatsApp</b> · automations · quotes</li><li>5 seats · 2,000 conversations</li></ul>
+        <ul><li>Everything in&nbsp;Start</li><li><b>+ WhatsApp</b> · automations · quotes</li><li>5 seats · 2,000 conversations</li></ul>
         <a class="cta teal" href="./pricing.html">See details</a>
       </div></div>
       <div class="ptray"><div class="plan">
         <div class="nm">Scale</div>
-        <div class="pr sg"><small>from </small>$599<small> /mo</small></div>
-        <ul><li>Everything in Grow</li><li><b>+ AI Phone</b> — from $0.14/min</li><li>e.g. 300 calls × 4 min ≈ $767/mo total</li></ul>
-        <a class="cta" href="./pricing.html#calculator">See the calculator</a>
+        <div class="pr sg"><small>from&nbsp;</small>$599<small> /mo</small></div>
+        <ul><li>Everything in&nbsp;Grow</li><li><b>+ AI Phone</b> — from&nbsp;$0.14/min</li><li>e.g. 300 calls × 4 min ≈ $767/mo total</li></ul>
+        <a class="cta" href="./pricing.html#calculator">See the&nbsp;calculator</a>
       </div></div>
     
-    <p class="seccap">Chat is the cheap way in and phone is where the bill moves. Both are printed in full on the pricing page before you talk to anyone.</p>
+    <p class="seccap">Chat is the&nbsp;cheap way in and phone is where the&nbsp;bill moves. Both are printed in&nbsp;full on&nbsp;the&nbsp;pricing page before you talk to&nbsp;anyone.</p>
   </div>
   </div>
 </section>
@@ -1668,40 +1702,38 @@
 <!-- ═══════════ 11 · EARLY ACCESS (bg-aurora + grain, dark) ═══════════ -->
 <section class="asksec t-md sec-light2" id="what-to-ask">
   <div class="wrap">
-    <span class="eyebrow light"><i></i>Before you talk to anyone &mdash; including us</span>
+    <span class="eyebrow light"><i></i>Before you talk to&nbsp;anyone &mdash; including us</span>
     <h2 class="h2" style="margin-top:20px;">Five questions worth asking&nbsp;any vendor.</h2>
-    <p class="lead" style="margin-top:16px;">If you have never bought this kind of software, the hard
-      part is not comparing features &mdash; it is knowing what to ask. These five separate the
-      products. Our own answers are linked beside each one, including the two that are not flattering.</p>
+    <p class="lead" style="margin-top:16px;">If you have never bought this&nbsp;kind of&nbsp;software, the&nbsp;hard
+      part is not comparing features &mdash; it is knowing what to&nbsp;ask. These&nbsp;five separate the&nbsp;products. Our&nbsp;own answers are linked beside each&nbsp;one, including the&nbsp;two that are not flattering.</p>
     <ol class="asklist">
       <li>
         <b>What happens when it does not know?</b>
-        <span>Guessing is the failure that costs you a customer. Ask to see a refusal, not a success.</span>
+        <span>Guessing is the&nbsp;failure that&nbsp;costs you a&nbsp;customer. Ask to&nbsp;see a&nbsp;refusal, not a&nbsp;success.</span>
         <a href="#try">Watch ours refuse&nbsp;&nbsp;&rarr;</a>
       </li>
       <li>
-        <b>Where do the prices come from?</b>
-        <span>If a vendor cannot show you the source of a quoted number, the number is invented.</span>
-        <a href="#yourprices">Try it on your own list&nbsp;&nbsp;&rarr;</a>
+        <b>Where do the&nbsp;prices come from?</b>
+        <span>If a&nbsp;vendor cannot show you the&nbsp;source of&nbsp;a&nbsp;quoted number, the&nbsp;number is invented.</span>
+        <a href="#yourprices">Try it on&nbsp;your&nbsp;own list&nbsp;&nbsp;&rarr;</a>
       </li>
       <li>
-        <b>What is still there on Monday morning?</b>
-        <span>A transcript is not a booking. Ask what exists in your systems after the call ends.</span>
+        <b>What is still there on&nbsp;Monday morning?</b>
+        <span>A&nbsp;transcript is not a&nbsp;booking. Ask what exists in&nbsp;your&nbsp;systems after the&nbsp;call ends.</span>
         <a href="./platform.html">See what it files&nbsp;&nbsp;&rarr;</a>
       </li>
       <li>
-        <b>What does a busy month actually cost?</b>
-        <span>Ask for the metered part, not the plan price. Voice minutes are where bills move.</span>
-        <a href="#calculator">Run your own volume&nbsp;&nbsp;&rarr;</a>
+        <b>What does a&nbsp;busy month actually cost?</b>
+        <span>Ask for&nbsp;the&nbsp;metered part, not the&nbsp;plan price. Voice minutes are where bills move.</span>
+        <a href="#calculator">Run your&nbsp;own volume&nbsp;&nbsp;&rarr;</a>
       </li>
       <li>
         <b>What can you not do yet?</b>
-        <span>Every vendor has a gap. The useful signal is whether they will name it before you pay.</span>
-        <a href="./integrations.html">Read ours, in full&nbsp;&nbsp;&rarr;</a>
+        <span>Every&nbsp;vendor has a&nbsp;gap. The&nbsp;useful signal is whether they will name it before you pay.</span>
+        <a href="./integrations.html">Read ours, in&nbsp;full&nbsp;&nbsp;&rarr;</a>
       </li>
     </ol>
-    <p class="seccap">Two of those five are questions we would rather you did not ask. They are on the
-      list because a buyer who does not ask them cannot tell a good product from a confident one.</p>
+    <p class="seccap">Two of&nbsp;those&nbsp;five are questions we would rather you did not ask. They are on&nbsp;the&nbsp;list because a&nbsp;buyer who does not ask them cannot tell a&nbsp;good product from&nbsp;a&nbsp;confident one.</p>
   </div>
 </section>
 
@@ -1710,18 +1742,18 @@
   <div class="wrap"><div class="grid">
     <div class="reveal">
       <div class="secrule"><span class="eyebrow"><i></i>Founding customer program</span><span class="line"></span></div>
-      <h2 class="h2 onDark" style="font-size:var(--fs-h2);">We're new.<br><span class="gradtext">That's your&nbsp;leverage.</span></h2>
-      <p class="lead onDark" style="margin-top:20px;">No borrowed logo wall, no invented testimonials — Saleringo is onboarding its founding cohort right now. Early businesses get terms and attention that won't exist later.</p>
+      <h2 class="h2 onDark" style="font-size:var(--fs-h2);">We're new.<br><span class="gradtext">That's&nbsp;your&nbsp;leverage.</span></h2>
+      <p class="lead onDark" style="margin-top:20px;">No&nbsp;borrowed logo wall, no&nbsp;invented testimonials — Saleringo is onboarding its&nbsp;founding cohort right now. Early businesses get terms and attention that&nbsp;won't exist later.</p>
       <div class="fbens">
-        <span class="b"><i>%</i><span><b>50% off for 3 months</b> — founding pricing, locked before general availability.</span></span>
-        <span class="b"><i>1:1</i><span><b>Priority onboarding</b> — we build your knowledge base with you.</span></span>
-        <span class="b"><i>→</i><span><b>Roadmap input</b> — founding customers pick the next integrations we build.</span></span>
+        <span class="b"><i>%</i><span><b>50% off for&nbsp;3 months</b> — founding pricing, locked before general availability.</span></span>
+        <span class="b"><i>1:1</i><span><b>Priority onboarding</b> — we build your&nbsp;knowledge base with&nbsp;you.</span></span>
+        <span class="b"><i>→</i><span><b>Roadmap input</b> — founding customers pick the&nbsp;next integrations we build.</span></span>
       </div>
       <div class="cohort reveal">
-        <span class="txt"><b>Founding cohort — we are taking five in this round.</b> Five is how many we can onboard by hand, not how many are left. We publish a founding customer’s name, words and numbers only once they say yes.</span>
+        <span class="txt"><b>Founding cohort — we are taking five in&nbsp;this&nbsp;round.</b> Five is how many we can onboard by&nbsp;hand, not how many are left. We publish a&nbsp;founding customer’s&nbsp;name, words and numbers only once they say yes.</span>
       </div>
 
-      <p class="dayone">What a founding customer has on day one:</p>
+      <p class="dayone">What a&nbsp;founding customer has on&nbsp;day one:</p>
       <div class="proof scene-frame">
 <svg viewBox="0 0 1000 560" role="img" aria-label="The Saleringo inbox shown on a laptop with a phone beside it">
   <defs>
@@ -1790,14 +1822,14 @@
     <text x="80" y="258" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#032222" text-anchor="middle" font-weight="800">Answered</text>
   </g>
 </svg>
-        <span class="caption">What you get on day one — the shared inbox, on desktop and phone.</span>
+        <span class="caption">What you get on&nbsp;day one — the&nbsp;shared inbox, on&nbsp;desktop and phone.</span>
       </div>
     </div>
 
     <div class="reveal">
       <div class="gradborder"><div style="padding:32px;">
-        <h3 class="sg" style="font-size:var(--fs-h3);font-weight:600;color:#fff;letter-spacing:-.02em;">Request a founding&nbsp;invite</h3>
-        <p style="margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;">A human reads every one of these. Tell us the channel that hurts most and we'll start there.</p>
+        <h3 class="sg" style="font-size:var(--fs-h3);font-weight:600;color:#fff;letter-spacing:-.02em;">Request a&nbsp;founding&nbsp;invite</h3>
+        <p style="margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;">A&nbsp;human reads every&nbsp;one of&nbsp;these. Tell us the&nbsp;channel that&nbsp;hurts most and we'll start there.</p>
         <form class="eaform" data-earlyaccess style="margin-top:22px;">
           <input type="hidden" name="context" value="Homepage early access">
           <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
@@ -1811,14 +1843,14 @@
           </select>
           <select name="channel" aria-label="Main channel">
             <option value="">Main channel…</option>
-            <option>Phone</option><option>Website chat</option><option>WhatsApp / messenger</option><option>All of them</option>
+            <option>Phone</option><option>Website chat</option><option>WhatsApp / messenger</option><option>All of&nbsp;them</option>
           </select>
-          <button class="btn btn-teal" type="submit">Get my plan<span class="cir">↗</span></button>
-          <p class="eanote full">Goes to a person, not a sequence — you get a reply within one business day, with a setup plan for your trade attached. No newsletter, no spam.</p>
-          <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your message is ready below — pick whichever way you prefer to send it.</p>
+          <button class="btn btn-teal" type="submit">Get my&nbsp;plan<span class="cir">↗</span></button>
+          <p class="eanote full">Goes to&nbsp;a&nbsp;person, not a&nbsp;sequence — you get a&nbsp;reply within&nbsp;one business day, with&nbsp;a&nbsp;setup plan for&nbsp;your&nbsp;trade attached. No&nbsp;newsletter, no&nbsp;spam.</p>
+          <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
         </form>
         <p style="margin-top:18px;padding-top:18px;border-top:1px solid var(--hair);font-size:var(--fs-xs);color:var(--tx3);font-weight:500;">
-          Would rather talk first? <a data-book data-fallback="#early-access" href="#early-access" style="color:var(--teal-ink);font-weight:700;">Ask for a 20-minute call — we propose times ↗</a>
+          Would rather talk first? <a data-book data-fallback="#early-access" href="#early-access" style="color:var(--teal-ink);font-weight:700;">Ask for&nbsp;a&nbsp;20-minute call — we propose times ↗</a>
         </p>
       </div></div>
     </div>
@@ -1832,8 +1864,8 @@
        loading="lazy" decoding="async" width="1900" height="1069"
      srcset="https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
   <div class="wrap">
-    <span class="ln">Somewhere in this picture,<br>a phone is ringing right now.</span>
-    <span class="sm">Phone · web chat · WhatsApp — answered in your customer&rsquo;s language, every hour of the night</span>
+    <span class="ln">Somewhere in&nbsp;this&nbsp;picture,<br>a&nbsp;phone is ringing right now.</span>
+    <span class="sm">Phone · web chat · WhatsApp — answered in your&nbsp;customer&rsquo;s&nbsp;language, every&nbsp;hour of&nbsp;the&nbsp;night</span>
   </div>
 </section>
 
@@ -1842,10 +1874,10 @@
   <div class="wrap">
     <div class="concwrap reveal">
       <div class="concl">
-        <span class="cnl">You have seen the whole of it</span>
-        <p class="cnp">Six phone numbers you can dial tonight, a demo you can try to break, a price lab that runs on your own list, and one pilot with its denominators printed beside it. What we have not shown you is a customer testimonial, because we do not have one worth printing yet.</p>
+        <span class="cnl">You have seen the&nbsp;whole of&nbsp;it</span>
+        <p class="cnp">Six phone numbers you can dial tonight, a&nbsp;demo you can try to&nbsp;break, a&nbsp;price lab that&nbsp;runs on&nbsp;your&nbsp;own list, and one pilot with&nbsp;its&nbsp;denominators printed beside it. What we have not shown you is a&nbsp;customer testimonial, because we do not have one worth printing yet.</p>
       </div>
-      <a class="btn btn-teal concbtn" href="./pricing.html">See what it costs for my trade<span class="cir">&#8599;</span></a>
+      <a class="btn btn-teal concbtn" href="./pricing.html">See what it costs for&nbsp;my&nbsp;trade<span class="cir">&#8599;</span></a>
     </div>
   </div>
 </section>
@@ -1853,19 +1885,19 @@
 <section class="closer bg-spot" id="closer">
   <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="reveal">Tonight, someone will&nbsp;call.<br>Let's make&nbsp;sure<br><em>someone&nbsp;answers.</em></h2>
-    <p class="lead onDark reveal">Join the founding cohort — 50% off for 3 months, onboarding with a human, answers your customers can trust.</p>
+    <h2 class="reveal">Tonight, someone will&nbsp;call.<br>Let's&nbsp;make&nbsp;sure<br><em>someone&nbsp;answers.</em></h2>
+    <p class="lead onDark reveal">Join the&nbsp;founding cohort — 50% off for&nbsp;3 months, onboarding with&nbsp;a&nbsp;human, answers your&nbsp;customers can trust.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Get the plan for my trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="./demo.html">Read a full call first<span class="cir">↗</span></a>
+      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="./demo.html">Read a&nbsp;full call first<span class="cir">↗</span></a>
     </div>
   </div>
 
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v18.4</span>
-        <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v19.1</span>
+        <p>AI phone, chat &amp; messenger answering — with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
       <div>
@@ -1875,10 +1907,10 @@
         <a class="lnk" href="./whatsapp.html">WhatsApp</a>
         <a class="lnk" href="./platform.html">Platform &amp; CRM</a>
       <a class="lnk" href="./integrations.html">Integrations</a>
-      <a class="lnk" href="./ai-answering-service.html">Buyer's guide</a>
-        <a class="lnk" href="./demo.html">See a conversation</a>
+      <a class="lnk" href="./ai-answering-service.html">Buyer's&nbsp;guide</a>
+        <a class="lnk" href="./demo.html">See a&nbsp;conversation</a>
         <a class="lnk" href="./pricing.html">Pricing</a>
-        <a class="lnk" href="./get-started.html">Get my plan</a>
+        <a class="lnk" href="./get-started.html">Get my&nbsp;plan</a>
       </div>
       <div>
         <h4>Industries</h4>
@@ -1896,15 +1928,14 @@
       </div>
       <div>
         <h4>Company</h4>
-        <a class="lnk" href="./about.html">About</a>
-        <a class="lnk" href="./security.html">Security &amp; Trust</a>
+        <a class="lnk" href="./about.html">About</a>&nbsp;<a class="lnk" href="./security.html">Security &amp; Trust</a>
         <a class="lnk" href="./verified-ai.html">How answers are checked</a>
         <a class="lnk" href="./privacy.html">Privacy Policy</a>
-        <a class="lnk" href="./terms.html">Terms of Service</a>
+        <a class="lnk" href="./terms.html">Terms of&nbsp;Service</a>
       </div>
     </div>
     <div class="base">
-      <span>© 2026 Saleringo · Honest Marketing Co., Ltd. — registered in South Korea, serving customers worldwide</span>
+      <span>© 2026 Saleringo · Honest Marketing Co., Ltd. — registered in&nbsp;South Korea, serving customers worldwide</span>
       <span class="r"><span>English · serving customers worldwide</span></span>
     </div>
   </div></footer>
@@ -1914,17 +1945,17 @@
 <!-- sticky conversion bar -->
 <div class="stickycta" id="stickybar">
   <div class="wrap">
-    <span class="msg"><b>Tonight's calls are still going to voicemail.</b> Founding cohort — 50% off for 3 months.</span>
-    <a class="btn btn-teal" href="#early-access">Get the plan for my trade<span class="cir">↗</span></a>
+    <span class="msg"><b>Tonight's&nbsp;calls are still going to&nbsp;voicemail.</b> Founding cohort — 50% off for&nbsp;3 months.</span>
+    <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=18.4"></script>
-<script src="../assets/js/canvas.js?v=18.4" defer></script>
-<script src="../assets/js/scenes.js?v=18.4" defer></script>
-<script src="../assets/js/play.js?v=18.4"></script>
-<script src="../assets/js/guide.js?v=18.4"></script>
-<script src="../assets/js/pricelab.js?v=18.4"></script>
+<script src="../assets/js/site.js?v=19.1"></script>
+<script src="../assets/js/canvas.js?v=19.1" defer></script>
+<script src="../assets/js/scenes.js?v=19.1" defer></script>
+<script src="../assets/js/play.js?v=19.1"></script>
+<script src="../assets/js/guide.js?v=19.1"></script>
+<script src="../assets/js/pricelab.js?v=19.1"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {

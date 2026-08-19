@@ -550,8 +550,16 @@ a{text-decoration:none;color:inherit;}
      captions, chart labels. 13px is the floor at which small UI text stays
      readable at arm's length; 11.5px is the floor for an uppercase label,
      which reads larger than its cap height suggests. */
-  --fs-xs:      13px;                        /* dense product UI    1.12x */
-  --fs-label:   12px;                        /* uppercase labels    1.08x */
+  /* Re-measured across all 26 English pages at 1440x900 with fonts.ready
+     awaited: 8,636 rendered text nodes still sat below 14px, 2,622 of them on
+     seven pages alone. Practically every one traced back to these two tokens —
+     nothing in the HTML sets a small size in CSS; the only literals left are
+     SVG font-size attributes, handled at the end of this file. The floor is
+     14px for anything a visitor reads as body or caption text, 13px for a
+     label inside a figure or a product mock. Both tokens now clear it, so the
+     floor holds by construction instead of page by page. */
+  --fs-xs:      14px;                        /* dense product UI            */
+  --fs-label:   13px;                        /* uppercase labels            */
   --fs-2xs:     var(--fs-xs);                /* alias — was a 1.10x step */
   --fs-num:     var(--fs-display);           /* alias — was identical at 128px */
   /* The nav is fixed at a constant height, so the gap beneath it is one number,
@@ -1877,3 +1885,158 @@ body:has(.stickycta) .totop{bottom:calc(22px + var(--stickycta-h,0px));}
    a phone, where the copy fills the column — the ring still points at the
    control and the docked guide bar still names the step. */
 .focusring.cue-hide .fr-cue,.focusring.cue-hide .fr-sub{display:none;}
+
+
+/* ═══ layout balance pass — measured on 26 pages at 1440, 1024 and 375 ═══
+   The complaint was not six bugs, it was six classes of bug. Each block below
+   is one class, stated as a rule and applied everywhere the class occurs, not
+   at the single instance it was spotted at. Every number was measured in the
+   browser with document.fonts.ready awaited, before and after.
+
+   These rules carry a leading `html` because site.css loads before scenes.css
+   and crm.css and several of the properties are already set there at equal
+   specificity, and because a handful of the measures are set in per-page
+   <style> blocks, which are parsed after every stylesheet. One extra element
+   in the selector wins both without reaching for !important. */
+
+/* ── 1. explanatory prose is never a peer in a card grid ──────────────────
+   Measured cause of most "orphan last row" reports: a footnote paragraph is a
+   direct child of the grid or the chip row it explains, so it wraps onto a
+   line of its own and is counted — and centred — as if it were a ninth chip.
+   index .igrid read 3,2,3,1 and .langrow read 9,3,1 for exactly this reason;
+   pricing .altgrid read 4,1. It also produced most of class 4: 76 centred
+   multi-line prose blocks at 1440, rising to 153 at 375.
+
+   THE RULE, applied site-wide: a section header block — its eyebrow, its
+   heading and the standfirst directly under it — and a one-sentence closer
+   may centre. Explanatory prose may not. It spans its row, aligns left,
+   caps at 70ch and sits flush with the content column it belongs to. */
+html .seccap,html .storyfoot,html .secfoot,html .custfoot,html .whyfoot,
+html .exfoot,html .stackfoot,html .guidelink,html .tnote,html .altnote,
+html .livenote,html .proofnote,html .metnote,html .plainfoot,html .costfoot,
+html .vpfoot,html .stagefoot,html .fn,html .disclaim,html .note,html .prob,
+html .eanote,html .mockcap,html .photocap,html .capL,html .alt,html .whotxt,
+html .heroscroll{
+  grid-column:1 / -1;   /* it is a band under the grid, not a cell in it */
+  flex-basis:100%;      /* the flex rows need the same statement */
+  width:100%;
+  max-width:70ch;
+  text-align:left;
+  margin-inline:0;
+}
+
+/* The other half of the same rule. Standfirsts are allowed to centre, but the
+   measure has to be one number or the centring has no rule behind it. Measured
+   across the 26 pages: .lead and .sub were capped at 400, 410, 420, 440, 460,
+   520, 530, 540, 560, 600, 610, 620, 640, 660 and 680px, plus two in ch — set
+   in per-page <style> blocks, twenty different answers to one question. */
+html .lead,html .sub,html .lsub{max-width:58ch;}
+
+/* ── 2. a column of cards ends where the panel beside it ends ─────────────
+   .todayside is three cards in the right half of a two-column dashboard and
+   carried align-content:start, so the stack finished 110px above the bottom of
+   the painted panel on its left. .calcout is the right half of the calculator
+   shell and finished 166px short of the left half. Both now resolve their own
+   slack instead of leaving it at the bottom edge. */
+html .todayside{align-content:stretch;}
+html .calcout{display:flex;flex-direction:column;justify-content:center;}
+
+/* ── 3. wrapping token rows wrap evenly ───────────────────────────────────
+   Free wrapping put 8 items on one line and 1 alone underneath. The counts
+   measured: .intwall 8+1 at 1440 and 5+1 at 1024, .langrow 9+3 at 1440 and
+   6,5,6,2 on industries, .kwrow 5,3,1, .chiprow 7+1, .exfilter 7+2.
+   Even tracks make the row count deliberate at every width — the minimum
+   track on each is set from the widest item that row actually holds, so the
+   column count falls where the balance is even rather than where the text
+   happens to run out. */
+html .langrow,html .intwall,html .kwrow,html .chiprow,html .exfilter{
+  display:grid;align-items:stretch;justify-items:stretch;
+}
+html .langrow > *,html .intwall > *,html .kwrow > *,
+html .chiprow > *,html .exfilter > *{
+  text-align:center;justify-content:center;width:100%;
+}
+html .langrow {grid-template-columns:repeat(auto-fit,minmax(156px,1fr));}
+html .intwall {grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}
+html .kwrow   {grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+html .chiprow {grid-template-columns:repeat(auto-fit,minmax(210px,1fr));}
+html .exfilter{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+/* Below the phone breakpoint two columns of these leave a 1-item last row on
+   every odd count, and a single column reads as a list, which is what a
+   wrapped row of nine becomes on a 375px screen anyway. */
+@media (max-width:620px){
+  html .intwall,html .chiprow,html .exfilter{grid-template-columns:1fr;}
+}
+
+/* ── 4. the legible floor inside figures ──────────────────────────────────
+   The only text on the site still set in px rather than a token is the label
+   inside a hand-drawn SVG — 150 elements at 12.5, 60 at 12, and a handful at
+   11.5, 11 and 10.5, including every label on the capture fan on the home
+   page. They are presentation attributes, which any CSS declaration outranks,
+   so the floor can be applied to exactly the sizes that break it and nothing
+   above it is touched. Written against the attribute rather than the element
+   because several of them are inherited from a <g>. */
+svg [font-size="10.5"],svg [font-size="11"],svg [font-size="11.5"],
+svg [font-size="12"],svg [font-size="12.5"]{font-size:13px;}
+
+/* ── 5. the same two rules again, one step heavier ────────────────────────
+   Nine of the blocks above are centred by a per-page <style> rule written as
+   a descendant pair — `.altsec .note`, `.vocabsec .note`, `.proofslot
+   .proofnote` — which outranks a single class plus `html`. An attribute
+   selector on the ancestor carries one more unit of weight and settles it
+   without !important, which would take the decision away from the pages for
+   good. Measured after: pricing's 11-line centred footnote and index's
+   5-line one both read left, capped, flush with their column. */
+html [class] .seccap,html [class] .storyfoot,html [class] .secfoot,
+html [class] .custfoot,html [class] .whyfoot,html [class] .exfoot,
+html [class] .stackfoot,html [class] .guidelink,html [class] .tnote,
+html [class] .altnote,html [class] .livenote,html [class] .proofnote,
+html [class] .metnote,html [class] .plainfoot,html [class] .costfoot,
+html [class] .vpfoot,html [class] .stagefoot,html [class] .fn,
+html [class] .disclaim,html [class] .note,html [class] .prob,
+html [class] .eanote,html [class] .mockcap,html [class] .photocap,
+html [class] .capL,html [class] .whotxt{
+  text-align:left;max-width:70ch;margin-inline:0;
+}
+/* .fn is also the step number inside a flow card, where it is a label and not
+   a footnote — one class doing two jobs. Put that one back. */
+html [class] .fstep .fn{text-align:inherit;max-width:none;}
+
+/* Card body copy is prose too: four paragraphs inside webchat's flow cards
+   were centred at 4 lines each because the card centres its label. */
+html .fstep p,html .fstep b{text-align:left;}
+
+/* ── 6. the last text below the floor ─────────────────────────────────────
+   After the token change, 26 pages held 10 rendered nodes still under the
+   floor. Six were SVG labels at 8.5 and 9.5, outside the range the block
+   above covers. Four were the hero shelf's two micro-labels on the home page,
+   set to 9px in that page's own <style> — small enough that the eye reads
+   them as texture rather than words. */
+svg [font-size="8"],svg [font-size="8.5"],svg [font-size="9"],
+svg [font-size="9.5"],svg [font-size="10"]{font-size:13px;}
+/* The other four are the home page hero shelf's two micro-labels, set to 9px
+   in index.html's own <style>. Raising them to the 13px floor was tried and
+   measured: the label overflows its card by 25 and 27px, because the card is
+   sized for 9px text. That one needs the card to change, not the type, so it
+   is left alone and written up rather than half-fixed here.
+   index.html <style>: .heroshelf .nl .t i / .heroshelf .nl .t em. */
+
+/* ── 7. the floor is per role, and a product mock is a figure ─────────────
+   Raising --fs-xs and --fs-label by one and two pixels is right for text a
+   visitor reads, and wrong inside the software mock-ups: those boxes are
+   drawn to a fixed width and the extra pixel pushed 96 elements past their
+   own edge at 375 and 19 at 1440 — transcript speaker labels, KPI tiles, the
+   funnel row, the calendar grid, the footer brand block. Measured, not
+   assumed: the same diff with the tokens rolled back showed none of them.
+
+   A mock is a picture of an interface, so its labels take the figure floor of
+   13px rather than the body floor of 14px — the same floor the SVG labels
+   above take, for the same reason. Scoping the two tokens to the mock chrome
+   is one declaration and reaches every mock on every page. */
+html .appwin,html .calmock,html .pipeboard,html .quotedoc,html .custcard,
+html .kpitiles,html .repcard,html .ledger,html .transcript,html .funnelrow,
+html .browserframe,html .msgthread,html .callcard,html .demo-body,
+html .bigfooter .brand{
+  --fs-xs:13px;
+  --fs-label:13px;
+}
