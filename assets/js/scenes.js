@@ -311,4 +311,118 @@
       }
     };
   });
+
+  /* ── 4 · what an answered conversation leaves behind ──────────────────────
+     Three inlets, one record, three ways back out. This is the only figure on
+     the site that draws a claim rather than a measurement, so it draws exactly
+     what the sentences beside it say and nothing more: a phone call carries a
+     number, a chat asks for a name and an address, a messenger thread arrives
+     with the account attached — and all three land in the same record, which
+     is the thing you can reach afterwards. */
+  window.SR_SCENE('capturefan', function (env) {
+    var K = env.ink;
+    var CH = [
+      { label: 'PHONE',     gets: 'the number',   c: '#17BDBD' },
+      { label: 'CHAT',      gets: 'name + email', c: '#5B9DFF' },
+      { label: 'MESSENGER', gets: 'the account',  c: '#34D186' }
+    ];
+    var OUT = ['Message', 'Email', 'Next offer'];
+    var CYCLE = 6.4;
+    var dots = [];
+    for (var i = 0; i < CH.length; i++) {
+      for (var k = 0; k < 3; k++) dots.push({ lane: i, t0: i * 0.5 + k * 1.5 });
+    }
+
+    function ease(t) { return t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t); }
+
+    return {
+      settleSeconds: CYCLE,
+      frame: function (c, W, H, t) {
+        var narrow = W < 560;
+        var padY = 16;
+        var laneY = [], n = CH.length;
+        for (var i = 0; i < n; i++) laneY.push(padY + (H - padY * 2) * (i + 0.5) / n);
+        var midY = H / 2;
+        var xIn = narrow ? 92 : 132;         /* where the inlet labels end   */
+        var xMid = W * 0.5;                  /* the record                    */
+        var xOut = W - (narrow ? 84 : 124);  /* where the outlets begin       */
+        var boxW = narrow ? 76 : 104, boxH = narrow ? 40 : 46;
+
+        /* the three inlets */
+        c.textBaseline = 'middle';
+        CH.forEach(function (ch, i) {
+          var y = laneY[i];
+          c.textAlign = 'left';
+          c.font = '800 ' + (narrow ? 8 : 9) + 'px "Space Grotesk", system-ui, sans-serif';
+          c.fillStyle = ch.c;
+          c.fillText(ch.label, 2, y - (narrow ? 7 : 8));
+          if (!narrow) {
+            c.font = '600 10px "Plus Jakarta Sans", system-ui, sans-serif';
+            c.fillStyle = K.muted;
+            c.fillText(ch.gets, 2, y + 8);
+          }
+          /* the path in */
+          c.strokeStyle = K.faint; c.lineWidth = 1.5;
+          c.beginPath();
+          c.moveTo(xIn, y);
+          c.bezierCurveTo(xIn + (xMid - xIn) * 0.5, y, xIn + (xMid - xIn) * 0.5, midY, xMid - boxW / 2, midY);
+          c.stroke();
+        });
+
+        /* the paths out */
+        OUT.forEach(function (_, i) {
+          var y = laneY[i];
+          c.strokeStyle = K.faint; c.lineWidth = 1.5;
+          c.beginPath();
+          c.moveTo(xMid + boxW / 2, midY);
+          c.bezierCurveTo(xMid + (xOut - xMid) * 0.5, midY, xMid + (xOut - xMid) * 0.5, y, xOut, y);
+          c.stroke();
+          c.textAlign = 'left';
+          c.font = '600 ' + (narrow ? 9 : 10) + 'px "Plus Jakarta Sans", system-ui, sans-serif';
+          c.fillStyle = K.muted;
+          c.fillText(OUT[i], xOut + 6, y);
+        });
+
+        /* the record in the middle */
+        c.fillStyle = K.onLight ? 'rgba(11,27,51,.06)' : 'rgba(255,255,255,.07)';
+        c.strokeStyle = K.accent; c.lineWidth = 1.5;
+        c.beginPath();
+        if (c.roundRect) c.roundRect(xMid - boxW / 2, midY - boxH / 2, boxW, boxH, 10);
+        else c.rect(xMid - boxW / 2, midY - boxH / 2, boxW, boxH);
+        c.fill(); c.stroke();
+        c.textAlign = 'center';
+        c.fillStyle = K.strong;
+        c.font = '700 ' + (narrow ? 10 : 11) + 'px "Space Grotesk", system-ui, sans-serif';
+        c.fillText('1 record', xMid, midY - 6);
+        c.font = '600 ' + (narrow ? 8 : 9) + 'px "Plus Jakarta Sans", system-ui, sans-serif';
+        c.fillStyle = K.muted;
+        c.fillText('per customer', xMid, midY + 9);
+
+        /* what is moving along the paths */
+        var loop = env.reduced ? CYCLE * 0.999 : (t % CYCLE);
+        dots.forEach(function (d) {
+          var age = loop - d.t0;
+          if (age < 0 || age > 3.4) return;
+          var y0 = laneY[d.lane], x, y, col;
+          if (age < 1.6) {                      /* inlet -> record */
+            var u = ease(age / 1.6);
+            x = xIn + (xMid - boxW / 2 - xIn) * u;
+            y = y0 + (midY - y0) * ease(Math.min(1, u * 1.25));
+            col = CH[d.lane].c;
+          } else if (age < 2.0) {
+            return;                             /* it rests in the record */
+          } else {                              /* record -> outlet */
+            var v = ease((age - 2.0) / 1.4);
+            x = xMid + boxW / 2 + (xOut - xMid - boxW / 2) * v;
+            y = midY + (y0 - midY) * ease(Math.min(1, v * 1.25));
+            col = K.accent;
+          }
+          c.fillStyle = col;
+          c.beginPath(); c.arc(x, y, 3, 0, Math.PI * 2); c.fill();
+        });
+
+        return true;
+      }
+    };
+  });
 })();

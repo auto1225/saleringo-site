@@ -55,9 +55,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=15.6">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=15.6">
-<link rel="stylesheet" href="../assets/css/crm.css?v=15.6">
+<link rel="stylesheet" href="../assets/css/site.css?v=15.8">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=15.8">
+<link rel="stylesheet" href="../assets/css/crm.css?v=15.8">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -339,6 +339,31 @@
     .nightsec .photosplit .copy{padding:44px 24px;}
     .cityband{min-height:220px;}
   }
+
+  /* ── what the conversation leaves behind ── */
+  .keepgrid{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    align-items:stretch;}
+  .keepcol{display:flex;flex-direction:column;padding:24px 22px 22px;border-radius:18px;
+    background:rgba(255,255,255,.045);border:1px solid var(--hair);}
+  .kh{display:flex;align-items:center;gap:8px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.13em;text-transform:uppercase;}
+  .kh i{width:7px;height:7px;border-radius:50%;flex:none;}
+  .keepcol b{display:block;margin-top:14px;font-size:var(--fs-lead);font-weight:700;
+    letter-spacing:-.02em;color:#fff;line-height:1.25;}
+  .keepcol p{margin-top:12px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);
+    font-weight:500;}
+  .kgot{margin-top:auto;padding-top:18px;font-size:var(--fs-2xs);font-weight:700;
+    letter-spacing:.03em;color:var(--tx3);}
+  .keepcol.voice .kh{color:var(--chan-voice);} .keepcol.voice .kh i{background:var(--chan-voice);}
+  .keepcol.chat  .kh{color:var(--chan-chat);}  .keepcol.chat  .kh i{background:var(--chan-chat);}
+  .keepcol.msg   .kh{color:var(--chan-msg);}   .keepcol.msg   .kh i{background:var(--chan-msg);}
+  .fanfig{margin:44px 0 0;}
+  .fanfig .scenebox{--sh:210px;}
+  .keepsec .seccap{margin-top:34px;max-width:74ch;}
+  @media (max-width:900px){
+    .keepgrid{grid-template-columns:1fr;gap:14px;}
+    .fanfig .scenebox{--sh:230px;}
+  }
 </style>
 </head>
 <body data-grade="voice">
@@ -355,7 +380,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v15.6">v15.6</span>
+    <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v15.8">v15.8</span>
     <span class="links">
     <a href="./platform.html">How it works</a>
     <a href="./demo.html">See it work</a>
@@ -936,6 +961,69 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════ WHAT IT LEAVES YOU ═══════════════════════════════════════════
+     The product's own argument stopped at "the work is done". What a small
+     business is short of is not one booking — it is a list of people it is
+     allowed to contact again, and every channel already collects that. ═══ -->
+<section class="keepsec t-xl sec-dark bg-spot" id="what-it-keeps">
+  <div class="wrap">
+    <div class="head reveal" style="max-width:720px;">
+      <span class="eyebrow"><i></i>What the conversation leaves behind</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">A booking is one&nbsp;night.
+        <span class="gradtext">A contact is next&nbsp;year.</span></h2>
+      <p class="lead onDark" style="margin-top:18px;">Answering wins you the job in
+        front of you. What you still have in March is the person &mdash; the number
+        that rang at 2:47&nbsp;AM, the email typed into your web chat, the account
+        behind the WhatsApp thread. Saleringo keeps all three in one record,
+        because that record is the part that compounds.</p>
+    </div>
+
+    <div class="keepgrid reveal">
+      <div class="keepcol voice">
+        <span class="kh"><i></i>AI Phone</span>
+        <b>The number arrives with the&nbsp;call</b>
+        <p>Caller ID is on every call, so the contact costs nothing to collect. If
+          the job needs a name &mdash; and most do &mdash; it asks for one, and
+          writes down the answer rather than guessing at&nbsp;it.</p>
+        <span class="kgot">Number &middot; name &middot; what they wanted &middot; the recording</span>
+      </div>
+      <div class="keepcol chat">
+        <span class="kh"><i></i>Web chat</span>
+        <b>It asks before it&nbsp;books</b>
+        <p>A slot is not held on an anonymous visitor. The widget takes a name and
+          one way to reach them &mdash; email or mobile, your choice &mdash; and it
+          asks in the language the visitor is already&nbsp;typing&nbsp;in.</p>
+        <span class="kgot">Name &middot; email or mobile &middot; the thread</span>
+      </div>
+      <div class="keepcol msg">
+        <span class="kh"><i></i>Messenger</span>
+        <b>The account comes&nbsp;attached</b>
+        <p>On WhatsApp, Instagram or KakaoTalk the contact is the conversation:
+          there is nothing to ask for. Two threads from one person merge into one
+          record instead of two half&#8209;customers.</p>
+        <span class="kgot">Verified account &middot; every message &middot; one record</span>
+      </div>
+    </div>
+
+    <figure class="fanfig scenefig reveal">
+      <div class="scenebox" data-scene="capturefan"></div>
+      <figcaption class="scenecap">
+        <b>Three front doors, one record, and a way back to the person.</b>
+        From there you can send the confirmation, follow up the quote nobody
+        answered, or put the whole segment into next month&rsquo;s offer &mdash;
+        by trade, by suburb, by what they asked about. Marketing consent is asked
+        for and stored per contact, and the export is yours to take with you.
+      </figcaption>
+    </figure>
+
+    <p class="seccap reveal">Every AI receptionist can hand you a transcript.
+      The question worth asking is what you are still holding six months later.
+      <a class="linkcta" href="./platform.html#who-next">See what the CRM does with
+        it&nbsp;&nbsp;&rarr;</a></p>
+  </div>
+</section>
+
 
 <!-- ═══════════ 3b · WHO ANSWERS FOR YOU TONIGHT — audience photographs ═══════════ -->
 <section class="audsec t-sm sec-dark">
@@ -1770,7 +1858,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v15.6</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v15.8</span>
         <p>AI phone, chat &amp; messenger answering — with the industry CRM that turns every conversation into a booking, a quote and a customer.</p>
         <p style="margin-top:10px;">hello@saleringo.com</p>
       </div>
@@ -1825,12 +1913,12 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=15.6"></script>
-<script src="../assets/js/canvas.js?v=15.6" defer></script>
-<script src="../assets/js/scenes.js?v=15.6" defer></script>
-<script src="../assets/js/play.js?v=15.6"></script>
-<script src="../assets/js/guide.js?v=15.6"></script>
-<script src="../assets/js/pricelab.js?v=15.6"></script>
+<script src="../assets/js/site.js?v=15.8"></script>
+<script src="../assets/js/canvas.js?v=15.8" defer></script>
+<script src="../assets/js/scenes.js?v=15.8" defer></script>
+<script src="../assets/js/play.js?v=15.8"></script>
+<script src="../assets/js/guide.js?v=15.8"></script>
+<script src="../assets/js/pricelab.js?v=15.8"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {
