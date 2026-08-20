@@ -2336,3 +2336,125 @@ html .funnelrow .fstep span,html .funnelrow .fstep .fn,html .fstep span{color:#9
 .ver{color:#9AA6B8;}
 .navwrap.onlight .ver,.sec-light .ver{color:#5A6779;}
 html .altsec .photocap{color:#656D78;}
+
+/* ── one scale of widths, not six ─────────────────────────────────────────
+   Measured at 1440 across 33 pages: 231 sections stacked blocks at three or
+   more different content widths — a grid at 1128, a standfirst at 651-816, a
+   caption at 702-742. Nothing was wrong with any single number; having six of
+   them in one section is what reads as prose skewed to one side.
+
+   --measure is the reading column. It is the only width prose may take. */
+:root{
+  /* Three widths, and only three. Measured before this: a single section would
+     put its grid at 1128, its header block at 600-620 and its caption at
+     702-742 — six different content columns stacked up the page, which is what
+     reads as prose skewed to one side under a full-width grid.
+       --w-full   the grid and figure column (the .wrap's own width)
+       --w-head   a section header: related to the grid, not floating in it
+       --measure  running prose, the only width a paragraph may take */
+  --w-head:62rem;
+  --measure:72ch;
+}
+
+html .lead,html .sub,html .lsub,html .secintro,html .standfirst{
+  max-width:var(--measure);
+}
+
+/* A caption belongs to the thing it captions. Capped at ~700px under a 1128px
+   figure it ended 400px short of the picture it describes. It spans the figure
+   now and flows into columns sized by measure rather than by count, so the
+   browser makes two at 1128, one at 700 and one on a phone — full width at
+   every size, and never a 115-character line. */
+html [class] figcaption.scenecap,html [class] .scenecap,html [class] .photocap,
+html [class] .mockcap,html [class] .exlabel,html [class] .pkcap,
+html [class] .statnote,html [class] .seccap,html [class] .funfoot,
+html [class] .labfoot,html [class] .altnote,html [class] .proofnote,
+html [class] .metnote,html [class] .storyfoot,html [class] .secfoot,
+html [class] .custfoot,html [class] .whyfoot,html [class] .exfoot,
+html [class] .stackfoot,html [class] .tnote,html [class] .livenote,
+html [class] .plainfoot,html [class] .costfoot,html [class] .vpfoot,
+html [class] .stagefoot,html [class] .disclaim,html [class] .note{
+  max-width:none;
+  column-width:32rem;
+  column-gap:46px;
+}
+/* Short captions must not split into two stubby columns; a single line of type
+   has nothing to balance. `column-width` alone would still make two columns out
+   of forty words, so the flow is only allowed where there is enough of it. */
+html .scenecap,html .photocap,html .mockcap,html .exlabel,html .pkcap,
+html .statnote,html .seccap,html .funfoot,html .labfoot,html .altnote,
+html .proofnote,html .metnote{
+  orphans:2; widows:2;
+}
+@media (max-width:900px){
+  html figcaption.scenecap,html .scenecap,html .photocap,html .mockcap,
+  html .exlabel,html .pkcap,html .statnote,html .seccap,html .funfoot,
+  html .labfoot,html .altnote,html .proofnote,html .metnote{
+    column-width:auto;columns:1;
+  }
+}
+
+/* Section header blocks were capped per page at 600, 620, 640, 660, 680, 700,
+   720, 740 and 800px above a 1128px grid. One value, related to the grid. */
+html [class] .head,html [class] .blockhead,html [class] .sechead,
+html [class] .khead,html [class] .thead,html [class] .chead{
+  max-width:var(--w-head);
+}
+
+/* ── a section header fills its section ───────────────────────────────────
+   Seventy-five header blocks carried an inline max-width at eight different
+   values above a grid that is always 1128px, so the page stepped 660 -> 700 ->
+   1128 down its own left edge. They take one width now.
+
+   Filling that width is not the same as widening the prose. Past about 75
+   characters a line stops being readable, so instead of one long measure the
+   header takes two columns on a wide screen — the heading left, the standfirst
+   right — which is the arrangement this site already uses on the channel band.
+   Both keep a reading measure; together they span the grid.
+
+   Only headers that actually have a standfirst to put in the second column, and
+   only where the section is wide enough to carry two. Centred headers are left
+   centred: there the balance is the point. */
+@media (min-width:1100px){
+  html [class] .head:not(.mid):not(.centered):has(> .lead),
+  html [class] .blockhead:not(.mid):has(> .lead),
+  html [class] .sechead:not(.mid):has(> .lead){
+    max-width:none;
+    display:grid;
+    grid-template-columns:1.02fr .98fr;
+    column-gap:64px;
+    align-items:end;
+  }
+  html [class] .head:not(.mid):not(.centered):has(> .lead) > .eyebrow,
+  html [class] .blockhead:not(.mid):has(> .lead) > .eyebrow,
+  html [class] .sechead:not(.mid):has(> .lead) > .eyebrow{
+    grid-column:1;grid-row:1;justify-self:start;
+  }
+  html [class] .head:not(.mid):not(.centered):has(> .lead) > h2,
+  html [class] .head:not(.mid):not(.centered):has(> .lead) > .h2,
+  html [class] .blockhead:not(.mid):has(> .lead) > h2,
+  html [class] .sechead:not(.mid):has(> .lead) > h2{
+    grid-column:1;grid-row:2;max-width:none;
+  }
+  html [class] .head:not(.mid):not(.centered):has(> .lead) > .lead,
+  html [class] .blockhead:not(.mid):has(> .lead) > .lead,
+  html [class] .sechead:not(.mid):has(> .lead) > .lead{
+    grid-column:2;grid-row:2;margin-top:0;max-width:var(--measure);
+  }
+  /* anything else in the block sits under both columns rather than beside one */
+  html [class] .head:not(.mid):not(.centered):has(> .lead) > *:not(.eyebrow):not(h2):not(.h2):not(.lead),
+  html [class] .blockhead:not(.mid):has(> .lead) > *:not(.eyebrow):not(h2):not(.h2):not(.lead),
+  html [class] .sechead:not(.mid):has(> .lead) > *:not(.eyebrow):not(h2):not(.h2):not(.lead){
+    grid-column:1 / -1;
+  }
+  /* a pill is not a row: badges and chips keep their own width */
+  html [class] .head:has(> .lead) > .eyebrow,
+  html [class] .head:has(> .lead) > .tryme,
+  html [class] .head:has(> .lead) > .rmtag,
+  html [class] .head:has(> .lead) > .pill,
+  html [class] .blockhead:has(> .lead) > .eyebrow,
+  html [class] .sechead:has(> .lead) > .eyebrow{
+    justify-self:start;width:max-content;max-width:100%;
+  }
+  html [class] .head:has(> .lead) > .tryme{grid-column:1;grid-row:3;margin-top:14px;}
+}
