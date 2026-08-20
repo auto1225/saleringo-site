@@ -409,6 +409,11 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
    used on ten pages, and turned each of them into a four-column grid 44px
    below where it belonged. */
 .tline{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:stretch;}
+/* Four columns with no breakpoint at all: at 375 each step was 65px wide and
+   "We read your business" needed 108, so every card on the timeline was cut
+   off mid-word. Two up on a tablet, one on a phone. */
+@media (max-width:900px){.tline{grid-template-columns:repeat(2,1fr);gap:18px;}}
+@media (max-width:620px){.tline{grid-template-columns:1fr;gap:14px;}}
 .tlstep{display:flex;flex-direction:column;background:#fff;border:1px solid var(--l-hair);
   border-radius:18px;padding:24px 22px 22px;box-shadow:0 16px 40px rgba(11,27,51,.05);
   position:relative;overflow:hidden;}

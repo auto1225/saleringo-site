@@ -1956,11 +1956,7 @@ html .langrow > *,html .intwall > *,html .kwrow > *,
 html .chiprow > *,html .exfilter > *{
   text-align:center;justify-content:center;width:100%;
 }
-html .langrow {grid-template-columns:repeat(auto-fit,minmax(156px,1fr));}
-html .intwall {grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}
-html .kwrow   {grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
-html .chiprow {grid-template-columns:repeat(auto-fit,minmax(210px,1fr));}
-html .exfilter{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+/* the column counts moved to the balanced block at the end of this file */
 /* Below the phone breakpoint two columns of these leave a 1-item last row on
    every odd count, and a single column reads as a list, which is what a
    wrapped row of nine becomes on a 375px screen anyway. */
@@ -2458,3 +2454,74 @@ html [class] .khead,html [class] .thead,html [class] .chead{
   }
   html [class] .head:has(> .lead) > .tryme{grid-column:1;grid-row:3;margin-top:14px;}
 }
+
+/* ── the chip walls read a computed column count ───────────────────────────
+   The count comes from assets/js/balance.js, which asks how many columns
+   divide the items evenly rather than only how many fit. `auto-fit` is the
+   fallback when the script has not run: it fills the row, which is what
+   these did before, stub last row and all. Every wall declares the minimum
+   chip width it wants as a token so the script and the fallback read the
+   same number from one place. */
+html .langrow,html .intwall,html .kwrow,html .chiprow,html .exfilter,
+html .langbig,html .tradewords,html .tradetour,html .smanch{
+  display:grid;align-items:stretch;justify-items:stretch;
+  grid-template-columns:repeat(var(--cols,auto-fit),minmax(var(--chip-min),1fr));
+}
+html .langbig > *,html .tradewords > *,html .tradetour > *,html .smanch > *{
+  text-align:center;justify-content:center;width:100%;
+}
+html .langrow  {--chip-min:156px;}
+html .intwall  {--chip-min:160px;}
+html .kwrow    {--chip-min:150px;}
+html .chiprow  {--chip-min:210px;}
+html .exfilter {--chip-min:180px;}
+html .langbig  {--chip-min:150px;}
+html .tradewords{--chip-min:170px;}
+html .tradetour{--chip-min:150px;}
+html .smanch  {--chip-min:130px;}
+
+/* ── the sitemap's columns are a masonry, not a grid ───────────────────────
+   Seven index cards whose contents run from a four-link list to a
+   forty-link one: measured 431px tall next to 3144px. In a three-track grid
+   the short cards leave the row open under them and the seventh sits alone,
+   so the page reads as three ragged towers with a hole. Multicol balances by
+   height instead of by count, which is the shape this content actually has;
+   `break-inside:avoid` keeps a card whole. */
+html .smgrid{
+  display:block;columns:3;column-gap:26px;
+}
+html .smgrid > *{
+  break-inside:avoid;-webkit-column-break-inside:avoid;
+  margin:0 0 26px;display:inline-block;width:100%;
+}
+@media (max-width:1000px){ html .smgrid{columns:2;} }
+@media (max-width:700px){ html .smgrid{columns:1;} }
+
+/* On a phone two columns of chips leave a one-item last row on every odd
+   count and a single column reads as the list it already is at 375px. This
+   sits after the balanced block so it still outranks the computed count. */
+@media (max-width:620px){
+  html .intwall,html .chiprow,html .exfilter,html .tradewords{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ── a bento closes its last row ───────────────────────────────────────────
+   The pattern is written for seven cards, where six and seven take three
+   columns each and close the row together. Platform has six, so the sixth
+   took three of six columns and left a 548px hole beside it — measured at
+   1440. A last card with no partner spans the row instead of half of it,
+   which is also the right shape for the card that lands there: the "and
+   yours" catch-all at the end of a list of trades. */
+html .bento > :nth-child(6):last-child{grid-column:span 6;}
+html .bento > :nth-child(3):last-child{grid-column:span 2;}
+
+/* ── an inline grid a media query can still reach ──────────────────────────
+   Six grids declared their columns in a style attribute, which outranks
+   every rule in every sheet — so no breakpoint could collapse them and they
+   held two or three columns down to 375px. Measured there: a report card at
+   187px with a 45px tile inside it, where the word "Conversations" needs
+   133. The column list moved to a custom property, which a rule reads and a
+   media query can override. */
+html .autocols{ grid-template-columns:var(--gc,1fr); }
+@media (max-width:700px){ html .autocols{ grid-template-columns:1fr; } }

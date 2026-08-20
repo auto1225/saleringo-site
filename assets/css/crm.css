@@ -128,7 +128,12 @@
   color:#63E0E0;background:rgba(23,189,189,.14);border:1px solid rgba(23,189,189,.3);border-radius:6px;padding:4px 8px;}
 .crow{display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid var(--app-line);font-size:var(--fs-2xs);}
 .crow:last-child{border-bottom:0;}
-.crow .k{width:96px;flex:none;color:var(--app-tx3);font-weight:800;letter-spacing:.04em;
+/* Measured across all 33 pages: the widest label in this column is
+   "Practitioner" at 100px, with "Jurisdiction" and "Represented" at 96 —
+   exactly the old width, so they sat on the edge and Practitioner lost six
+   pixels off its end inside the card's overflow:hidden. 106 clears all
+   three. */
+.crow .k{width:106px;flex:none;color:var(--app-tx3);font-weight:800;letter-spacing:.04em;
   font-size:var(--fs-label);text-transform:uppercase;padding-top:2px;}
 .crow .v{color:var(--app-tx);font-weight:500;line-height:1.6;min-width:0;}
 .crow .v em{font-style:normal;color:var(--teal);font-weight:700;}
@@ -216,8 +221,15 @@
 @media (max-width:760px){
   .pipeboard{grid-template-columns:1fr;}
   .kpitiles{grid-template-columns:1fr 1fr;}
+  /* Three columns below 760px hid the Thu and Fri HEADERS but kept their
+     slots, so the five slots of each time row wrapped across three columns
+     and Thursday's 09:00 rendered under "Mon". The calendar was showing the
+     wrong day. Hide the two days entirely instead: the children run five
+     headers then five slots per row, so day four and day five are always
+     child 5n+4 and 5n+5 — headers included. */
   .calgrid{grid-template-columns:repeat(3,1fr);}
-  .calgrid .dh:nth-child(n+4){display:none;}
+  .calgrid > :nth-child(5n+4),
+  .calgrid > :nth-child(5n+5){display:none;}
   .funnelrow{flex-wrap:wrap;}
   .fstep{flex:1 1 44%;}
   .ledger{grid-template-columns:1fr;}
@@ -600,3 +612,10 @@
   background:rgba(255,255,255,.03);border-radius:999px;padding:8px 13px;}
 .pkcap{margin:14px 0 0;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);
   font-weight:600;max-width:82ch;}
+
+/* CONVERSATIONS is one thirteen-letter word set in caps at .11em tracking:
+   133px that cannot break anywhere. Two tiles across a 320px card leaves it
+   107px, so it lost its last 26px. Below 520 the tiles stack. */
+@media (max-width:520px){
+  .kpitiles{grid-template-columns:1fr;}
+}
