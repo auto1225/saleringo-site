@@ -1195,4 +1195,509 @@
       }
     };
   });
+
+  /* ── 9 · what the model is handed, and what it is never handed ────────────
+     Claim (already made in the policy card beside it): the model is given the
+     question, the business's own approved material, and the conversation so
+     far. It is not given another customer's data, and nothing here trains a
+     model that serves anybody else unless the customer opts in in writing.
+
+     A stock photograph of somebody on a phone cannot say any of that. Three
+     boxes and two crossed routes can, and the two crossed routes are the half
+     a buyer's reviewer actually reads. */
+  window.SR_SCENE('modelfeed', function (env) {
+    var K = env.ink;
+    var RED = '#D96A5E';
+    var GIVEN = [
+      ['The question just asked',         'The question asked'],
+      ['Your prices, hours and policies', 'Your prices and hours'],
+      ['This conversation so far',        'This conversation']
+    ];
+
+    function cross(c, x, y, s, col) {
+      c.save();
+      c.strokeStyle = col; c.lineWidth = 2.4; c.lineCap = 'round';
+      c.beginPath();
+      c.moveTo(x - s, y - s); c.lineTo(x + s, y + s);
+      c.moveTo(x - s, y + s); c.lineTo(x + s, y - s);
+      c.stroke(); c.restore();
+    }
+    /* a packet running a straight gutter, looping */
+    function runner(c, x1, y1, x2, y2, col, t, period, offset) {
+      var u = ((t / period) + (offset || 0)) % 1;
+      c.save();
+      c.fillStyle = col; c.globalAlpha = 0.35 + 0.65 * Math.sin(Math.PI * u);
+      c.beginPath();
+      c.arc(x1 + (x2 - x1) * u, y1 + (y2 - y1) * u, 4.2, 0, TAU);
+      c.fill(); c.restore();
+    }
+
+    return {
+      settleSeconds: 3,
+      frame: function (c, W, H, t) {
+        var SOFT = soft(K), PANEL = panelFill(K), HAIR = hairLine(K);
+        c.textBaseline = 'middle';
+        var narrow = W < 700;
+        var p = ease(t / 0.9);
+
+        /* the refusal band is the point of the figure, so it gets real room */
+        var botH = narrow ? 118 : 92;
+        var topH = Math.max(120, H - botH - 18);
+
+        var xA, wA, xM, wM, xB, wB, yA, hA, yM, hM, yB, hB;
+        if (narrow) {
+          xA = xM = xB = 0; wA = wM = wB = W;
+          hA = 122; hM = 62; hB = 62;
+          var free = Math.max(0, topH - (hA + hM + hB));
+          var g = Math.max(12, Math.min(26, free / 2));
+          yA = 0; yM = yA + hA + g; yB = yM + hM + g;
+        } else {
+          wM = Math.max(160, Math.min(230, W * 0.21));
+          wA = Math.max(210, W * 0.30);
+          var gap = Math.max(46, (W - wA - wM) * 0.16);
+          wB = Math.max(150, W - wA - wM - gap * 2);
+          xA = 0; xM = wA + gap; xB = xM + wM + gap;
+          yA = yM = yB = 0; hA = hM = hB = topH;
+        }
+
+        /* ── what is handed over ── */
+        c.save(); c.globalAlpha = p;
+        c.fillStyle = PANEL; box(c, xA, yA, wA, hA, 14); c.fill();
+        c.strokeStyle = HAIR; c.lineWidth = 1; c.stroke();
+        label(c, 'HANDED OVER, FOR THIS ONE ANSWER', xA + 16, yA + 24,
+              wA - 32, '800', GRO, 13, K.accent);
+        var rowTop = yA + 44, step = Math.min(34, Math.max(24, (hA - 56) / 3));
+        GIVEN.forEach(function (g2, i) {
+          var y = rowTop + i * step + step / 2;
+          c.fillStyle = K.accent;
+          c.beginPath(); c.arc(xA + 22, y, 3.4, 0, TAU); c.fill();
+          label(c, wA < 320 ? g2[1] : g2[0], xA + 36, y, wA - 52, '600', JAK, 14, K.strong);
+        });
+        c.restore();
+
+        /* ── the model ── */
+        c.save(); c.globalAlpha = p;
+        c.fillStyle = K.onLight ? '#0B1B33' : 'rgba(23,189,189,.14)';
+        box(c, xM, yM, wM, hM, 14); c.fill();
+        c.strokeStyle = K.accent; c.lineWidth = 1.8; c.stroke();
+        var mc = yM + hM / 2;
+        label(c, 'THE MODEL', xM + wM / 2, mc - 12, wM - 24,
+              '800', GRO, 16, K.onLight ? '#7FE3E3' : K.accent, 'center');
+        label(c, 'composes one answer', xM + wM / 2, mc + 12, wM - 20,
+              '600', JAK, 13, K.onLight ? 'rgba(255,255,255,.80)' : SOFT, 'center');
+        c.restore();
+
+        /* ── what comes back ── */
+        c.save(); c.globalAlpha = p;
+        c.fillStyle = PANEL; box(c, xB, yB, wB, hB, 14); c.fill();
+        c.strokeStyle = HAIR; c.lineWidth = 1; c.stroke();
+        var bc = yB + hB / 2;
+        label(c, 'COMES BACK', xB + 16, yB + 24, wB - 32, '800', GRO, 13, K.accent);
+        if (narrow) {
+          label(c, 'One answer, to your customer', xB + 16, bc + 12, wB - 32, '700', JAK, 14, K.strong);
+        } else {
+          label(c, 'One answer,', xB + 16, bc - 10, wB - 32, '700', JAK, 15, K.strong);
+          label(c, 'to your customer', xB + 16, bc + 12, wB - 32, '600', JAK, 14, SOFT);
+        }
+        c.restore();
+
+        /* ── the two live routes ── */
+        if (narrow) {
+          link(c, xA + wA / 2, yA + hA, xM + wM / 2, yM, K.accent, 2.2, 0.5);
+          link(c, xM + wM / 2, yM + hM, xB + wB / 2, yB, K.accent, 2.2, 0.5);
+          runner(c, xA + wA / 2, yA + hA, xM + wM / 2, yM, K.accent, t, 2.2, 0);
+          runner(c, xM + wM / 2, yM + hM, xB + wB / 2, yB, K.accent, t, 2.2, 0.5);
+        } else {
+          var my = topH / 2;
+          link(c, xA + wA, my, xM, my, K.accent, 2.2, 0.5);
+          link(c, xM + wM, my, xB, my, K.accent, 2.2, 0.5);
+          runner(c, xA + wA, my, xM, my, K.accent, t, 2.2, 0);
+          runner(c, xM + wM, my, xB, my, K.accent, t, 2.2, 0.5);
+        }
+
+        /* ── and the two routes that do not exist ── */
+        var by = H - botH;
+        c.save();
+        c.fillStyle = K.onLight ? 'rgba(217,106,94,.07)' : 'rgba(217,106,94,.10)';
+        box(c, 0, by, W, botH, 14); c.fill();
+        c.strokeStyle = 'rgba(217,106,94,.45)'; c.lineWidth = 1; c.stroke();
+        c.restore();
+
+        var cells = narrow
+          ? [{ x: 0, y: by, w: W, h: botH / 2 }, { x: 0, y: by + botH / 2, w: W, h: botH / 2 }]
+          : [{ x: 0, y: by, w: W / 2, h: botH }, { x: W / 2, y: by, w: W / 2, h: botH }];
+        var TXT = [
+          ['Another customer’s data', 'never reaches it — one tenant, one wall',
+           'Another customer’s data', 'never reaches it'],
+          ['Nothing here trains a shared model', 'off by default · written opt-in only',
+           'None of it trains a model', 'opt-in only, in writing']
+        ];
+        cells.forEach(function (cell, i) {
+          var cy = cell.y + cell.h / 2;
+          cross(c, cell.x + 24, cy, 7, RED);
+          var tight = cell.w < 430;
+          label(c, TXT[i][tight ? 2 : 0], cell.x + 44, cy - 10, cell.w - 62, '800', JAK, 14, K.strong);
+          label(c, TXT[i][tight ? 3 : 1], cell.x + 44, cy + 11, cell.w - 62, '600', JAK, 13, SOFT);
+        });
+        return true;
+      }
+    };
+  });
+
+  /* ── 10 · the first sentence of every conversation ────────────────────────
+     Claim: disclosure is the opening line, not a footnote. The figure is the
+     strip of the first seconds — the line lands before the caller has said
+     what they want — plus the three channels it lands on and the one control
+     the owner does not get. Nothing here is a recording; it is the wording the
+     page already prints, drawn on a timeline. */
+  window.SR_SCENE('firstline', function (env) {
+    var K = env.ink;
+    var RED = '#D96A5E';
+    var MARKS = [
+      [0.05, 'It rings',       'Rings'],
+      [0.30, 'Picked up',      'Answered'],
+      [0.56, 'Disclosure',     'Disclosed'],
+      [0.94, 'Their question', 'Question']
+    ];
+    var CH = [
+      { n: 'AI PHONE',  t: 'PHONE', c: CHAN.voice },
+      { n: 'WEB CHAT',  t: 'CHAT',  c: CHAN.chat },
+      { n: 'MESSENGER', t: 'MSG',   c: CHAN.msg }
+    ];
+    var LINE   = '“You’re speaking with an AI assistant for this business.';
+    var LINE2  = 'Ask for a person at any point and I’ll put you through.”';
+    var LINE_T = '“You’re speaking with an AI assistant.';
+    var LINE2_T = 'Ask for a person any time.”';
+
+    return {
+      settleSeconds: 4.4,
+      frame: function (c, W, H, t) {
+        var SOFT = soft(K), PANEL = panelFill(K), HAIR = hairLine(K);
+        c.textBaseline = 'middle';
+        var narrow = W < 620;
+        var trackY = 30;
+        var x0 = 8, x1 = W - 8;
+        var head = ease(t / 3.2);
+
+        /* the strip of the first seconds */
+        c.save();
+        c.strokeStyle = HAIR; c.lineWidth = 2; c.lineCap = 'round';
+        c.beginPath(); c.moveTo(x0, trackY); c.lineTo(x1, trackY); c.stroke();
+        c.strokeStyle = K.accent; c.lineWidth = 3;
+        c.beginPath(); c.moveTo(x0, trackY); c.lineTo(x0 + (x1 - x0) * head, trackY); c.stroke();
+        c.restore();
+
+        MARKS.forEach(function (m, i) {
+          var mx = x0 + (x1 - x0) * m[0];
+          var on = head >= m[0];
+          var isDisc = i === 2;
+          c.fillStyle = on ? (isDisc ? K.accent : K.strong) : HAIR;
+          c.beginPath(); c.arc(mx, trackY, isDisc ? 6 : 4, 0, TAU); c.fill();
+          var last = i === MARKS.length - 1;
+          var al = i === 0 ? 'left' : last ? 'right' : 'center';
+          var lx = i === 0 ? mx - 4 : last ? mx + 4 : mx;
+          label(c, narrow ? m[2] : m[1], lx, trackY - 20, narrow ? 92 : 170,
+                isDisc ? '800' : '600', isDisc ? GRO : JAK, 13,
+                on ? (isDisc ? K.accent : SOFT) : HAIR, al);
+        });
+
+        /* the sentence itself, landing at the third mark */
+        var q = Math.max(0, Math.min(1, (head - 0.56) / 0.18));
+        var cardY = trackY + 24;
+        var cardH = narrow ? 96 : 82;
+        c.save();
+        c.globalAlpha = q;
+        c.translate(0, (1 - q) * 10);
+        c.fillStyle = PANEL; box(c, 0, cardY, W, cardH, 14); c.fill();
+        c.strokeStyle = K.accent; c.lineWidth = 1.6; c.stroke();
+        c.fillStyle = K.accent; box(c, 0, cardY, 4, cardH, [14, 0, 0, 14]); c.fill();
+        var tight = W < 560;
+        label(c, tight ? LINE_T : LINE, 20, cardY + 26, W - 40, '700', JAK, 15, K.strong);
+        label(c, tight ? LINE2_T : LINE2, 20, cardY + 50, W - 40, '600', JAK, 14, SOFT);
+        label(c, narrow ? 'first sentence · caller’s language'
+                        : 'first sentence · in the caller’s own language',
+              20, cardY + (narrow ? 76 : 72), W - 40, '700', GRO, 13, K.accent);
+        c.restore();
+
+        /* every channel, and the switch that is not there */
+        var rowY = cardY + cardH + 16;
+        var rowH = Math.max(46, H - rowY);
+        var cols = narrow ? 2 : 4;
+        var rows = Math.ceil(4 / cols);
+        var gp = 8;
+        var cw = (W - gp * (cols - 1)) / cols;
+        var ch2 = (rowH - gp * (rows - 1)) / rows;
+
+        function cellAt(i) {
+          var r = Math.floor(i / cols), k = i % cols;
+          return { x: k * (cw + gp), y: rowY + r * (ch2 + gp), w: cw, h: ch2 };
+        }
+        CH.forEach(function (chn, i) {
+          var B = cellAt(i);
+          var on = q > 0.35 + i * 0.12;
+          c.fillStyle = on ? tint(chn.c, K.onLight ? 0.10 : 0.14) : PANEL;
+          box(c, B.x, B.y, B.w, B.h, 12); c.fill();
+          c.strokeStyle = on ? chn.c : HAIR; c.lineWidth = on ? 1.6 : 1;
+          box(c, B.x, B.y, B.w, B.h, 12); c.stroke();
+          if (on) tick(c, B.x + 18, B.y + B.h / 2, 5, chn.c);
+          label(c, B.w < 158 ? chn.t : chn.n, B.x + 32, B.y + B.h / 2,
+                B.w - 44, '800', GRO, 14, K.strong);
+        });
+        var L = cellAt(3);
+        c.fillStyle = K.onLight ? 'rgba(217,106,94,.07)' : 'rgba(217,106,94,.10)';
+        box(c, L.x, L.y, L.w, L.h, 12); c.fill();
+        c.strokeStyle = 'rgba(217,106,94,.45)'; c.lineWidth = 1;
+        box(c, L.x, L.y, L.w, L.h, 12); c.stroke();
+        c.save();
+        c.strokeStyle = RED; c.lineWidth = 2.2; c.lineCap = 'round';
+        c.beginPath();
+        c.moveTo(L.x + 13, L.y + L.h / 2 - 5); c.lineTo(L.x + 23, L.y + L.h / 2 + 5);
+        c.moveTo(L.x + 13, L.y + L.h / 2 + 5); c.lineTo(L.x + 23, L.y + L.h / 2 - 5);
+        c.stroke(); c.restore();
+        label(c, L.w < 200 ? 'No off switch' : 'No switch to turn it off',
+              L.x + 32, L.y + L.h / 2, L.w - 44, '800', JAK, 13, K.strong);
+        return true;
+      }
+    };
+  });
+
+  /* ── 11 · what the desk actually receives ─────────────────────────────────
+     Claim: when one of the five triggers fires, the conversation does not end
+     in a transcript dump. It ends in one card with four parts, and the parts
+     are the four the list beside it names. The motion is the argument: the
+     answer stops, a person is fetched, and the card fills in behind them. */
+  window.SR_SCENE('handoff', function (env) {
+    var K = env.ink;
+    var PARTS = [
+      ['What was asked',               'What was asked'],
+      ['What the AI already answered', 'What it answered'],
+      ['The facts it used',            'The facts used'],
+      ['A reply, ready to edit',       'A reply to edit']
+    ];
+
+    function person(c, x, y, s, col) {
+      c.save();
+      c.fillStyle = col;
+      c.beginPath(); c.arc(x, y - s * 0.58, s * 0.40, 0, TAU); c.fill();
+      c.beginPath();
+      if (c.roundRect) c.roundRect(x - s * 0.70, y, s * 1.40, s * 0.82, [s * 0.66, s * 0.66, 5, 5]);
+      else c.rect(x - s * 0.70, y, s * 1.40, s * 0.82);
+      c.fill(); c.restore();
+    }
+
+    return {
+      settleSeconds: 4.2,
+      frame: function (c, W, H, t) {
+        var SOFT = soft(K), PANEL = panelFill(K), HAIR = hairLine(K), AM = amber(K);
+        c.textBaseline = 'middle';
+        var narrow = W < 660;
+
+        var xL, wL, yL, hL, xR, wR, yR, hR;
+        if (narrow) {
+          xL = xR = 0; wL = wR = W;
+          hL = 118; yL = 0;
+          yR = hL + 40; hR = Math.max(160, H - yR);
+        } else {
+          wL = Math.max(230, W * 0.36);
+          var gap = 66;
+          wR = Math.max(200, W - wL - gap);
+          xL = 0; xR = wL + gap; yL = yR = 0; hL = hR = H;
+        }
+
+        /* the turn that stops the AI */
+        c.fillStyle = PANEL; box(c, xL, yL, wL, hL, 14); c.fill();
+        c.strokeStyle = HAIR; c.lineWidth = 1; c.stroke();
+        var ly = yL + 26;
+        label(c, 'THE TURN THAT STOPS IT', xL + 16, ly, wL - 32, '800', GRO, 13, SOFT);
+        label(c, '“Can you guarantee the date?”', xL + 16, ly + 28,
+              wL - 32, '700', JAK, 15, K.strong);
+        var chipY = ly + 54, chipH = 30;
+        c.fillStyle = tint(K.onLight ? '#8A5A10' : '#F0B454', K.onLight ? 0.10 : 0.16);
+        box(c, xL + 16, chipY, wL - 32, chipH, 9); c.fill();
+        c.strokeStyle = AM; c.lineWidth = 1.4; c.stroke();
+        label(c, wL < 320 ? 'CASE 05 · needs a person'
+                          : 'CASE 05 · date confirmation needs a person',
+              xL + 28, chipY + chipH / 2, wL - 56, '800', JAK, 13, AM);
+
+        /* a person is fetched */
+        var q = smooth(((t - 0.5) % 4.4) / 1.2);
+        var px, py, ax1, ay1, ax2, ay2;
+        if (narrow) {
+          ax1 = W / 2; ay1 = yL + hL + 6; ax2 = W / 2; ay2 = yR - 6;
+          px = W / 2 + 44; py = (ay1 + ay2) / 2;
+        } else {
+          ax1 = xL + wL + 8; ay1 = H / 2; ax2 = xR - 8; ay2 = H / 2;
+          px = (ax1 + ax2) / 2; py = H / 2 - 30;
+        }
+        c.save(); c.globalAlpha = 0.55; c.strokeStyle = AM; c.lineWidth = 2;
+        c.setLineDash([5, 5]); c.lineCap = 'round';
+        c.beginPath(); c.moveTo(ax1, ay1); c.lineTo(ax2, ay2); c.stroke(); c.restore();
+        c.fillStyle = AM;
+        c.beginPath();
+        c.arc(ax1 + (ax2 - ax1) * q, ay1 + (ay2 - ay1) * q, 4.5, 0, TAU); c.fill();
+        person(c, px, py, 13, AM);
+
+        /* the one card the desk opens */
+        c.fillStyle = K.onLight ? '#FFFFFF' : '#0A1627';
+        box(c, xR, yR, wR, hR, 14); c.fill();
+        c.fillStyle = tint(K.accent, K.onLight ? 0.07 : 0.10);
+        box(c, xR, yR, wR, hR, 14); c.fill();
+        c.strokeStyle = K.accent; c.lineWidth = 1.6;
+        box(c, xR, yR, wR, hR, 14); c.stroke();
+        label(c, 'ONE CARD ON YOUR DESK', xR + 18, yR + 24, wR - 36, '800', GRO, 13, K.accent);
+
+        var top = yR + 42, avail = hR - 54;
+        var rh = Math.min(42, Math.max(30, avail / 4));
+        PARTS.forEach(function (pt, i) {
+          var y = top + i * rh + rh / 2;
+          var lit = t >= 1.4 + i * 0.42;
+          if (i) {
+            c.strokeStyle = HAIR; c.lineWidth = 1;
+            c.beginPath(); c.moveTo(xR + 18, y - rh / 2); c.lineTo(xR + wR - 18, y - rh / 2); c.stroke();
+          }
+          if (lit) tick(c, xR + 30, y, 5.5, K.accent);
+          else {
+            c.strokeStyle = HAIR; c.lineWidth = 1.4;
+            c.beginPath(); c.arc(xR + 30, y, 5.5, 0, TAU); c.stroke();
+          }
+          label(c, wR < 320 ? pt[1] : pt[0], xR + 46, y, wR - 66,
+                lit ? '700' : '600', JAK, 14, lit ? K.strong : SOFT);
+        });
+        return true;
+      }
+    };
+  });
+
+  /* ── 12 · where a booking actually travels ────────────────────────────────
+     The integrations page is nineteen status rows and one word each. This is
+     the key to that word, drawn as the route a booking takes: Live today is a
+     straight line nobody touches; Bridge for now is the same line with a step
+     somebody on the front desk has to keep doing; In build is an empty lane,
+     and the page says plainly that nothing sits in it.
+
+     The two counts are read off the table below rather than typed here, so
+     the figure cannot drift out of step with the rows it summarises. */
+  window.SR_SCENE('bridgehop', function (env) {
+    var K = env.ink;
+    var GREEN = '#34D186', BLUE = '#5B9DFF';
+    var counted = null;
+
+    function count() {
+      if (counted) return counted;
+      var s = env.host.closest ? env.host.closest('section') : null;
+      var root = s || document;
+      var live = root.querySelectorAll('.introw .st.live').length;
+      var bridge = root.querySelectorAll('.introw .st.bridge').length;
+      if (!live && !bridge) return { live: 0, bridge: 0 };   /* not mounted yet */
+      counted = { live: live, bridge: bridge };
+      return counted;
+    }
+    function nsys(n) { return n + (n === 1 ? ' system' : ' systems'); }
+
+    return {
+      settleSeconds: 3.4,
+      frame: function (c, W, H, t) {
+        var SOFT = soft(K), PANEL = panelFill(K), HAIR = hairLine(K), AM = amber(K);
+        c.textBaseline = 'middle';
+        var n = count();
+        var narrow = W < 620;
+        var gp = narrow ? 12 : 14;
+        var laneH = (H - gp * 2) / 3;
+
+        var LANES = [
+          { st: 'LIVE TODAY', c: GREEN, head: nsys(n.live),
+            stops: ['Booking made', 'Saleringo', 'Your system'],
+            tight: ['Booking', 'Saleringo', 'Your system'],
+            foot: 'Written straight in. Nobody has to touch it.',
+            footT: 'Nobody has to touch it.', hop: false, empty: false },
+          { st: 'BRIDGE FOR NOW', c: BLUE, head: nsys(n.bridge),
+            stops: ['Booking made', 'Zapier · webhook · CSV', 'Your system'],
+            tight: ['Booking', 'Zapier / CSV', 'Your system'],
+            foot: 'One extra step — and somebody has to keep doing it.',
+            footT: 'Somebody keeps doing that step.', hop: true, empty: false },
+          { st: 'IN BUILD', c: AM, head: 'nothing today',
+            stops: [], tight: [],
+            foot: 'Empty, and the page says so rather than promising a date.',
+            footT: 'Empty, and it says so.', hop: false, empty: true }
+        ];
+
+        LANES.forEach(function (L, i) {
+          var y = i * (laneH + gp);
+          c.fillStyle = PANEL; box(c, 0, y, W, laneH, 14); c.fill();
+          if (L.empty) {
+            c.save(); c.setLineDash([5, 5]); c.strokeStyle = HAIR; c.lineWidth = 1;
+            box(c, 0, y, W, laneH, 14); c.stroke(); c.restore();
+          } else {
+            c.strokeStyle = tint(L.c, 0.45); c.lineWidth = 1;
+            box(c, 0, y, W, laneH, 14); c.stroke();
+          }
+          c.fillStyle = L.c; box(c, 0, y, 4, laneH, [14, 0, 0, 14]); c.fill();
+
+          /* the status word, and how many rows wear it */
+          var hx = 18, hy = y + 24;
+          var pillW = Math.min(narrow ? 150 : 178, W - 36);
+          c.fillStyle = tint(L.c, K.onLight ? 0.14 : 0.20);
+          box(c, hx, hy - 12, pillW, 24, 7); c.fill();
+          label(c, L.st, hx + 10, hy, pillW - 20, '800', GRO, 13, L.c);
+          label(c, L.head, hx + pillW + 12, hy, Math.max(70, W - hx - pillW - 30),
+                '700', JAK, 13, SOFT);
+
+          /* the route */
+          var ry = y + laneH * 0.62;
+          if (!L.empty) {
+            var stops = L.stops.length, m = 16;
+            var sw = (W - m * 2) / stops;
+            var boxW = Math.min(sw - 12, narrow ? 104 : 190);
+            var boxH = 30;
+            for (var s2 = 0; s2 < stops; s2++) {
+              var sx = m + sw * s2 + sw / 2;
+              var mid = L.hop && s2 === 1;
+              c.fillStyle = mid ? tint(L.c, K.onLight ? 0.12 : 0.18)
+                                : (K.onLight ? '#FFFFFF' : '#0A1627');
+              box(c, sx - boxW / 2, ry - boxH / 2, boxW, boxH, 8); c.fill();
+              c.save();
+              c.strokeStyle = mid ? L.c : HAIR; c.lineWidth = mid ? 1.6 : 1;
+              if (mid) c.setLineDash([4, 4]);
+              box(c, sx - boxW / 2, ry - boxH / 2, boxW, boxH, 8); c.stroke();
+              c.restore();
+              label(c, (boxW < 150 ? L.tight : L.stops)[s2], sx, ry,
+                    boxW - 12, mid ? '800' : '600', JAK, 13,
+                    mid ? L.c : K.strong, 'center');
+              if (s2 < stops - 1) {
+                var ex = m + sw * (s2 + 1) + sw / 2 - boxW / 2;
+                c.save(); c.globalAlpha = 0.5; c.strokeStyle = L.c;
+                c.lineWidth = 2; c.lineCap = 'round';
+                c.beginPath(); c.moveTo(sx + boxW / 2 + 3, ry); c.lineTo(ex - 3, ry); c.stroke();
+                c.restore();
+              }
+            }
+            /* the packet: straight through on Live, held at the bridge */
+            var period = L.hop ? 4.6 : 2.6;
+            var u = (t % period) / period;
+            var xs = m + sw / 2, xm = m + sw + sw / 2, xe = m + sw * 2 + sw / 2;
+            var pxx;
+            if (!L.hop) pxx = xs + (xe - xs) * smooth(u);
+            else if (u < 0.30) pxx = xs + (xm - xs) * smooth(u / 0.30);
+            else if (u < 0.70) pxx = xm;
+            else pxx = xm + (xe - xm) * smooth((u - 0.70) / 0.30);
+            var pyy = ry - boxH / 2 - 10;
+            c.fillStyle = L.c;
+            c.beginPath(); c.arc(pxx, pyy, 4.6, 0, TAU); c.fill();
+            if (L.hop && u >= 0.30 && u < 0.70) {
+              c.save();
+              c.globalAlpha = 0.30 + 0.40 * Math.abs(Math.sin(t * 3));
+              c.strokeStyle = L.c; c.lineWidth = 2;
+              c.beginPath(); c.arc(pxx, pyy, 9, 0, TAU); c.stroke();
+              c.restore();
+            }
+          }
+
+          label(c, W < 760 ? L.footT : L.foot, 18, y + laneH - 18,
+                W - 36, '600', JAK, 13, SOFT);
+        });
+        return true;
+      }
+    };
+  });
+
 })();
