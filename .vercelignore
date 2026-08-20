@@ -3,3 +3,7 @@
 # of production.
 assets/svg-scenes.html
 DEV_SPEC.md
+
+# measurement helpers used while auditing; not part of the site
+pages.json
+hoversels.json

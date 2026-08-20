@@ -3,3 +3,5 @@
 # Internal build spec: names other internal strategy documents and the
 # migration roadmap. This repository is public; the spec stays local.
 DEV_SPEC.md
+pages.json
+hoversels.json
