@@ -981,7 +981,7 @@ window.SR_PLAY = {
         produces:{
           pipeline:{stage:'With a person', ini:'??', nm:'Funding question',
             mt:'Asked whether the council would pay · nothing stated · manager calling Tuesday', tag:'Urgent', chan:'Phone · 7:05 PM'},
-          booking:{title:'Call-back — registered manager', slot:'Tue 11:00', note:'The refusal did not end the conversation. A named person is on it at a real time.'},
+          booking:{title:'Call-back — registered manager', slot:'Tue 11:00', note:'Saying no to the funding question did not cost her a person. Tuesday at eleven, with a name attached.'},
           quote:null, quoteWhy:'No funding figure, ever — not eligibility, not a top-up, not what the funded rate would leave to pay.',
           record:{name:'Funding question', sub:'Phone, 7:05 PM',
             rows:[['Recorded verbatim','Her question as she asked it, house and pension included, unsummarised'],
@@ -1283,7 +1283,7 @@ window.SR_PLAY = {
         produces:{
           pipeline:{stage:'Market appraisal', ini:'??', nm:'31 Marchgate Row',
             mt:'Asked for a valuation twice · no figure given · appraisal booked with the valuer', tag:'Urgent', chan:'Web chat · 10:15 PM'},
-          booking:{title:'Market appraisal — at the house', slot:'Tue 18:00', note:'Free, and in a named valuer’s own diary. The refusal did not end the conversation.'},
+          booking:{title:'Market appraisal — at the house', slot:'Tue 18:00', note:'Free, and in a named valuer’s own diary. He was told no and still got an appointment out of it.'},
           quote:null, quoteWhy:'No valuation, no range, and no portal estimate read back — including when it was asked for as a ballpark.',
           record:{name:'31 Marchgate Row', sub:'Web chat, 10:15 PM',
             rows:[['Asked for','A rough sale price, then a ballpark when the first ask was refused'],
