@@ -469,7 +469,9 @@ section:has(> .wrap > .head.centered) .faq,
 .st-ai{background:#E3F5F5;color:#0B7878;}
 .st-hu{background:#FAF0E1;color:#8D642F;}
 .chanmini{display:inline-flex;width:20px;height:20px;border-radius:6px;align-items:center;justify-content:center;font-size:var(--fs-label);flex:none;}
-.cm-v{background:rgba(23,189,189,.15);color:var(--teal-ink);}
+/* --teal-ink is tuned against a plain light surface; on the chip's own
+   teal tint it lands at 4.30. One shade down clears it. */
+.cm-v{background:rgba(23,189,189,.15);color:#0A6A6A;}
 .cm-c{background:rgba(91,157,255,.15);color:#3D7DE0;}
 .cm-m{background:rgba(52,209,134,.15);color:#1E9E63;}
 @media (max-width:1240px){
