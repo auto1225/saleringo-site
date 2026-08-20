@@ -19,7 +19,7 @@
   --app-bg:#0A1424;      --app-panel:#0E1B2E;   --app-rail:#081120;
   --app-line:rgba(255,255,255,.09);
   --app-line2:rgba(255,255,255,.16);
-  --app-tx:#E8EEF7;      --app-tx2:#8A9BB4;     --app-tx3:#7C8AA0;  /* was #5B6B84 - 3.18:1 on --panel */
+  --app-tx:#E8EEF7;      --app-tx2:#8A9BB4;     --app-tx3:#8793A5;  /* was #5B6B84 - 3.18:1 on --panel */
   --st-new:#5B8DEF;      --st-booked:#17BDBD;   --st-quote:#E8A44C;   --st-won:#3AC98A;
 }
 

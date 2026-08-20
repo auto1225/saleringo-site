@@ -87,7 +87,7 @@
   font-size:var(--fs-xs);font-weight:600;color:rgba(255,255,255,.86);text-shadow:0 2px 12px rgba(0,0,0,.6);}
 /* floating UI chip that sits over a scene */
 .scene-overlay{position:absolute;z-index:4;border-radius:16px;padding:14px 16px;
-  background:rgba(8,16,30,.78);backdrop-filter:blur(14px);
+  background:rgba(8,16,30,.93);backdrop-filter:blur(14px);
   border:1px solid rgba(255,255,255,.16);box-shadow:0 20px 50px rgba(0,0,0,.5);}
 .scene-overlay b{display:block;font-size:var(--fs-xs);color:#fff;}
 .scene-overlay span{display:block;font-size:var(--fs-2xs);color:var(--tx2);margin-top:3px;font-weight:600;}
@@ -137,7 +137,7 @@
 .quotecard.light .by span{color:var(--l-mut);}
 .quotecard .metric{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.10);
   font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);color:var(--teal);font-weight:600;}
-.quotecard.light .metric{border-color:var(--l-hair);color:#0A7F7F;}
+.quotecard.light .metric{border-color:var(--l-hair);color:#0B7878;}
 .quotecard.pending{border-style:dashed;}
 .quotecard.pending p{color:var(--tx2);font-style:italic;}
 .quotecard.light.pending p{color:var(--l-mut);}
@@ -315,7 +315,7 @@ img.ph{display:block;width:100%;height:100%;object-fit:cover;object-position:cen
 
 /* caption under photos */
 .photocap{margin-top:10px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.04em;}
-.photocap.light{color:#6B7688;}
+.photocap.light{color:#656D78;}
 
 /* ── MOBILE OVERFLOW GUARDS ──────────────────────────────
    Fixed-width decorative and demo blocks were pushing the document

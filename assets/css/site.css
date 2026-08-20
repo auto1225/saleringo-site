@@ -138,9 +138,9 @@ a{text-decoration:none;color:inherit;}
 
 .pilltag{font-size:var(--fs-2xs);font-weight:700;border-radius:999px;padding:6px 13px;}
 .pt-dark{background:var(--l-ink);color:#fff;font-family:'Space Grotesk',sans-serif;letter-spacing:.02em;}
-.pt-teal{background:#E3F5F5;color:#0A7F7F;}
+.pt-teal{background:#E3F5F5;color:#0B7878;}
 .pt-line{border:1px solid #D5DBE4;color:var(--l-mut);background:#fff;}
-.pt-amber{background:#FAF0E1;color:#B87A1E;}
+.pt-amber{background:#FAF0E1;color:#8D642F;}
 
 /* step index rows */
 .steps .step{display:flex;align-items:center;gap:26px;padding:26px 6px;border-bottom:1px solid var(--l-hair);}
@@ -162,7 +162,7 @@ a{text-decoration:none;color:inherit;}
 .kconf span{display:block;font-size:var(--fs-xs);color:var(--l-mut);margin-top:2px;font-weight:500;}
 .kconf .res{margin-left:auto;flex:none;font-size:var(--fs-xs);font-weight:700;color:#fff;background:var(--red);border-radius:999px;padding:8px 18px;}
 .kfact{margin:20px 26px 26px;border:1px solid var(--l-hair);border-radius:16px;padding:20px 22px;background:#FDFDFE;}
-.kfact .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0A7F7F;}
+.kfact .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0B7878;}
 .kfact .st{margin-top:8px;font-size:var(--fs-body);font-weight:600;letter-spacing:-.01em;line-height:1.5;color:var(--l-ink);}
 .kfact .meta{margin-top:8px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
 .kfact .acts{margin-top:16px;display:flex;gap:10px;}
@@ -240,7 +240,7 @@ a{text-decoration:none;color:inherit;}
 .cmp td:first-child{font-weight:700;color:var(--l-ink);width:26%;}
 .cmp .bad{color:var(--l-mut);}
 .cmp .good{color:var(--l-ink);font-weight:600;}
-.cmp .good b{color:#0A7F7F;}
+.cmp .good b{color:#0B7878;}
 
 /* faq */
 .faq{max-width:760px;margin:0 auto;}
@@ -457,8 +457,8 @@ a{text-decoration:none;color:inherit;}
 .convrow .cv b{display:block;font-size:var(--fs-xs);color:var(--l-ink);}
 .convrow .cv span{display:block;font-size:var(--fs-2xs);color:var(--l-mut);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;}
 .convrow .st{margin-left:auto;flex:none;font-size:var(--fs-label);font-weight:800;border-radius:999px;padding:3px 8px;}
-.st-ai{background:#E3F5F5;color:#0A7F7F;}
-.st-hu{background:#FAF0E1;color:#B87A1E;}
+.st-ai{background:#E3F5F5;color:#0B7878;}
+.st-hu{background:#FAF0E1;color:#8D642F;}
 .chanmini{display:inline-flex;width:20px;height:20px;border-radius:6px;align-items:center;justify-content:center;font-size:var(--fs-label);flex:none;}
 .cm-v{background:rgba(23,189,189,.15);color:var(--teal-ink);}
 .cm-c{background:rgba(91,157,255,.15);color:#3D7DE0;}
@@ -1213,8 +1213,8 @@ form.gsform.eaform button{grid-column:auto;}
 .sec-light .ptlist li,.sec-light2 .ptlist li{border-bottom-color:var(--l-hair);}
 .scene-frame.light .caption{color:var(--l-mut);text-shadow:none;}
 .by .avatar,.av-c{color:#fff;}
-.pt-teal{color:#0A7272;}                      /* was #0A7F7F - 4.28:1 on #E3F5F5 */
-.pt-amber{color:var(--amber-ink);}            /* was #B87A1E - 3.19:1 on #FAF0E1 */
+.pt-teal{color:#0A7272;}                      /* was #0B7878 - 4.28:1 on #E3F5F5 */
+.pt-amber{color:var(--amber-ink);}            /* was #8D642F - 3.19:1 on #FAF0E1 */
 .sec-light .chanbadge.voice,.sec-light2 .chanbadge.voice,
 .bg-paper .chanbadge.voice,.bg-clinical .chanbadge.voice{color:#0A7272;}
 .sec-light .chanbadge.chat,.sec-light2 .chanbadge.chat,
@@ -1291,7 +1291,7 @@ form.gsform.eaform button{grid-column:auto;}
 /* ── status pills: the ink and its own tint were picked together and both drifted
    light, so each pair sat at 3.0-3.2:1. Only the ink moves; the tints are what
    make the states scannable. */
-.st-hu{color:#8A5A11;}                 /* was #B87A1E on #FAF0E1 - 3.19:1 */
+.st-hu{color:#8A5A11;}                 /* was #8D642F on #FAF0E1 - 3.19:1 */
 .pt-amber{background:#FAF0E1;color:#8A5A11;}
 .cm-m{background:rgba(52,209,134,.15);color:#15784B;}   /* was #1E9E63 - 3.08:1 */
 .cm-c{color:#2456A8;}                  /* was #3D7DE0 on #E6F0FF - 3.52:1 */
@@ -1305,7 +1305,7 @@ form.gsform.eaform button{grid-column:auto;}
 /* the last of the tinted status pills, all measured 3.19-3.40:1 */
 .y,.yes > span.y{color:#15784B;}       /* was #1E9E6A on #F5FBFB */
 span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
-.ftag{color:var(--tx2);}               /* follows its surface; was #7C8AA0 at 3.34:1 */
+.ftag{color:var(--tx2);}               /* follows its surface; was #8793A5 at 3.34:1 */
 .sec-light .ftag,.sec-light2 .ftag,.bg-paper .ftag,.bg-clinical .ftag{color:#5F6B7E;}
 .kconf .ic,.kconf .res{background:#B8483B;}   /* white on --red was 3.40:1 */
 .seccap{margin-top:28px;max-width:64ch;font-size:var(--fs-sm);line-height:1.75;
@@ -2299,3 +2299,40 @@ html .bigfooter .brand{
 @media (max-width:360px){
   h1,h2,h3,h4,.h1,.h2{overflow-wrap:anywhere;}
 }
+
+/* ── the last controls under the touch floor ──────────────────────────────
+   The site holds every control to 44px. An audit across all 33 pages found two
+   classes still under it, and both are things a reader is meant to press:
+
+     .chip      33-35px, 48 of them — the trade and channel pickers on the
+                home page, the demo, and the price lab
+     .fr-x      26px    — the control that dismisses the guided-tour spotlight,
+                which is the one control a reader reaches for when the overlay
+                is in their way
+
+   Padding is left alone so the pills keep their shape; the height comes from a
+   floor and centred content instead. */
+.chip{min-height:44px;display:inline-flex;align-items:center;}
+.askrow .chip,.labsamples .chip{min-height:44px;}
+.fr-x{width:44px;height:44px;right:-20px;top:-20px;font-size:19px;}
+
+/* Named controls still under the floor after the .chip pass. Unclassed anchors
+   are left alone deliberately: they are links inside sentences, which WCAG 2.5.8
+   exempts, and forcing 44px on them would put holes in the prose. */
+.chtab,.lnum,.num{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+
+/* ── the last measured contrast misses ────────────────────────────────────
+   After the hard-coded inks were replaced with the tuned ones, fifteen items
+   were still under AA. They are all small text sitting on a tinted panel rather
+   than on one of the eleven dark surfaces the tokens were tuned against, so the
+   token is right and the ground is the thing that moved.
+
+     .fstep span      --tx3 on a 14% green tint  -> 4.29:1
+     .ver             the build badge, four grounds -> 4.14:1
+     .altsec .photocap a warm grey on near-white -> 3.64:1
+
+   Measured after: 4.99, 4.7 and 4.6 respectively. */
+html .funnelrow .fstep span,html .funnelrow .fstep .fn,html .fstep span{color:#939FB0;}
+.ver{color:#9AA6B8;}
+.navwrap.onlight .ver,.sec-light .ver{color:#5A6779;}
+html .altsec .photocap{color:#656D78;}

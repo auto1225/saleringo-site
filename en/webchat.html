@@ -30,9 +30,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it slow my site down?","acceptedAnswer":{"@type":"Answer","text":"No. The widget loads asynchronously after your page renders, weighs about 40KB, and never blocks your content. If our CDN were unreachable, your site loads without the widget \u2014 nothing breaks and nothing errors on your page."}},{"@type":"Question","name":"Does it detect the visitor's language?","acceptedAnswer":{"@type":"Answer","text":"Yes. It detects the language a visitor writes in and replies in that language. Your approved facts stay in one source language; translations are generated per conversation, and the lead record notes which language was used so your reply can match."}},{"@type":"Question","name":"How does the handoff to a human work?","acceptedAnswer":{"@type":"Answer","text":"When a question falls outside your approved facts \u2014 or hits a topic you flagged, like contracts, payments, or medical advice \u2014 the widget tells the visitor a person will follow up, collects their&nbsp;contact details, and notifies your team by email and in the Saleringo inbox with the full transcript. During business hours, your team can also take over the chat live."}},{"@type":"Question","name":"What data does it store, and where?","acceptedAnswer":{"@type":"Answer","text":"Conversation transcripts and the lead fields you configure. No cookie is set for visitors who never open the widget. You choose the data region at setup, you can delete a conversation or a whole lead record from the dashboard, and deletion removes it from the knowledge base too. Full detail is on our Security & Trust and Privacy pages."}},{"@type":"Question","name":"Can it run alongside my existing chat widget?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set Saleringo to the opposite corner and run both while you evaluate \u2014 many teams do this for a couple of weeks. When you switch, removing the old widget is the only change; your&nbsp;Saleringo install stays the same three lines."}}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=21.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=21.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=21.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=21.7">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=21.7">
+<link rel="stylesheet" href="../assets/css/crm.css?v=21.7">
 <style>
   /* ═══ PRODUCT-UI SHOWCASE — light-first page ═══ */
   body{background:#F4F8FB;}
@@ -157,7 +157,7 @@
   .heroband{position:relative;z-index:2;margin:56px auto 0;display:flex;gap:10px;
     justify-content:center;align-items:center;flex-wrap:wrap;}
   .heroband .bandlab{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;
-    text-transform:uppercase;color:#6C7686;margin-right:6px;}
+    text-transform:uppercase;color:#656D78;margin-right:6px;}
   /* ── cost of inaction + alternatives ── */
   .costsec .costnums{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   .costnum{background:#fff;border:1px solid #EDE5D8;border-radius:20px;padding:30px 28px;
@@ -166,17 +166,17 @@
   .costnum .n{margin-top:14px;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.04em;color:var(--l-ink);line-height:1;}
   .costnum p{margin-top:14px;font-size:var(--fs-xs);line-height:1.75;color:var(--l-mut);font-weight:500;}
   .costsec .costfoot{margin-top:26px;text-align:center;font-size:var(--fs-xs);line-height:1.8;color:var(--l-mut);font-weight:500;}
-  .costsec .costfoot a{color:#0A7F7F;font-weight:700;}
+  .costsec .costfoot a{color:#0B7878;font-weight:700;}
   .costsec .altwrap{margin-top:70px;}
   .costsec .altwrap .cap{text-align:center;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;
     text-transform:uppercase;color:#6F767F;margin-bottom:24px;}
-  .costsec .altnote{margin-top:18px;text-align:center;font-size:var(--fs-2xs);color:#6C7686;font-weight:500;}
+  .costsec .altnote{margin-top:18px;text-align:center;font-size:var(--fs-2xs);color:#656D78;font-weight:500;}
   .proofslot{max-width:830px;margin:60px auto 0;}
   .secpad .riskrow{margin-top:44px;}
   .closer .riskrow.short{grid-template-columns:repeat(2,1fr);max-width:640px;margin-left:auto;margin-right:auto;}
   @media (max-width:900px){.costsec .costnums{grid-template-columns:1fr;}}
   .scenecap{margin-top:16px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;
-    text-transform:uppercase;color:#6C7686;font-weight:700;}
+    text-transform:uppercase;color:#656D78;font-weight:700;}
   @media (max-width:1000px){.herogrid{grid-template-columns:1fr;gap:44px;}}
 
   /* ── install snippet ── */
@@ -189,7 +189,7 @@
   .sniprow{display:flex;gap:8px;flex-wrap:wrap;padding:13px 22px;border-top:1px solid var(--hair);}
   .instlist{margin-top:26px;display:grid;gap:13px;}
   .instlist .b{display:flex;gap:13px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.62;color:var(--l-mut);font-weight:500;}
-  .instlist .b i{flex:none;width:24px;height:24px;border-radius:50%;background:#E3F5F5;color:#0A7F7F;
+  .instlist .b i{flex:none;width:24px;height:24px;border-radius:50%;background:#E3F5F5;color:#0B7878;
     font-size:var(--fs-2xs);font-weight:800;display:flex;align-items:center;justify-content:center;font-style:normal;margin-top:1px;}
   .instlist .b b{color:var(--l-ink);}
 
@@ -257,7 +257,7 @@
   .pricecols{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center;margin-top:46px;}
   .incl{display:grid;gap:12px;}
   .incl .r{display:flex;gap:12px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.6;color:var(--l-mut);font-weight:500;}
-  .incl .r i{flex:none;color:#0A7F7F;font-style:normal;font-weight:800;}
+  .incl .r i{flex:none;color:#0B7878;font-style:normal;font-weight:800;}
   .incl .r b{color:var(--l-ink);}
   .meter{margin-top:24px;background:#fff;border:1px solid var(--l-hair);border-radius:16px;padding:18px 20px;}
   .meter .t{display:flex;font-size:var(--fs-xs);font-weight:700;color:var(--l-mut);}
@@ -349,7 +349,7 @@
   <div class="grainlayer grain" aria-hidden="true"></div>
 
   <div class="navwrap onlight"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v21.0">v21.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v21.7">v21.7</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop on" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how" aria-current="true">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html" aria-current="page" class="np-here">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./index.html#what-to-ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -428,7 +428,7 @@
 <svg viewBox="0 0 1000 620" role="img" aria-label="A real business website with the Saleringo launcher open in the corner: a visitor asks about a service and gets a straight answer without leaving the page.">
   <defs>
     <linearGradient id="wcWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7FAFC"/><stop offset="1" stop-color="#E8EFF5"/></linearGradient>
-    <linearGradient id="wcHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12294E"/><stop offset="1" stop-color="#0A7F7F"/></linearGradient>
+    <linearGradient id="wcHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12294E"/><stop offset="1" stop-color="#0B7878"/></linearGradient>
     <radialGradient id="wcGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".26"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
   </defs>
   <rect width="1000" height="620" fill="url(#wcWall)"/>
@@ -495,7 +495,7 @@
       <text x="76" y="168" font-size="12.5" fill="#0B4F4F" font-weight="600">area. Same-day call-out is $95,</text>
       <text x="76" y="184" font-size="12.5" fill="#0B4F4F" font-weight="600">applied to&nbsp;the&nbsp;repair.</text>
       <rect x="60" y="202" width="126" height="20" rx="10" fill="#DFF3F3"/>
-      <text x="123" y="216" font-size="9.5" fill="#0A7F7F" text-anchor="middle" font-weight="800">✓ FROM&nbsp;YOUR&nbsp;FACTS</text>
+      <text x="123" y="216" font-size="9.5" fill="#0B7878" text-anchor="middle" font-weight="800">✓ FROM&nbsp;YOUR&nbsp;FACTS</text>
 
       <rect x="18" y="232" width="188" height="30" rx="12" fill="#EFF3F7"/>
       <text x="34" y="252" font-size="12.5" fill="#4A5A6B" font-weight="600">Book me for&nbsp;this&nbsp;afternoon</text>
@@ -758,7 +758,7 @@
           <rect x="26" y="60" width="112" height="6" rx="3" fill="#C9D6E2"/>
           <rect x="26" y="72" width="84" height="6" rx="3" fill="#DDE4EC"/>
           <rect x="14" y="90" width="88" height="14" rx="7" fill="#E3F5F5"/>
-          <text x="58" y="100" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" font-weight="800" fill="#0A7F7F" text-anchor="middle">✓ YOUR&nbsp;FACTS</text>
+          <text x="58" y="100" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" font-weight="800" fill="#0B7878" text-anchor="middle">✓ YOUR&nbsp;FACTS</text>
         </svg>
         <b>They ask</b>
         <p>Price, availability, policy, "do you take my&nbsp;insurance". Answered from&nbsp;approved facts, in&nbsp;the&nbsp;language they typed.</p>
@@ -834,7 +834,7 @@
               Date · <b style="color:var(--l-ink);">Oct 12 (Sat)</b><br>
               Guests · <b style="color:var(--l-ink);">120</b><br>
               Quote · <b style="color:var(--l-ink);">$9,800 sent</b><br>
-              Next · <b style="color:#0A7F7F;">Tour Sat 11:00</b></div>
+              Next · <b style="color:#0B7878;">Tour Sat 11:00</b></div>
             <div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap;">
               <span class="pilltag pt-teal">✓ Answers from&nbsp;your&nbsp;facts</span>
               <span class="pilltag pt-line">Transcript attached</span></div>
@@ -1002,7 +1002,7 @@
         </div>
         <div class="pane">
           <div class="pipeboard">
-            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>New inquiry<span class="ct">6</span></h4>
+            <div class="pipecol s1"><h4 role="presentation" aria-level="3"><span class="sw"></span>New inquiry<span class="ct">6</span></h4>
               <div class="pcard"><div class="who"><span class="ini">JD</span><span class="nm">J. Delacroix</span></div>
                 <div class="mt">Read the&nbsp;pricing page twice, then asked about&nbsp;lead times</div>
                 <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat &middot; 23:14</span></div></div>
@@ -1195,7 +1195,7 @@
       </details>
       <details>
         <summary>What data does it store, and where?</summary>
-        <p>Conversation transcripts and the&nbsp;lead fields you configure. No&nbsp;cookie is set for&nbsp;visitors who never open the&nbsp;widget. You choose the&nbsp;data region at&nbsp;setup, you can delete a&nbsp;conversation or a&nbsp;whole lead record from&nbsp;the&nbsp;dashboard, and deletion removes it from&nbsp;the&nbsp;knowledge base too. Full detail is on&nbsp;our&nbsp;<a href="./security.html" style="color:#0A7F7F;font-weight:700;">Security &amp; Trust</a> and <a href="./privacy.html" style="color:#0A7F7F;font-weight:700;">Privacy</a> pages.</p>
+        <p>Conversation transcripts and the&nbsp;lead fields you configure. No&nbsp;cookie is set for&nbsp;visitors who never open the&nbsp;widget. You choose the&nbsp;data region at&nbsp;setup, you can delete a&nbsp;conversation or a&nbsp;whole lead record from&nbsp;the&nbsp;dashboard, and deletion removes it from&nbsp;the&nbsp;knowledge base too. Full detail is on&nbsp;our&nbsp;<a href="./security.html" style="color:#0B7878;font-weight:700;">Security &amp; Trust</a> and <a href="./privacy.html" style="color:#0B7878;font-weight:700;">Privacy</a> pages.</p>
       </details>
       <details>
         <summary>Can it run alongside my&nbsp;existing chat widget?</summary>
@@ -1279,7 +1279,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v21.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v21.7</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1327,9 +1327,9 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=21.0"></script>
-<script src="../assets/js/canvas.js?v=21.0" defer></script>
-<script src="../assets/js/scenes.js?v=21.0" defer></script>
-<script src="../assets/js/guide.js?v=21.0"></script>
+<script src="../assets/js/site.js?v=21.7"></script>
+<script src="../assets/js/canvas.js?v=21.7" defer></script>
+<script src="../assets/js/scenes.js?v=21.7" defer></script>
+<script src="../assets/js/guide.js?v=21.7"></script>
 </body>
 </html>
