@@ -624,7 +624,7 @@
 
     <div class="convdef reveal">
       <b>What counts as a&nbsp;conversation?</b> One customer, one channel, one 24-hour window — however many messages go back and forth inside it. If the&nbsp;same customer writes again three days later, that's&nbsp;a&nbsp;new conversation. A&nbsp;phone call is one conversation plus its&nbsp;per-minute voice usage. Handoffs to&nbsp;your&nbsp;team don't end the&nbsp;conversation or start a&nbsp;new one.
-      <br><br><b>How WhatsApp is billed:</b> messages inside an&nbsp;included conversation are covered by&nbsp;your&nbsp;plan — no&nbsp;per-message charge. Only conversations beyond your&nbsp;allowance are metered: $0.08 per&nbsp;conversation plus $0.02 per&nbsp;message inside it. Meta's&nbsp;per-conversation fee is passed through&nbsp;at&nbsp;cost and varies by&nbsp;the&nbsp;customer's&nbsp;country.
+      <br><br><b>How WhatsApp is billed:</b> messages inside an&nbsp;included conversation are covered by&nbsp;your&nbsp;plan &mdash; no&nbsp;per-message charge. Only conversations beyond your&nbsp;allowance are metered: $0.08 per&nbsp;conversation plus $0.02 per&nbsp;message inside it. <b>Meta bills separately, and per&nbsp;message rather than per&nbsp;conversation</b> &mdash; that&nbsp;changed on 1&nbsp;July&nbsp;2025. When a&nbsp;customer writes to&nbsp;you, replying costs nothing from&nbsp;Meta for&nbsp;the&nbsp;next 24&nbsp;hours; outside that&nbsp;window you must send an&nbsp;approved template, and Meta charges for&nbsp;each&nbsp;one it delivers. Marketing templates are always charged; utility and authentication templates are charged only when&nbsp;they land outside that&nbsp;window. The&nbsp;rate depends on&nbsp;the&nbsp;category and on&nbsp;the&nbsp;customer's&nbsp;country, and we pass it through at&nbsp;cost. <a href="https://whatsappbusiness.com/products/platform-pricing/" target="_blank" rel="noopener">Meta publishes the&nbsp;rates&nbsp;&nbsp;&rarr;</a>
     </div>
   </div>
 </section>
@@ -833,7 +833,7 @@
       <div class="rate">
         <span class="chanbadge msg">WhatsApp</span>
         <div class="amt">$249<small>+ /mo</small></div>
-        <p>Grow plan. Conversations included in&nbsp;your&nbsp;allowance; <b>$0.02/msg</b> in&nbsp;conversations beyond it, plus Meta's&nbsp;per-conversation fee (at&nbsp;cost).</p>
+        <p>Grow plan. Conversations included in&nbsp;your&nbsp;allowance; <b>$0.02/msg</b> in&nbsp;conversations beyond it, plus Meta's&nbsp;per-message template fee (at&nbsp;cost).</p>
       </div>
       <div class="rate">
         <span class="chanbadge voice">AI Phone</span>
@@ -898,7 +898,7 @@
           <div class="tot"><span>Estimated total</span><span class="n" id="c-total"><em>≈ $767</em> /mo</span></div>
         </div>
         <p class="payback" id="c-pay">Add an&nbsp;average job value to&nbsp;see how many booked jobs cover this&nbsp;bill.</p>
-        <p class="calcnote">Estimate in&nbsp;USD, before tax. Voice per-minute rates start at&nbsp;$0.14 and are confirmed per&nbsp;country before purchase. WhatsApp conversations inside your&nbsp;plan allowance carry no&nbsp;per-message charge; beyond the&nbsp;allowance, each&nbsp;conversation bills at&nbsp;$0.08 plus $0.02 per&nbsp;message. Meta's&nbsp;per-conversation fee is passed through&nbsp;at&nbsp;cost (varies by&nbsp;country) and is not included in&nbsp;this&nbsp;estimate. The&nbsp;payback line is arithmetic on&nbsp;the&nbsp;numbers you entered — it is not a&nbsp;forecast of&nbsp;your&nbsp;results.</p>
+        <p class="calcnote">Estimate in&nbsp;USD, before tax. Voice per-minute rates start at&nbsp;$0.14 and are confirmed per&nbsp;country before purchase. WhatsApp conversations inside your&nbsp;plan allowance carry no&nbsp;per-message charge; beyond the&nbsp;allowance, each&nbsp;conversation bills at&nbsp;$0.08 plus $0.02 per&nbsp;message. Meta's&nbsp;per-message template fee is passed through&nbsp;at&nbsp;cost (varies by&nbsp;country) and is not included in&nbsp;this&nbsp;estimate. The&nbsp;payback line is arithmetic on&nbsp;the&nbsp;numbers you entered — it is not a&nbsp;forecast of&nbsp;your&nbsp;results.</p>
       </div>
     </div>
 
@@ -978,7 +978,7 @@
           <thead><tr><th>Beyond your&nbsp;allowance</th><th>Rate</th></tr></thead>
           <tbody>
             <tr><td>AI conversation</td><td class="good"><b>$0.08</b> each&nbsp;after your&nbsp;monthly allowance</td></tr>
-            <tr><td>WhatsApp message</td><td class="good"><b>$0.02</b> each — only in&nbsp;conversations beyond your&nbsp;allowance, + Meta's&nbsp;per-conversation fee (passed through&nbsp;at&nbsp;cost, varies by&nbsp;country)</td></tr>
+            <tr><td>WhatsApp message</td><td class="good"><b>$0.02</b> each — only in&nbsp;conversations beyond your&nbsp;allowance, + Meta's&nbsp;per-message template fee (passed through&nbsp;at&nbsp;cost, varies by&nbsp;country)</td></tr>
             <tr><td>Voice minute</td><td class="good">from&nbsp;<b>$0.14</b>/min — confirmed per&nbsp;country before purchase</td></tr>
           </tbody>
         </table>
@@ -1256,7 +1256,7 @@
      WhatsApp messages inside an included conversation are covered by the plan;
      only conversations beyond the allowance are metered:
      $0.08 per conversation + $0.02 per message inside it.
-     Meta's per-conversation fee is passed through at cost and not estimated here. */
+     Meta's per-message template fee is passed through at cost and not estimated here. */
   function calc() {
     var calls = num('c-calls'), mins = num('c-mins'), convs = num('c-convs'),
         avg = num('c-avgmsgs'), job = num('c-job');

@@ -17,11 +17,14 @@
    send it did not observe.
    ═══════════════════════════════════════════════════════════════════ */
 window.SR_CONFIG = window.SR_CONFIG || {
-  /* No lead endpoint is provisioned yet, so the form falls back to the composer
-     and the on-site flow at /en/get-started.html carries the journey instead.
-     Drop a Formspree / Netlify / Worker URL in here and the form starts POSTing
-     the moment the page reloads - no markup changes needed. */
-  formEndpoint: '',
+  /* /api/lead is this site's own endpoint (api/lead.js). It answers GET with
+     whether it has anywhere to put a lead, so a page can tell the truth before
+     the visitor presses anything, and it answers POST with a reference number
+     the visitor can quote. With no destination configured it returns 503 and
+     the composer fallback below takes over - the same behaviour the site had
+     when this was an empty string, and never a silent loss. Point it at
+     Formspree or a Worker instead and nothing else has to change. */
+  formEndpoint: '/api/lead',
   /* Booking terminates on-site rather than at a third-party scheduler, so the
      journey never leaves the domain and never depends on an account we do not
      control. Set a Cal.com/Calendly URL here to override. */
@@ -116,6 +119,36 @@ window.SR_CONFIG = window.SR_CONFIG || {
     document.documentElement.style.setProperty('--stickycta-h', h + 'px');
   }
   stickyctaHeight();
+
+  /* -- give the phone its screen back --
+     The docked bar is one row and about 64px, which is little on a laptop and
+     a lot on a 812px phone held in one hand. It behaves the way a good app bar
+     behaves: reading downward tucks it away, the first upward gesture brings
+     it back, and it is always there at the end of the page where the decision
+     gets made. Only below 720px - on a desktop it never moves. */
+  (function () {
+    var bar = document.querySelector('.stickycta');
+    if (!bar) return;
+    var narrow = window.matchMedia('(max-width:720px)');
+    var last = window.pageYOffset, tick = false;
+    function onScroll() {
+      if (tick) return;
+      tick = true;
+      requestAnimationFrame(function () {
+        tick = false;
+        var y = window.pageYOffset;
+        var dy = y - last;
+        if (Math.abs(dy) < 8) return;
+        last = y;
+        if (!narrow.matches) { bar.classList.remove('tuck'); return; }
+        var atEnd = (window.innerHeight + y) >= (document.body.scrollHeight - 240);
+        bar.classList.toggle('tuck', dy > 0 && y > 400 && !atEnd);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    narrow.addEventListener('change', function () { bar.classList.remove('tuck'); });
+  })();
+
   if (window.ResizeObserver) {
     var bar = document.querySelector('.stickycta');
     if (bar) new ResizeObserver(stickyctaHeight).observe(bar);
@@ -131,6 +164,40 @@ window.SR_CONFIG = window.SR_CONFIG || {
       .observe(_bar, { attributes: true, attributeFilter: ['class'] });
   }
 
+  /* -- a field no person can see and no person fills in --
+     Added at runtime rather than in 34 pieces of markup: the form only submits
+     with script running anyway, so a bot that never runs script gains nothing
+     by ignoring it, and one that does fills it in and is answered with a
+     reference that goes nowhere. */
+  (function () {
+    var forms = document.querySelectorAll('form[data-earlyaccess]'), i;
+    for (i = 0; i < forms.length; i++) {
+      if (forms[i].querySelector('[name="company_website_hp"]')) continue;
+      var w = document.createElement('div');
+      w.setAttribute('aria-hidden', 'true');
+      w.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden';
+      w.innerHTML = '<label>Company website<input type="text" name="company_website_hp" ' +
+                    'tabindex="-1" autocomplete="off"></label>';
+      forms[i].appendChild(w);
+    }
+  })();
+
+
+  /* -- does the form have anywhere to send it? --
+     An endpoint that exists is not the same as an endpoint wired to a
+     destination. The page asks once: /api/lead answers GET with {ready}, and
+     the answer decides which of two true things the fine print says - "we take
+     it from here", or "you press send". A page that cannot reach the endpoint
+     at all assumes the worse of the two. */
+  var SR_READY = null;
+  if (CFG.formEndpoint && CFG.formEndpoint.charAt(0) === '/' &&
+      document.querySelector('form[data-earlyaccess]')) {
+    fetch(CFG.formEndpoint, { method: 'GET', headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.ok ? r.json() : { ready: false }; })
+      .then(function (j) { SR_READY = !!j.ready; if (!SR_READY) tellTheTruthAboutForms(); })
+      .catch(function () { SR_READY = false; tellTheTruthAboutForms(); });
+  }
+
   /* ── say what the button does, before it is pressed ──
      With no formEndpoint provisioned the submit handler does not post: it
      writes the message and hands the visitor four ways to send it. The fine
@@ -141,7 +208,7 @@ window.SR_CONFIG = window.SR_CONFIG || {
      runtime rather than in the markup, so the day an endpoint is configured
      every page silently goes back to the direct-submit wording. */
   function tellTheTruthAboutForms() {
-    if (CFG.formEndpoint) return;
+    if (CFG.formEndpoint && SR_READY !== false) return;
     var LEAD = 'One tap writes your message and opens it in your mail app, ' +
                'Gmail or Outlook — you press send. ';
     /* Only the fine print that sits under a lead form's own submit button.
@@ -198,10 +265,10 @@ window.SR_CONFIG = window.SR_CONFIG || {
 
     if (CFG.formEndpoint) {
       if (btn) { btn._label = btn.innerHTML; btn.disabled = true; btn.textContent = 'Sending…'; }
-      postLead(CFG.formEndpoint, payload).then(function () {
-        form.innerHTML = '<div class="easent" role="status">' +
-          '<b>Sent — thank you.</b><span>A person reads every one of these. ' +
-          'You\'ll get a reply within one business day with a setup plan for your industry attached.</span></div>';
+      postLead(CFG.formEndpoint, payload).then(function (r) {
+        return r.json().catch(function () { return {}; });
+      }).then(function (j) {
+        showReceipt(form, j);
       }).catch(function () {
         if (btn) { btn.disabled = false; btn.innerHTML = btn._label; }
         composeFallback(form, get);
@@ -210,6 +277,36 @@ window.SR_CONFIG = window.SR_CONFIG || {
     }
     composeFallback(form, get);
   });
+
+  /* -- the receipt --
+     A form that vanishes into a thank-you leaves the visitor holding nothing.
+     The endpoint returns a reference; the page shows it, says whether a copy is
+     already in their inbox, and gives a date for the reply rather than a mood.
+     The confirmation line is printed only when the server reports it actually
+     sent one - the same rule as the send itself. */
+  function showReceipt(form, j) {
+    var reference = (j && j.reference) || '';
+    var confirmed = !!(j && j.confirmation);
+    var next = new Date();
+    next.setDate(next.getDate() + (next.getDay() === 5 ? 3 : next.getDay() === 6 ? 2 : 1));
+    /* the page is in English; the reader's device locale is not the page's */
+    var by = next.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+    form.innerHTML =
+      '<div class="easent" role="status" tabindex="-1">' +
+        '<b>Received. We have it — there is nothing left for you to send.</b>' +
+        (reference ? '<code class="earef">' + reference + '</code>' : '') +
+        '<span>' +
+          (confirmed
+            ? 'A copy is in your inbox now. If it is not there within a minute, look in spam. '
+            : '') +
+          'A person reads every one of these. You will hear back by <b>' + by + '</b> with a setup ' +
+          'plan for your trade attached' +
+          (reference ? ', and quoting the reference above finds you straight away.' : '.') +
+        '</span>' +
+      '</div>';
+    var box = form.querySelector('.easent');
+    if (box) { box.focus(); box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  }
 
   /* composer fallback — unchanged behaviour, now only a fallback */
   /* Composer fallback.

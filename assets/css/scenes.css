@@ -211,6 +211,12 @@
   transition:transform .6s var(--ease);background:rgba(6,13,28,.92);backdrop-filter:blur(18px);
   border-top:1px solid rgba(255,255,255,.12);padding:14px 0;}
 .stickycta.show{transform:none;}
+
+/* Reading downward on a phone tucks the docked bar away; the first upward
+   gesture brings it back, and it returns for good at the end of the page.
+   The rest of the site never moves it. */
+.stickycta.show.tuck{transform:translateY(112%);}
+@media (prefers-reduced-motion: reduce){ .stickycta.show.tuck{transform:none;} }
 .stickycta .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
 .stickycta .msg{font-size:var(--fs-xs);color:var(--tx);font-weight:600;}
 .stickycta .msg b{color:var(--teal);}

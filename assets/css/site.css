@@ -721,6 +721,14 @@ body[data-chan] .chip.on{background:var(--accent-glass);
 .easent b{display:block;font-size:var(--fs-body);color:#7FE9BC;letter-spacing:-.015em;}
 .easent span{display:block;margin-top:9px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
 
+/* the reference a visitor can quote back at us */
+.easent .earef{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:10px;
+  font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);font-weight:600;
+  letter-spacing:.06em;color:#7FE9BC;background:rgba(58,201,138,.12);
+  border:1px solid rgba(58,201,138,.3);user-select:all;}
+.easent b + .earef{margin-top:14px;}
+.sec-light .easent .earef,.sec-light2 .easent .earef{color:#0B6B4A;background:#E9F7F1;border-color:#B9E3D2;}
+
 /* ── composer fallback: three routes, not one ──
    A buyer audit found three qualified buyers reaching the end of the funnel and
    being handed an unsent mailto: draft. mailto: only fires for people with a
@@ -2709,3 +2717,27 @@ html .weekday li > i{margin-right:6px;}
 @media (max-width:700px){
   html [class] .ch > span{padding-left:6px;padding-right:6px;letter-spacing:.02em;}
 }
+
+
+/* ── who stands behind a security claim ───────────────────────────────────
+   A trust page that states controls without an owner, a version or a review
+   date is asking to be believed rather than checked. This block carries the
+   four facts a procurement reviewer looks for first, including the one most
+   sites omit: that no third-party audit report exists yet. */
+.ownerbox{margin-top:26px;border:1px solid var(--l-hair);border-radius:16px;
+  padding:24px 26px;background:#fff;}
+.sec-dark .ownerbox,.sec-dark2 .ownerbox{border-color:var(--hair);background:rgba(255,255,255,.03);}
+.ownerbox > b{display:block;font-size:var(--fs-sm);letter-spacing:-.015em;color:var(--l-ink);}
+.sec-dark .ownerbox > b{color:#fff;}
+.ownerbox ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px;}
+.ownerbox li{display:grid;grid-template-columns:172px minmax(0,1fr);gap:18px;
+  padding-top:12px;border-top:1px solid var(--l-hair);}
+.sec-dark .ownerbox li{border-color:var(--hair);}
+.ownerbox li:first-child{border-top:0;padding-top:0;}
+.ownerbox .k{font-size:var(--fs-xs);font-weight:800;letter-spacing:.02em;color:var(--l-mut2);}
+.sec-dark .ownerbox .k{color:var(--tx3);}
+.ownerbox .v{font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;max-width:var(--measure);}
+.sec-dark .ownerbox .v{color:var(--tx2);}
+.ownerbox a{color:var(--teal-ink);font-weight:700;}
+.sec-dark .ownerbox a{color:var(--teal);}
+@media (max-width:640px){ .ownerbox li{grid-template-columns:1fr;gap:4px;} }
