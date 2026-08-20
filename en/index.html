@@ -63,6 +63,11 @@
   .aftersec .head{margin-bottom:0;}
   .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;}
   /* ── HERO — full-bleed photograph ── */
+  /* hero photograph: lifted so the picture reads as a place, not a fill */
+  /* scrim rescaled off the sheet default: the copy corner is 0.42, the
+     foot anchor stays dark so the hand-off to the next section has no seam */
+  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.421) 0%,rgba(4,8,15,0.218) 26%,rgba(4,8,15,0.247) 60%,rgba(4,8,15,0.92) 100%);}
+  .hero .bgimg img{filter:brightness(1.67) saturate(1.15) contrast(1.04);}
   .hero{position:relative;overflow:hidden;padding-bottom:70px;}
   .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
   /* ── the hero, as one band and one shelf ──────────────────────────────

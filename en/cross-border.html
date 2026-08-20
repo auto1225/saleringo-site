@@ -37,6 +37,11 @@
      as overlays on a night skyline, then a cost comparison.   */
 
   /* full-bleed photo hero — block layout overrides .photohero's flex */
+  /* hero photograph: lifted so the picture reads as a place, not a fill */
+  /* scrim rescaled off the sheet default: the copy corner is 0.45, the
+     foot anchor stays dark so the hand-off to the next section has no seam */
+  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.449) 0%,rgba(4,8,15,0.275) 45%,rgba(4,8,15,0.86) 100%);}
+  .hero .bgimg img{filter:brightness(1.5) saturate(1.15) contrast(1.04);}
   .hero{position:relative;overflow:hidden;padding-bottom:96px;display:block;}
   .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
   .hero-inner{position:relative;z-index:2;text-align:center;padding:170px clamp(22px,4.6vw,56px) 0;}

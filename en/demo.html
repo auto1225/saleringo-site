@@ -37,8 +37,8 @@
   /* hero — a photograph carries it; .photohero's flex centring is not wanted here
      because the header also holds the nav and the night-timeline strip */
   .dhero{position:relative;overflow:hidden;display:block;min-height:0;background:#050B16;}
-  .dhero .bgimg img{filter:brightness(1.28) saturate(1.12) contrast(1.04);}
-  .dhero .scrim{background:linear-gradient(180deg,rgba(4,8,15,.72) 0%,rgba(4,8,15,.52) 38%,rgba(4,8,15,.78) 74%,#050B16 100%);}
+  .dhero .bgimg img{filter:brightness(1.67) saturate(1.12) contrast(1.04);}
+  .dhero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.42) 0%,rgba(4,8,15,0.304) 38%,rgba(4,8,15,0.456) 74%,#050B16 100%);}
   .dhero .wrap,.stage .wrap,.startsec .wrap,.closer .wrap{position:relative;z-index:1;}
   .nightstrip{position:relative;z-index:2;max-width:1080px;margin:52px auto 0;padding:0 32px;}
   .startscene{margin-top:56px;}
@@ -183,7 +183,7 @@
 </nav></div>
 
   <div class="wrap dhero-inner">
-    <span class="eyebrow"><i></i>Full conversations · 3 channels · 8 trades</span><span class="tryme"><i aria-hidden="true">⬤</i>Pick a&nbsp;channel and a&nbsp;trade &middot; then a&nbsp;question</span>
+    <span class="eyebrow"><i></i>Full conversations · 3 channels · 25 trades</span><span class="tryme"><i aria-hidden="true">⬤</i>Pick a&nbsp;channel and a&nbsp;trade &middot; then a&nbsp;question</span>
     <h1 style="margin-top:28px;">Watch it answer. Then see what&nbsp;it&nbsp;filed.</h1>
     <p class="sub">The&nbsp;same AI on&nbsp;a&nbsp;phone call, a&nbsp;website chat and a&nbsp;WhatsApp thread — answering from&nbsp;facts you approved, handing the&nbsp;hard question to&nbsp;a&nbsp;person. Then, under&nbsp;every&nbsp;conversation, the&nbsp;part most demos never show you: the&nbsp;slot it held, the&nbsp;quote it priced, the&nbsp;record it wrote and the&nbsp;pipeline card it created.</p>
     <div class="chtabs" role="tablist" aria-label="Choose a channel">
@@ -283,12 +283,23 @@
         <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="academies" type="button">Academies</button>
         <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="veterinary" type="button">Veterinary</button>
         <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="franchise" type="button">Franchise</button>
-        <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="property" type="button">Property Management</button>
-        <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="restaurants" type="button">Restaurants</button>
-        <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="salons" type="button">Salons &amp; Barbers</button>
-        <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="auto" type="button">Auto Repair</button>
-        <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="funeral" type="button">Funeral Homes</button>
-        <button class="chip" role="tab" aria-selected="false" aria-controls="playstage" data-playtrade="legal" type="button">Law Firms</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="property" type="button">Property Management</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="restaurants" type="button">Restaurants</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="salons" type="button">Salons &amp; Barbers</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="auto" type="button">Auto Repair</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="funeral" type="button">Funeral Homes</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="legal" type="button">Law Firms</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="senior" type="button">Senior Care</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="pest" type="button">Pest Control</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="estate" type="button">Real Estate</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="rental" type="button">Equipment Rental</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="storage" type="button">Self-Storage</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="movers" type="button">Movers</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="fitness" type="button">Gyms &amp; Fitness</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="golf" type="button">Golf Clubs</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="universities" type="button">Universities</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="public" type="button">Public Sector</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="ecommerce" type="button">E-commerce</button>
       </div>
 
       <div class="playwrap" id="demostage" role="tabpanel">
@@ -333,8 +344,8 @@
             <div class="transcript">
               <div class="line"><span class="spk cu">CALLER</span><span class="tx">My&nbsp;AC died and it’s&nbsp;95°F (35°C) out. Can anyone come tonight?</span></div>
               <div class="line"><span class="spk ai">AI</span><span class="tx">I’m sorry to&nbsp;hear that. I can hold tomorrow’s&nbsp;first slot at&nbsp;8 AM, or book an&nbsp;emergency visit tonight — the&nbsp;after-hours call-out is <em>$180</em>. Which works for&nbsp;you?</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Tonight. And… I think I smell gas near the&nbsp;unit.</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">Please step away from&nbsp;the&nbsp;unit now — I’m connecting you to&nbsp;our&nbsp;<em>on-call tech</em> as we speak. If the&nbsp;smell is strong, hang up and call your&nbsp;local emergency number first.</span></div>
+              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Tonight. And… I think I can smell gas by&nbsp;the&nbsp;furnace in&nbsp;the&nbsp;closet.</span></div>
+              <div class="line"><span class="spk ai">AI</span><span class="tx">Please step away from&nbsp;the&nbsp;furnace now — I’m connecting you to&nbsp;our&nbsp;<em>on-call tech</em> as we speak. If the&nbsp;smell is strong, hang up and call your&nbsp;local emergency number first.</span></div>
             </div>
           </div>
           <div class="resultrow"><span class="rchip">✓ CRM updated · job created, tech dispatched</span></div>

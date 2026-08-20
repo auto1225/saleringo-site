@@ -34,10 +34,13 @@
 <link rel="stylesheet" href="../assets/css/scenes.css?v=24.1">
 <link rel="stylesheet" href="../assets/css/crm.css?v=24.1">
 <style>
+  /* scrim rescaled off the sheet default: the copy corner is 0.42, the
+     foot anchor stays dark so the hand-off to the next section has no seam */
+  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.421) 0%,rgba(4,8,15,0.218) 26%,rgba(4,8,15,0.247) 60%,rgba(4,8,15,0.92) 100%);}
   /* ── 1 · HERO: full-bleed photograph, copy in a glass panel ── */
   .hero{position:relative;overflow:hidden;padding-bottom:96px;}
   /* 1900x2850 portrait in a wide hero — hold the band on the face and the handset */
-  .hero.photohero .bgimg img{object-position:center 34%;}
+  .hero.photohero .bgimg img{filter:brightness(1.59) saturate(1.15) contrast(1.04);object-position:center 34%;}
   .hero-split{position:relative;z-index:2;width:100%;display:grid;
     grid-template-columns:minmax(0,780px);padding:196px 0 30px;}
   /* type scale is owned by site.css (--fs-h1); only the voice of it lives here */
