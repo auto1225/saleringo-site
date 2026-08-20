@@ -16,7 +16,10 @@
 (function () {
   'use strict';
   var WALLS = '.langrow,.intwall,.kwrow,.chiprow,.exfilter,.langbig,' +
-              '.tradewords,.tradetour,.smanch,.np-in,.bigfooter .ftgrid';
+              '.tradewords,.tradetour,.smanch,.np-in,.bigfooter .ftgrid,' +
+              /* card grids holding running text, not chips */
+              '.tline,.cases,.whogrid,.stackrow,.tourcards,.funflow,' +
+              '.gatesteps,.specstrip,.chanlinks,.approvedby';
 
   function minWidth(el) {
     var v = parseFloat(getComputedStyle(el).getPropertyValue('--chip-min'));

@@ -927,7 +927,7 @@ body:has(.stickycta.show) .totop{bottom:calc(22px + var(--stickycta-h,124px));}
 .caselog{margin-top:40px;}
 .caselog .ch{font-size:var(--fs-h3);font-weight:700;color:#fff;margin:0 0 18px;
   font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;}
-.cases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 @media(max-width:1000px){.cases{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.cases{grid-template-columns:1fr;}}
 .case{border:1px solid var(--hair);border-radius:14px;padding:16px 16px 15px;
@@ -2264,7 +2264,7 @@ html .bigfooter .brand{
   font-size:var(--fs-label);font-weight:600;color:var(--tx3);
 }
 .smanch a:hover{color:#fff;border-color:var(--hair2);background:rgba(255,255,255,.05);}
-.tourcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.tourcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;}
 .tourcard{
   display:flex;flex-direction:column;gap:8px;
   border:1px solid var(--hair2);border-radius:20px;padding:22px 24px;
@@ -2484,7 +2484,10 @@ html [class] .khead,html [class] .thead,html [class] .chead{
    same number from one place. */
 html .langrow,html .intwall,html .kwrow,html .chiprow,html .exfilter,
 html .langbig,html .tradewords,html .tradetour,html .smanch,
-html .np-in,html .bigfooter .ftgrid{
+html .np-in,html .bigfooter .ftgrid,
+html .tline,html .cases,html .whogrid,html .stackrow,html .tourcards,
+html .funflow,html .gatesteps,html .specstrip,html .chanlinks,
+html .approvedby{
   display:grid;align-items:stretch;justify-items:stretch;
   grid-template-columns:repeat(var(--cols,auto-fit),minmax(var(--chip-min),1fr));
 }
@@ -2502,6 +2505,12 @@ html .tradetour{--chip-min:150px;}
 html .smanch  {--chip-min:130px;}
 html .np-in   {--chip-min:150px;}
 html .bigfooter .ftgrid{--chip-min:150px;}
+/* A card holding sentences needs room for about 45 characters a line;
+   at 1128px a 340px floor gives three columns, and the balancer steps
+   down to two when three would leave a stub row. */
+html .tline,html .cases,html .whogrid,html .stackrow,html .tourcards,
+html .funflow,html .gatesteps,html .specstrip,html .chanlinks,
+html .approvedby{--chip-min:340px;}
 /* Both are menus rather than chip walls: only the column count is shared,
    the links keep their own left alignment. */
 
@@ -2621,3 +2630,38 @@ html main .crow li,html main .fields li,html main .kwrow li{
 
 /* A figcaption with no class is still a caption. */
 html main figcaption{ max-width:var(--measure); }
+
+/* ── a row that cannot wrap pushes its last child out of the box ───────────
+   Measured at 375 across 44 pages: 91 pieces of text sat outside the box
+   that draws around them, by as much as 116px. Every one was the same
+   shape — a flex row holding a label and a tag with no flex-wrap and no
+   min-width:0 on the children, so on a phone the tag had nowhere to go and
+   simply left. They stack instead, and a chip's own words break rather than
+   run past its edge. */
+@media (max-width:700px){
+  html .exhead,html .convrow,html .docrow,html .mathrow,
+  html .step,html .weekday,html .exout{
+    flex-wrap:wrap;
+  }
+  html .exhead > *,html .convrow > *,html .docrow > *,html .mathrow > *,
+  html .step > *,html .weekday > *,html .exout > *{
+    min-width:0;
+  }
+  /* The chip and what is inside it. min-width:0 was tried here and made it
+     worse — it let the cells shrink under their own text and the spill
+     went from 47 places to 144 — so this breaks words and nothing else. */
+  html .bk,html .bk *,html .weekday,html .weekday *,
+  html .col > span,html .exhead .tag,
+  html .convrow span,html .mathrow .val,html .docrow span{
+    overflow-wrap:break-word;
+  }
+  /* a tag pushed to its own line should not also be pushed to the right */
+  html .exhead .tag{margin-left:0;}
+}
+
+/* A flex row holding a list must let the list shrink, or the list keeps its
+   content width and the row's box is the thing that gives. Measured at 375:
+   a 169px <ul> inside a 158px .weekday, text 36px outside the box. */
+@media (max-width:700px){
+  html .weekday > *{min-width:0;}
+}

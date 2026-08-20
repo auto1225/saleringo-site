@@ -424,7 +424,7 @@
 .pipecap{margin:14px 0 0;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);
   font-weight:600;max-width:var(--measure);}
 
-.whogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px;}
+.whogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
 @media(max-width:1000px){.whogrid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.whogrid{grid-template-columns:1fr;}}
 .whocard{border:1px solid var(--hair);border-radius:15px;padding:18px;
@@ -456,7 +456,7 @@
 
 
 /* ═══ THE FIVE-PART STACK, THE DENY LIST, THE RECIPES ══════════ */
-.stackrow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px;align-items:stretch;}
+.stackrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px;align-items:stretch;}
 @media(max-width:1100px){.stackrow{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:700px){.stackrow{grid-template-columns:1fr;}}
 .stk{border:1px solid var(--hair);border-radius:15px;padding:17px;background:rgba(255,255,255,.026);
