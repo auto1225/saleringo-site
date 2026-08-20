@@ -3102,3 +3102,63 @@ html .icard .rank{font-size:var(--fs-label);}
 html .icard .rank[data-state="live"],
 html .icard .rank.is-live{display:none;}
 
+
+/* ── seven rooms, not twenty-five tiles ───────────────────────────────────
+   The wall was 27 photocards in one flat grid: 26 stock photographs, 26
+   kickers all reading "Founding cohort", 26 identical shapes. Whatever each
+   tile said, the composition said "we do a lot of things" - which is the
+   opposite of what a buyer looking for the dental pack needs to feel.
+
+   The same twenty-five trades, in the seven groups the navigation has always
+   used. One photograph a group instead of four. And the refusal each pack is
+   built around - the thing nobody else prints - comes out of the small print
+   and sits under the trade it belongs to. */
+.roomgrid{display:grid;gap:0;margin-top:44px;}
+.room{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);
+  gap:44px;align-items:start;padding:44px 0;border-top:1px solid var(--l-hair);}
+.room:first-child{border-top:0;padding-top:0;}
+.sec-dark .room,.sec-dark2 .room{border-color:var(--hair);}
+.room-pic{margin:0;border-radius:18px;overflow:hidden;position:relative;
+  aspect-ratio:4/3;background:#0E1B2E;}
+.room-pic img{width:100%;height:100%;object-fit:cover;display:block;}
+.room-h{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
+  font-weight:600;letter-spacing:-.03em;line-height:1.1;color:var(--l-ink);}
+.sec-dark .room-h{color:#fff;}
+.room-lead{margin-top:10px;font-size:var(--fs-sm);line-height:1.7;
+  color:var(--l-mut);font-weight:500;max-width:var(--measure);}
+.sec-dark .room-lead{color:var(--tx2);}
+.room-list{list-style:none;margin:26px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 44px;}
+.room-list > li{padding:20px 0;border-top:1px solid var(--l-hair);}
+.sec-dark .room-list > li{border-color:var(--hair);}
+.room-t{display:flex;align-items:baseline;gap:10px;text-decoration:none;
+  color:var(--l-ink);font-size:var(--fs-body);font-weight:700;letter-spacing:-.015em;}
+.sec-dark .room-t{color:#fff;}
+.room-t b{font-weight:700;}
+.room-go{color:var(--teal-deep);font-weight:700;transition:transform .4s var(--ease);}
+.sec-dark .room-go{color:var(--teal);}
+.room-t:hover .room-go{transform:translateX(4px);}
+.room-t:hover b{text-decoration:underline;text-underline-offset:3px;}
+.room-d{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.7;
+  color:var(--l-mut);font-weight:500;max-width:var(--measure);}
+.sec-dark .room-d{color:var(--tx2);}
+/* the refusal: the second thing you read, not a footnote */
+.room-no{display:block;margin-top:10px;font-size:var(--fs-xs);font-weight:600;
+  color:var(--l-mut2);padding-left:16px;position:relative;}
+.sec-dark .room-no{color:var(--tx3);}
+.room-no::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:1px;
+  background:#A8453A;}
+.sec-dark .room-no::before{background:#E88A7D;}
+.room-no b{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);
+  font-weight:600;color:#A8453A;margin-right:7px;letter-spacing:-.02em;}
+.sec-dark .room-no b{color:#E88A7D;}
+@media (max-width:900px){
+  .room{grid-template-columns:1fr;gap:22px;}
+  .room-pic{aspect-ratio:16/9;}
+  .room-list{grid-template-columns:1fr;}
+}
+
+/* the two that are not trades: no photograph, because neither one is a room */
+.room-nottrade{grid-template-columns:minmax(0,300px) minmax(0,1fr);}
+.room-nottrade .room-body-wide{grid-column:2;}
+@media (max-width:900px){ .room-nottrade .room-body-wide{grid-column:1;} }
