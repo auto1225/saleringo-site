@@ -2557,3 +2557,25 @@ html .bigfooter .ftall:hover{color:#fff;}
    any other, so the balancer counted six items in a five-group panel and
    settled on four columns to divide them. */
 html .np-in > .np-foot{grid-column:1 / -1;}
+
+/* ── a standalone link is a target, not a word in a sentence ───────────────
+   Measured at 375 across 44 pages: the named links that stand on their own —
+   "The dental pack →", "Pricing ↗", the section chips on the site map — are
+   47 to 161px wide and 18 to 23px tall. Width is fine; height misses the
+   24px floor by a few pixels.
+
+   The fix is a hit area rather than a size change: growing the links
+   themselves would reflow lists that are already tuned. Six pixels of reach
+   above and below takes the smallest of them past the floor and stays well
+   inside the gap between neighbours, so the next link down cannot steal the
+   tap. Links inside a sentence are left alone — WCAG exempts them, and
+   padding them out would break the line they sit in. */
+@media (pointer:coarse){
+  html a.go, html .fcol a.lnk, html .smanch a, html .smt, html .np-col a{
+    position:relative;
+  }
+  html a.go::after, html .fcol a.lnk::after, html .smanch a::after,
+  html .smt::after, html .np-col a::after{
+    content:"";position:absolute;left:0;right:0;top:-6px;bottom:-6px;
+  }
+}

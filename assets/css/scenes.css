@@ -552,7 +552,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 /* what the model is handed, and what it is never handed. Stacks under 700px
    of canvas; the wrap is roughly viewport − 100 inside a .figcard. */
 .feedfig .scenebox{--sh:250px;}
-@media (max-width:820px){ .feedfig .scenebox{--sh:480px;} }
+@media (max-width:820px){ .feedfig .scenebox{--sh:440px;} }
 
 /* the first sentence of the call. Stacks under 620px of canvas. */
 .linefig .scenebox{--sh:230px;}
