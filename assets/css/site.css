@@ -3162,3 +3162,121 @@ html .icard .rank.is-live{display:none;}
 .room-nottrade{grid-template-columns:minmax(0,300px) minmax(0,1fr);}
 .room-nottrade .room-body-wide{grid-column:2;}
 @media (max-width:900px){ .room-nottrade .room-body-wide{grid-column:1;} }
+
+
+/* ── the column is the page now, and the breaks are in the sentence ───────
+   The reading measure was doing the damage the review kept pointing at: a
+   36-em column wraps wherever the last word happens to fall, so "They are
+   not" ends one line and "a Saleringo" ends another, and the eye carries half
+   a clause down and reassembles it six times a paragraph.
+
+   wrap.js puts the breaks where the sentence already breaks - after a comma,
+   a dash, a full stop, or before the conjunction that starts the next clause
+   - filling each line as far as it goes and ending it at the last sense
+   boundary that still fits. With that doing the work, the cap is no longer
+   needed and prose takes the width of the page.
+
+   The cap stays for anyone without script: the .srwrap class is set by
+   wrap.js itself, so a reader with JavaScript off keeps the 36-em measure
+   rather than a 128-character line. */
+html.srwrap main p,
+html.srwrap main .lead,html.srwrap main .sub,html.srwrap main .lsub,
+html.srwrap main .secintro,html.srwrap main .standfirst,
+html.srwrap main figcaption,html.srwrap main blockquote,
+html.srwrap main li,
+html.srwrap main .scenecap,html.srwrap main .photocap,html.srwrap main .mockcap,
+html.srwrap main .exlabel,html.srwrap main .pkcap,html.srwrap main .statnote,
+html.srwrap main .seccap,html.srwrap main .funfoot,html.srwrap main .labfoot,
+html.srwrap main .altnote,html.srwrap main .proofnote,html.srwrap main .metnote,
+html.srwrap main .note,html.srwrap main .fn,html.srwrap main .srcnote,
+html.srwrap main .mathnote,html.srwrap main .smlede,html.srwrap main .disclaim,
+html.srwrap main .room-lead,html.srwrap main .room-d,html.srwrap main .sl-note,
+html.srwrap main .sl-foot,html.srwrap main .secfoot,html.srwrap .faq p{
+  max-width:none;
+}
+/* a heading was already balanced; with the width off the leash it needs to be
+   told again, and told not to hang one word on its own last line */
+html.srwrap main h1,html.srwrap main h2,html.srwrap main .h2,
+html.srwrap main h3{max-width:none;text-wrap:balance;}
+/* the breaks the sentence asked for */
+br.cw{content:"";}
+
+/* the kicker's rule, mirrored where the block is centred, so the words sit on
+   the same axis as the heading under them (see wrap.js: axis) */
+html .eyebrow.is-mid::after{
+  content:"";width:22px;height:1px;flex:none;background:var(--accent,var(--teal));opacity:.85;
+}
+html .sec-light .eyebrow.is-mid::after,html .sec-light2 .eyebrow.is-mid::after,
+html .bg-paper .eyebrow.is-mid::after{background:var(--teal-deep);}
+
+
+/* ── one block, one alignment ─────────────────────────────────────────────
+   Measured across the pages: blocks that stack their children but do not
+   agree on where the text starts. A centred heading with a left-aligned note
+   under it, a centred lead form whose fine print runs left, a centred hero
+   with a left-aligned scroll cue. Each one is small; together they are what
+   reads as a page nobody tidied.
+
+   The rule is the obvious one - a note takes the alignment of the thing it is
+   a note to - and it is written here rather than in each page so the next
+   note added anywhere inherits it. */
+html .leadbox .eanote,
+html .leadbox .eafallback-lead,
+html .leadbox .easent{text-align:center;}
+html .leadbox .easent .earef{margin-left:auto;margin-right:auto;}
+html .altwrap .altnote,html .altwrap .cap + .altnote,
+html .altwrap .fn,html .altsec .altnote{text-align:center;margin-left:auto;margin-right:auto;}
+html .peopleband .capL{text-align:center;margin-left:auto;margin-right:auto;}
+html .hcap .heroscroll,html .hero .heroscroll{text-align:center;}
+html .stagehint{text-align:left;}
+/* a centred note still needs its measure centred, not just its words */
+html .leadbox .eanote,html .altwrap .altnote,html .peopleband .capL{
+  margin-left:auto;margin-right:auto;}
+
+
+/* ── the page's own map, down the left edge ───────────────────────────────
+   One mark per section, drawn on a canvas: the one you are reading is lit,
+   the ones behind you are filled, the ones ahead are hairlines, and a line
+   grows through them as you scroll. It appears only where there is room
+   beside the content and only on a page long enough to get lost in.
+
+   The canvas is decoration - the same destinations are already in the page as
+   headings - so it is aria-hidden, and the keyboard path is a real list of
+   links underneath it, visible only when one is focused. */
+/* No opacity transition to get in: a fade needs frames, and a throttled tab
+   can leave the computed value stuck at 0 with the class already applied -
+   which is a rail that exists, is painted, and cannot be seen. It is shown or
+   it is not. */
+.pagerail{position:fixed;left:22px;top:50%;transform:translateY(-50%);
+  height:min(62vh,520px);width:26px;z-index:35;pointer-events:auto;}
+.pagerail:not(.on){display:none;}
+.pagerail-cv{display:block;}
+.pagerail-tip{position:absolute;left:34px;transform:translateY(-50%);
+  white-space:nowrap;font-size:var(--fs-xs);font-weight:600;letter-spacing:-.01em;
+  color:var(--tx);background:rgba(8,16,30,.92);border:1px solid var(--hair);
+  border-radius:8px;padding:6px 11px;opacity:0;pointer-events:none;
+  transition:opacity .25s var(--ease);backdrop-filter:blur(8px);}
+.pagerail-tip.on{opacity:1;}
+.sec-light .pagerail-tip,.bg-paper .pagerail-tip{}
+.pagerail-keys{list-style:none;margin:0;padding:0;position:absolute;inset:0;}
+.pagerail-keys a{position:absolute;left:0;width:1px;height:1px;overflow:hidden;
+  clip-path:inset(50%);white-space:nowrap;}
+.pagerail-keys a:focus-visible{position:fixed;left:22px;top:50%;width:auto;height:auto;
+  clip-path:none;transform:translateY(-50%);background:rgba(8,16,30,.96);
+  border:1px solid var(--teal);border-radius:10px;padding:8px 14px;color:#fff;
+  font-size:var(--fs-xs);font-weight:700;z-index:60;}
+@media (max-width:1179px){ .pagerail{display:none;} }
+@media print{ .pagerail{display:none;} }
+
+/* When a row collapses to a stack on a phone, the alignment has to collapse
+   with it: a count that was right-aligned beside a heading is right-aligned
+   UNDER it otherwise, and a badge that was centred in a bar sits 64px in from
+   the words below it. Measured at 375 on the home page and the trade pages. */
+@media (max-width:700px){
+  html .top .count,html .top > .count{text-align:left;}
+  /* justify-content:center is what centres the pill above words that
+     start at the left edge once the bar wraps to three lines */
+  html .cohortbar{align-items:flex-start;text-align:left;justify-content:flex-start;}
+  html .cohortbar > *{margin-left:0;margin-right:0;}
+  html .pricecols > *{margin-left:0;}
+}
