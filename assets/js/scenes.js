@@ -1276,7 +1276,7 @@
           var y = rowTop + i * step + step / 2;
           c.fillStyle = K.accent;
           c.beginPath(); c.arc(xA + 22, y, 3.4, 0, TAU); c.fill();
-          label(c, wA < 320 ? g2[1] : g2[0], xA + 36, y, wA - 52, '600', JAK, 14, K.strong);
+          label(c, wA < 300 ? g2[1] : g2[0], xA + 36, y, wA - 52, '600', JAK, 14, K.strong);
         });
         c.restore();
 

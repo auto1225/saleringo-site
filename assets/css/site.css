@@ -2315,7 +2315,12 @@ html .bigfooter .brand{
    floor and centred content instead. */
 .chip{min-height:44px;display:inline-flex;align-items:center;}
 .askrow .chip,.labsamples .chip{min-height:44px;}
-.fr-x{width:44px;height:44px;right:-20px;top:-20px;font-size:19px;}
+.fr-x{width:26px;height:26px;right:-9px;top:-40px;font-size:16px;}
+/* The 44px lives here instead: an invisible, centred hit area. The circle
+   stays small so it cannot land on the control beside the one being
+   pointed at, and it sits above the ring where there is nothing to hit. */
+.fr-x::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;
+  transform:translate(-50%,-50%);border-radius:50%;}
 
 /* Named controls still under the floor after the .chip pass. Unclassed anchors
    are left alone deliberately: they are links inside sentences, which WCAG 2.5.8
