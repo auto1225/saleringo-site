@@ -2665,3 +2665,47 @@ html main figcaption{ max-width:var(--measure); }
 @media (max-width:700px){
   html .weekday > *{min-width:0;}
 }
+
+
+/* ── a figure needs air above it ──────────────────────────────────────────
+   .scenefig carried margin:0, so whatever ended immediately above a canvas
+   figure sat flush against its top edge. Measured at 1800 on the home page:
+   the last row of the trade grid ended at 7057.5 and the drawing began at
+   7057.5 — the pills and the boxes drawn inside the canvas read as one
+   collided mass. A figure is a separate object; it gets a gap. */
+html .scenefig{margin-top:34px;}
+html .scenefig:first-child{margin-top:0;}
+
+/* ── a list row that cannot wrap widens the card around it ────────────────
+   .weekday li was a flex row, so a <b> inside the sentence became a flex
+   item of its own and could not wrap with the words around it. Measured at
+   375 on golf: the li's min-content was 169px inside a 158px card, and
+   because a column flex line takes the width of its widest child, every
+   child — even the three-letter "Sat" — was pushed 24px past the card's
+   right edge. The row is a block with a hanging marker instead, so the
+   sentence wraps and the emphasis wraps with it. */
+html .weekday li{display:block;padding-left:15px;text-indent:-15px;}
+html .weekday li > i{margin-right:6px;}
+
+/* Same shape, one level up: .exrow holds a tick, a sentence and an amount
+   in a flex row with no wrap. At 375 on public-sector the three came to
+   301px inside 287px. The amount drops to its own line rather than out of
+   the box; above a phone it keeps its right-hand column. */
+@media (max-width:700px){
+  html .exrow{flex-wrap:wrap;}
+  html .exrow > span{min-width:0;}
+  html .exrow .amt{margin-left:23px;}
+  /* two pill buttons side by side under a 225px card */
+  html .kfact .acts,html .acts{flex-wrap:wrap;}
+}
+
+/* ── a four-column board on a 375px screen ────────────────────────────────
+   The queue/ramp/column boards all run 74px + three equal columns. At 375
+   that leaves 67px of content per cell, and "INSTAGRAM" at .08em tracking
+   needs 87. The heading cells give up their tracking and half their side
+   padding before the word gives up the cell. Written here rather than in
+   each page's <style> block because four pages share the component under
+   four different names, and a page's own style beats a linked sheet. */
+@media (max-width:700px){
+  html [class] .ch > span{padding-left:6px;padding-right:6px;letter-spacing:.02em;}
+}

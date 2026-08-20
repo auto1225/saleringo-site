@@ -62,9 +62,49 @@
     el.style.setProperty('--cols', n);
   }
 
+  /* ── a display number must fit the box it is quoted in ───────────────────
+     .stat .n and its relatives are set at --fs-num with white-space:nowrap,
+     which is right for "68%" and wrong for "50,000+": measured at 1440 on
+     universities, that number rendered 415px wide inside a 246px column and
+     ran 169px into the column beside it. A CSS cap would have to shrink every
+     number to the width of the longest one; this shrinks only the number that
+     does not fit, and only by the ratio by which it misses. */
+  var FITS = '.stat .n,.kpi .n,.kpitile .vl,.calcout .big,.plan .pr,.wakenum';
+
+  function textWidth(el) {
+    var rg = el.ownerDocument.createRange();
+    rg.selectNodeContents(el);
+    var r = rg.getBoundingClientRect();
+    return r.width;
+  }
+
+  function fit(el) {
+    /* the observer watches the box, and setting a font-size changes the box's
+       height — so re-measure only when its width actually moved, or this
+       feeds itself */
+    if (el._fitW === el.clientWidth) return;
+    el._fitW = el.clientWidth;
+    el.style.fontSize = '';
+    var box = el.clientWidth;
+    if (box < 20) return;                    /* not laid out yet */
+    var w = textWidth(el);
+    if (!w || w <= box) return;
+    var base = parseFloat(getComputedStyle(el).fontSize);
+    if (!base) return;
+    /* one pass is enough: type scales linearly with font-size */
+    var px = Math.floor(base * (box / w) * 100) / 100;
+    el.style.fontSize = Math.max(14, px) + 'px';
+  }
+
+  function fitAll() {
+    var ns = document.querySelectorAll(FITS), i;
+    for (i = 0; i < ns.length; i++) fit(ns[i]);
+  }
+
   function run() {
     var walls = document.querySelectorAll(WALLS), i;
     for (i = 0; i < walls.length; i++) balance(walls[i]);
+    fitAll();
   }
 
   function start() {
@@ -75,6 +115,12 @@
     });
     var walls = document.querySelectorAll(WALLS), j;
     for (j = 0; j < walls.length; j++) ro.observe(walls[j]);
+    /* the number's own box is what changes when the window does */
+    var nums = document.querySelectorAll(FITS), k;
+    var nro = new ResizeObserver(function (entries) {
+      for (var m = 0; m < entries.length; m++) fit(entries[m].target);
+    });
+    for (k = 0; k < nums.length; k++) nro.observe(nums[k]);
   }
 
   if (document.readyState === 'loading') {

@@ -212,6 +212,456 @@
       "source": "/get-started",
       "destination": "/en/get-started.html",
       "permanent": true
+    },
+    {
+      "source": "/industries/academies",
+      "destination": "/en/industries/academies.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/academies.html",
+      "destination": "/en/industries/academies.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/auto-repair",
+      "destination": "/en/industries/auto-repair.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/auto-repair.html",
+      "destination": "/en/industries/auto-repair.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/auto-repair",
+      "destination": "/en/industries/auto-repair.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/clinics",
+      "destination": "/en/industries/clinics.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/clinics.html",
+      "destination": "/en/industries/clinics.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/dental",
+      "destination": "/en/industries/dental.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/dental.html",
+      "destination": "/en/industries/dental.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ecommerce",
+      "destination": "/en/industries/ecommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ecommerce.html",
+      "destination": "/en/industries/ecommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/ecommerce",
+      "destination": "/en/industries/ecommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/equipment-rental",
+      "destination": "/en/industries/equipment-rental.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/equipment-rental.html",
+      "destination": "/en/industries/equipment-rental.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/equipment-rental",
+      "destination": "/en/industries/equipment-rental.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/fitness",
+      "destination": "/en/industries/fitness.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/fitness.html",
+      "destination": "/en/industries/fitness.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/fitness",
+      "destination": "/en/industries/fitness.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/franchise",
+      "destination": "/en/industries/franchise.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/franchise.html",
+      "destination": "/en/industries/franchise.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/funeral-homes",
+      "destination": "/en/industries/funeral-homes.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/funeral-homes.html",
+      "destination": "/en/industries/funeral-homes.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/funeral-homes",
+      "destination": "/en/industries/funeral-homes.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/golf",
+      "destination": "/en/industries/golf.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/golf.html",
+      "destination": "/en/industries/golf.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/golf",
+      "destination": "/en/industries/golf.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/home-services",
+      "destination": "/en/industries/home-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/home-services.html",
+      "destination": "/en/industries/home-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/legal",
+      "destination": "/en/industries/legal.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/legal.html",
+      "destination": "/en/industries/legal.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/legal",
+      "destination": "/en/industries/legal.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/movers",
+      "destination": "/en/industries/movers.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/movers.html",
+      "destination": "/en/industries/movers.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/movers",
+      "destination": "/en/industries/movers.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/pest-control",
+      "destination": "/en/industries/pest-control.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/pest-control.html",
+      "destination": "/en/industries/pest-control.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/pest-control",
+      "destination": "/en/industries/pest-control.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/property-management",
+      "destination": "/en/industries/property-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/property-management.html",
+      "destination": "/en/industries/property-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/property-management",
+      "destination": "/en/industries/property-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/public-sector",
+      "destination": "/en/industries/public-sector.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/public-sector.html",
+      "destination": "/en/industries/public-sector.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/public-sector",
+      "destination": "/en/industries/public-sector.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/real-estate",
+      "destination": "/en/industries/real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/real-estate.html",
+      "destination": "/en/industries/real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/real-estate",
+      "destination": "/en/industries/real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurants",
+      "destination": "/en/industries/restaurants.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurants.html",
+      "destination": "/en/industries/restaurants.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/restaurants",
+      "destination": "/en/industries/restaurants.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/salons",
+      "destination": "/en/industries/salons.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/salons.html",
+      "destination": "/en/industries/salons.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/salons",
+      "destination": "/en/industries/salons.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/self-storage",
+      "destination": "/en/industries/self-storage.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/self-storage.html",
+      "destination": "/en/industries/self-storage.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/self-storage",
+      "destination": "/en/industries/self-storage.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/senior-care",
+      "destination": "/en/industries/senior-care.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/senior-care.html",
+      "destination": "/en/industries/senior-care.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/senior-care",
+      "destination": "/en/industries/senior-care.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/stays",
+      "destination": "/en/industries/stays.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/stays.html",
+      "destination": "/en/industries/stays.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/universities",
+      "destination": "/en/industries/universities.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/universities.html",
+      "destination": "/en/industries/universities.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/universities",
+      "destination": "/en/industries/universities.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/venues",
+      "destination": "/en/industries/venues.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/venues.html",
+      "destination": "/en/industries/venues.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/veterinary",
+      "destination": "/en/industries/veterinary.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/veterinary.html",
+      "destination": "/en/industries/veterinary.html",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-answering-service",
+      "destination": "/en/ai-answering-service.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-answering-service.html",
+      "destination": "/en/ai-answering-service.html",
+      "permanent": true
+    },
+    {
+      "source": "/cross-border",
+      "destination": "/en/cross-border.html",
+      "permanent": true
+    },
+    {
+      "source": "/cross-border.html",
+      "destination": "/en/cross-border.html",
+      "permanent": true
+    },
+    {
+      "source": "/demo.html",
+      "destination": "/en/demo.html",
+      "permanent": true
+    },
+    {
+      "source": "/examples.html",
+      "destination": "/en/examples.html",
+      "permanent": true
+    },
+    {
+      "source": "/get-started.html",
+      "destination": "/en/get-started.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries.html",
+      "destination": "/en/industries.html",
+      "permanent": true
+    },
+    {
+      "source": "/integrations.html",
+      "destination": "/en/integrations.html",
+      "permanent": true
+    },
+    {
+      "source": "/platform.html",
+      "destination": "/en/platform.html",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/en/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/en/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/security.html",
+      "destination": "/en/security.html",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/en/sitemap.html",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.html",
+      "destination": "/en/sitemap.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/sitemap",
+      "destination": "/en/sitemap.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/en/terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/verified-ai",
+      "destination": "/en/verified-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/verified-ai.html",
+      "destination": "/en/verified-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/voice.html",
+      "destination": "/en/voice.html",
+      "permanent": true
+    },
+    {
+      "source": "/webchat.html",
+      "destination": "/en/webchat.html",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp.html",
+      "destination": "/en/whatsapp.html",
+      "permanent": true
     }
   ],
   "headers": [
