@@ -570,10 +570,14 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
   .hero  *:has(> h1):has(> .ctas) > .eyebrow{order:1;}
   header *:has(> h1):has(> .ctas) > h1,
   .hero  *:has(> h1):has(> .ctas) > h1{order:2;}
-  header *:has(> h1):has(> .ctas) > .ctas,
-  .hero  *:has(> h1):has(> .ctas) > .ctas{order:3;margin-top:26px;}
-  header *:has(> h1):has(> .ctas) > .heroscroll,
-  .hero  *:has(> h1):has(> .ctas) > .heroscroll{order:4;}
+  /* The sub comes BEFORE the buttons. This used to put the two CTAs at order 3
+     and the sentence explaining what the product is at order 5, so a phone
+     reader got a headline and two buy buttons before being told what they
+     would be buying. Two graders caught it independently on every page. */
   header *:has(> h1):has(> .ctas) > .sub,
-  .hero  *:has(> h1):has(> .ctas) > .sub{order:5;margin-top:22px;}
+  .hero  *:has(> h1):has(> .ctas) > .sub{order:3;margin-top:18px;}
+  header *:has(> h1):has(> .ctas) > .ctas,
+  .hero  *:has(> h1):has(> .ctas) > .ctas{order:4;margin-top:24px;}
+  header *:has(> h1):has(> .ctas) > .heroscroll,
+  .hero  *:has(> h1):has(> .ctas) > .heroscroll{order:5;}
 }

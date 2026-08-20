@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Enquiry Answering for Care Homes &amp; Home Care | Saleringo</title>
+<meta name="description" content="An AI that answers a care provider's enquiry line at any hour, reads your published fee schedule as written, books the tour — and puts a named person on the line for anything clinical or safeguarding.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/senior-care.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/senior-care.html">
+<meta property="og:title" content="AI Enquiry Answering for Care Homes &amp; Home Care">
+<meta property="og:description" content="An AI that answers a care provider's enquiry line at any hour, reads your published fee schedule as written, books the tour — and puts a named person on the line for anything clinical or safeguarding.">
+<meta property="og:image" content="https://images.pexels.com/photos/18429307/pexels-photo-18429307.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Enquiry Answering for Care Homes &amp; Home Care">
+<meta name="twitter:description" content="An AI that answers a care provider's enquiry line at any hour, reads your published fee schedule as written, books the tour — and puts a named person on the line for anything clinical or safeguarding.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/18429307/pexels-photo-18429307.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./senior-care.html">
+<link rel="alternate" hreflang="x-default" href="./senior-care.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it tell a family what level of care their relative needs?","acceptedAnswer":{"@type":"Answer","text":"No. Residential, nursing, dementia care, respite, a package of home visits — which of those a person needs is a decision that follows an assessment by your own staff, and often a local authority or hospital assessment as well. The AI records what the caller says about the situation, in the caller's words, and books the assessment or the show-round. It does not read the description back as a recommendation, and it does not tell anyone their mother needs a nursing bed."}},{"@type":"Question","name":"What happens if a caller describes someone at risk?","acceptedAnswer":{"@type":"Answer","text":"It stops taking details and gets a person on the line. Your safeguarding lead and your out-of-hours manager are named in the configuration with real numbers, and the AI says out loud that it is putting a person on. If nobody picks up it escalates down the list you gave it and tells the caller who is being called and what to do meanwhile, including the emergency services if the caller has described a medical emergency. A concern is never closed as a completed enquiry, never left as a note for the morning, and never answered by the AI itself."}},{"@type":"Question","name":"Can it quote our fees?","acceptedAnswer":{"@type":"Answer","text":"It reads the weekly rate or hourly rate you published, for the band the caller asked about, exactly as written, and sends the whole schedule. It will not estimate a total, will not price a care level nobody has assessed, and will not say anything about funding — not local authority rates, not means testing, not top-up or third-party contributions, not NHS continuing healthcare. Those are answered by a person who knows the case."}},{"@type":"Question","name":"How is enquiry information handled?","acceptedAnswer":{"@type":"Answer","text":"Conversations capture enquiry details — who is calling and their relationship, where the person is now, what the family says they are looking for, stated urgency or discharge date, the tour or assessment slot booked, and whether a call was escalated to a named person. Records are kept separate from every other provider, encrypted in transit and at rest, with retention and deletion controls your organisation operates. Full details, including data regions and subprocessors, are in Security & data."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Enquiry Answering for Care Homes & Home Care","item":"https://claude.saleringo.com/en/industries/senior-care.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=24.1">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=24.1">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=24.1">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=24.1">
+<style>
+  /* ── SENIOR CARE · archetype: THE ENQUIRY CALL ───────────────
+     The caller is almost never the resident. It is a son or a
+     daughter, usually after a hospital rang, usually in the evening,
+     usually for the first time in their life. The page is built for
+     that call: an answered line, a fee read as published, a tour in
+     the diary — and a hard stop the moment anyone describes risk. */
+
+  .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:104px;display:block;background:#070C14;}
+  /* 1600x1067 landscape of a care home corridor; bias slightly low so the
+     two carers sit under the copy panel rather than behind the headline. */
+  .hero.photohero .bgimg img{filter:brightness(1.06) saturate(.88) contrast(1.02);object-position:center 58%;}
+  .hero.photohero .scrim{background:
+    linear-gradient(94deg, rgba(4,7,13,0.525) 0%, rgba(4,7,13,0.422) 46%, rgba(4,7,13,0.24) 82%),
+    linear-gradient(180deg, rgba(4,7,13,0.411) 0%, rgba(4,7,13,0.137) 34%, rgba(4,8,15,0.96) 100%);}
+  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(23,189,189,.16), transparent 74%);}
+  .navwrap .nav{background:rgba(8,15,26,.9);border-color:rgba(255,255,255,.12);}
+  .hero-inner{position:relative;z-index:2;padding:170px clamp(22px,4.6vw,56px) 0;display:grid;
+    grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:530px;}
+  /* the trade's own vocabulary, used as the headline furniture */
+  .tradewords{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
+  .tradewords span{font-size:var(--fs-xs);font-weight:700;border-radius:999px;padding:8px 15px;
+    border:1px solid var(--hair2);background:rgba(255,255,255,.06);color:var(--tx2);}
+  .tradewords span.hi{color:var(--teal);border-color:rgba(23,189,189,.45);background:rgba(23,189,189,.12);}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .whofor{margin-top:24px;padding-top:22px;border-top:1px solid var(--hair);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;max-width:340px;}
+  .whotxt b{color:#fff;}
+
+  .roomband{background:#FDFDFE;}
+  .roomband .photosplit{min-height:500px;}
+  .audgrid.three{grid-template-columns:repeat(3,1fr);}
+  .audgrid.three .audcard{min-height:300px;}
+  .audnote{margin-top:14px;text-align:center;}
+  @media (max-width:900px){.audgrid.three{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.audgrid.three{grid-template-columns:1fr;}}
+
+  /* ── what a named regulator actually asks for (dark) ── */
+  .sweep{position:relative;background:#040910;}
+  .sweep .head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .sweep .head .lead{margin-top:18px;}
+  .sweepgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  @media (max-width:900px){.sweepgrid{grid-template-columns:1fr;}}
+  .sweepcard{border:1px solid var(--hair);border-radius:20px;padding:28px 28px 30px;background:rgba(255,255,255,.03);}
+  .sweepcard .lb{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);}
+  .sweepcard .big{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);
+    font-weight:600;letter-spacing:-.04em;line-height:1.02;color:#fff;}
+  .sweepcard.after .big{color:var(--teal);}
+  .sweepcard p{margin-top:12px;font-size:var(--fs-sm);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .sweep .src{margin-top:30px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
+  .sweep .src a{color:var(--teal);font-weight:700;}
+  .sweep .kpiband{margin-top:56px;}
+  .sweep .note{margin-top:28px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:500;max-width:820px;margin-left:auto;margin-right:auto;}
+
+  /* ── paired threads (dark grid) ── */
+  .pairs{position:relative;background:#050B16;}
+  .pairs .head{text-align:center;max-width:680px;margin:0 auto 56px;}
+  .pairs .head .lead{margin-top:18px;}
+  .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  .pairwrap .plabel{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .pairwrap .plabel b{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+  .pairwrap .plabel span{font-size:var(--fs-xs);color:var(--tx3);font-weight:600;}
+  .pairwrap .after{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;}
+  .pairs .note{margin-top:30px;text-align:center;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  /* ── boundaries (paper) ── */
+  .nogo{color:var(--l-ink);}
+  .nogo .cols{display:grid;grid-template-columns:1fr 1.12fr;gap:80px;align-items:stretch;}
+  .nogo .lead{margin-top:20px;max-width:400px;}
+  .ngrow{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #E9E2D6;}
+  .ngrow:last-of-type{border-bottom:0;}
+  .ngrow .x{flex:none;width:34px;height:34px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
+    color:var(--red);font-size:var(--fs-sm);font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .ngrow b{display:block;font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:var(--l-ink);}
+  .ngrow span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
+  .ngseal{margin-top:26px;font-size:var(--fs-sm);font-weight:700;color:#0B7878;background:#E3F5F5;border:1px solid #BFE7E7;
+    border-radius:999px;padding:14px 28px;display:inline-block;}
+
+  /* ── jurisdiction (dark aurora) ── */
+  .world{position:relative;overflow:hidden;}
+  .world .head{text-align:center;max-width:680px;margin:0 auto 50px;}
+  .world .head .lead{margin-top:18px;}
+  .world .tzcards{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .world .glass{padding:22px 24px;}
+  .world .glass b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);color:#fff;}
+  .world .glass span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .world .out{margin-top:34px;text-align:center;}
+  .world .out a{font-size:var(--fs-xs);font-weight:700;color:var(--teal);}
+
+  /* ── start (bright) ── */
+  .start{background:#FDFDFE;}
+  .start .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
+  .start .lead{margin-top:22px;max-width:400px;}
+  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:22px 24px;max-width:400px;
+    box-shadow:0 20px 48px rgba(11,27,51,.07);}
+  .langnote .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0B7878;}
+  .langnote p{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  .langnote .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .start .browserframe{margin-top:54px;}
+  .start .cap{margin-top:15px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+    color:#6F767F;font-weight:700;}
+
+  .faqsec{background:var(--l-bg);}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;}
+  .closer .riskrow{margin-bottom:72px;text-align:left;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer .lead{margin:22px auto 0;max-width:540px;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;}
+    .pairgrid,.world .tzcards{grid-template-columns:1fr;}
+    .nogo .cols,.start .cols{grid-template-columns:1fr;gap:46px;}
+    .closer .riskrow{margin-bottom:52px;}
+  }
+
+  /* ══ CRM surface, honest integrations, multi-site, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
+
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.build h4{color:#8A9BB4;} .statcol.build h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;max-width:760px;}
+
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+
+  /* the escalation strip — the one thing on this page that is not a feature */
+  .escband{background:#0B0F17;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+  .escband .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:44px;align-items:center;}
+  @media(max-width:900px){.escband .wrap{grid-template-columns:1fr;gap:24px;}}
+  .escband .lbl{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#F09186;}
+  .escband h3{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
+    font-weight:600;letter-spacing:-.035em;line-height:1.1;color:#fff;}
+  .escsteps{display:grid;gap:10px;}
+  .escsteps div{display:flex;gap:12px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.7;
+    color:var(--tx2);font-weight:500;border:1px solid var(--hair);border-radius:14px;padding:14px 16px;
+    background:rgba(255,255,255,.03);}
+  .escsteps div b{color:#fff;font-weight:700;}
+  .escsteps div i{flex:none;font-style:normal;color:#F09186;font-weight:800;font-size:var(--fs-xs);padding-top:2px;}
+</style>
+</head>
+<body data-grade="trust">
+
+<!-- ═══════ HERO · one enquiry call, with a clock time on it ═══════ -->
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/18429307/pexels-photo-18429307.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+           srcset="https://images.pexels.com/photos/18429307/pexels-photo-18429307.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/18429307/pexels-photo-18429307.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/18429307/pexels-photo-18429307.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="100vw"
+         alt="" width="1600" height="1067" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v24.1">v24.1</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="./dental.html">Dental</a></li><li><a href="./clinics.html">Clinics &amp; med-spa</a></li><li><a href="./veterinary.html">Veterinary</a></li><li><a href="./senior-care.html" aria-current="page" class="np-here">Senior living &amp; care</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home &amp; property</p><ul aria-labelledby="nh-trade-1"><li><a href="./home-services.html">Home services</a></li><li><a href="./pest-control.html">Pest control</a></li><li><a href="./property-management.html">Property management</a></li><li><a href="./real-estate.html">Estate &amp; lettings</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Vehicle, plant &amp; storage</p><ul aria-labelledby="nh-trade-2"><li><a href="./auto-repair.html">Auto repair</a></li><li><a href="./equipment-rental.html">Equipment &amp; tool hire</a></li><li><a href="./self-storage.html">Self-storage</a></li><li><a href="./movers.html">Movers &amp; removals</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Booked by appointment</p><ul aria-labelledby="nh-trade-3"><li><a href="./salons.html">Salons &amp; barbers</a></li><li><a href="./fitness.html">Gyms &amp; studios</a></li><li><a href="./academies.html">Tutoring &amp; academies</a></li><li><a href="./golf.html">Golf &amp; country clubs</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-4"><li><a href="./stays.html">Boutique stays</a></li><li><a href="./venues.html">Wedding &amp; venues</a></li><li><a href="./restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">Professional &amp; public</p><ul aria-labelledby="nh-trade-5"><li><a href="./legal.html">Legal</a></li><li><a href="./funeral-homes.html">Funeral homes</a></li><li><a href="./universities.html">Universities &amp; admissions</a></li><li><a href="./public-sector.html">Public sector</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">Online &amp; multi-site</p><ul aria-labelledby="nh-trade-6"><li><a href="./ecommerce.html">Online stores</a></li><li><a href="./franchise.html">Franchise &amp; multi-site</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../industries.html">All twenty-five trades · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-panel">
+      <span class="eyebrow"><i></i>For&nbsp;care homes, supported living &amp; home care · the&nbsp;enquiry call</span>
+      <h1>9:20 PM. The&nbsp;ward wants the&nbsp;bed <br><em>back by&nbsp;Friday.</em></h1>
+      <p class="sub">His daughter has never made this&nbsp;call before. She wants to&nbsp;know whether you have a&nbsp;room, what a&nbsp;week costs, whether you take someone with&nbsp;his mobility, and whether she can come and look at&nbsp;the&nbsp;place. Saleringo answers, takes what she says without&nbsp;interpreting it, reads the&nbsp;weekly rate from&nbsp;the&nbsp;schedule you published, and puts a&nbsp;show-round in&nbsp;your&nbsp;diary for&nbsp;the&nbsp;morning.</p>
+      <div class="tradewords" aria-label="The words this trade actually uses">
+        <span class="hi">enquiry call</span><span class="hi">show-round</span><span class="hi">needs assessment</span>
+        <span>discharge date</span><span>weekly fee</span><span>respite</span>
+        <span>care band</span><span>rota gap</span><span>safeguarding lead</span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
+        <a class="btn btn-ghostl" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+      </div>
+      <p class="heroscroll"><a href="../index.html#start-here">New here? Start with&nbsp;the three-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
+      <div class="micro">Founding cohort open · your&nbsp;fee schedule is read as&nbsp;written, never estimated</div>
+      <div class="whofor">
+        <span class="whotxt">For&nbsp;providers where the&nbsp;enquiry line, the&nbsp;rota line and the&nbsp;families' line are all the&nbsp;same&nbsp;number — <b>founding cohort now open</b></span>
+      </div>
+    </div>
+
+    <!-- ── scene: the person who is actually on the phone ── -->
+    <div>
+    <div class="scene-frame light tiltcard rev">
+<div class="photo-scrim" style="height:clamp(300px,34vw,470px);">
+  <img class="ph" src="https://images.pexels.com/photos/7605216/pexels-photo-7605216.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+       srcset="https://images.pexels.com/photos/7605216/pexels-photo-7605216.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/7605216/pexels-photo-7605216.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/7605216/pexels-photo-7605216.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+       sizes="(max-width:900px) 100vw, 50vw" alt="A woman standing in a kitchen mid-phone-call, one hand raised, talking to someone she cannot see"
+       loading="lazy" decoding="async" width="1600" height="2400">
+</div>
+      <div class="scene-overlay tl">
+        <b>Calling for&nbsp;her&nbsp;father</b>
+        <span>Relationship and consent to&nbsp;discuss recorded before anything else</span>
+      </div>
+      <div class="scene-overlay br">
+        <b>Show-round held · 10:30 Thu</b>
+        <span>Weekly rate read from&nbsp;the&nbsp;published schedule, full schedule sent</span>
+      </div>
+    </div>
+    <p class="photocap">9:20 PM — the&nbsp;office closed at&nbsp;five and the&nbsp;enquiry still reaches an&nbsp;answer.
+      Illustrative photography; not a&nbsp;Saleringo customer.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════ THE ROOM · full-bleed photograph ═══════ -->
+<section class="roomband">
+  <div class="photosplit rev">
+    <div class="media">
+      <img class="ph" src="https://images.pexels.com/photos/34450318/pexels-photo-34450318.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+           srcset="https://images.pexels.com/photos/34450318/pexels-photo-34450318.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/34450318/pexels-photo-34450318.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/34450318/pexels-photo-34450318.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/34450318/pexels-photo-34450318.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="(max-width:900px) 100vw, 50vw"
+           alt="A quiet care home lounge in late afternoon sun, empty armchairs in a row beside a curtained window" loading="lazy" decoding="async" width="1600" height="1115">
+    </div>
+    <div class="copy reveal">
+      <span class="eyebrow light"><i></i>The&nbsp;room is ready. The&nbsp;phone is in&nbsp;somebody's&nbsp;pocket.</span>
+      <h2 class="h2" style="margin-top:22px">You get one&nbsp;chance <br>to&nbsp;be the&nbsp;place she&nbsp;rang&nbsp;back.</h2>
+      <p class="lead" style="margin-top:18px;">Everything a&nbsp;family notices on&nbsp;a&nbsp;show-round was decided deliberately — the&nbsp;light in&nbsp;the&nbsp;lounge, what the&nbsp;corridor smells like, who greets them. The&nbsp;call that&nbsp;decides whether they ever walk through&nbsp;the&nbsp;door usually comes at&nbsp;nine at&nbsp;night, to&nbsp;a&nbsp;line nobody is sitting at, and it goes to&nbsp;the&nbsp;next home on&nbsp;the&nbsp;list.</p>
+      <a class="linkcta" style="margin-top:28px;" href="../demo.html">See how it answers an&nbsp;enquiry&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- The page opens on a call that arrived out of hours. This is the arithmetic
+     underneath it — the same block on every trade page, never re-derived. -->
+<section class="dialsec t-md sec-dark bg-grid">
+  <div class="wrap">
+    <div class="nightfig scenefig reveal">
+      <div class="scenebox" data-scene="nightclock"></div>
+      <div>
+        <p class="scenecap"><b>A&nbsp;nine-to-six office is closed for&nbsp;15 of&nbsp;the&nbsp;day&rsquo;s&nbsp;24 hours</b> &mdash; and both weekend days after that. Across&nbsp;a&nbsp;full week
+          the&nbsp;office phone is staffed for&nbsp;<span class="num">45 of&nbsp;168 hours</span>.
+          A&nbsp;working daughter rings after she has got home, fed her&nbsp;own children and read the&nbsp;discharge letter — which is to&nbsp;say, in&nbsp;the&nbsp;other 123.</p>
+        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
+          collected. It is what an&nbsp;ordinary working week divides into.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHAT A NAMED REGULATOR ASKS FOR · the one cited claim on this page ═══════ -->
+<!-- Class-A evidence: the CMA's own published advice to UK care home providers,
+     16 November 2018, updated 8 December 2021. No percentage is asserted, because
+     we do not have one we can stand behind. -->
+<section class="sweep grain t-xl">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>Written by&nbsp;a&nbsp;regulator, not by&nbsp;us</span></div>
+      <h2 class="h2 onDark">In&nbsp;the&nbsp;UK, the&nbsp;fee question is not <br>a&nbsp;later conversation. It belongs at <em style="font-style:normal;color:var(--teal);">first&nbsp;contact.</em></h2>
+      <p class="lead onDark">The&nbsp;Competition and Markets Authority publishes consumer law advice for&nbsp;UK care home providers. Among the&nbsp;upfront information it expects prospective residents and their&nbsp;representatives to&nbsp;be given at&nbsp;the&nbsp;point of&nbsp;first contact — including on&nbsp;the&nbsp;provider&rsquo;s&nbsp;website — is information about&nbsp;fees and charges. First contact, for&nbsp;most families, is a&nbsp;phone call made in&nbsp;the&nbsp;evening.</p>
+    </div>
+
+    <div class="sweepgrid reveal">
+      <div class="sweepcard">
+        <span class="lb">What the&nbsp;advice describes</span>
+        <div class="big">First contact</div>
+        <p>Fees and charges sit in&nbsp;the&nbsp;list of&nbsp;upfront information the&nbsp;CMA expects to&nbsp;reach families at&nbsp;the&nbsp;start, not after&nbsp;a&nbsp;visit and not with&nbsp;the&nbsp;contract. That&nbsp;is a&nbsp;description of&nbsp;a&nbsp;conversation, and the&nbsp;conversation happens on&nbsp;the&nbsp;phone.</p>
+      </div>
+      <div class="sweepcard after">
+        <span class="lb">What that&nbsp;requires of&nbsp;the&nbsp;line</span>
+        <div class="big">Somebody answering</div>
+        <p>Published rates on&nbsp;a&nbsp;website do not read themselves out at&nbsp;half past&nbsp;nine. An&nbsp;answered line that&nbsp;reads the&nbsp;band she asked for&nbsp;and sends the&nbsp;full schedule is the&nbsp;mechanism, and it is the&nbsp;one part of&nbsp;this&nbsp;a&nbsp;piece of&nbsp;software can actually take on.</p>
+      </div>
+    </div>
+
+    <p class="src reveal">Source: <a href="https://www.gov.uk/government/publications/care-homes-consumer-law-advice-for-providers" target="_blank" rel="noopener">Competition and Markets Authority &mdash; <i>Care homes: consumer law advice for providers</i></a>, published 16&nbsp;November&nbsp;2018, updated 8&nbsp;December&nbsp;2021. Read the&nbsp;guidance itself; we have not paraphrased it into&nbsp;a&nbsp;claim it does not make, and we have not attached a&nbsp;percentage to&nbsp;it.</p>
+
+    <div class="kpiband reveal">
+      <div class="kpi"><div class="n">168</div><div class="l">hours in&nbsp;a&nbsp;week during which an&nbsp;enquiry can arrive</div></div>
+      <div class="kpi"><div class="n">45</div><div class="l">of&nbsp;them a&nbsp;nine-to-six weekday office is staffed</div></div>
+      <div class="kpi"><div class="n">0</div><div class="l">figures the&nbsp;AI may speak that&nbsp;are not on&nbsp;your&nbsp;published schedule</div></div>
+      <div class="kpi"><div class="n">1</div><div class="l">named person a&nbsp;safeguarding call is put through&nbsp;to, immediately</div></div>
+    </div>
+
+    <p class="note reveal">There is a&nbsp;temptation on&nbsp;a&nbsp;page like this&nbsp;to&nbsp;produce a&nbsp;figure for&nbsp;how many enquiry calls go unanswered in&nbsp;this&nbsp;sector. We do not have one from&nbsp;a&nbsp;source we would be willing to&nbsp;name, so there isn't one here. What is here is a&nbsp;regulator&rsquo;s&nbsp;published expectation about&nbsp;when fee information should reach a&nbsp;family, and the&nbsp;arithmetic of&nbsp;a&nbsp;week.<br><br>
+      <b>The&nbsp;CMA&rsquo;s&nbsp;advice addresses UK care home providers.</b> It is guidance on&nbsp;consumer law, it is not the&nbsp;whole of&nbsp;the&nbsp;law, and it does not apply outside the&nbsp;United Kingdom. Nothing on&nbsp;this&nbsp;page is legal advice and nothing here certifies any provider as&nbsp;compliant with&nbsp;anything. Your&nbsp;own advisers sign off your&nbsp;fee schedule and your&nbsp;contracts, exactly as&nbsp;they do today.</p>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ TWO CALLS, ONE EVENING ═══════ -->
+<section class="pairs bg-grid grain t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>The&nbsp;same evening, two&nbsp;very different calls</span></div>
+      <h2 class="h2 onDark">One call is an&nbsp;enquiry. <br>One call is a&nbsp;concern, and it does&nbsp;not&nbsp;wait.</h2>
+      <p class="lead onDark">Both arrive on&nbsp;the&nbsp;same line, forty minutes apart, long after&nbsp;the&nbsp;office has emptied. The&nbsp;first is answered by&nbsp;reading a&nbsp;rate and opening the&nbsp;diary. The&nbsp;second is answered by&nbsp;stopping, saying so, and getting a&nbsp;named person onto&nbsp;the&nbsp;call.</p>
+    </div>
+
+    <div class="pairgrid reveal">
+      <div class="pairwrap">
+        <div class="plabel"><b>21:40 · the&nbsp;enquiry</b><span>discharge letter in&nbsp;her&nbsp;hand</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;home</b><br><span>Enquiry line · 9:40 PM</span></span></div>
+          <div class="mbody">
+            <div class="m in">My&nbsp;dad's&nbsp;in&nbsp;hospital and they want him out by&nbsp;Friday. Have you got a&nbsp;room, and what does it cost?</div>
+            <div class="m out">We have vacancies at&nbsp;the&nbsp;moment; the&nbsp;manager confirms whether one is right for&nbsp;him after&nbsp;an&nbsp;assessment, so I won't say a&nbsp;room is held. Residential is <b>£1,450 a&nbsp;week</b> on&nbsp;our&nbsp;published schedule and I'm&nbsp;sending you the&nbsp;whole schedule now.<span class="tick">✓✓</span></div>
+            <div class="m in">Could we come and see it? Ideally tomorrow.</div>
+            <div class="m out">Thursday 10:30 or Friday 14:00 with&nbsp;the&nbsp;manager. I've&nbsp;also passed the&nbsp;Friday discharge date to&nbsp;her&nbsp;so she can ring the&nbsp;ward in&nbsp;the&nbsp;morning rather than the&nbsp;afternoon.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="hchip">→ Show-round booked at&nbsp;9:44 PM</span>
+          <span class="rchip">✓ Rate read from&nbsp;the&nbsp;schedule, unedited</span>
+        </div>
+      </div>
+
+      <div class="pairwrap">
+        <div class="plabel"><b>22:15 · the&nbsp;concern</b><span>escalation, not intake</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;home</b><br><span>Enquiry line · 10:15 PM</span></span></div>
+          <div class="mbody">
+            <div class="m in">I visited my&nbsp;mum today and there was a&nbsp;bruise on&nbsp;her&nbsp;arm nobody could explain to&nbsp;me.</div>
+            <div class="m out">I'm&nbsp;stopping there — that&nbsp;goes to&nbsp;a&nbsp;person, not into&nbsp;a&nbsp;message. I'm&nbsp;calling Ruth Okafor, the&nbsp;safeguarding lead, on&nbsp;her&nbsp;out-of-hours number now, and I'm&nbsp;staying on&nbsp;the&nbsp;line with&nbsp;you while it rings.<span class="tick">✓✓</span></div>
+            <div class="m in">Should I be worried? What usually causes that?</div>
+            <div class="m out">I'm&nbsp;not going to&nbsp;answer that. I'd&nbsp;be guessing about&nbsp;your&nbsp;mother's&nbsp;health, and that&nbsp;is exactly the&nbsp;kind of&nbsp;guess that&nbsp;does harm. Ruth is picking up.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="vchip">✓ Named person called within&nbsp;the&nbsp;call</span>
+          <span class="rchip">✕ Not&nbsp;logged, not&nbsp;triaged, not&nbsp;left for&nbsp;the&nbsp;morning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- who is actually on the other end of those calls -->
+    <div class="audgrid three reveal" style="margin-top:64px;">
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/7735799/pexels-photo-7735799.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/7735799/pexels-photo-7735799.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7735799/pexels-photo-7735799.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7735799/pexels-photo-7735799.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7735799/pexels-photo-7735799.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A woman in glasses on a mobile phone indoors, listening intently with her hand at her chin" loading="lazy" decoding="async" width="1600" height="1167">
+        <b>The&nbsp;daughter, after&nbsp;the&nbsp;ward rang</b>
+        <span>Has never done this&nbsp;before, has a&nbsp;date to&nbsp;work to, and is ringing four homes tonight</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/29372730/pexels-photo-29372730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/29372730/pexels-photo-29372730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/29372730/pexels-photo-29372730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/29372730/pexels-photo-29372730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/29372730/pexels-photo-29372730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A care worker sitting and talking with an older woman in her own flat, a walking crutch resting on the bed" loading="lazy" decoding="async" width="1600" height="1067">
+        <b>The&nbsp;home care client's&nbsp;family</b>
+        <span>Rings to&nbsp;move the&nbsp;Tuesday visit, or because the&nbsp;carer has not arrived yet</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/18459204/pexels-photo-18459204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/18459204/pexels-photo-18459204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/18459204/pexels-photo-18459204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/18459204/pexels-photo-18459204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/18459204/pexels-photo-18459204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="Residents and a care worker around a dining table in a care home day room, cups and plates on the table" loading="lazy" decoding="async" width="1600" height="1067">
+        <b>The&nbsp;social worker, and the&nbsp;discharge team</b>
+        <span>Wants capacity, banding and a&nbsp;date — and wants it in&nbsp;writing, not in&nbsp;a&nbsp;voicemail</span>
+      </div>
+    </div>
+    <p class="photocap audnote">Illustrative photography — these are not Saleringo customers, and no&nbsp;photograph on&nbsp;this&nbsp;page shows a&nbsp;real resident, a&nbsp;real family or a&nbsp;real incident.</p>
+
+    <div class="note reveal">Both threads above are worked illustrations. The&nbsp;<b>£1,450 a&nbsp;week</b> is the&nbsp;sample published schedule this&nbsp;page uses throughout; your&nbsp;own schedule supplies the&nbsp;real figures, and Ruth Okafor is a&nbsp;placeholder for&nbsp;whoever your&nbsp;safeguarding lead actually is.</div>
+  </div>
+</section>
+
+<!-- ═══════ THE ESCALATION STRIP · the heart of the page ═══════ -->
+<section class="escband t-sm">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="lbl">The&nbsp;one path that&nbsp;is not a&nbsp;workflow</span>
+      <h3>If a&nbsp;caller describes someone at&nbsp;risk, <br>the&nbsp;AI&rsquo;s&nbsp;only job is to&nbsp;get a&nbsp;person on&nbsp;the&nbsp;line.</h3>
+    </div>
+    <div class="escsteps reveal">
+      <div><i>01</i><span><b>It stops taking details.</b> No&nbsp;further intake questions, no&nbsp;"and what time did that&nbsp;happen", no&nbsp;attempt to&nbsp;establish whether the&nbsp;concern is founded. Establishing that&nbsp;is a&nbsp;trained person&rsquo;s&nbsp;work.</span></div>
+      <div><i>02</i><span><b>It says out loud what it is doing.</b> The&nbsp;caller hears the&nbsp;name of&nbsp;the&nbsp;person being called and why. Nobody is told a&nbsp;manager "will be in&nbsp;touch".</span></div>
+      <div><i>03</i><span><b>It dials your&nbsp;escalation list, in&nbsp;order, during the&nbsp;call.</b> Safeguarding lead, then registered manager, then on-call director — real numbers you supply, tried one after&nbsp;another while the&nbsp;caller is still there.</span></div>
+      <div><i>04</i><span><b>If the&nbsp;caller describes a&nbsp;medical emergency, it says to&nbsp;call the&nbsp;emergency services.</b> It gives the&nbsp;number for&nbsp;the&nbsp;caller&rsquo;s&nbsp;country and does not ask them to&nbsp;stay on&nbsp;the&nbsp;line for&nbsp;anything else first.</span></div>
+      <div><i>05</i><span><b>The&nbsp;record cannot be closed by&nbsp;the&nbsp;AI.</b> A&nbsp;call marked as&nbsp;a&nbsp;concern stays open, timestamped, with&nbsp;every&nbsp;number tried and who answered, until a&nbsp;named person closes it.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ THE CARE ENQUIRY CRM ═══════ -->
+<section class="crmsec sec-dark bg-spot t-xl" id="care-crm">
+  <div class="wrap">
+    <div class="head reveal" >
+      <span class="eyebrow"><i></i>The&nbsp;care enquiry CRM</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Most AI receptionists hand you a&nbsp;transcript. <br>This&nbsp;one hands you <em style="font-style:normal;color:var(--teal);">an&nbsp;enquiry already written&nbsp;up.</em></h2>
+      <p class="secintro">A&nbsp;polite answer is not a&nbsp;system. The&nbsp;other half of&nbsp;Saleringo is a&nbsp;CRM built around&nbsp;the&nbsp;enquiry — who is calling and whether they may discuss the&nbsp;person, where that&nbsp;person is tonight, what the&nbsp;family says they are looking for, the&nbsp;date they are working to — moving through&nbsp;the&nbsp;stages your&nbsp;manager already works in.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Enquiries</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">This&nbsp;week</div>
+          <span class="it on"><span class="dot"></span>New enquiries<span class="n">11</span></span>
+          <span class="it"><span class="dot"></span>Show-rounds<span class="n">5</span></span>
+          <span class="it"><span class="dot"></span>Assessments<span class="n">3</span></span>
+          <span class="it"><span class="dot"></span>Home care visits<span class="n">7</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>Fee questions</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Fee schedule</span>
+          <span class="it"><span class="dot"></span>Escalation list</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation"><span class="sw"></span>Enquiry<span class="ct">4</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">HB</span><span class="nm">H. B. — daughter</span></div>
+                <div class="mt">Father in&nbsp;hospital · ward pushing for&nbsp;Friday · residential asked about</div>
+                <div class="ft"><span class="tag hot">Discharge date</span><span class="chan">Phone · 9:40 PM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">NP</span><span class="nm">N. P. — son</span></div>
+                <div class="mt">Asked the&nbsp;weekly rate before anything else · schedule sent</div>
+                <div class="ft"><span class="tag ai">Rate read</span><span class="chan">Phone · 7:50 PM</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Show-round<span class="ct">5</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">MA</span><span class="nm">M. A. — niece</span></div>
+                <div class="mt">Thu 10:30 with&nbsp;the&nbsp;manager · wheelchair access flagged as&nbsp;stated</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">Booked overnight</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">DK</span><span class="nm">D. K. — husband</span></div>
+                <div class="mt">Respite fortnight in&nbsp;March · returning enquiry from&nbsp;last year</div>
+                <div class="ft"><span class="tag">Respite</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Assessment booked<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">SR</span><span class="nm">S. R. — social worker</span></div>
+                <div class="mt">Assessment Wed 09:00 · funding route not&nbsp;discussed on&nbsp;the&nbsp;call</div>
+                <div class="ft"><span class="tag">Assessment</span><span class="chan">Phone · 4:20 PM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">JT</span><span class="nm">J. T. — daughter</span></div>
+                <div class="mt">Home care · four visits a&nbsp;day requested · manager to&nbsp;confirm capacity</div>
+                <div class="ft"><span class="tag">Home care</span><span class="chan">Phone · 8:05 PM</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>With&nbsp;a&nbsp;person<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">!!</span><span class="nm">Caller — daughter</span></div>
+                <div class="mt">Concern raised about&nbsp;a&nbsp;bruise — safeguarding lead called during the&nbsp;call</div>
+                <div class="ft"><span class="tag hot">Escalated</span><span class="chan">Open until closed by&nbsp;a&nbsp;person</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">EW</span><span class="nm">E. W. — son</span></div>
+                <div class="mt">Asked what the&nbsp;council would pay — refused, routed to&nbsp;the&nbsp;manager</div>
+                <div class="ft"><span class="tag">Refused</span><span class="chan">Held</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stages, fields, fee schedule and escalation list are configured for&nbsp;your&nbsp;service during onboarding. No&nbsp;resident, family or incident shown here is real.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div>
+        <span class="eyebrow"><i></i>Nine fields, and two&nbsp;of&nbsp;them stop the&nbsp;call</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">A&nbsp;generic CRM asks what the&nbsp;customer wants. <br>This&nbsp;one asks who is allowed to&nbsp;tell&nbsp;you.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Relationship and consent to&nbsp;discuss come first.</b> The&nbsp;caller is almost never the&nbsp;person who would move in. Who they are, and whether the&nbsp;person concerned knows they are ringing, is established before any detail about&nbsp;that&nbsp;person is written down.</span></li>
+          <li><i>→</i><span><b>Where the&nbsp;person is tonight routes everything.</b> At&nbsp;home, on&nbsp;a&nbsp;ward, in&nbsp;another home, in&nbsp;temporary respite — it decides who else has to&nbsp;be spoken to&nbsp;and how fast the&nbsp;assessment has to&nbsp;happen.</span></li>
+          <li><i>→</i><span><b>What the&nbsp;family says they need is stored as&nbsp;their&nbsp;words.</b> "He gets confused in&nbsp;the&nbsp;evenings" is recorded as&nbsp;that&nbsp;sentence. It is never converted into&nbsp;a&nbsp;care band, a&nbsp;diagnosis or a&nbsp;recommendation by&nbsp;the&nbsp;AI.</span></li>
+          <li><i>→</i><span><b>The&nbsp;discharge date is a&nbsp;scheduling rule, not a&nbsp;note.</b> A&nbsp;stated date pulls the&nbsp;show-round and the&nbsp;assessment to&nbsp;the&nbsp;first slots that&nbsp;land before it, and marks the&nbsp;file so the&nbsp;manager sees it first.</span></li>
+          <li><i>→</i><span><b>Two fields end the&nbsp;script.</b> A&nbsp;safeguarding concern and a&nbsp;described medical emergency are not fields that&nbsp;get filled in&nbsp;and moved on&nbsp;from. Either one stops the&nbsp;conversation and starts dialling.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;record it fills</a>
+      </div>
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">HB</span>
+            <span><b>H. B. — enquiry</b><span>Enquiry line, 9:40 PM · 6 minutes</span></span>
+            <span class="stg">Show-round booked</span>
+          </div>
+          <div class="crow"><span class="k">Caller &amp; relationship</span><span class="v">Daughter · calling with&nbsp;his&nbsp;knowledge <em>— asked and recorded, not assumed</em></span></div>
+          <div class="crow"><span class="k">Where he is now</span><span class="v">Acute ward, Bay 3 — as&nbsp;stated by&nbsp;the&nbsp;caller</span></div>
+          <div class="crow"><span class="k">Date being worked to</span><span class="v">Friday, per&nbsp;the&nbsp;ward — treated as&nbsp;a&nbsp;scheduling constraint</span></div>
+          <div class="crow"><span class="k">What she described</span><span class="v">"Unsteady on&nbsp;his&nbsp;feet, gets confused at&nbsp;night"<span class="aibadge">Verbatim</span></span></div>
+          <div class="crow"><span class="k">Care type asked about</span><span class="v">Residential — her&nbsp;words, not a&nbsp;banding</span></div>
+          <div class="crow"><span class="k">Fee read</span><span class="v">£1,450/week residential · schedule v6 sent in&nbsp;writing</span></div>
+          <div class="crow"><span class="k">Funding</span><span class="v">Not&nbsp;discussed — manager&rsquo;s&nbsp;conversation</span></div>
+          <div class="crow"><span class="k">Show-round</span><span class="v">Thu 10:30 held with&nbsp;the&nbsp;registered manager</span></div>
+          <div class="crow"><span class="k">Guardrail</span><span class="v">No&nbsp;care level assessed, no&nbsp;place promised, no&nbsp;clinical comment</span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;family and not a&nbsp;resident.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WORKED EXAMPLES · six calls, start to finish ═══════ -->
+<section class="sec-dark bg-grid t-md" id="worked-examples">
+  <div class="wrap">
+    <div class="reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Worked examples · senior care</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Six calls a&nbsp;provider&nbsp;takes&nbsp;— <br>and what each&nbsp;one left&nbsp;behind.</h2>
+      <p class="lead onDark" style="margin-top:18px;">Not a&nbsp;demo script. Six ordinary calls: the&nbsp;hour they arrive,
+        the&nbsp;channel they arrive on, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;one produced — a&nbsp;show-round in&nbsp;the&nbsp;diary, a&nbsp;rate read as&nbsp;published, a&nbsp;question refused, a&nbsp;named person dialled. Every&nbsp;figure below comes from&nbsp;the&nbsp;same sample schedule: <b>£1,450</b> a&nbsp;week residential, <b>£1,690</b> nursing, <b>£28.50</b> an&nbsp;hour for&nbsp;home care.</p>
+    </div>
+
+    <div class="exgrid" style="margin-top:38px;">
+
+      <div class="excard">
+        <div class="exhead"><span class="when">21:40</span><span class="via">Phone</span><span class="tag solved">Show-round booked</span></div>
+        <div class="exbody">
+          <p class="exq">My&nbsp;dad's&nbsp;in&nbsp;hospital and they want the&nbsp;bed back by&nbsp;Friday. Have you got anything?</p>
+          <div class="exturn"><span class="who">Saleringo</span>We do have vacancies this&nbsp;week. I can't tell you a&nbsp;room is his&nbsp;— that&nbsp;follows an&nbsp;assessment by&nbsp;our&nbsp;manager, and she is the&nbsp;one who decides. What I can do tonight is book you in&nbsp;to&nbsp;see the&nbsp;place and put the&nbsp;Friday date in&nbsp;front of&nbsp;her&nbsp;first thing.</div>
+          <div class="exturn"><span class="who">Caller</span>What's&nbsp;it going to&nbsp;cost?</div>
+          <div class="exturn"><span class="who">Saleringo</span>Residential is <b>£1,450 a&nbsp;week</b> on&nbsp;our&nbsp;published schedule. I'm&nbsp;sending you the&nbsp;whole schedule now so you have every&nbsp;line, including what is and isn't included, before you speak to&nbsp;anybody.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Show-round held for&nbsp;<b>Thursday 10:30</b> with&nbsp;the&nbsp;registered manager</span></div>
+            <div class="exrow"><i>✓</i><span>Discharge date recorded as&nbsp;a&nbsp;scheduling constraint, file marked for&nbsp;the&nbsp;manager</span></div>
+            <div class="exrow"><i>✓</i><span>Weekly rate read as&nbsp;published; full schedule sent, version stamped</span><span class="amt">£1,450</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;room promised, no&nbsp;date promised, no&nbsp;view offered on&nbsp;whether he is suitable</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration of&nbsp;how the&nbsp;product behaves — not a&nbsp;customer story and not a&nbsp;real family.
+            The&nbsp;only thing being demonstrated is that&nbsp;the&nbsp;call was answered, and that&nbsp;what it did and did not
+            say was decided in&nbsp;advance rather than at&nbsp;half past&nbsp;nine.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">22:15</span><span class="via">Phone</span><span class="tag human">Escalated · named person</span></div>
+        <div class="exbody">
+          <p class="exq">There was a&nbsp;bruise on&nbsp;my&nbsp;mum's&nbsp;arm today and nobody could tell me where it came from.</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;going to&nbsp;stop you there, because this&nbsp;needs a&nbsp;person and not
+            a&nbsp;message. I'm&nbsp;ringing Ruth Okafor, our&nbsp;safeguarding lead, on&nbsp;her&nbsp;out-of-hours number right now. I'll&nbsp;stay
+            on&nbsp;the&nbsp;line with&nbsp;you while it rings, and if she doesn't answer I'll&nbsp;try the&nbsp;registered manager next.</div>
+          <div class="exturn"><span class="who">Caller</span>Is that&nbsp;something that&nbsp;happens a&nbsp;lot at&nbsp;her&nbsp;age?</div>
+          <div class="exturn hand"><span class="who">Saleringo</span>That&nbsp;isn't mine to&nbsp;answer. Anything I said about&nbsp;why she has
+            a&nbsp;bruise would be a&nbsp;guess about&nbsp;your&nbsp;mother's&nbsp;health, and a&nbsp;guess is the&nbsp;worst thing you could be given tonight.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Safeguarding lead dialled <b>during the&nbsp;call</b>, with&nbsp;the&nbsp;caller still on&nbsp;the&nbsp;line</span></div>
+            <div class="exrow"><i>✓</i><span>Every&nbsp;number tried, and who answered, timestamped on&nbsp;the&nbsp;record</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;clinical comment. No&nbsp;"it's&nbsp;probably nothing". No&nbsp;reassurance offered.</span></div>
+            <div class="exrow"><i>✕</i><span>Record cannot be closed by&nbsp;the&nbsp;AI — it stays open until a&nbsp;named person closes it</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. This&nbsp;is the&nbsp;call the&nbsp;whole page is built around.
+            An&nbsp;answering system that&nbsp;treats a&nbsp;concern as&nbsp;a&nbsp;message to&nbsp;pass on&nbsp;in&nbsp;the&nbsp;morning has no&nbsp;business on&nbsp;a&nbsp;care
+            provider's&nbsp;line, which is why escalation here is dialling, not logging.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">19:50</span><span class="via">Phone</span><span class="tag human">Refused · routed</span></div>
+        <div class="exbody">
+          <p class="exq">Would the&nbsp;council pay for&nbsp;this? She's&nbsp;only got her&nbsp;house and a&nbsp;small pension.</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;not able to&nbsp;answer that, and I don't want to&nbsp;guess at&nbsp;it —
+            what someone is entitled to&nbsp;depends on&nbsp;a&nbsp;financial assessment and on&nbsp;rules I'm&nbsp;not the&nbsp;right thing to&nbsp;be reading
+            you. Our&nbsp;manager goes through&nbsp;that&nbsp;properly, including what happens if the&nbsp;funded rate doesn't meet our&nbsp;fee.
+            I've&nbsp;written your&nbsp;question down as&nbsp;you asked it and held Tuesday 11:00 for&nbsp;her&nbsp;to&nbsp;call you.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Question recorded <b>verbatim</b>, so the&nbsp;family is not asked to&nbsp;explain twice</span></div>
+            <div class="exrow"><i>✓</i><span>Call-back with&nbsp;the&nbsp;manager held for&nbsp;Tuesday 11:00</span></div>
+            <div class="exrow"><i>✕</i><span>Nothing said about&nbsp;eligibility, means testing, top-ups or local authority rates</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;fee quoted "if the&nbsp;council pays" — a&nbsp;figure that&nbsp;does not exist on&nbsp;the&nbsp;schedule</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Funding is the&nbsp;single subject on&nbsp;this&nbsp;line where
+            a&nbsp;confident wrong answer costs a&nbsp;family real money and costs the&nbsp;provider a&nbsp;relationship. It is a&nbsp;permanent
+            handoff, not a&nbsp;confidence threshold.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">07:10</span><span class="via">Phone</span><span class="tag hot">Rota gap · manager alerted</span></div>
+        <div class="exbody">
+          <p class="exq">Nobody has come for&nbsp;Mum's&nbsp;morning call. She's&nbsp;still in&nbsp;bed and she needs her&nbsp;tablets.</p>
+          <div class="exturn"><span class="who">Saleringo</span>I have her&nbsp;visit as&nbsp;07:00 with&nbsp;a&nbsp;thirty-minute call. I'm&nbsp;alerting
+            the&nbsp;on-duty coordinator now with&nbsp;the&nbsp;address and the&nbsp;missed time, and I'll&nbsp;confirm to&nbsp;you which carer is coming
+            and when as&nbsp;soon as&nbsp;she has reassigned it.</div>
+          <div class="exturn"><span class="who">Caller</span>Can she take the&nbsp;tablets herself in&nbsp;the&nbsp;meantime?</div>
+          <div class="exturn hand"><span class="who">Saleringo</span>I can't advise on&nbsp;medication. If you're&nbsp;worried about&nbsp;her&nbsp;right
+            now, ring 999. Otherwise the&nbsp;coordinator will speak to&nbsp;you directly — she is being called as&nbsp;we speak.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Missed visit raised with&nbsp;the&nbsp;on-duty coordinator at&nbsp;<b>07:11</b>, address attached</span></div>
+            <div class="exrow"><i>✓</i><span>Scheduled visit time confirmed back to&nbsp;the&nbsp;family from&nbsp;the&nbsp;rota, not from&nbsp;memory</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;medication advice. No&nbsp;"it should be fine". Emergency number given plainly.</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;promise of&nbsp;a&nbsp;replacement time until a&nbsp;coordinator has actually assigned one</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. In&nbsp;home care the&nbsp;enquiry line and the&nbsp;operational
+            line are the&nbsp;same number, which is why a&nbsp;missed visit and a&nbsp;new enquiry have to&nbsp;be told apart in&nbsp;the&nbsp;first
+            fifteen seconds and sent to&nbsp;different people.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Sat 11:30</span><span class="via">Phone</span><span class="tag human">Refused · assessment offered</span></div>
+        <div class="exbody">
+          <p class="exq">She's&nbsp;getting worse. Does she need nursing care now, or would residential do?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;not going to&nbsp;answer that&nbsp;one, and I'd&nbsp;be wary of&nbsp;anywhere
+            that&nbsp;did over the&nbsp;phone. Which kind of&nbsp;care someone needs follows an&nbsp;assessment by&nbsp;a&nbsp;nurse or our&nbsp;manager, and
+            often by&nbsp;the&nbsp;local authority as&nbsp;well. What I can do is book that&nbsp;assessment and send you both&nbsp;rates so you know
+            the&nbsp;range: residential <b>£1,450</b>, nursing <b>£1,690</b> a&nbsp;week.</div>
+          <div class="exturn"><span class="who">Caller</span>Monday would work.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Assessment booked for&nbsp;Monday with&nbsp;the&nbsp;person who is qualified to&nbsp;make the&nbsp;judgement</span></div>
+            <div class="exrow"><i>✓</i><span>Both&nbsp;published rates read, so the&nbsp;family can plan without&nbsp;being told which applies</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;care level suggested. No&nbsp;"it sounds like nursing". No&nbsp;clinical inference from&nbsp;symptoms.</span></div>
+            <div class="exrow"><i>✓</i><span>The&nbsp;caller&rsquo;s&nbsp;description of&nbsp;the&nbsp;change kept in&nbsp;her&nbsp;own words for&nbsp;the&nbsp;assessor</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. "Which kind of&nbsp;care does she need" is the&nbsp;most
+            common question on&nbsp;this&nbsp;line and the&nbsp;least safe for&nbsp;software to&nbsp;answer, because the&nbsp;answer changes the&nbsp;price,
+            the&nbsp;staffing and the&nbsp;family&rsquo;s&nbsp;whole plan.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Tue 08:40</span><span class="via">Web chat</span><span class="tag solved">Respite · dates held</span></div>
+        <div class="exbody">
+          <p class="exq">I look after my&nbsp;husband and I'm&nbsp;having an&nbsp;operation in&nbsp;March. Do you do two weeks?</p>
+          <div class="exturn"><span class="who">Saleringo</span>We do take respite stays. Respite is charged at&nbsp;the&nbsp;same weekly
+            rate as&nbsp;a&nbsp;permanent place for&nbsp;the&nbsp;same care type — <b>£1,450</b> residential — with&nbsp;a&nbsp;minimum stay set out
+            on&nbsp;the&nbsp;schedule I'm&nbsp;sending. Do you have the&nbsp;operation dates? I can hold provisional dates and put the&nbsp;pre-admission
+            assessment before them.</div>
+          <div class="exturn"><span class="who">Visitor</span>The&nbsp;9th to&nbsp;the&nbsp;23rd, roughly.</div>
+          <div class="exturn"><span class="who">Saleringo</span>Held provisionally, with&nbsp;the&nbsp;assessment on&nbsp;the&nbsp;2nd. Provisional
+            means the&nbsp;manager confirms it — it is not a&nbsp;booking until she has.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Respite dates held provisionally with&nbsp;the&nbsp;assessment scheduled ahead of&nbsp;them</span></div>
+            <div class="exrow"><i>✓</i><span>Rate and minimum stay read from&nbsp;the&nbsp;schedule, both&nbsp;sent in&nbsp;writing</span><span class="amt">£1,450</span></div>
+            <div class="exrow"><i>✕</i><span>"Provisional" said out loud rather than implied — nothing is confirmed by&nbsp;the&nbsp;AI</span></div>
+            <div class="exrow"><i>✓</i><span>Pipeline: <b>Enquiry → Assessment booked</b>, flagged <b>respite</b></span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Respite enquiries usually come from&nbsp;the&nbsp;carer
+            themselves, months out, and they are the&nbsp;enquiries most often lost — not to&nbsp;a&nbsp;competitor, but to&nbsp;a&nbsp;voicemail
+            nobody returned before the&nbsp;date passed.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>What it will and won’t answer</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">The&nbsp;line, written&nbsp;down <br>before&nbsp;a&nbsp;family hears&nbsp;anything.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Your&nbsp;registered manager approves every&nbsp;row of&nbsp;this&nbsp;during onboarding. The&nbsp;third
+        column is the&nbsp;one to&nbsp;read twice — the&nbsp;<b style="color:#F09186;">Never</b> rows are what make this&nbsp;safe on&nbsp;a&nbsp;care provider's&nbsp;line at&nbsp;all.</p>
+    </div>
+    <div class="qbank">
+      <div class="qrow hd"><span>A&nbsp;caller asks</span><span>What happens</span><span>Handled by</span></div>
+      <div class="qrow"><span class="qq">What does a&nbsp;week cost?</span>
+        <span class="qa">Reads the&nbsp;published rate for&nbsp;the&nbsp;care type asked about — £1,450 residential — and sends the&nbsp;full schedule.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Have you got any vacancies?</span>
+        <span class="qa">States current vacancy status as&nbsp;your&nbsp;manager last set it, and says a&nbsp;place follows an&nbsp;assessment.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can we come and look round?</span>
+        <span class="qa">Books the&nbsp;show-round from&nbsp;your&nbsp;own diary and confirms it in&nbsp;writing.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">He's&nbsp;being discharged Friday.</span>
+        <span class="qa">Records the&nbsp;date as&nbsp;a&nbsp;constraint, pulls the&nbsp;assessment in&nbsp;front of&nbsp;it and flags the&nbsp;file for&nbsp;the&nbsp;manager.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Do you take respite?</span>
+        <span class="qa">Answers from&nbsp;your&nbsp;published terms, holds provisional dates, and says out loud that&nbsp;they are provisional.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">What time is Mum's&nbsp;visit today?</span>
+        <span class="qa">Reads the&nbsp;scheduled visit from&nbsp;the&nbsp;rota. A&nbsp;missed or late visit goes to&nbsp;the&nbsp;on-duty coordinator.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Is my&nbsp;dad settling in&nbsp;all right?</span>
+        <span class="qa">Not&nbsp;answered by&nbsp;the&nbsp;AI. Taken as&nbsp;a&nbsp;call-back for&nbsp;the&nbsp;named nurse or key worker on&nbsp;his&nbsp;unit.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Can you hold the&nbsp;room until Friday?</span>
+        <span class="qa">States your&nbsp;published deposit and holding terms and hands the&nbsp;decision to&nbsp;the&nbsp;manager. It does not negotiate.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Does she need nursing or residential?</span>
+        <span class="qa">Refused. Care level follows an&nbsp;assessment by&nbsp;a&nbsp;qualified person, never a&nbsp;phone conversation.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Should I be worried about&nbsp;that&nbsp;bruise?</span>
+        <span class="qa">Refused, and escalated. The&nbsp;safeguarding lead is dialled during the&nbsp;call, not messaged after&nbsp;it.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Can she take her&nbsp;tablets herself?</span>
+        <span class="qa">Refused. No&nbsp;clinical or medication advice in&nbsp;any wording. Emergency number given if risk is described.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Would the&nbsp;council pay for&nbsp;her?</span>
+        <span class="qa">Refused. Nothing on&nbsp;eligibility, means testing, top-ups or funded rates. Routed to&nbsp;the&nbsp;manager.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Can you promise us a&nbsp;place for&nbsp;Friday?</span>
+        <span class="qa">Refused. No&nbsp;place and no&nbsp;date is promised by&nbsp;the&nbsp;AI, in&nbsp;any form, however hard the&nbsp;deadline.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Which home would you choose for&nbsp;your&nbsp;own mother?</span>
+        <span class="qa">Refused. It does not sell, does not compare and does not reassure in&nbsp;your&nbsp;voice.</span><span class="qs never">Never</span></div>
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">An&nbsp;ordinary&nbsp;week <br>at a&nbsp;forty-bed&nbsp;home.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Not a&nbsp;busy one. An&nbsp;ordinary one — with&nbsp;the&nbsp;share arriving while
+        the&nbsp;office is closed marked, because that&nbsp;is the&nbsp;part currently reaching a&nbsp;voicemail or the&nbsp;manager&rsquo;s&nbsp;own mobile at&nbsp;dinner.</p>
+    </div>
+    <div class="weekstrip">
+      <div class="weekday"><span class="d">Mon</span><div class="n">9<small> calls</small></div>
+        <ul><li><i>·</i>3 enquiries</li><li><i>·</i>5 office closed</li><li><i>·</i>4 fee questions</li></ul></div>
+      <div class="weekday"><span class="d">Tue</span><div class="n">7<small> calls</small></div>
+        <ul><li><i>·</i>2 enquiries</li><li><i>·</i>4 office closed</li></ul></div>
+      <div class="weekday peak"><span class="d">Wed</span><div class="n">11<small> calls</small></div>
+        <ul><li><i>·</i>4 enquiries</li><li><i>·</i>6 office closed</li><li><i>·</i>busiest evening</li></ul></div>
+      <div class="weekday"><span class="d">Thu</span><div class="n">8<small> calls</small></div>
+        <ul><li><i>·</i>3 enquiries</li><li><i>·</i>5 office closed</li><li><i>·</i>1 escalated</li></ul></div>
+      <div class="weekday"><span class="d">Fri</span><div class="n">9<small> calls</small></div>
+        <ul><li><i>·</i>3 enquiries</li><li><i>·</i>5 office closed</li><li><i>·</i>discharge day</li></ul></div>
+      <div class="weekday peak"><span class="d">Sat</span><div class="n">7<small> calls</small></div>
+        <ul><li><i>·</i>3 enquiries</li><li><i>·</i><b>closed all day</b></li></ul></div>
+      <div class="weekday"><span class="d">Sun</span><div class="n">5<small> calls</small></div>
+        <ul><li><i>·</i>2 enquiries</li><li><i>·</i><b>closed all day</b></li></ul></div>
+    </div>
+    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;forty-bed home — the&nbsp;shape of&nbsp;a&nbsp;week,
+      not a&nbsp;measurement and not a&nbsp;promise. On&nbsp;this&nbsp;shape <b>37 of&nbsp;56 calls arrive while the&nbsp;office is closed</b>.
+      That&nbsp;proportion is a&nbsp;property of&nbsp;the&nbsp;clock, not a&nbsp;claim about&nbsp;your&nbsp;service; the&nbsp;only number that&nbsp;matters is
+      in&nbsp;your&nbsp;own call log, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a> takes it.</p>
+
+    <p class="exlabel reveal" style="margin-top:56px;">
+      <b>We are not going to tell you how many enquiries you currently&nbsp;lose.</b>
+      We do not know your&nbsp;call log, and we are not going to&nbsp;invent one for&nbsp;a&nbsp;trade
+      like this. The&nbsp;rates are published on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing
+      page</a> and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator</a>
+      takes your&nbsp;own numbers &mdash; it defaults sceptical on&nbsp;purpose.</p>
+  </div>
+</section>
+
+<!-- ═══════ WHERE IT STOPS · paper ═══════ -->
+<section class="nogo bg-clinical t-xl">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>Where it stops</span>
+      <h2 class="h2" style="margin-top:22px">What it will <em style="font-style:normal;color:var(--red);">never</em>&nbsp;do.</h2>
+      <p class="lead">On&nbsp;this&nbsp;trade the&nbsp;refusals are not a&nbsp;safety feature bolted to&nbsp;a&nbsp;sales tool. They are the&nbsp;product.
+        These&nbsp;boundaries are built in — not configured, not optional, and they do not soften because a&nbsp;ward wants a&nbsp;bed by&nbsp;Friday.</p>
+      <span class="ngseal">It answers the&nbsp;line. It never makes the&nbsp;judgement.</span>
+
+      <div class="quotecard light pending" style="margin-top:38px;">
+        <div class="mark">”</div>
+        <p>A&nbsp;founding provider&rsquo;s&nbsp;words belong here. We are onboarding the&nbsp;first cohort now, so there is nothing to&nbsp;quote yet — and on&nbsp;this&nbsp;page of&nbsp;all pages, an&nbsp;invented testimonial would undo the&nbsp;exact thing it is about.</p>
+        <div class="by">
+          <span class="avatar av-b" style="opacity:.4;">?</span>
+          <span><b>Founding provider · seat open</b><span>Reserved for&nbsp;the&nbsp;first care service live</span></span>
+        </div>
+        <div class="metric">Founding cohort · 50% off for&nbsp;3 months</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Give clinical or medication advice</b><span>Not&nbsp;about&nbsp;a&nbsp;bruise, a&nbsp;fall, a&nbsp;missed tablet, a&nbsp;change overnight or anything else. It does not hedge it, soften it or offer a&nbsp;general line. If risk is described it names the&nbsp;emergency number and gets a&nbsp;person on&nbsp;the&nbsp;call.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Decide what care someone needs</b><span>Residential, nursing, dementia care, respite, four visits a&nbsp;day — that&nbsp;follows an&nbsp;assessment by&nbsp;people qualified to&nbsp;make it. The&nbsp;family&rsquo;s&nbsp;description is kept in&nbsp;their&nbsp;own words and handed over unconverted.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Promise a&nbsp;place, a&nbsp;room or a&nbsp;date</b><span>Vacancy status is stated as&nbsp;your&nbsp;manager last set it, and nothing beyond&nbsp;that. Provisional is said out loud, every&nbsp;time, including when the&nbsp;caller is under real time pressure.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Say anything about&nbsp;funding</b><span>No&nbsp;eligibility, no&nbsp;means testing, no&nbsp;local authority rate, no&nbsp;top-up or third-party contribution, no&nbsp;continuing healthcare. It reads the&nbsp;fee you published and stops there.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Take a&nbsp;safeguarding concern as&nbsp;a&nbsp;message</b><span>A&nbsp;concern is not intake and it is not a&nbsp;ticket. It stops the&nbsp;conversation, names the&nbsp;person being called, dials your&nbsp;escalation list while the&nbsp;caller is still there, and leaves a&nbsp;record only a&nbsp;named person can close.</span></span>
+      </div>
+      <a class="linkcta" style="margin-top:26px;" href="../security.html">Guardrails &amp; security&nbsp;&nbsp;→</a>
+    </div>
+  </div></div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/36595248/pexels-photo-36595248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/36595248/pexels-photo-36595248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/36595248/pexels-photo-36595248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/36595248/pexels-photo-36595248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A quiet hospital ward corridor with bed-number signs above the doors and a trolley of folded linen" loading="lazy" decoding="async" width="1600" height="2400">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:22ch;line-height:1.1;">A&nbsp;discharge date is<br>not an&nbsp;assessment.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">It is a&nbsp;deadline the&nbsp;family has been handed. The&nbsp;AI treats it as&nbsp;a&nbsp;scheduling constraint and gets your&nbsp;manager in&nbsp;front of&nbsp;it — it never lets the&nbsp;deadline decide the&nbsp;answer.</p>
+  </div>
+</section>
+<p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a&nbsp;named customer, not a&nbsp;testimonial, and not a&nbsp;real&nbsp;ward.</p>
+
+<!-- ═══════ WHERE THE GUIDANCE APPLIES · dark aurora ═══════ -->
+<section class="world bg-aurora t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><i></i>One product, several&nbsp;jurisdictions</span>
+      <h2 class="h2 onDark" style="margin-top:20px">Care regulation is <em style="font-style:normal;color:var(--teal);">local.</em> <br>This&nbsp;page is read&nbsp;everywhere.</h2>
+      <p class="lead onDark">So it is worth being exact. What Saleringo does is the&nbsp;same in&nbsp;every&nbsp;country: it answers the&nbsp;line, reads the&nbsp;fee schedule you published, books what your&nbsp;diary allows, and hands anything clinical, financial or safeguarding to&nbsp;a&nbsp;person you named. Who registers and inspects you, and what your&nbsp;fee information must contain, is a&nbsp;matter for&nbsp;your&nbsp;regulator and your&nbsp;own advisers.</p>
+    </div>
+
+    <div class="tzcards reveal">
+      <div class="glass"><b>In&nbsp;England</b><span>Adult social care providers are registered with&nbsp;and inspected by&nbsp;the&nbsp;<a href="https://www.cqc.org.uk/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700;">Care Quality Commission</a>. Nothing here changes your&nbsp;registration, your&nbsp;statement of&nbsp;purpose or your&nbsp;own policies — the&nbsp;AI works inside them and hands off at&nbsp;the&nbsp;edges you set.</span></div>
+      <div class="glass"><b>Safeguarding routes to&nbsp;people, not to&nbsp;us</b><span>In&nbsp;England, <a href="https://www.legislation.gov.uk/ukpga/2014/23/section/42" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700;">section&nbsp;42 of&nbsp;the&nbsp;Care Act&nbsp;2014</a> places the&nbsp;duty to&nbsp;make safeguarding enquiries on&nbsp;the&nbsp;local authority. Your&nbsp;own policy says who reports and when. The&nbsp;AI&rsquo;s&nbsp;role is narrow and fixed: reach the&nbsp;named person on&nbsp;your&nbsp;list, immediately, and say so.</span></div>
+      <div class="glass"><b>Everywhere&nbsp;else</b><span>No&nbsp;equivalent regulator or duty is assumed. The&nbsp;AI still reads only the&nbsp;fee schedule you published, still refuses clinical and funding questions, and still escalates a&nbsp;concern to&nbsp;the&nbsp;names and numbers you configured. This&nbsp;is not legal advice and not a&nbsp;compliance certification.</span></div>
+    </div>
+    <div class="out reveal"><a href="../security.html#regulated">How regulated providers are onboarded ↗</a></div>
+  </div>
+</section>
+
+<!-- ═══════ HOW TO START · bright + product UI ═══════ -->
+<section class="start t-md">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>How to&nbsp;start</span>
+      <h2 class="h2" style="margin-top:22px">Live <br>before tonight's&nbsp;enquiry.</h2>
+      <p class="lead">Start with&nbsp;your&nbsp;fee schedule and your&nbsp;escalation list. Add website chat and messenger when your&nbsp;team is ready.</p>
+      <p class="lead" style="margin-top:16px;font-size:var(--fs-sm);">Keep your&nbsp;systems — <b style="color:var(--l-ink);">Zapier</b> and <b style="color:var(--l-ink);">CSV export</b> are live today; care management platforms are on&nbsp;the&nbsp;roadmap, and founding customers vote on&nbsp;what ships next.</p>
+      <div class="langnote">
+        <div class="ty">THE SCHEDULE IS THE SOURCE</div>
+        <p>Your&nbsp;fee schedule is imported once and read as&nbsp;written. Every&nbsp;figure the&nbsp;AI speaks traces back to&nbsp;a&nbsp;line on&nbsp;it, with&nbsp;a&nbsp;version and a&nbsp;date. A&nbsp;figure that&nbsp;is not on&nbsp;the&nbsp;schedule is not estimated — it becomes a&nbsp;call-back from&nbsp;your&nbsp;manager.</p>
+        <div class="tags"><span class="pilltag pt-teal">Schedule v6 · approved</span><span class="pilltag pt-teal">Home care rates · approved</span><span class="pilltag pt-line">Funding · never quoted</span></div>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Import your&nbsp;fee schedule</b><span>Every&nbsp;line becomes a&nbsp;quotable fact with&nbsp;a&nbsp;version and a&nbsp;date</span></span><span class="tail pilltag pt-line">~1 hour</span></div>
+      <div class="step"><span class="num">02</span><span class="tx"><b>Name the&nbsp;escalation list</b><span>Safeguarding lead, registered manager, on-call director — real numbers, in&nbsp;order</span></span><span class="tail pilltag pt-teal">✓ Approved</span></div>
+      <div class="step"><span class="num">03</span><span class="tx"><b>Point the&nbsp;out-of-hours line at&nbsp;it</b><span>Enquiries answered, show-rounds booked, concerns dialled through&nbsp;from&nbsp;night one</span></span><span class="tail pilltag pt-dark">Tonight</span></div>
+      <div class="step"><span class="num">04</span><span class="tx"><b>Add chat and messenger</b><span>Same schedule, same refusals, on&nbsp;whichever channel a&nbsp;family reaches for</span></span><span class="tail pilltag pt-amber">When ready</span></div>
+    </div>
+  </div>
+
+  <!-- product UI: the overnight log -->
+  <div class="browserframe light reveal">
+    <div class="bar"><i></i><i></i><i></i><span class="url">app.saleringo.com/enquiries?range=overnight</span></div>
+    <div class="inboxmock">
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">OVERNIGHT</div>
+        <div class="convrow on"><span class="chanmini cm-v">A</span><span class="cv"><b>All calls</b></span><span class="st st-ai">8</span></div>
+        <div class="convrow"><span class="chanmini cm-c">EN</span><span class="cv"><b>Enquiries</b></span><span class="st st-ai">4</span></div>
+        <div class="convrow"><span class="chanmini cm-m">£</span><span class="cv"><b>Fee questions</b></span><span class="st st-ai">2</span></div>
+        <div class="convrow"><span class="chanmini cm-c">!</span><span class="cv"><b>Escalated</b></span><span class="st st-hu">2</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">LAST NIGHT</div>
+        <div class="convrow on"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">HB</span><span class="cv"><b>H. B. · phone · 21:40</b><span>Show-round Thu 10:30</span></span><span class="st st-ai">AI</span></div>
+        <div class="convrow"><span class="avatar av-a" style="width:30px;height:30px;font-size:var(--fs-2xs);">!!</span><span class="cv"><b>Caller · phone · 22:15</b><span>Safeguarding lead reached 22:16</span></span><span class="st st-hu">Human</span></div>
+        <div class="convrow"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">EW</span><span class="cv"><b>E. W. · phone · 19:50</b><span>Funding · refused, routed</span></span><span class="st st-hu">Human</span></div>
+        <div class="convrow"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">DK</span><span class="cv"><b>D. K. · chat · 08:40</b><span>Respite · dates provisional</span></span><span class="st st-ai">AI</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">ANSWER TRACE</div>
+        <div style="font-size:var(--fs-sm);font-weight:800;color:var(--l-ink);">Residential · £1,450 per&nbsp;week</div>
+        <div style="margin-top:6px;font-size:var(--fs-2xs);color:var(--l-mut);font-weight:600;">Fee schedule v6 · effective 2026-04-01</div>
+        <div style="margin-top:16px;display:grid;gap:8px;">
+          <span class="pilltag pt-teal" style="justify-self:start;">✓ Source: fee schedule, residential line</span>
+          <span class="pilltag pt-line" style="justify-self:start;">Read verbatim · not summarised</span>
+          <span class="pilltag pt-dark" style="justify-self:start;">Approved by: registered manager</span>
+        </div>
+        <div style="margin-top:18px;font-size:var(--fs-2xs);line-height:1.7;color:var(--l-mut);font-weight:500;">
+          Full schedule sent to&nbsp;the&nbsp;caller in&nbsp;writing at&nbsp;21:43, version stamped against the&nbsp;record.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cap reveal">Every&nbsp;figure traces back to&nbsp;a&nbsp;line on&nbsp;the&nbsp;schedule it came from</div>
+  </div>
+</section>
+
+<!-- ═══════ MORE THAN ONE SERVICE ═══════ -->
+<section class="sec-dark bg-grid t-xl" id="multi-location">
+  <div class="wrap">
+    <div class="head reveal" >
+      <span class="eyebrow"><i></i>Two homes. Three. A&nbsp;group with&nbsp;a&nbsp;home care arm.</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">One home's weekly&nbsp;fee <br>is&nbsp;not <em style="font-style:normal;color:var(--teal);">another home's.</em></h2>
+      <p class="secintro">If you run more than one service, a&nbsp;confident figure from&nbsp;the&nbsp;wrong schedule is worse than no&nbsp;figure at&nbsp;all, and an&nbsp;escalation sent to&nbsp;the&nbsp;wrong manager is worse again. Each&nbsp;service is set up as&nbsp;its&nbsp;own registered entity inside a&nbsp;single account.</p>
+    </div>
+    <div class="mlgrid reveal">
+      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own number, hours and fee schedule</b>
+        <p>Each&nbsp;home answers on&nbsp;its&nbsp;own line with&nbsp;its&nbsp;own weekly rates, its&nbsp;own home care hourly rates and its&nbsp;own
+          vacancy status. A&nbsp;family asking about&nbsp;one service never hears another&rsquo;s&nbsp;figures.</p></div>
+      <div class="mlcard"><span class="n">02</span><b>Its&nbsp;own escalation list</b>
+        <p>The&nbsp;safeguarding lead dialled is the&nbsp;one registered for&nbsp;that&nbsp;service tonight — not a&nbsp;head-office number
+          that&nbsp;rings out until Monday.</p></div>
+      <div class="mlcard"><span class="n">03</span><b>Each&nbsp;manager sees only their&nbsp;own service</b>
+        <p>A&nbsp;registered manager opens the&nbsp;board and sees their&nbsp;enquiries, their&nbsp;show-rounds, their&nbsp;escalations —
+          not the&nbsp;group&rsquo;s.</p></div>
+      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
+        <p>One report puts every&nbsp;service in&nbsp;the&nbsp;same row: enquiries answered, show-rounds booked, fee questions answered
+          in&nbsp;full, minutes from&nbsp;a&nbsp;concern being raised to&nbsp;a&nbsp;named person answering. Exportable to&nbsp;PDF or Excel.</p></div>
+    </div>
+    <p class="statnote">Services, numbers, schedules, escalation lists and who-sees-what are configured with&nbsp;you during
+      onboarding — not through&nbsp;a&nbsp;self-serve wizard we would have to&nbsp;invent a&nbsp;timescale for.</p>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faqsec t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow light"><i></i>Questions registered managers ask</span>
+      <h2 class="h2" style="margin-top:20px">Asked by&nbsp;providers like&nbsp;yours.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Will it tell a&nbsp;family what level of&nbsp;care their&nbsp;relative needs?</summary>
+        <p>No. Residential, nursing, dementia care, respite, a&nbsp;package of&nbsp;home visits — which of&nbsp;those a&nbsp;person needs is a&nbsp;decision that&nbsp;follows an&nbsp;assessment by&nbsp;your&nbsp;own staff, and often a&nbsp;local authority or hospital assessment as&nbsp;well. The&nbsp;AI records what the&nbsp;caller says about&nbsp;the&nbsp;situation, in&nbsp;the&nbsp;caller&rsquo;s&nbsp;words, and books the&nbsp;assessment or the&nbsp;show-round. It does not read the&nbsp;description back as&nbsp;a&nbsp;recommendation, and it does not tell anyone their&nbsp;mother needs a&nbsp;nursing bed.</p>
+      </details>
+      <details>
+        <summary>What happens if a&nbsp;caller describes someone at&nbsp;risk?</summary>
+        <p>It stops taking details and gets a&nbsp;person on&nbsp;the&nbsp;line. Your&nbsp;safeguarding lead and your&nbsp;out-of-hours manager are named in&nbsp;the&nbsp;configuration with&nbsp;real numbers, and the&nbsp;AI says out loud that&nbsp;it is putting a&nbsp;person on. If nobody picks up it escalates down&nbsp;the&nbsp;list you gave it and tells the&nbsp;caller who is being called and what to&nbsp;do meanwhile, including the&nbsp;emergency services if the&nbsp;caller has described a&nbsp;medical emergency. A&nbsp;concern is never closed as&nbsp;a&nbsp;completed enquiry, never left as&nbsp;a&nbsp;note for&nbsp;the&nbsp;morning, and never answered by&nbsp;the&nbsp;AI itself.</p>
+      </details>
+      <details>
+        <summary>Can it quote our&nbsp;fees?</summary>
+        <p>It reads the&nbsp;weekly rate or hourly rate you published, for&nbsp;the&nbsp;band the&nbsp;caller asked about, exactly as&nbsp;written, and sends the&nbsp;whole schedule. It will not estimate a&nbsp;total, will not price a&nbsp;care level nobody has assessed, and will not say anything about&nbsp;funding — not local authority rates, not means testing, not top-up or third-party contributions, not continuing healthcare. Those are answered by&nbsp;a&nbsp;person who knows the&nbsp;case.</p>
+      </details>
+      <details>
+        <summary>How is enquiry information handled?</summary>
+        <p>Conversations capture enquiry details — who is calling and their&nbsp;relationship, where the&nbsp;person is now, what the&nbsp;family says they are looking for, stated urgency or discharge date, the&nbsp;tour or assessment slot booked, and whether a&nbsp;call was escalated to&nbsp;a&nbsp;named person. Records are kept separate from&nbsp;every&nbsp;other provider, encrypted in&nbsp;transit and at&nbsp;rest, with&nbsp;retention and deletion controls your&nbsp;organisation operates. Full details, including data regions and subprocessors, are in&nbsp;the&nbsp;<a href="../security.html" style="color:var(--teal-deep);font-weight:700;">Security &amp; data</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/18429571/pexels-photo-18429571.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/18429571/pexels-photo-18429571.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/18429571/pexels-photo-18429571.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/18429571/pexels-photo-18429571.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A care worker standing with a kettle beside a resident's bed in a daylit room" loading="lazy" decoding="async" width="1600" height="1067">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:22ch;line-height:1.1;">The&nbsp;rota call and the&nbsp;new<br>enquiry ring the&nbsp;same&nbsp;number.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">A&nbsp;carer running late, a&nbsp;visit being moved, a&nbsp;family ringing for&nbsp;the&nbsp;first time — told apart in&nbsp;the&nbsp;first fifteen seconds and sent to&nbsp;different people.</p>
+  </div>
+</section>
+
+<!-- ═══════ WHAT IT CONNECTS TO ═══════ -->
+<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#050B16,#081426);">
+  <div class="wrap">
+    <div class="head reveal" >
+      <span class="eyebrow"><i></i>Your&nbsp;existing systems, honestly</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Three columns. <br>No&nbsp;logo&nbsp;wall.</h2>
+      <p class="secintro">Normally this&nbsp;answer is buried in&nbsp;an&nbsp;FAQ. A&nbsp;registered manager deserves to&nbsp;see it before
+        they decide, not after.</p>
+    </div>
+    <div class="statgrid reveal">
+      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+        <ul>
+          <li>Zapier<span>Push enquiries and stage changes into&nbsp;the&nbsp;systems you already run</span></li>
+          <li>CSV export<span>Enquiries, show-rounds, assessments and the&nbsp;whole board, whenever you ask</span></li>
+          <li>Saleringo's&nbsp;own board &amp; scheduler<span>Enough on&nbsp;its&nbsp;own if you would rather start light</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4 role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</h4>
+        <ul>
+          <li>Your&nbsp;care management platform<span>No&nbsp;direct link. Enquiry records reach it through&nbsp;Zapier or a&nbsp;CSV import</span></li>
+          <li>Your&nbsp;rostering system<span>Visit times are read from&nbsp;an&nbsp;export you keep current; live two-way sync is not built yet</span></li>
+          <li>Your&nbsp;existing answering service<span>Runs alongside during the&nbsp;first weeks if you would rather overlap than switch</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4 role="heading" aria-level="3"><i></i>In&nbsp;build</h4>
+        <ul>
+          <li>Care management and rostering platforms<span>On&nbsp;the&nbsp;roadmap; founding customers vote on&nbsp;what ships next. We will not name a&nbsp;month we cannot stand behind</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="statnote">If the&nbsp;system you run is not on&nbsp;this&nbsp;page, ask on&nbsp;the&nbsp;call. "Not yet" now is cheaper
+      for&nbsp;both of&nbsp;us than "not yet" after you have paid.</p>
+  </div>
+</section>
+
+<!-- PACK: the actual per-trade configuration, not a re-skinned page -->
+<section class="packsec sec-dark bg-grid t-md" id="the-pack">
+  <div class="wrap">
+    <div class="head reveal" >
+      <div class="secrule"><span class="eyebrow"><i></i>Not a&nbsp;skin &mdash; a&nbsp;different object model</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Six fields, three&nbsp;rules, <br>and one call that&nbsp;ends the&nbsp;script.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most industry pages change a&nbsp;photograph and a&nbsp;noun. This&nbsp;is the&nbsp;configuration
+        itself: the&nbsp;fields the&nbsp;record carries, the&nbsp;rules the&nbsp;calendar enforces, the&nbsp;lines a&nbsp;figure may be read from, who ends
+        up with&nbsp;the&nbsp;work, and the&nbsp;subjects the&nbsp;AI is not allowed to&nbsp;touch.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;record carries</span>
+        <div class="pkfields"><div class="pkf"><b>Caller, relationship &amp; consent</b><span>asked, not assumed</span></div><div class="pkf"><b>Where the&nbsp;person is tonight</b><span>home, ward, another service</span></div><div class="pkf"><b>What the&nbsp;family described</b><span>their&nbsp;words, unconverted</span></div><div class="pkf"><b>Care type asked about</b><span>asked about&nbsp;— never assessed</span></div><div class="pkf"><b>Date being worked to</b><span>a&nbsp;constraint, not a&nbsp;note</span></div><div class="pkf"><b>Concern flag</b><span>ends the&nbsp;script, starts dialling</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;calendar enforces</span>
+        <ol class="pkrules"><li>A&nbsp;stated discharge date pulls the&nbsp;show-round and the&nbsp;assessment to&nbsp;the&nbsp;first slots that&nbsp;land before it, not the&nbsp;next free ones.</li><li>Nothing is confirmed by&nbsp;the&nbsp;AI. Slots are held as&nbsp;provisional and said out loud as&nbsp;provisional until your&nbsp;manager confirms.</li><li>A&nbsp;concern-flagged record cannot be closed by&nbsp;the&nbsp;system. Only a&nbsp;named person closes it.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;figure is read from</span>
+        <ul class="pkq"><li>The&nbsp;weekly rate for&nbsp;the&nbsp;care type asked about</li><li>Home care hourly rates and minimum call length</li><li>Respite terms and minimum stay, as&nbsp;published</li><li>Anything about&nbsp;funding &mdash; not read at&nbsp;all</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">The&nbsp;registered manager takes the&nbsp;show-round and the&nbsp;assessment. The&nbsp;on-duty coordinator takes the&nbsp;rota calls. The&nbsp;safeguarding lead takes the&nbsp;concern, by&nbsp;phone, during the&nbsp;call.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Clinical advice, care-level decisions, funding, promises of&nbsp;a&nbsp;place or a&nbsp;date, and any concern about&nbsp;a&nbsp;person&rsquo;s&nbsp;safety. Every&nbsp;one of&nbsp;those is a&nbsp;person.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Enquiries answered on&nbsp;the&nbsp;first ring</span><span class="pkk">Show-rounds booked out of&nbsp;hours</span><span class="pkk">Fee questions answered in&nbsp;full</span><span class="pkk">Minutes from&nbsp;concern raised to&nbsp;a&nbsp;named person answering</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Fee schedule, escalation list and appointment lengths all come from&nbsp;your&nbsp;own setup. Product illustration &mdash; the&nbsp;fields and rules are the&nbsp;real ones.</span>Enquiries answered rather than missed, show-rounds in&nbsp;the&nbsp;diary by&nbsp;morning, and a&nbsp;measurable gap between a&nbsp;concern being spoken and a&nbsp;person hearing it. Those are things a&nbsp;registered manager already tracks; the&nbsp;only thing that&nbsp;changes is who was awake when the&nbsp;phone rang.</p>
+  </div>
+</section>
+
+<section class="t-sm sec-dark"><div class="wrap" style="text-align:center;"><p style="font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:600;max-width:72ch;margin:0 auto;"><b style="color:#fff;">A&nbsp;note on&nbsp;what this&nbsp;page is not. </b>Nothing here is legal, clinical or financial advice, and nothing here certifies your&nbsp;service as&nbsp;compliant with&nbsp;any regulator&rsquo;s&nbsp;requirements. Your&nbsp;registered manager owns your&nbsp;policies and your&nbsp;own advisers sign off your&nbsp;fee schedule. What we supply is a&nbsp;line that&nbsp;is answered, a&nbsp;schedule that&nbsp;is read as&nbsp;written, and an&nbsp;escalation that&nbsp;dials. <a href="../security.html#regulated" style="color:var(--teal-ink);font-weight:700;">Where we stand →</a></p></div></section>
+
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have seen where it stops</span>
+        <p class="cnp">A&nbsp;show-round booked at&nbsp;quarter to&nbsp;ten at&nbsp;night, a&nbsp;weekly rate read as&nbsp;published, and a&nbsp;refusal line that&nbsp;does not move: no&nbsp;clinical view, no&nbsp;care-level decision, no&nbsp;funding answer, and a&nbsp;concern that&nbsp;reaches a&nbsp;named person while the&nbsp;caller is still on&nbsp;the&nbsp;phone. What sits behind all of&nbsp;it is the&nbsp;record on&nbsp;the&nbsp;manager&rsquo;s&nbsp;desk in&nbsp;the&nbsp;morning.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="closer bg-spot">
+  <div class="wrap">
+    <div class="riskrow reveal">
+      <div class="riskitem"><div class="ic">✓</div><b>Your&nbsp;schedule, as&nbsp;written</b><span>Every&nbsp;figure traces to&nbsp;a&nbsp;line, a&nbsp;version and a&nbsp;date.</span></div>
+      <div class="riskitem"><div class="ic">→</div><b>Judgement calls leave</b><span>Clinical, care level, funding and safeguarding all reach a&nbsp;person.</span></div>
+      <div class="riskitem"><div class="ic">◷</div><b>Month to&nbsp;month</b><span>No&nbsp;annual lock-in. Stop whenever it stops earning its&nbsp;place.</span></div>
+      <div class="riskitem"><div class="ic">%</div><b>Founding pricing</b><span>50% off for&nbsp;3 months, locked before general availability.</span></div>
+    </div>
+
+    <h2 class="reveal">Somebody is going&nbsp;to&nbsp;ring <br>at&nbsp;<em>half past&nbsp;nine tonight.</em></h2>
+    <p class="lead onDark reveal">Import your&nbsp;fee schedule, name who a&nbsp;concern goes to, and let the&nbsp;next enquiry be answered by&nbsp;something that&nbsp;knows what to&nbsp;ask, what never to&nbsp;decide, and who to&nbsp;wake.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
+    </div>
+
+    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
+      <div class="lh">Get your&nbsp;service's&nbsp;setup plan</div>
+      <p class="lsub">Tell us how your&nbsp;enquiry line works after&nbsp;five and who a&nbsp;concern reaches at&nbsp;night. We reply with&nbsp;the&nbsp;stages, intake fields, fee rules and escalation order we would set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
+      <form class="eaform" data-earlyaccess>
+        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
+        <input type="text" name="business" placeholder="Service or group name" aria-label="Service or group name">
+        <input type="text" name="country" placeholder="Country" aria-label="Country">
+        <input type="hidden" name="industry" required value="Senior care">
+        <input type="hidden" name="context" value="Senior care industry page">
+        <select name="locations" aria-label="How many services">
+          <option value="">How many services?</option>
+          <option>One</option><option>Two or three</option><option>Four or more</option>
+        </select>
+        <select name="channel" aria-label="Out-of-hours today">
+          <option value="">Out of&nbsp;hours today…</option>
+          <option>Diverts to&nbsp;the&nbsp;manager's&nbsp;mobile</option><option>An&nbsp;answering service</option>
+          <option>Voicemail</option><option>Honestly, it varies</option>
+        </select>
+        <button class="btn btn-teal" type="submit">Get the&nbsp;Senior Care setup plan →</button>
+        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
+        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
+        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
+      </form>
+      <p class="eanote" style="margin-top:18px;"><span class="pilltag pt-teal">✓ Reads your&nbsp;schedule — no&nbsp;care-level decision, no&nbsp;funding answer, no&nbsp;improvised figure</span></p>
+    </div>
+    <div class="trust">Security or procurement questions? <a href="../security.html" style="color:var(--tx2);">See where your&nbsp;data lives ↗</a> · Also relevant: <a href="./clinics.html" style="color:var(--tx2);">Clinics</a></div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v24.1</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4 aria-level="3">The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="./dental.html">Dental</a><a class="lnk" href="./clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="./veterinary.html">Veterinary</a><a class="lnk" href="./senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5>Home &amp; property</h5><a class="lnk" href="./home-services.html">Home services</a><a class="lnk" href="./pest-control.html">Pest control</a><a class="lnk" href="./property-management.html">Property management</a><a class="lnk" href="./real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5>Vehicle, plant &amp; storage</h5><a class="lnk" href="./auto-repair.html">Auto repair</a><a class="lnk" href="./equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="./self-storage.html">Self-storage</a><a class="lnk" href="./movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="./salons.html">Salons &amp; barbers</a><a class="lnk" href="./fitness.html">Gyms &amp; studios</a><a class="lnk" href="./academies.html">Tutoring &amp; academies</a><a class="lnk" href="./golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="./stays.html">Boutique stays</a><a class="lnk" href="./venues.html">Wedding &amp; venues</a><a class="lnk" href="./restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Professional &amp; public</h5><a class="lnk" href="./legal.html">Legal</a><a class="lnk" href="./funeral-homes.html">Funeral homes</a><a class="lnk" href="./universities.html">Universities &amp; admissions</a><a class="lnk" href="./public-sector.html">Public sector</a></div><div class="fgrp"><h5>Online &amp; multi-site</h5><a class="lnk" href="./ecommerce.html">Online stores</a><a class="lnk" href="./franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><h4 aria-level="3">Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4 aria-level="3">Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+<nav data-startpath data-compact aria-hidden="true" data-title="What to check here" data-end="#early-access" data-end-label="Get my plan">
+  <ol>
+    <li data-step="#the-pack" data-short="The pack" data-next="see the six fields and three rules"><a href="#the-pack"><b>The&nbsp;pack</b></a></li>
+  </ol>
+</nav>
+</main>
+
+<div class="stickycta" data-sticky>
+  <div class="wrap">
+    <span class="msg">Answered at&nbsp;9:40 PM, your&nbsp;weekly rate read as&nbsp;published, <b>a&nbsp;concern put through&nbsp;to&nbsp;a&nbsp;named person.</b></span>
+    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=24.1"></script>
+<script src="../../assets/js/balance.js?v=24.1" defer></script>
+<script src="../../assets/js/canvas.js?v=24.1" defer></script>
+<script src="../../assets/js/scenes.js?v=24.1" defer></script>
+<script src="../../assets/js/guide.js?v=24.1"></script>
+</body>
+</html>

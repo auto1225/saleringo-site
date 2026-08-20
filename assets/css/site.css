@@ -1884,7 +1884,12 @@ body:has(.stickycta) .totop{bottom:calc(22px + var(--stickycta-h,0px));}
    obstruction, not a hint. When all three placements collide — which happens on
    a phone, where the copy fills the column — the ring still points at the
    control and the docked guide bar still names the step. */
-.focusring.cue-hide .fr-cue,.focusring.cue-hide .fr-sub{display:none;}
+/* cue-hide fires when the pointer cannot be placed without covering a
+   control. It used to hide only the label and the sub, which left the
+   44px close button floating over the primary CTA on the home page at
+   375px — a close button with nothing left to close. Nothing to say
+   means nothing to show. */
+.focusring.cue-hide{display:none;}
 
 
 /* ═══ layout balance pass — measured on 26 pages at 1440, 1024 and 375 ═══

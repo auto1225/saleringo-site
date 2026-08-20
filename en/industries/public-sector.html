@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI for Council &amp; Public Sector Switchboards | Saleringo</title>
+<meta name="description" content="An AI that answers a council's main line at 1:40 AM, wakes the duty officer for the burst main, and logs everything else with a reference number — and never makes a determination, an entitlement decision or a planning ruling.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/public-sector.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/public-sector.html">
+<meta property="og:title" content="AI for Council &amp; Public Sector Switchboards">
+<meta property="og:description" content="An AI that answers a council's main line at 1:40 AM, wakes the duty officer for the burst main, and logs everything else with a reference number — and never makes a determination, an entitlement decision or a planning ruling.">
+<meta property="og:image" content="https://images.pexels.com/photos/9129106/pexels-photo-9129106.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI for Council &amp; Public Sector Switchboards">
+<meta name="twitter:description" content="An AI that answers a council's main line at 1:40 AM, wakes the duty officer for the burst main, and logs everything else with a reference number — and never makes a determination, an entitlement decision or a planning ruling.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/9129106/pexels-photo-9129106.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./public-sector.html">
+<link rel="alternate" hreflang="x-default" href="./public-sector.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can the AI decide whether somebody is eligible for something?","acceptedAnswer":{"@type":"Answer","text":"No, and the refusal is categorical rather than a confidence threshold. It does not decide eligibility, it does not confirm an entitlement, it does not interpret a policy or a regulation, and it does not say what a planning or enforcement outcome will be — not even as a hedge, and not even where the general rule is published. It says on the call that no decision has been made, records the question in the caller's own words, gives a reference number, and routes the contact to the named service that does decide."}},{"@type":"Question","name":"How does it know what counts as an emergency at two in the morning?","acceptedAnswer":{"@type":"Answer","text":"From your own out-of-hours list, not from ours. Your authority names the categories that reach a duty officer tonight — a burst main, a dangerous structure, a tree blocking a carriageway, an out-of-hours homelessness presentation — and the wording that goes with each. The AI matches the call against that list and nothing else. If it cannot match a call to a named category, it does not invent one: it escalates to the on-call contact you nominated and says so to the caller."}},{"@type":"Question","name":"Can it answer callers who do not speak the majority language?","acceptedAnswer":{"@type":"Answer","text":"It holds the call in the language it arrives in, and the language is recorded on the contact so the callback is not made in the wrong one. The published-source rule does not relax in translation: it may only say what your authority published, and a page that exists in one language only is answered by saying so and routing to a person. This is a practical expectation in many places and a written one in some — Welsh language standards made under the Welsh Language (Wales) Measure 2011 require councils to greet callers in Welsh on the main line and to deal with the call in Welsh if that is the caller's wish. Your authority's own duties are yours to confirm."}},{"@type":"Question","name":"What does the audit trail actually hold?","acceptedAnswer":{"@type":"Answer","text":"Who contacted you, on which channel, at what time, what they asked in their own words, what was said back, which published page or document that answer came from and when your authority last approved it, the reference number issued, and where the contact was routed. Refusals are recorded as fully as answers, because a question the AI would not touch is the one most likely to be asked about later. Data is encrypted in transit and at rest, kept separate from every other customer, with retention and deletion controls your authority operates."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI for Council &amp; Public Sector Switchboards","item":"https://claude.saleringo.com/en/industries/public-sector.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=24.1">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=24.1">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=24.1">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=24.1">
+<style>
+  /* ── PUBLIC SECTOR · archetype: THE QUEUE AND THE LINE ───── */
+  /* nothing here is sold and nothing here is booked. the whole
+     page is one distinction: an emergency that must reach a
+     person tonight, a published fact that can be read out, and
+     a determination that software must never make.            */
+
+  .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:104px;display:block;background:#0A0C10;}
+  /* town hall lit at night: bias to the building, keep the water dark. */
+  .hero.photohero .bgimg img{filter:brightness(1.0) saturate(.86) contrast(1.05);object-position:center 40%;}
+  .hero.photohero .scrim{background:
+    linear-gradient(94deg, rgba(5,8,14,0.524) 0%, rgba(5,8,14,0.435) 46%, rgba(5,8,14,0.234) 82%),
+    linear-gradient(180deg, rgba(5,8,14,0.412) 0%, rgba(5,8,14,0.145) 34%, rgba(5,9,16,0.96) 100%);}
+  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(23,189,189,.15), transparent 74%);}
+  .navwrap .nav{background:rgba(9,13,22,.9);border-color:rgba(255,255,255,.12);}
+  .hero-inner{position:relative;z-index:2;padding:170px clamp(22px,4.6vw,56px) 0;display:grid;
+    grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:530px;}
+  .tradewords{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
+  .tradewords span{font-size:var(--fs-xs);font-weight:700;border-radius:999px;padding:8px 15px;
+    border:1px solid var(--hair2);background:rgba(255,255,255,.06);color:var(--tx2);}
+  .tradewords span.hi{color:var(--teal);border-color:rgba(23,189,189,.45);background:rgba(23,189,189,.12);}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .whofor{margin-top:24px;padding-top:22px;border-top:1px solid var(--hair);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;max-width:340px;}
+  .whotxt b{color:#fff;}
+
+  .roomband{background:#FDFDFE;}
+  .roomband .photosplit{min-height:500px;}
+  .audgrid.three{grid-template-columns:repeat(3,1fr);}
+  .audgrid.three .audcard{min-height:300px;}
+  .audnote{margin-top:14px;text-align:center;}
+  @media (max-width:900px){.audgrid.three{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.audgrid.three{grid-template-columns:1fr;}}
+
+  /* ── the line (dark) — triage one way, refusal the other ── */
+  .gate{position:relative;background:#04070D;}
+  .gate .head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .gate .head .lead{margin-top:18px;}
+  .gatesteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+  @media (max-width:980px){.gatesteps{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.gatesteps{grid-template-columns:1fr;}}
+  .gstep{border:1px solid var(--hair);border-radius:18px;padding:22px 22px 24px;background:rgba(255,255,255,.028);}
+  .gstep .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .gstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;line-height:1.3;}
+  .gstep p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .gstep.stop{border-color:rgba(240,145,134,.34);background:rgba(240,145,134,.055);}
+  .gstep.stop .n{color:#F09186;}
+  .gate .kpiband{margin-top:56px;}
+  .gate .note{margin-top:28px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:500;max-width:820px;margin-left:auto;margin-right:auto;}
+
+  /* ── paired threads (dark grid) ── */
+  .pairs{position:relative;background:#050B16;}
+  .pairs .head{text-align:center;max-width:680px;margin:0 auto 56px;}
+  .pairs .head .lead{margin-top:18px;}
+  .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  .pairwrap .plabel{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .pairwrap .plabel b{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+  .pairwrap .plabel span{font-size:var(--fs-xs);color:var(--tx3);font-weight:600;}
+  .pairwrap .after{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;}
+  .pairs .note{margin-top:30px;text-align:center;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  /* ── boundaries (paper) ── */
+  .nogo{color:var(--l-ink);}
+  .nogo .cols{display:grid;grid-template-columns:1fr 1.12fr;gap:80px;align-items:stretch;}
+  .nogo .lead{margin-top:20px;max-width:400px;}
+  .ngrow{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #E9E2D6;}
+  .ngrow:last-of-type{border-bottom:0;}
+  .ngrow .x{flex:none;width:34px;height:34px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
+    color:var(--red);font-size:var(--fs-sm);font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .ngrow b{display:block;font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:var(--l-ink);}
+  .ngrow span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
+  .ngseal{margin-top:26px;font-size:var(--fs-sm);font-weight:700;color:#0B7878;background:#E3F5F5;border:1px solid #BFE7E7;
+    border-radius:999px;padding:14px 28px;display:inline-block;}
+
+  /* ── what it says out loud (dark aurora) ── */
+  .world{position:relative;overflow:hidden;}
+  .world .head{text-align:center;max-width:680px;margin:0 auto 50px;}
+  .world .head .lead{margin-top:18px;}
+  .world .tzcards{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .world .glass{padding:22px 24px;}
+  .world .glass b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);color:#fff;}
+  .world .glass span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .world .out{margin-top:34px;text-align:center;}
+  .world .out a{font-size:var(--fs-xs);font-weight:700;color:var(--teal);}
+
+  /* ── start (bright) ── */
+  .start{background:#FDFDFE;}
+  .start .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
+  .start .lead{margin-top:22px;max-width:400px;}
+  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:22px 24px;max-width:400px;
+    box-shadow:0 20px 48px rgba(11,27,51,.07);}
+  .langnote .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0B7878;}
+  .langnote p{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  .langnote .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .start .browserframe{margin-top:54px;}
+  .start .cap{margin-top:15px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+    color:#6F767F;font-weight:700;}
+
+  .faqsec{background:var(--l-bg);}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;}
+  .closer .riskrow{margin-bottom:72px;text-align:left;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer .lead{margin:22px auto 0;max-width:540px;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;}
+    .pairgrid,.world .tzcards{grid-template-columns:1fr;}
+    .nogo .cols,.start .cols{grid-template-columns:1fr;gap:46px;}
+    .closer .riskrow{margin-bottom:52px;}
+  }
+
+  /* ══ CRM surface, honest integrations, many services, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:620px;}
+
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.build h4{color:#8A9BB4;} .statcol.build h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;max-width:760px;}
+
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+</style>
+</head>
+<body data-grade="trust">
+
+<!-- ═══════ HERO · one night call, with a clock time on it ═══════ -->
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/9129106/pexels-photo-9129106.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+           srcset="https://images.pexels.com/photos/9129106/pexels-photo-9129106.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/9129106/pexels-photo-9129106.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/9129106/pexels-photo-9129106.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="100vw"
+         alt="" width="1600" height="1110" loading="eager" fetchpriority="high" decoding="async">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v24.1">v24.1</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="./dental.html">Dental</a></li><li><a href="./clinics.html">Clinics &amp; med-spa</a></li><li><a href="./veterinary.html">Veterinary</a></li><li><a href="./senior-care.html">Senior living &amp; care</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home &amp; property</p><ul aria-labelledby="nh-trade-1"><li><a href="./home-services.html">Home services</a></li><li><a href="./pest-control.html">Pest control</a></li><li><a href="./property-management.html">Property management</a></li><li><a href="./real-estate.html">Estate &amp; lettings</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Vehicle, plant &amp; storage</p><ul aria-labelledby="nh-trade-2"><li><a href="./auto-repair.html">Auto repair</a></li><li><a href="./equipment-rental.html">Equipment &amp; tool hire</a></li><li><a href="./self-storage.html">Self-storage</a></li><li><a href="./movers.html">Movers &amp; removals</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Booked by appointment</p><ul aria-labelledby="nh-trade-3"><li><a href="./salons.html">Salons &amp; barbers</a></li><li><a href="./fitness.html">Gyms &amp; studios</a></li><li><a href="./academies.html">Tutoring &amp; academies</a></li><li><a href="./golf.html">Golf &amp; country clubs</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-4"><li><a href="./stays.html">Boutique stays</a></li><li><a href="./venues.html">Wedding &amp; venues</a></li><li><a href="./restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">Professional &amp; public</p><ul aria-labelledby="nh-trade-5"><li><a href="./legal.html">Legal</a></li><li><a href="./funeral-homes.html">Funeral homes</a></li><li><a href="./universities.html">Universities &amp; admissions</a></li><li><a href="./public-sector.html" aria-current="page" class="np-here">Public sector</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">Online &amp; multi-site</p><ul aria-labelledby="nh-trade-6"><li><a href="./ecommerce.html">Online stores</a></li><li><a href="./franchise.html">Franchise &amp; multi-site</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../industries.html">All twenty-five trades · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-panel">
+      <span class="eyebrow"><i></i>For&nbsp;councils, municipal offices, utilities &amp;&nbsp;public agencies · the&nbsp;main&nbsp;line</span>
+      <h1>The&nbsp;main burst at&nbsp;1:40&nbsp;AM. <br><em>One&nbsp;call woke the&nbsp;duty officer. Nine&nbsp;got a&nbsp;reference&nbsp;number.</em></h1>
+      <p class="sub">A&nbsp;public switchboard at&nbsp;night is two&nbsp;jobs at&nbsp;once. One&nbsp;caller is standing next to&nbsp;water coming
+        up through&nbsp;the&nbsp;road and has to&nbsp;reach a&nbsp;person tonight. The&nbsp;other nine want a&nbsp;bin day, an&nbsp;opening time,
+        a&nbsp;form, or a&nbsp;fee — and need to&nbsp;be answered, logged and given a&nbsp;reference so they stop ringing back.
+        Saleringo does both, quotes only what your&nbsp;authority published, and makes no&nbsp;determination of&nbsp;any&nbsp;kind.</p>
+      <div class="tradewords" aria-label="The words this trade actually uses">
+        <span class="hi">the&nbsp;main line</span><span class="hi">duty officer</span><span class="hi">reference number</span>
+        <span>out of&nbsp;hours</span><span>service request</span><span>next working day</span>
+        <span>named officer</span><span>published information</span><span>audit trail</span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
+        <a class="btn btn-ghostl" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+      </div>
+      <p class="heroscroll"><a href="../index.html#start-here">New here? Start with&nbsp;the three-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
+      <div class="micro">Founding cohort open · every&nbsp;answer traced to&nbsp;a&nbsp;page your&nbsp;authority published and signed&nbsp;off</div>
+      <div class="whofor">
+        <span class="whotxt">For&nbsp;the&nbsp;team that&nbsp;runs one main number for&nbsp;waste, tax, housing, highways and everything&nbsp;else — <b>founding cohort now open</b></span>
+      </div>
+    </div>
+
+    <!-- ── scene: the crew that went out, and the nine calls that did not need one ── -->
+    <div>
+    <div class="scene-frame light tiltcard rev">
+<div class="photo-scrim" style="height:clamp(300px,34vw,470px);">
+  <img class="ph" src="https://images.pexels.com/photos/33484880/pexels-photo-33484880.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+       srcset="https://images.pexels.com/photos/33484880/pexels-photo-33484880.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/33484880/pexels-photo-33484880.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/33484880/pexels-photo-33484880.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+       sizes="(max-width:900px) 100vw, 50vw" alt="Two workers in orange high-visibility trousers breaking asphalt around an open manhole in a road"
+       loading="lazy" decoding="async" width="1600" height="1067">
+</div>
+      <div class="scene-overlay tl">
+        <b>01:42 · duty officer paged</b>
+        <span>Matched to&nbsp;your&nbsp;own out-of-hours category, not&nbsp;ours</span>
+      </div>
+      <div class="scene-overlay br">
+        <b>01:52 · logged, ref&nbsp;4471-B</b>
+        <span>Council Tax · next working day · no&nbsp;decision made</span>
+      </div>
+    </div>
+    <p class="photocap">1:40 AM — the&nbsp;offices are dark and the&nbsp;main line is still answered, and still decides nothing.
+      Illustrative photography; not a&nbsp;Saleringo customer authority.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════ THE ROOM · full-bleed photograph ═══════ -->
+<section class="roomband">
+  <div class="photosplit rev">
+    <div class="media">
+      <img class="ph" src="https://images.pexels.com/photos/7682340/pexels-photo-7682340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+           srcset="https://images.pexels.com/photos/7682340/pexels-photo-7682340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7682340/pexels-photo-7682340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/7682340/pexels-photo-7682340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/7682340/pexels-photo-7682340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+           sizes="(max-width:900px) 100vw, 50vw"
+           alt="Three people in headsets side by side at one long desk, taking calls on laptops" loading="lazy" decoding="async" width="1600" height="1067">
+    </div>
+    <div class="copy reveal">
+      <span class="eyebrow light"><i></i>The&nbsp;main line is the&nbsp;front door. It&nbsp;also closes at&nbsp;five.</span>
+      <h2 class="h2" style="margin-top:22px">Eleven waiting at&nbsp;9:05, <br>and&nbsp;four of&nbsp;them want&nbsp;bin&nbsp;day.</h2>
+      <p class="lead" style="margin-top:18px;">The&nbsp;expensive thing about&nbsp;a&nbsp;public switchboard is not the&nbsp;hard calls.
+        It is that&nbsp;the&nbsp;same simple question arrives three&nbsp;times through&nbsp;three&nbsp;channels because the&nbsp;first
+        two&nbsp;attempts went into&nbsp;a&nbsp;queue and the&nbsp;caller gave up. Answer it once, log it once, give a&nbsp;reference —
+        and it stops coming back.</p>
+      <a class="linkcta" style="margin-top:28px;" href="../demo.html">See how it answers out of&nbsp;hours&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- The page opens on a call that arrived out of hours. This is the arithmetic
+     underneath it — the same block on every trade page, never re-derived. -->
+<section class="dialsec t-md sec-dark bg-grid">
+  <div class="wrap">
+    <div class="nightfig scenefig reveal">
+      <div class="scenebox" data-scene="nightclock"></div>
+      <div>
+        <p class="scenecap"><b>A&nbsp;nine-to-five office is closed for&nbsp;16 of&nbsp;the&nbsp;day&rsquo;s&nbsp;24 hours</b> &mdash; and both weekend days after that. Across&nbsp;a&nbsp;full week
+          the&nbsp;main line is staffed for&nbsp;<span class="num">40 of&nbsp;168 hours</span>.
+          A&nbsp;main that&nbsp;goes at&nbsp;5:05 on&nbsp;a&nbsp;Friday is inside the&nbsp;other 128.</p>
+        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
+          collected. It is what an&nbsp;ordinary working week divides into.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ THE LINE · triage one way, a permanent refusal the other ═══════ -->
+<section class="gate grain t-xl">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>The&nbsp;one distinction the&nbsp;whole pack is&nbsp;built&nbsp;on</span></div>
+      <h2 class="h2 onDark">Every&nbsp;other trade books first. <br>This&nbsp;one <em style="font-style:normal;color:var(--teal);">decides nothing.</em></h2>
+      <p class="lead onDark">In&nbsp;a&nbsp;clinic or a&nbsp;garage the&nbsp;calendar is the&nbsp;point. On&nbsp;a&nbsp;public main line there is nothing
+        to&nbsp;book and nothing to&nbsp;win. There are three&nbsp;kinds of&nbsp;call — one that&nbsp;must reach a&nbsp;person tonight, one that&nbsp;has
+        a&nbsp;published answer, and one that&nbsp;asks software to&nbsp;decide something only your&nbsp;authority may decide. The&nbsp;pack exists
+        to&nbsp;keep those three apart.</p>
+    </div>
+
+    <div class="gatesteps reveal">
+      <div class="gstep"><span class="n">01</span><b>The&nbsp;question is matched to&nbsp;something you&nbsp;published</b>
+        <p>Collection day, opening hours, how to&nbsp;pay, which form, what to&nbsp;bring, what a&nbsp;fee is. If your&nbsp;authority
+          has not published it, the&nbsp;AI does not have it — and says so rather than reaching for&nbsp;the&nbsp;general answer.</p></div>
+      <div class="gstep"><span class="n">02</span><b>Out of&nbsp;hours, it triages against your&nbsp;own list</b>
+        <p>Your&nbsp;authority names the&nbsp;categories that&nbsp;wake a&nbsp;duty officer tonight and the&nbsp;wording that&nbsp;goes with&nbsp;each.
+          A&nbsp;call it cannot match to&nbsp;a&nbsp;named category goes to&nbsp;your&nbsp;on-call contact anyway. It does not invent categories.</p></div>
+      <div class="gstep stop"><span class="n">03</span><b>It never makes a&nbsp;determination</b>
+        <p>Not eligibility, not an&nbsp;entitlement, not a&nbsp;planning or enforcement outcome, not what a&nbsp;rule means for&nbsp;this
+          person. <b>No&nbsp;hedge either</b> — "usually" and "normally" are determinations wearing a&nbsp;coat.</p></div>
+      <div class="gstep"><span class="n">04</span><b>Everything else is logged, with&nbsp;a&nbsp;reference and a&nbsp;service</b>
+        <p>A&nbsp;reference number read out before the&nbsp;call ends, the&nbsp;service area attached, the&nbsp;caller told plainly that
+          it is a&nbsp;next-working-day item and that&nbsp;nothing has been decided.</p></div>
+    </div>
+
+    <div class="kpiband reveal">
+      <div class="kpi"><div class="n">1</div><div class="l">out-of-hours category list, and it is yours&nbsp;— we do not supply one</div></div>
+      <div class="kpi"><div class="n">0</div><div class="l">determinations, entitlements or rulings the&nbsp;AI may make</div></div>
+      <div class="kpi"><div class="n">1</div><div class="l">reference number per&nbsp;contact, said out loud before the&nbsp;call ends</div></div>
+      <div class="kpi"><div class="n">40<em>/168</em></div><div class="l">hours a&nbsp;nine-to-five main line is staffed</div></div>
+    </div>
+
+    <p class="note reveal">Those four figures are definitions and arithmetic, not measurements. This&nbsp;page publishes no&nbsp;statistic
+      about&nbsp;how many calls public switchboards abandon, because the&nbsp;numbers in&nbsp;circulation are published by&nbsp;companies selling
+      the&nbsp;same product we are, and we are not going to&nbsp;launder one of&nbsp;those through&nbsp;a&nbsp;chart. The&nbsp;argument on&nbsp;this&nbsp;page
+      stands without&nbsp;a&nbsp;percentage: your&nbsp;own telephony report already knows the&nbsp;abandonment rate on&nbsp;the&nbsp;main number, and
+      what time of&nbsp;day it peaks.</p>
+  </div>
+</section>
+
+<div id="cta-gate" aria-hidden="true"></div>
+
+<!-- ═══════ TWO CALLS, ONE NIGHT ═══════ -->
+<section class="pairs bg-grid grain t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secrule" style="justify-content:center;"><span class="eyebrow"><i></i>Twelve minutes apart, on&nbsp;the&nbsp;same number</span></div>
+      <h2 class="h2 onDark">One wakes an&nbsp;officer. <br>One&nbsp;is refused — and still&nbsp;answered.</h2>
+      <p class="lead onDark">The&nbsp;difference between these&nbsp;two threads is the&nbsp;whole page. A&nbsp;burst main is a&nbsp;category on&nbsp;a&nbsp;list
+        your&nbsp;authority wrote. Whether somebody qualifies for&nbsp;a&nbsp;discount is a&nbsp;decision, and no&nbsp;wording — not even
+        a&nbsp;careful one — makes it safe for&nbsp;software to&nbsp;make.</p>
+    </div>
+
+    <div class="pairgrid reveal">
+      <div class="pairwrap">
+        <div class="plabel"><b>01:40 · the&nbsp;emergency</b><span>source: your&nbsp;out-of-hours category list</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;authority</b><br><span>Main line · 1:40 AM</span></span></div>
+          <div class="mbody">
+            <div class="m in">There's&nbsp;water coming up out of&nbsp;the&nbsp;road outside number&nbsp;40. It's&nbsp;across both lanes now.</div>
+            <div class="m out">Thank you — that&nbsp;is on&nbsp;the&nbsp;authority's&nbsp;out-of-hours list as&nbsp;a&nbsp;burst main, so I'm&nbsp;paging the&nbsp;duty officer now rather than logging it for&nbsp;the&nbsp;morning. Can you confirm the&nbsp;street and whether the&nbsp;water is reaching any&nbsp;property?<span class="tick">✓✓</span></div>
+            <div class="m in">Marsh Lane. It's&nbsp;at&nbsp;the&nbsp;kerb of&nbsp;number&nbsp;42's&nbsp;drive, not inside.</div>
+            <div class="m out">Recorded, word for&nbsp;word. Duty officer paged at&nbsp;<b>01:42</b>, your&nbsp;reference is <b>4470-A</b>, and the&nbsp;out-of-hours instruction your&nbsp;authority publishes is on&nbsp;its&nbsp;way to&nbsp;you by&nbsp;text. I&nbsp;have not been told what they will do, and I&nbsp;am not going to&nbsp;guess.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="vchip">✓ Matched to&nbsp;your&nbsp;own named category</span>
+          <span class="hchip">→ Officer paged 01:42 · ref 4470-A · location verbatim</span>
+        </div>
+      </div>
+
+      <div class="pairwrap">
+        <div class="plabel"><b>01:52 · the&nbsp;refusal</b><span>no&nbsp;determination, in&nbsp;any wording</span></div>
+        <div class="msgthread">
+          <div class="mhead"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
+            <span><b>Saleringo · your&nbsp;authority</b><br><span>Main line · 1:52 AM</span></span></div>
+          <div class="mbody">
+            <div class="m in">My&nbsp;husband moved out in&nbsp;June. Do I get the&nbsp;single-person discount, and from&nbsp;when?</div>
+            <div class="m out">I can't decide either of&nbsp;those, and I'd&nbsp;rather say so plainly than give you something that&nbsp;sounds like an&nbsp;answer. Whether a&nbsp;discount applies, and from&nbsp;what date, is a&nbsp;decision the&nbsp;Council&nbsp;Tax team makes on&nbsp;the&nbsp;evidence — not something I&nbsp;may say at&nbsp;two in&nbsp;the&nbsp;morning.<span class="tick">✓✓</span></div>
+            <div class="m in">So I've&nbsp;rung for&nbsp;nothing.</div>
+            <div class="m out">No. I've&nbsp;logged it as&nbsp;<b>4471-B</b> with&nbsp;the&nbsp;June date you gave me, sent you the&nbsp;published change-of-circumstances form, and put it in&nbsp;front of&nbsp;Council&nbsp;Tax for&nbsp;the&nbsp;next working day. To&nbsp;be clear: no&nbsp;decision has been made by&nbsp;anyone yet, including me.<span class="tick">✓✓</span></div>
+          </div>
+        </div>
+        <div class="after">
+          <span class="rchip">✕ No&nbsp;entitlement decided · no&nbsp;date implied</span>
+          <span class="hchip">→ Ref 4471-B · published form sent · routed to&nbsp;Council&nbsp;Tax</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- who is actually on the other end of those calls -->
+    <div class="audgrid three reveal" style="margin-top:64px;">
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/6963043/pexels-photo-6963043.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/6963043/pexels-photo-6963043.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/6963043/pexels-photo-6963043.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/6963043/pexels-photo-6963043.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/6963043/pexels-photo-6963043.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A man and a woman at a kitchen counter reading a letter together, a phone in his hand" loading="lazy" decoding="async" width="1600" height="1334">
+        <b>Has the&nbsp;letter open in&nbsp;front of&nbsp;them</b>
+        <span>Wants to&nbsp;know which form and what to&nbsp;bring — not a&nbsp;ruling on&nbsp;anything</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/10223594/pexels-photo-10223594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/10223594/pexels-photo-10223594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/10223594/pexels-photo-10223594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/10223594/pexels-photo-10223594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/10223594/pexels-photo-10223594.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="An older man in glasses sitting on a sofa at home, talking on a mobile phone" loading="lazy" decoding="async" width="1600" height="2400">
+        <b>Will not be using the&nbsp;website</b>
+        <span>For&nbsp;this&nbsp;caller the&nbsp;phone is not one channel of&nbsp;several. It is the&nbsp;accessible&nbsp;one</span>
+      </div>
+      <div class="audcard">
+        <img class="ph" src="https://images.pexels.com/photos/17133436/pexels-photo-17133436.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+           srcset="https://images.pexels.com/photos/17133436/pexels-photo-17133436.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/17133436/pexels-photo-17133436.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/17133436/pexels-photo-17133436.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/17133436/pexels-photo-17133436.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
+           sizes="(max-width:900px) 100vw, 33vw"
+             alt="A man standing on a cobbled residential street with a phone to his ear, seen from behind" loading="lazy" decoding="async" width="1600" height="2400">
+        <b>Is standing next to&nbsp;the&nbsp;thing</b>
+        <span>Reporting a&nbsp;location, in&nbsp;the&nbsp;dark, and needs somebody to&nbsp;write down exactly&nbsp;where</span>
+      </div>
+    </div>
+    <p class="photocap audnote">Illustrative photography — these are not Saleringo customers and not real residents.</p>
+
+    <div class="note reveal">Both threads above are worked illustrations. "Marsh&nbsp;Lane", <b>4470-A</b> and <b>4471-B</b> are invented,
+      and the&nbsp;reference format is whatever your&nbsp;own case system already issues. No&nbsp;real authority, address or resident
+      appears anywhere on&nbsp;this&nbsp;page.</div>
+  </div>
+</section>
+
+<!-- ═══════ THE PUBLIC-SECTOR CRM ═══════ -->
+<section class="crmsec sec-dark bg-spot t-xl" id="ps-crm">
+  <div class="wrap">
+    <div class="head reveal" >
+      <span class="eyebrow"><i></i>The&nbsp;public-sector CRM</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Most AI receptionists hand you a&nbsp;transcript. <br>This&nbsp;one hands you <em style="font-style:normal;color:var(--teal);">a&nbsp;contact record with&nbsp;a&nbsp;source.</em></h2>
+      <p class="secintro">A&nbsp;message taken is not a&nbsp;record. The&nbsp;other half of&nbsp;Saleringo is a&nbsp;CRM built around&nbsp;one contact —
+        service area, location, category, reference number, the&nbsp;language it was held in, and the&nbsp;page the&nbsp;answer came from —
+        moving through&nbsp;the&nbsp;stages your&nbsp;authority already works in, with&nbsp;every&nbsp;step timestamped.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Main line · overnight</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Contacts</div>
+          <span class="it on"><span class="dot"></span>Overnight<span class="n">31</span></span>
+          <span class="it"><span class="dot"></span>Emergencies<span class="n">2</span></span>
+          <span class="it"><span class="dot"></span>Logged with&nbsp;ref<span class="n">24</span></span>
+          <span class="it"><span class="dot"></span>Waiting on&nbsp;an&nbsp;officer<span class="n">5</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>By&nbsp;service area</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Published answers</span>
+          <span class="it"><span class="dot"></span>Out-of-hours categories</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation" aria-level="3"><span class="sw"></span>New contact<span class="ct">9</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">MR</span><span class="nm">M. R.</span></div>
+                <div class="mt">Water across both lanes, Marsh Lane · location taken verbatim</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 1:40 AM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">AK</span><span class="nm">A. K.</span></div>
+                <div class="mt">Bin not emptied · asked twice this&nbsp;week on&nbsp;two&nbsp;channels</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Emergency triage<span class="ct">2</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">MR</span><span class="nm">M. R.</span></div>
+                <div class="mt">Burst main — on&nbsp;the&nbsp;authority's&nbsp;out-of-hours list</div>
+                <div class="ft"><span class="tag hot">Paged 01:42</span><span class="chan">Duty officer</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">??</span><span class="nm">Caller</span></div>
+                <div class="mt">Could not be matched to&nbsp;a&nbsp;named category · escalated anyway</div>
+                <div class="ft"><span class="tag">Escalated</span><span class="chan">On-call contact</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Logged with&nbsp;a&nbsp;reference<span class="ct">24</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DP</span><span class="nm">D. P.</span></div>
+                <div class="mt">Ref 4471-B · Council Tax · change of&nbsp;circumstances form sent</div>
+                <div class="ft"><span class="tag">Next working day</span><span class="chan">No&nbsp;decision made</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">LW</span><span class="nm">L. W.</span></div>
+                <div class="mt">Noise, 22:15 · Environmental Health · times recorded as&nbsp;given</div>
+                <div class="ft"><span class="tag">Ref issued</span><span class="chan">Read out on&nbsp;call</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Waiting on&nbsp;an&nbsp;officer<span class="ct">5</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">??</span><span class="nm">Caller</span></div>
+                <div class="mt">Asked whether an&nbsp;extension will be approved — recorded, refused</div>
+                <div class="ft"><span class="tag hot">Refused</span><span class="chan">Planning · named officer</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">SB</span><span class="nm">S. B.</span></div>
+                <div class="mt">Answer not in&nbsp;the&nbsp;published set · handed over, not improvised</div>
+                <div class="ft"><span class="tag">Held</span><span class="chan">To&nbsp;a&nbsp;person</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stages, service areas, out-of-hours categories and reference formats are configured for&nbsp;your&nbsp;authority during onboarding. No&nbsp;contact, address or resident shown here is real.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div>
+        <span class="eyebrow"><i></i>Nine fields, and one of&nbsp;them is the&nbsp;source</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">A&nbsp;generic CRM stores what was&nbsp;said. <br>This&nbsp;one stores&nbsp;where it came&nbsp;from.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Service area, from&nbsp;your&nbsp;own list.</b> Waste, council tax, housing, highways, planning, environmental health, licensing. The&nbsp;routing is the&nbsp;record — a&nbsp;contact with&nbsp;no&nbsp;service area attached is an&nbsp;unrouted contact, and those are the&nbsp;ones that&nbsp;come back.</span></li>
+          <li><i>→</i><span><b>Out-of-hours category — the&nbsp;field that&nbsp;pages a&nbsp;person.</b> Matched against the&nbsp;list your&nbsp;authority wrote. An&nbsp;unmatched night call is escalated rather than parked, and the&nbsp;record says which of&nbsp;the&nbsp;two happened.</span></li>
+          <li><i>→</i><span><b>Location, captured and never tidied.</b> The&nbsp;street, the&nbsp;side, the&nbsp;house number, the&nbsp;landmark the&nbsp;caller used. A&nbsp;crew sent to&nbsp;the&nbsp;wrong end of&nbsp;a&nbsp;long road is a&nbsp;paraphrase problem.</span></li>
+          <li><i>→</i><span><b>Reference number, issued and read out.</b> Before the&nbsp;call ends, in&nbsp;your&nbsp;own format, and repeated in&nbsp;writing on&nbsp;the&nbsp;channel they used. It is what stops the&nbsp;third call about&nbsp;the&nbsp;same thing.</span></li>
+          <li><i>→</i><span><b>Language of&nbsp;the&nbsp;contact.</b> Recorded, so the&nbsp;callback is not made in&nbsp;the&nbsp;wrong one and so you can see, at&nbsp;the&nbsp;end of&nbsp;a&nbsp;quarter, which languages your&nbsp;main line actually took.</span></li>
+          <li><i>→</i><span><b>Source of&nbsp;the&nbsp;answer, on&nbsp;every&nbsp;answer.</b> The&nbsp;page or document it came from and the&nbsp;date your&nbsp;authority last approved it. Refusals are stored the&nbsp;same way, because a&nbsp;refusal is the&nbsp;line most likely to&nbsp;be asked about&nbsp;later.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;record it fills</a>
+      </div>
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">DP</span>
+            <span><b>D. P. — new contact</b><span>First contact — phone, 1:52 AM</span></span>
+            <span class="stg">Logged</span>
+          </div>
+          <div class="crow"><span class="k">Service area</span><span class="v">Council Tax <em>— from&nbsp;the&nbsp;authority's&nbsp;own list</em></span></div>
+          <div class="crow"><span class="k">Reference</span><span class="v">4471-B · read out at&nbsp;01:56<span class="aibadge">Issued</span></span></div>
+          <div class="crow"><span class="k">Out-of-hours category</span><span class="v">None matched — correctly not an&nbsp;emergency</span></div>
+          <div class="crow"><span class="k">What was asked</span><span class="v">Single-person discount after a&nbsp;partner left in&nbsp;June — verbatim</span></div>
+          <div class="crow"><span class="k">Decision</span><span class="v">None. Said out loud: no&nbsp;decision has been made<span class="aibadge">Refused</span></span></div>
+          <div class="crow"><span class="k">Sent</span><span class="v">Published change-of-circumstances form · link only, nothing summarised</span></div>
+          <div class="crow"><span class="k">Language</span><span class="v">Held in&nbsp;the&nbsp;language the&nbsp;call arrived in · recorded</span></div>
+          <div class="crow"><span class="k">Accessibility</span><span class="v">Large-print copy requested by&nbsp;post — stored as&nbsp;a&nbsp;rule</span></div>
+          <div class="crow"><span class="k">Routed to</span><span class="v">Council Tax · next working day · named queue</span></div>
+          <div class="crow"><span class="k">Audit trail</span><span class="v">Who, when, what was said, and which published page it came from</span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;resident and not a&nbsp;real contact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WORKED EXAMPLES · six calls on one main line ═══════ -->
+<section class="sec-dark bg-grid t-md" id="worked-examples">
+  <div class="wrap">
+    <div class="reveal" style="max-width:740px;">
+      <span class="eyebrow"><i></i>Worked examples · a&nbsp;district authority's&nbsp;main&nbsp;line</span>
+      <h2 class="h2 onDark" style="margin-top:20px;">Six calls a&nbsp;switchboard&nbsp;takes&nbsp;— <br>and what each&nbsp;one left&nbsp;behind.</h2>
+      <p class="lead onDark" style="margin-top:18px;">Not a&nbsp;demo script. Six ordinary contacts: the&nbsp;hour they arrive,
+        the&nbsp;channel they arrive on, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;one produced — an&nbsp;officer paged, a&nbsp;published
+        fact read out, a&nbsp;determination refused and recorded. The&nbsp;one fee that&nbsp;appears below is the&nbsp;<b>$38</b> bulky-waste
+        charge this&nbsp;page publishes and uses consistently.</p>
+    </div>
+
+    <div class="exgrid" style="margin-top:38px;">
+
+      <div class="excard">
+        <div class="exhead"><span class="when">01:40</span><span class="via">Phone</span><span class="tag solved">Emergency · officer paged</span></div>
+        <div class="exbody">
+          <p class="exq">There's&nbsp;water coming up out of&nbsp;the&nbsp;road outside number&nbsp;40. It's&nbsp;across both lanes.</p>
+          <div class="exturn"><span class="who">Saleringo</span>That&nbsp;is on&nbsp;the&nbsp;authority's&nbsp;out-of-hours list as&nbsp;a&nbsp;burst main,
+            so I'm&nbsp;paging the&nbsp;duty officer now rather than logging it for&nbsp;the&nbsp;morning. Which street, and is the&nbsp;water
+            reaching any&nbsp;property?</div>
+          <div class="exturn"><span class="who">Caller</span>Marsh Lane. It's&nbsp;at&nbsp;the&nbsp;kerb of&nbsp;number&nbsp;42's&nbsp;drive, not inside yet.</div>
+          <div class="exturn"><span class="who">Saleringo</span>Recorded exactly as&nbsp;you said it. Duty officer paged at&nbsp;<b>01:42</b>,
+            your&nbsp;reference is <b>4470-A</b>, and I'm&nbsp;sending you the&nbsp;out-of-hours instruction the&nbsp;authority publishes.
+            I&nbsp;have not been told what the&nbsp;officer will do, so I&nbsp;won't tell you either.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Matched to&nbsp;a&nbsp;category the&nbsp;authority named, in&nbsp;two&nbsp;minutes, at&nbsp;1:40 AM</span></div>
+            <div class="exrow"><i>✓</i><span>Location held <b>verbatim</b> — street, kerb, house number, not "near number 40"</span></div>
+            <div class="exrow"><i>✓</i><span>Reference issued and read out before the&nbsp;call ended</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;response time promised. No&nbsp;guess at&nbsp;what the&nbsp;officer would do.</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration of&nbsp;how the&nbsp;product behaves — not a&nbsp;customer story and not a&nbsp;real incident.
+            The&nbsp;order of&nbsp;operations is the&nbsp;point: match the&nbsp;category first, then take the&nbsp;location, then page. The&nbsp;category
+            list is written by&nbsp;the&nbsp;authority, not by&nbsp;us.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">01:52</span><span class="via">Phone</span><span class="tag human">Refused · no&nbsp;determination</span></div>
+        <div class="exbody">
+          <p class="exq">My&nbsp;husband moved out in&nbsp;June. Do I get the&nbsp;single-person discount, and from&nbsp;when?</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I can't decide that, and I'd&nbsp;rather say so plainly than
+            give you something that&nbsp;sounds like an&nbsp;answer and then turns out not to&nbsp;be one. Whether a&nbsp;discount applies,
+            and from&nbsp;what date, is a&nbsp;decision the&nbsp;Council&nbsp;Tax team makes on&nbsp;the&nbsp;evidence. What I&nbsp;can do is log it now
+            with&nbsp;the&nbsp;June date you gave me and send you the&nbsp;published form.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Question recorded in&nbsp;her&nbsp;own words, with&nbsp;the&nbsp;date, on&nbsp;the&nbsp;contact</span></div>
+            <div class="exrow"><i>✓</i><span>Reference <b>4471-B</b> issued and routed to&nbsp;Council&nbsp;Tax for&nbsp;the&nbsp;next working day</span></div>
+            <div class="exrow"><i>✓</i><span>Told explicitly that&nbsp;<b>no&nbsp;decision has been made</b>, by&nbsp;anyone, including the&nbsp;AI</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;entitlement stated. No&nbsp;effective date. No&nbsp;"you should qualify".</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. The&nbsp;hedge is the&nbsp;dangerous answer here, not
+            the&nbsp;safe one: "you'd&nbsp;normally get it from&nbsp;the&nbsp;date they left" is a&nbsp;determination, and it is the&nbsp;authority
+            that&nbsp;said it. So the&nbsp;refusal is categorical rather than a&nbsp;confidence threshold.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Sat 09:10</span><span class="via">Phone</span><span class="tag solved">Answered from&nbsp;the&nbsp;calendar</span></div>
+        <div class="exbody">
+          <p class="exq">There was a&nbsp;bank holiday on&nbsp;Monday. Is my&nbsp;bin still Thursday or has it moved?</p>
+          <div class="exturn"><span class="who">Saleringo</span>Moved by&nbsp;one&nbsp;day for&nbsp;your&nbsp;round this&nbsp;week — the&nbsp;published
+            collection calendar has you on&nbsp;<b>Friday</b>, out by&nbsp;7&nbsp;AM. I'll&nbsp;text that&nbsp;to&nbsp;you so you're&nbsp;not holding it
+            in&nbsp;your&nbsp;head. A&nbsp;replacement bin or a&nbsp;bulky collection is a&nbsp;different form and I&nbsp;can send either.</div>
+          <div class="exturn"><span class="who">Caller</span>Bulky, actually — there's&nbsp;a&nbsp;sofa.</div>
+          <div class="exturn"><span class="who">Saleringo</span>The&nbsp;published charge is <b>$38</b> for&nbsp;up to&nbsp;three items.
+            I've&nbsp;sent the&nbsp;booking page and logged this&nbsp;as&nbsp;<b>4488-C</b> so nobody asks you to&nbsp;explain it twice.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Collection day answered from&nbsp;the&nbsp;published calendar, on&nbsp;a&nbsp;Saturday morning</span><span class="amt">$38 published charge</span></div>
+            <div class="exrow"><i>✓</i><span>Answer repeated in&nbsp;writing, which is what stops the&nbsp;second and third call</span></div>
+            <div class="exrow"><i>✓</i><span>Second question picked up in&nbsp;the&nbsp;same contact instead of&nbsp;a&nbsp;new one</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;promise the&nbsp;crew would come. Collections are an&nbsp;operational matter, not a&nbsp;phone one.</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. This&nbsp;is the&nbsp;call the&nbsp;whole queue is made of:
+            high volume, low complexity, entirely published. It is also the&nbsp;call an&nbsp;officer should never have been
+            answering on&nbsp;a&nbsp;Saturday.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Thu 18:30</span><span class="via">Web chat</span><span class="tag human">Refused · no&nbsp;ruling</span></div>
+        <div class="exbody">
+          <p class="exq">Will my&nbsp;neighbour's&nbsp;extension get approved? It's&nbsp;three&nbsp;metres from&nbsp;my&nbsp;kitchen window.</p>
+          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;not going to&nbsp;tell you what will happen to&nbsp;that
+            application, and I&nbsp;won't tell you what the&nbsp;policy means for&nbsp;your&nbsp;window either. That&nbsp;is a&nbsp;planning
+            judgement, and a&nbsp;wrong steer from&nbsp;me could cost you a&nbsp;comment you were entitled to&nbsp;make.</div>
+          <div class="exturn"><span class="who">Visitor</span>Then what can you tell me?</div>
+          <div class="exturn"><span class="who">Saleringo</span>Facts the&nbsp;authority has published: the&nbsp;application is on&nbsp;the&nbsp;public
+            register, the&nbsp;consultation period and how to&nbsp;comment are on&nbsp;that&nbsp;page, and the&nbsp;case officer's&nbsp;name is on&nbsp;it.
+            I've&nbsp;sent you the&nbsp;link and logged your&nbsp;question as&nbsp;<b>4492-D</b> so the&nbsp;case officer sees it was asked.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Published register page and consultation route sent, unedited</span></div>
+            <div class="exrow"><i>✓</i><span>Named case officer given — a&nbsp;person, not a&nbsp;general inbox</span></div>
+            <div class="exrow"><i>✓</i><span>Question logged so it is visible on&nbsp;the&nbsp;file, not lost in&nbsp;a&nbsp;chat window</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;outcome predicted. No&nbsp;policy interpreted. No&nbsp;"that&nbsp;usually gets refused".</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Planning is the&nbsp;single most tempting subject
+            for&nbsp;a&nbsp;chatbot, because the&nbsp;policy is published and reads like a&nbsp;rule. It is not a&nbsp;rule until somebody
+            applies it to&nbsp;one site, which is why this&nbsp;is a&nbsp;permanent refusal rather than a&nbsp;difficult one.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Tue 07:50</span><span class="via">Phone</span><span class="tag solved">Held in&nbsp;the&nbsp;caller's&nbsp;language</span></div>
+        <div class="exbody">
+          <p class="exq">— the&nbsp;call opens in&nbsp;a&nbsp;language the&nbsp;authority's&nbsp;website is not published&nbsp;in —</p>
+          <div class="exturn"><span class="who">Saleringo</span>The&nbsp;whole call is held in&nbsp;that&nbsp;language. The&nbsp;caller wants
+            to&nbsp;know what to&nbsp;bring to&nbsp;a&nbsp;housing appointment; the&nbsp;document list is published, so it is read out and
+            then sent in&nbsp;writing.</div>
+          <div class="exturn hand"><span class="who">Saleringo</span>The&nbsp;second question is whether a&nbsp;deposit will be
+            covered. That&nbsp;is a&nbsp;decision, so it is refused in&nbsp;the&nbsp;same language, logged as&nbsp;<b>4501-E</b>, and routed
+            to&nbsp;Housing with&nbsp;the&nbsp;language recorded on&nbsp;the&nbsp;contact so the&nbsp;callback is not made in&nbsp;English by&nbsp;accident.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Document list given from&nbsp;the&nbsp;published page, in&nbsp;the&nbsp;language the&nbsp;call arrived in</span></div>
+            <div class="exrow"><i>✓</i><span>Language stored on&nbsp;the&nbsp;record, so the&nbsp;callback and the&nbsp;letter match it</span></div>
+            <div class="exrow"><i>✓</i><span>Quarter-end report shows which languages the&nbsp;main line actually took</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;translation of&nbsp;a&nbsp;page you have not published in&nbsp;that&nbsp;language, presented as&nbsp;official</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. The&nbsp;published-source rule does not relax
+            in&nbsp;translation. Where a&nbsp;page exists in&nbsp;one language only, the&nbsp;AI says so and hands over, rather than
+            producing a&nbsp;version of&nbsp;it nobody at&nbsp;your&nbsp;authority has ever read.</p>
+        </div>
+      </div>
+
+      <div class="excard">
+        <div class="exhead"><span class="when">Fri 22:15</span><span class="via">Phone</span><span class="tag solved">Logged · reference given</span></div>
+        <div class="exbody">
+          <p class="exq">The&nbsp;flat above has had music on&nbsp;since eight. Can somebody come out?</p>
+          <div class="exturn"><span class="who">Saleringo</span>Noise is not on&nbsp;the&nbsp;authority's&nbsp;out-of-hours callout list,
+            so I&nbsp;won't tell you an&nbsp;officer is coming tonight when they are not. What I&nbsp;will do is take it properly:
+            the&nbsp;address, the&nbsp;flat, when it started, and whether this&nbsp;has happened before.</div>
+          <div class="exturn"><span class="who">Caller</span>Third Friday running. It stops about&nbsp;two.</div>
+          <div class="exturn"><span class="who">Saleringo</span>All of&nbsp;that&nbsp;is on&nbsp;the&nbsp;record, in&nbsp;your&nbsp;words, with&nbsp;the&nbsp;three
+            dates. Reference <b>4506-F</b>, Environmental&nbsp;Health, first thing Monday. I've&nbsp;also sent you the&nbsp;authority's
+            published page on&nbsp;what happens next — I'm&nbsp;not going to&nbsp;paraphrase it.</div>
+          <div class="exout">
+            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="exrow"><i>✓</i><span>Pattern captured — "third Friday running" is the&nbsp;detail that&nbsp;makes a&nbsp;case</span></div>
+            <div class="exrow"><i>✓</i><span>Told the&nbsp;truth about&nbsp;tonight instead of&nbsp;a&nbsp;comfortable maybe</span></div>
+            <div class="exrow"><i>✓</i><span>Reference read out, and the&nbsp;published next-steps page sent unedited</span></div>
+            <div class="exrow"><i>✕</i><span>No&nbsp;officer promised. No&nbsp;view on&nbsp;whether it is a&nbsp;statutory nuisance. That&nbsp;is a&nbsp;determination.</span></div>
+          </div>
+          <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Most out-of-hours calls are this&nbsp;one: real,
+            miserable, and not an&nbsp;emergency. The&nbsp;value is not a&nbsp;van at&nbsp;midnight — it is that&nbsp;somebody wrote it down
+            properly the&nbsp;first time, so the&nbsp;fourth Friday is not the&nbsp;first Friday all over again.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>What it will and won’t answer</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">The&nbsp;line, written&nbsp;down <br>before&nbsp;a&nbsp;caller hears&nbsp;anything.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Your&nbsp;authority approves every&nbsp;row of&nbsp;this&nbsp;during onboarding. The&nbsp;third
+        column is the&nbsp;one to&nbsp;read twice — every&nbsp;<b style="color:#F09186;">Never</b> row is a&nbsp;place where an&nbsp;answer would
+        amount to&nbsp;a&nbsp;decision your&nbsp;authority has not made yet.</p>
+    </div>
+    <div class="qbank">
+      <div class="qrow hd"><span>A&nbsp;caller asks</span><span>What happens</span><span>Handled by</span></div>
+      <div class="qrow"><span class="qq">When is my&nbsp;bin collected?</span>
+        <span class="qa">Answers from&nbsp;the&nbsp;published collection calendar, including the&nbsp;bank-holiday shift, and repeats it in&nbsp;writing.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">What time does the&nbsp;office open?</span>
+        <span class="qa">Answers from&nbsp;your&nbsp;published hours — including the&nbsp;counter that&nbsp;closes earlier than the&nbsp;phone line.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">How much is a&nbsp;bulky collection?</span>
+        <span class="qa">Quotes the&nbsp;published charge — $38 for&nbsp;up to&nbsp;three items — and sends the&nbsp;booking page.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Which form do I need, and what do I bring?</span>
+        <span class="qa">Names the&nbsp;published form and reads out the&nbsp;document list from&nbsp;the&nbsp;page it sits on.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">There's&nbsp;a&nbsp;tree down across the&nbsp;road.</span>
+        <span class="qa">Matched against your&nbsp;out-of-hours categories. If it matches, a&nbsp;duty officer is paged and the&nbsp;time is on&nbsp;the&nbsp;record.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can I have this&nbsp;in&nbsp;large print / by&nbsp;post?</span>
+        <span class="qa">Stored as&nbsp;an&nbsp;enforced contact rule and applied to&nbsp;every&nbsp;later message on&nbsp;that&nbsp;record.</span><span class="qs auto">AI</span></div>
+      <div class="qrow"><span class="qq">Can I speak to&nbsp;my&nbsp;case officer?</span>
+        <span class="qa">Gives the&nbsp;named officer and the&nbsp;published route to&nbsp;them, and logs that&nbsp;the&nbsp;request was made.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Why has nobody come out yet?</span>
+        <span class="qa">Records the&nbsp;chase against the&nbsp;original reference and hands it to&nbsp;the&nbsp;service. It does not explain another&nbsp;team's&nbsp;delay.</span><span class="qs pers">Person</span></div>
+      <div class="qrow"><span class="qq">Am I entitled to&nbsp;this&nbsp;discount?</span>
+        <span class="qa">Refused. No&nbsp;eligibility decided, in&nbsp;any wording — including a&nbsp;hedge that&nbsp;implies one.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Will this&nbsp;application be approved?</span>
+        <span class="qa">Refused. No&nbsp;planning outcome, no&nbsp;enforcement outcome, no&nbsp;prediction of&nbsp;either.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Does the&nbsp;rule mean I can do it?</span>
+        <span class="qa">Refused. Interpreting a&nbsp;policy or a&nbsp;regulation for&nbsp;one person's&nbsp;facts is a&nbsp;decision, not information.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">How much will my&nbsp;bill be?</span>
+        <span class="qa">Refused. It quotes the&nbsp;published rates and bands; what an&nbsp;individual account comes to&nbsp;is a&nbsp;calculation the&nbsp;service makes.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">When will somebody definitely come?</span>
+        <span class="qa">Refused. No&nbsp;response time is promised beyond what your&nbsp;authority has published as&nbsp;a&nbsp;standard.</span><span class="qs never">Never</span></div>
+      <div class="qrow"><span class="qq">Is what my&nbsp;neighbour is doing legal?</span>
+        <span class="qa">Refused. That&nbsp;is a&nbsp;legal interpretation and an&nbsp;enforcement judgement. It is logged and it goes to&nbsp;a&nbsp;person.</span><span class="qs never">Never</span></div>
+    </div>
+
+    <div class="reveal" style="max-width:660px;margin-top:62px;">
+      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">An&nbsp;ordinary&nbsp;week <br>on&nbsp;one main&nbsp;number.</h3>
+      <p class="lead onDark" style="margin-top:14px;">Not a&nbsp;record week. A&nbsp;dull one — with&nbsp;the&nbsp;share arriving while
+        the&nbsp;offices are closed marked, because that&nbsp;is the&nbsp;part currently reaching an&nbsp;answerphone and then reaching
+        the&nbsp;main line again on&nbsp;Monday.</p>
+    </div>
+    <div class="weekstrip">
+      <div class="weekday"><span class="d">Mon</span><div class="n">210<small> contacts</small></div>
+        <ul><li><i>·</i>148 in&nbsp;hours</li><li><i>·</i>62 offices closed</li><li><i>·</i>collection day queries</li></ul></div>
+      <div class="weekday"><span class="d">Tue</span><div class="n">185<small> contacts</small></div>
+        <ul><li><i>·</i>130 in&nbsp;hours</li><li><i>·</i>55 offices closed</li></ul></div>
+      <div class="weekday"><span class="d">Wed</span><div class="n">190<small> contacts</small></div>
+        <ul><li><i>·</i>132 in&nbsp;hours</li><li><i>·</i>58 offices closed</li></ul></div>
+      <div class="weekday"><span class="d">Thu</span><div class="n">178<small> contacts</small></div>
+        <ul><li><i>·</i>126 in&nbsp;hours</li><li><i>·</i>52 offices closed</li><li><i>·</i>1 planning refusal logged</li></ul></div>
+      <div class="weekday peak"><span class="d">Fri</span><div class="n">205<small> contacts</small></div>
+        <ul><li><i>·</i>134 in&nbsp;hours</li><li><i>·</i>71 offices closed</li><li><i>·</i>the&nbsp;5:05 PM burst</li></ul></div>
+      <div class="weekday"><span class="d">Sat</span><div class="n">44<small> contacts</small></div>
+        <ul><li><i>·</i>2 emergencies</li><li><i>·</i><b>closed all day</b></li></ul></div>
+      <div class="weekday"><span class="d">Sun</span><div class="n">38<small> contacts</small></div>
+        <ul><li><i>·</i>1 emergency</li><li><i>·</i><b>closed all day</b></li></ul></div>
+    </div>
+    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;one district main line — the&nbsp;shape of&nbsp;a&nbsp;week,
+      not a&nbsp;measurement and not a&nbsp;promise. On&nbsp;this&nbsp;shape <b>380 of&nbsp;1,050 contacts arrive while the&nbsp;offices are closed</b>,
+      which is a&nbsp;property of&nbsp;the&nbsp;clock rather than a&nbsp;claim about&nbsp;your&nbsp;authority. The&nbsp;only number that&nbsp;matters is in&nbsp;your&nbsp;own
+      telephony report, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a> takes it.</p>
+
+    <div class="reveal" style="max-width:680px;margin-top:62px;">
+      <span class="eyebrow"><i></i>What the&nbsp;line costs, per&nbsp;contact</span>
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">No&nbsp;return on&nbsp;investment. <br>Just&nbsp;a&nbsp;bill, divided.</h3>
+      <p class="lead onDark" style="margin-top:14px;">A&nbsp;public switchboard does not earn revenue, so we are not going to&nbsp;dress
+        this&nbsp;up as&nbsp;a&nbsp;return. Here is the&nbsp;published price, divided by&nbsp;the&nbsp;contacts it would carry — and nothing else.
+        What an&nbsp;officer-hour costs at&nbsp;your&nbsp;authority is in&nbsp;your&nbsp;own establishment figures, not in&nbsp;ours.</p>
+    </div>
+    <div class="mathbox" style="max-width:680px;margin-top:26px;">
+      <div class="mathrow"><span class="lbl"><b>Saleringo Scale, plan base</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone</span></span><span class="val">$599</span></div>
+      <div class="mathrow"><span class="lbl"><b>AI Phone minutes</b><span class="sub">1,200 min × $0.14/min, as&nbsp;on&nbsp;the&nbsp;published sample invoice</span></span><span class="val">$168</span></div>
+      <div class="mathrow"><span class="lbl"><b>Your&nbsp;month, all&nbsp;in</b><span class="sub">$599 + $168</span></span><span class="val">$767</span></div>
+      <div class="mathrow"><span class="lbl"><b>Contacts those minutes carry</b><span class="sub">1,200 min ÷ a&nbsp;three-minute average call</span></span><span class="val">400</span></div>
+      <div class="mathrow total"><span class="lbl"><b>Cost per&nbsp;contact handled</b><span class="sub">$767 ÷ 400, rounded to&nbsp;the&nbsp;cent</span></span><span class="val">$1.92</span></div>
+      <p class="mathnote">Every&nbsp;rate here is published on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal-ink);font-weight:700;">pricing page</a>; the&nbsp;three-minute average is an&nbsp;assumption stated so you can replace it —
+        at&nbsp;four minutes the&nbsp;same bill carries 300 contacts and the&nbsp;figure is $2.56. We are not going to&nbsp;tell you whether
+        that&nbsp;is cheaper than the&nbsp;desk it sits beside, because we do not know your&nbsp;pay scales, and the&nbsp;savings figures that
+        circulate for&nbsp;this&nbsp;sector come from&nbsp;companies selling what we sell. An&nbsp;authority starting on&nbsp;website chat rather
+        than voice is on&nbsp;a&nbsp;$79/mo plan, and the&nbsp;arithmetic changes accordingly. Put your&nbsp;own numbers into&nbsp;the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal-ink);font-weight:700;">calculator</a>;
+        it defaults sceptical on&nbsp;purpose.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHERE IT STOPS · paper ═══════ -->
+<section class="nogo bg-clinical t-xl">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>Where it stops</span>
+      <h2 class="h2" style="margin-top:22px">What it will <em style="font-style:normal;color:var(--red);">never</em>&nbsp;do.</h2>
+      <p class="lead">In&nbsp;a&nbsp;public body, the&nbsp;answers software refuses to&nbsp;give matter more than the&nbsp;ones it gives.
+        These&nbsp;boundaries are built in — not configured, not optional, and they do not soften because the&nbsp;caller
+        is angry, upset, or asking for&nbsp;the&nbsp;third time.</p>
+      <span class="ngseal">It logs, routes and quotes. It never&nbsp;decides.</span>
+
+      <div class="quotecard light pending" style="margin-top:38px;">
+        <div class="mark">”</div>
+        <p>A&nbsp;founding authority’s&nbsp;words belong here. We are onboarding the&nbsp;first cohort now, so there is nothing to&nbsp;quote yet — and an&nbsp;invented testimonial would undo the&nbsp;exact thing this&nbsp;page is about.</p>
+        <div class="by">
+          <span class="avatar av-b" style="opacity:.4;">?</span>
+          <span><b>Founding authority · seat open</b><span>Reserved for&nbsp;the&nbsp;first public body live</span></span>
+        </div>
+        <div class="metric">Founding cohort · 50% off for&nbsp;3 months</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Decide eligibility or confirm an&nbsp;entitlement</b><span>Not “you should qualify”, not “that&nbsp;normally applies from&nbsp;the&nbsp;date they left”, and not a&nbsp;hedge that&nbsp;implies either. It records the&nbsp;question in&nbsp;the&nbsp;caller’s&nbsp;own words and routes it to&nbsp;the&nbsp;service that&nbsp;decides.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Give a&nbsp;planning, licensing or enforcement outcome</b><span>No&nbsp;prediction, no&nbsp;likelihood, no&nbsp;“that&nbsp;usually gets refused”. It gives the&nbsp;published register entry, the&nbsp;consultation route and the&nbsp;named case officer, and stops there.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Interpret a&nbsp;policy, a&nbsp;regulation or a&nbsp;law</b><span>Reading a&nbsp;rule and applying it to&nbsp;one person’s&nbsp;facts is a&nbsp;decision, not information. The&nbsp;published wording may be sent; what it means for&nbsp;this&nbsp;caller is a&nbsp;person’s&nbsp;answer.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Say anything that&nbsp;implies a&nbsp;decision has been made</b><span>Every&nbsp;logged contact carries the&nbsp;sentence out loud: no&nbsp;decision has been made. A&nbsp;reference number is a&nbsp;receipt for&nbsp;a&nbsp;question, and the&nbsp;AI never lets it sound like an&nbsp;outcome.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Answer from&nbsp;anything your&nbsp;authority has not published</b><span>No&nbsp;general knowledge, no&nbsp;neighbouring authority’s&nbsp;rules, no&nbsp;last&nbsp;year’s&nbsp;fee. If it is not in&nbsp;the&nbsp;approved set, it is a&nbsp;handoff — and the&nbsp;record says which page every&nbsp;answer came from.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Promise a&nbsp;visit, a&nbsp;response time or a&nbsp;crew</b><span>It states the&nbsp;service standard your&nbsp;authority published, if there is one, and otherwise says plainly that&nbsp;it does not know. An&nbsp;invented “someone will be out tonight” is the&nbsp;call you hear about&nbsp;in&nbsp;the&nbsp;complaint.</span></span>
+      </div>
+      <div class="ngrow">
+        <span class="x">✕</span>
+        <span><b>Invent an&nbsp;out-of-hours category to&nbsp;seem helpful</b><span>The&nbsp;list belongs to&nbsp;your&nbsp;authority. A&nbsp;call it cannot match is escalated to&nbsp;the&nbsp;on-call contact you nominated, flagged as&nbsp;unmatched, rather than quietly filed until Monday.</span></span>
+      </div>
+      <a class="linkcta" style="margin-top:26px;" href="../security.html">Guardrails &amp; security&nbsp;&nbsp;→</a>
+    </div>
+  </div></div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A utility crew in high-visibility jackets working from a bucket truck on a suburban street lined with traffic cones" loading="lazy" decoding="async" width="1600" height="1395">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:22ch;line-height:1.1;">Paged at&nbsp;01:42.<br>Decided at&nbsp;no&nbsp;point.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">Eligibility, entitlements, rulings and interpretations are a&nbsp;permanent handoff, not a&nbsp;confidence threshold that&nbsp;a&nbsp;persistent caller can move.</p>
+  </div>
+</section>
+<p class="photocap" style="max-width:1240px;margin:10px auto 0;padding:0 36px;">Photography is illustrative — not a&nbsp;named customer, not a&nbsp;real authority, and not a&nbsp;testimonial.</p>
+
+<!-- ═══════ WHAT IT SAYS OUT LOUD · dark aurora ═══════ -->
+<section class="world bg-aurora t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><i></i>Three things it says out&nbsp;loud</span>
+      <h2 class="h2 onDark" style="margin-top:20px">The&nbsp;disclaimers are not <em style="font-style:normal;color:var(--teal);">in&nbsp;the&nbsp;footer.</em> <br>They&nbsp;are in&nbsp;the&nbsp;call.</h2>
+      <p class="lead onDark">Two of&nbsp;these are said on&nbsp;the&nbsp;call itself, in&nbsp;your&nbsp;authority's&nbsp;own approved wording, rather than
+        buried where nobody reads them. The&nbsp;third is a&nbsp;property of&nbsp;which channel the&nbsp;caller is on.</p>
+    </div>
+
+    <div class="tzcards reveal">
+      <div class="glass"><b>“No&nbsp;decision has been made.”</b><span>Said out loud on&nbsp;every&nbsp;contact that&nbsp;touches an&nbsp;entitlement, an&nbsp;application or a&nbsp;complaint. A&nbsp;reference number is a&nbsp;receipt for&nbsp;a&nbsp;question, never an&nbsp;outcome, and the&nbsp;AI does not let it sound like one.</span></div>
+      <div class="glass"><b>“Your&nbsp;reference is 4471-B.”</b><span>Issued in&nbsp;your&nbsp;own format, read out before the&nbsp;call ends and repeated in&nbsp;writing on&nbsp;the&nbsp;channel they used. It is the&nbsp;single cheapest thing you can give somebody who would otherwise ring back twice.</span></div>
+      <div class="glass"><b>The&nbsp;phone is the&nbsp;accessible channel</b><span>It answers in&nbsp;the&nbsp;language the&nbsp;call arrives in, records that&nbsp;language, and stores large print, post-only or “no&nbsp;email” as&nbsp;an&nbsp;enforced rule rather than a&nbsp;note somebody has to&nbsp;read.</span></div>
+    </div>
+
+    <p class="lead onDark reveal" style="margin:34px auto 0;text-align:center;font-size:var(--fs-sm);">Language and access on&nbsp;a&nbsp;public line are often a&nbsp;written duty, not a&nbsp;courtesy. Welsh language standards made under&nbsp;the&nbsp;<b>Welsh
+      Language (Wales) Measure 2011</b> require councils to&nbsp;greet callers in&nbsp;Welsh on&nbsp;the&nbsp;main number and to&nbsp;deal with&nbsp;the&nbsp;call
+      in&nbsp;Welsh throughout if that&nbsp;is the&nbsp;caller's&nbsp;wish. In&nbsp;the&nbsp;United States, <b>Executive Order 13166</b> (2000) requires federal
+      agencies, and recipients of&nbsp;federal financial assistance, to&nbsp;take reasonable steps to&nbsp;provide meaningful access to&nbsp;people
+      with&nbsp;limited English proficiency. And <b>Directive (EU) 2016/2102</b>, which has applied since 23 September 2018, covers
+      the&nbsp;websites and mobile apps of&nbsp;public sector bodies — which is precisely why the&nbsp;phone still has to&nbsp;work for&nbsp;the&nbsp;people
+      a&nbsp;website cannot reach. Which duties bind your&nbsp;authority is for&nbsp;your&nbsp;authority and its&nbsp;regulator; nothing on&nbsp;this&nbsp;page
+      is legal advice about&nbsp;them.</p>
+    <div class="out reveal"><a href="../security.html#regulated">How regulated organisations are onboarded ↗</a></div>
+  </div>
+</section>
+
+<!-- ═══════ HOW TO START · bright + product UI ═══════ -->
+<section class="start t-md">
+  <div class="wrap"><div class="cols">
+    <div class="reveal">
+      <span class="eyebrow light"><i></i>How to&nbsp;start</span>
+      <h2 class="h2" style="margin-top:22px">Live on&nbsp;the&nbsp;out-of-hours line <br>before the&nbsp;weekend.</h2>
+      <p class="lead">Start with&nbsp;the&nbsp;twenty questions your&nbsp;main line already answers most, your&nbsp;out-of-hours category list and your&nbsp;published fees. Add website chat and messenger when you are ready.</p>
+      <p class="lead" style="margin-top:16px;font-size:var(--fs-sm);">Keep your&nbsp;systems — <b style="color:var(--l-ink);">Zapier</b> and <b style="color:var(--l-ink);">CSV export</b> are live today; case-management platforms are on&nbsp;the&nbsp;roadmap, and founding customers vote on&nbsp;what ships next.</p>
+      <div class="langnote">
+        <div class="ty">EVERY ANSWER TRACES TO&nbsp;A&nbsp;PAGE YOU&nbsp;PUBLISHED</div>
+        <p>Nothing enters the&nbsp;answer set without&nbsp;a&nbsp;source and an&nbsp;approval date, and the&nbsp;record shows both on&nbsp;every&nbsp;contact. When a&nbsp;fee or a&nbsp;calendar changes, the&nbsp;old answer stops being sayable the&nbsp;same day. Anything outside the&nbsp;approved set becomes a&nbsp;handoff, not an&nbsp;improvisation.</p>
+        <div class="tags"><span class="pilltag pt-teal">Published answers · approved</span><span class="pilltag pt-teal">Fees &amp; charges · approved</span><span class="pilltag pt-line">Out-of-hours list · yours</span></div>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Import your&nbsp;published answers &amp; fees</b><span>Collection calendar, hours, forms, charges — each with&nbsp;its&nbsp;source page</span></span><span class="tail pilltag pt-line">~1 day</span></div>
+      <div class="step"><span class="num">02</span><span class="tx"><b>Write the&nbsp;out-of-hours category list</b><span>What wakes a&nbsp;duty officer, in&nbsp;your&nbsp;words, plus the&nbsp;on-call fallback</span></span><span class="tail pilltag pt-teal">✓ Triage live</span></div>
+      <div class="step"><span class="num">03</span><span class="tx"><b>Approve what it may say</b><span>Including the&nbsp;refusals and the&nbsp;“no&nbsp;decision has been made” wording, line by&nbsp;line</span></span><span class="tail pilltag pt-dark">Signed off</span></div>
+      <div class="step"><span class="num">04</span><span class="tx"><b>Point the&nbsp;main number at&nbsp;it after five</b><span>Contacts logged, references issued, records written from&nbsp;night one</span></span><span class="tail pilltag pt-amber">This&nbsp;week</span></div>
+    </div>
+  </div>
+
+  <!-- product UI: the overnight queue -->
+  <div class="browserframe light reveal">
+    <div class="bar"><i></i><i></i><i></i><span class="url">app.saleringo.com/contacts?window=overnight</span></div>
+    <div class="inboxmock">
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">MAIN LINE</div>
+        <div class="convrow on"><span class="chanmini cm-v">A</span><span class="cv"><b>All contacts</b></span><span class="st st-ai">31</span></div>
+        <div class="convrow"><span class="chanmini cm-c">EM</span><span class="cv"><b>Emergencies</b></span><span class="st st-hu">2</span></div>
+        <div class="convrow"><span class="chanmini cm-m">RF</span><span class="cv"><b>Logged with&nbsp;ref</b></span><span class="st st-ai">24</span></div>
+        <div class="convrow"><span class="chanmini cm-c">OF</span><span class="cv"><b>Waiting on&nbsp;an&nbsp;officer</b></span><span class="st st-hu">5</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">LAST NIGHT</div>
+        <div class="convrow on"><span class="avatar av-c" style="width:30px;height:30px;font-size:var(--fs-2xs);">MR</span><span class="cv"><b>M. R. · phone · 01:40</b><span>Burst main · paged 01:42</span></span><span class="st st-hu">Officer</span></div>
+        <div class="convrow"><span class="avatar av-a" style="width:30px;height:30px;font-size:var(--fs-2xs);">DP</span><span class="cv"><b>D. P. · phone · 01:52</b><span>Entitlement refused · 4471-B</span></span><span class="st st-hu">Human</span></div>
+        <div class="convrow"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">LW</span><span class="cv"><b>L. W. · phone · 22:15</b><span>Noise · Env Health Monday</span></span><span class="st st-ai">AI</span></div>
+        <div class="convrow"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">AK</span><span class="cv"><b>A. K. · chat · 20:05</b><span>Collection day · answered</span></span><span class="st st-ai">AI</span></div>
+      </div>
+      <div class="col">
+        <div style="font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;color:#6F767F;margin-bottom:12px;">ANSWER TRACE</div>
+        <div style="font-size:var(--fs-sm);font-weight:800;color:var(--l-ink);">Bulky collection · $38</div>
+        <div style="margin-top:6px;font-size:var(--fs-2xs);color:var(--l-mut);font-weight:600;">Fees &amp; charges page · approved 2026-04-01</div>
+        <div style="margin-top:16px;display:grid;gap:8px;">
+          <span class="pilltag pt-teal" style="justify-self:start;">✓ Source: published fees page</span>
+          <span class="pilltag pt-line" style="justify-self:start;">No&nbsp;decision implied</span>
+          <span class="pilltag pt-dark" style="justify-self:start;">Approved by: service manager</span>
+        </div>
+        <div style="margin-top:18px;font-size:var(--fs-2xs);line-height:1.7;color:var(--l-mut);font-weight:500;">
+          Reference 4488-C issued at&nbsp;09:12 and read out on&nbsp;the&nbsp;call. The&nbsp;record shows the&nbsp;page, the&nbsp;version and the&nbsp;approval date.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cap reveal">Every&nbsp;answer traces back to&nbsp;the&nbsp;page it came from</div>
+  </div>
+</section>
+
+<!-- ═══════ MANY SERVICES, MANY SITES ═══════ -->
+<section class="sec-dark bg-grid t-xl" id="multi-location">
+  <div class="wrap">
+    <div class="head reveal" >
+      <span class="eyebrow"><i></i>One number. Seven services. Sometimes three&nbsp;authorities.</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Waste does not answer <br>the&nbsp;way <em style="font-style:normal;color:var(--teal);">planning answers.</em></h2>
+      <p class="secintro">The&nbsp;main number is one queue, but behind it are services with&nbsp;different published answers, different out-of-hours rules and different people. And if you run a&nbsp;shared service across&nbsp;more than one authority, the&nbsp;answers must not merge while the&nbsp;reporting must.</p>
+    </div>
+    <div class="mlgrid reveal">
+      <div class="mlcard"><span class="n">01</span><b>Each&nbsp;service has its&nbsp;own answer set</b>
+        <p>Waste, council tax, housing, highways, planning, environmental health, licensing. A&nbsp;caller asking about&nbsp;one
+          never hears another's&nbsp;fee, form or standard, and the&nbsp;record says which set the&nbsp;answer came from.</p></div>
+      <div class="mlcard"><span class="n">02</span><b>One out-of-hours list, across&nbsp;all of&nbsp;them</b>
+        <p>The&nbsp;triage runs against the&nbsp;authority, not the&nbsp;service — a&nbsp;call that&nbsp;one team would have escalated is not
+          one another&nbsp;team parks until Monday by&nbsp;accident.</p></div>
+      <div class="mlcard"><span class="n">03</span><b>Shared services stay separated per&nbsp;authority</b>
+        <p>Two councils on&nbsp;one contact centre keep two&nbsp;answer sets, two&nbsp;fee schedules and two&nbsp;reference formats.
+          Access is set during onboarding, not inherited from&nbsp;a&nbsp;shared inbox.</p></div>
+      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
+        <p>One report puts every&nbsp;service in&nbsp;the&nbsp;same row: contacts, out-of-hours share, emergencies escalated,
+          refusals logged, repeat contacts on&nbsp;one reference. Exportable to&nbsp;PDF or Excel.</p></div>
+    </div>
+    <p class="statnote">Services, numbers, answer sets, out-of-hours categories and who-sees-what are configured with&nbsp;you
+      during onboarding — not through&nbsp;a&nbsp;self-serve wizard we would have to&nbsp;invent a&nbsp;timescale for.</p>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faqsec t-md">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow light"><i></i>Questions service managers ask</span>
+      <h2 class="h2" style="margin-top:20px">Asked by&nbsp;authorities like&nbsp;yours.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Can the&nbsp;AI decide whether somebody is eligible for&nbsp;something?</summary>
+        <p>No, and the&nbsp;refusal is categorical rather than a&nbsp;confidence threshold. It does not decide eligibility, it does not confirm an&nbsp;entitlement, it does not interpret a&nbsp;policy or a&nbsp;regulation, and it does not say what a&nbsp;planning or enforcement outcome will be — not even as&nbsp;a&nbsp;hedge, and not even where the&nbsp;general rule is published. It says on&nbsp;the&nbsp;call that&nbsp;no&nbsp;decision has been made, records the&nbsp;question in&nbsp;the&nbsp;caller's&nbsp;own words, gives a&nbsp;reference number, and routes the&nbsp;contact to&nbsp;the&nbsp;named service that&nbsp;does decide.</p>
+      </details>
+      <details>
+        <summary>How does it know what counts as&nbsp;an&nbsp;emergency at&nbsp;two in&nbsp;the&nbsp;morning?</summary>
+        <p>From your&nbsp;own out-of-hours list, not from&nbsp;ours. Your&nbsp;authority names the&nbsp;categories that&nbsp;reach a&nbsp;duty officer tonight — a&nbsp;burst main, a&nbsp;dangerous structure, a&nbsp;tree blocking a&nbsp;carriageway, an&nbsp;out-of-hours homelessness presentation — and the&nbsp;wording that&nbsp;goes with&nbsp;each. The&nbsp;AI matches the&nbsp;call against that&nbsp;list and nothing else. If it cannot match a&nbsp;call to&nbsp;a&nbsp;named category, it does not invent one: it escalates to&nbsp;the&nbsp;on-call contact you nominated, flags the&nbsp;contact as&nbsp;unmatched, and says so to&nbsp;the&nbsp;caller.</p>
+      </details>
+      <details>
+        <summary>Can it answer callers who do not speak the&nbsp;majority language?</summary>
+        <p>It holds the&nbsp;call in&nbsp;the&nbsp;language it arrives in, and the&nbsp;language is recorded on&nbsp;the&nbsp;contact so the&nbsp;callback is not made in&nbsp;the&nbsp;wrong one. The&nbsp;published-source rule does not relax in&nbsp;translation: it may only say what your&nbsp;authority published, and a&nbsp;page that&nbsp;exists in&nbsp;one language only is answered by&nbsp;saying so and routing to&nbsp;a&nbsp;person. This&nbsp;is a&nbsp;practical expectation in&nbsp;many places and a&nbsp;written one in&nbsp;some — Welsh language standards made under&nbsp;the&nbsp;Welsh Language (Wales) Measure 2011 require councils to&nbsp;greet callers in&nbsp;Welsh on&nbsp;the&nbsp;main number and to&nbsp;deal with&nbsp;the&nbsp;call in&nbsp;Welsh if that&nbsp;is the&nbsp;caller's&nbsp;wish. Which duties bind your&nbsp;authority is yours to&nbsp;confirm.</p>
+      </details>
+      <details>
+        <summary>What does the&nbsp;audit trail actually hold?</summary>
+        <p>Who contacted you, on&nbsp;which channel, at&nbsp;what time, what they asked in&nbsp;their&nbsp;own words, what was said back, which published page or document that&nbsp;answer came from and when your&nbsp;authority last approved it, the&nbsp;reference number issued, and where the&nbsp;contact was routed. Refusals are recorded as&nbsp;fully as&nbsp;answers, because a&nbsp;question the&nbsp;AI would not touch is the&nbsp;one most likely to&nbsp;be asked about&nbsp;later. Data is encrypted in&nbsp;transit and at&nbsp;rest, kept separate from&nbsp;every&nbsp;other customer, with&nbsp;retention and deletion controls your&nbsp;authority operates — see <a href="../security.html" style="color:var(--teal-deep);font-weight:700;">Security &amp; data</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="photo-scrim reveal" style="min-height:300px;display:flex;align-items:flex-end;">
+  <img class="ph" src="https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
+         alt="A young office worker leaning against a wall carrying a tall stack of ring binders and paper files" loading="lazy" decoding="async" width="1600" height="1067">
+  <div class="wrap" style="padding-bottom:30px;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">One contact.<br>One source behind&nbsp;it.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:52ch;">Every&nbsp;answer carries the&nbsp;page it came from and the&nbsp;date you approved it — and so does every&nbsp;refusal.</p>
+  </div>
+</section>
+
+<!-- ═══════ WHAT IT CONNECTS TO ═══════ -->
+<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#050B16,#081426);">
+  <div class="wrap">
+    <div class="head reveal" >
+      <span class="eyebrow"><i></i>Your&nbsp;existing systems, honestly</span>
+      <h2 class="h2 onDark" style="margin-top:18px;">Three columns. <br>No&nbsp;logo&nbsp;wall.</h2>
+      <p class="secintro">Normally this&nbsp;answer is buried in&nbsp;an&nbsp;FAQ, or discovered halfway through&nbsp;a&nbsp;procurement.
+        A&nbsp;service manager deserves to&nbsp;see it before they decide, not after.</p>
+    </div>
+    <div class="statgrid reveal">
+      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+        <ul>
+          <li>Zapier<span>Push contacts, references and stage changes into&nbsp;the&nbsp;systems you already run</span></li>
+          <li>CSV export<span>Contacts, out-of-hours escalations, refusals and routing, whenever you ask</span></li>
+          <li>Saleringo's&nbsp;own board &amp; reporting<span>Enough on&nbsp;its&nbsp;own if you would rather start light</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>Bridge for&nbsp;now</h4>
+        <ul>
+          <li>Your&nbsp;case-management platform<span>No&nbsp;direct link. Contacts reach it through&nbsp;Zapier or a&nbsp;CSV import</span></li>
+          <li>Your&nbsp;published pages<span>Imported and re-imported on&nbsp;a&nbsp;schedule you set. They stay yours; we do not become the&nbsp;system of&nbsp;record for&nbsp;them</span></li>
+        </ul>
+      </div>
+      <div class="statcol build"><h4><i></i>In&nbsp;build</h4>
+        <ul>
+          <li>Case and CRM platforms used by&nbsp;public bodies<span>On&nbsp;the&nbsp;roadmap; founding customers vote on&nbsp;what ships next. We will not name a&nbsp;month we cannot stand behind, and we will not name a&nbsp;framework we are not on</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="statnote">If the&nbsp;system you run is not on&nbsp;this&nbsp;page, ask on&nbsp;the&nbsp;call. "Not yet" now is cheaper
+      for&nbsp;both of&nbsp;us than "not yet" after a&nbsp;procurement has closed.</p>
+  </div>
+</section>
+
+<!-- PACK: the actual per-trade configuration, not a re-skinned page -->
+<section class="packsec sec-dark bg-grid t-md" id="the-pack">
+  <div class="wrap">
+    <div class="head reveal" >
+      <div class="secrule"><span class="eyebrow"><i></i>Not a&nbsp;skin &mdash; a&nbsp;different object model</span><span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Six fields, three&nbsp;rules, <br>and one thing it will not&nbsp;do.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Most industry pages change a&nbsp;photograph and a&nbsp;noun. This&nbsp;is the&nbsp;configuration
+        itself: the&nbsp;fields the&nbsp;contact carries, the&nbsp;rules the&nbsp;triage enforces, the&nbsp;places a&nbsp;figure may be quoted from, who
+        ends up with&nbsp;the&nbsp;work, and the&nbsp;subjects the&nbsp;AI is not allowed to&nbsp;touch.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;contact carries</span>
+        <div class="pkfields"><div class="pkf"><b>Service area</b><span>from&nbsp;your&nbsp;own list of&nbsp;services</span></div><div class="pkf"><b>Out-of-hours category</b><span>decides whether a&nbsp;person is woken</span></div><div class="pkf"><b>Location</b><span>captured, never tidied</span></div><div class="pkf"><b>Reference number</b><span>issued and read out loud</span></div><div class="pkf"><b>Language of&nbsp;the&nbsp;contact</b><span>so the&nbsp;callback matches it</span></div><div class="pkf"><b>Source of&nbsp;the&nbsp;answer</b><span>page, version and approval date</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;triage enforces</span>
+        <ol class="pkrules"><li>Only categories your&nbsp;authority named page a&nbsp;duty officer. An&nbsp;unmatched night call is escalated to&nbsp;your&nbsp;on-call contact and flagged, never quietly filed.</li><li>Every&nbsp;logged contact leaves with&nbsp;a&nbsp;reference number and the&nbsp;sentence "no&nbsp;decision has been made".</li><li>Nothing may be said that&nbsp;does not trace to&nbsp;a&nbsp;published page with&nbsp;an&nbsp;approval date. Everything else is a&nbsp;handoff.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;figure is quoted from</span>
+        <ul class="pkq"><li>Published fees &amp; charges</li><li>Published collection calendar</li><li>Published opening hours</li><li>Published service standards &mdash; where they exist, never invented</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">A&nbsp;duty officer for&nbsp;the&nbsp;matched emergencies; a&nbsp;named service and a&nbsp;named officer for&nbsp;everything else, next working day.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Eligibility, entitlements, rulings, interpretations, and anything that&nbsp;would amount to&nbsp;a&nbsp;decision. Every&nbsp;one of&nbsp;those is a&nbsp;person.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Out-of-hours contacts answered, not voicemailed</span><span class="pkk">Repeat contacts on&nbsp;one reference</span><span class="pkk">Emergencies escalated inside two&nbsp;minutes</span><span class="pkk">Refusals logged and routed</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Services, published answers, out-of-hours categories and reference formats all come from&nbsp;your&nbsp;own setup. Product illustration &mdash; the&nbsp;fields and rules are the&nbsp;real ones.</span>Contacts answered after five, repeat calls collapsed onto&nbsp;one reference, and how fast the&nbsp;genuine emergencies reached a&nbsp;person. Those are numbers a&nbsp;service manager already reports; the&nbsp;only thing that&nbsp;changes is who was on&nbsp;the&nbsp;line when the&nbsp;phone rang at&nbsp;1:40 AM.</p>
+  </div>
+</section>
+
+<section class="t-sm sec-dark"><div class="wrap" style="text-align:center;"><p style="font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:600;max-width:72ch;margin:0 auto;"><b style="color:#fff;">A&nbsp;note on&nbsp;what this&nbsp;page is not. </b>Nothing on&nbsp;this&nbsp;page is legal advice, to&nbsp;you or to&nbsp;anyone who calls you, and nothing here certifies your&nbsp;authority as&nbsp;compliant with&nbsp;its&nbsp;statutory duties, its&nbsp;equality and accessibility obligations, or its&nbsp;records and retention rules. Those are yours and your&nbsp;regulator's. What we supply is a&nbsp;line that&nbsp;is answered, a&nbsp;refusal that&nbsp;holds, and an&nbsp;answer set your&nbsp;authority signed. <a href="../security.html#regulated" style="color:var(--teal-ink);font-weight:700;">Where we stand →</a></p></div></section>
+
+<section class="concsec t-sm sec-dark">
+  <div class="wrap">
+    <div class="concwrap reveal">
+      <div class="concl">
+        <span class="cnl">You have seen where it stops</span>
+        <p class="cnp">An&nbsp;emergency matched against your&nbsp;own list and put in&nbsp;front of&nbsp;a&nbsp;person in&nbsp;two&nbsp;minutes, a&nbsp;fee quoted from&nbsp;your&nbsp;own published page, a&nbsp;reference number read out before the&nbsp;call ended, and a&nbsp;refusal line that&nbsp;does not move: no&nbsp;eligibility, no&nbsp;ruling, no&nbsp;interpretation. What sits behind all of&nbsp;it is a&nbsp;record on&nbsp;a&nbsp;named officer's&nbsp;queue on&nbsp;Monday morning, with&nbsp;the&nbsp;source of&nbsp;every&nbsp;sentence attached.</p>
+      </div>
+      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="closer bg-spot">
+  <div class="wrap">
+    <div class="riskrow reveal">
+      <div class="riskitem"><div class="ic">✓</div><b>Approved line by&nbsp;line</b><span>Nothing goes live that&nbsp;a&nbsp;service manager at&nbsp;your&nbsp;authority hasn't signed off.</span></div>
+      <div class="riskitem"><div class="ic">→</div><b>Decisions leave</b><span>Eligibility, rulings and interpretations reach a&nbsp;person, thread attached.</span></div>
+      <div class="riskitem"><div class="ic">◷</div><b>Month to&nbsp;month</b><span>No&nbsp;annual lock-in. Stop whenever it stops earning its&nbsp;place.</span></div>
+      <div class="riskitem"><div class="ic">%</div><b>Founding pricing</b><span>50% off for&nbsp;3 months, locked before general availability.</span></div>
+    </div>
+
+    <h2 class="reveal">A&nbsp;main goes <br>at&nbsp;<em>five past five on&nbsp;a&nbsp;Friday.</em></h2>
+    <p class="lead onDark reveal">Import your&nbsp;published answers, write the&nbsp;out-of-hours list, approve what it may say — and let tonight's&nbsp;1 AM call be answered, escalated or logged with&nbsp;a&nbsp;reference, and decided by&nbsp;nobody but&nbsp;you.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
+      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
+    </div>
+
+    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
+      <div class="lh">Get your&nbsp;authority's&nbsp;setup plan</div>
+      <p class="lsub">Tell us which services the&nbsp;main number carries and what currently happens after five. We reply with&nbsp;the&nbsp;contact fields, the&nbsp;out-of-hours triage and the&nbsp;refusal set we would build for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
+      <form class="eaform" data-earlyaccess>
+        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
+        <input type="text" name="business" placeholder="Authority or agency name" aria-label="Authority or agency name">
+        <input type="text" name="country" placeholder="Country / region" aria-label="Country or region">
+        <input type="hidden" name="industry" required value="Public sector">
+        <input type="hidden" name="context" value="Public sector industry page">
+        <select name="locations" aria-label="How many services the main number carries">
+          <option value="">How many services on&nbsp;the&nbsp;main number?</option>
+          <option>One or two</option><option>Three to&nbsp;six</option><option>Seven or more</option>
+        </select>
+        <select name="channel" aria-label="What happens after five today">
+          <option value="">What happens after five today…</option>
+          <option>Answerphone</option><option>An&nbsp;out-of-hours contractor</option>
+          <option>A&nbsp;duty officer's&nbsp;mobile</option><option>Nothing, honestly</option>
+        </select>
+        <button class="btn btn-teal" type="submit">Get the&nbsp;Public Sector setup plan →</button>
+        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
+        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
+        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
+      </form>
+      <p class="eanote" style="margin-top:18px;"><span class="pilltag pt-teal">✓ No&nbsp;eligibility, no&nbsp;ruling, no&nbsp;interpretation — and a&nbsp;reference number on&nbsp;every&nbsp;contact</span></p>
+    </div>
+    <div class="trust">Security or procurement questions? <a href="../security.html" style="color:var(--tx2);">See where your&nbsp;data lives ↗</a> · Also relevant: <a href="./property-management.html" style="color:var(--tx2);">Property Management</a></div>
+  </div>
+
+  <footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v24.1</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4 aria-level="3">The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="./dental.html">Dental</a><a class="lnk" href="./clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="./veterinary.html">Veterinary</a><a class="lnk" href="./senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5>Home &amp; property</h5><a class="lnk" href="./home-services.html">Home services</a><a class="lnk" href="./pest-control.html">Pest control</a><a class="lnk" href="./property-management.html">Property management</a><a class="lnk" href="./real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5>Vehicle, plant &amp; storage</h5><a class="lnk" href="./auto-repair.html">Auto repair</a><a class="lnk" href="./equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="./self-storage.html">Self-storage</a><a class="lnk" href="./movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="./salons.html">Salons &amp; barbers</a><a class="lnk" href="./fitness.html">Gyms &amp; studios</a><a class="lnk" href="./academies.html">Tutoring &amp; academies</a><a class="lnk" href="./golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="./stays.html">Boutique stays</a><a class="lnk" href="./venues.html">Wedding &amp; venues</a><a class="lnk" href="./restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Professional &amp; public</h5><a class="lnk" href="./legal.html">Legal</a><a class="lnk" href="./funeral-homes.html">Funeral homes</a><a class="lnk" href="./universities.html">Universities &amp; admissions</a><a class="lnk" href="./public-sector.html">Public sector</a></div><div class="fgrp"><h5>Online &amp; multi-site</h5><a class="lnk" href="./ecommerce.html">Online stores</a><a class="lnk" href="./franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><h4>Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4>Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</section>
+<nav data-startpath data-compact aria-hidden="true" data-title="What to check here" data-end="#early-access" data-end-label="Get my plan">
+  <ol>
+    <li data-step="#the-pack" data-short="The pack" data-next="see the six fields and three rules"><a href="#the-pack"><b>The&nbsp;pack</b></a></li>
+  </ol>
+</nav>
+</main>
+
+<div class="stickycta" data-sticky>
+  <div class="wrap">
+    <span class="msg">Answered at&nbsp;1:40 AM, the&nbsp;duty officer paged in&nbsp;two&nbsp;minutes, <b>and a&nbsp;reference on&nbsp;the&nbsp;rest.</b></span>
+    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=24.1"></script>
+<script src="../../assets/js/balance.js?v=24.1" defer></script>
+<script src="../../assets/js/canvas.js?v=24.1" defer></script>
+<script src="../../assets/js/scenes.js?v=24.1" defer></script>
+<script src="../../assets/js/guide.js?v=24.1"></script>
+</body>
+</html>
