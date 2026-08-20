@@ -243,7 +243,16 @@ a{text-decoration:none;color:inherit;}
 .cmp .good b{color:#0B7878;}
 
 /* faq */
-.faq{max-width:760px;margin:0 auto;}
+/* A section reads as one column or it reads as two mistakes. The heading
+   above a FAQ is left-aligned at the header width; the list was centred at
+   760px, so on every trade page the questions started 184px to the right of
+   the heading that introduced them — measured 136px of skew across the
+   section on fourteen pages. The list starts where its heading starts.
+   Where the heading is deliberately centred, the list still is too. */
+.faq{max-width:760px;margin:0;}
+section:has(> .wrap > .head.mid) .faq,
+section:has(> .wrap > .head.centered) .faq,
+.head.mid ~ .faq,.head.centered ~ .faq{margin-left:auto;margin-right:auto;}
 .faq details{border-bottom:1px solid var(--l-hair);padding:22px 6px;}
 .faq summary{font-size:var(--fs-body);font-weight:700;cursor:pointer;color:inherit;list-style:none;display:flex;}
 
