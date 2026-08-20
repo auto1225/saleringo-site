@@ -1345,7 +1345,7 @@ window.SR_PLAY = {
             mt:'Asked for a delivery time · none given · mud flagged as a transport decision', tag:'Urgent', chan:'Phone · Mon 16:30'},
           booking:null, bookingWhy:'No delivery window — the transport desk sets the slot, and it has not set this one yet.',
           quote:{ref:'Transport, both ways', lines:[['Delivery','each way','£45'],['Collection','each way','£45'],['Slot','set by your transport desk, not here','—']],
-            total:'£90 both ways', foot:'The money is on the rate card. The time is not, so it is left blank rather than filled in.'},
+            total:'£45 each way', foot:'The money is on the rate card. The time is not, so it is left blank rather than filled in.'},
           record:{name:'Tuesday delivery', sub:'Phone, Mon 16:30',
             rows:[['Escalated','Ground still soft after the weekend — unloading onto mud is the transport desk’s call'],
                   ['Not done','No delivery window invented to get off the phone. No rough time offered as a compromise.'],

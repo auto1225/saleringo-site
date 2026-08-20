@@ -1257,7 +1257,12 @@
           var gap = Math.max(46, (W - wA - wM) * 0.16);
           wB = Math.max(150, W - wA - wM - gap * 2);
           xA = 0; xM = wA + gap; xB = xM + wM + gap;
-          yA = yM = yB = 0; hA = hM = hB = topH;
+          /* The box is reserved tall enough for the stacked layout, and the
+             flip happens a little later than the box grows — so on the two
+             viewports in between, a 370px-high panel would hold 100px of
+             content and 270px of nothing. Cap it and centre the row. */
+          hA = hM = hB = Math.min(topH, 210);
+          yA = yM = yB = (topH - hA) / 2;
         }
 
         /* ── what is handed over ── */
@@ -1426,11 +1431,15 @@
         var rows = Math.ceil(4 / cols);
         var gp = 8;
         var cw = (W - gp * (cols - 1)) / cols;
-        var ch2 = (rowH - gp * (rows - 1)) / rows;
+        /* the box is allowed to be taller than the row needs — a 128px-tall
+           channel chip is a bug the CSS cannot see, so the cell is capped and
+           the block is centred in whatever room is left */
+        var ch2 = Math.min((rowH - gp * (rows - 1)) / rows, 58);
+        var slack = Math.max(0, rowH - (ch2 * rows + gp * (rows - 1)));
 
         function cellAt(i) {
           var r = Math.floor(i / cols), k = i % cols;
-          return { x: k * (cw + gp), y: rowY + r * (ch2 + gp), w: cw, h: ch2 };
+          return { x: k * (cw + gp), y: rowY + slack / 2 + r * (ch2 + gp), w: cw, h: ch2 };
         }
         CH.forEach(function (chn, i) {
           var B = cellAt(i);
@@ -1455,7 +1464,7 @@
         c.moveTo(L.x + 13, L.y + L.h / 2 + 5); c.lineTo(L.x + 23, L.y + L.h / 2 - 5);
         c.stroke(); c.restore();
         label(c, L.w < 200 ? 'No off switch' : 'No switch to turn it off',
-              L.x + 32, L.y + L.h / 2, L.w - 44, '800', JAK, 13, K.strong);
+              L.x + 30, L.y + L.h / 2, L.w - 38, '800', JAK, 13, K.strong);
         return true;
       }
     };
@@ -1501,7 +1510,12 @@
           wL = Math.max(230, W * 0.36);
           var gap = 66;
           wR = Math.max(200, W - wL - gap);
-          xL = 0; xR = wL + gap; yL = yR = 0; hL = hR = H;
+          xL = 0; xR = wL + gap;
+          /* same reason as the figure above: the reserved box is sized for the
+             stacked layout, so the side-by-side one caps its height and
+             centres rather than stretching a card round 200px of air */
+          hR = Math.min(H, 250); hL = Math.min(H, 190);
+          yR = (H - hR) / 2; yL = (H - hL) / 2;
         }
 
         /* the turn that stops the AI */
@@ -1600,23 +1614,24 @@
         var SOFT = soft(K), PANEL = panelFill(K), HAIR = hairLine(K), AM = amber(K);
         c.textBaseline = 'middle';
         var n = count();
-        var narrow = W < 620;
-        var gp = narrow ? 12 : 14;
+        var gp = 14;
         var laneH = (H - gp * 2) / 3;
 
         var LANES = [
           { st: 'LIVE TODAY', c: GREEN, head: nsys(n.live),
             stops: ['Booking made', 'Saleringo', 'Your system'],
             tight: ['Booking', 'Saleringo', 'Your system'],
+            line: 'Booking → Saleringo → your system',
             foot: 'Written straight in. Nobody has to touch it.',
             footT: 'Nobody has to touch it.', hop: false, empty: false },
           { st: 'BRIDGE FOR NOW', c: BLUE, head: nsys(n.bridge),
             stops: ['Booking made', 'Zapier · webhook · CSV', 'Your system'],
             tight: ['Booking', 'Zapier / CSV', 'Your system'],
+            line: 'Booking → Zapier or CSV → your system',
             foot: 'One extra step — and somebody has to keep doing it.',
             footT: 'Somebody keeps doing that step.', hop: true, empty: false },
           { st: 'IN BUILD', c: AM, head: 'nothing today',
-            stops: [], tight: [],
+            stops: [], tight: [], line: '',
             foot: 'Empty, and the page says so rather than promising a date.',
             footT: 'Empty, and it says so.', hop: false, empty: true }
         ];
@@ -1633,54 +1648,86 @@
           }
           c.fillStyle = L.c; box(c, 0, y, 4, laneH, [14, 0, 0, 14]); c.fill();
 
-          /* the status word, and how many rows wear it */
+          /* the status word, and how many rows below wear it */
           var hx = 18, hy = y + 24;
-          var pillW = Math.min(narrow ? 150 : 178, W - 36);
+          var pillW = Math.min(W < 520 ? 148 : 178, W - 40);
           c.fillStyle = tint(L.c, K.onLight ? 0.14 : 0.20);
           box(c, hx, hy - 12, pillW, 24, 7); c.fill();
           label(c, L.st, hx + 10, hy, pillW - 20, '800', GRO, 13, L.c);
-          label(c, L.head, hx + pillW + 12, hy, Math.max(70, W - hx - pillW - 30),
+          label(c, L.head, hx + pillW + 12, hy, Math.max(64, W - hx - pillW - 28),
                 '700', JAK, 13, SOFT);
 
-          /* the route */
-          var ry = y + laneH * 0.62;
+          /* ── the route the booking takes ──────────────────────────────
+             Three labelled boxes need about 96px each to hold 13px type. On
+             a 300px canvas they do not have it, and a route reading
+             "Zapier…  →  Your syst…" is worse than no route at all. Below
+             that width the stops become nodes on a line and the route is
+             written out once, in full, underneath. */
+          var m = 14;
+          var ry = y + Math.min(laneH * 0.58, 68);
+          var stops = 3;
+          var frac = L.hop ? [0.28, 0.44, 0.28] : [1 / 3, 1 / 3, 1 / 3];
+          var avail = W - m * 2;
+          var centres = [], acc = 0, s2;
+          for (s2 = 0; s2 < stops; s2++) {
+            centres.push(m + avail * (acc + frac[s2] / 2));
+            acc += frac[s2];
+          }
+          var widths = frac.map(function (f) { return Math.min(avail * f - 10, 210); });
+          var compact = Math.min.apply(null, widths) < 92;
+          var boxH = 30;
+
           if (!L.empty) {
-            var stops = L.stops.length, m = 16;
-            var sw = (W - m * 2) / stops;
-            var boxW = Math.min(sw - 12, narrow ? 104 : 190);
-            var boxH = 30;
-            for (var s2 = 0; s2 < stops; s2++) {
-              var sx = m + sw * s2 + sw / 2;
-              var mid = L.hop && s2 === 1;
-              c.fillStyle = mid ? tint(L.c, K.onLight ? 0.12 : 0.18)
-                                : (K.onLight ? '#FFFFFF' : '#0A1627');
-              box(c, sx - boxW / 2, ry - boxH / 2, boxW, boxH, 8); c.fill();
-              c.save();
-              c.strokeStyle = mid ? L.c : HAIR; c.lineWidth = mid ? 1.6 : 1;
-              if (mid) c.setLineDash([4, 4]);
-              box(c, sx - boxW / 2, ry - boxH / 2, boxW, boxH, 8); c.stroke();
+            if (compact) {
+              c.save(); c.globalAlpha = 0.45; c.strokeStyle = L.c;
+              c.lineWidth = 2; c.lineCap = 'round';
+              c.beginPath(); c.moveTo(centres[0], ry); c.lineTo(centres[2], ry); c.stroke();
               c.restore();
-              label(c, (boxW < 150 ? L.tight : L.stops)[s2], sx, ry,
-                    boxW - 12, mid ? '800' : '600', JAK, 13,
-                    mid ? L.c : K.strong, 'center');
-              if (s2 < stops - 1) {
-                var ex = m + sw * (s2 + 1) + sw / 2 - boxW / 2;
-                c.save(); c.globalAlpha = 0.5; c.strokeStyle = L.c;
-                c.lineWidth = 2; c.lineCap = 'round';
-                c.beginPath(); c.moveTo(sx + boxW / 2 + 3, ry); c.lineTo(ex - 3, ry); c.stroke();
+              for (s2 = 0; s2 < stops; s2++) {
+                var mid0 = L.hop && s2 === 1;
+                c.fillStyle = K.onLight ? '#FFFFFF' : '#0A1627';
+                c.beginPath(); c.arc(centres[s2], ry, mid0 ? 8 : 6, 0, TAU); c.fill();
+                c.strokeStyle = L.c; c.lineWidth = mid0 ? 2.2 : 1.8;
+                c.save();
+                if (mid0) c.setLineDash([3, 3]);
+                c.beginPath(); c.arc(centres[s2], ry, mid0 ? 8 : 6, 0, TAU); c.stroke();
                 c.restore();
               }
+              label(c, L.line, W / 2, ry + 24, W - 28, '700', JAK, 13, K.strong, 'center');
+            } else {
+              for (s2 = 0; s2 < stops; s2++) {
+                var sx = centres[s2], bw = widths[s2];
+                var mid = L.hop && s2 === 1;
+                c.fillStyle = mid ? tint(L.c, K.onLight ? 0.12 : 0.18)
+                                  : (K.onLight ? '#FFFFFF' : '#0A1627');
+                box(c, sx - bw / 2, ry - boxH / 2, bw, boxH, 8); c.fill();
+                c.save();
+                c.strokeStyle = mid ? L.c : HAIR; c.lineWidth = mid ? 1.6 : 1;
+                if (mid) c.setLineDash([4, 4]);
+                box(c, sx - bw / 2, ry - boxH / 2, bw, boxH, 8); c.stroke();
+                c.restore();
+                label(c, (bw < 150 ? L.tight : L.stops)[s2], sx, ry, bw - 12,
+                      mid ? '800' : '600', JAK, 13, mid ? L.c : K.strong, 'center');
+                if (s2 < stops - 1) {
+                  c.save(); c.globalAlpha = 0.5; c.strokeStyle = L.c;
+                  c.lineWidth = 2; c.lineCap = 'round';
+                  c.beginPath();
+                  c.moveTo(sx + bw / 2 + 4, ry);
+                  c.lineTo(centres[s2 + 1] - widths[s2 + 1] / 2 - 4, ry);
+                  c.stroke(); c.restore();
+                }
+              }
             }
+
             /* the packet: straight through on Live, held at the bridge */
             var period = L.hop ? 4.6 : 2.6;
             var u = (t % period) / period;
-            var xs = m + sw / 2, xm = m + sw + sw / 2, xe = m + sw * 2 + sw / 2;
-            var pxx;
+            var xs = centres[0], xm = centres[1], xe = centres[2], pxx;
             if (!L.hop) pxx = xs + (xe - xs) * smooth(u);
             else if (u < 0.30) pxx = xs + (xm - xs) * smooth(u / 0.30);
             else if (u < 0.70) pxx = xm;
             else pxx = xm + (xe - xm) * smooth((u - 0.70) / 0.30);
-            var pyy = ry - boxH / 2 - 10;
+            var pyy = ry - (compact ? 16 : boxH / 2 + 10);
             c.fillStyle = L.c;
             c.beginPath(); c.arc(pxx, pyy, 4.6, 0, TAU); c.fill();
             if (L.hop && u >= 0.30 && u < 0.70) {
@@ -1690,6 +1737,12 @@
               c.beginPath(); c.arc(pxx, pyy, 9, 0, TAU); c.stroke();
               c.restore();
             }
+          } else {
+            /* nothing travels this lane, so the lane is drawn empty */
+            c.save(); c.globalAlpha = 0.5; c.strokeStyle = HAIR;
+            c.lineWidth = 2; c.setLineDash([6, 7]); c.lineCap = 'round';
+            c.beginPath(); c.moveTo(m + 10, ry); c.lineTo(W - m - 10, ry); c.stroke();
+            c.restore();
           }
 
           label(c, W < 760 ? L.footT : L.foot, 18, y + laneH - 18,

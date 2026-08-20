@@ -55,12 +55,13 @@
   .roles .psband .media img.ph{filter:saturate(.98) contrast(1.03);}
   @media (max-width:900px){.roles .psband .copy{padding:40px 22px;}}
 
-  /* the disclosure moment, photographed */
-  .polshots{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .polshots .photocard{min-height:310px;}
-  .polshots .photocard > img.ph{filter:brightness(0.88) saturate(1.04) contrast(1.05);}
-  .aipolicy .photocap{margin-top:18px;}
-  @media (max-width:900px){.polshots{grid-template-columns:1fr;}}
+  /* The disclosure moment and the model's diet, DRAWN. Both blocks used to be
+     photographs — a florist on the phone under "How your data is used for AI",
+     two cafe owners under "Nobody finds out later". Neither picture showed
+     what its heading claimed, and a stock person on a phone under a paragraph
+     about training data reads as evidence when it is decoration. There is no
+     honest photograph of data isolation, so these are figures. */
+  .aipolicy .figstack{margin-top:20px;}
 
   .roles{color:var(--l-ink);}
   .roles .wrap,.measures .wrap,.closer .wrap,.hero .wrap{position:relative;z-index:1;}
@@ -488,31 +489,36 @@
         <p>Your&nbsp;business knowledge and conversations are used to&nbsp;answer your&nbsp;customers. <b>We do not use one customer's&nbsp;data to&nbsp;train models that&nbsp;serve another&nbsp;customer.</b> Model improvement using your&nbsp;data is off by&nbsp;default and requires your&nbsp;written opt-in.</p>
       </div></div>
     </div>
-    <div class="polshots reveal">
-      <div class="photocard">
-        <img class="ph" src="https://images.pexels.com/photos/5414327/pexels-photo-5414327.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
-             srcset="https://images.pexels.com/photos/5414327/pexels-photo-5414327.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w,
-                 https://images.pexels.com/photos/5414327/pexels-photo-5414327.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-             sizes="(max-width:900px) 100vw, 50vw"
-             alt="A florist taking a call at the counter, wrapped orders waiting beside her"
-             loading="lazy" decoding="async" width="800" height="1200">
+    <div class="figstack reveal">
+      <figure class="figcard scenefig linefig">
+        <div class="scenebox" data-scene="firstline"></div>
         <span class="kicker">Second one, first sentence</span>
         <h3>Nobody finds out&nbsp;later.</h3>
         <p>Disclosure is the&nbsp;opening line on&nbsp;every&nbsp;channel, in&nbsp;the&nbsp;caller&rsquo;s&nbsp;language, with&nbsp;a&nbsp;way to&nbsp;reach a&nbsp;person in&nbsp;the&nbsp;same breath. You can reword it; you cannot switch it off where the&nbsp;law requires it.</p>
-      </div>
-      <div class="photocard">
-        <img class="ph" src="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
-             srcset="https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w,
-                 https://images.pexels.com/photos/34164498/pexels-photo-34164498.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-             sizes="(max-width:900px) 100vw, 50vw"
-             alt="Two cafe owners standing together behind their counter"
-             loading="lazy" decoding="async" width="800" height="533">
+        <figcaption class="scenecap">
+          <b>A&nbsp;drawing of&nbsp;the&nbsp;first seconds, not a&nbsp;recording.</b> The&nbsp;line rings, it is picked&nbsp;up,
+          and the&nbsp;disclosure sentence is said before the&nbsp;caller has told anyone what they want —
+          <i style="font-style:normal;">&ldquo;You&rsquo;re speaking with&nbsp;an&nbsp;AI assistant for&nbsp;this&nbsp;business. Ask for&nbsp;a&nbsp;person
+          at&nbsp;any point and I&rsquo;ll put you&nbsp;through.&rdquo;</i> The&nbsp;same sentence opens the&nbsp;AI&nbsp;phone,
+          the&nbsp;web&nbsp;chat and the&nbsp;messenger, in&nbsp;the&nbsp;caller&rsquo;s&nbsp;own language, and the&nbsp;figure marks
+          the&nbsp;one control that&nbsp;does not exist: a&nbsp;switch to&nbsp;turn it&nbsp;off.
+        </figcaption>
+      </figure>
+      <figure class="figcard scenefig feedfig">
+        <div class="scenebox" data-scene="modelfeed"></div>
         <span class="kicker">Kept, and kept apart</span>
         <h3>One tenant, one&nbsp;wall.</h3>
         <p>Recording follows your&nbsp;country&rsquo;s&nbsp;consent rule automatically, and the&nbsp;consent basis is stored with&nbsp;the&nbsp;call. Your&nbsp;conversations never train a&nbsp;model that&nbsp;serves another&nbsp;business.</p>
-      </div>
+        <figcaption class="scenecap">
+          <b>What the&nbsp;model is handed, and what it never&nbsp;is.</b> To&nbsp;answer one question it gets
+          three things: the&nbsp;question, your&nbsp;own prices, hours and policies, and the&nbsp;conversation
+          so&nbsp;far. One answer comes back to&nbsp;your&nbsp;customer. The&nbsp;two routes drawn crossed out are
+          the&nbsp;ones a&nbsp;reviewer is actually asking about — another&nbsp;customer&rsquo;s&nbsp;data never reaches
+          it, and none of&nbsp;this trains a&nbsp;model that&nbsp;serves anybody else: that&nbsp;is off by&nbsp;default
+          and turning it on&nbsp;takes your&nbsp;written opt-in.
+        </figcaption>
+      </figure>
     </div>
-    <p class="photocap reveal">Photography is illustrative — the&nbsp;kinds of&nbsp;business these&nbsp;policies were written for, not named customers and not testimonials.</p>
   </div>
 </section>
 <div id="cta-gate" aria-hidden="true"></div>
@@ -699,5 +705,7 @@
 <script src="../assets/js/site.js?v=25.1"></script>
 <script src="../assets/js/balance.js?v=25.1" defer></script>
 <script src="../assets/js/guide.js?v=25.1"></script>
+<script src="../assets/js/canvas.js?v=25.1" defer></script>
+<script src="../assets/js/scenes.js?v=25.1" defer></script>
 </body>
 </html>

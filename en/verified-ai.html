@@ -72,10 +72,15 @@
   @media (max-width:900px){.life .psband .copy{padding:40px 22px;}}
 
   /* the two sides of a handoff */
-  .handshots{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .handshots .photocard{min-height:320px;}
+  /* One column, not two. The right-hand slot used to hold a photograph of a
+     florist standing at her shop door under a heading about what the handoff
+     card contains — a picture of neither thing. It is a figure now, and a
+     figure with four labelled rows cannot live in a 500px column, so the
+     photograph that IS honest (hands full, taking a call) runs full width
+     above it. */
+  .handshots{margin-top:20px;display:grid;gap:16px;}
+  .handshots .photocard{min-height:300px;}
   .handshots .photocard > img.ph{filter:brightness(0.88) saturate(1.04) contrast(1.05);}
-  @media (max-width:900px){.handshots{grid-template-columns:1fr;}}
 
   .life{background:var(--l-bg);}
   .life .cols{display:grid;grid-template-columns:1fr 1.25fr;gap:96px;align-items:stretch;}
@@ -413,19 +418,21 @@
         <h3>Hands full, question&nbsp;open.</h3>
         <p>The&nbsp;five triggers exist so the&nbsp;questions that&nbsp;need you actually reach you — instead&nbsp;of&nbsp;being answered badly while you are mid-order.</p>
       </div>
-      <div class="photocard">
-        <img class="ph" src="https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
-             srcset="https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w,
-                     https://images.pexels.com/photos/3933017/pexels-photo-3933017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-             sizes="(max-width:900px) 100vw, 50vw"
-             alt="A florist standing at the entrance of her flower shop"
-             loading="lazy" decoding="async" width="800" height="533">
+      <figure class="figcard scenefig handfig">
+        <div class="scenebox" data-scene="handoff"></div>
         <span class="kicker">After the&nbsp;handoff</span>
         <h3>A&nbsp;summary, not a&nbsp;transcript&nbsp;dump.</h3>
         <p>Your&nbsp;desk opens one card: what was asked, what the&nbsp;AI already answered, which facts it used, and a&nbsp;reply waiting to&nbsp;be edited.</p>
-      </div>
+        <figcaption class="scenecap">
+          <b>Drawn, using Case&nbsp;05 as the&nbsp;example.</b> A&nbsp;caller asks whether the&nbsp;date can be
+          guaranteed. That&nbsp;is commitment language, so the&nbsp;answer stops there and a&nbsp;person is
+          fetched — and what lands on&nbsp;their&nbsp;desk is one card with&nbsp;four parts already filled&nbsp;in:
+          what was asked, what the&nbsp;AI had already answered, the&nbsp;facts it used, and a&nbsp;reply
+          waiting to&nbsp;be edited. Not a&nbsp;transcript to&nbsp;read from&nbsp;the&nbsp;top.
+        </figcaption>
+      </figure>
     </div>
-    <p class="photocap light reveal">Photography is illustrative — the&nbsp;kinds of&nbsp;work these&nbsp;handoff rules were written for, not named customers and not testimonials.</p>
+    <p class="photocap light reveal">The&nbsp;photograph is illustrative — the&nbsp;kind of&nbsp;work these&nbsp;handoff rules were written for, not a&nbsp;named customer and not a&nbsp;testimonial.</p>
   </div>
 </section>
 <div id="cta-gate" aria-hidden="true"></div>
@@ -620,5 +627,7 @@
 <script src="../assets/js/site.js?v=25.1"></script>
 <script src="../assets/js/balance.js?v=25.1" defer></script>
 <script src="../assets/js/guide.js?v=25.1"></script>
+<script src="../assets/js/canvas.js?v=25.1" defer></script>
+<script src="../assets/js/scenes.js?v=25.1" defer></script>
 </body>
 </html>
