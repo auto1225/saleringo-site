@@ -66,8 +66,12 @@
 .pcard:hover{transform:translateY(-2px);border-color:var(--app-line2);}
 .pcard:last-child{margin-bottom:0;}
 .pcard .who{display:flex;align-items:center;gap:7px;}
-.pcard .ini{width:22px;height:22px;border-radius:50%;flex:none;display:grid;place-items:center;
-  font-size:var(--fs-label);font-weight:800;color:#04121C;background:linear-gradient(140deg,#31D4D4,#0FA3A3);}
+.pcard .ini{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;
+  /* Two letters fit a 22px circle until the two letters are O and W, which
+     need 25px and pushed past the edge on pest-control. Two more pixels and
+     a hair off the tracking hold every pair. */
+  font-size:var(--fs-label);font-weight:800;letter-spacing:-.02em;
+  color:#04121C;background:linear-gradient(140deg,#31D4D4,#0FA3A3);}
 .pcard .nm{font-size:var(--fs-xs);font-weight:700;color:var(--app-tx);letter-spacing:-.01em;}
 .pcard .mt{margin-top:7px;font-size:var(--fs-2xs);line-height:1.5;color:var(--app-tx2);font-weight:500;}
 .pcard .ft{margin-top:9px;padding-top:8px;border-top:1px solid var(--app-line);
@@ -133,7 +137,7 @@
    exactly the old width, so they sat on the edge and Practitioner lost six
    pixels off its end inside the card's overflow:hidden. 106 clears all
    three. */
-.crow .k{width:106px;flex:none;color:var(--app-tx3);font-weight:800;letter-spacing:.04em;
+.crow .k{width:124px;flex:none;color:var(--app-tx3);font-weight:800;letter-spacing:.04em;
   font-size:var(--fs-label);text-transform:uppercase;padding-top:2px;}
 .crow .v{color:var(--app-tx);font-weight:500;line-height:1.6;min-width:0;}
 .crow .v em{font-style:normal;color:var(--teal);font-weight:700;}

@@ -987,6 +987,429 @@ window.SR_PLAY = {
             rows:[['Recorded verbatim','Her question as she asked it, house and pension included, unsummarised'],
                   ['Not done','Nothing on eligibility, means testing, top-ups or funded rates. No “you’d probably qualify”.'],
                   ['Next action','Manager rings Tuesday and goes through it properly']]}}}
+    ]},
+
+  golf: {
+    label: 'Golf Clubs',
+    seed: 'Pro shop’s locked up — I have the tee sheet in front of me.',
+    asks: [
+      { id:'society', chip:'“24 of us, a Thursday in September”', risk:'normal',
+        turns:[
+          {who:'user', text:'I run the society at work. Twenty-four of us, a Thursday in September. What can you do us?'},
+          {who:'ai',   text:'Your society package for twelve or more is $74 a head — coffee and a bacon roll on arrival, 18 holes, two courses afterwards. For 24 that is $1,776. Thursday 11 September has room for six four-balls from 09:40; Thursday 18 is emptier if you’d rather spread out.'},
+          {who:'verify', text:'✓ From your green fee sheet and society rules · 2 sources'},
+          {who:'user', text:'The 11th. Take a deposit off me now and it’s done.'},
+          {who:'ai',   text:'That part is your secretary’s. I don’t take deposits and I don’t confirm a society date on my own. I’ve pencilled the 11th with an expiry alarm, sent the package in writing, and she has your numbers on her list for the morning.'},
+          {who:'result', text:'✓ Package sent · the 11th pencilled · secretary owns the deposit'}],
+        why:'It packaged the whole day at eight in the evening and still would not take the money. A pencilled date with an expiry alarm is honest; a confirmed one at that hour would not have been.',
+        produces:{
+          pipeline:{stage:'Society quote out', ini:'??', nm:'Work society · 24',
+            mt:'Thursday 11 September · six four-balls from 09:40 · deposit routed to the secretary', tag:'AI logged', chan:'WhatsApp · Wed 20:10'},
+          booking:{title:'Thursday 11 September — pencilled', slot:'Thu 09:40', note:'Pencilled with an expiry alarm, not confirmed. The secretary confirms it when the deposit lands.'},
+          quote:{ref:'Society package · 12 or more', lines:[['Society package, per head','coffee and a bacon roll, 18 holes, two courses','$74'],['Twenty-four players','12 or more qualifies for the package','$1,776'],['Buggy hire, each','subject to course conditions on the day','$38']],
+            total:'$1,776', foot:'Read off the club’s own sheet. Buggies are on the booking and released free of charge if the greenkeeper keeps them off.'},
+          record:{name:'Work society · 24', sub:'WhatsApp, Wed 20:10',
+            rows:[['Collected','Playing date · numbers · package · buggies · catering, with the dietaries'],
+                  ['Not done','No deposit taken. No date confirmed. Not at eight in the evening, not ever.'],
+                  ['Next action','Catering numbers due 14 days out — reminder already set']]}}},
+
+      { id:'open', chip:'“is the course on? we’re driving over”', risk:'trap',
+        turns:[
+          {who:'user', text:'Is it on this morning? We’re driving over from the coast and I’m not doing that for nothing again.'},
+          {who:'handoff', text:'→ Frost delay. Your greenkeeper set the status at 06:15: first tee 09:00, buggies off until it lifts, temporary greens on 3 and 12. I’m reading his words back to you — I don’t decide whether the course is open and I’m not going to pretend I do.'},
+          {who:'user', text:'And if it doesn’t lift by nine?'},
+          {who:'handoff', text:'→ Then he’ll update it and I’ll have the new wording the moment he does. Give me your number and I’ll message you if it changes before you set off.'},
+          {who:'result', text:'✓ Greenkeeper’s own wording read back · caller on the change list'}],
+        why:'Course status is a field only the greens staff may write, and this reads it verbatim rather than summarising it. One wording went to fourteen callers before eight o’clock — his, not its own.',
+        produces:{
+          pipeline:{stage:'Status read back', ini:'??', nm:'Frost-delay caller',
+            mt:'Asked whether the course was open · status quoted as written · no forecast given', tag:'AI logged', chan:'Phone · 06:12'},
+          booking:null, bookingWhy:'No tee time offered while the course is under a frost delay — the sheet is the greenkeeper’s to release.',
+          quote:null,   quoteWhy:'No green fee quoted for a round nobody has said can be played yet.',
+          record:{name:'Frost-delay caller', sub:'Phone, 06:12',
+            rows:[['Read back','First tee 09:00 · buggies off until it lifts · temporary greens on 3 and 12 — set at 06:15'],
+                  ['Not done','No guess at whether the frost would lift. No forecast dressed up as a course status.'],
+                  ['Next action','Messaged the moment the greenkeeper changes the wording']]}}},
+
+      { id:'memberrate', chip:'“one of the lads is a member — member rate?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Four of us Sunday, and one of the lads is a member here, so we’ll all take the member rate.'},
+          {who:'handoff', text:'→ I can’t apply that one. A member’s guest rate covers guests playing with the member, and I’m not the person to decide who counts. I’ve held 09:20 at the visitor rate and put the question to the shop — if it applies, they’ll adjust it before you pay.'},
+          {who:'user', text:'It’s only thirty quid difference each, come on.'},
+          {who:'handoff', text:'→ I know, and it’s still not mine to move. I’m not going to stretch your own rule in your favour and then have you argued with at the first tee. The fee on the booking is marked unconfirmed rather than guessed at.'},
+          {who:'result', text:'✓ 09:20 held, four names · fee marked unconfirmed · shop to rule'}],
+        why:'A guest rate needs the member named and present, and the club decides who counts — not the caller, and not this. The tee time is still held, because the refusal is about the fee band, not about the golf.',
+        produces:{
+          pipeline:{stage:'Tee time held', ini:'??', nm:'Sunday four-ball',
+            mt:'Claimed the member rate · held at visitor rate · escalated to the pro shop', tag:'Urgent', chan:'Phone · Sat 08:30'},
+          booking:{title:'Sunday — held off the sheet', slot:'Sun 09:20', note:'Four names against a real slot on the tee sheet. The fee band is the only thing left open.'},
+          quote:null, quoteWhy:'No fee band applied — the member’s guest rate is $30 and whether it reaches three at once on a Sunday is the shop’s ruling, not this system’s.',
+          record:{name:'Sunday four-ball', sub:'Phone, Sat 08:30',
+            rows:[['Bands available','Weekend visitor $86 · weekday visitor $54 · twilight $32 from 16:00 · member’s guest $30'],
+                  ['Not done','No reclassification of a caller who asks nicely. No rule stretched in the club’s own favour.'],
+                  ['Next action','Pro shop rules on it and adjusts before anyone pays']]}}}
+    ]},
+
+  storage: {
+    label: 'Self-Storage',
+    seed: 'Office shut at half five — gate’s open till ten. What are you storing?',
+    asks: [
+      { id:'size', chip:'“moving Saturday — what size do I need?”', risk:'normal',
+        turns:[
+          {who:'user', text:'I don’t know what size I need. It’s a two-bed flat — a sofa, a bed, a washing machine and about twenty boxes.'},
+          {who:'ai',   text:'That is normally 75 sq ft here — £128 a month, and the first eight weeks are half price, so month one is £64 for the unit. Deposit is £50, refundable. Cover is a condition of the licence — £6 a month at £3,000 declared. I’ve held 75 for the morning; Dawn puts the unit number on it.'},
+          {who:'verify', text:'✓ From your size guide and price list · 2 sources'},
+          {who:'user', text:'Van’s booked for half nine Saturday.'},
+          {who:'result', text:'✓ Held at a size · expires 12:00 · no unit number given'}],
+        why:'It held an enquiry at a size, never at a unit. Naming 214 tonight is how somebody drives a loaded van to a door that is already occupied.',
+        produces:{
+          pipeline:{stage:'Size matched, held', ini:'??', nm:'Two-bed flat',
+            mt:'Sofa, bed, washing machine, twenty boxes · 75 sq ft held · van 09:30 Saturday', tag:'AI logged', chan:'Phone · 6:20 PM'},
+          booking:{title:'75 sq ft — held, not let', slot:'Sat 09:30', note:'Held until 12:00 tomorrow. The van time is the appointment; the unit number is Dawn’s to write.'},
+          quote:{ref:'Move-in day', lines:[['75 sq ft, month one','first eight weeks half price','£64'],['Deposit','refundable, never waived','£50'],['Cover, per month','a condition of the licence · £3,000 declared','£6'],['From month three','the standing monthly fee','£128']],
+            total:'£120 on the day', foot:'Every line read off the published list. The deposit is a term, not a lever.'},
+          record:{name:'Two-bed flat', sub:'Phone, 6:20 PM',
+            rows:[['Storing','Her words, verbatim — the size was matched from them, and the assumption is on the record'],
+                  ['Access needed','Drive-up, van at 09:30 · gate is 06:00–22:00, the office is 09:00–17:30'],
+                  ['Next action','Dawn names the unit and does the licence at the counter']]}}},
+
+      { id:'jerrycans', chip:'“mower, jerry cans, patio gas — all fine yeah?”', risk:'trap',
+        turns:[
+          {who:'user', text:'It’s the contents of a garage — mower, a couple of jerry cans, the patio heater bottle. That’s all fine, yeah?'},
+          {who:'handoff', text:'→ The mower is fine drained of fuel. The jerry cans and the gas bottle are not — petrol and gas are on the prohibited list here and I can’t sign that off, not as a favour and not if they’re empty-ish. That’s a fire rule, not a policy I can bend.'},
+          {who:'user', text:'They’d be right at the back, nobody would know.'},
+          {who:'handoff', text:'→ I understand, and the answer is still no. I’ve booked the 50 sq ft for everything else and written down exactly what you told me so Dawn can go through the list with you before you load the van rather than after.'},
+          {who:'result', text:'✓ Refused twice · items recorded · 50 sq ft held anyway'}],
+        why:'It was put as a favour the second time, which is the ask that matters. The rest of the garage still got a unit — a refusal that ends the conversation is just a lost customer with extra steps.',
+        produces:{
+          pipeline:{stage:'Size matched, held', ini:'??', nm:'Garage clear-out',
+            mt:'Petrol and gas refused twice · 50 sq ft held for the rest · Dawn to walk the list', tag:'Urgent', chan:'Phone · Sat 11:40'},
+          booking:{title:'50 sq ft — held', slot:'Sat 09:30', note:'Held for everything that may lawfully go in. The prohibited items are named on the record.'},
+          quote:null, quoteWhy:'No price for the load as described — the fuel and the bottle come off it first, and Dawn walks the list before the van is loaded.',
+          record:{name:'Garage clear-out', sub:'Phone, Sat 11:40',
+            rows:[['Recorded verbatim','“Mower, a couple of jerry cans, the patio heater bottle” — in his words, on the record'],
+                  ['Not done','No prohibited item signed off. Not as a favour, not on the second ask, not because they are nearly empty.'],
+                  ['Next action','Dawn goes through the prohibited list with him at the counter']]}}},
+
+      { id:'brother', chip:'“has my brother paid for his unit?”', risk:'trap',
+        turns:[
+          {who:'user', text:'My brother has a unit with you. I need to know if he’s behind on it, and I need to get in and take my things out.'},
+          {who:'handoff', text:'→ I’m not going to tell you whether anyone holds a unit here — not their balance, not their access times, not whether they’re a customer at all. That applies to family the same as anyone else, and it would apply to someone ringing about you.'},
+          {who:'user', text:'Some of that stuff is mine though.'},
+          {who:'handoff', text:'→ Then it needs a person and probably paperwork, and it needs to be Dawn. I’ve taken your name and number and marked it for her first thing — I haven’t confirmed or denied anything about an account, and I won’t.'},
+          {who:'result', text:'✓ Logged as its own enquiry · attached to nobody’s account'}],
+        why:'The tell is that it did not even confirm the brother exists as a customer. Neither confirming nor denying is the whole answer, and it holds when the caller has a fair-sounding reason.',
+        produces:{
+          pipeline:{stage:'With the manager', ini:'??', nm:'Third-party access',
+            mt:'Asked about another customer’s account · neither confirmed nor denied · routed to Dawn', tag:'Urgent', chan:'Phone · Thu 16:05'},
+          booking:null, bookingWhy:'No visit arranged — access to somebody else’s unit is not a booking, it is paperwork and a person.',
+          quote:null,   quoteWhy:'No account details of any kind, including a balance. Nothing here was ever a quote.',
+          record:{name:'Third-party access', sub:'Phone, Thu 16:05',
+            rows:[['Logged as','Its own enquiry — deliberately not attached to anyone else’s record'],
+                  ['Not done','No gate PIN. It has never issued one and it cannot. No confirmation that the unit exists.'],
+                  ['Next action','Dawn handles it as a third-party access question, with identification']]}}}
+    ]},
+
+  pest: {
+    label: 'Pest Control',
+    seed: 'Office is shut — I can still get you on the first van. What is it?',
+    asks: [
+      { id:'nest', chip:'“nest under the gutter, mum’s got an adrenaline pen”', risk:'normal',
+        turns:[
+          {who:'user', text:'There’s a nest under the gutter and they’re going in and out all day. My mother is here and she carries an adrenaline pen. Can you come tomorrow?'},
+          {who:'ai',   text:'Yes — 09:15 tomorrow, and that’s a slot in the diary, not a hope. A domestic nest is $85 treated on the visit. I’m booking it as a stinging insect nest; I’m not going to tell you whether they’re wasps, because I can’t see them. The adrenaline pen goes on the card so the technician knows before he sets the ladder.'},
+          {who:'verify', text:'✓ From your rate card and today’s diary · 2 sources'},
+          {who:'user', text:'It’s up under the eaves, maybe five metres.'},
+          {who:'result', text:'✓ Booked 09:15 · job card written · ladder height flagged'}],
+        why:'Who is at risk changes the visit, so it is asked before the price is agreed. The height decides which ladder leaves the yard, which is why it is on the card rather than in somebody’s memory.',
+        produces:{
+          pipeline:{stage:'Visit booked', ini:'??', nm:'Nest · eaves',
+            mt:'Stinging insect, species unconfirmed · adrenaline pen on site · approx. 5 m', tag:'AI logged', chan:'Phone · 8:52 PM'},
+          booking:{title:'First van — tomorrow', slot:'Wed 09:15', note:'A real slot in the round, with the ladder and the risk note already on the job card.'},
+          quote:{ref:'Example rate card', lines:[['Wasp or hornet nest, domestic','one nest, treated on the visit','$85'],['Second nest, same visit','same ladder, same journey','$30'],['Early, evening or weekend slot','on top, and only if the slot exists','$60']],
+            total:'$85', foot:'Agreed before the van moves. The early call-out is not on this one because the 09:15 is an ordinary slot.'},
+          record:{name:'Nest · eaves', sub:'Phone, 8:52 PM',
+            rows:[['Who is at risk','Mother on site carrying an adrenaline pen — asked for, not volunteered'],
+                  ['Species','Unconfirmed. The technician identifies it at the top of the ladder.'],
+                  ['Next action','Card to the technician tonight; aftercare sheet sent after the visit']]}}},
+
+      { id:'whatisit', chip:'“what are they — wasps or bees?”', risk:'trap',
+        turns:[
+          {who:'user', text:'There’s a massive clump of bees hanging off the fence post. What are they — wasps? Can you just come and do them?'},
+          {who:'handoff', text:'→ Stop there, because that description could be a honey bee swarm — and if it is, it is a beekeeper’s job, not ours, and we would not treat it. I’m not identifying it from a message; I’m telling you what it might be so you don’t have it sprayed by mistake.'},
+          {who:'user', text:'So are you coming or not?'},
+          {who:'handoff', text:'→ Not until somebody has looked. Here is the local swarm collection number our office gives out. If it turns out not to be a swarm, ring me back and I’ll have a van to you — but I’m not booking a treatment for something I can’t see.'},
+          {who:'result', text:'✓ Swarm number given · nothing booked · nothing quoted'}],
+        why:'A species is never named from a phone description, and this is the case that shows why: the wrong guess kills a colony that somebody would have come and collected for nothing.',
+        produces:{
+          pipeline:{stage:'Routed to a person', ini:'??', nm:'Possible swarm',
+            mt:'“Clump of bees on the fence post” · no species named · swarm collection number given', tag:'Urgent', chan:'Web chat · 5:40 PM'},
+          booking:null, bookingWhy:'No visit booked — if it is a swarm we would not treat it, and a van sent anyway is a wasted journey and a dead colony.',
+          quote:null,   quoteWhy:'No price. Nothing is quoted for a job that may not be ours to do.',
+          record:{name:'Possible swarm', sub:'Web chat, 5:40 PM',
+            rows:[['Recorded verbatim','“A massive clump of bees hanging off the fence post” — his description, not a species'],
+                  ['Not done','No identification from a description. No treatment offered. No “sounds like wasps”.'],
+                  ['Next action','Beekeeper route given; the office picks it up if he calls back']]}}},
+
+      { id:'diy', chip:'“what do you use — can I just buy it?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Honestly I’d rather just do it myself. What do you lot use — can I buy it, or is there something from the hardware shop that works?'},
+          {who:'handoff', text:'→ I’m not going to tell you what to buy or how to apply it. Not a brand, not a dose, not “a can from the shop should do it”. That is a line I don’t cross, whoever is asking and however small the job sounds.'},
+          {who:'user', text:'It’s one nest. Bit over the top, isn’t it?'},
+          {who:'handoff', text:'→ What I can do is book a technician who is qualified to apply it, at $85 for the nest. If you’d rather not, that’s absolutely your call — I’ll leave the quote on file and stop pushing.'},
+          {who:'result', text:'✓ Quote left on file · nothing booked · pushing stopped'}],
+        why:'Telling a caller which product to buy is the cheapest possible answer and the one that puts somebody up a ladder with the wrong tin. Note that it stops selling when he says no.',
+        produces:{
+          pipeline:{stage:'Quote on file', ini:'??', nm:'DIY caller',
+            mt:'Asked what product we use · refused outright · quote left, no pressure applied', tag:'AI logged', chan:'Phone · 7:30 PM'},
+          booking:null, bookingWhy:'No visit booked — he has not said yes, and it stopped asking after the first no.',
+          quote:{ref:'Left on file', lines:[['Wasp or hornet nest, domestic','one nest, treated on the visit','$85']],
+            total:'$85', foot:'On file rather than pressed. He rings back or he does not.'},
+          record:{name:'DIY caller', sub:'Phone, 7:30 PM',
+            rows:[['Asked for','A product name, a dose, or a hardware-shop equivalent'],
+                  ['Not done','No brand. No dose. No method. No “just be careful in the evening”.'],
+                  ['Next action','Nothing chased. The quote sits on the record if he changes his mind.']]}}}
+    ]},
+
+  movers: {
+    label: 'Movers',
+    seed: 'Office is closed — I can take the whole job down now.',
+    asks: [
+      { id:'roughprice', chip:'“just give me a rough number, I’m ringing round”', risk:'normal',
+        turns:[
+          {who:'user', text:'We complete on the 26th and I need a price. Three-bed terrace, second floor, no lift. I’m ringing round tonight.'},
+          {who:'ai',   text:'Both postcodes first, then I’ll tell you what I can and can’t do on a price tonight.'},
+          {who:'user', text:'SE15 4QA to BN1. It’s a permit street. And there’s an upright piano in the front room. So what’s the number?'},
+          {who:'ai',   text:'I’m not going to, and I’d rather say why than waste your evening. A second-floor carry with no lift and a piano changes the crew and the hours, and any number I gave you now would be withdrawn on Thursday. What I can do is book the survey that produces the real one — twenty minutes on video, no charge. Thursday 7:30 PM or Saturday 10:00, and Dan covers SE15.'},
+          {who:'result', text:'✓ Survey booked · card written · no figure given'}],
+        why:'A rough number on a permit street with a piano and no lift is a number the survey has to take back on Thursday, and the customer remembers the first one. So it books the thing that produces the real figure instead.',
+        produces:{
+          pipeline:{stage:'Survey booked', ini:'??', nm:'SE15 4QA → BN1',
+            mt:'Three-bed terrace · second floor, no lift · permit street · upright piano · completes 26th', tag:'AI logged', chan:'Phone · Tue 18:41'},
+          booking:{title:'Video survey — Dan', slot:'Thu 19:30', note:'Twenty minutes, no charge, link sent. A real gap in the surveyor’s own diary.'},
+          quote:{ref:'What exists before a survey', lines:[['Two-man part-load, local zone','first two hours','£180'],['Thereafter','per half hour','£45'],['Bay suspension','the council sets that fee, not us','at cost']],
+            total:'£180 to start', foot:'The published rates only. The move itself is £1,150 after survey, and not a penny of that is sayable tonight.'},
+          record:{name:'SE15 4QA → BN1', sub:'Phone, Tue 18:41',
+            rows:[['In his words','“Permit street, and there’s an upright piano in the front room.”'],
+                  ['Not done','No rough number. No “from”. No figure the survey would have to withdraw.'],
+                  ['Next action','Card to Dan tonight so the survey starts knowing about the piano']]}}},
+
+      { id:'keys', chip:'“chain’s slipped — can your crew just wait?”', risk:'trap',
+        turns:[
+          {who:'user', text:'We’re loaded and sitting outside the new place. The chain has slipped, the keys aren’t released yet. Can your crew just wait?'},
+          {who:'ai',   text:'Waiting time is the first hour free, then £45 per half hour — that much is on the quote you signed.'},
+          {who:'handoff', text:'→ Whether the crew can stay past four is not mine to promise: they are on another job this evening. I’ve put your move manager on it now with the job, the diary and this call attached, and she will ring you inside ten minutes with a straight answer — including what an overnight in the van would cost if it comes to that. I’m not going to tell you it’ll be fine.'},
+          {who:'result', text:'✓ Move manager paged · ten-minute callback · nothing promised'}],
+        why:'Completion day turns on somebody else’s solicitor, and the crew is already committed elsewhere. It quotes the waiting rate, which is written down, and refuses the hour, which is not.',
+        produces:{
+          pipeline:{stage:'Office decides', ini:'??', nm:'Completion day · 26th',
+            mt:'Loaded, keys not released · crew committed this evening · move manager ringing inside ten minutes', tag:'Urgent', chan:'Phone · Fri 13:52'},
+          booking:null, bookingWhy:'No promise the crew can stay — they are on another job, and the diary is not this system’s to overwrite.',
+          quote:{ref:'From the signed quote', lines:[['Waiting time','after the first free hour, per half hour','£45'],['Overnight in the van','the move manager prices it, not me','—']],
+            total:'£45 / half hour', foot:'The rate is on the quote he already signed. The overnight is deliberately left blank.'},
+          record:{name:'Completion day · 26th', sub:'Phone, Fri 13:52',
+            rows:[['Situation','Van loaded and parked · keys held by a chain nobody here controls'],
+                  ['Not done','No completion-day hour guaranteed. No “it’ll be fine”. No overnight priced.'],
+                  ['Next action','Move manager rings within ten minutes with a straight answer']]}}},
+
+      { id:'gunsafe', chip:'“gun safe, two gas bottles, petrol mower — fine?”', risk:'trap',
+        turns:[
+          {who:'user', text:'There’s a gun safe bolted into the garage floor, two patio gas bottles and a mower with petrol in it. That’s all fine, isn’t it?'},
+          {who:'handoff', text:'→ I’m not the one who can say yes to any of those, and I’d rather be blunt now than have the crew find out on the day. Full gas bottles and fuel in a tank are on the prohibited list — the mower travels drained. The safe depends on its weight and how it comes off the floor, and that is a survey question, not a phone one.'},
+          {who:'user', text:'The lads will manage the safe though, surely.'},
+          {who:'handoff', text:'→ Very probably, but I’m not going to say yes on behalf of the people who have to lift it. All three are on the survey card by name so Dan raises them himself.'},
+          {who:'result', text:'✓ Three items named on the card · none accepted'}],
+        why:'“Very probably” is as far as it goes, and it still does not turn into a yes. Accepting a specialist item on the phone is a promise made with somebody else’s back.',
+        produces:{
+          pipeline:{stage:'Refused outright', ini:'??', nm:'Garage contents',
+            mt:'Gun safe, two gas bottles, petrol mower · none accepted · all three onto the survey card', tag:'Urgent', chan:'Web chat · Sun 21:47'},
+          booking:null, bookingWhy:'No crew committed to a load nobody has seen, and no date pencilled off the back of it.',
+          quote:null,   quoteWhy:'No price for items that may not travel at all. The mower goes drained or it does not go.',
+          record:{name:'Garage contents', sub:'Web chat, Sun 21:47',
+            rows:[['Named on the card','Gun safe, bolted · two patio gas bottles · petrol mower — each written out, not summarised'],
+                  ['Not done','No prohibited item accepted on the phone. No cover level invented. No weight guessed.'],
+                  ['Next action','Dan raises all three at the survey rather than the crew finding them on the day']]}}}
+    ]},
+
+  estate: {
+    label: 'Real Estate',
+    seed: 'Branch is shut — the diaries are in front of me. Which one did you see?',
+    asks: [
+      { id:'available', chip:'“the Cargill Street two-bed — am I too late?”', risk:'normal',
+        turns:[
+          {who:'user', text:'I’ve just seen the two-bed on Cargill Street on the portal. Is it still available, or am I too late?'},
+          {who:'ai',   text:'14 Cargill Street, the second-floor two-bed — still available. $1,875 a month, free from the 6th, unfurnished, one allocated space. None of that is my estimate; it is what the listing says tonight. Three questions and I can book you in: when you’d want to move, who else would be on the tenancy, and whether you’ve seen the referencing criteria.'},
+          {who:'verify', text:'✓ Read from the live listing · 1 source'},
+          {who:'user', text:'The 9th, my tenancy ends on the 5th. Two of us, no guarantor yet.'},
+          {who:'result', text:'✓ Saturday 10:30 booked · occupier given 24 hours’ notice'}],
+        why:'The same three questions in the same order, whoever rings and whenever they ring. The sitting tenant’s twenty-four hours is part of the booking rather than something somebody remembers to do on Friday.',
+        produces:{
+          pipeline:{stage:'Viewing booked', ini:'??', nm:'14 Cargill Street, Flat 6',
+            mt:'Two adults · move 9th, tenancy ends 5th · no guarantor yet · referencing criteria sent', tag:'AI logged', chan:'Phone · 8:52 PM'},
+          booking:{title:'Cargill Street — accompanied', slot:'Sat 10:30', note:'A real gap in that negotiator’s own diary, not a shared pool. Occupier noticed at 20:55.'},
+          quote:{ref:'Listing facts, as published', lines:[['Rent','per calendar month','$1,875'],['Available from','unfurnished · one allocated space','the 6th'],['Holding deposit','on this listing','one week’s rent']],
+            total:'$1,875 pcm', foot:'Read off the listing, not recalled. Fee facts are stated as published and never interpreted.'},
+          record:{name:'14 Cargill Street, Flat 6', sub:'Phone, 8:52 PM',
+            rows:[['Question set','Move date · party · referencing seen — identical for every applicant on this listing'],
+                  ['Position','Captured, never scored. Two adults, no guarantor yet, in their words.'],
+                  ['Next action','Negotiator accompanies Saturday; referencing criteria already with them']]}}},
+
+      { id:'offer', chip:'“what would they take? would they do 1,750?”', risk:'trap',
+        turns:[
+          {who:'user', text:'What would they actually take for the Fern Bank house? I’m not going in at the asking price.'},
+          {who:'handoff', text:'→ I’m not going to answer that, and I’m not going to hint at it either. What a vendor would accept is theirs to decide and a negotiator’s to discuss — if I guessed and you acted on it, I would have cost somebody money.'},
+          {who:'user', text:'Ballpark. Would they do 1,750 if I signed tomorrow?'},
+          {who:'handoff', text:'→ Still no, and putting a figure in front of me doesn’t change it. Give me the figure and your position — chain, funding, timescale — and it is on the desk with the recording attached before nine on Monday. Nobody will ask you to repeat it.'},
+          {who:'result', text:'✓ Figure captured · nothing implied · first on the desk Monday'}],
+        why:'Another party’s position is never stated and never hinted at, and a hint is the whole risk here — “I couldn’t say, but I wouldn’t rule it out” is an answer, and it is the agency that gave it.',
+        produces:{
+          pipeline:{stage:'For a person', ini:'??', nm:'Fern Bank · offer question',
+            mt:'Asked what the vendor would take · nothing stated or implied · figure and position captured', tag:'Urgent', chan:'Phone · 9:40 PM'},
+          booking:null, bookingWhy:'No viewing booked off an offer conversation — he has seen it; what he wants is a negotiator.',
+          quote:null,   quoteWhy:'No figure of any kind. Not the vendor’s position, not a range, not a hint that behaves like one.',
+          record:{name:'Fern Bank · offer question', sub:'Phone, 9:40 PM',
+            rows:[['Refused, verbatim','His question written into its own field, word for word, with the recording attached'],
+                  ['Not done','No indication of what would be accepted. No other applicant’s offer or position disclosed.'],
+                  ['Next action','First thing on the negotiator’s desk at nine on Monday']]}}},
+
+      { id:'worth', chip:'“roughly what would my place go for?”', risk:'trap',
+        turns:[
+          {who:'user', text:'I’m thinking about selling Marchgate Row. Roughly what would it go for?'},
+          {who:'handoff', text:'→ I don’t give figures — not a number, not a range, and not what a portal estimate says. Anyone who does it over the phone without standing in the house is guessing, and you would be entitled to hold them to it.'},
+          {who:'user', text:'Even a ballpark? I only want to know if it’s worth bothering.'},
+          {who:'handoff', text:'→ Especially not a ballpark, because that is the number you’d remember. What I can give you is a market appraisal, free, at the house — there’s a gap next Tuesday at 18:00 in the valuer’s diary.'},
+          {who:'result', text:'✓ Appraisal booked · no figure quoted on it'}],
+        why:'A valuation is the most-asked question on an estate agency line and the one most expensive to answer wrongly. The appraisal is booked in a named valuer’s diary, and not a number is spoken before he is standing in the hall.',
+        produces:{
+          pipeline:{stage:'Market appraisal', ini:'??', nm:'31 Marchgate Row',
+            mt:'Asked for a valuation twice · no figure given · appraisal booked with the valuer', tag:'Urgent', chan:'Web chat · 10:15 PM'},
+          booking:{title:'Market appraisal — at the house', slot:'Tue 18:00', note:'Free, and in a named valuer’s own diary. The refusal did not end the conversation.'},
+          quote:null, quoteWhy:'No valuation, no range, and no portal estimate read back — including when it was asked for as a ballpark.',
+          record:{name:'31 Marchgate Row', sub:'Web chat, 10:15 PM',
+            rows:[['Asked for','A rough sale price, then a ballpark when the first ask was refused'],
+                  ['Not done','No figure. No range. No “others on that road went for”.'],
+                  ['Next action','Valuer stands in the house on Tuesday and gives the only figure worth having']]}}}
+    ]},
+
+  rental: {
+    label: 'Equipment Rental',
+    seed: 'Counter opens at seven — I can reserve against the yard now.',
+    asks: [
+      { id:'digger', chip:'“any chance of a 1.5-tonne digger Thursday to Monday?”', risk:'normal',
+        turns:[
+          {who:'user', text:'Morning. Any chance of a 1.5-tonne digger Thursday through to Monday? Eastgate if you’ve got one. And what’s it costing me all in?'},
+          {who:'ai',   text:'Thursday to Monday runs as the week rate — £285 — which comes in under four day rates at £95. Delivery is £45 and collection £45. Before I go further: how is it getting into the garden?'},
+          {who:'user', text:'Go on then. It’s a back garden — the side gate’s about 900.'},
+          {who:'ai',   text:'Then the 1.5 won’t go through: it’s 990 across the tracks on your list. The micro will. Reserved until 10:00, and the desk confirms it before anything is loaded — I can’t put it on hire myself.'},
+          {who:'result', text:'✓ Reserved to 10:00 · micro, not the 1.5 · no contract raised'}],
+        why:'It talked him out of the machine he asked for, because 900 millimetres of gate beats 990 millimetres of track every time. Availability stays unknown until the desk confirms — reserved is a different word from booked, and the caller is told which one he has.',
+        produces:{
+          pipeline:{stage:'Reserved for the desk', ini:'??', nm:'Micro · Eastgate',
+            mt:'Thu–Mon · back garden, 900mm gate · 1.5 ruled out on track width · held to 10:00', tag:'AI logged', chan:'Phone · 06:40'},
+          booking:{title:'Eastgate — reserved, not on hire', slot:'Thu 08:00', note:'Expires 10:00 today. Your desk confirms or releases it; no contract has been raised.'},
+          quote:{ref:'Hire sheet', lines:[['Micro excavator, week rate','Thursday out, Monday back','£285'],['Day rate, for comparison','four days would be more','£95'],['Delivery','each way','£45'],['Collection','each way','£45']],
+            total:'£285 + transport', foot:'The week rate was offered because it is cheaper than the way he asked for it.'},
+          record:{name:'Micro · Eastgate', sub:'Phone, 06:40',
+            rows:[['Site access','Back garden · 900mm side gate — asked before the price was settled, not after'],
+                  ['Status','Reserved, not on hire. Availability stays unknown until your desk confirms.'],
+                  ['Next action','Hire desk confirms at seven; the yard gets the pick list if it does']]}}},
+
+      { id:'competence', chip:'“my lad can drive it, he’s been on one before”', risk:'trap',
+        turns:[
+          {who:'user', text:'My lad can drive it, he’s been on one before. That’s fine, isn’t it?'},
+          {who:'handoff', text:'→ I can quote it and I can reserve it. What I can’t do is tell you he’s qualified to operate it — that isn’t a judgement I’m allowed to make, in any wording. Your hire terms set out what has to be produced before that class of machine leaves the yard, and I’ve sent you that wording as it is written.'},
+          {who:'user', text:'He’s got a card somewhere.'},
+          {who:'handoff', text:'→ Then bring it, and the desk checks it at the counter with the card in hand. I’ve recorded that you say he holds one, flagged the hire as needing that check before release, and reserved the machine in the meantime so you don’t lose the week.'},
+          {who:'result', text:'✓ Release-blocked · terms sent as written · machine still held'}],
+        why:'“He’s been on one before” is exactly the sentence a hire desk must not accept over a phone. It reserves the machine anyway, so refusing the judgement does not cost the customer his week.',
+        produces:{
+          pipeline:{stage:'Reserved · release-blocked', ini:'??', nm:'Operator check due',
+            mt:'Caller asserted competence · no judgement made · card to be checked at the counter', tag:'Urgent', chan:'Phone · 07:20'},
+          booking:{title:'Reserved — release-blocked', slot:'Thu 08:00', note:'Held so the week is not lost, and flagged so nothing leaves the yard until the card is seen.'},
+          quote:null, quoteWhy:'No hire priced to completion — the machine is release-blocked, and pricing it through implies it is going out.',
+          record:{name:'Operator check due', sub:'Phone, 07:20',
+            rows:[['Recorded','That he says the lad holds a card — recorded as his claim, not as a fact'],
+                  ['Not done','No competence confirmed, in any wording. No hire terms paraphrased — they were sent as written.'],
+                  ['Next action','Desk checks the card at the counter before release']]}}},
+
+      { id:'slot', chip:'“what time’s it coming Tuesday?”', risk:'trap',
+        turns:[
+          {who:'user', text:'What time’s it landing Tuesday? I need to have someone there and the ground’s still mud after the weekend.'},
+          {who:'handoff', text:'→ I’m not going to promise you a time they haven’t set. I’ve put the ground condition in front of the transport desk, because unloading onto mud is their call and not mine, and asked them whether the slot can start after nine. They’ll come back to you.'},
+          {who:'user', text:'Just give me a rough window, I’ll work round it.'},
+          {who:'handoff', text:'→ A rough window is the one you’d plan your morning around. When transport sets it you get the real one — last week’s on that route was 08:00 to 12:00, but that was last week’s lorry, not yours.'},
+          {who:'result', text:'✓ Ground condition escalated · no window invented'}],
+        why:'A delivery window belongs to whoever loads the lorry. Inventing one gets a man stood in a field at eight for a wagon that was never coming until eleven.',
+        produces:{
+          pipeline:{stage:'With the transport desk', ini:'??', nm:'Tuesday delivery',
+            mt:'Asked for a delivery time · none given · mud flagged as a transport decision', tag:'Urgent', chan:'Phone · Mon 16:30'},
+          booking:null, bookingWhy:'No delivery window — the transport desk sets the slot, and it has not set this one yet.',
+          quote:{ref:'Transport, both ways', lines:[['Delivery','each way','£45'],['Collection','each way','£45'],['Slot','set by your transport desk, not here','—']],
+            total:'£90 both ways', foot:'The money is on the rate card. The time is not, so it is left blank rather than filled in.'},
+          record:{name:'Tuesday delivery', sub:'Phone, Mon 16:30',
+            rows:[['Escalated','Ground still soft after the weekend — unloading onto mud is the transport desk’s call'],
+                  ['Not done','No delivery window invented to get off the phone. No rough time offered as a compromise.'],
+                  ['Next action','Transport sets the slot and comes back to him directly']]}}}
+    ]},
+
+  universities: {
+    label: 'Universities',
+    seed: 'It’s the middle of the night here — ask anyway, I’m the admissions line.',
+    asks: [
+      { id:'fees', chip:'“what’s the fee, and when does the scholarship close?”', risk:'normal',
+        turns:[
+          {who:'user', text:'What’s the tuition for MSc Data Science for an international student starting September, and when does the scholarship close?'},
+          {who:'ai',   text:'Tuition for 2026 entry at overseas fee status is $24,000 for the year, with a $2,000 deposit on acceptance — both from the 2026 fees page. The merit scholarship closes on 31 March. I’ve stored which page each of those came from, so nobody has to take my word for it.'},
+          {who:'verify', text:'✓ From your 2026 fees page and funding page · 2 sources'},
+          {who:'user', text:'ok. and the deposit is refundable or?'},
+          {who:'result', text:'✓ Answered from source · reminder set for three days before the close'}],
+        why:'Two published facts, each with the page it came from stored beside it. The fee status is recorded as the applicant stated it and marked unverified — stating it is not the same as being assessed for it.',
+        produces:{
+          pipeline:{stage:'Enquiry', ini:'??', nm:'A. O. — prospective PGT',
+            mt:'MSc Data Science · Sept 2026 · overseas as stated, not assessed', tag:'AI logged', chan:'WhatsApp · 02:40 local'},
+          booking:null, bookingWhy:'Nothing to book — she asked for two published facts and got both, at twenty to three in the morning.',
+          quote:{ref:'2026 fees page', lines:[['Tuition, overseas fee status','for the year','$24,000'],['Deposit','on acceptance','$2,000'],['Merit scholarship','closes','31 March']],
+            total:'$24,000', foot:'Read from the published pages, with the source of each line stored against the record.'},
+          record:{name:'A. O. — prospective PGT', sub:'WhatsApp, 02:40 local',
+            rows:[['Fee status','Overseas — as stated by the applicant, not assessed'],
+                  ['Answers given','Tuition and scholarship close, both from the 2026 fees page · source stored'],
+                  ['Next action','Reminder three days before the scholarship close']]}}},
+
+      { id:'qualify', chip:'“do I have the right degree for it?”', risk:'trap',
+        turns:[
+          {who:'user', text:'I have a three-year BSc from a university in Ghana with a 2:1 equivalent. Does that qualify?'},
+          {who:'handoff', text:'→ I can’t answer that, and I won’t guess at it. The published requirement is a good honours degree in a quantitative subject; whether yours meets it is a judgement an officer makes on your transcript. Upload it here and it goes into the queue tonight.'},
+          {who:'user', text:'But roughly — do people with my background get in?'},
+          {who:'handoff', text:'→ That’s the same question with softer edges, so it’s the same answer. No likelihood, no “that looks strong”. Your transcript is attached and the target for this programme is ten working days.'},
+          {who:'result', text:'✓ Transcript attached · officer review · nothing implied'}],
+        why:'Comparability of an overseas qualification is a person’s ruling on a document, and encouragement is an admissions decision wearing a friendly voice. The second, softer ask gets the same refusal as the first.',
+        produces:{
+          pipeline:{stage:'Officer review', ini:'??', nm:'M. R. — prospective PGT',
+            mt:'Three-year BSc, overseas · transcript uploaded · comparability not assessed', tag:'Urgent', chan:'Web chat · 21:05'},
+          booking:null, bookingWhy:'No appointment — this is a document to be read, not a conversation to be had.',
+          quote:null,   quoteWhy:'No fee discussion attached to an application that has not been assessed.',
+          record:{name:'M. R. — prospective PGT', sub:'Web chat, 21:05',
+            rows:[['Qualification','Three-year BSc, overseas — recorded as stated; an officer rules on comparability'],
+                  ['Not done','No eligibility judgement. No chances. No encouragement, in any wording.'],
+                  ['Next action','Officer reads the transcript against a ten-working-day target']]}}},
+
+      { id:'visa', chip:'“how much do I need in the bank for the visa?”', risk:'trap',
+        turns:[
+          {who:'user', text:'If I get the offer, how much money do I need to show in my bank account for the visa, and how long should it be there?'},
+          {who:'handoff', text:'→ I am not going to answer that, and I want to be straight about why. Immigration advice is regulated — in the UK it can only be given by advisers authorised under the Immigration and Asylum Act 1999 and regulated by the Immigration Advice Authority, and I am not one. A wrong number from me could cost you a refusal.'},
+          {who:'user', text:'An agent gave me a figure already.'},
+          {who:'handoff', text:'→ Then please check it against the official government guidance rather than against me. I’ve booked you fifteen minutes with our international student advice team on Thursday, and I’ve written your question into your file word for word so you don’t have to explain it twice.'},
+          {who:'result', text:'✓ Adviser booked at quarter past eleven at night'}],
+        why:'This is the refusal with a statute behind it, and the reason is said out loud rather than hidden behind “I can’t help with that”. An agent’s figure is not corrected either — it is pointed at the only source that counts.',
+        produces:{
+          pipeline:{stage:'Waiting on a person', ini:'??', nm:'K. D. — prospective PGT',
+            mt:'Visa maintenance funds · refused as regulated advice · adviser booked Thursday', tag:'Urgent', chan:'Web chat · 23:15'},
+          booking:{title:'International student advice team', slot:'Thu 15:00', note:'Fifteen minutes, booked at 23:15 the night she asked. The refusal came with a diary slot attached.'},
+          quote:null, quoteWhy:'No figure of any kind — a maintenance-funds number from here is exactly the wrong thing to be right about.',
+          record:{name:'K. D. — prospective PGT', sub:'Web chat, 23:15',
+            rows:[['Refused','Visa question — routed to the international advice team, with the reason stated'],
+                  ['Not done','No immigration advice, in any wording. No correction of the agent’s figure either.'],
+                  ['Next action','Adviser has her words verbatim before Thursday']]}}}
     ]}
 };
 

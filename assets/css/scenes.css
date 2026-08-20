@@ -191,7 +191,13 @@
 .altcol.win{background:linear-gradient(180deg,#0B1B33,#08121F);color:#fff;}
 .altcol h4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}
 .altcol.win h4{color:var(--teal);}
-.altcol .cost{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+.altcol .cost{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
+  font-weight:600;letter-spacing:-.03em;color:var(--l-ink);
+  /* This is sized for a price, and a price never wraps. A trade that puts a
+     phrase here instead — golf's "Your pro's mornings" — ran 58px past a
+     237px column inside an overflow:hidden grid, so the end of it was cut
+     off. Words wrap; numbers are too short to be affected. */
+  overflow-wrap:anywhere;text-wrap:balance;line-height:1.12;}
 .altcol.win .cost{color:#fff;}
 .altcol ul{margin-top:16px;list-style:none;display:grid;gap:10px;}
 .altcol li{font-size:var(--fs-xs);line-height:1.55;color:var(--l-mut);display:flex;gap:8px;font-weight:500;}

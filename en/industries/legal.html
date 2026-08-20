@@ -28,15 +28,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the AI give legal advice?","acceptedAnswer":{"@type":"Answer","text":"No, and the refusal is categorical rather than a confidence threshold. It does not opine on the merits, does not state a limitation period or filing deadline, does not estimate what a matter is worth, and does not predict an outcome — not even as a hedge. It states on the call, in your firm's own approved wording, that no lawyer–client relationship is formed by the conversation. What it does is capture the account word for word, book the consultation once the conflict check clears, and put the whole thread in front of a lawyer."}},{"@type":"Question","name":"How does the conflict check work if a machine is answering?","acceptedAnswer":{"@type":"Answer","text":"The AI collects the opposing party and any related names and runs them against your firm's own conflicts list. It does not exercise the judgement — a person clears or declines the check. Until it is cleared, nothing may be scheduled: the gate sits on the calendar itself, not on a checklist somebody remembers. If the check does not clear, the AI says only that the firm is not able to act, offers your referral list, and never explains why."}},{"@type":"Question","name":"Are records from different matters kept apart?","acceptedAnswer":{"@type":"Answer","text":"Yes. Matter records are walled from each other rather than sitting in one shared list the way a clinic's patient list does. A record opened on one matter is not visible from another, and access is set per matter during onboarding. Data is encrypted in transit and at rest, kept separate from every other firm, with retention and deletion controls your firm operates."}},{"@type":"Question","name":"How does this sit with bar advertising rules?","acceptedAnswer":{"@type":"Answer","text":"Most jurisdictions prohibit outcome claims, guarantees and unqualified specialisation claims in what a firm says to a prospective client. The never-list on this page maps to those prohibitions one-to-one: no merits opinion, no predicted outcome, no case value, no superiority claim. The specific rules differ by jurisdiction and your firm approves every line of the answer set before it goes live. Nothing on this page is legal advice about your own advertising obligations."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the AI give legal advice?","acceptedAnswer":{"@type":"Answer","text":"No, and that is a flat rule rather than a score the model has to clear. It does not opine on the merits, does not state a limitation period or filing deadline, does not estimate what a matter is worth, and does not predict an outcome — not even as a hedge. It states on the call, in your firm's own approved wording, that no lawyer–client relationship is formed by the conversation. What it does is capture the account word for word, book the consultation once the conflict check clears, and put the whole thread in front of a lawyer."}},{"@type":"Question","name":"How does the conflict check work if a machine is answering?","acceptedAnswer":{"@type":"Answer","text":"The AI collects the opposing party and any related names and runs them against your firm's own conflicts list. It does not exercise the judgement — a person clears or declines the check. Until it is cleared, nothing may be scheduled: the gate sits on the calendar itself, not on a checklist somebody remembers. If the check does not clear, the AI says only that the firm is not able to act, offers your referral list, and never explains why."}},{"@type":"Question","name":"Are records from different matters kept apart?","acceptedAnswer":{"@type":"Answer","text":"Yes. Matter records are walled from each other rather than sitting in one shared list the way a clinic's patient list does. A record opened on one matter is not visible from another, and access is set per matter during onboarding. Data is encrypted in transit and at rest, kept separate from every other firm, with retention and deletion controls your firm operates."}},{"@type":"Question","name":"How does this sit with bar advertising rules?","acceptedAnswer":{"@type":"Answer","text":"Most jurisdictions prohibit outcome claims, guarantees and unqualified specialisation claims in what a firm says to a prospective client. The never-list on this page maps to those prohibitions one-to-one: no merits opinion, no predicted outcome, no case value, no superiority claim. The specific rules differ by jurisdiction and your firm approves every line of the answer set before it goes live. Nothing on this page is legal advice about your own advertising obligations."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Intake for Small Law Firms","item":"https://claude.saleringo.com/en/industries/legal.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=24.5">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=24.5">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=24.5">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=24.5">
+<link rel="stylesheet" href="../../assets/css/site.css?v=24.8">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=24.8">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=24.8">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=24.8">
 <style>
   /* ── LEGAL · archetype: THE GATE ─────────────────────────── */
   /* the only pack in the product where a check blocks scheduling
@@ -221,7 +221,7 @@
   <div class="tint" aria-hidden="true"></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v24.5">v24.5</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v24.8">v24.8</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -278,7 +278,7 @@
       </div>
     </div>
     <p class="photocap">11:20 PM — the&nbsp;office is dark and the&nbsp;call is still answered, and still not advised.
-      Illustrative photography; not a&nbsp;Saleringo customer firm.</p>
+      Illustrative photography. No&nbsp;firm shown here is a&nbsp;Saleringo customer.</p>
     </div>
   </div>
 </header>
@@ -605,7 +605,7 @@
           </div>
           <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. A&nbsp;hedge is the&nbsp;dangerous answer here, not
             the&nbsp;safe one: "it might be worth pursuing" is still an&nbsp;opinion on&nbsp;the&nbsp;merits, and it is still the&nbsp;firm that&nbsp;said it.
-            So the&nbsp;refusal is categorical rather than a&nbsp;confidence threshold.</p>
+            So the&nbsp;refusal is absolute, not a&nbsp;score the&nbsp;model has to&nbsp;clear.</p>
         </div>
       </div>
 
@@ -704,9 +704,8 @@
 
     <div class="reveal" style="max-width:660px;margin-top:62px;">
       <span class="eyebrow"><i></i>What it will and won’t answer</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">The&nbsp;line, written&nbsp;down <br>before&nbsp;a&nbsp;caller hears&nbsp;anything.</h3>
-      <p class="lead onDark" style="margin-top:14px;">Your&nbsp;firm approves every&nbsp;row of&nbsp;this&nbsp;during onboarding. The&nbsp;third
-        column is the&nbsp;one to&nbsp;read twice — the&nbsp;<b style="color:#F09186;">Never</b> rows map, one for&nbsp;one, onto the&nbsp;things
+      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);max-width:none;">Signed off by&nbsp;a&nbsp;solicitor <br>before the&nbsp;line is&nbsp;switched&nbsp;on.</h3>
+      <p class="lead onDark" style="margin-top:14px;">A&nbsp;partner signs this&nbsp;grid off before anything goes live. The&nbsp;column worth reading first is the&nbsp;third one &mdash; the&nbsp;<b style="color:#F09186;">Never</b> rows map, one for&nbsp;one, onto the&nbsp;things
         bar advertising rules prohibit a&nbsp;firm from&nbsp;saying to&nbsp;a&nbsp;prospective client.</p>
     </div>
     <div class="qbank">
@@ -858,7 +857,7 @@
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><i></i>Two things it says out&nbsp;loud</span>
-      <h2 class="h2 onDark" style="margin-top:20px">The&nbsp;disclaimers are not <em style="font-style:normal;color:var(--teal);">in&nbsp;the&nbsp;footer.</em><br>They&nbsp;are in&nbsp;the&nbsp;call.</h2>
+      <h2 class="h2 onDark" style="margin-top:20px">The&nbsp;disclaimers are not <em style="font-style:normal;color:var(--teal);">in&nbsp;the&nbsp;footer.</em> <br>They&nbsp;are in&nbsp;the&nbsp;call.</h2>
       <p class="lead onDark">Two of&nbsp;these are said on&nbsp;the&nbsp;call itself, in&nbsp;your&nbsp;firm's&nbsp;own approved wording, rather than
         buried where nobody reads them. The&nbsp;third is a&nbsp;property of&nbsp;how the&nbsp;records are built.</p>
     </div>
@@ -887,7 +886,7 @@
       <p class="lead" style="margin-top:16px;font-size:var(--fs-sm);">Keep your&nbsp;systems — <b style="color:var(--l-ink);">Zapier</b> and <b style="color:var(--l-ink);">CSV export</b> are live today; practice-management tools are on&nbsp;the&nbsp;roadmap, and founding customers vote on&nbsp;what ships next.</p>
       <div class="langnote">
         <div class="ty">THE ANSWER SET IS APPROVED, LINE BY&nbsp;LINE</div>
-        <p>Every&nbsp;sentence the&nbsp;AI may say about&nbsp;your&nbsp;firm is reviewed by&nbsp;a&nbsp;solicitor before it goes live — including the&nbsp;refusals and the&nbsp;no-retainer wording. Anything outside the&nbsp;approved set becomes a&nbsp;handoff, not an&nbsp;improvisation.</p>
+        <p>Every&nbsp;sentence the&nbsp;AI may say about&nbsp;your&nbsp;firm is reviewed by&nbsp;a&nbsp;solicitor before it goes live — including the&nbsp;refusals and the&nbsp;no-retainer wording. A&nbsp;question that&nbsp;falls outside the&nbsp;approved set leaves the&nbsp;line and goes to&nbsp;a&nbsp;person; it is never filled&nbsp;in.</p>
         <div class="tags"><span class="pilltag pt-teal">Practice list · approved</span><span class="pilltag pt-teal">Fee schedule · approved</span><span class="pilltag pt-line">Conflicts list · yours</span></div>
       </div>
     </div>
@@ -952,8 +951,8 @@
         <p>The&nbsp;gate runs against the&nbsp;firm, not the&nbsp;branch — a&nbsp;matter one office cannot take is not one another&nbsp;office
           can take by&nbsp;accident.</p></div>
       <div class="mlcard"><span class="n">03</span><b>Matters stay walled, per&nbsp;office and per&nbsp;matter</b>
-        <p>A&nbsp;fee-earner opens the&nbsp;board and sees the&nbsp;matters they are on. Access is set during onboarding, not
-          inherited from&nbsp;a&nbsp;shared inbox.</p></div>
+        <p>A&nbsp;fee-earner opens the&nbsp;board and sees the&nbsp;matters they are on. Who may open which matter is decided at&nbsp;onboarding, never
+          inherited from&nbsp;whoever had the&nbsp;shared inbox.</p></div>
       <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
         <p>One report puts every&nbsp;office in&nbsp;the&nbsp;same row: inquiries, screened in, referred out, conflicts declined,
           consultations booked out of&nbsp;hours. Exportable to&nbsp;PDF or Excel.</p></div>
@@ -973,7 +972,7 @@
     <div class="faq reveal">
       <details>
         <summary>Does the&nbsp;AI give legal advice?</summary>
-        <p>No, and the&nbsp;refusal is categorical rather than a&nbsp;confidence threshold. It does not opine on&nbsp;the&nbsp;merits, does not state a&nbsp;limitation period or filing deadline, does not estimate what a&nbsp;matter is worth, and does not predict an&nbsp;outcome — not even as&nbsp;a&nbsp;hedge. It states on&nbsp;the&nbsp;call, in&nbsp;your&nbsp;firm's&nbsp;own approved wording, that&nbsp;no&nbsp;lawyer–client relationship is formed by&nbsp;the&nbsp;conversation. What it does is capture the&nbsp;account word for&nbsp;word, book the&nbsp;consultation once the&nbsp;conflict check clears, and put the&nbsp;whole thread in&nbsp;front of&nbsp;a&nbsp;solicitor.</p>
+        <p>No, and that&nbsp;is a&nbsp;flat rule rather than a&nbsp;score the&nbsp;model has to&nbsp;clear. It does not opine on&nbsp;the&nbsp;merits, does not state a&nbsp;limitation period or filing deadline, does not estimate what a&nbsp;matter is worth, and does not predict an&nbsp;outcome — not even as&nbsp;a&nbsp;hedge. It states on&nbsp;the&nbsp;call, in&nbsp;your&nbsp;firm's&nbsp;own approved wording, that&nbsp;no&nbsp;lawyer–client relationship is formed by&nbsp;the&nbsp;conversation. What it does is capture the&nbsp;account word for&nbsp;word, book the&nbsp;consultation once the&nbsp;conflict check clears, and put the&nbsp;whole thread in&nbsp;front of&nbsp;a&nbsp;solicitor.</p>
       </details>
       <details>
         <summary>How does the&nbsp;conflict check work if a&nbsp;machine is answering?</summary>
@@ -1067,7 +1066,7 @@
       <span class="pkl">What you judge it on&nbsp;after ninety days</span>
       <div class="pkkrow"><span class="pkk">Conflict checks run before first contact</span><span class="pkk">Consultations booked out of&nbsp;hours</span><span class="pkk">Declined-and-referred rate</span><span class="pkk">Time to&nbsp;first response</span></div>
     </div>
-    <p class="pkcap"><span class="capnote">Practice list, conflicts list, fees and consultation lengths all come from&nbsp;your&nbsp;own setup. Product illustration &mdash; the&nbsp;fields and rules are the&nbsp;real ones.</span>Checks run before contact, consultations recovered after hours, and how many inquiries you correctly turned away. Those are numbers a&nbsp;partner already watches; the&nbsp;only thing that&nbsp;changes is who was at&nbsp;the&nbsp;desk when the&nbsp;phone rang.</p>
+    <p class="pkcap"><span class="capnote">Practice list, conflicts list, fees and consultation lengths all come from&nbsp;your&nbsp;own setup. The&nbsp;screen is drawn for&nbsp;this&nbsp;page; the&nbsp;conflict gate and the&nbsp;matter fields are the&nbsp;real ones.</span>Checks run before contact, consultations recovered after hours, and how many inquiries you correctly turned away. Those are numbers a&nbsp;partner already watches; the&nbsp;only thing that&nbsp;changes is who was at&nbsp;the&nbsp;desk when the&nbsp;phone rang.</p>
   </div>
 </section>
 
@@ -1132,7 +1131,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v24.5</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v24.8</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1179,10 +1178,10 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=24.5"></script>
-<script src="../../assets/js/balance.js?v=24.5" defer></script>
-<script src="../../assets/js/canvas.js?v=24.5" defer></script>
-<script src="../../assets/js/scenes.js?v=24.5" defer></script>
-<script src="../../assets/js/guide.js?v=24.5"></script>
+<script src="../../assets/js/site.js?v=24.8"></script>
+<script src="../../assets/js/balance.js?v=24.8" defer></script>
+<script src="../../assets/js/canvas.js?v=24.8" defer></script>
+<script src="../../assets/js/scenes.js?v=24.8" defer></script>
+<script src="../../assets/js/guide.js?v=24.8"></script>
 </body>
 </html>
