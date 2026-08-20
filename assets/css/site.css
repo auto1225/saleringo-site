@@ -2741,3 +2741,156 @@ html .weekday li > i{margin-right:6px;}
 .ownerbox a{color:var(--teal-ink);font-weight:700;}
 .sec-dark .ownerbox a{color:var(--teal);}
 @media (max-width:640px){ .ownerbox li{grid-template-columns:1fr;gap:4px;} }
+
+
+/* ── one section, several answers ─────────────────────────────────────────
+   The tab strip replaces four uppercase kickers with one row of plain words.
+   It is styled as a set of choices rather than as a control panel: no pills
+   inside pills, no LIVE badge, no step number. The selected one is marked by
+   weight and a rule under it, which is the oldest and quietest way to say
+   "you are here".
+
+   Without script every panel is shown, so the strip hides itself rather than
+   sitting above a stack it cannot drive. */
+.panelset{margin-top:34px;}
+.pstabs{display:none;}
+.srjs .pstabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--hair);
+  margin-bottom:34px;padding-bottom:0;}
+.srjs .sec-light .pstabs,.srjs .sec-light2 .pstabs,.srjs .bg-paper .pstabs{border-color:var(--l-hair);}
+.srjs .pstabs button{appearance:none;background:none;border:0;cursor:pointer;
+  padding:12px 18px 14px;margin-bottom:-1px;font:inherit;
+  font-size:var(--fs-sm);font-weight:600;color:var(--tx2);
+  border-bottom:2px solid transparent;transition:color .3s var(--ease),border-color .3s var(--ease);}
+.srjs .pstabs button:hover{color:var(--tx);}
+.srjs .pstabs button.on{color:var(--tx);font-weight:700;border-bottom-color:var(--teal);}
+.srjs .sec-light .pstabs button,.srjs .sec-light2 .pstabs button,.srjs .bg-paper .pstabs button{color:var(--l-mut);}
+.srjs .sec-light .pstabs button.on,.srjs .sec-light2 .pstabs button.on,.srjs .bg-paper .pstabs button.on{
+  color:var(--l-ink);border-bottom-color:var(--teal-deep);}
+.srjs .pstabs button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px;}
+/* a panel already carries its own heading, so it needs no top margin of its own */
+.pspanel + .pspanel{margin-top:96px;}
+.srjs .pspanel + .pspanel{margin-top:0;}
+@media (max-width:620px){
+  .srjs .pstabs{gap:0;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;}
+  .srjs .pstabs::-webkit-scrollbar{display:none;}
+  .srjs .pstabs button{white-space:nowrap;padding:12px 14px 14px;}
+}
+
+
+/* ── the plans, on the page where the number was worked out ───────────────
+   The home page ran a whole section for three prices. It is three prices; it
+   is a strip under the calculator, where the reader has just produced a
+   number and the only useful next fact is what the plan costs. No cards
+   inside cards, no POPULAR badge - the middle plan earns attention by being
+   the one most people can afford, which the pricing page argues properly. */
+.planstrip{margin-top:44px;padding-top:34px;border-top:1px solid var(--hair);}
+.planstrip .ps-head b{display:block;font-size:var(--fs-lead);font-weight:700;
+  letter-spacing:-.02em;color:var(--tx);}
+.planstrip .ps-head span{display:block;margin-top:8px;font-size:var(--fs-xs);
+  line-height:1.7;color:var(--tx2);font-weight:500;max-width:var(--measure);}
+.planstrip .ps-list{list-style:none;margin:26px 0 0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;}
+.planstrip .ps-list li{padding:20px 26px 20px 0;border-left:1px solid var(--hair);
+  padding-left:26px;}
+.planstrip .ps-list li:first-child{border-left:0;padding-left:0;}
+.planstrip .ps-list b{display:block;font-size:var(--fs-xs);font-weight:800;
+  letter-spacing:.02em;color:var(--tx2);}
+.planstrip .ps-p{display:block;margin-top:6px;font-family:'Space Grotesk',sans-serif;
+  font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:#fff;}
+.planstrip .ps-p i{font-style:normal;font-size:var(--fs-xs);font-weight:600;color:var(--tx3);}
+.planstrip .ps-d{display:block;margin-top:8px;font-size:var(--fs-xs);line-height:1.65;
+  color:var(--tx2);font-weight:500;}
+.planstrip .ps-foot{margin-top:20px;display:flex;gap:28px;flex-wrap:wrap;}
+.planstrip .ps-foot .linkcta{color:var(--teal);}
+@media (max-width:700px){
+  .planstrip .ps-list li{border-left:0;border-top:1px solid var(--hair);padding:18px 0;}
+  .planstrip .ps-list li:first-child{border-top:0;padding-top:0;}
+}
+
+/* the line the conclusion band used to carry, now the closer's first breath */
+.concline{margin:0 auto 26px;max-width:var(--measure);text-align:center;
+  font-size:var(--fs-xs);line-height:1.75;color:var(--tx2);font-weight:500;}
+
+
+/* ══ THE HOUSE STYLE, CORRECTED ═══════════════════════════════════════════
+   Five devices had become the design instead of serving it. Counted across
+   the 44 pages: 522 uppercase pill kickers, 159 status pills, 42 star fields,
+   75 teal glows, 18 LIVE badges. Any one of them is a good idea. All of them
+   on every section is a template.
+
+   None of them is deleted; each is turned down to the level where it means
+   something again. ─────────────────────────────────────────────────────── */
+
+/* 1 · THE KICKER. It was a bordered pill in uppercase mono at .22em of
+   tracking, which is a lot of decoration to say "this section is about X" -
+   and it said it 522 times. It is now what it always was in print: a small
+   line of type above the headline, in the case it was written in, with a
+   short rule instead of a border. The dot stays; it is the one accent mark
+   that carries the brand. */
+html .eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  border:0;border-radius:0;padding:0 0 0 0;background:none;
+  font-size:var(--fs-xs);font-weight:600;letter-spacing:0;text-transform:none;
+  color:var(--tx2);
+}
+html .eyebrow::before{
+  content:"";width:22px;height:1px;flex:none;background:var(--accent,var(--teal));opacity:.85;
+}
+html .eyebrow i{width:0;height:0;margin:0;background:none;}
+html .eyebrow.light{background:none;border:0;color:var(--l-mut2);}
+html .sec-light .eyebrow::before,html .sec-light2 .eyebrow::before,
+html .bg-paper .eyebrow::before{background:var(--teal-deep);}
+
+/* 2 · THE STATUS PILL. A pill is a control you can press. Using the same
+   shape for a label that does nothing taught the reader to stop pressing.
+   Status keeps the colour and loses the capsule; only .pilltag.is-action -
+   something that is genuinely pressable - keeps it. */
+html .pilltag:not(.is-action){
+  border-radius:4px;padding:4px 0 4px 14px;background:none !important;
+  border:0;position:relative;letter-spacing:.01em;
+}
+html .pilltag:not(.is-action)::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.9;
+}
+
+/* 3 · THE ATMOSPHERE. A star field and a teal glow are an event; two of them
+   on one page is weather. One atmospheric section per page keeps its glow -
+   the rest sit on the flat ground the type was designed for. */
+html section.bg-spot ~ section.bg-spot::before,
+html section.bg-spot ~ section.bg-spot::after{opacity:.32;}
+html section .stars ~ .stars{display:none;}
+html section.bg-grid ~ section.bg-grid ~ section.bg-grid::before{opacity:.4;}
+
+/* 4 · THE PHOTOGRAPHS. 1,356 of them come from a stock library, which is fine
+   - the alternative is a shoot this company has not done. A single grade over
+   all of them already exists in scenes.css (grayscale + sepia + the brand
+   scrim), and adding a second one on top of it only muddied the heroes; that
+   attempt is recorded here so it is not tried again. What actually reads as
+   stock is the QUANTITY of scenery, so the fix is in 3 above and in the cuts
+   to the home page: fewer photographs, each one showing a real business
+   situation, and the brand carried by the drawn figures - which nobody else
+   has - rather than by the photographs, which anybody can buy. */
+
+/* 5 · THE NESTED CARD. .shell holds .core, .tray holds .paper: a rounded box
+   with a border inside a rounded box with a border, twice on some pages. The
+   outer one is a frame - a machined tray the screen sits in - so it keeps its
+   radius and drops its stroke, and the inner object keeps the stroke that
+   makes it an object. One line each, not two. */
+html .shell{border-color:transparent;}
+html .tray{border-color:transparent;}
+
+/* the control that opens the rest of the trades is a control, so it keeps the
+   pill the status labels gave up - and it says how many, not "more" */
+html .chip.chipmore{border-style:dashed;color:var(--tx3);font-weight:700;}
+html .chip.chipmore:hover{color:var(--tx);border-color:var(--teal);}
+html .sec-light .chip.chipmore,html .sec-light2 .chip.chipmore{color:var(--l-mut2);}
+
+/* the trade card's LIVE / ONBOARDING / ROADMAP mark is a status, not a button */
+/* .rank is already absolutely placed on the card, so it keeps its position -
+   setting position:relative here moved every one of them into the flow */
+html .icard .rank{background:none;border:0;padding:0 0 0 14px;border-radius:0;
+  letter-spacing:.04em;text-transform:none;}
+html .icard .rank::before{content:"";position:absolute;left:0;top:50%;
+  transform:translateY(-50%);width:6px;height:6px;border-radius:50%;
+  background:currentColor;}
