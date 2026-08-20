@@ -623,3 +623,14 @@
 @media (max-width:520px){
   .kpitiles{grid-template-columns:1fr;}
 }
+
+/* On a phone the label column stops being a column.
+   Widening it to 124px so "In the property" fits on a desktop took the same
+   18px off the value beside it, and at 375 that left "Not discussed —
+   manager's conversation" six pixels past its box inside a card that clips.
+   A 320px card has no room for two columns; the label goes above the value,
+   which is how every other record on a phone reads anyway. */
+@media (max-width:620px){
+  .crow{flex-direction:column;gap:3px;}
+  .crow .k{width:auto;}
+}
