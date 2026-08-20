@@ -1664,7 +1664,6 @@
              that width the stops become nodes on a line and the route is
              written out once, in full, underneath. */
           var m = 14;
-          var ry = y + Math.min(laneH * 0.58, 68);
           var stops = 3;
           var frac = L.hop ? [0.28, 0.44, 0.28] : [1 / 3, 1 / 3, 1 / 3];
           var avail = W - m * 2;
@@ -1676,6 +1675,10 @@
           var widths = frac.map(function (f) { return Math.min(avail * f - 10, 210); });
           var compact = Math.min.apply(null, widths) < 92;
           var boxH = 30;
+          /* compact writes the route out in words UNDER the track, so the
+             track has to move up or that sentence lands on the lane's own
+             footnote — measured at 375px, 14px apart and touching */
+          var ry = y + (compact ? 56 : Math.min(laneH * 0.58, 68));
 
           if (!L.empty) {
             if (compact) {

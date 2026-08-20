@@ -565,8 +565,8 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 /* three lanes: the route a booking takes under each of the three statuses.
    The lanes never re-stack — they only lose their labelled boxes for nodes
    on a line once a box would be narrower than 13px type needs. */
-.lanefig .scenebox{--sh:340px;}
-@media (max-width:760px){ .lanefig .scenebox{--sh:400px;} }
+.lanefig .scenebox{--sh:360px;}
+@media (max-width:760px){ .lanefig .scenebox{--sh:410px;} }
 
 /* A bottom-right overlay panel and the frame's own caption both sit at the
    foot of the frame, and the panel is painted above it: 298px of the caption
