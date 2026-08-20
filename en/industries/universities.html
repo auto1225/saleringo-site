@@ -29,10 +29,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Front Desk for Universities & Admissions Offices","item":"https://claude.saleringo.com/en/industries/universities.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=27.1">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=27.1">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=27.1">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=27.1">
+<link rel="stylesheet" href="../../assets/css/site.css?v=28.1">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=28.1">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=28.1">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=28.1">
 <style>
   /* page-specific: universities & international admissions landing */
   /* full-bleed photo hero — block layout overrides .photohero's flex */
@@ -65,7 +65,7 @@
   @media (max-width:620px){.hero .hero-panel{padding:24px 18px;}}
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.045em;font-weight:600;color:#fff;max-width:900px;margin:0 auto;}
   .hero h1 .teal{color:var(--teal);}
-  .hero .sub{margin:28px auto 0;max-width:620px;font-size:var(--fs-lead);line-height:1.7;color:var(--tx2);font-weight:500;}
+  .hero .sub{margin:28px auto 0;font-size:var(--fs-lead);line-height:1.7;color:var(--tx2);font-weight:500;}
   .hero .ctas{margin-top:38px;display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;}
   .hero .micro{margin-top:20px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
 
@@ -111,7 +111,7 @@
 
   .notdo{background:var(--l-bg);}
   .notdo .cols{display:grid;grid-template-columns:1fr 1.2fr;gap:90px;align-items:stretch;}
-  .notdo .lead{margin-top:24px;max-width:400px;}
+  .notdo .lead{margin-top:24px;}
   .ndrow{display:flex;gap:18px;padding:24px 26px;align-items:flex-start;}
   .ndrow + .ndrow{border-top:1px solid var(--l-hair);}
   .ndrow .x{flex:none;width:30px;height:30px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
@@ -122,7 +122,7 @@
 
   .demosec{position:relative;overflow:hidden;}
   .demosec .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:start;position:relative;z-index:2;}
-  .demosec .lead{margin-top:22px;max-width:420px;}
+  .demosec .lead{margin-top:22px;}
   .leadcard .core{padding:22px;}
   .leadcard .k{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:var(--teal);}
   .leadcard .nm{margin-top:10px;display:flex;align-items:center;font-size:var(--fs-sm);font-weight:700;color:#fff;}
@@ -135,7 +135,7 @@
 
   .startsec{background:linear-gradient(180deg,var(--l-bg),#FDFDFE);}
   .startsec .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;align-items:stretch;}
-  .startsec .lead{margin-top:24px;max-width:400px;}
+  .startsec .lead{margin-top:24px;}
   .channote{margin-top:34px;background:#fff;border:1px solid var(--l-hair);border-radius:16px;padding:20px 22px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
   .channote b{color:var(--l-ink);}
   @media (max-width:900px){.startsec .cols{grid-template-columns:1fr;gap:44px;}}
@@ -148,7 +148,7 @@
     linear-gradient(180deg,#060D1C,#04080F);
     text-align:center;overflow:hidden;}
   .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);font-weight:600;letter-spacing:-.045em;color:#fff;line-height:1.06;position:relative;}
-  .closer .lead{margin:24px auto 0;max-width:520px;position:relative;}
+  .closer .lead{margin:24px auto 0;position:relative;}
   .closer .ctas{margin-top:42px;display:flex;justify-content:center;gap:16px;position:relative;flex-wrap:wrap;}
   .bigfooter{margin-top:130px;}
   @media (max-width:900px){.hero h1{font-size:var(--fs-h1);}.closer h2{font-size:var(--fs-h2);}
@@ -165,7 +165,7 @@
   .ptlist li b{color:#fff;font-weight:700;}
   .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
   .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;max-width:600px;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
 
   /* three-state integration status */
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
@@ -184,7 +184,7 @@
     font-weight:700;border-bottom:1px solid var(--hair);}
   .statcol li:last-child{border-bottom:0;}
   .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;max-width:740px;}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
 
   /* the source line under a cited answer */
   .srcrow{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
@@ -198,7 +198,7 @@
   .leadbox{max-width:660px;margin:0 auto;text-align:left;}
   .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
     color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;max-width:520px;text-align:center;font-size:var(--fs-sm);
+  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
     line-height:1.72;color:var(--tx2);font-weight:500;}
   .leadbox .eaform{max-width:100%;}
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
@@ -222,7 +222,7 @@
   <div class="ghost sg" aria-hidden="true">02:40<small>AM</small></div>
 
   <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v27.1">v27.1</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v28.1">v28.1</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -923,7 +923,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v27.1</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v28.1</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -971,10 +971,10 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=27.1"></script>
-<script src="../../assets/js/balance.js?v=27.1" defer></script>
-<script src="../../assets/js/canvas.js?v=27.1" defer></script>
-<script src="../../assets/js/scenes.js?v=27.1" defer></script>
-<script src="../../assets/js/guide.js?v=27.1"></script>
+<script src="../../assets/js/site.js?v=28.1"></script>
+<script src="../../assets/js/balance.js?v=28.1" defer></script>
+<script src="../../assets/js/canvas.js?v=28.1" defer></script>
+<script src="../../assets/js/scenes.js?v=28.1" defer></script>
+<script src="../../assets/js/guide.js?v=28.1"></script>
 </body>
 </html>

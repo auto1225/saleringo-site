@@ -447,7 +447,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .scenebox{position:relative;width:100%;height:var(--sh,320px);}
 .scenebox .scenecv{position:absolute;inset:0;display:block;width:100%;height:100%;}
 .scenecap{margin-top:16px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);
-  font-weight:500;max-width:60ch;}
+  font-weight:500;max-width:var(--measure);}
 .scenecap b{color:var(--tx);font-weight:700;}
 .scenecap .num{font-family:'Space Grotesk',sans-serif;color:var(--teal);font-weight:600;}
 .sec-light .scenecap,.sec-light2 .scenecap,.bg-paper .scenecap,.bg-clinical .scenecap{
@@ -499,7 +499,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 /* These four figures argue in full sentences under themselves, so the caption
    is allowed the full measure rather than the 60ch a marginal note gets. */
 .jobsfig .scenecap,.tracefig .scenecap,.chankeyfig .scenecap,
-.fanfig .scenecap{max-width:76ch;}
+.fanfig .scenecap{max-width:var(--measure);}
 .jobsfig,.tracefig{margin:0 0 26px;}
 .chankeyfig{margin:34px 0 0;}
 
@@ -534,7 +534,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .figcard h3{margin-top:10px;font-size:var(--fs-h3);font-weight:800;
   letter-spacing:-.015em;color:#fff;}
 .figcard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;
-  color:var(--tx2);font-weight:500;max-width:74ch;}
+  color:var(--tx2);font-weight:500;max-width:var(--measure);}
 .sec-light .figcard h3,.sec-light2 .figcard h3,.bg-clinical .figcard h3,
 .bg-paper .figcard h3{color:var(--l-ink);}
 .sec-light .figcard p,.sec-light2 .figcard p,.bg-clinical .figcard p,

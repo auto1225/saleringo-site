@@ -215,8 +215,13 @@
 .ledger .lb-o li i{color:#C2544A;} .ledger .lb-n li i{color:var(--teal);}
 
 /* ═══ responsive guards ═══════════════════════════════════ */
-@media (max-width:1000px){
+/* The board sits inside a mock that is narrower than the window, so it runs
+   out of room before the viewport does: at 1100 its four columns were 77px
+   each and the card text was clipped. It halves at 1200 now. */
+@media (max-width:1200px){
   .pipeboard{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:1000px){
   .appwin .split{grid-template-columns:1fr;}
   .appwin .rail{display:none;}
   .flowline{grid-template-columns:1fr 1fr;row-gap:32px;}
@@ -305,12 +310,12 @@
    points at the one demo on the page that actually responds to a click. */
 .castag{
   margin:6px 0 22px;font-size:var(--fs-xs);line-height:1.6;color:var(--tx3,rgba(255,255,255,.62));
-  font-weight:600;max-width:62ch;
+  font-weight:600;max-width:var(--measure);
 }
 
 /* ── pointer from a static worked example to the demo that answers back ── */
 .thinklead{
-  margin:26px auto 0;max-width:64ch;text-align:center;font-size:var(--fs-sm);line-height:1.65;
+  margin:26px auto 0;max-width:var(--measure);text-align:center;font-size:var(--fs-sm);line-height:1.65;
   color:var(--tx3,rgba(255,255,255,.62));font-weight:600;
 }
 .thinklead a{color:var(--teal);font-weight:700;border-bottom:1px solid rgba(15,163,163,.4);}
@@ -385,7 +390,7 @@
   color:var(--tx3);margin-bottom:5px;}
 .labwhy{margin:0;padding:0 15px 14px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx3);font-weight:600;}
 
-.labfoot{margin-top:16px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);font-weight:600;max-width:70ch;}
+.labfoot{margin-top:16px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);font-weight:600;max-width:var(--measure);}
 .labfoot b{color:var(--teal);font-weight:800;}
 
 /* a quantity it heard but deliberately did not apply — worth seeing, not alarming */
@@ -417,7 +422,7 @@
 .pchip.hot{background:rgba(224,90,60,.14);border-color:rgba(224,90,60,.4);color:#F0A088;}
 .pchip.warm{background:rgba(232,164,76,.12);border-color:rgba(232,164,76,.36);color:#F0BE7C;}
 .pipecap{margin:14px 0 0;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);
-  font-weight:600;max-width:80ch;}
+  font-weight:600;max-width:var(--measure);}
 
 .whogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px;}
 @media(max-width:1000px){.whogrid{grid-template-columns:repeat(2,1fr);}}
@@ -540,7 +545,7 @@
 .tscard b{display:block;margin-top:8px;font-size:var(--fs-sm);line-height:1.4;color:#fff;font-weight:700;}
 .tscard p{margin:9px 0 0;font-size:var(--fs-xs);line-height:1.68;color:var(--tx3);font-weight:500;}
 .todaycap{margin:16px 0 0;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);
-  font-weight:600;max-width:82ch;}
+  font-weight:600;max-width:var(--measure);}
 
 
 /* ═══ CHANNEL PICKER + THE TWO NEW OUTPUTS ═════════════════════
@@ -615,7 +620,7 @@
 .pkk{font-size:var(--fs-xs);font-weight:600;color:var(--tx2);border:1px solid var(--hair);
   background:rgba(255,255,255,.03);border-radius:999px;padding:8px 13px;}
 .pkcap{margin:14px 0 0;font-size:var(--fs-xs);line-height:1.7;color:var(--tx3);
-  font-weight:600;max-width:82ch;}
+  font-weight:600;max-width:var(--measure);}
 
 /* CONVERSATIONS is one thirteen-letter word set in caps at .11em tracking:
    133px that cannot break anywhere. Two tiles across a 320px card leaves it

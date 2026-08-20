@@ -258,7 +258,7 @@ section:has(> .wrap > .head.centered) .faq,
 
 .faq summary:after{content:"+";margin-left:auto;color:var(--teal-ink);font-weight:600;}
 .faq details[open] summary:after{content:"–";}
-.faq p{margin-top:14px;font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);max-width:640px;}
+.faq p{margin-top:14px;font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);max-width:var(--measure);}
 /* --tx2 not --l-mut: this block runs on dark sections too, where a light
    ink measured 3.43:1. The light-surface contract maps --tx2 to --l-mut. */
 
@@ -594,7 +594,7 @@ section:has(> .wrap > .head.centered) .faq,
 
 /* fluid headings — the 52px→36px cliff at 900px is gone */
 .h2{font-size:var(--fs-h2);}
-.lead{font-size:var(--fs-lead);line-height:1.72;max-width:58ch;}
+.lead{font-size:var(--fs-lead);line-height:1.72;max-width:var(--measure);}
 .display{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-display);
   font-weight:600;letter-spacing:-.055em;line-height:.92;color:#fff;}
 h1{font-size:var(--fs-h1);font-family:'Space Grotesk',sans-serif;font-weight:600;
@@ -608,7 +608,7 @@ h1{font-size:var(--fs-h1);font-family:'Space Grotesk',sans-serif;font-weight:600
 h1 .quiet{color:var(--tx2);font-weight:500;}
 h1 .huge{display:block;font-size:1.42em;letter-spacing:-.06em;}
 .h2{max-width:21ch;}
-.sub{max-width:54ch;}
+.sub{max-width:var(--measure);}
 
 /* numbers were fixed-px + nowrap and only survived via overflow-x:hidden */
 .stat .n{font-size:var(--fs-num);}
@@ -942,7 +942,7 @@ body:has(.stickycta.show) .totop{bottom:calc(22px + var(--stickycta-h,124px));}
    them — a limitation printed small reads as a limitation being hidden. */
 .proofnote{margin-top:34px;border:1px solid var(--hair);border-left:2px solid rgba(23,189,189,.55);
   border-radius:14px;padding:20px 22px;background:rgba(255,255,255,.022);
-  display:grid;gap:12px;max-width:96ch;}
+  display:grid;gap:12px;max-width:var(--measure);}
 .proofnote p{margin:0;font-size:var(--fs-sm);line-height:1.72;color:var(--tx2);font-weight:500;}
 .proofnote b{color:#fff;font-weight:700;}
 
@@ -1080,7 +1080,7 @@ form.gsform.eaform button{grid-column:auto;}
   .sprow .spl{opacity:.8;}
 }
 .spnote{margin-top:16px;font-size:var(--fs-sm);line-height:1.72;color:var(--l-tx2);
-  font-weight:500;max-width:82ch;}
+  font-weight:500;max-width:var(--measure);}
 
 .retgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;align-items:stretch;}
 @media(max-width:900px){.retgrid{grid-template-columns:repeat(2,1fr);}}
@@ -1126,7 +1126,7 @@ form.gsform.eaform button{grid-column:auto;}
 
 .livenote{margin-top:30px;border:1px solid var(--hair);border-left:2px solid rgba(23,189,189,.55);
   border-radius:14px;padding:20px 22px;background:rgba(255,255,255,.022);display:grid;gap:12px;
-  max-width:96ch;}
+  max-width:var(--measure);}
 .livenote p{margin:0;font-size:var(--fs-sm);line-height:1.72;color:var(--tx2);font-weight:500;}
 .livenote b{color:#fff;font-weight:700;}
 
@@ -1140,7 +1140,7 @@ form.gsform.eaform button{grid-column:auto;}
 .cnl{display:block;font-size:var(--fs-label);font-weight:800;letter-spacing:.13em;
   text-transform:uppercase;color:var(--teal);}
 .cnp{margin:10px 0 0;font-size:var(--fs-sm);line-height:1.72;color:var(--tx2);
-  font-weight:500;max-width:78ch;}
+  font-weight:500;max-width:var(--measure);}
 .concbtn{white-space:nowrap;}
 @media(max-width:820px){.concbtn{justify-self:start;}}
 
@@ -1173,7 +1173,7 @@ form.gsform.eaform button{grid-column:auto;}
 .sga{display:inline-block;margin-top:10px;font-size:var(--fs-xs);font-weight:700;color:var(--teal);
   border-bottom:1px solid rgba(23,189,189,.4);padding-bottom:2px;align-self:flex-start;}
 .segnote{margin:16px 0 0;font-size:var(--fs-sm);line-height:1.72;color:var(--tx3);
-  font-weight:500;max-width:88ch;}
+  font-weight:500;max-width:var(--measure);}
 
 /* A disclaimer occupying the position of a conclusion reads as the point of
    the section. .capnote demotes it to what it is - a footnote - so the
@@ -1272,11 +1272,11 @@ form.gsform.eaform button{grid-column:auto;}
 
 /* section-closing sentences added where a section previously ended on a
    disclaimer, a caption, a promo chip or a nav link */
-.stackfoot,.exfoot,.custfoot,.whyfoot{margin-top:26px;max-width:64ch;
+.stackfoot,.exfoot,.custfoot,.whyfoot{margin-top:26px;max-width:var(--measure);
   font-size:var(--fs-sm);line-height:1.75;font-weight:500;color:inherit;opacity:.92;
   text-wrap:pretty;}
 .custfoot,.exfoot{margin-left:auto;margin-right:auto;text-align:center;}
-.storyfoot{margin:22px 0 20px;max-width:56ch;font-size:var(--fs-sm);line-height:1.7;
+.storyfoot{margin:22px 0 20px;max-width:var(--measure);font-size:var(--fs-sm);line-height:1.7;
   font-weight:600;color:inherit;text-wrap:pretty;}
 
 /* markers that sit on their own tinted pill rather than on the section ground */
@@ -1310,7 +1310,7 @@ form.gsform.eaform button{grid-column:auto;}
 .sec-light span.x,.sec-light2 span.x{color:#A8453A;}    /* was --red - 3.19:1 */
 /* white on the flat teal button was 3.09:1; the deeper teal carries it to 4.6 */
 .kfact .ap{background:#0A7272;}
-.secfoot{margin-top:26px;max-width:66ch;font-size:var(--fs-sm);line-height:1.75;
+.secfoot{margin-top:26px;max-width:var(--measure);font-size:var(--fs-sm);line-height:1.75;
   font-weight:500;color:inherit;opacity:.92;text-wrap:pretty;}
 
 /* the last of the tinted status pills, all measured 3.19-3.40:1 */
@@ -1319,7 +1319,7 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
 .ftag{color:var(--tx2);}               /* follows its surface; was #8793A5 at 3.34:1 */
 .sec-light .ftag,.sec-light2 .ftag,.bg-paper .ftag,.bg-clinical .ftag{color:#5F6B7E;}
 .kconf .ic,.kconf .res{background:#B8483B;}   /* white on --red was 3.40:1 */
-.seccap{margin-top:28px;max-width:64ch;font-size:var(--fs-sm);line-height:1.75;
+.seccap{margin-top:28px;max-width:var(--measure);font-size:var(--fs-sm);line-height:1.75;
   font-weight:500;color:inherit;opacity:.94;text-wrap:pretty;}
 .guidelink{margin-top:18px;font-size:var(--fs-sm);font-weight:700;}
 .guidelink a{color:inherit;text-decoration:underline;text-underline-offset:4px;
@@ -1337,7 +1337,7 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
   background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.16);
   backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 30px 70px rgba(0,0,0,.4);}
 .startpath .sp-lead{font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:500;
-  max-width:60ch;text-wrap:pretty;}
+  max-width:var(--measure);text-wrap:pretty;}
 .startpath .sp-lead b{color:var(--tx);font-weight:700;}
 .sp-steps{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;counter-reset:sp;}
 .sp-steps > li{border-radius:16px;border:1px solid transparent;transition:
@@ -1385,7 +1385,7 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
 .pathsec .sp-steps > li{border:1px solid rgba(255,255,255,.10);
   background:rgba(255,255,255,.03);display:flex;}
 .pathsec .sp-steps > li > a{flex-direction:column;gap:12px;height:100%;padding:18px 18px 16px;}
-.pathsec .sp-lead{max-width:70ch;}
+.pathsec .sp-lead{max-width:var(--measure);}
 .pathsec .sp-t{margin-top:auto;padding-top:10px;}
 .pathsec .sp-b{flex:1;}
 @media (max-width:900px){
@@ -1422,7 +1422,7 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
 
 /* the path's fine print — what you actually submit, said before you scroll to it */
 .sp-fine{display:block;margin-top:8px;font-size:var(--fs-xs);line-height:1.65;
-  color:var(--tx3);font-weight:500;max-width:62ch;}
+  color:var(--tx3);font-weight:500;max-width:var(--measure);}
 
 /* ── .asksec — what to discuss ─────────────────────────────────────────────
    A first-time buyer's hardest problem is not comparing features, it is not
@@ -1671,7 +1671,7 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
    blocks exceeded 80 characters per line (worst: 130). Neither is a per-page
    problem; both are one missing rule. */
 p, li, dd { line-height: 1.65; }
-p { max-width: 74ch; }
+p { max-width:var(--measure); }
 /* product mocks, tables and chat bubbles are UI, not prose — they set their
    own measure and must not inherit a prose cap */
 .appwin p, .bub, .exturn, td p, th p, .labcard p, .quotedoc p,
@@ -1790,7 +1790,7 @@ body:has(.stickycta.show){padding-bottom:var(--stickycta-h,0px);}
 /* Legal pages ran 113-119 characters per line at 1440. The paragraphs were
    capped and the list items were not, so the two disagreed inside the same
    section. */
-.dsec p,.dsec li,.dsec dd{max-width:68ch;}
+.dsec p,.dsec li,.dsec dd{max-width:var(--measure);}
 
 /* The knowledge-base tab strip needs 370px and its frame is 338px wide on a
    phone, with overflow hidden: the fifth tab was rendered completely off the
@@ -1936,7 +1936,7 @@ html .heroscroll{
   grid-column:1 / -1;   /* it is a band under the grid, not a cell in it */
   flex-basis:100%;      /* the flex rows need the same statement */
   width:100%;
-  max-width:70ch;
+  max-width:var(--measure);
   text-align:left;
   margin-inline:0;
 }
@@ -1946,7 +1946,7 @@ html .heroscroll{
    across the 26 pages: .lead and .sub were capped at 400, 410, 420, 440, 460,
    520, 530, 540, 560, 600, 610, 620, 640, 660 and 680px, plus two in ch — set
    in per-page <style> blocks, twenty different answers to one question. */
-html .lead,html .sub,html .lsub{max-width:58ch;}
+html .lead,html .sub,html .lsub{max-width:var(--measure);}
 
 /* ── 2. a column of cards ends where the panel beside it ends ─────────────
    .todayside is three cards in the right half of a two-column dashboard and
@@ -2008,7 +2008,7 @@ html [class] .vpfoot,html [class] .stagefoot,html [class] .fn,
 html [class] .disclaim,html [class] .note,html [class] .prob,
 html [class] .eanote,html [class] .mockcap,html [class] .photocap,
 html [class] .capL,html [class] .whotxt{
-  text-align:left;max-width:70ch;margin-inline:0;
+  text-align:left;max-width:var(--measure);margin-inline:0;
 }
 /* .fn is also the step number inside a flow card, where it is a label and not
    a footnote — one class doing two jobs. Put that one back. */
@@ -2370,18 +2370,30 @@ html .altsec .photocap{color:#656D78;}
        --w-head   a section header: related to the grid, not floating in it
        --measure  running prose, the only width a paragraph may take */
   --w-head:62rem;
-  --measure:72ch;
+  /* a multiplier on the element's own em: ~76 characters at any size.
+     72ch was 140 characters, because ch is the width of "0". */
+  --measure-em:36;
+  --measure:calc(var(--measure-em) * 1em);
 }
 
 html .lead,html .sub,html .lsub,html .secintro,html .standfirst{
   max-width:var(--measure);
 }
 
-/* A caption belongs to the thing it captions. Capped at ~700px under a 1128px
-   figure it ended 400px short of the picture it describes. It spans the figure
-   now and flows into columns sized by measure rather than by count, so the
-   browser makes two at 1128, one at 700 and one on a phone — full width at
-   every size, and never a 115-character line. */
+/* ── a caption is one column ───────────────────────────────────────────────
+   These used to flow into CSS multi-columns so a caption would reach the
+   full width of its figure. That solved a width problem and created a
+   reading one: the median caption here is 163 characters — two or three
+   lines — so each column held a line and a half and the sentence broke
+   across the gutter. A reader hit "arrives as a message with two", jumped
+   back up and to the right, and carried on at "delivery ticks against an
+   account". Nothing in multicol prevents that; orphans and widows govern
+   where a column breaks, not whether the break makes sense.
+
+   92ch rather than the 72ch prose takes: a caption is set several steps
+   smaller, so 92 characters of it is a physically shorter line than 72
+   characters of a standfirst — and it puts the short fifth of them on one
+   line instead of stranding three words on a second. */
 html [class] figcaption.scenecap,html [class] .scenecap,html [class] .photocap,
 html [class] .mockcap,html [class] .exlabel,html [class] .pkcap,
 html [class] .statnote,html [class] .seccap,html [class] .funfoot,
@@ -2391,24 +2403,11 @@ html [class] .custfoot,html [class] .whyfoot,html [class] .exfoot,
 html [class] .stackfoot,html [class] .tnote,html [class] .livenote,
 html [class] .plainfoot,html [class] .costfoot,html [class] .vpfoot,
 html [class] .stagefoot,html [class] .disclaim,html [class] .note{
-  max-width:none;
-  column-width:32rem;
-  column-gap:46px;
-}
-/* Short captions must not split into two stubby columns; a single line of type
-   has nothing to balance. `column-width` alone would still make two columns out
-   of forty words, so the flow is only allowed where there is enough of it. */
-html .scenecap,html .photocap,html .mockcap,html .exlabel,html .pkcap,
-html .statnote,html .seccap,html .funfoot,html .labfoot,html .altnote,
-html .proofnote,html .metnote{
-  orphans:2; widows:2;
-}
-@media (max-width:900px){
-  html figcaption.scenecap,html .scenecap,html .photocap,html .mockcap,
-  html .exlabel,html .pkcap,html .statnote,html .seccap,html .funfoot,
-  html .labfoot,html .altnote,html .proofnote,html .metnote{
-    column-width:auto;columns:1;
-  }
+  max-width:min(100%,calc(var(--measure-em) * 1em));
+  columns:auto;
+  column-count:1;
+  column-width:auto;
+  text-wrap:pretty;
 }
 
 /* Section header blocks were capped per page at 600, 620, 640, 660, 680, 700,
@@ -2590,3 +2589,35 @@ html .np-in > .np-foot{grid-column:1 / -1;}
     content:"";position:absolute;left:0;right:0;top:-6px;bottom:-6px;
   }
 }
+
+/* ── running text takes the measure, wherever it sits ──────────────────────
+   Measured at 1440: half the plain paragraphs on the site ran past 80
+   characters a line and the longest reached 115. A paragraph inside a narrow
+   column is unaffected — max-width only caps — so this reaches the ones
+   sitting in a full-width band, which are exactly the ones that were long. */
+/* Every paragraph, not just the unclassed ones. A <p> is running text by
+   definition; the classed ones were exactly the ones carrying bespoke
+   widths — 600px here, 760 there, 820 somewhere else. One inside a narrow
+   card is unaffected, because max-width only caps. */
+html main p,
+html main .secintro,html main .smlede,html main .srcnote,html main .mathnote{
+  max-width:var(--measure);
+}
+
+/* ── a list item is running text too ───────────────────────────────────────
+   Measured at 1440: list items in prose carried no measure at all and ran to
+   110 characters a line, longer than any paragraph on the site. Lists inside
+   a product mock, a nav panel or a chip wall are excluded — those are labels
+   in a component, not sentences, and they size to their own container. */
+html main li{
+  max-width:var(--measure);
+}
+html main .np-col li,html main .smanch li,html main .langrow li,
+html main .intwall li,html main .chiprow li,html main .exfilter li,
+html main .appwin li,html main .custcard li,html main .pcard li,
+html main .crow li,html main .fields li,html main .kwrow li{
+  max-width:none;
+}
+
+/* A figcaption with no class is still a caption. */
+html main figcaption{ max-width:var(--measure); }
