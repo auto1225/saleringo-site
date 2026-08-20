@@ -1410,6 +1410,67 @@ window.SR_PLAY = {
             rows:[['Refused','Visa question — routed to the international advice team, with the reason stated'],
                   ['Not done','No immigration advice, in any wording. No correction of the agent’s figure either.'],
                   ['Next action','Adviser has her words verbatim before Thursday']]}}}
+    ]},
+
+  public: {
+    label: 'Public Sector',
+    seed: 'Main line, out of hours. Every contact gets a reference before it ends.',
+    asks: [
+      { id:'bulky', chip:'“bank holiday — is my bin still Thursday?”', risk:'normal',
+        turns:[
+          {who:'user', text:'There was a bank holiday on Monday. Is my bin still Thursday or has it moved?'},
+          {who:'ai',   text:'Thursday is unchanged this week — that’s from the published collection calendar, not from me working it out.'},
+          {who:'user', text:'Bulky, actually — there’s a sofa.'},
+          {who:'ai',   text:'Different thing entirely. The published charge is $38 for up to three items. I’ve sent the booking page and logged this as 4488-C so nobody asks you to explain it twice.'},
+          {who:'verify', text:'✓ From your fees and charges page · approved 2026-04-01'},
+          {who:'result', text:'✓ Reference 4488-C issued and read out on the call'}],
+        why:'Two published facts and a receipt. The reference is said out loud before the call ends, which is what stops the same resident ringing three times to find out whether anybody wrote it down.',
+        produces:{
+          pipeline:{stage:'Logged with a reference', ini:'??', nm:'4488-C · bulky waste',
+            mt:'Collection day confirmed from the calendar · bulky charge quoted · booking page sent', tag:'AI logged', chan:'Phone · Sat 09:10'},
+          booking:null, bookingWhy:'No slot booked here — the authority’s own booking page takes the date, and this does not sit in front of it.',
+          quote:{ref:'Fees and charges page', lines:[['Bulky collection','up to three items','$38']],
+            total:'$38', foot:'The published charge, quoted with the page and approval date stored beside it.'},
+          record:{name:'4488-C · bulky waste', sub:'Phone, Sat 09:10',
+            rows:[['Source of the answer','Fees and charges page · approved 2026-04-01 — stored, not recalled'],
+                  ['Reference','4488-C, issued at 09:12 and read out on the call'],
+                  ['Next action','Nothing. He books it himself on the page he was sent.']]}}},
+
+      { id:'discount', chip:'“my husband moved out — do I get the discount?”', risk:'trap',
+        turns:[
+          {who:'user', text:'My husband moved out in June. Do I get the single-person discount, and from when?'},
+          {who:'handoff', text:'→ I can’t decide either of those, and I’d rather say so plainly than give you something that sounds like an answer. Whether a discount applies, and from what date, is a decision the Council Tax team makes on the evidence — not something I may say at two in the morning.'},
+          {who:'user', text:'So I’ve rung for nothing.'},
+          {who:'handoff', text:'→ No. I’ve logged it as 4471-B with the June date you gave me, sent you the published change-of-circumstances form, and put it in front of Council Tax for the next working day. To be clear: no decision has been made by anyone yet, including me.'},
+          {who:'result', text:'✓ Ref 4471-B · form sent · routed to Council Tax'}],
+        why:'The sentence that matters is the last one. A reference number is a receipt for a question, and it is said out loud that no decision has been made — because a resident who thinks one has will act on it.',
+        produces:{
+          pipeline:{stage:'Waiting on an officer', ini:'??', nm:'4471-B · Council Tax',
+            mt:'Single-person discount after a partner left in June · nothing decided · form sent', tag:'Urgent', chan:'Phone · 01:52'},
+          booking:null, bookingWhy:'No appointment — this goes to a queue with a reference, which is what the resident actually needs.',
+          quote:null,   quoteWhy:'No figure. What an individual account comes to is a calculation the service makes, not a number said at two in the morning.',
+          record:{name:'4471-B · Council Tax', sub:'Phone, 01:52',
+            rows:[['What was asked','Single-person discount after a partner left in June — verbatim, with the date'],
+                  ['Decision','None. Said out loud: no decision has been made, by anyone, including the AI.'],
+                  ['Next action','Council Tax, next working day, named queue']]}}},
+
+      { id:'planning', chip:'“will my neighbour’s extension get approved?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Will my neighbour’s extension get approved? It’s three metres from my kitchen window.'},
+          {who:'handoff', text:'→ I’m not going to tell you what will happen to that application, and I won’t tell you what the policy means for your window either. That is a planning judgement, and a wrong steer from me could cost you a comment you were entitled to make.'},
+          {who:'user', text:'Then what can you tell me?'},
+          {who:'handoff', text:'→ Facts the authority has published: the application is on the public register, the consultation period and how to comment are on that page, and the case officer’s name is on it. I’ve sent you the link and logged your question as 4492-D so the case officer sees it was asked.'},
+          {who:'result', text:'✓ Ref 4492-D · named case officer · consultation route given'}],
+        why:'Reading a rule and applying it to one person’s facts is a decision, not information — so the policy is not interpreted either. What he gets instead is the deadline he could otherwise have missed, and a person’s name.',
+        produces:{
+          pipeline:{stage:'Logged with a reference', ini:'??', nm:'4492-D · planning',
+            mt:'Asked for an outcome and a policy reading · neither given · consultation route sent', tag:'Urgent', chan:'Web chat · Thu 18:30'},
+          booking:null, bookingWhy:'No visit and no callback promised — an invented “someone will be out” is the call that becomes a complaint.',
+          quote:null,   quoteWhy:'Nothing here is chargeable, and nothing about it was ever a price question.',
+          record:{name:'4492-D · planning', sub:'Web chat, Thu 18:30',
+            rows:[['Given','Public register entry · consultation period and how to comment · the case officer, by name'],
+                  ['Not done','No outcome predicted. No policy interpreted. No “that usually gets refused”.'],
+                  ['Next action','Case officer sees that the question was asked, and when']]}}}
     ]}
 };
 
