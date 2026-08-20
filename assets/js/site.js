@@ -371,7 +371,14 @@ window.SR_CONFIG = window.SR_CONFIG || {
     if (gate) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          past = e.isIntersecting || e.boundingClientRect.top < 0;
+          /* Past the gate means past it — not merely level with it.
+             `isIntersecting` turns true the moment the gate scrolls INTO
+             view, which on the home page is before the reader has left the
+             hero: the bar arrived at scroll 0 and stood underneath the two
+             hero buttons, making five calls to action visible at once on
+             the screen that decides the sale. The gate's top being above
+             the fold is the honest test. */
+          past = e.boundingClientRect.top < 0;
         });
         sync();
       }, { threshold: 0 }).observe(gate);

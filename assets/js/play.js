@@ -808,6 +808,185 @@ window.SR_PLAY = {
             rows:[['Collected','Served the 12th · hearing listed for the 30th — recorded, not interpreted'],
                   ['Not done','No limitation period. No filing deadline. No “usually it’s 14 days”.'],
                   ['Next action','Sorts to the top of Monday morning; solicitor confirms the date']]}}}
+    ]},
+
+  ecommerce: {
+    label: 'E-commerce',
+    seed: 'Store’s closed for messages — I’m still here. What’s the order?',
+    asks: [
+      { id:'sizing', chip:'“does this run small? and postage?”', risk:'normal',
+        turns:[
+          {who:'user', text:'sorry random q — does this run small?? and how much is postage, need it for the weekend'},
+          {who:'ai',   text:'The size guide on that one says order your usual — it’s cut true. Standard delivery is $4.90 and express is $11.50, both from a 3 PM cut-off, so ordering now still catches today’s van.'},
+          {who:'verify', text:'✓ From your size guide and delivery table · 2 sources'},
+          {who:'user', text:'ok going with the 10 then'},
+          {who:'result', text:'✓ Basket saved · contact record created'}],
+        why:'The basket did not sit until Monday waiting for a sizing answer. The delivery prices and the cut-off were read off the table the store published, not estimated from the postcode.',
+        produces:{
+          pipeline:{stage:'Basket saved', ini:'??', nm:'Pre-purchase buyer',
+            mt:'Sizing question at 11:40 PM · answered from the size guide · basket completed', tag:'AI logged', chan:'Web chat · 11:40 PM'},
+          booking:{title:'Dispatch — today’s cut-off', slot:'Today 15:00', note:'Not a diary but a deadline. The cut-off is the store’s own, quoted before the order was placed.'},
+          quote:{ref:'Basket — two items', lines:[['Two items','the example order this page prints','$128'],['Standard delivery, domestic','order before the 3 PM cut-off','$4.90'],['Express, domestic','next working day from the same cut-off','$11.50']],
+            total:'$128 + delivery', foot:'Read off the store’s own delivery table. No shipping figure was worked out on the fly.'},
+          record:{name:'Pre-purchase buyer', sub:'Web chat, 11:40 PM',
+            rows:[['Collected','Item and exact variant — size and colourway, not the product name'],
+                  ['Answered in','The language she typed in, without being asked which one'],
+                  ['Next action','Nothing. She checked out. The record is there if she writes again.']]}}},
+
+      { id:'saturday', chip:'“will it 100% be here saturday? it’s a birthday”', risk:'trap',
+        turns:[
+          {who:'user', text:'order 48812. will it 100% be here by saturday? it’s a birthday and i’ve got nothing else'},
+          {who:'handoff', text:'→ I can’t promise a day, and I’d rather say so than say “should be fine”. What the carrier has told us is: last scan 4:10 PM today in Leipzig, and their own estimate is Friday to Monday. That’s their estimate. Here is their tracking page so you’re reading it at the same time I am.'},
+          {who:'user', text:'yeah but realistically though'},
+          {who:'handoff', text:'→ I’m not going to turn their estimate into my promise, even asked twice. I have put the birthday on your order so whoever picks this up on Monday knows why the date mattered.'},
+          {who:'result', text:'✓ Asked twice · declined twice · birthday written to the record'}],
+        why:'A delivery date is the one thing a store cannot take back once it is said. It reads the last scan and quotes the carrier’s estimate with the word estimate still in the sentence — not as “usually two days”, not because it is a birthday, and not on the second ask.',
+        produces:{
+          pipeline:{stage:'Status quoted', ini:'??', nm:'Order #48812',
+            mt:'Asked for a guaranteed Saturday — declined twice · carrier page handed over', tag:'AI logged', chan:'Web chat · 11:41 PM'},
+          booking:null, bookingWhy:'No date on the calendar — the carrier has not given one, so neither has this.',
+          quote:null,   quoteWhy:'No quote — nothing was being bought, and a promise is not a line item.',
+          record:{name:'Order #48812', sub:'Web chat, 11:41 PM',
+            rows:[['Read back','Two items, shipped Wednesday · last scan Leipzig, 4:10 PM · carrier estimate Friday to Monday'],
+                  ['Not done','No delivery date the carrier had not given. No “should be fine”. Not on the second ask.'],
+                  ['Next action','Birthday and the reason for the deadline sit on the order for Monday morning']]}}},
+
+      { id:'late', chip:'“it doesn’t fit and I forgot — still ok?”', risk:'trap',
+        turns:[
+          {who:'user', text:'I know it’s been a while but it doesn’t fit and I forgot. Can I still send it back?'},
+          {who:'handoff', text:'→ Let me be straight with you: it was delivered on the 4th, so you’re on day 34 and our published window is 30 days. That means I can’t approve it — but it also isn’t mine to refuse. Can you send two photos with the tags visible?'},
+          {who:'user', text:'Sent. Is that a no, then?'},
+          {who:'handoff', text:'→ It’s a “not my call”. Priya on our side decides these ones and she already has everything — order, dates, photos, tags on, and that this is your second order with no previous returns. I’m not going to guess which way she’ll go and get your hopes up either way.'},
+          {who:'result', text:'✓ Case gathered in full · Priya owns the decision'}],
+        why:'Goodwill outside the published window is a commercial decision, so it belongs to a named person. The work is still done: the case arrives complete, and nobody has to chase the buyer for photos in the morning.',
+        produces:{
+          pipeline:{stage:'Held for a person', ini:'??', nm:'Day 34 return',
+            mt:'Outside the 30-day window · photos attached · Priya deciding', tag:'Urgent', chan:'Instagram DM · Mon 09:02'},
+          booking:null, bookingWhy:'No collection booked — nothing is collected until a person says yes.',
+          quote:null,   quoteWhy:'No refund figure — the window was stated, and the decision is not this system’s to price.',
+          record:{name:'Day 34 return', sub:'Instagram DM, Mon 09:02',
+            rows:[['Policy applied','30 days from delivery, tags on — stated exactly, without apology and without stretching'],
+                  ['Not done','No goodwill exception granted. Not once, in any wording, and not after the second ask.'],
+                  ['Next action','Priya’s decision lands back on the order with a timestamp and a reason']]}}}
+    ]},
+
+  fitness: {
+    label: 'Gyms & Fitness',
+    seed: 'Desk is unstaffed — the one person on shift is teaching the 6:45.',
+    asks: [
+      { id:'trial', chip:'“can I try a class? what’s it cost after?”', risk:'normal',
+        turns:[
+          {who:'user', text:'Hi — my friend goes to your Thursday one. Could I come this week? And what’s it cost after that?'},
+          {who:'ai',   text:'Your first one is free, and Thursday 6:15 with Dani has a bed. Drop-in reformer is $28, the intro offer is three classes in fourteen days for $45, and unlimited is $149 a month by direct debit. Cancelling is free up to 12 hours before, and inside that it’s $15 — I’d rather say that now than after you’ve missed one.'},
+          {who:'verify', text:'✓ From your timetable and price list · 2 sources'},
+          {who:'user', text:'Never done reformer. Is that going to matter?'},
+          {who:'result', text:'✓ Bed 4 held · screening form sent · instructor told'}],
+        why:'The cancellation window and the fee were said before the booking rather than after the no-show, which is the only time saying them is worth anything.',
+        produces:{
+          pipeline:{stage:'Trial held · screening out', ini:'??', nm:'Trial caller',
+            mt:'Free trial · never done reformer · form sent, not yet returned', tag:'AI logged', chan:'Phone · 8:42 PM'},
+          booking:{title:'Thursday reformer — Dani', slot:'Thu 06:15', note:'Bed 4 of 10, against the real capacity in Dani’s own timetable.'},
+          quote:{ref:'Example price list', lines:[['Reformer class, 50 min','capacity 10 · drop-in','$28'],['Intro offer','three classes in fourteen days','$45'],['Unlimited membership','direct debit on the 1st · 30 days’ notice','$149/mo'],['Late cancel or no-show','inside the 12-hour window','$15']],
+            total:'$28 drop-in', foot:'Read from the studio’s published list. The fee on the last line was quoted before the booking, not after it.'},
+          record:{name:'Trial caller', sub:'Phone, 8:42 PM',
+            rows:[['Collected','Class · experience level · screening state · which instructor was asked for'],
+                  ['Booked against','Dani’s 6:15, bed 4 of 10 — an eleventh bed is a person standing in the doorway at 6:14'],
+                  ['Next action','Screening form chased if it is not back before Thursday']]}}},
+
+      { id:'pregnant', chip:'“I’m 14 weeks pregnant — can I keep coming?”', risk:'trap',
+        turns:[
+          {who:'user', text:'I’m 14 weeks pregnant. Can I stay in the Wednesday mat class, or is there something I should change?'},
+          {who:'handoff', text:'→ That is not a question I will answer, and I am not going to soften it with a guess. Priya is prenatal-qualified and she will call you tomorrow — I’ve put your message on the record exactly as you wrote it.'},
+          {who:'user', text:'I only wanted to know whether to skip the ab bit.'},
+          {who:'handoff', text:'→ Understood, and still no — a modification is advice too. Your Wednesday place stays as it is until you and Priya have spoken, and if you would rather I took it out of the class list meanwhile, say so and I will.'},
+          {who:'result', text:'✓ Routed to the prenatal-qualified instructor · words kept verbatim'}],
+        why:'Pregnancy, injury, surgery and medication are a permanent handoff, not a confidence threshold. Watch the narrowed second ask: a modification is still advice, so the answer is still no.',
+        produces:{
+          pipeline:{stage:'Instructor to call', ini:'??', nm:'Wednesday mat member',
+            mt:'Pregnancy question · no view given · Priya calling tomorrow', tag:'Urgent', chan:'Instagram · Mon 20:30'},
+          booking:null, bookingWhy:'Nothing moved on the class list — her place stays as it was until she and Priya have spoken.',
+          quote:null,   quoteWhy:'No quote — nothing was sold off the back of a health question.',
+          record:{name:'Wednesday mat member', sub:'Instagram, Mon 20:30',
+            rows:[['Recorded verbatim','Her message, word for word, on the record before the callback'],
+                  ['Not done','No modification offered. Not even the one she suggested herself. No view on suitability, in any wording.'],
+                  ['Next action','Priya rings tomorrow; the place is held rather than confirmed']]}}},
+
+      { id:'fee', chip:'“take the $15 off, I was ill”', risk:'trap',
+        turns:[
+          {who:'user', text:'I got charged fifteen dollars for missing Thursday. Take it off — I was ill.'},
+          {who:'handoff', text:'→ I can’t remove a charge — I have no authority over money here and I’m not going to pretend otherwise. The rule as written is free cancellation up to 12 hours before, $15 inside it. What I have done is log your request with the time you made it and the reason you gave, and send it to the manager.'},
+          {who:'user', text:'So nobody can help me until Monday?'},
+          {who:'handoff', text:'→ The manager sees it this morning, not Monday, and she can do what I can’t. I’ve also put you down for a callback rather than leaving you to ring again.'},
+          {who:'result', text:'✓ Rule stated as written · manager owns the money'}],
+        why:'Under pressure it neither waived the fee nor improvised an exception to it. The manager is the only person who may move money, and saying so is more useful than sympathy.',
+        produces:{
+          pipeline:{stage:'Manager to decide', ini:'??', nm:'Late-cancel dispute',
+            mt:'Asked for the $15 to be removed · rule restated · manager sees it this morning', tag:'Urgent', chan:'Phone · Sat 07:20'},
+          booking:null, bookingWhy:'Nothing to schedule — a callback was set instead, so she does not have to ring twice.',
+          quote:null,   quoteWhy:'No credit note. It cannot move money, and it will not behave as though it can.',
+          record:{name:'Late-cancel dispute', sub:'Phone, Sat 07:20',
+            rows:[['Rule applied','Free up to 12 hours before, $15 inside it — read as written, under pressure'],
+                  ['Not done','No fee waived. No exception improvised. No “I’ll see what I can do”.'],
+                  ['Next action','Manager decides this morning; the member is on the callback list either way']]}}}
+    ]},
+
+  senior: {
+    label: 'Senior Care',
+    seed: 'Office is closed — I can still take this properly. What’s happened?'
+    ,
+    asks: [
+      { id:'discharge', chip:'“they want dad out by Friday”', risk:'normal',
+        turns:[
+          {who:'user', text:'My dad’s in hospital and they want the bed back by Friday. Have you got anything?'},
+          {who:'ai',   text:'We may have. Residential is £1,450 a week on our published schedule and I’m sending you the whole schedule now. What I can’t do is promise you a place for Friday — that follows an assessment. What I can do tonight is book the show-round: Thursday 10:30 or Friday 14:00 with the registered manager.'},
+          {who:'verify', text:'✓ From your published fee schedule · 1 source'},
+          {who:'user', text:'Thursday. He’s unsteady on his feet and he gets confused at night, if that matters.'},
+          {who:'result', text:'✓ Show-round held · his words kept · assessment queued'}],
+        why:'It read the weekly rate off the schedule and refused the Friday in the same breath. A hard discharge date is a constraint on the record, never a reason to promise a bed nobody has assessed.',
+        produces:{
+          pipeline:{stage:'Show-round', ini:'??', nm:'Son — first call',
+            mt:'Hospital discharge worked to Friday · residential asked about · no place promised', tag:'AI logged', chan:'Phone · 9:44 PM'},
+          booking:{title:'Show-round — registered manager', slot:'Thu 10:30', note:'Held with the manager herself, and the pre-admission assessment queued behind it.'},
+          quote:{ref:'Fee schedule v6', lines:[['Residential, per week','published schedule','£1,450'],['Nursing, per week','published schedule','£1,690'],['Home care, per hour','published schedule','£28.50']],
+            total:'£1,450/week', foot:'Sent in writing, whole and unedited. Which band he needs is an assessment, not a sales conversation.'},
+          record:{name:'Son — first call', sub:'Phone, 9:44 PM',
+            rows:[['Collected','Caller and relationship · where he is tonight · the date being worked to · consent asked, not assumed'],
+                  ['In his words','“Unsteady on his feet, gets confused at night” — written down unconverted'],
+                  ['Next action','Manager confirms the assessment before anything about a room is said']]}}},
+
+      { id:'bruise', chip:'“there was a bruise nobody could explain”', risk:'trap',
+        turns:[
+          {who:'user', text:'I visited my mum today and there was a bruise on her arm nobody could explain to me.'},
+          {who:'handoff', text:'→ I’m going to stop you there, because this needs a person and not a message. I’m ringing Ruth Okafor, our safeguarding lead, on her out-of-hours number right now. I’ll stay on the line with you while it rings, and if she doesn’t answer I’ll try the registered manager next.'},
+          {who:'user', text:'Should I be worried? What usually causes that?'},
+          {who:'handoff', text:'→ That isn’t mine to answer. Anything I said about why she has a bruise would be a guess about your mother’s health, and a guess is the worst thing you could be given tonight. Ruth is picking up.'},
+          {who:'result', text:'✓ Safeguarding lead reached during the call · record left open'}],
+        why:'This one does not merely refuse — it dials. A named person is rung while the caller is still on the line, in a set order, and the record cannot be closed by software afterwards.',
+        produces:{
+          pipeline:{stage:'With a person', ini:'??', nm:'Daughter — concern raised',
+            mt:'Unexplained bruise · safeguarding lead called during the call · open until a person closes it', tag:'Urgent', chan:'Phone · 8:20 PM'},
+          booking:null, bookingWhy:'No appointment offered — this was not a booking conversation and it was wrong to treat it as one.',
+          quote:null,   quoteWhy:'No fees discussed. Nothing about this call belongs anywhere near a schedule.',
+          record:{name:'Daughter — concern raised', sub:'Phone, 8:20 PM',
+            rows:[['Escalation order','Safeguarding lead, then registered manager, then on-call director — tried one after another, out loud'],
+                  ['Not done','Not logged for the morning. Not triaged. No view on what causes a bruise.'],
+                  ['Next action','The record stays open until a named person closes it — the AI cannot']]}}},
+
+      { id:'funding', chip:'“would the council pay for this?”', risk:'trap',
+        turns:[
+          {who:'user', text:'Would the council pay for this? She’s only got her house and a small pension.'},
+          {who:'handoff', text:'→ I’m not able to answer that, and I don’t want to guess at it — what someone is entitled to depends on a financial assessment and on rules I’m not the right thing to be reading you. Our manager goes through that properly, including what happens if the funded rate doesn’t meet our fee. I’ve written your question down as you asked it and held Tuesday 11:00 for her to call you.'},
+          {who:'result', text:'✓ Question kept verbatim · manager call-back held'}],
+        why:'Eligibility, means testing, top-ups and funded rates are one refusal, not four. The question survives in the family’s own words so nobody has to explain it a second time.',
+        produces:{
+          pipeline:{stage:'With a person', ini:'??', nm:'Funding question',
+            mt:'Asked whether the council would pay · nothing stated · manager calling Tuesday', tag:'Urgent', chan:'Phone · 7:05 PM'},
+          booking:{title:'Call-back — registered manager', slot:'Tue 11:00', note:'The refusal did not end the conversation. A named person is on it at a real time.'},
+          quote:null, quoteWhy:'No funding figure, ever — not eligibility, not a top-up, not what the funded rate would leave to pay.',
+          record:{name:'Funding question', sub:'Phone, 7:05 PM',
+            rows:[['Recorded verbatim','Her question as she asked it, house and pension included, unsummarised'],
+                  ['Not done','Nothing on eligibility, means testing, top-ups or funded rates. No “you’d probably qualify”.'],
+                  ['Next action','Manager rings Tuesday and goes through it properly']]}}}
     ]}
 };
 
