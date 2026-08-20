@@ -743,22 +743,88 @@
           return { x: gx + k * (tw + gap), y: gy + r * (th + gap), w: tw, h: th };
         }
 
-        /* ── fan lines: one origin, six destinations ── */
+        /* ── the flow, routed through the gutters ────────────────────────
+           This used to fan one line from the panel to each of the six tiles.
+           Measured: the lines aimed at columns two and three had control points
+           at x=389 and x=533, both inside column one's box, so four of the six
+           were drawn straight across the faces of the tiles in front of them.
+           A fan into a 3x2 grid cannot avoid that.
+
+           Routed like wiring instead: a trunk to a spine in the gutter, a stub
+           from the spine into the first tile of each row, then a hop from tile
+           to tile along the row inside the gap between them. Every segment sits
+           in a gutter, so nothing is drawn over anything. It also reads in the
+           order the frames actually fill: in at the left, along the row. */
         var ox = narrow ? W / 2 : qx + qw, oy = narrow ? qy + qh : qy + qh / 2;
+        var spine = narrow ? gy - 13 : gx - 13;           /* the middle of the gutter */
+        var segCol = function (i) {
+          return st[i] === 'made' ? K.accent : st[i] === 'blank' ? AM : HAIR;
+        };
+        var segOn = function (i) { return st[i] !== 'wait'; };
+        var lit = function (i) { return segOn(i) ? 2.4 : 1.4; };
+
+        /* trunk: panel -> spine */
+        var anyOn = st.some(function (v) { return v !== 'wait'; });
+        c.save();
+        c.globalAlpha = 0.5; c.lineCap = 'round';
+        c.strokeStyle = anyOn ? K.accent : HAIR; c.lineWidth = anyOn ? 2.4 : 1.4;
+        c.beginPath();
+        if (narrow) { c.moveTo(ox, oy); c.lineTo(ox, spine); }
+        else        { c.moveTo(ox, oy); c.lineTo(spine, oy); }
+        c.stroke();
+
+        /* spine: spans the rows (or the columns, when stacked) */
+        var firsts = [], i2;
+        for (i2 = 0; i2 < 6; i2 += cols) firsts.push(i2);
+        var a0 = tileAt(firsts[0]), a1 = tileAt(firsts[firsts.length - 1]);
+        c.beginPath();
+        if (narrow) {
+          c.moveTo(a0.x + a0.w / 2, spine);
+          c.lineTo(tileAt(cols - 1).x + tileAt(cols - 1).w / 2, spine);
+        } else {
+          c.moveTo(spine, a0.y + a0.h / 2);
+          c.lineTo(spine, a1.y + a1.h / 2);
+        }
+        c.stroke();
+        c.restore();
+
+        /* stub into the first tile of each row, then a hop along the row */
         for (var f = 0; f < 6; f++) {
           var T = tileAt(f);
-          var on = st[f] !== 'wait';
-          var col = st[f] === 'made' ? K.accent : st[f] === 'blank' ? AM : HAIR;
-          if (narrow) vlink(c, ox, oy, T.x + T.w / 2, T.y, col, on ? 2.4 : 1.4, on ? 0.5 : 0.5);
-          else        link(c, ox, oy, T.x, T.y + T.h / 2, col, on ? 2.4 : 1.4, on ? 0.5 : 0.5);
-          /* a packet runs the line for 0.7s after a frame changes state */
+          var col = segCol(f);
+          c.save(); c.globalAlpha = 0.5; c.lineCap = 'round';
+          c.strokeStyle = col; c.lineWidth = lit(f);
+          c.beginPath();
+          /* stacked, the grid flows down a column, so the tile a stub comes
+             from is the one above it, not the one to its left. Taking the left
+             neighbour there ran the stub from the top spine past every tile in
+             between — the same defect this routing exists to remove. */
+          var fromSpine = narrow ? (f < cols) : (f % cols === 0);
+          if (fromSpine) {
+            if (narrow) { c.moveTo(T.x + T.w / 2, spine); c.lineTo(T.x + T.w / 2, T.y); }
+            else        { c.moveTo(spine, T.y + T.h / 2); c.lineTo(T.x, T.y + T.h / 2); }
+          } else {
+            var Pv = tileAt(narrow ? f - cols : f - 1);
+            if (narrow) { c.moveTo(Pv.x + Pv.w / 2, Pv.y + Pv.h); c.lineTo(T.x + T.w / 2, T.y); }
+            else        { c.moveTo(Pv.x + Pv.w, Pv.y + Pv.h / 2); c.lineTo(T.x, T.y + T.h / 2); }
+          }
+          c.stroke(); c.restore();
+
+          /* a packet runs the segment for 0.7s after a frame changes state */
           var age = t - mark[f];
-          if (on && age >= 0 && age < 0.7) {
+          if (segOn(f) && age >= 0 && age < 0.7) {
             var u = smooth(age / 0.7);
-            var px = narrow ? ox + (T.x + T.w / 2 - ox) * u : ox + (T.x - ox) * u;
-            var py = narrow ? oy + (T.y - oy) * u : oy + (T.y + T.h / 2 - oy) * u;
+            var sx, sy, ex, ey;
+            if (narrow ? (f < cols) : (f % cols === 0)) {
+              sx = narrow ? T.x + T.w / 2 : spine; sy = narrow ? spine : T.y + T.h / 2;
+              ex = narrow ? T.x + T.w / 2 : T.x;   ey = narrow ? T.y : T.y + T.h / 2;
+            } else {
+              var Q = tileAt(narrow ? f - cols : f - 1);
+              sx = narrow ? Q.x + Q.w / 2 : Q.x + Q.w; sy = narrow ? Q.y + Q.h : Q.y + Q.h / 2;
+              ex = narrow ? T.x + T.w / 2 : T.x;       ey = narrow ? T.y : T.y + T.h / 2;
+            }
             c.fillStyle = col;
-            c.beginPath(); c.arc(px, py, 4.5, 0, TAU); c.fill();
+            c.beginPath(); c.arc(sx + (ex - sx) * u, sy + (ey - sy) * u, 4.5, 0, TAU); c.fill();
           }
         }
 
