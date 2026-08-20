@@ -3051,3 +3051,54 @@ html .inboxmock .col,html .inboxmock .col *{min-width:0;overflow-wrap:break-word
   html .colboard .ch,html .colboard .cb,
   html .rampboard .ch,html .rampboard .cb{min-width:430px;}
 }
+
+
+/* ══ FOUR NOTES THE REVIEW MADE, ANSWERED ═════════════════════════════════
+
+   1 · THE CITY AT NIGHT. Nine of forty page heroes were a night photograph.
+   Five of them earn it - a garage with its shutters down, a house lit above
+   the door, a vet alone with an x-ray - because 2:47 AM is the argument this
+   company makes. Four did not: a skyline over the privacy policy, the same
+   skyline over the terms, another over the security page, a fourth over the
+   demo. Two of them were literally the same photograph. A legal document with
+   a stock skyline on it is not atmosphere, it is filler, and on a trust page
+   filler costs more than it buys.
+
+   Those four heroes drop the photograph and take the ground the brand already
+   owns: the grid, and one soft pool of light under the words. Nothing else on
+   the page changes. */
+header.nophoto{background:#070E1B;}
+header.nophoto::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 78%);
+}
+header.nophoto::after{
+  content:"";position:absolute;left:50%;top:-8%;width:min(1100px,120%);height:520px;
+  transform:translateX(-50%);z-index:0;pointer-events:none;
+  background:radial-gradient(50% 60% at 50% 40%,rgba(23,189,189,.16),rgba(23,189,189,0) 72%);
+}
+header.nophoto .scrim{background:linear-gradient(180deg,rgba(7,14,27,.2) 0%,rgba(7,14,27,.55) 62%,#081226 100%);}
+header.nophoto .hero-inner,header.nophoto .navwrap{position:relative;z-index:2;}
+
+/* 2 · ROUNDED CARDS INSIDE ROUNDED CARDS. Measured on the home page: 63
+   elements sat inside two rounded ancestors and 24 inside three - a window,
+   holding a column, holding a card, holding a round avatar. The frame and the
+   object each earn a radius; the container between them does not, so the
+   middle layer goes square and the count of visible corners halves. */
+html .appwin .pipecol,html .browserframe .inboxmock,
+html .inboxmock .convrow,html .appwin .board,html .appwin .body > .col,
+html .shell .core > .demo-body{border-radius:0;}
+/* a circle is an object, not a container - it keeps its shape */
+html .ini,html .avatar,html .dot,html .wdot{border-radius:50%;}
+
+/* 3 · THE LIVE BADGE. Twelve of them on the home page alone, on cards where
+   being live is the expectation. A state worth marking is the one that breaks
+   the expectation, so LIVE stops being printed and ONBOARDING and ROADMAP -
+   the two that change what a buyer can have today - are what is left. */
+html .icard .rank{font-size:var(--fs-label);}
+html .icard .rank[data-state="live"],
+html .icard .rank.is-live{display:none;}
+
