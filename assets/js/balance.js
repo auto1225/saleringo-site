@@ -16,7 +16,7 @@
 (function () {
   'use strict';
   var WALLS = '.langrow,.intwall,.kwrow,.chiprow,.exfilter,.langbig,' +
-              '.tradewords,.tradetour,.smanch';
+              '.tradewords,.tradetour,.smanch,.np-in,.bigfooter .ftgrid';
 
   function minWidth(el) {
     var v = parseFloat(getComputedStyle(el).getPropertyValue('--chip-min'));
@@ -24,14 +24,27 @@
   }
 
   function balance(el) {
-    var kids = 0, i, c = el.children;
+    var kids = 0, i, c = el.children, cs;
     for (i = 0; i < c.length; i++) {
-      if (getComputedStyle(c[i]).display !== 'none') kids++;
+      cs = getComputedStyle(c[i]);
+      if (cs.display === 'none') continue;
+      /* A child told to span the row is a band, not one of the items being
+         divided — counting the nav panel's footer link row as a sixth column
+         is what made five groups render as four. */
+      if (cs.gridColumn && cs.gridColumn.indexOf('-1') >= 0) continue;
+      if (cs.gridColumnStart === '1' && cs.gridColumnEnd === '-1') continue;
+      kids++;
     }
     if (!kids) return;
 
     var gap = parseFloat(getComputedStyle(el).columnGap) || 0;
     var w = el.clientWidth;
+    /* A menu panel is hidden until it opens, and it opens with a transition.
+       Measured mid-transition it reported 800-odd pixels of its eventual 1003
+       and settled on four columns for five groups. Zero or a width still in
+       motion is not an answer — the ResizeObserver fires again when it stops,
+       and that reading is the one that counts. */
+    if (w < 40) return;
     var min = minWidth(el);
     /* the most that fit: n columns need n*min + (n-1)*gap */
     var fit = Math.max(1, Math.floor((w + gap) / (min + gap)));

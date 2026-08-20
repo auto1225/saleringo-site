@@ -2463,7 +2463,8 @@ html [class] .khead,html [class] .thead,html [class] .chead{
    chip width it wants as a token so the script and the fallback read the
    same number from one place. */
 html .langrow,html .intwall,html .kwrow,html .chiprow,html .exfilter,
-html .langbig,html .tradewords,html .tradetour,html .smanch{
+html .langbig,html .tradewords,html .tradetour,html .smanch,
+html .np-in,html .bigfooter .ftgrid{
   display:grid;align-items:stretch;justify-items:stretch;
   grid-template-columns:repeat(var(--cols,auto-fit),minmax(var(--chip-min),1fr));
 }
@@ -2479,23 +2480,30 @@ html .langbig  {--chip-min:150px;}
 html .tradewords{--chip-min:170px;}
 html .tradetour{--chip-min:150px;}
 html .smanch  {--chip-min:130px;}
+html .np-in   {--chip-min:150px;}
+html .bigfooter .ftgrid{--chip-min:150px;}
+/* Both are menus rather than chip walls: only the column count is shared,
+   the links keep their own left alignment. */
 
-/* ── the sitemap's columns are a masonry, not a grid ───────────────────────
-   Seven index cards whose contents run from a four-link list to a
-   forty-link one: measured 431px tall next to 3144px. In a three-track grid
-   the short cards leave the row open under them and the seventh sits alone,
-   so the page reads as three ragged towers with a hole. Multicol balances by
-   height instead of by count, which is the shape this content actually has;
-   `break-inside:avoid` keeps a card whole. */
+/* ── the sitemap's cards align, and the long one is a band ────────────────
+   Seven index cards running 434px to 3144px tall. In a three-track grid the
+   long one took a column and the row beside it stood open. Multicol was
+   worse: it cannot split a card marked break-inside:avoid, so three cards
+   balanced into two of the three columns and the section grew from 3695px
+   to 6160.
+
+   So the long card stops being a column. It is the first band, full width,
+   with its own list flowing inside it; the remaining six form an even three
+   by two whose cards stretch to their row, which is what makes their
+   bottoms line up. */
 html .smgrid{
-  display:block;columns:3;column-gap:26px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:26px;align-items:stretch;
 }
-html .smgrid > *{
-  break-inside:avoid;-webkit-column-break-inside:avoid;
-  margin:0 0 26px;display:inline-block;width:100%;
-}
-@media (max-width:1000px){ html .smgrid{columns:2;} }
-@media (max-width:700px){ html .smgrid{columns:1;} }
+html .smgrid > .wide{grid-column:1 / -1;}
+html .smgrid > .wide .smanch{--chip-min:150px;}
+@media (max-width:1000px){ html .smgrid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media (max-width:700px){  html .smgrid{grid-template-columns:1fr;} }
 
 /* On a phone two columns of chips leave a one-item last row on every odd
    count and a single column reads as the list it already is at 375px. This
@@ -2525,3 +2533,17 @@ html .bento > :nth-child(3):last-child{grid-column:span 2;}
    media query can override. */
 html .autocols{ grid-template-columns:var(--gc,1fr); }
 @media (max-width:700px){ html .autocols{ grid-template-columns:1fr; } }
+
+/* The footer's trade block ends with the way out of it: every trade on one
+   page. It sits under the groups rather than inside them. */
+html .bigfooter .ftall{
+  display:inline-block;margin-top:14px;font-weight:700;color:var(--teal);
+}
+html .bigfooter .ftall:hover{color:#fff;}
+
+
+
+/* The link row under a nav panel spans the columns. It was a grid child like
+   any other, so the balancer counted six items in a five-group panel and
+   settled on four columns to divide them. */
+html .np-in > .np-foot{grid-column:1 / -1;}
