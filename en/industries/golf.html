@@ -32,10 +32,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Receptionist for Golf & Country Clubs","item":"https://claude.saleringo.com/en/industries/golf.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── LINKS MORNING · golf & country clubs ──────────── */
   body[data-grade="golf"]{ --gradeH:138deg; --gradeS:1.30; --gradeSep:.34; }
@@ -521,9 +521,17 @@
         and the&nbsp;thing each&nbsp;one produced — a&nbsp;tee time held, a&nbsp;fee quoted off&nbsp;your&nbsp;own sheet, a&nbsp;society packaged, a&nbsp;question that&nbsp;stopped dead and went to&nbsp;a&nbsp;person. More scenarios, plus the&nbsp;other trades, are on&nbsp;the&nbsp;<a href="../examples.html" style="color:var(--teal);font-weight:700;">worked examples page</a>.</p>
     </div>
 
-    <div class="exgrid" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Status read back</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Both rates quoted</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Society packaged · routed</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Guest rate · escalated</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Membership · escalated</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Follow-up</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Status read back">
+            <div class="excard">
         <div class="exhead"><span class="when">06:12</span><span class="via">Phone</span><span class="tag solved">Status read back</span></div>
         <div class="exbody">
           <p class="exq">Is it&nbsp;on this&nbsp;morning? We&rsquo;re&nbsp;driving over&nbsp;from&nbsp;the&nbsp;coast and I&rsquo;m&nbsp;not doing that&nbsp;for&nbsp;nothing again.</p>
@@ -542,8 +550,9 @@
             or implied here is a&nbsp;Saleringo customer. The&nbsp;status is a&nbsp;field only your&nbsp;greens staff can write. The&nbsp;AI reads it, timestamps it, and says so.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Both rates quoted">
+            <div class="excard">
         <div class="exhead"><span class="when">Fri 21:05</span><span class="via">Web chat</span><span class="tag solved">Both rates quoted</span></div>
         <div class="exbody">
           <p class="exq">What does a&nbsp;visitor pay on&nbsp;a&nbsp;Saturday? And is there a&nbsp;twilight rate — your&nbsp;site doesn&rsquo;t&nbsp;say.</p>
@@ -562,8 +571,9 @@
             publishes. A&nbsp;golfer comparing three clubs on&nbsp;a&nbsp;Friday night plays at&nbsp;whichever one gave him a&nbsp;number.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Society packaged · routed">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 20:10</span><span class="via">WhatsApp</span><span class="tag solved">Society packaged · routed</span></div>
         <div class="exbody">
           <p class="exq">I run the&nbsp;society at&nbsp;work. Twenty-four of&nbsp;us, a&nbsp;Thursday in&nbsp;September. What can you do us?</p>
@@ -580,8 +590,9 @@
           <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Society enquiries arrive in&nbsp;the&nbsp;evening because that&nbsp;is when the&nbsp;organiser has time, which is exactly when the&nbsp;club office does not.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Guest rate · escalated">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 08:30</span><span class="via">Phone</span><span class="tag human">Guest rate · escalated</span></div>
         <div class="exbody">
           <p class="exq">I&rsquo;m&nbsp;bringing three guests on&nbsp;Sunday. They get my&nbsp;guest rate, yes? And can they use the&nbsp;buggies?</p>
@@ -598,8 +609,9 @@
           <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. A&nbsp;wrong guest rate is either money off&nbsp;the&nbsp;till or a&nbsp;row at&nbsp;the&nbsp;first tee, and the&nbsp;row is the&nbsp;expensive one. Stopping is the&nbsp;feature.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Membership · escalated">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 21:40</span><span class="via">Web chat</span><span class="tag human">Membership · escalated</span></div>
         <div class="exbody">
           <p class="exq">How do I join? What&rsquo;s&nbsp;the&nbsp;joining fee, how long is the&nbsp;list, and can my&nbsp;daughter go on&nbsp;junior?</p>
@@ -616,8 +628,9 @@
           <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Membership money is committee money, and a&nbsp;figure invented at&nbsp;half past nine at&nbsp;night becomes an&nbsp;argument in&nbsp;March.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Follow-up">
+            <div class="excard">
         <div class="exhead"><span class="when">Day 10</span><span class="via">Automatic</span><span class="tag solved">Follow-up</span></div>
         <div class="exbody">
           <p class="exq">— society organiser took the&nbsp;package for&nbsp;24, opened it twice, then went quiet —</p>
@@ -634,8 +647,8 @@
           <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. 22&nbsp;×&nbsp;$74 is $1,628, and it is the&nbsp;kind of&nbsp;booking that&nbsp;quietly disappears between an&nbsp;enquiry in&nbsp;February and a&nbsp;Thursday in&nbsp;September. On&nbsp;a&nbsp;cycle this&nbsp;long the&nbsp;follow-up is the&nbsp;product, and it is the&nbsp;half a&nbsp;message-taking service cannot do at&nbsp;all.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:640px;margin-top:62px;">
       <span class="eyebrow"><i></i>What it will and won’t answer</span>
@@ -1045,7 +1058,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1093,11 +1106,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

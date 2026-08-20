@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Line for Estate & Lettings Agents","item":"https://claude.saleringo.com/en/industries/real-estate.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── ESTATE & LETTINGS AGENCY · archetype: THE BOOKED VIEWING ──────────
      The nearest neighbour on this site is property management, and the hero
@@ -855,9 +855,17 @@
         nothing here is invented, and your&nbsp;own listings set your&nbsp;numbers.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Viewing booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Negotiator decides</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Appraisal booked</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Never answered</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Negotiator decides · WhatsApp</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Never answered · Phone</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Viewing booked">
+            <div class="excard">
         <div class="exhead"><span class="when">Fri 20:52</span><span class="via">Phone</span><span class="tag solved">Viewing booked</span></div>
         <div class="exbody">
           <p class="exq">I've&nbsp;just seen the&nbsp;two-bed on&nbsp;Cargill Street on&nbsp;the&nbsp;portal. Is it gone?</p>
@@ -875,8 +883,9 @@
           <p class="exlabel">Friday night is when applicants look and when offices are shut. The&nbsp;$1,875 is this&nbsp;page's&nbsp;own sample advertised rent.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Negotiator decides">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 09:15</span><span class="via">Phone</span><span class="tag human">Negotiator decides</span></div>
         <div class="exbody">
           <p class="exq">What would they actually take for&nbsp;the&nbsp;Fern Bank house? I'm&nbsp;not going in&nbsp;at&nbsp;the&nbsp;asking price.</p>
@@ -892,8 +901,9 @@
           <p class="exlabel">In&nbsp;this trade that&nbsp;is the&nbsp;costliest sentence an&nbsp;answering system can invent. It is a&nbsp;permanent handoff, not a&nbsp;confidence threshold.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Appraisal booked">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 19:20</span><span class="via">Phone</span><span class="tag solved">Appraisal booked</span></div>
         <div class="exbody">
           <p class="exq">I'm&nbsp;thinking about&nbsp;selling Marchgate Row. Roughly what would it go for?</p>
@@ -910,8 +920,9 @@
           <p class="exlabel">The&nbsp;refusal is the&nbsp;reason this&nbsp;one converts. A&nbsp;number on&nbsp;the&nbsp;phone ends the&nbsp;call; no&nbsp;number ends with&nbsp;a&nbsp;valuer standing in&nbsp;the&nbsp;hallway.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Never answered">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 11:40</span><span class="via">Web chat</span><span class="tag human">Never answered</span></div>
         <div class="exbody">
           <p class="exq">Before I book — what sort of&nbsp;people live round there? Is it a&nbsp;family area? Are the&nbsp;neighbours alright?</p>
@@ -927,8 +938,9 @@
           <p class="exlabel">A&nbsp;consistent script is worth more here than anywhere else on&nbsp;this&nbsp;site: the&nbsp;transcript shows that&nbsp;this&nbsp;caller was asked and offered exactly what the&nbsp;last one was.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Negotiator decides · WhatsApp">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 21:05</span><span class="via">WhatsApp</span><span class="tag human">Negotiator decides</span></div>
         <div class="exbody">
           <p class="exq">Two people saw my&nbsp;flat today. What did they think? Nobody's&nbsp;rung me.</p>
@@ -944,8 +956,9 @@
           <p class="exlabel">Saying "there's&nbsp;no&nbsp;feedback logged yet" out loud is unpopular for&nbsp;ten seconds and correct forever.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Never answered · Phone">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 18:40</span><span class="via">Phone</span><span class="tag human">Never answered</span></div>
         <div class="exbody">
           <p class="exq">If&nbsp;I offered on&nbsp;that&nbsp;house, could I even get a&nbsp;mortgage on&nbsp;it? What are rates like now?</p>
@@ -961,8 +974,8 @@
           <p class="exlabel">This&nbsp;guardrail ships enabled and is not a&nbsp;setting anyone can switch off to&nbsp;warm a&nbsp;lead. Make a&nbsp;vendor demonstrate this refusal live on&nbsp;the&nbsp;call, before you look at&nbsp;a&nbsp;single feature.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>Asked, answered, or&nbsp;refused</span>
@@ -1232,7 +1245,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1280,11 +1293,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

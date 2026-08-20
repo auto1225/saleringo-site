@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Dental Practices","item":"https://claude.saleringo.com/en/industries/dental.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── DENTAL · archetype: CLINICAL LIGHT ─────────────────── */
   /* the only industry page that opens bright. left-aligned hero,
@@ -538,9 +538,17 @@
         a&nbsp;record written, a&nbsp;pipeline card moved. Four more dental scenarios, plus seven other trades, are on&nbsp;the&nbsp;<a href="../examples.html#dental" style="color:var(--teal-deep);font-weight:700;">worked examples page</a>.</p>
     </div>
 
-    <div class="exgrid" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Recall filled</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Booked · coverage routed</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Plan follow-up</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Consult booked</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">On-call routed</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Four booked</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Recall filled">
+            <div class="excard">
         <div class="exhead"><span class="when">Day 14 overdue</span><span class="via">Automatic</span><span class="tag solved">Recall filled</span></div>
         <div class="exbody">
           <p class="exq">— no&nbsp;contact since a&nbsp;hygiene visit eight months ago —</p>
@@ -558,8 +566,9 @@
             Nobody at&nbsp;the&nbsp;desk started this&nbsp;message: it fires from&nbsp;the&nbsp;recall list on&nbsp;the&nbsp;interval you set, and the&nbsp;$110–$160 hygiene range is the&nbsp;one published further down this&nbsp;page.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Booked · coverage routed">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 18:52</span><span class="via">Phone</span><span class="tag solved">Booked · coverage routed</span></div>
         <div class="exbody">
           <p class="exq">I've been quoted for&nbsp;a&nbsp;crown. Before I book — how much of&nbsp;it will my&nbsp;insurance actually pay?</p>
@@ -578,8 +587,9 @@
           <p class="exlabel">A&nbsp;worked illustration, not a&nbsp;customer story. Capturing insurance is allowed; estimating a&nbsp;benefit is not — the&nbsp;same limit the&nbsp;FAQ below describes, shown doing its&nbsp;job.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Plan follow-up">
+            <div class="excard">
         <div class="exhead"><span class="when">Day 10</span><span class="via">Automatic</span><span class="tag solved">Plan follow-up</span></div>
         <div class="exbody">
           <p class="exq">— implant plan sent after the&nbsp;exam, no&nbsp;reply for&nbsp;ten days —</p>
@@ -597,8 +607,9 @@
             Payment terms are a&nbsp;conversation for&nbsp;a&nbsp;person, so it asked for&nbsp;one instead of&nbsp;inventing an&nbsp;installment plan.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Consult booked">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 20:40</span><span class="via">Web chat</span><span class="tag solved">Consult booked</span></div>
         <div class="exbody">
           <p class="exq">Another&nbsp;practice quoted me for&nbsp;an&nbsp;implant and it felt high. What would you charge — and are they overcharging me?</p>
@@ -619,8 +630,9 @@
             number at&nbsp;8:40 PM — but a&nbsp;comparative claim about&nbsp;a&nbsp;competitor is refused outright, in&nbsp;every&nbsp;wording.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="On-call routed">
+            <div class="excard">
         <div class="exhead"><span class="when">23:55</span><span class="via">Phone</span><span class="tag human">On-call routed</span></div>
         <div class="exbody">
           <p class="exq">My&nbsp;son took an&nbsp;elbow at&nbsp;soccer practice and one of&nbsp;his&nbsp;front teeth has come right out. What do we do with&nbsp;it?</p>
@@ -640,8 +652,9 @@
             anything else on&nbsp;this&nbsp;page.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Four booked">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 08:15</span><span class="via">WhatsApp</span><span class="tag solved">Four booked</span></div>
         <div class="exbody">
           <p class="exq">There are four of&nbsp;us — two adults, kids of&nbsp;7 and 11. Can you see us all in&nbsp;one go after school? We're nearer Northgate.</p>
@@ -661,8 +674,8 @@
             answered this. A&nbsp;second site's&nbsp;prices are never quoted by&nbsp;accident — see the&nbsp;multi-location section below.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:640px;margin-top:62px;">
       <span class="eyebrow light"><i></i>What it will and won’t answer</span>
@@ -1110,7 +1123,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1157,11 +1170,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

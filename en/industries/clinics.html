@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Clinics","item":"https://claude.saleringo.com/en/industries/clinics.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── CLINICS · archetype: MULTILINGUAL ──────────────────── */
   /* split hero over a wall of greetings, a language ribbon as
@@ -529,9 +529,17 @@
         trades, are on&nbsp;the&nbsp;<a href="../examples.html#clinics" style="color:var(--teal);font-weight:700;">worked examples page</a>.</p>
     </div>
 
-    <div class="exgrid" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Booked by AI</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Quoted from your list</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Clinical · escalated</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">No-show recovered</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Booked · coverage routed</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Booked · referral queued</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Booked by AI">
+            <div class="excard">
         <div class="exhead"><span class="when">23:40</span><span class="via">WhatsApp · Português</span><span class="tag solved">Booked by&nbsp;AI</span></div>
         <div class="exbody">
           <p class="exq">Boa noite. Estarei na cidade de 14 a&nbsp;18 de outubro. Conseguem marcar-me nessa semana? Quanto custa a&nbsp;primeira consulta?</p>
@@ -550,8 +558,9 @@
             The&nbsp;reply comes from&nbsp;wording your&nbsp;clinic signed off in&nbsp;Portuguese, with&nbsp;its&nbsp;own source and expiry. It is not a&nbsp;translation produced at&nbsp;the&nbsp;moment of&nbsp;sending, and the&nbsp;$120 is the&nbsp;figure published on&nbsp;this&nbsp;page.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Quoted from your list">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 12:05</span><span class="via">Web chat</span><span class="tag solved">Quoted from&nbsp;your&nbsp;list</span></div>
         <div class="exbody">
           <p class="exq">What does a&nbsp;full course cost rather than one session? And is the&nbsp;consultation extra on&nbsp;top?</p>
@@ -571,8 +580,9 @@
             a&nbsp;handoff rather than an&nbsp;estimate.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Clinical · escalated">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 21:15</span><span class="via">WhatsApp</span><span class="tag human">Clinical · escalated</span></div>
         <div class="exbody">
           <p class="exq">It's&nbsp;three days after my&nbsp;treatment and the&nbsp;area is still red and warm to&nbsp;touch. Should I be worried?</p>
@@ -591,8 +601,9 @@
             tempts a&nbsp;chatbot into&nbsp;reassurance, which is exactly why it is refused categorically here. That&nbsp;refusal is the&nbsp;reason a&nbsp;clinic can put this&nbsp;on&nbsp;its&nbsp;main line at&nbsp;all.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="No-show recovered">
+            <div class="excard">
         <div class="exhead"><span class="when">+15 min</span><span class="via">Automatic</span><span class="tag solved">No-show recovered</span></div>
         <div class="exbody">
           <p class="exq">— 10:00 consultation, nobody arrived, chair empty —</p>
@@ -611,8 +622,9 @@
             usually the&nbsp;first one to&nbsp;pay for&nbsp;itself.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Booked · coverage routed">
+            <div class="excard">
         <div class="exhead"><span class="when">Mon 19:20</span><span class="via">Phone</span><span class="tag solved">Booked · coverage routed</span></div>
         <div class="exbody">
           <p class="exq">Do you work with&nbsp;my&nbsp;insurer, or is this&nbsp;all self-pay? And how much would they cover?</p>
@@ -633,8 +645,9 @@
             a&nbsp;policy pays is not — the&nbsp;same boundary the&nbsp;section above describes, doing its&nbsp;job in&nbsp;the&nbsp;middle of&nbsp;a&nbsp;booking rather than instead of&nbsp;one.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Booked · referral queued">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 08:30</span><span class="via">Web chat</span><span class="tag solved">Booked · referral queued</span></div>
         <div class="exbody">
           <p class="exq">I saw Dr. Marchetti last year and would rather see her&nbsp;again, afternoons only. Also — do you do the&nbsp;injectable treatment my&nbsp;friend had here?</p>
@@ -654,8 +667,8 @@
             service cannot do: it books into&nbsp;a&nbsp;named practitioner's&nbsp;own diary, and it turns "we don't do that" into&nbsp;a&nbsp;referral your&nbsp;team can act on rather than a&nbsp;lost patient.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:640px;margin-top:62px;">
       <span class="eyebrow"><i></i>What it will and won’t answer</span>
@@ -1079,7 +1092,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1126,11 +1139,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

@@ -30,10 +30,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Veterinary Practices","item":"https://claude.saleringo.com/en/industries/veterinary.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── VETERINARY · archetype: NIGHT PRACTICE ────────────────────
      opens dark and quiet, because that is when this trade's hardest
@@ -454,9 +454,17 @@
         no&nbsp;invented outcome, no&nbsp;testimonial. Four more veterinary scenarios sit on&nbsp;the&nbsp;<a href="../examples.html#veterinary" style="color:var(--teal);font-weight:700;">worked examples page</a>.</p>
     </div>
 
-    <div class="exgrid reveal">
-
-      <div class="excard">
+    <div class="panelset exset reveal">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Booked by AI</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Estimate approved</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Handed to a vet</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Recall fired</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Routed to a branch</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Straight to a person</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Booked by AI">
+            <div class="excard">
         <div class="exhead"><span class="when">Mon 07:05</span><span class="via">Phone</span><span class="tag solved">Booked by&nbsp;AI</span></div>
         <div class="exbody">
           <p class="exq">Do you actually see rabbits? Ours needs her&nbsp;nails done and she's&nbsp;due a&nbsp;once-over.</p>
@@ -472,8 +480,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. Exotics calls are the&nbsp;ones a&nbsp;general answering service books wrong — this&nbsp;one can only offer clinicians you have listed.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Estimate approved">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 12:25</span><span class="via">WhatsApp</span><span class="tag solved">Estimate approved</span></div>
         <div class="exbody">
           <p class="exq">We got the&nbsp;dental estimate you sent. Are the&nbsp;bloods actually necessary, and can we go ahead?</p>
@@ -489,8 +498,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. Half&nbsp;of&nbsp;this&nbsp;message is admin and half is clinical — the&nbsp;whole trick is splitting it in&nbsp;one reply.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Handed to a vet">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 08:15</span><span class="via">WhatsApp</span><span class="tag human">Handed to&nbsp;a&nbsp;vet</span></div>
         <div class="exbody">
           <p class="exq">Can I have more of&nbsp;the&nbsp;tablets you gave her&nbsp;last month? She's&nbsp;nearly out.</p>
@@ -507,8 +517,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. Medication is a&nbsp;categorical refusal. What the&nbsp;AI can do is make the&nbsp;human step fast instead&nbsp;of&nbsp;slow.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Recall fired">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 09:00</span><span class="via">Automatic</span><span class="tag solved">Recall fired</span></div>
         <div class="exbody">
           <p class="exq">— nobody asked for&nbsp;this&nbsp;one; the&nbsp;record's&nbsp;own due date fired it —</p>
@@ -525,8 +536,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. This&nbsp;one runs unprompted. It is the&nbsp;least visible thing on&nbsp;the&nbsp;page and usually the&nbsp;one that&nbsp;pays for&nbsp;the&nbsp;month.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Routed to a branch">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 13:30</span><span class="via">Phone</span><span class="tag solved">Routed to&nbsp;a&nbsp;branch</span></div>
         <div class="exbody">
           <p class="exq">Our&nbsp;vet mentioned a&nbsp;scan. Do you do that&nbsp;yourselves or do we have to&nbsp;go somewhere else?</p>
@@ -543,8 +555,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. Multi-branch practices lose people at&nbsp;exactly this&nbsp;handover. The&nbsp;AI is only allowed to&nbsp;name partners and branches you have entered.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Straight to a person">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 21:10</span><span class="via">Phone</span><span class="tag human">Straight to&nbsp;a&nbsp;person</span></div>
         <div class="exbody">
           <p class="exq">He's&nbsp;fourteen and he can't get up any more. I think it might be time. What do you think?</p>
@@ -560,8 +573,8 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. This is the&nbsp;conversation that&nbsp;decides whether a&nbsp;practice can put an&nbsp;AI on&nbsp;its&nbsp;main line at&nbsp;all. The&nbsp;only correct behavior is to&nbsp;leave.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
   </div>
 </section>
 
@@ -856,7 +869,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -903,11 +916,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

@@ -2925,3 +2925,129 @@ html .bigfooter .brand p{max-width:min(100%,26em);}
 @media (max-width:560px){
   html .bigfooter .cols{grid-template-columns:1fr;}
 }
+
+
+/* ══ THE 13px FLOOR, RAISED ═══════════════════════════════════════════════
+   A buyer's review counted 180 text elements below 14px and said the page is
+   tiring to read for long. Measured on the live home page: 146 of 746 blocks
+   with their own words still rendered under 14px. Every one traced to the two
+   decisions below, both of which were mine and both of which I defended once
+   before as "a mock is a picture of an interface".
+
+   That defence is thin. The mock is not a picture - the reader is meant to
+   read the pipeline card, the calendar slot, the quote line, because those
+   ARE the product. Making them a size no one reads comfortably in order to
+   make them look like a screenshot is decoration winning over use.
+
+   So the floor is 14px for anything with words in it, and 13px survives in
+   exactly one place: a label inside a drawn figure, where the type is a key
+   to a diagram rather than something to be read in sequence. */
+html .appwin,html .calmock,html .pipeboard,html .quotedoc,html .custcard,
+html .kpitiles,html .repcard,html .ledger,html .transcript,html .funnelrow,
+html .browserframe,html .msgthread,html .callcard,html .demo-body,
+html .bigfooter .brand{
+  --fs-xs:14px;
+  --fs-label:14px;
+}
+:root{
+  --fs-label:14px;       /* was 13px - an uppercase label is still read */
+}
+/* SVG keys stay at the figure floor: they label a drawing, not a sentence */
+svg [font-size="11"],svg [font-size="12"],svg [font-size="12.5"],
+svg [font-size="9.5"],svg [font-size="10"]{font-size:13px;}
+
+/* Long passages on a dark ground get a little more light. #94A2B8 clears
+   4.5:1 comfortably, but body copy read for minutes rather than seconds is
+   easier a step brighter, and every one of these was measured against the
+   eleven dark panels the site actually uses. */
+html .sec-dark .lead,html .sec-dark2 .lead,html .bg-grid .lead,
+html .bg-spot .lead,html .bg-dusk .lead,html .lead.onDark,
+html .sec-dark main p,html .bg-grid main p{color:#A7B4C8;}
+
+
+/* ── three kinds of promise, told apart ───────────────────────────────────
+   A trust page that lists a database setting, a signed clause and a per-order
+   answer in one voice makes the reader check all of it or none of it. Three
+   columns, three different things standing behind them, and a fourth block
+   for the one most sites leave out: what has no third-party attestation at
+   all. Colour is the weakest signal here and carries none of the meaning -
+   the tag says which kind it is in words. */
+.statusledger{margin-top:44px;border-top:1px solid var(--l-hair);padding-top:38px;}
+.sec-dark .statusledger,.sec-dark2 .statusledger{border-color:var(--hair);}
+.statusledger .sl-head b{display:block;font-family:'Space Grotesk',sans-serif;
+  font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;line-height:1.15;
+  color:var(--l-ink);max-width:22ch;}
+.sec-dark .statusledger .sl-head b{color:#fff;}
+.statusledger .sl-head span{display:block;margin-top:14px;font-size:var(--fs-sm);
+  line-height:1.75;color:var(--l-mut);font-weight:500;max-width:var(--measure);}
+.sec-dark .statusledger .sl-head span{color:var(--tx2);}
+.sl-cols{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;}
+.sl-col{padding:0 28px;border-left:1px solid var(--l-hair);}
+.sec-dark .sl-col{border-color:var(--hair);}
+.sl-col:first-child{padding-left:0;border-left:0;}
+.sl-col:last-child{padding-right:0;}
+.sl-tag{display:inline-block;font-size:var(--fs-xs);font-weight:800;letter-spacing:.01em;
+  padding-left:16px;position:relative;color:var(--l-ink);}
+.sec-dark .sl-tag{color:#fff;}
+.sl-tag::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:8px;height:8px;border-radius:50%;background:currentColor;}
+.sl-live .sl-tag{color:#0B7878;}
+.sl-doc .sl-tag{color:#8D642F;}
+.sl-order .sl-tag{color:#4B5D7A;}
+.sec-dark .sl-live .sl-tag{color:var(--teal);}
+.sec-dark .sl-doc .sl-tag{color:#E8A44C;}
+.sec-dark .sl-order .sl-tag{color:#9FB0C8;}
+.sl-note{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut2);font-weight:500;}
+.sec-dark .sl-note{color:var(--tx3);}
+.sl-col ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:14px;}
+.sl-col li{font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;
+  padding-top:14px;border-top:1px solid var(--l-hair);}
+.sec-dark .sl-col li{color:var(--tx2);border-color:var(--hair);}
+.sl-col li b{display:block;color:var(--l-ink);font-weight:700;margin-bottom:3px;}
+.sec-dark .sl-col li b{color:var(--tx);}
+.sl-foot{margin-top:34px;padding-top:22px;border-top:1px solid var(--l-hair);
+  font-size:var(--fs-xs);line-height:1.8;color:var(--l-mut);font-weight:500;
+  max-width:var(--measure);}
+.sec-dark .sl-foot{color:var(--tx2);border-color:var(--hair);}
+.sl-foot b{color:var(--l-ink);}
+.sec-dark .sl-foot b{color:var(--tx);}
+@media (max-width:900px){
+  .sl-cols{grid-template-columns:1fr;gap:30px;}
+  .sl-col{padding:0;border-left:0;border-top:1px solid var(--l-hair);padding-top:26px;}
+  .sl-col:first-child{border-top:0;padding-top:0;}
+  .sec-dark .sl-col{border-color:var(--hair);}
+}
+
+/* the worked examples keep the card, lose the wall: one panel, full width */
+.srjs .exset > .pspanel > .excard{max-width:none;}
+.srjs .exset .pstabs{margin-bottom:26px;}
+
+/* The ledger's list items inherit the prose measure, which is wider than the
+   column they sit in - measured at 1440, they ran 160px into the next column.
+   A list inside a three-column ledger sizes to its column, like every other
+   list in a component. */
+html .sl-col ul,html .sl-col li{max-width:none;min-width:0;}
+html .sl-tag{white-space:normal;line-height:1.45;}
+/* the type floor took a mock column 2px past its edge; the words break */
+html .calmock .col,html .colboard .col,html .queueboard .col,
+html .rampboard .col,html .col > span{overflow-wrap:break-word;min-width:0;}
+
+/* The 14px floor made two boxes 2px and 39px too small for their own words.
+   Both hold labels rather than sentences, so the words break rather than the
+   box giving - the same rule the mock chips already take at phone width, now
+   applied where the type grew. */
+html .sl-col li,html .sl-col li b,html .sl-col .sl-tag{overflow-wrap:break-word;}
+html .inboxmock .col,html .inboxmock .col *{min-width:0;overflow-wrap:break-word;}
+
+/* Raising the label floor to 14px put "INSTAGRAM" 6px outside its cell on a
+   375px screen: a four-column board simply does not fit a phone at a size
+   anyone can read. Breaking the word mid-way would be worse than either. The
+   board keeps its columns and scrolls sideways inside its own frame, which is
+   what the site already does with wide tables. */
+@media (max-width:700px){
+  html .queueboard,html .colboard,html .rampboard{overflow-x:auto;
+    scrollbar-width:thin;-webkit-overflow-scrolling:touch;}
+  html .queueboard .ch,html .queueboard .cb,
+  html .colboard .ch,html .colboard .cb,
+  html .rampboard .ch,html .rampboard .cb{min-width:430px;}
+}

@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Enquiry Answering for Care Homes & Home Care","item":"https://claude.saleringo.com/en/industries/senior-care.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── SENIOR CARE · archetype: THE ENQUIRY CALL ───────────────
      The caller is almost never the resident. It is a son or a
@@ -581,9 +581,17 @@
         the&nbsp;channel they arrive on, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;one produced — a&nbsp;show-round in&nbsp;the&nbsp;diary, a&nbsp;rate read as&nbsp;published, a&nbsp;question refused, a&nbsp;named person dialled. Every&nbsp;figure below comes from&nbsp;the&nbsp;same sample schedule: <b>£1,450</b> a&nbsp;week residential, <b>£1,690</b> nursing, <b>£28.50</b> an&nbsp;hour for&nbsp;home care.</p>
     </div>
 
-    <div class="exgrid" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Show-round booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Escalated · named person</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Refused · routed</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Rota gap · manager alerted</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Refused · assessment offered</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Respite · dates held</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Show-round booked">
+            <div class="excard">
         <div class="exhead"><span class="when">21:40</span><span class="via">Phone</span><span class="tag solved">Show-round booked</span></div>
         <div class="exbody">
           <p class="exq">My&nbsp;dad's&nbsp;in&nbsp;hospital and they want the&nbsp;bed back by&nbsp;Friday. Have you got anything?</p>
@@ -602,8 +610,9 @@
             say was decided in&nbsp;advance rather than at&nbsp;half past&nbsp;nine.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Escalated · named person">
+            <div class="excard">
         <div class="exhead"><span class="when">22:15</span><span class="via">Phone</span><span class="tag human">Escalated · named person</span></div>
         <div class="exbody">
           <p class="exq">There was a&nbsp;bruise on&nbsp;my&nbsp;mum's&nbsp;arm today and nobody could tell me where it came from.</p>
@@ -625,8 +634,9 @@
             provider's&nbsp;line, which is why escalation here is dialling, not logging.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Refused · routed">
+            <div class="excard">
         <div class="exhead"><span class="when">19:50</span><span class="via">Phone</span><span class="tag human">Refused · routed</span></div>
         <div class="exbody">
           <p class="exq">Would the&nbsp;council pay for&nbsp;this? She's&nbsp;only got her&nbsp;house and a&nbsp;small pension.</p>
@@ -646,8 +656,9 @@
             handoff, not a&nbsp;confidence threshold.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Rota gap · manager alerted">
+            <div class="excard">
         <div class="exhead"><span class="when">07:10</span><span class="via">Phone</span><span class="tag hot">Rota gap · manager alerted</span></div>
         <div class="exbody">
           <p class="exq">Nobody has come for&nbsp;Mum's&nbsp;morning call. She's&nbsp;still in&nbsp;bed and she needs her&nbsp;tablets.</p>
@@ -669,8 +680,9 @@
             fifteen seconds and sent to&nbsp;different people.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Refused · assessment offered">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 11:30</span><span class="via">Phone</span><span class="tag human">Refused · assessment offered</span></div>
         <div class="exbody">
           <p class="exq">She's&nbsp;getting worse. Does she need nursing care now, or would residential do?</p>
@@ -691,8 +703,9 @@
             the&nbsp;staffing and the&nbsp;family&rsquo;s&nbsp;whole plan.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Respite · dates held">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 08:40</span><span class="via">Web chat</span><span class="tag solved">Respite · dates held</span></div>
         <div class="exbody">
           <p class="exq">I look after my&nbsp;husband and I'm&nbsp;having an&nbsp;operation in&nbsp;March. Do you do two weeks?</p>
@@ -715,8 +728,8 @@
             nobody returned before the&nbsp;date passed.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:62px;">
       <span class="eyebrow"><i></i>What it will and won’t answer</span>
@@ -1122,7 +1135,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1169,11 +1182,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

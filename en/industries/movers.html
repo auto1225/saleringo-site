@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Movers & Removals","item":"https://claude.saleringo.com/en/industries/movers.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── HERO — full-bleed photograph, the night scene laid over it ────── */
   .hero{position:relative;overflow:hidden;padding-bottom:78px;}
@@ -819,9 +819,17 @@
         fictional firm and to&nbsp;nobody else — your&nbsp;own price list sets your&nbsp;numbers.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Survey booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Priced by your rules</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Office decides</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Office decides · WhatsApp</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Quoted, not discounted</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Refused outright</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Survey booked">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 18:41</span><span class="via">Phone</span><span class="tag human">Survey booked</span></div>
         <div class="exbody">
           <p class="exq">We complete on&nbsp;the&nbsp;26th. Three-bed terrace, second floor, no&nbsp;lift, and there's&nbsp;an&nbsp;upright piano. Just give me a&nbsp;rough number.</p>
@@ -842,8 +850,9 @@
           <p class="exlabel">The&nbsp;refusal is the&nbsp;conversion event. A&nbsp;caller who is told plainly why the&nbsp;number is not available yet books the&nbsp;survey; a&nbsp;caller given a&nbsp;guess shops it against three firms who guessed lower.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Priced by your rules">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 08:10</span><span class="via">Web chat</span><span class="tag solved">Priced by&nbsp;your&nbsp;rules</span></div>
         <div class="exbody">
           <p class="exq">It's&nbsp;one two-seater sofa, ground floor to&nbsp;ground floor, about&nbsp;nine miles. Do I really need a&nbsp;survey for&nbsp;that?</p>
@@ -864,8 +873,9 @@
           <p class="exlabel">Same product, opposite behaviour — because the&nbsp;rule is yours, not&nbsp;ours. You decide the&nbsp;size and shape of&nbsp;job that&nbsp;can be priced without&nbsp;a&nbsp;survey, and the&nbsp;AI holds that&nbsp;line in&nbsp;both directions.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Office decides">
+            <div class="excard">
         <div class="exhead"><span class="when">Fri 13:52</span><span class="via">Phone</span><span class="tag human">Office decides</span></div>
         <div class="exbody">
           <p class="exq">We're loaded and sitting outside the&nbsp;new place. The&nbsp;chain has slipped, the&nbsp;keys aren't released yet. Can your&nbsp;crew just wait?</p>
@@ -886,8 +896,9 @@
           <p class="exlabel">Completion day is the&nbsp;one where a&nbsp;reassuring answer does the&nbsp;most damage. The&nbsp;rate is a&nbsp;fact and it says the&nbsp;fact; the&nbsp;crew's&nbsp;evening is a&nbsp;judgment and it hands that&nbsp;over.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Office decides · WhatsApp">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 19:12</span><span class="via">WhatsApp</span><span class="tag human">Office decides</span></div>
         <div class="exbody">
           <p class="exq">There's&nbsp;a&nbsp;painting in&nbsp;the&nbsp;hallway worth about&nbsp;four thousand. Am I covered if something happens to&nbsp;it?</p>
@@ -908,8 +919,9 @@
           <p class="exlabel">Liability is the&nbsp;one subject where a&nbsp;helpful sentence becomes a&nbsp;dispute nine weeks later. The&nbsp;AI produces the&nbsp;record and hands over&nbsp;the&nbsp;decision.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Quoted, not discounted">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 12:40</span><span class="via">Phone</span><span class="tag solved">Quoted, not discounted</span></div>
         <div class="exbody">
           <p class="exq">Another&nbsp;firm has come in&nbsp;three hundred cheaper for&nbsp;the&nbsp;same day. Can you match it?</p>
@@ -931,8 +943,9 @@
           <p class="exlabel">An&nbsp;answering system that&nbsp;discounts costs a&nbsp;removals firm more than one that&nbsp;misses calls. Negotiating a&nbsp;price is a&nbsp;permanent handoff here, never a&nbsp;confidence threshold.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Refused outright">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 21:47</span><span class="via">Phone</span><span class="tag human">Refused outright</span></div>
         <div class="exbody">
           <p class="exq">There's&nbsp;a&nbsp;gun safe bolted into&nbsp;the&nbsp;garage floor, two patio gas bottles and a&nbsp;mower with&nbsp;petrol in&nbsp;it. That's&nbsp;all fine, isn't it?</p>
@@ -954,8 +967,8 @@
           <p class="exlabel">The&nbsp;guardrail ships enabled, and there is no&nbsp;switch that&nbsp;turns it off when the&nbsp;diary looks empty. Ask any vendor to&nbsp;play you this exact moment on&nbsp;their&nbsp;demo, before you look at&nbsp;anything else.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>Quoted, booked, or&nbsp;handed over</span>
@@ -1183,7 +1196,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1231,11 +1244,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

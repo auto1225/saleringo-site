@@ -29,10 +29,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Front Desk for Universities & Admissions Offices","item":"https://claude.saleringo.com/en/industries/universities.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* page-specific: universities & international admissions landing */
   /* full-bleed photo hero — block layout overrides .photohero's flex */
@@ -603,9 +603,17 @@
       <p class="exlabel" style="margin-top:14px;">Every&nbsp;scenario below is a&nbsp;worked illustration of&nbsp;how the&nbsp;product behaves, built from&nbsp;the&nbsp;fees page and prospectus an&nbsp;institution would load. They are not customer stories, and no&nbsp;institution, applicant or agent named or implied here is real. The&nbsp;<b>$24,000</b> tuition and the&nbsp;<b>$2,000</b> deposit are the&nbsp;illustrative published figures this&nbsp;page uses throughout — your&nbsp;own fee schedule supplies the&nbsp;real ones. Plan prices are the&nbsp;ones on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>; nothing here is invented.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Sourced &amp; refused</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Volume absorbed</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Refused &amp; routed</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Officer decides</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Identity first</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Document chased</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Sourced &amp; refused">
+            <div class="excard">
         <div class="exhead"><span class="when">02:40 local</span><span class="via">WhatsApp</span><span class="tag solved">Sourced &amp; refused</span></div>
         <div class="exbody">
           <p class="exq">Good afternoon. I want to&nbsp;apply for&nbsp;the&nbsp;MSc in&nbsp;Data Science. What is the&nbsp;fee for&nbsp;international students, and do I have the&nbsp;right degree for&nbsp;it?</p>
@@ -623,8 +631,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. The&nbsp;refusal is the&nbsp;point: the&nbsp;fee is a&nbsp;published fact, and the&nbsp;degree question is not.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Volume absorbed">
+            <div class="excard">
         <div class="exhead"><span class="when">Results day, 08:20</span><span class="via">Phone</span><span class="tag solved">Volume absorbed</span></div>
         <div class="exbody">
           <p class="exq">I missed my&nbsp;offer by&nbsp;one grade. Have you still got places on&nbsp;Economics, and can you take me?</p>
@@ -641,8 +650,9 @@
           <p class="exlabel">UCAS publishes the&nbsp;2026 Clearing window as&nbsp;2 July to&nbsp;19 October, and says more than 50,000 students find a&nbsp;place through&nbsp;it each&nbsp;year. Most of&nbsp;those calls land in&nbsp;a&nbsp;few days, into&nbsp;an&nbsp;office that&nbsp;cannot hire for&nbsp;a&nbsp;week.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Refused &amp; routed">
+            <div class="excard">
         <div class="exhead"><span class="when">23:15</span><span class="via">Web chat</span><span class="tag human">Refused &amp; routed</span></div>
         <div class="exbody">
           <p class="exq">If I get the&nbsp;offer, how much money do I need to&nbsp;show in&nbsp;my&nbsp;bank account for&nbsp;the&nbsp;visa, and how long should it be there?</p>
@@ -659,8 +669,9 @@
           <p class="exlabel">Australia restricts immigration assistance under&nbsp;the&nbsp;Migration Act 1958 to&nbsp;agents registered with&nbsp;the&nbsp;OMARA and other exempt persons. The&nbsp;refusal is written once and holds wherever you recruit.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Officer decides">
+            <div class="excard">
         <div class="exhead"><span class="when">11:00</span><span class="via">Phone</span><span class="tag human">Officer decides</span></div>
         <div class="exbody">
           <p class="exq">I have four students for&nbsp;September. Last year you gave our&nbsp;agency a&nbsp;partial award on&nbsp;the&nbsp;fee — is that&nbsp;running again?</p>
@@ -677,8 +688,9 @@
           <p class="exlabel">Agents ask this&nbsp;question constantly, and a&nbsp;front desk that&nbsp;improvises an&nbsp;answer creates a&nbsp;commitment your&nbsp;finance office has to&nbsp;honour or explain away.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Identity first">
+            <div class="excard">
         <div class="exhead"><span class="when">19:40</span><span class="via">Phone</span><span class="tag human">Identity first</span></div>
         <div class="exbody">
           <p class="exq">I'm&nbsp;ringing about&nbsp;my&nbsp;daughter's&nbsp;application. Has she been made an&nbsp;offer yet? She won't tell me anything.</p>
@@ -695,8 +707,9 @@
           <p class="exlabel">In&nbsp;the&nbsp;United States, the&nbsp;Family Educational Rights and Privacy Act (20 U.S.C. § 1232g) requires written consent before personally identifiable information from&nbsp;a&nbsp;student's&nbsp;education records is disclosed, with&nbsp;limited exceptions; under&nbsp;the&nbsp;UK and EU GDPR the&nbsp;same file is personal data. Confirming an&nbsp;application exists is already a&nbsp;disclosure.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Document chased">
+            <div class="excard">
         <div class="exhead"><span class="when">Three days before the&nbsp;close</span><span class="via">Automatic</span><span class="tag solved">Document chased</span></div>
         <div class="exbody">
           <p class="exq">— application started in&nbsp;January, transcript in, English test never uploaded. Nobody has chased it —</p>
@@ -713,8 +726,8 @@
           <p class="exlabel">Applications go quiet at&nbsp;the&nbsp;document stage more often than at&nbsp;the&nbsp;decision stage. This is the&nbsp;message everybody agrees should go out and nobody has three days spare to&nbsp;send.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>What it will and won't answer</span>
@@ -923,7 +936,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -971,11 +984,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

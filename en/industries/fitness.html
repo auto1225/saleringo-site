@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Gyms, Studios & Personal Training","item":"https://claude.saleringo.com/en/industries/fitness.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── FITNESS · archetype: THE ROOM WHILE THE CLASS IS RUNNING ────────
      The hero is a real studio with the beds laid out and nobody at the
@@ -855,9 +855,17 @@
         nothing here is invented, and your&nbsp;own price list sets your&nbsp;numbers.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Trial booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Instructor called</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Instructor called · Instagram</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Waitlist filled</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Fee not waived</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Routed to a person</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Trial booked">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 20:40</span><span class="via">Phone</span><span class="tag solved">Trial booked</span></div>
         <div class="exbody">
           <p class="exq">Do you still do the&nbsp;free class? Could I&nbsp;come Thursday morning?</p>
@@ -878,8 +886,9 @@
             up this&nbsp;page; your&nbsp;prices are whatever you sign off during onboarding.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Instructor called">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 21:12</span><span class="via">WhatsApp</span><span class="tag human">Instructor called</span></div>
         <div class="exbody">
           <p class="exq">I've got a&nbsp;dodgy knee from&nbsp;running. Which of&nbsp;your&nbsp;classes should I&nbsp;do?</p>
@@ -901,8 +910,9 @@
             "that&nbsp;should be fine for&nbsp;your&nbsp;knee". It is a&nbsp;permanent refusal here, not a&nbsp;confidence threshold.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Instructor called · Instagram">
+            <div class="excard">
         <div class="exhead"><span class="when">Mon 20:30</span><span class="via">Instagram</span><span class="tag human">Instructor called</span></div>
         <div class="exbody">
           <p class="exq">I'm 14&nbsp;weeks pregnant. Can I&nbsp;stay in&nbsp;the&nbsp;Wednesday mat class, or&nbsp;is there something I&nbsp;should change?</p>
@@ -924,8 +934,9 @@
             Ask them to&nbsp;show you what happens when the&nbsp;caller narrows the&nbsp;question and asks a&nbsp;second time.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Waitlist filled">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 06:02</span><span class="via">Automatic</span><span class="tag solved">Waitlist filled</span></div>
         <div class="exbody">
           <p class="exq">— no&nbsp;message from&nbsp;anyone. A&nbsp;bed in&nbsp;the&nbsp;07:15 reformer came free at&nbsp;06:02 —</p>
@@ -944,8 +955,9 @@
             at&nbsp;six in&nbsp;the&nbsp;morning, which is precisely when nobody is at&nbsp;the&nbsp;desk.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Fee not waived">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 07:20</span><span class="via">Phone</span><span class="tag human">Fee not waived</span></div>
         <div class="exbody">
           <p class="exq">I&nbsp;got charged fifteen dollars for&nbsp;missing Thursday. Take it off — I&nbsp;was ill.</p>
@@ -967,8 +979,9 @@
             Money decisions are a&nbsp;permanent handoff here.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Routed to a person">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 19:55</span><span class="via">Web chat</span><span class="tag human">Routed to&nbsp;a&nbsp;person</span></div>
         <div class="exbody">
           <p class="exq">I&nbsp;want to&nbsp;cancel my&nbsp;membership before the&nbsp;next payment goes out.</p>
@@ -990,8 +1003,8 @@
             and the&nbsp;timestamp; the&nbsp;deciding stays where it belongs.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>Answered, or&nbsp;handed to&nbsp;an&nbsp;instructor</span>
@@ -1225,7 +1238,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1273,11 +1286,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

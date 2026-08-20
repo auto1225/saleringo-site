@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Answering for Self-Storage Facilities","item":"https://claude.saleringo.com/en/industries/self-storage.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── ROLLER DOOR · self-storage ───────────────────────── */
   .hero{position:relative;overflow:hidden;}
@@ -703,9 +703,17 @@
         connection yet, so which door is free stays unknown until your&nbsp;manager says otherwise.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Size matched</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Full price, up front</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Refused</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Refused · Phone</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">To the manager</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Pre-move-in</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Size matched">
+            <div class="excard">
         <div class="exhead"><span class="when">19:50</span><span class="via">Phone · after hours</span><span class="tag solved">Size matched</span></div>
         <div class="exbody">
           <p class="exq">I don't know what size I need. It's&nbsp;a&nbsp;two-bed flat — a&nbsp;sofa, a&nbsp;bed, a&nbsp;washing machine and about&nbsp;twenty boxes.</p>
@@ -727,8 +735,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer. £128, £97, £50 and £6 are the&nbsp;figures published in&nbsp;the&nbsp;thread at&nbsp;the&nbsp;top of&nbsp;this&nbsp;page, from&nbsp;one fictional site's&nbsp;price list.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Full price, up front">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 21:15</span><span class="via">Web chat</span><span class="tag solved">Full price, up front</span></div>
         <div class="exbody">
           <p class="exq">Your&nbsp;site says first eight weeks half price. So it's&nbsp;£64 to&nbsp;move in&nbsp;on&nbsp;Friday?</p>
@@ -750,8 +759,9 @@
           <p class="exlabel">Every&nbsp;discount that&nbsp;hides a&nbsp;minimum term becomes a&nbsp;dispute later. This&nbsp;reads the&nbsp;promotion as written, including the&nbsp;half that&nbsp;costs the&nbsp;customer.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Refused">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 11:40</span><span class="via">Phone</span><span class="tag human">Refused</span></div>
         <div class="exbody">
           <p class="exq">It's&nbsp;the&nbsp;contents of&nbsp;a&nbsp;garage — mower, a&nbsp;couple of&nbsp;jerry cans, the&nbsp;patio heater bottle. That's&nbsp;all fine, yeah?</p>
@@ -772,8 +782,9 @@
           <p class="exlabel">Fuel, gas, chemicals, food, plants, anything living, anything illegal. A&nbsp;chatbot that&nbsp;wants the&nbsp;sale says yes to&nbsp;this&nbsp;caller. This&nbsp;is the&nbsp;single hardest refusal on&nbsp;the&nbsp;page and the&nbsp;one your&nbsp;insurer cares about.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Refused · Phone">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 16:05</span><span class="via">Phone</span><span class="tag human">Refused</span></div>
         <div class="exbody">
           <p class="exq">My&nbsp;brother has a&nbsp;unit with&nbsp;you. I need to&nbsp;know if he's&nbsp;behind on&nbsp;it, and I need to&nbsp;get in&nbsp;and take my&nbsp;things out.</p>
@@ -794,8 +805,9 @@
           <p class="exlabel">The&nbsp;pressure on&nbsp;this&nbsp;call is emotional, urgent and usually genuine. It is still the&nbsp;call where a&nbsp;helpful system does the&nbsp;most damage.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="To the manager">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 09:20</span><span class="via">Web chat</span><span class="tag human">To&nbsp;the&nbsp;manager</span></div>
         <div class="exbody">
           <p class="exq">I've&nbsp;got a&nbsp;touring caravan to&nbsp;put away for&nbsp;the&nbsp;winter, and we might move our&nbsp;shop stock in&nbsp;too — we'd&nbsp;need couriers dropping pallets.</p>
@@ -817,8 +829,9 @@
           <p class="exlabel">Vehicle, caravan and business storage carry different paperwork, different access and different liability. Answering them off the&nbsp;household price list is how a&nbsp;site ends up with&nbsp;an&nbsp;argument in&nbsp;the&nbsp;compound.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Pre-move-in">
+            <div class="excard">
         <div class="exhead"><span class="when">Day before move-in</span><span class="via">Automatic</span><span class="tag solved">Pre-move-in</span></div>
         <div class="exbody">
           <p class="exq">— nothing from&nbsp;the&nbsp;customer. The&nbsp;record says a&nbsp;van at&nbsp;09:30 tomorrow, ground floor, 75&nbsp;sq&nbsp;ft —</p>
@@ -840,8 +853,8 @@
           <p class="exlabel">The&nbsp;AI started this&nbsp;one. Pre-move-in messages are the&nbsp;least glamorous automation on&nbsp;this&nbsp;page and the&nbsp;one that&nbsp;removes the&nbsp;most 09:30 arguments at&nbsp;a&nbsp;locked gate.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>What it will and won't answer</span>
@@ -1108,7 +1121,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1156,11 +1169,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

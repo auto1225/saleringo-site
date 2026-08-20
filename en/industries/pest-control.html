@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Pest Control","item":"https://claude.saleringo.com/en/industries/pest-control.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── HERO — full-bleed photograph, the evening call laid over it ────── */
   .hero{position:relative;overflow:hidden;padding-bottom:78px;}
@@ -889,9 +889,17 @@
         nothing here is invented, and your&nbsp;own rate card sets your&nbsp;numbers.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Visit created</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Commercial, documented</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Not our job</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Refused</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Facts, not a verdict</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Follow-up</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Visit created">
+            <div class="excard">
         <div class="exhead"><span class="when">21:12</span><span class="via">Phone</span><span class="tag solved">Visit created</span></div>
         <div class="exbody">
           <p class="exq">There's&nbsp;a&nbsp;nest under&nbsp;the&nbsp;gutter and they're going in&nbsp;and out all day. My&nbsp;mother is here and she carries an&nbsp;adrenaline pen. Can you come tomorrow?</p>
@@ -911,8 +919,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. The&nbsp;$85 nest and $60 early slot are the&nbsp;figures published in&nbsp;the&nbsp;rate card above; yours are whatever your&nbsp;card says.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Commercial, documented">
+            <div class="excard">
         <div class="exhead"><span class="when">06:40</span><span class="via">Phone</span><span class="tag solved">Commercial, documented</span></div>
         <div class="exbody">
           <p class="exq">Chef found droppings in&nbsp;the&nbsp;dry store this&nbsp;morning. We open at&nbsp;eleven and we've got the&nbsp;inspector due Thursday. What do I do?</p>
@@ -934,8 +943,9 @@
           <p class="exlabel">Food businesses are asked to&nbsp;keep pest records and produce them on&nbsp;inspection. The&nbsp;AI's&nbsp;job is to&nbsp;make sure the&nbsp;6:40 AM sighting exists in&nbsp;writing with&nbsp;a&nbsp;time on&nbsp;it — not to&nbsp;interpret anybody's&nbsp;food-safety obligations.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Not our job">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 11:20</span><span class="via">Web chat</span><span class="tag human">Not our&nbsp;job</span></div>
         <div class="exbody">
           <p class="exq">There's&nbsp;a&nbsp;massive clump of&nbsp;bees hanging off the&nbsp;fence post, about&nbsp;the&nbsp;size of&nbsp;a&nbsp;rugby ball. How fast can you kill them?</p>
@@ -956,8 +966,9 @@
           <p class="exlabel">This&nbsp;is the&nbsp;refusal the&nbsp;whole page rests on. A&nbsp;booking system rewarded for&nbsp;bookings will sell this&nbsp;one every&nbsp;time. It is also the&nbsp;one your&nbsp;reputation in&nbsp;that&nbsp;town does not survive.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Refused">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 19:05</span><span class="via">WhatsApp</span><span class="tag human">Refused</span></div>
         <div class="exbody">
           <p class="exq">Honestly I'd rather just do it myself. What do you lot use — can I buy it, or is there something from&nbsp;the&nbsp;hardware shop that&nbsp;works?</p>
@@ -977,8 +988,9 @@
           <p class="exlabel">Applying pesticide is regulated work in&nbsp;most countries and a&nbsp;member of&nbsp;the&nbsp;public asking an&nbsp;answering system for&nbsp;instructions is the&nbsp;clearest place a&nbsp;chatty model does damage. This&nbsp;refusal is not tuned by&nbsp;confidence. It is absolute.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Facts, not a verdict">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 14:30</span><span class="via">Phone</span><span class="tag human">Facts, not a&nbsp;verdict</span></div>
         <div class="exbody">
           <p class="exq">Before you come — is the&nbsp;stuff you use safe? I've got a&nbsp;six-month-old, a&nbsp;cat, and a&nbsp;tropical tank in&nbsp;the&nbsp;same room.</p>
@@ -1000,8 +1012,9 @@
           <p class="exlabel">A&nbsp;fish tank is the&nbsp;example everyone in&nbsp;this&nbsp;trade recognises, which is why it is worth printing: the&nbsp;honest answer costs one sentence and keeps the&nbsp;booking anyway.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Follow-up">
+            <div class="excard">
         <div class="exhead"><span class="when">Day 21</span><span class="via">Automatic</span><span class="tag solved">Follow-up</span></div>
         <div class="exbody">
           <p class="exq">— no&nbsp;message from&nbsp;the&nbsp;customer. The&nbsp;programme record says visit 2 of 3 is due —</p>
@@ -1022,8 +1035,8 @@
           <p class="exlabel">Nobody at&nbsp;the&nbsp;office started this&nbsp;one. Unattended follow-ups are where programme money quietly leaves a&nbsp;pest control business, and they leave without&nbsp;anybody noticing.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>Answered, or&nbsp;passed to&nbsp;a&nbsp;technician</span>
@@ -1257,7 +1270,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1306,11 +1319,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

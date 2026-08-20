@@ -30,8 +30,8 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Security & Data \u2014 In Plain English First | Saleringo", "description": "How your customers' data is handled, in plain English first and technical detail second. GDPR roles, data regions, retention and our DPA.", "url": "https://claude.saleringo.com/en/security.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=30.6">
+<link rel="stylesheet" href="../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=31.6">
 <style>
   /* page-specific: trust center layouts */
   /* the hero is a photograph; .photohero's flex centring is overridden because the
@@ -593,24 +593,65 @@
     <div class="tray reveal"><div class="paper">
       <div class="docrow">
         <span class="ft" aria-hidden="true"></span>
-        <span><b>Data Processing Agreement (DPA)</b>
+        <span><b><a href="mailto:hello@saleringo.com?subject=DPA%20v1.2%20request">Data Processing Agreement (DPA)&nbsp;&nbsp;&rarr;</a></b>
         <span class="d">Controller / processor roles under&nbsp;UK &amp; EU GDPR, our&nbsp;obligations, and the&nbsp;Standard Contractual Clauses</span></span>
         <span class="tail pilltag pt-line">v1.2 &middot; 12&nbsp;Aug&nbsp;2026</span>
       </div>
       <div class="docrow">
         <span class="ft" aria-hidden="true"></span>
-        <span><b>Subprocessor list</b>
+        <span><b><a href="mailto:hello@saleringo.com?subject=Subprocessor%20list%20v1.4%20request">Subprocessor list&nbsp;&nbsp;&rarr;</a></b>
         <span class="d">Every&nbsp;vendor that&nbsp;touches your&nbsp;data, what they do, and where they run</span></span>
         <span class="tail pilltag pt-line">v1.4 &middot; 12&nbsp;Aug&nbsp;2026</span>
       </div>
       <div class="docrow">
         <span class="ft" aria-hidden="true"></span>
-        <span><b>Security overview</b>
+        <span><b><a href="mailto:hello@saleringo.com?subject=Security%20overview%20v1.1%20request">Security overview&nbsp;&nbsp;&rarr;</a></b>
         <span class="d">Architecture, data flows, and controls — written for&nbsp;security questionnaires</span></span>
         <span class="tail pilltag pt-line">v1.1 &middot; 12&nbsp;Aug&nbsp;2026</span>
       </div>
     </div></div>
     <p class="secfoot">Ask for&nbsp;any of&nbsp;these&nbsp;during evaluation and you get the&nbsp;document, not a&nbsp;sales call. They are sent on&nbsp;request rather than published because each&nbsp;one is issued to&nbsp;a&nbsp;named party &mdash; not because they do not exist. The&nbsp;version and date beside each&nbsp;one is what you will receive.</p>
+    
+    <div class="statusledger reveal">
+      <div class="sl-head">
+        <b>Which of these is a&nbsp;setting, which is a&nbsp;contract, and which is a&nbsp;conversation</b>
+        <span>A&nbsp;trust page that lists everything in&nbsp;one voice makes a&nbsp;buyer check all&nbsp;of&nbsp;it or none&nbsp;of&nbsp;it. These are the&nbsp;same claims made above, sorted by&nbsp;what actually stands behind each&nbsp;one, so your&nbsp;security reviewer knows which line to&nbsp;argue about.</span>
+      </div>
+      <div class="sl-cols">
+        <div class="sl-col sl-live">
+          <span class="sl-tag">Built and running today</span>
+          <p class="sl-note">In&nbsp;the&nbsp;product now. You can see it in&nbsp;your&nbsp;own account during a&nbsp;trial.</p>
+          <ul>
+            <li><b>Tenant isolation</b>Row-level security at&nbsp;the&nbsp;database layer, with&nbsp;cross-tenant tests in&nbsp;CI on&nbsp;every&nbsp;release.</li>
+            <li><b>Encryption</b>TLS&nbsp;1.2+ in&nbsp;transit, AES-256 at&nbsp;rest, on&nbsp;every&nbsp;object listed in&nbsp;retention.</li>
+            <li><b>Deletion</b>Delete a&nbsp;conversation or a&nbsp;whole customer record from&nbsp;the&nbsp;dashboard; it leaves the&nbsp;knowledge base with&nbsp;it.</li>
+            <li><b>No&nbsp;training on&nbsp;your&nbsp;data</b>Your&nbsp;conversations are not used to&nbsp;train a&nbsp;model that&nbsp;serves anyone else.</li>
+            <li><b>Answer provenance</b>Every&nbsp;answer traces to&nbsp;a&nbsp;fact you approved, with&nbsp;a&nbsp;source and an&nbsp;expiry.</li>
+          </ul>
+        </div>
+        <div class="sl-col sl-doc">
+          <span class="sl-tag">Contractual, in&nbsp;writing</span>
+          <p class="sl-note">Real documents with&nbsp;version numbers, sent to&nbsp;a&nbsp;named party. Not published, because each&nbsp;one is issued to&nbsp;you.</p>
+          <ul>
+            <li><b>DPA, with&nbsp;the&nbsp;SCCs</b>Controller/processor roles under&nbsp;UK &amp; EU&nbsp;GDPR. v1.2, 12&nbsp;Aug&nbsp;2026.</li>
+            <li><b>Subprocessor list</b>The&nbsp;ten companies named above, in&nbsp;a&nbsp;form you can attach to&nbsp;a&nbsp;contract. v1.4.</li>
+            <li><b>Security overview</b>Architecture, data flows and controls, written for&nbsp;questionnaires. v1.1.</li>
+            <li><b>Retention</b>The&nbsp;periods on&nbsp;this&nbsp;page are the&nbsp;ones the&nbsp;DPA commits us&nbsp;to.</li>
+          </ul>
+        </div>
+        <div class="sl-col sl-order">
+          <span class="sl-tag">Confirmed for&nbsp;your&nbsp;order</span>
+          <p class="sl-note">Depends on&nbsp;your&nbsp;country, your&nbsp;channels and your&nbsp;regulator. Ask and you get a&nbsp;written answer, not a&nbsp;maybe.</p>
+          <ul>
+            <li><b>Where the&nbsp;data sits</b>United States by&nbsp;default; a&nbsp;South Korean footprint is available at&nbsp;setup. The&nbsp;model that&nbsp;drafts the&nbsp;answer runs in&nbsp;the&nbsp;United States either&nbsp;way.</li>
+            <li><b>Recording and consent</b>The&nbsp;rule differs by&nbsp;country and by&nbsp;state. We set yours at&nbsp;onboarding and store the&nbsp;consent basis with&nbsp;each&nbsp;call &mdash; but which rule applies to&nbsp;you is confirmed for&nbsp;your&nbsp;market, not assumed.</li>
+            <li><b>Telephony carriage</b>Which carrier serves your&nbsp;numbers, and under&nbsp;whose licence.</li>
+            <li><b>Regulated trades</b>Clinics, legal and financial work carry refusal rules we agree with&nbsp;you in&nbsp;writing first.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="sl-foot"><b>And what is not here.</b> No&nbsp;SOC&nbsp;2 report, no&nbsp;ISO&nbsp;27001 certificate, no&nbsp;penetration-test letter from&nbsp;a&nbsp;third party. Those do not exist for&nbsp;Saleringo yet, so nothing on&nbsp;this&nbsp;page is independently attested &mdash; it is our&nbsp;own statement, written to&nbsp;be checked line by&nbsp;line. If your&nbsp;process requires an&nbsp;auditor&rsquo;s&nbsp;report, we are not ready for&nbsp;you yet, and we would rather you knew that&nbsp;now than after a&nbsp;procurement review.</p>
+    </div>
     <div class="ownerbox reveal">
       <b>Who owns this&nbsp;page, and when it was last checked</b>
       <ul>
@@ -625,13 +666,14 @@
 </section>
 
 <!-- ═══════ VULNERABILITY REPORTING ═══════ -->
-<section class="vuln sec-light t-sm">
+<section class="vuln sec-light t-sm" id="vulnerability">
   <div class="wrap"><div class="cols">
     <div class="reveal">
       <span class="eyebrow light"><i></i>Vulnerability reporting</span>
       <h2 class="h2" style="margin-top:24px;">Found something? <br>Tell us&nbsp;first.</h2>
       <p class="lead">We welcome good-faith security research. If you believe you've found a&nbsp;vulnerability in&nbsp;Saleringo, write to&nbsp;us before disclosing it anywhere else.</p>
       <span class="secaddr sg">security@saleringo.com</span>
+      <p class="note"><b>Published, not on&nbsp;request:</b> the&nbsp;same statement is machine-readable at <a href="/.well-known/security.txt"><code>/.well-known/security.txt</code></a> &mdash; the&nbsp;address, the&nbsp;expiry, the&nbsp;languages and a&nbsp;link back to&nbsp;this&nbsp;policy, at&nbsp;the&nbsp;location a&nbsp;researcher&rsquo;s&nbsp;tooling checks first. It is the&nbsp;one piece of&nbsp;security evidence we can honestly publish rather than send to&nbsp;a&nbsp;named party.</p>
       <p class="note">Please include steps to&nbsp;reproduce, and don't access data that&nbsp;isn't yours while testing. We won't pursue action against good-faith research that&nbsp;follows this&nbsp;process.</p>
     </div>
     <div class="steps reveal">
@@ -674,7 +716,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -718,11 +760,11 @@
 
 <div class="stickycta"><div class="wrap"><span class="msg">Due diligence done? <b>The&nbsp;next step costs nothing and proves more than this&nbsp;page.</b></span><a class="btn btn-teal" href="./get-started.html">Get my&nbsp;plan<span class="cir">↗</span></a></div></div>
 
-<script src="../assets/js/site.js?v=30.6"></script>
-<script src="../assets/js/balance.js?v=30.6" defer></script>
-<script src="../assets/js/panels.js?v=30.6" defer></script>
-<script src="../assets/js/guide.js?v=30.6"></script>
-<script src="../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../assets/js/scenes.js?v=30.6" defer></script>
+<script src="../assets/js/site.js?v=31.6"></script>
+<script src="../assets/js/balance.js?v=31.6" defer></script>
+<script src="../assets/js/panels.js?v=31.6" defer></script>
+<script src="../assets/js/guide.js?v=31.6"></script>
+<script src="../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../assets/js/scenes.js?v=31.6" defer></script>
 </body>
 </html>

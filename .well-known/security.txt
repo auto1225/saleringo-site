@@ -1,0 +1,11 @@
+# Saleringo — vulnerability reporting
+# The security page states a reporting address and a good-faith promise; this
+# file is the machine-readable form of the same statement, at the location a
+# researcher's tooling looks first. It is the one piece of security evidence
+# that can honestly be published rather than sent on request.
+
+Contact: mailto:security@saleringo.com
+Expires: 2027-08-12T00:00:00.000Z
+Preferred-Languages: en, ko
+Canonical: https://claude.saleringo.com/.well-known/security.txt
+Policy: https://claude.saleringo.com/en/security.html#vulnerability

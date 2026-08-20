@@ -32,10 +32,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Receptionist for Wedding & Event Venues","item":"https://claude.saleringo.com/en/industries/venues.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── ELEGANT EVENT · wedding & event venues ──────────── */
   .dsp{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.03em;}
@@ -520,9 +520,17 @@
         and the&nbsp;thing each&nbsp;one produced — a&nbsp;tour held, a&nbsp;quote built from&nbsp;your&nbsp;season rules, a&nbsp;record written, a&nbsp;pipeline card moved. Four more venue scenarios, plus seven other trades, are on&nbsp;the&nbsp;<a href="../examples.html#venues" style="color:var(--teal);font-weight:700;">worked examples page</a>.</p>
     </div>
 
-    <div class="exgrid" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Tour booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Both options quoted</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Quote paused · routed</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Supplier handled</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Contract · escalated</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Follow-up</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Tour booked">
+            <div class="excard">
         <div class="exhead"><span class="when">01:32</span><span class="via">Phone</span><span class="tag solved">Tour booked</span></div>
         <div class="exbody">
           <p class="exq">We've got our&nbsp;hearts set on&nbsp;the&nbsp;20th of&nbsp;June. Is it free? We're about&nbsp;130 people.</p>
@@ -543,8 +551,9 @@
             or implied here is a&nbsp;Saleringo customer. The&nbsp;$9,800 is the&nbsp;figure published further up this&nbsp;page. A&nbsp;"no" at&nbsp;1:32 AM with&nbsp;two alternatives attached keeps a&nbsp;couple who would otherwise have moved on&nbsp;by&nbsp;morning.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Both options quoted">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 10:20</span><span class="via">Web chat</span><span class="tag solved">Both options quoted</span></div>
         <div class="exbody">
           <p class="exq">What's&nbsp;actually the&nbsp;difference between your&nbsp;Saturday package and the&nbsp;Friday one? Your&nbsp;site isn't clear.</p>
@@ -568,8 +577,9 @@
             publishes; the&nbsp;AI applies your&nbsp;season rules and never negotiates around them. A&nbsp;couple who can see the&nbsp;cheaper option in&nbsp;writing is a&nbsp;couple who stops shopping.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Quote paused · routed">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 17:05</span><span class="via">WhatsApp</span><span class="tag solved">Quote paused · routed</span></div>
         <div class="exbody">
           <p class="exq">Bit of&nbsp;a&nbsp;problem — the&nbsp;list has grown. We're at&nbsp;165 now, not 130. Does that&nbsp;change the&nbsp;quote?</p>
@@ -591,8 +601,9 @@
             software that&nbsp;treats it as a&nbsp;pricing band books a&nbsp;wedding that&nbsp;cannot be held. Stopping is the&nbsp;feature.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Supplier handled">
+            <div class="excard">
         <div class="exhead"><span class="when">Fri 15:40</span><span class="via">Phone</span><span class="tag solved">Supplier handled</span></div>
         <div class="exbody">
           <p class="exq">I'm doing the&nbsp;flowers for&nbsp;the&nbsp;wedding on&nbsp;the&nbsp;27th. What time can I get in, and is there a&nbsp;door I can load through?</p>
@@ -613,8 +624,9 @@
             Here they never touch your&nbsp;coordinator's afternoon.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Contract · escalated">
+            <div class="excard">
         <div class="exhead"><span class="when">Mon 22:10</span><span class="via">Web chat</span><span class="tag human">Contract · escalated</span></div>
         <div class="exbody">
           <p class="exq">How much is the&nbsp;deposit, when's&nbsp;the&nbsp;balance due, and what happens if we have to&nbsp;move the&nbsp;date?</p>
@@ -635,8 +647,9 @@
             the&nbsp;AI may confirm on&nbsp;its&nbsp;own; contract terms sit behind the&nbsp;same line. Anything a&nbsp;lawyer would read is a&nbsp;handoff, every&nbsp;time, with&nbsp;the&nbsp;hold protected in&nbsp;the&nbsp;meantime.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Follow-up">
+            <div class="excard">
         <div class="exhead"><span class="when">Day 21</span><span class="via">Automatic</span><span class="tag solved">Follow-up</span></div>
         <div class="exbody">
           <p class="exq">— toured the&nbsp;venue three weeks ago, quote opened twice, then silence —</p>
@@ -657,8 +670,8 @@
             and it is the&nbsp;half a&nbsp;message-taking service cannot do at&nbsp;all.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:640px;margin-top:62px;">
       <span class="eyebrow"><i></i>What it will and won’t answer</span>
@@ -1067,7 +1080,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1115,11 +1128,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Auto Repair & Collision","item":"https://claude.saleringo.com/en/industries/auto-repair.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── AUTO REPAIR · archetype: THE SHOP AFTER THE SHUTTER COMES DOWN ──
      The hero is a real independent garage at night, roller shutter half
@@ -881,9 +881,17 @@
         nothing here is invented, and your&nbsp;own card sets your&nbsp;numbers.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Ramp booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Refused · flagged</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Recovery offered</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Ceiling held</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Insurer named, never spoken for</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Ramp refilled</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Ramp booked">
+            <div class="excard">
         <div class="exhead"><span class="when">18:48</span><span class="via">Phone</span><span class="tag solved">Ramp booked</span></div>
         <div class="exbody">
           <p class="exq">Engine light came on&nbsp;— how much to&nbsp;look at&nbsp;it, and can you take it tomorrow?</p>
@@ -905,8 +913,9 @@
             higher up this&nbsp;page; your&nbsp;card is whatever you sign off during onboarding.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Refused · flagged">
+            <div class="excard">
         <div class="exhead"><span class="when">19:02</span><span class="via">Phone</span><span class="tag human">Refused · flagged</span></div>
         <div class="exbody">
           <p class="exq">It grinds when I&nbsp;brake. What's&nbsp;that&nbsp;going to&nbsp;cost?</p>
@@ -929,8 +938,9 @@
             Ask them to&nbsp;show you what their&nbsp;system says the&nbsp;second time a&nbsp;caller pushes for&nbsp;a&nbsp;ballpark.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Recovery offered">
+            <div class="excard">
         <div class="exhead"><span class="when">21:14</span><span class="via">Phone</span><span class="tag human">Recovery offered</span></div>
         <div class="exbody">
           <p class="exq">There's&nbsp;a&nbsp;burning smell and the&nbsp;steering's&nbsp;gone heavy. Is it safe for&nbsp;me to&nbsp;drive it in&nbsp;tomorrow?</p>
@@ -952,8 +962,9 @@
             This&nbsp;guardrail ships enabled and is not a&nbsp;setting anyone can switch off.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Ceiling held">
+            <div class="excard">
         <div class="exhead"><span class="when">Wed 11:04</span><span class="via">Automatic</span><span class="tag solved">Ceiling held</span></div>
         <div class="exbody">
           <p class="exq">— no&nbsp;message from&nbsp;the&nbsp;customer. The&nbsp;technician's&nbsp;estimate has come back over&nbsp;the&nbsp;agreed ceiling —</p>
@@ -974,8 +985,9 @@
             the&nbsp;stop automatic rather than a&nbsp;judgement call by&nbsp;whoever is nearest the&nbsp;phone.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Insurer named, never spoken for">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 08:20</span><span class="via">Web chat</span><span class="tag human">Insurer named, never spoken for</span></div>
         <div class="exbody">
           <p class="exq">Someone went into&nbsp;the&nbsp;back of&nbsp;me. Will my&nbsp;insurance cover the&nbsp;bumper and a&nbsp;courtesy car?</p>
@@ -997,8 +1009,9 @@
             answering it is not — and "who is being quoted, the&nbsp;driver or&nbsp;the&nbsp;insurer" is a&nbsp;field on&nbsp;the&nbsp;card for&nbsp;exactly this&nbsp;reason.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Ramp refilled">
+            <div class="excard">
         <div class="exhead"><span class="when">Day 358</span><span class="via">Automatic</span><span class="tag solved">Ramp refilled</span></div>
         <div class="exbody">
           <p class="exq">— no&nbsp;message from&nbsp;the&nbsp;customer. The&nbsp;record says the&nbsp;safety inspection is due in&nbsp;a&nbsp;week —</p>
@@ -1019,8 +1032,8 @@
             The&nbsp;$60 safety inspection is the&nbsp;figure published in&nbsp;the&nbsp;example rate card on&nbsp;this&nbsp;page.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>What it will and won't answer</span>
@@ -1254,7 +1267,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1302,11 +1315,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

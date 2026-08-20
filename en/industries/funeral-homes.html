@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI First-Call Answering for Funeral Homes","item":"https://claude.saleringo.com/en/industries/funeral-homes.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* ── FUNERAL HOMES · archetype: THE FIRST CALL ───────────── */
   /* the quietest page on the site. no urgency furniture, no
@@ -550,9 +550,17 @@
         the&nbsp;channel they arrive on, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;one produced — a&nbsp;director paged, a&nbsp;price list read as&nbsp;written, a&nbsp;question refused and recorded. Every&nbsp;figure below is the&nbsp;<b>$1,395</b> this&nbsp;page publishes; nothing is imported from&nbsp;anywhere else.</p>
     </div>
 
-    <div class="exgrid" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Director paged</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Read from your GPL</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Refused · no steering</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Refused · recorded</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Urgent · scheduled</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Pre-need found</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Director paged">
+            <div class="excard">
         <div class="exhead"><span class="when">03:40</span><span class="via">Phone</span><span class="tag human">Director paged</span></div>
         <div class="exbody">
           <p class="exq">My&nbsp;mother died at&nbsp;home about&nbsp;an&nbsp;hour ago. I don't know what we're&nbsp;supposed to&nbsp;do now.</p>
@@ -574,8 +582,9 @@
             three facts the&nbsp;director needed.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Read from your GPL">
+            <div class="excard">
         <div class="exhead"><span class="when">04:15</span><span class="via">Phone</span><span class="tag solved">Read from&nbsp;your&nbsp;GPL</span></div>
         <div class="exbody">
           <p class="exq">Before I agree to&nbsp;anything — what does a&nbsp;direct cremation actually cost with&nbsp;you?</p>
@@ -598,8 +607,9 @@
             after hours. The&nbsp;$1,395 is this&nbsp;page's&nbsp;own published sample figure.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Refused · no steering">
+            <div class="excard">
         <div class="exhead"><span class="when">Sat 22:50</span><span class="via">Phone</span><span class="tag human">Refused · no&nbsp;steering</span></div>
         <div class="exbody">
           <p class="exq">Which one do you think we should have? What do most people do?</p>
@@ -619,8 +629,9 @@
             line, and that&nbsp;is why the&nbsp;quote builder has no&nbsp;upgrade path in&nbsp;it at&nbsp;all.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Refused · recorded">
+            <div class="excard">
         <div class="exhead"><span class="when">23:30</span><span class="via">Phone</span><span class="tag human">Refused · recorded</span></div>
         <div class="exbody">
           <p class="exq">She died at&nbsp;home on&nbsp;her&nbsp;own. Does this&nbsp;have to&nbsp;go to&nbsp;the&nbsp;coroner?</p>
@@ -640,8 +651,9 @@
             are a&nbsp;permanent handoff, not a&nbsp;confidence threshold.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Urgent · scheduled">
+            <div class="excard">
         <div class="exhead"><span class="when">01:20</span><span class="via">Phone</span><span class="tag solved">Urgent · scheduled</span></div>
         <div class="exbody">
           <p class="exq">We're&nbsp;Muslim. The&nbsp;burial has to&nbsp;be within&nbsp;twenty-four hours. Can that&nbsp;be done?</p>
@@ -664,8 +676,9 @@
             in&nbsp;this&nbsp;pack and not a&nbsp;free-text note somebody has to&nbsp;read in&nbsp;time.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Pre-need found">
+            <div class="excard">
         <div class="exhead"><span class="when">Tue 09:05</span><span class="via">Web chat</span><span class="tag solved">Pre-need found</span></div>
         <div class="exbody">
           <p class="exq">I think my&nbsp;father took out a&nbsp;plan with&nbsp;you years ago. Does that&nbsp;still stand, and what would we owe?</p>
@@ -685,8 +698,8 @@
             paid for, which is why the&nbsp;check runs before the&nbsp;price list does.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:62px;">
       <span class="eyebrow"><i></i>What it will and won’t answer</span>
@@ -1092,7 +1105,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1139,11 +1152,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>

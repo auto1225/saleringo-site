@@ -29,10 +29,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Front Desk for Tutoring & Academies","item":"https://claude.saleringo.com/en/industries/academies.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=30.6">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=30.6">
+<link rel="stylesheet" href="../../assets/css/site.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=31.6">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=31.6">
 <style>
   /* page-specific: tutoring & test prep landing */
   /* full-bleed photo hero — block layout overrides .photohero's flex */
@@ -604,9 +604,17 @@
         here is invented, and your&nbsp;own tuition sheet sets your&nbsp;numbers.</p>
     </div>
 
-    <div class="exgrid reveal" style="margin-top:38px;">
-
-      <div class="excard">
+    <div class="panelset exset reveal" style="margin-top:38px;">
+          <div class="pstabs" role="tablist" aria-label="Six worked examples">
+        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Placement booked</button>
+        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Enrolment offered</button>
+        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Admin absorbed</button>
+        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Director decides</button>
+        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Escalated</button>
+        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Re-engagement</button>
+      </div>
+          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Placement booked">
+            <div class="excard">
         <div class="exhead"><span class="when">21:50</span><span class="via">WhatsApp</span><span class="tag solved">Placement booked</span></div>
         <div class="exbody">
           <p class="exq">My&nbsp;son is in&nbsp;grade 9 and his&nbsp;maths has fallen off a&nbsp;cliff this&nbsp;year. Do you have anything for&nbsp;him, and what does it cost?</p>
@@ -627,8 +635,9 @@
           <p class="exlabel">Worked illustration, not a&nbsp;customer story. Parent and student are two records for&nbsp;a&nbsp;reason: the&nbsp;parent pays and decides, the&nbsp;student attends.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Enrolment offered">
+            <div class="excard">
         <div class="exhead"><span class="when">The&nbsp;hour the&nbsp;level lands</span><span class="via">Automatic</span><span class="tag solved">Enrolment offered</span></div>
         <div class="exbody">
           <p class="exq">— test sat on&nbsp;Saturday. Your&nbsp;director assigns the&nbsp;level on&nbsp;Monday morning. No&nbsp;message from&nbsp;the&nbsp;parent —</p>
@@ -647,8 +656,9 @@
           <p class="exlabel">The&nbsp;AI started this&nbsp;one. Term enrolment is decided in&nbsp;about&nbsp;a&nbsp;week, so the&nbsp;message that&nbsp;arrives the&nbsp;hour the&nbsp;level is set is worth more than the&nbsp;one that&nbsp;arrives on&nbsp;Friday.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Admin absorbed">
+            <div class="excard">
         <div class="exhead"><span class="when">Mon 07:42</span><span class="via">Phone</span><span class="tag solved">Admin absorbed</span></div>
         <div class="exbody">
           <p class="exq">She's&nbsp;got school exams for&nbsp;the&nbsp;next three weeks so she'll miss most of&nbsp;the&nbsp;Wednesday sessions. Can we pause the&nbsp;fees?</p>
@@ -667,8 +677,9 @@
           <p class="exlabel">Absence calls all land in&nbsp;the&nbsp;same twenty minutes before the&nbsp;school run. The&nbsp;half that is admin is absorbed; the&nbsp;half that is money goes to&nbsp;a&nbsp;person.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Director decides">
+            <div class="excard">
         <div class="exhead"><span class="when">Sun 19:20</span><span class="via">Web chat</span><span class="tag human">Director decides</span></div>
         <div class="exbody">
           <p class="exq">If we bring both children, is there a&nbsp;sibling rate? Two lots of&nbsp;tuition is a&nbsp;lot for&nbsp;us.</p>
@@ -687,8 +698,9 @@
           <p class="exlabel">Discount requests go straight to&nbsp;a&nbsp;person — that&nbsp;guardrail is printed higher up this&nbsp;page, and this is what it looks like in&nbsp;a&nbsp;conversation.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Escalated">
+            <div class="excard">
         <div class="exhead"><span class="when">Thu 20:35</span><span class="via">Phone</span><span class="tag human">Escalated</span></div>
         <div class="exbody">
           <p class="exq">The&nbsp;center down the&nbsp;road guarantees a&nbsp;score increase. Can you match that?</p>
@@ -707,8 +719,9 @@
           <p class="exlabel">Outcome claims are restricted in&nbsp;many markets and corrode trust everywhere. Refusing well converts better than promising badly — the&nbsp;parent who hears "no" here trusts the&nbsp;"yes" later.</p>
         </div>
       </div>
-
-      <div class="excard">
+          </div>
+          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Re-engagement">
+            <div class="excard">
         <div class="exhead"><span class="when">Two weeks before term</span><span class="via">Automatic</span><span class="tag solved">Re-engagement</span></div>
         <div class="exbody">
           <p class="exq">— student finished last term and didn't re-enrol. Nobody has chased it —</p>
@@ -728,8 +741,8 @@
           <p class="exlabel">Enrolment happens in&nbsp;two spikes a&nbsp;year. This is the&nbsp;message that&nbsp;gets written on&nbsp;a&nbsp;to-do list in&nbsp;both of&nbsp;them and sent in&nbsp;neither.</p>
         </div>
       </div>
-
-    </div>
+          </div>
+        </div>
 
     <div class="reveal" style="max-width:660px;margin-top:56px;">
       <span class="eyebrow"><i></i>What it will and won't answer</span>
@@ -947,7 +960,7 @@
   <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v30.6</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v31.6</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -995,11 +1008,11 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=30.6"></script>
-<script src="../../assets/js/balance.js?v=30.6" defer></script>
-<script src="../../assets/js/panels.js?v=30.6" defer></script>
-<script src="../../assets/js/canvas.js?v=30.6" defer></script>
-<script src="../../assets/js/scenes.js?v=30.6" defer></script>
-<script src="../../assets/js/guide.js?v=30.6"></script>
+<script src="../../assets/js/site.js?v=31.6"></script>
+<script src="../../assets/js/balance.js?v=31.6" defer></script>
+<script src="../../assets/js/panels.js?v=31.6" defer></script>
+<script src="../../assets/js/canvas.js?v=31.6" defer></script>
+<script src="../../assets/js/scenes.js?v=31.6" defer></script>
+<script src="../../assets/js/guide.js?v=31.6"></script>
 </body>
 </html>
