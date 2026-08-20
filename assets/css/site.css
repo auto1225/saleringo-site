@@ -1684,6 +1684,12 @@ p { max-width:var(--measure); }
    own measure and must not inherit a prose cap */
 .appwin p, .bub, .exturn, td p, th p, .labcard p, .quotedoc p,
 .crow p, .pcard p, figure p, .fr-sub, .sp-d, .gr-lab { max-width: none; }
+/* A caption is prose even when it is printed inside the mock it describes.
+   .crmcap sits in .appwin > .body and was therefore exempted along with the
+   UI around it: measured at 1440, 94 characters on one line. Captions take
+   the measure back. */
+html .appwin .crmcap,html .appwin .mockcap,html .appwin .seccap,
+html .appwin .exlabel,html .appwin .statnote{max-width:var(--measure);}
 
 /* the "how it sends" clause prepended to lead-form fine print when no
    endpoint is configured - the one fact a visitor needs before clicking */
@@ -2841,17 +2847,21 @@ html .eyebrow.light{background:none;border:0;color:var(--l-mut2);}
 html .sec-light .eyebrow::before,html .sec-light2 .eyebrow::before,
 html .bg-paper .eyebrow::before{background:var(--teal-deep);}
 
-/* 2 · THE STATUS PILL. A pill is a control you can press. Using the same
-   shape for a label that does nothing taught the reader to stop pressing.
-   Status keeps the colour and loses the capsule; only .pilltag.is-action -
-   something that is genuinely pressable - keeps it. */
+/* 2 · THE STATUS PILL. A capsule is the shape of a control you can press, and
+   using it for a label that does nothing taught the reader to stop pressing
+   things. The first attempt took the capsule's BACKGROUND away as well - and
+   every one of these inks was measured against that background, not against
+   the page. Measured after it: .pt-dark fell to 1.02:1, white on a white card,
+   invisible; .pt-teal and .pt-amber to 3.4:1; and a white card inside a dark
+   section made a surface-keyed override wrong in a third way.
+
+   So the tint stays, because the tint is what makes the ink legal, and only
+   the capsule goes: a tag with a small radius reads as a label, a pill reads
+   as a button. Anything genuinely pressable keeps .is-action and its pill. */
 html .pilltag:not(.is-action){
-  border-radius:4px;padding:4px 0 4px 14px;background:none !important;
-  border:0;position:relative;letter-spacing:.01em;
-}
-html .pilltag:not(.is-action)::before{
-  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
-  width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.9;
+  border-radius:5px;
+  font-weight:700;
+  letter-spacing:.01em;
 }
 
 /* 3 · THE ATMOSPHERE. A star field and a teal glow are an event; two of them
@@ -2894,3 +2904,24 @@ html .icard .rank{background:none;border:0;padding:0 0 0 14px;border-radius:0;
 html .icard .rank::before{content:"";position:absolute;left:0;top:50%;
   transform:translateY(-50%);width:6px;height:6px;border-radius:50%;
   background:currentColor;}
+
+/* ── the footer's first column ────────────────────────────────────────────
+   Measured on every page: the brand blurb rendered 22 characters a line over
+   six lines - a column of confetti under the logo. The track was 1.35fr of a
+   five-column grid, about 200px, and the paragraph was capped at 240px on top
+   of that. It gets a floor now, and the paragraph a measure rather than a
+   pixel width. */
+html .bigfooter .cols{grid-template-columns:minmax(280px,1.6fr) 1fr 2.05fr 1fr 1fr;}
+html .bigfooter .brand p{max-width:min(100%,26em);}
+@media (max-width:1100px){
+  html .bigfooter .cols{grid-template-columns:minmax(240px,1.4fr) 1fr 1fr;}
+}
+/* A 240px floor plus two more tracks plus the gaps is 380px, which is wider
+   than the phone it was measured on - five pages scrolled sideways by 5px
+   before this. Below 900 the floor goes away with the three-column layout. */
+@media (max-width:900px){
+  html .bigfooter .cols{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:560px){
+  html .bigfooter .cols{grid-template-columns:1fr;}
+}
