@@ -51,6 +51,39 @@
     if (s.offsetHeight < 200) return;
     secs.push({ el: s, name: title(s) });
   });
+
+  /* Not every page is built out of top-level sections. The privacy policy and
+     the terms are three sections holding numbered clauses; the buyer's guide
+     is a document with no <section> at all; the site map's sections are mostly
+     shorter than the 200px floor. Those are exactly the pages a reader gets
+     lost in, and the first version of this rail skipped all four of them.
+
+     So when the sections do not describe the page, the headings do. */
+  if (secs.length < MIN_SECTIONS) {
+    secs = [];
+    var seen = [];
+    [].forEach.call(main.querySelectorAll('h2, h3, .h2'), function (h) {
+      if (h.closest('.pspanel[hidden]')) return;
+      if (!h.getClientRects().length) return;
+      var t = (h.textContent || '').replace(/\s+/g, ' ').trim();
+      if (!t || t.length < 3) return;
+      /* scroll to the block that holds the heading, not to the heading */
+      var target = h.closest('section, article, .docsec, .doc, .wrap') || h;
+      if (seen.indexOf(target) >= 0 && seen.length) {
+        /* several headings in one block: keep the heading itself as the mark */
+        target = h;
+      }
+      seen.push(target);
+      if (t.length > 40) t = t.slice(0, 38).replace(/[\s,.;:-]+$/, '') + '…';
+      secs.push({ el: target, name: t });
+    });
+    /* a document with fifty clauses does not want fifty marks */
+    if (secs.length > 16) {
+      var step = Math.ceil(secs.length / 16), thin = [];
+      for (var q = 0; q < secs.length; q += step) thin.push(secs[q]);
+      secs = thin;
+    }
+  }
   if (secs.length < MIN_SECTIONS) return;
   if (document.documentElement.scrollHeight < MIN_PAGE) return;
 
