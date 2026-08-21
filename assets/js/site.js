@@ -437,6 +437,35 @@ window.SR_CONFIG = window.SR_CONFIG || {
     }, 1600);
   }
 
+  /* ── the watchdog: on screen and still unreadable ──
+     Where the browser supports scroll-driven animation the reveal stops being
+     this observer's job and becomes a function of scroll position - and an
+     animation whose first frame is opacity 0 holds that frame until its range
+     is reached. A block taller than the viewport can fail to reach it. On a
+     desktop almost nothing is taller than the viewport; on a phone a great
+     many blocks are, and each one stayed invisible with its space reserved.
+
+     The ranges are fixed in CSS. This is the belt: anything actually on screen
+     that still cannot be read after a moment is shown. It only ever fires for
+     a block the reader is looking at, so it cannot flatten the effect for the
+     rest of the page. */
+  if ('IntersectionObserver' in window) {
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        setTimeout(function () {
+          if (!el.isConnected) return;
+          var r = el.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > window.innerHeight) return;
+          if (parseFloat(getComputedStyle(el).opacity) > 0.05) return;
+          el.classList.add('sr-force');
+        }, 420);
+      });
+    }, { threshold: 0 });
+    document.querySelectorAll('.reveal').forEach(function (el) { watch.observe(el); });
+  }
+
   /* ── mobile nav ── */
   var burger = document.querySelector('.nav .burger');
   if (burger) {

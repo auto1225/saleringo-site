@@ -805,26 +805,26 @@ section,header{overflow-x:clip;}
     .srjs .reveal{
       animation:sr-rise .01s linear both;
       animation-timeline:view();
-      animation-range:entry 4% cover 26%;
+      animation-range:cover 0% cover 20%;
       opacity:1;transform:none;transition:none;
     }
     /* section headings wipe rather than fade — one different gesture, used sparingly */
     .srjs .t-xl .h2.reveal,.srjs .t-xl h2.reveal{
       animation:sr-wipe .01s linear both;
       animation-timeline:view();
-      animation-range:entry 6% cover 30%;
+      animation-range:cover 0% cover 22%;
     }
     /* editorial copy blocks arrive from the side they sit on */
     .srjs .photosplit .copy.reveal,.srjs .duo > .reveal:first-child{
       animation:sr-riseleft .01s linear both;
       animation-timeline:view();
-      animation-range:entry 4% cover 28%;
+      animation-range:cover 0% cover 22%;
     }
     /* big numbers count in — the figures are the argument on this site */
     .srjs .kpi .n,.srjs .stat .n,.srjs .kpitile .vl,.srjs .fstep b,.srjs .mathrow.total .val{
       animation:sr-count .01s linear both;
       animation-timeline:view();
-      animation-range:entry 10% cover 32%;
+      animation-range:cover 2% cover 24%;
     }
     /* hero photography settles instead of sitting still */
     .photohero .bgimg img{
@@ -3286,4 +3286,29 @@ html .leadbox .eanote,html .altwrap .altnote,html .peopleband .capL{
   html .cohortbar{align-items:flex-start;text-align:left;justify-content:flex-start;}
   html .cohortbar > *{margin-left:0;margin-right:0;}
   html .pricecols > *{margin-left:0;}
+}
+
+
+/* ── a reveal must never be able to strand its own content ────────────────
+   The scroll-driven reveal is an animation whose first frame is opacity 0,
+   held by animation-fill-mode:both until the element reaches its range. The
+   range was written in the "entry" phase - from the moment the element starts
+   entering the viewport to the moment it has fully entered - and an element
+   TALLER than the viewport never fully enters. On a 1440px screen almost
+   nothing is taller than the viewport. On a 375x812 phone a great many blocks
+   are, and every one of them held its first frame: present in the document,
+   holding its space, invisible. Measured on the home page at 375, the plan
+   strip under the calculator was one of them.
+
+   Two changes. The ranges are quoted in "cover", which any element that
+   scrolls at all completes. And the watchdog below catches whatever a browser
+   still leaves dark: if a block is on screen and cannot be read, it is shown,
+   because a fade nobody sees is worth less than a sentence somebody does. */
+.srjs .reveal.sr-force,
+.srjs .reveal.sr-force .h2,
+.srjs .reveal.sr-force h2{
+  animation:none !important;
+  opacity:1 !important;
+  transform:none !important;
+  clip-path:none !important;
 }
