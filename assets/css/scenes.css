@@ -8,7 +8,7 @@
 /* ── ATMOSPHERIC BACKGROUNDS ────────────────────────────── */
 
 /* aurora mesh — cinematic hero ground */
-.bg-aurora{position:relative;isolation:isolate;background:#04080F;}
+.bg-aurora{position:relative;isolation:isolate;background:#0A1120;}
 .bg-aurora::before{content:"";position:absolute;inset:-10% -5%;z-index:-2;pointer-events:none;
   background:
     radial-gradient(38% 46% at 18% 22%, rgba(23,189,189,.34), transparent 62%),
@@ -22,15 +22,20 @@
 /* warm dusk — the after-hours beat. One per page, on the section where the
    page names the problem: "The 2:47 AM problem", "Night inquiries were dying
    in the inbox", "The math of one night call". Not a general dark ground. */
-.bg-dusk{position:relative;isolation:isolate;background:#0B1020;}
+.bg-dusk{position:relative;isolation:isolate;background:#101832;}
 .bg-dusk::before{content:"";position:absolute;inset:-10%;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(42% 50% at 78% 16%, rgba(255,168,86,.26), transparent 62%),
-    radial-gradient(38% 46% at 20% 30%, rgba(196,92,120,.22), transparent 62%),
-    radial-gradient(52% 56% at 50% 96%, rgba(23,189,189,.20), transparent 66%);
+    radial-gradient(42% 50% at 78% 16%, rgba(255,178,104,.38), transparent 62%),
+    radial-gradient(38% 46% at 20% 30%, rgba(206,104,132,.30), transparent 62%),
+    radial-gradient(52% 56% at 50% 96%, rgba(23,189,189,.28), transparent 66%);
   filter:blur(52px);}
+/* This wash used to end at 90% opaque, which is a section that fades to black
+   at the foot: the warm dusk glow above it was buried, the photograph inside
+   it lost its subject, and the two comparison columns sat in a hole. A night
+   scene needs a LIT night, not an unlit page - the ground stays deep, and the
+   glow it was hiding is allowed through. */
 .bg-dusk:not(.photohero):not(:has(.bgimg))::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg, rgba(11,16,32,.32), rgba(6,10,22,.9));}
+  background:linear-gradient(180deg, rgba(11,16,32,.16), rgba(8,13,26,.52));}
 /* over a photograph the same wash only needs to protect the copy at the foot */
 .bg-dusk.photohero::after,.bg-dusk:has(.bgimg)::after{content:"";position:absolute;inset:0;
   z-index:-1;background:linear-gradient(180deg, rgba(11,16,32,.10) 0%,
@@ -69,7 +74,7 @@
           mask-image:radial-gradient(76% 66% at 50% 40%, #000, transparent);}
 
 /* spotlight — focused CTA bands */
-.bg-spot{position:relative;isolation:isolate;background:#050B16;}
+.bg-spot{position:relative;isolation:isolate;background:#0C1526;}
 .bg-spot::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(60% 120% at 50% -20%, rgba(23,189,189,.30), transparent 60%);}
 
@@ -146,12 +151,15 @@
 /* before / after */
 .baGrid{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:stretch;}
 .baCol{border-radius:20px;padding:26px;}
-.baCol.before{background:rgba(217,106,94,.07);border:1px solid rgba(217,106,94,.28);}
-.baCol.after{background:rgba(23,189,189,.08);border:1px solid rgba(23,189,189,.32);}
+.baCol.before{background:rgba(217,106,94,.12);border:1px solid rgba(217,106,94,.38);}
+/* the "after" column is the relief in this argument, so it is the lit one:
+   a warmer tint, a brighter edge and a soft glow under it */
+.baCol.after{background:linear-gradient(165deg,rgba(23,189,189,.20),rgba(23,189,189,.09));
+  border:1px solid rgba(23,189,189,.46);box-shadow:0 22px 60px -34px rgba(23,189,189,.55);}
 .baCol h4{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}
 .baCol.before h4{color:#E58C81;} .baCol.after h4{color:var(--teal);}
 .baCol ul{list-style:none;display:grid;gap:12px;}
-.baCol li{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:500;display:flex;gap:10px;}
+.baCol li{font-size:var(--fs-xs);line-height:1.65;color:var(--tx);font-weight:500;display:flex;gap:10px;}
 .baCol li i{flex:none;font-style:normal;font-weight:800;}
 .baCol.before li i{color:#E58C81;} .baCol.after li i{color:var(--teal);}
 .baArrow{align-self:center;color:var(--tx3);font-size:var(--fs-h3);text-align:center;}

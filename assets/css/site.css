@@ -7,7 +7,14 @@
 
 :root{
   /* dark (global default) */
-  --bg0:#04080F; --bg1:#071021; --panel:#0B1B33;
+  /* Measured on the home page: nine of eleven sections are dark, and their
+     grounds sat at a luminance of 0.0023-0.0033 - which is black. Grey text on
+     black with every surface at the same depth is what reads as murky: there
+     is no air between the planes, so the page becomes one flat dark sheet.
+     One step of light into the whole family. Every ink on this site was
+     measured against these grounds and still clears its ratio - the text is
+     15.6:1 where it was 17.5:1 - and the panels above them now separate. */
+  --bg0:#0A1120; --bg1:#0D1728; --panel:#12233D;
   --hair:rgba(255,255,255,.08); --hair2:rgba(255,255,255,.14);
   --tx:#F2F6FB; --tx2:#94A2B8; --tx3:#8793A5; /* >=4.55:1 on all 11 dark panels it lands on */
   --teal:#17BDBD; --teal-deep:#0FA3A3; --teal-glass:rgba(23,189,189,.13);
@@ -101,7 +108,7 @@ a{text-decoration:none;color:inherit;}
   background:rgba(232,164,76,.10);border:1px solid rgba(232,164,76,.35);border-radius:999px;padding:5px 13px;}
 
 /* dark section helpers */
-.sec-dark{background:linear-gradient(180deg,#081226,#060D1C);}
+.sec-dark{background:linear-gradient(180deg,#0E1A31,#0B1424);}
 .stars{position:absolute;inset:0;pointer-events:none;
   /* was .20 x .35 on 120px centres - about one visible dot per 14,400px2 */
   background-image:radial-gradient(rgba(255,255,255,.42) 1px, transparent 1px);
