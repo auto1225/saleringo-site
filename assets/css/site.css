@@ -3312,3 +3312,37 @@ html .leadbox .eanote,html .altwrap .altnote,html .peopleband .capL{
   transform:none !important;
   clip-path:none !important;
 }
+
+
+/* ── the pack, on a page of its own ───────────────────────────────────────
+   A trade page is an argument; the pack detail is a manifest. They were in
+   one scroll, and the manifest is the part a buyer comes back to after they
+   have decided to look properly - which is exactly the part that should have
+   its own address. What stays behind is a card that says what is through the
+   door, at the size a card should be. */
+.packcard .pc-link{display:block;text-decoration:none;position:relative;
+  border:1px solid var(--hair);border-radius:20px;padding:34px 38px 34px 34px;
+  background:linear-gradient(150deg,rgba(23,189,189,.09),rgba(23,189,189,.02));
+  transition:border-color .4s var(--ease),transform .5s var(--ease);}
+.packcard .pc-link:hover{border-color:rgba(23,189,189,.44);transform:translateY(-3px);}
+.packcard .pc-k{display:block;font-size:var(--fs-xs);font-weight:600;color:var(--teal);}
+.packcard .pc-h{display:block;margin-top:12px;font-family:'Space Grotesk',sans-serif;
+  font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;line-height:1.14;color:#fff;
+  max-width:20ch;}
+.packcard .pc-d{display:block;margin-top:14px;font-size:var(--fs-xs);line-height:1.75;
+  color:var(--tx2);font-weight:500;max-width:var(--measure);}
+.packcard .pc-go{position:absolute;right:30px;top:34px;font-size:var(--fs-lead);
+  color:var(--teal);transition:transform .4s var(--ease);}
+.packcard .pc-link:hover .pc-go{transform:translateX(5px);}
+@media (max-width:640px){
+  .packcard .pc-link{padding:26px 22px;}
+  .packcard .pc-go{position:static;display:block;margin-top:16px;}
+}
+
+/* and on the pack page, the way back to the argument */
+.packback{border-top:1px solid var(--hair);}
+.packback .pb-line{font-size:var(--fs-xs);line-height:1.8;color:var(--tx2);font-weight:500;
+  max-width:var(--measure);}
+.packback .pb-line b{color:var(--tx);}
+.packback .pb-links{margin-top:20px;display:flex;gap:30px;flex-wrap:wrap;}
+.packback .pb-links .linkcta{color:var(--teal);}

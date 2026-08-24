@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&rsquo;s in the Legal pack | Saleringo</title>
+<meta name="description" content="Every field, pipeline stage, guardrail and integration in the Saleringo Legal pack — the CRM behind the call, and the things the AI is not allowed to do.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/legal-pack.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/legal-pack.html">
+<meta property="og:title" content="What’s in the Legal pack">
+<meta property="og:description" content="Every field, pipeline stage, guardrail and integration in the Saleringo Legal pack — the CRM behind the call, and the things the AI is not allowed to do.">
+<meta property="og:image" content="https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Intake for Small Law Firms &amp; Solo Practices">
+<meta name="twitter:description" content="An AI that answers a law firm's phone after hours, takes the matter and the opposing party, runs the conflict check before anything is scheduled — and never gives advice, a deadline or a case value.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/8872669/pexels-photo-8872669.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./legal.html">
+<link rel="alternate" hreflang="x-default" href="./legal.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://claude.saleringo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Industries", "item": "https://claude.saleringo.com/en/industries.html"}, {"@type": "ListItem", "position": 3, "name": "AI Intake for Small Law Firms", "item": "https://claude.saleringo.com/en/industries/legal.html"}, {"@type": "ListItem", "position": 4, "name": "The Legal pack", "item": "https://claude.saleringo.com/en/industries/legal-pack.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=38.1">
+<style>
+  /* ── LEGAL · archetype: THE GATE ─────────────────────────── */
+  /* the only pack in the product where a check blocks scheduling
+     itself. the page's argument is not "answer first, win the
+     client" — it is that a frightened person at 11 PM is
+     answered, told plainly what happens next, and given no
+     advice whatsoever.                                          */
+
+  .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:104px;display:block;background:#0A0C10;}
+  /* 1600x2400 portrait of a small practice desk: bias to the lamp and the files. */
+  .hero.photohero .bgimg img{filter:brightness(1.25) saturate(.82) contrast(1.04);object-position:center 58%;}
+  .hero.photohero .scrim{background:
+    linear-gradient(94deg, rgba(5,8,14,0.404) 0%, rgba(5,8,14,0.33) 46%, rgba(5,8,14,0.191) 82%),
+    linear-gradient(180deg, rgba(5,8,14,0.313) 0%, rgba(5,8,14,0.104) 34%, rgba(5,9,16,0.96) 100%);}
+  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(23,189,189,.15), transparent 74%);}
+  .navwrap .nav{background:rgba(9,13,22,.9);border-color:rgba(255,255,255,.12);}
+  .hero-inner{position:relative;z-index:2;padding:170px clamp(22px,4.6vw,56px) 0;display:grid;
+    grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
+  .tradewords{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
+  .tradewords span{font-size:var(--fs-xs);font-weight:700;border-radius:999px;padding:8px 15px;
+    border:1px solid var(--hair2);background:rgba(255,255,255,.06);color:var(--tx2);}
+  .tradewords span.hi{color:var(--teal);border-color:rgba(23,189,189,.45);background:rgba(23,189,189,.12);}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .whofor{margin-top:24px;padding-top:22px;border-top:1px solid var(--hair);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;max-width:340px;}
+  .whotxt b{color:#fff;}
+
+  .roomband{background:#FDFDFE;}
+  .roomband .photosplit{min-height:500px;}
+  .audgrid.three{grid-template-columns:repeat(3,1fr);}
+  .audgrid.three .audcard{min-height:300px;}
+  .audnote{margin-top:14px;text-align:center;}
+  @media (max-width:900px){.audgrid.three{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.audgrid.three{grid-template-columns:1fr;}}
+
+  /* ── the gate (dark) — the one thing no other pack has ── */
+  .gate{position:relative;background:#04070D;}
+  .gate .head{text-align:center;max-width:720px;margin:0 auto 48px;}
+  .gate .head .lead{margin-top:18px;}
+  .gatesteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+  @media (max-width:980px){.gatesteps{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.gatesteps{grid-template-columns:1fr;}}
+  .gstep{border:1px solid var(--hair);border-radius:18px;padding:22px 22px 24px;background:rgba(255,255,255,.028);}
+  .gstep .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .gstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;line-height:1.3;}
+  .gstep p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .gstep.stop{border-color:rgba(240,145,134,.34);background:rgba(240,145,134,.055);}
+  .gstep.stop .n{color:#F09186;}
+  .gate .kpiband{margin-top:56px;}
+  .gate .note{margin-top:28px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:500;margin-left:auto;margin-right:auto;}
+
+  /* ── paired threads (dark grid) ── */
+  .pairs{position:relative;background:#0C1526;}
+  .pairs .head{text-align:center;max-width:680px;margin:0 auto 56px;}
+  .pairs .head .lead{margin-top:18px;}
+  .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+  .pairwrap .plabel{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .pairwrap .plabel b{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+  .pairwrap .plabel span{font-size:var(--fs-xs);color:var(--tx3);font-weight:600;}
+  .pairwrap .after{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;}
+  .pairs .note{margin-top:30px;text-align:center;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  /* ── boundaries (paper) ── */
+  .nogo{color:var(--l-ink);}
+  .nogo .cols{display:grid;grid-template-columns:1fr 1.12fr;gap:80px;align-items:stretch;}
+  .nogo .lead{margin-top:20px;}
+  .ngrow{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #E9E2D6;}
+  .ngrow:last-of-type{border-bottom:0;}
+  .ngrow .x{flex:none;width:34px;height:34px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
+    color:#A8453A;font-size:var(--fs-sm);font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .ngrow b{display:block;font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:var(--l-ink);}
+  .ngrow span{display:block;margin-top:4px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
+  .ngseal{margin-top:26px;font-size:var(--fs-sm);font-weight:700;color:#0B7878;background:#E3F5F5;border:1px solid #BFE7E7;
+    border-radius:999px;padding:14px 28px;display:inline-block;}
+
+  /* ── jurisdiction (dark aurora) ── */
+  .world{position:relative;overflow:hidden;}
+  .world .head{text-align:center;max-width:680px;margin:0 auto 50px;}
+  .world .head .lead{margin-top:18px;}
+  .world .tzcards{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .world .glass{padding:22px 24px;}
+  .world .glass b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);color:#fff;}
+  .world .glass span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .world .out{margin-top:34px;text-align:center;}
+  .world .out a{font-size:var(--fs-xs);font-weight:700;color:var(--teal);}
+
+  /* ── start (bright) ── */
+  .start{background:#FDFDFE;}
+  .start .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
+  .start .lead{margin-top:22px;}
+  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:22px 24px;max-width:400px;
+    box-shadow:0 20px 48px rgba(11,27,51,.07);}
+  .langnote .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0B7878;}
+  .langnote p{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  .langnote .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .start .browserframe{margin-top:54px;}
+  .start .cap{margin-top:15px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+    color:#6F767F;font-weight:700;}
+
+  .faqsec{background:var(--l-bg);}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;}
+  .closer .riskrow{margin-bottom:72px;text-align:left;}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer .lead{margin:22px auto 0;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;}
+    .pairgrid,.world .tzcards{grid-template-columns:1fr;}
+    .nogo .cols,.start .cols{grid-template-columns:1fr;gap:46px;}
+    .closer .riskrow{margin-bottom:52px;}
+  }
+
+  /* ══ CRM surface, honest integrations, multi-office, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
+
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.build h4{color:#8A9BB4;} .statcol.build h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
+
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+</style>
+</head>
+<body>
+<header class="hero nophoto">
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v38.1">v38.1</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="./dental.html">Dental</a></li><li><a href="./clinics.html">Clinics &amp; med-spa</a></li><li><a href="./veterinary.html">Veterinary</a></li><li><a href="./senior-care.html">Senior living &amp; care</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home &amp; property</p><ul aria-labelledby="nh-trade-1"><li><a href="./home-services.html">Home services</a></li><li><a href="./pest-control.html">Pest control</a></li><li><a href="./property-management.html">Property management</a></li><li><a href="./real-estate.html">Estate &amp; lettings</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Vehicle, plant &amp; storage</p><ul aria-labelledby="nh-trade-2"><li><a href="./auto-repair.html">Auto repair</a></li><li><a href="./equipment-rental.html">Equipment &amp; tool hire</a></li><li><a href="./self-storage.html">Self-storage</a></li><li><a href="./movers.html">Movers &amp; removals</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Booked by appointment</p><ul aria-labelledby="nh-trade-3"><li><a href="./salons.html">Salons &amp; barbers</a></li><li><a href="./fitness.html">Gyms &amp; studios</a></li><li><a href="./academies.html">Tutoring &amp; academies</a></li><li><a href="./golf.html">Golf &amp; country clubs</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-4"><li><a href="./stays.html">Boutique stays</a></li><li><a href="./venues.html">Wedding &amp; venues</a></li><li><a href="./restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">Professional &amp; public</p><ul aria-labelledby="nh-trade-5"><li><a href="./legal.html" aria-current="page" class="np-here">Legal</a></li><li><a href="./funeral-homes.html">Funeral homes</a></li><li><a href="./universities.html">Universities &amp; admissions</a></li><li><a href="./public-sector.html">Public sector</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">Online &amp; multi-site</p><ul aria-labelledby="nh-trade-6"><li><a href="./ecommerce.html">Online stores</a></li><li><a href="./franchise.html">Franchise &amp; multi-site</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../industries.html">All twenty-five trades · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><i></i>The&nbsp;Legal pack</span>
+    <h1 style="margin-top:26px;">Everything in&nbsp;the&nbsp;pack,
+      <br>and what it will not do.</h1>
+    <p class="sub">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and stages this&nbsp;trade actually works in,
+      and the&nbsp;systems it hands to. The&nbsp;argument for&nbsp;any of&nbsp;it is on
+      <a href="./legal.html">the&nbsp;Legal page</a>.</p>
+  </div>
+</header>
+<main>
+
+<section class="crmsec sec-dark bg-spot t-xl" id="the-pack-detail">
+  <div class="wrap">
+    <div class="panelset packset">
+      <div class="pstabs" role="tablist" aria-label="What you get">
+        <button type="button" role="tab" aria-controls="legal-crm" aria-selected="false">The CRM behind the call</button>
+        <button type="button" role="tab" aria-controls="the-pack" aria-selected="false">Everything in the pack</button>
+      </div>
+      <div class="pspanel" id="legal-crm" role="tabpanel" aria-label="The CRM behind the call">
+
+    <div class="head reveal" >
+        <h2 class="h2 onDark" style="margin-top:20px;">A&nbsp;message slip is not intake. <br>What reaches the&nbsp;fee-earner is <em style="font-style:normal;color:var(--teal);">a&nbsp;matter, screened.</em></h2>
+      <p class="secintro">A&nbsp;message taken is not intake. The&nbsp;other half of&nbsp;Saleringo is a&nbsp;CRM built around&nbsp;a&nbsp;matter —
+        matter type, opposing party, jurisdiction, key dates, fee basis — moving through&nbsp;the&nbsp;stages your&nbsp;practice already
+        works in, with&nbsp;each&nbsp;record walled from&nbsp;the&nbsp;next.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Matter intake</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Intake</div>
+          <span class="it on"><span class="dot"></span>New inquiries<span class="n">14</span></span>
+          <span class="it"><span class="dot"></span>Conflict checks<span class="n">6</span></span>
+          <span class="it"><span class="dot"></span>Consultations<span class="n">8</span></span>
+          <span class="it"><span class="dot"></span>Referred out<span class="n">4</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>By&nbsp;practice area</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Practice list</span>
+          <span class="it"><span class="dot"></span>Conflicts list</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation" aria-level="3"><span class="sw"></span>New inquiry<span class="ct">5</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Landlord dispute · served today · account taken verbatim</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Phone · 11:20 PM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">SW</span><span class="nm">S. W.</span></div>
+                <div class="mt">Employment · asked the&nbsp;consultation fee before anything else</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Conflict check<span class="ct">4</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Opposing party taken · running against the&nbsp;firm's&nbsp;list</div>
+                <div class="ft"><span class="tag hot">Gate</span><span class="chan">Nothing booked</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">HN</span><span class="nm">H. N.</span></div>
+                <div class="mt">Not&nbsp;cleared — firm unable to&nbsp;act · referral list sent</div>
+                <div class="ft"><span class="tag">Declined</span><span class="chan">Reason not&nbsp;disclosed</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Consultation booked<span class="ct">8</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Tue 14:00 · confirmed after clearance at&nbsp;08:12</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">$250 fee basis</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">MV</span><span class="nm">M. V.</span></div>
+                <div class="mt">Family matter · contact rules recorded: no&nbsp;voicemail, text only</div>
+                <div class="ft"><span class="tag">Safety</span><span class="chan">Channel set</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Waiting on&nbsp;a&nbsp;lawyer<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">??</span><span class="nm">Caller</span></div>
+                <div class="mt">Asked for&nbsp;a&nbsp;filing deadline — recorded, refused, flagged urgent</div>
+                <div class="ft"><span class="tag hot">Refused</span><span class="chan">First thing</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">JB</span><span class="nm">J. B.</span></div>
+                <div class="mt">Already represented on&nbsp;this&nbsp;matter — stopped, not progressed</div>
+                <div class="ft"><span class="tag">Held</span><span class="chan">To&nbsp;a&nbsp;solicitor</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stages, practice list, conflicts list and fee basis are configured for&nbsp;your&nbsp;firm during onboarding. No&nbsp;matter or party shown here is real.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div>
+        <span class="eyebrow"><i></i>Eight fields, and one of&nbsp;them stops the&nbsp;calendar</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">A&nbsp;generic CRM asks for&nbsp;a&nbsp;name. <br>This&nbsp;one asks&nbsp;who is on&nbsp;the&nbsp;other&nbsp;side.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Matter type, from&nbsp;your&nbsp;own practice list.</b> Most inquiries fail here, and the&nbsp;ones that&nbsp;fail late are the&nbsp;expensive ones. A&nbsp;matter you do not take becomes a&nbsp;referral card with&nbsp;the&nbsp;reason attached.</span></li>
+          <li><i>→</i><span><b>Opposing party — the&nbsp;field that&nbsp;runs the&nbsp;gate.</b> Taken by&nbsp;name, with&nbsp;related parties, before a&nbsp;slot is offered. No&nbsp;other pack in&nbsp;the&nbsp;product has a&nbsp;check that&nbsp;blocks scheduling.</span></li>
+          <li><i>→</i><span><b>Key dates, captured and never interpreted.</b> Incident, service, hearing. The&nbsp;record holds them exactly as&nbsp;given; what they mean for&nbsp;a&nbsp;deadline is a&nbsp;solicitor's&nbsp;answer, not the&nbsp;AI's.</span></li>
+          <li><i>→</i><span><b>Already represented?</b> If they are, the&nbsp;conversation stops there and goes to&nbsp;a&nbsp;person — whether the&nbsp;firm may communicate with&nbsp;them at&nbsp;all is not a&nbsp;machine's&nbsp;call.</span></li>
+          <li><i>→</i><span><b>Safe to&nbsp;leave a&nbsp;message?</b> In&nbsp;family and domestic matters this&nbsp;is a&nbsp;safety field, not a&nbsp;convenience one. It is asked, recorded, and followed without&nbsp;exception.</span></li>
+          <li><i>→</i><span><b>Matter-walled records.</b> A&nbsp;record opened on&nbsp;one matter is not visible from&nbsp;another. Nothing here works like a&nbsp;clinic's&nbsp;single patient list, and that&nbsp;was the&nbsp;most expensive part to&nbsp;build.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;record it fills</a>
+      </div>
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">DR</span>
+            <span><b>D. R. — new matter</b><span>First contact — phone, 11:20 PM</span></span>
+            <span class="stg">Conflict check</span>
+          </div>
+          <div class="crow"><span class="k">Matter type</span><span class="v">Landlord &amp; tenant <em>— on&nbsp;the&nbsp;firm's&nbsp;practice list</em></span></div>
+          <div class="crow"><span class="k">Opposing party</span><span class="v">Named · conflict check queued<span class="aibadge">Gate</span></span></div>
+          <div class="crow"><span class="k">Jurisdiction</span><span class="v">Captured — whether the&nbsp;firm is admitted is confirmed by&nbsp;a&nbsp;person</span></div>
+          <div class="crow"><span class="k">Key dates</span><span class="v">Served today; tenancy from&nbsp;March — recorded, not interpreted</span></div>
+          <div class="crow"><span class="k">Represented</span><span class="v">No&nbsp;— asked explicitly, answered explicitly</span></div>
+          <div class="crow"><span class="k">Fee basis</span><span class="v">Consultation, $250 — the&nbsp;only figure the&nbsp;AI may say</span></div>
+          <div class="crow"><span class="k">Referral source</span><span class="v">Search · captured for&nbsp;the&nbsp;follow-up path</span></div>
+          <div class="crow"><span class="k">Safe to&nbsp;contact</span><span class="v">This&nbsp;number, any time — confirmed on&nbsp;the&nbsp;call</span></div>
+          <div class="crow"><span class="k">Account</span><span class="v">Preserved word for&nbsp;word, not summarised<span class="aibadge">Verbatim</span></span></div>
+          <div class="crow"><span class="k">Guardrail</span><span class="v">No&nbsp;advice, no&nbsp;deadline, no&nbsp;valuation · no&nbsp;retainer formed</span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;client and not a&nbsp;real matter.</p>
+      </div>
+    </div>
+  
+      </div>
+      <div class="pspanel" id="the-pack" role="tabpanel" aria-label="Everything in the pack">
+
+    <div class="head reveal" >
+      <div class="secrule">
+        <span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">A&nbsp;gate before a&nbsp;diary, <br>and nothing resembling advice.</h2>
+      <p class="lead onDark" style="margin-top:16px;">Intake at&nbsp;a&nbsp;firm is a&nbsp;gate before it is a&nbsp;diary. The&nbsp;matter carries the&nbsp;opposing party so the&nbsp;conflict check can run, the&nbsp;jurisdiction that decides whether you may act at&nbsp;all, and a&nbsp;safe-to-contact flag that is a&nbsp;safety field rather than a&nbsp;preference. Fees come from&nbsp;your&nbsp;published rates. Merits, deadlines and valuations stay on&nbsp;a&nbsp;solicitor&rsquo;s&nbsp;desk.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;matter carries</span>
+        <div class="pkfields"><div class="pkf"><b>Matter type</b><span>from&nbsp;your&nbsp;own practice list</span></div><div class="pkf"><b>Opposing party</b><span>runs the&nbsp;conflict check</span></div><div class="pkf"><b>Jurisdiction</b><span>decides whether you may act</span></div><div class="pkf"><b>Key dates</b><span>captured, never interpreted</span></div><div class="pkf"><b>Already represented?</b><span>decides whether you may communicate</span></div><div class="pkf"><b>Safe to&nbsp;contact</b><span>a&nbsp;safety field, not a&nbsp;preference</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;calendar enforces</span>
+        <ol class="pkrules"><li>Nothing is confirmed until the&nbsp;conflict check clears. A&nbsp;time may be held; the&nbsp;gate is on&nbsp;the&nbsp;calendar, not on&nbsp;a&nbsp;checklist.</li><li>A&nbsp;matter type that&nbsp;is not on&nbsp;the&nbsp;practice list never reaches the&nbsp;diary — it becomes a&nbsp;referral with&nbsp;the&nbsp;reason attached.</li><li>Matters are walled: a&nbsp;record opened on&nbsp;one matter is not visible from&nbsp;another.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;figure is quoted from</span>
+        <ul class="pkq"><li>Consultation fee</li><li>Fixed-fee service from&nbsp;your&nbsp;list</li><li>Hourly rate, as&nbsp;published</li><li>Disbursements &mdash; named, never estimated</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">A&nbsp;solicitor clears the&nbsp;conflict check and signs the&nbsp;engagement letter. Nothing binds the&nbsp;firm until they do.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Merits, deadlines, valuations, and anything that&nbsp;would amount to&nbsp;advice. Every&nbsp;one of&nbsp;those is a&nbsp;person.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Conflict checks run before first contact</span><span class="pkk">Consultations booked out of&nbsp;hours</span><span class="pkk">Declined-and-referred rate</span><span class="pkk">Time to&nbsp;first response</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Practice list, conflicts list, fees and consultation lengths all come from&nbsp;your&nbsp;own setup. The&nbsp;screen is drawn for&nbsp;this&nbsp;page; the&nbsp;conflict gate and the&nbsp;matter fields are the&nbsp;real ones.</span>Checks run before contact, consultations recovered after hours, and how many inquiries you correctly turned away. Those are numbers a&nbsp;partner already watches; the&nbsp;only thing that&nbsp;changes is who was at&nbsp;the&nbsp;desk when the&nbsp;phone rang.</p>
+  
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="packback t-sm sec-dark">
+  <div class="wrap">
+    <p class="pb-line"><b>This is the&nbsp;manifest, not the&nbsp;argument.</b> Why any of&nbsp;it matters — the&nbsp;call that&nbsp;arrives at&nbsp;night, what it costs to&nbsp;miss, what the&nbsp;AI refuses to&nbsp;say — is on the&nbsp;page this&nbsp;came from.</p>
+    <p class="pb-links"><a class="linkcta" href="./legal.html">Back to&nbsp;the&nbsp;Legal page&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="../get-started.html">Get the&nbsp;plan for&nbsp;my&nbsp;trade&nbsp;&nbsp;&rarr;</a></p>
+  </div>
+</section>
+
+<footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v38.1</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4 aria-level="3">The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="./dental.html">Dental</a><a class="lnk" href="./clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="./veterinary.html">Veterinary</a><a class="lnk" href="./senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5>Home &amp; property</h5><a class="lnk" href="./home-services.html">Home services</a><a class="lnk" href="./pest-control.html">Pest control</a><a class="lnk" href="./property-management.html">Property management</a><a class="lnk" href="./real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5>Vehicle, plant &amp; storage</h5><a class="lnk" href="./auto-repair.html">Auto repair</a><a class="lnk" href="./equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="./self-storage.html">Self-storage</a><a class="lnk" href="./movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="./salons.html">Salons &amp; barbers</a><a class="lnk" href="./fitness.html">Gyms &amp; studios</a><a class="lnk" href="./academies.html">Tutoring &amp; academies</a><a class="lnk" href="./golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="./stays.html">Boutique stays</a><a class="lnk" href="./venues.html">Wedding &amp; venues</a><a class="lnk" href="./restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Professional &amp; public</h5><a class="lnk" href="./legal.html">Legal</a><a class="lnk" href="./funeral-homes.html">Funeral homes</a><a class="lnk" href="./universities.html">Universities &amp; admissions</a><a class="lnk" href="./public-sector.html">Public sector</a></div><div class="fgrp"><h5>Online &amp; multi-site</h5><a class="lnk" href="./ecommerce.html">Online stores</a><a class="lnk" href="./franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><h4>Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4>Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</main>
+
+
+<div class="stickycta" data-sticky>
+  <div class="wrap">
+    <span class="msg">Answered at&nbsp;11:20 PM, the&nbsp;conflict check run before anything was booked, <b>filed as&nbsp;a&nbsp;matter.</b></span>
+    <a class="btn btn-teal" href="./legal.html#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=38.1"></script>
+<script src="../../assets/js/balance.js?v=38.1" defer></script>
+<script src="../../assets/js/panels.js?v=38.1" defer></script>
+<script src="../../assets/js/wrap.js?v=38.1" defer></script>
+<script src="../../assets/js/rail.js?v=38.1" defer></script>
+<script src="../../assets/js/canvas.js?v=38.1" defer></script>
+<script src="../../assets/js/scenes.js?v=38.1" defer></script>
+<script src="../../assets/js/guide.js?v=38.1"></script>
+</body>
+</html>

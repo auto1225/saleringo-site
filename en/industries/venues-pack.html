@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&rsquo;s in the Wedding & venues pack | Saleringo</title>
+<meta name="description" content="Every field, pipeline stage, guardrail and integration in the Saleringo Wedding & venues pack — the CRM behind the call, and the things the AI is not allowed to do.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/venues-pack.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/venues-pack.html">
+<meta property="og:title" content="What’s in the Wedding & venues pack">
+<meta property="og:description" content="Every field, pipeline stage, guardrail and integration in the Saleringo Wedding & venues pack — the CRM behind the call, and the things the AI is not allowed to do.">
+<meta property="og:image" content="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Receptionist for Wedding &amp; Event Venues">
+<meta name="twitter:description" content="An AI receptionist for wedding and event venues: checks dates, books the tour, quotes the package from your own price list and works the pipeline.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./venues.html">
+<link rel="alternate" hreflang="x-default" href="./venues.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://claude.saleringo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Industries", "item": "https://claude.saleringo.com/en/industries.html"}, {"@type": "ListItem", "position": 3, "name": "AI Receptionist for Wedding & Event Venues", "item": "https://claude.saleringo.com/en/industries/venues.html"}, {"@type": "ListItem", "position": 4, "name": "The Wedding & venues pack", "item": "https://claude.saleringo.com/en/industries/venues-pack.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=38.1">
+<style>
+  /* ── ELEGANT EVENT · wedding & event venues ──────────── */
+  .dsp{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.03em;}
+  .rule{width:64px;height:1px;background:linear-gradient(90deg,#E8C89A,rgba(232,200,154,0));}
+
+  .hero{position:relative;min-height:94vh;display:flex;flex-direction:column;justify-content:flex-end;
+    align-items:stretch;overflow:hidden;background:#0D0917;padding-top:124px;}
+  /* photo layer — a real room at night, copy on smoked glass over it */
+  .hero.photohero .bgimg img{filter:brightness(1.27) saturate(1.12) contrast(1.04);}
+  .hero.photohero .scrim{background:
+    radial-gradient(76% 64% at 52% 32%,rgba(13,9,23,0.044),rgba(9,6,16,0.256) 100%),
+    linear-gradient(180deg,rgba(9,6,16,0.275) 0%,rgba(9,6,16,0.051) 28%,rgba(7,5,14,0.96) 92%);}
+  .hero.photohero .tint{background:radial-gradient(56% 62% at 22% 46%,rgba(232,200,154,.20),transparent 70%);}
+  .hero-inner{position:relative;z-index:3;max-width:840px;padding:40px 44px 44px;margin-bottom:58px;}
+  .hero .hero-panel{background:rgba(11,7,20,.60);border-color:rgba(232,200,154,.22);
+    box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 40px 90px rgba(0,0,0,.6);}
+  .whofor{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.13);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);line-height:1.6;color:#B7AFC4;font-weight:600;max-width:330px;}
+  .whotxt b{color:#E8C89A;}
+  /* full-bleed hall band */
+  .hallband{background:#FBF9F5;}
+  .hallband .photosplit{min-height:520px;}
+  .hallband .copy .lead{}
+  .guard .photocard{margin-bottom:14px;}
+  .hero .kicker{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:#E8C89A;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;
+    letter-spacing:-.015em;font-weight:500;color:#fff;margin:20px 0 0;}
+  .hero h1 em{font-style:italic;color:#E8C89A;}
+  .hero .sub{margin-top:24px;font-size:var(--fs-body);line-height:1.78;color:#C4BDCE;font-weight:500;}
+  .hero .ctas{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:#8B839A;font-weight:500;}
+  .herostat{position:relative;z-index:3;display:flex;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.13);}
+  .herostat div{flex:1;min-width:190px;padding:22px 26px 22px 0;}
+  .herostat b{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#E8C89A;display:block;line-height:1;}
+  .herostat span{display:block;margin-top:8px;font-size:var(--fs-xs);color:#9A92A8;font-weight:500;line-height:1.6;}
+
+  .funnel{}
+  .funnel .head{max-width:680px;margin-bottom:52px;}
+  .funnel h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    line-height:1.06;letter-spacing:-.015em;color:var(--l-ink);margin-top:20px;}
+  .fsteps{display:grid;gap:14px;max-width:900px;}
+  .fstep{display:flex;align-items:center;gap:22px;}
+  .fbar{height:78px;border-radius:16px;display:flex;align-items:center;gap:18px;padding:0 26px;color:#fff;
+    box-shadow:0 20px 44px rgba(31,18,48,.20);}
+  .fbar .no{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);color:rgba(255,255,255,.6);flex:none;font-style:normal;}
+  .fbar b{display:block;font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:#fff;}
+  .fbar em{display:block;margin-top:3px;font-size:var(--fs-xs);color:rgba(255,255,255,.72);font-weight:500;font-style:normal;}
+  .f1{width:100%;background:linear-gradient(100deg,#2A1C40,#3C2A57);}
+  .f2{width:80%;background:linear-gradient(100deg,#2B2352,#155E76);}
+  .f3{width:61%;background:linear-gradient(100deg,#116273,#0C8686);}
+  .f4{width:44%;background:linear-gradient(100deg,#0C8686,#17BDBD);}
+  .f4 b{color:#032222;} .f4 em{color:rgba(3,34,34,.78);} .f4 .no{color:rgba(3,34,34,.5);}
+  .ftag{flex:none;font-size:var(--fs-2xs);font-weight:700;color:var(--l-mut);letter-spacing:.02em;}
+  .funnel .fn{margin-top:34px;font-size:var(--fs-2xs);color:#767081;font-weight:500;line-height:1.8;max-width:640px;}
+
+  .stagesec{background:linear-gradient(180deg,#150F26,#0C0817);}
+  .stagesec .head{text-align:center;max-width:640px;margin:0 auto 52px;}
+  .stagesec h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    line-height:1.06;color:#fff;margin-top:18px;}
+  .stagesec h2 em{font-style:italic;color:#E8C89A;}
+  .duo{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;align-items:stretch;}
+  .duo .rrow{display:flex;gap:8px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--hair);}
+  .logline{margin-top:16px;padding:20px 22px;border-radius:18px;}
+  .logline h5{font-size:var(--fs-label);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#E8C89A;}
+  .logline .ll{margin-top:14px;font-size:var(--fs-xs);color:var(--tx2);font-weight:500;line-height:2.05;}
+  .logline .ll b{color:#fff;}
+  .stagesec .after{margin-top:34px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;}
+  .stagesec .after a{font-size:var(--fs-xs);font-weight:700;color:var(--tx2);}
+  .stagesec .after a:hover{color:#fff;}
+
+  .altsec{}
+  .altsec .head{text-align:center;max-width:640px;margin:0 auto 50px;}
+  .altsec h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    line-height:1.06;color:var(--l-ink);margin-top:18px;}
+  .altsec .fn{margin-top:30px;text-align:center;font-size:var(--fs-2xs);color:#69737F;font-weight:500;line-height:1.8;}
+
+  .guard{position:relative;overflow:hidden;}
+  .guard .head{max-width:660px;margin-bottom:46px;}
+  .guard h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    line-height:1.06;color:#fff;margin-top:18px;}
+  .guard .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:32px;align-items:stretch;}
+  .gcards{display:grid;gap:14px;}
+  .gcard{padding:26px 26px 28px;border-radius:20px;display:flex;gap:18px;align-items:flex-start;}
+  .gcard .ic{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(217,106,94,.45);
+    background:rgba(217,106,94,.12);color:#E58C81;font-size:var(--fs-sm);font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .gcard .gt{flex:1;}
+  .gcard b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:#fff;}
+  .gcard p{margin-top:7px;font-size:var(--fs-xs);line-height:1.68;color:var(--tx2);font-weight:500;}
+
+  .ctaband{text-align:center;}
+  .ctaband h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    line-height:1.08;color:#fff;margin-top:20px;}
+  .ctaband .riskrow{margin:44px auto 0;max-width:1040px;text-align:left;}
+  .ctaband .btns{margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .ctaband .fine{margin-top:20px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  .faqsec{}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+  .faqsec h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    line-height:1.06;color:var(--l-ink);margin-top:18px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;
+    background:radial-gradient(880px 460px at 50% -6%,rgba(232,200,154,.14),transparent 62%),
+      linear-gradient(180deg,#140E24,#07060E);}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.015em;color:#fff;line-height:1.06;}
+  .closer h2 em{font-style:italic;color:#E8C89A;}
+  .closer .lead{margin:22px auto 0;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .closer .trust a{color:var(--tx2);}
+
+
+  @media (max-width:1000px){
+    .hero{min-height:auto;padding-top:150px;}
+    .hero-inner{padding:28px 24px 30px;margin-bottom:34px;}
+    .duo,.guard .cols{grid-template-columns:1fr;gap:26px;}
+    .fbar{width:100% !important;height:auto;padding:20px 22px;}
+    .fstep{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+
+  /* ══ v4 · CRM surface, honest integrations, multi-location, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
+
+  /* three-state integration status */
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
+  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
+  .statcol.road h4{color:#8A9BB4;} .statcol.road h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
+
+  /* multi-location */
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
+  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
+  .mlsite{border:1px solid var(--app-line,rgba(255,255,255,.09));border-radius:13px;padding:15px 16px;
+    background:var(--app-panel,#0E1B2E);}
+  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#fff;}
+  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
+  .mlsite dl{margin-top:11px;}
+  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(255,255,255,.07);}
+  .mlsite .r:first-of-type{border-top:0;}
+  .mlsite .r dt{width:76px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
+    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
+  .mlsite .r dd{color:#DCE6F2;font-weight:600;margin:0;}
+
+  /* inline lead form */
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+</style>
+</head>
+<body>
+<header class="hero nophoto">
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v38.1">v38.1</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="./dental.html">Dental</a></li><li><a href="./clinics.html">Clinics &amp; med-spa</a></li><li><a href="./veterinary.html">Veterinary</a></li><li><a href="./senior-care.html">Senior living &amp; care</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home &amp; property</p><ul aria-labelledby="nh-trade-1"><li><a href="./home-services.html">Home services</a></li><li><a href="./pest-control.html">Pest control</a></li><li><a href="./property-management.html">Property management</a></li><li><a href="./real-estate.html">Estate &amp; lettings</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Vehicle, plant &amp; storage</p><ul aria-labelledby="nh-trade-2"><li><a href="./auto-repair.html">Auto repair</a></li><li><a href="./equipment-rental.html">Equipment &amp; tool hire</a></li><li><a href="./self-storage.html">Self-storage</a></li><li><a href="./movers.html">Movers &amp; removals</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Booked by appointment</p><ul aria-labelledby="nh-trade-3"><li><a href="./salons.html">Salons &amp; barbers</a></li><li><a href="./fitness.html">Gyms &amp; studios</a></li><li><a href="./academies.html">Tutoring &amp; academies</a></li><li><a href="./golf.html">Golf &amp; country clubs</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-4"><li><a href="./stays.html">Boutique stays</a></li><li><a href="./venues.html" aria-current="page" class="np-here">Wedding &amp; venues</a></li><li><a href="./restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">Professional &amp; public</p><ul aria-labelledby="nh-trade-5"><li><a href="./legal.html">Legal</a></li><li><a href="./funeral-homes.html">Funeral homes</a></li><li><a href="./universities.html">Universities &amp; admissions</a></li><li><a href="./public-sector.html">Public sector</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">Online &amp; multi-site</p><ul aria-labelledby="nh-trade-6"><li><a href="./ecommerce.html">Online stores</a></li><li><a href="./franchise.html">Franchise &amp; multi-site</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../industries.html">All twenty-five trades · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><i></i>The&nbsp;Wedding & venues pack</span>
+    <h1 style="margin-top:26px;">Everything in&nbsp;the&nbsp;pack,
+      <br>and what it will not do.</h1>
+    <p class="sub">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and stages this&nbsp;trade actually works in,
+      and the&nbsp;systems it hands to. The&nbsp;argument for&nbsp;any of&nbsp;it is on
+      <a href="./venues.html">the&nbsp;Wedding & venues page</a>.</p>
+  </div>
+</header>
+<main>
+
+<section class="crmsec sec-dark bg-spot t-md" id="the-pack-detail">
+  <div class="wrap">
+    <div class="panelset packset">
+      <div class="pstabs" role="tablist" aria-label="What you get">
+        <button type="button" role="tab" aria-controls="venue-crm" aria-selected="false">The CRM behind the call</button>
+        <button type="button" role="tab" aria-controls="the-pack" aria-selected="false">Everything in the pack</button>
+      </div>
+      <div class="pspanel" id="venue-crm" role="tabpanel" aria-label="The CRM behind the call">
+
+    <div class="head reveal" style="margin-bottom:40px;">
+        <h2 class="dsp" style="font-size:var(--fs-h2);font-weight:500;line-height:1.06;color:#fff;margin-top:18px;">
+ Every&nbsp;other AI hands you a&nbsp;transcript. <br>This&nbsp;one hands you <em style="font-style:italic;color:#E8C89A;">a&nbsp;diary that&nbsp;fills&nbsp;itself.</em></h2>
+      <p class="secintro">A&nbsp;wedding is decided over&nbsp;four months, not four minutes. So the&nbsp;other half of&nbsp;Saleringo is
+        a&nbsp;CRM shaped like a&nbsp;venue diary — event date, guest count, package, budget band and site visit —
+        moving through&nbsp;the&nbsp;stages your&nbsp;coordinator already thinks in.</p>
+    </div>
+
+    <div class="appwin reveal">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Venue pipeline</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Front desk</div>
+          <span class="it on"><span class="dot"></span>Pipeline<span class="n">24</span></span>
+          <span class="it"><span class="dot"></span>Site visits<span class="n">6</span></span>
+          <span class="it"><span class="dot"></span>Quotes<span class="n">6</span></span>
+          <span class="it"><span class="dot"></span>Deposits due<span class="n">3</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>Season report</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Packages</span>
+          <span class="it"><span class="dot"></span>Season pricing</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation" aria-level="3"><span class="sw"></span>New inquiry<span class="ct">9</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">LB</span><span class="nm">L. B.</span></div>
+                <div class="mt">Oct 12 · 120 guests · dinner reception</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Chat · 2:47 AM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">MH</span><span class="nm">M. H.</span></div>
+                <div class="mt">May, date flexible · 60 guests · under&nbsp;minimum spend</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">WhatsApp</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Site visit booked<span class="ct">6</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">AM</span><span class="nm">A. M.</span></div>
+                <div class="mt">Tour Sat 11:00 · reminder set both sides</div>
+                <div class="ft"><span class="tag">Calendar</span><span class="chan">Phone</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">PN</span><span class="nm">P. N.</span></div>
+                <div class="mt">Tour Fri 14:00 · bringing both families</div>
+                <div class="ft"><span class="tag hot">Hot</span><span class="chan">Chat</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Quote under&nbsp;review<span class="ct">6</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">SO</span><span class="nm">S. O.</span></div>
+                <div class="mt">Peak-Saturday rate applied · opened twice</div>
+                <div class="ft"><span class="tag">Auto-quote</span><span class="amt">$9,800</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">DK</span><span class="nm">D. K.</span></div>
+                <div class="mt">Off-peak Friday option sent alongside</div>
+                <div class="ft"><span class="tag">Follow-up d+14</span><span class="amt">$4,280</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Date won<span class="ct">3</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">EV</span><span class="nm">E. V.</span></div>
+                <div class="mt">Contract signed · deposit received</div>
+                <div class="ft"><span class="tag">Closed</span><span class="amt">$6,100</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">RT</span><span class="nm">R. T.</span></div>
+                <div class="mt">Next spring · balance reminder queued</div>
+                <div class="ft"><span class="tag">Closed</span><span class="amt">$2,340</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stage names, fields and season rules are configured for&nbsp;your&nbsp;venue during onboarding.</p>
+
+    <div class="crmduo reveal" style="margin-top:64px;">
+      <div>
+        <span class="eyebrow"><i></i>The&nbsp;fields a&nbsp;venue actually needs</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#fff;margin-top:18px;line-height:1.1;">
+ A&nbsp;generic CRM asks for&nbsp;a&nbsp;name. <br>This&nbsp;one asks for&nbsp;the&nbsp;date.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Seasonal pricing rules.</b> A&nbsp;peak Saturday in&nbsp;October and a&nbsp;Friday in&nbsp;February are not the&nbsp;same number — the&nbsp;quote applies the&nbsp;rule you wrote, not a&nbsp;guess.</span></li>
+          <li><i>→</i><span><b>Deposit reminders that&nbsp;fire themselves.</b> Deposit due, balance due, final headcount — each&nbsp;one queued the&nbsp;moment the&nbsp;date is signed.</span></li>
+          <li><i>→</i><span><b>The&nbsp;long follow-up nobody keeps up.</b> Couples go quiet for&nbsp;weeks. The&nbsp;pipeline nudges at&nbsp;day&nbsp;3, day&nbsp;21 and month&nbsp;2 without&nbsp;anyone remembering to.</span></li>
+          <li><i>→</i><span><b>Hot-lead alerts.</b> A&nbsp;couple who asks for&nbsp;the&nbsp;date and the&nbsp;price in&nbsp;the&nbsp;same message reaches your&nbsp;phone while they are still deciding.</span></li>
+        </ul>
+        <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;pipeline it fills</a>
+      </div>
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">LB</span>
+            <span><b>L. B. — October inquiry</b><span>First contact — web chat, 2:47 AM</span></span>
+            <span class="stg">Quote under&nbsp;review</span>
+          </div>
+          <div class="crow"><span class="k">Event date</span><span class="v">Sat, Oct 12 — second choice Oct 26</span></div>
+          <div class="crow"><span class="k">Guest count</span><span class="v">120 seated, dinner reception</span></div>
+          <div class="crow"><span class="k">Package</span><span class="v">Weekend reception + extended hours</span></div>
+          <div class="crow"><span class="k">Budget band</span><span class="v">$8–12k <em>— stated, not inferred</em></span></div>
+          <div class="crow"><span class="k">Site visit</span><span class="v">Sat 11:00 · reminder set<span class="aibadge">Booked by&nbsp;AI</span></span></div>
+          <div class="crow"><span class="k">Summary</span><span class="v">Compared two Saturdays, asked twice about&nbsp;the&nbsp;cancellation window.<span class="aibadge">AI written</span></span></div>
+          <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti warm"><i></i>Keen, price-sensitive</span></span></div>
+          <div class="crow"><span class="k">Next action</span><span class="v">Confirm the&nbsp;date — your&nbsp;coordinator, not the&nbsp;AI<span class="aibadge">Queued</span></span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;customer.</p>
+      </div>
+    </div>
+  
+      </div>
+      <div class="pspanel" id="the-pack" role="tabpanel" aria-label="Everything in the pack">
+
+    <div class="head reveal" >
+      <div class="secrule">
+        <span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">The&nbsp;guest count decides the&nbsp;hall &mdash; <br>and a&nbsp;hold is never a&nbsp;booking.</h2>
+      <p class="lead onDark" style="margin-top:16px;">A&nbsp;wedding record holds two names and one date, and then the&nbsp;number that&nbsp;rules everything else: the&nbsp;guest count. A&nbsp;hall below it is never offered however free the&nbsp;calendar looks — capacity is a&nbsp;fire limit, not a&nbsp;negotiation. One party per&nbsp;time slot per&nbsp;hall, enforced by&nbsp;the&nbsp;calendar rather than by&nbsp;whoever answered, and no&nbsp;outside supplier is logged without&nbsp;a&nbsp;current public-liability certificate on&nbsp;file. A&nbsp;quote is hall hire, the&nbsp;catering minimum for&nbsp;that&nbsp;hall, corkage and licence and production if taken, then tax, service charge and deposit. And a&nbsp;date can be held, never guaranteed — it says so in&nbsp;the&nbsp;same breath.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;record carries</span>
+        <div class="pkfields"><div class="pkf"><b>Both names</b><span>one record, two contacts</span></div><div class="pkf"><b>Desired date and time</b><span>drives everything else</span></div><div class="pkf"><b>Guest count</b><span>decides which halls are even possible</span></div><div class="pkf"><b>Hall of&nbsp;interest</b><span>garden, main or banquet</span></div><div class="pkf"><b>Catering basis</b><span>plated or buffet, against the&nbsp;minimum spend</span></div><div class="pkf"><b>Where they found you</b><span>ad, search or referral</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;calendar enforces</span>
+        <ol class="pkrules"><li>A&nbsp;hall below the&nbsp;guest count is never offered, however free the&nbsp;date is &mdash; capacity is a&nbsp;fire limit, not a&nbsp;negotiation.</li><li>One party per&nbsp;time slot per&nbsp;hall &mdash; the&nbsp;calendar enforces it, not the&nbsp;person.</li><li>A&nbsp;date can be held, never confirmed, until someone signs it off.</li><li>No&nbsp;outside supplier is logged without&nbsp;a&nbsp;current public-liability certificate on&nbsp;file.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;quote is built from</span>
+        <ul class="pkq"><li>Hall hire &mdash; $2,300 on&nbsp;a&nbsp;peak Saturday, $1,280 off-peak Friday</li><li>Catering minimum &mdash; the&nbsp;hall’s&nbsp;150 covers at&nbsp;$50, payable whether 90 come or 150</li><li>Corkage, ceremony license fee and production, if taken</li><li>Tax, service charge, deposit and balance</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">Sales lead confirms the&nbsp;hold and prepares the&nbsp;tour before the&nbsp;couple arrives.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Guaranteeing a&nbsp;date. Holding is not booking, and it says so in&nbsp;the&nbsp;same breath.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Tours booked from&nbsp;after-hours inquiries</span><span class="pkk">Tour show rate</span><span class="pkk">Tour-to-quote conversion</span><span class="pkk">Average booked value</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Hall availability, slot length and pricing all come from&nbsp;your&nbsp;own setup. Sample booking enquiry &mdash; the&nbsp;halls and the&nbsp;capacity rule are the&nbsp;real ones.</span>Tours booked from&nbsp;after-hours inquiries, whether they showed, whether the&nbsp;tour became a&nbsp;quote. A&nbsp;venue lives on&nbsp;tours held, and tours are lost at&nbsp;midnight, not at&nbsp;the&nbsp;viewing.</p>
+  
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="packback t-sm sec-dark">
+  <div class="wrap">
+    <p class="pb-line"><b>This is the&nbsp;manifest, not the&nbsp;argument.</b> Why any of&nbsp;it matters — the&nbsp;call that&nbsp;arrives at&nbsp;night, what it costs to&nbsp;miss, what the&nbsp;AI refuses to&nbsp;say — is on the&nbsp;page this&nbsp;came from.</p>
+    <p class="pb-links"><a class="linkcta" href="./venues.html">Back to&nbsp;the&nbsp;Wedding & venues page&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="../get-started.html">Get the&nbsp;plan for&nbsp;my&nbsp;trade&nbsp;&nbsp;&rarr;</a></p>
+  </div>
+</section>
+
+<footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v38.1</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4 aria-level="3">The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="./dental.html">Dental</a><a class="lnk" href="./clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="./veterinary.html">Veterinary</a><a class="lnk" href="./senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5>Home &amp; property</h5><a class="lnk" href="./home-services.html">Home services</a><a class="lnk" href="./pest-control.html">Pest control</a><a class="lnk" href="./property-management.html">Property management</a><a class="lnk" href="./real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5>Vehicle, plant &amp; storage</h5><a class="lnk" href="./auto-repair.html">Auto repair</a><a class="lnk" href="./equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="./self-storage.html">Self-storage</a><a class="lnk" href="./movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="./salons.html">Salons &amp; barbers</a><a class="lnk" href="./fitness.html">Gyms &amp; studios</a><a class="lnk" href="./academies.html">Tutoring &amp; academies</a><a class="lnk" href="./golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="./stays.html">Boutique stays</a><a class="lnk" href="./venues.html">Wedding &amp; venues</a><a class="lnk" href="./restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Professional &amp; public</h5><a class="lnk" href="./legal.html">Legal</a><a class="lnk" href="./funeral-homes.html">Funeral homes</a><a class="lnk" href="./universities.html">Universities &amp; admissions</a><a class="lnk" href="./public-sector.html">Public sector</a></div><div class="fgrp"><h5>Online &amp; multi-site</h5><a class="lnk" href="./ecommerce.html">Online stores</a><a class="lnk" href="./franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><h4>Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4>Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</main>
+
+
+<!-- sticky conversion bar — IntersectionObserver in site.js -->
+<div class="stickycta">
+  <div class="wrap">
+    <span class="msg">A&nbsp;couple is comparing halls tonight. <b>Answer first, book the&nbsp;tour, send the&nbsp;quote.</b></span>
+    <a class="btn btn-teal" href="./venues.html#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=38.1"></script>
+<script src="../../assets/js/balance.js?v=38.1" defer></script>
+<script src="../../assets/js/panels.js?v=38.1" defer></script>
+<script src="../../assets/js/wrap.js?v=38.1" defer></script>
+<script src="../../assets/js/rail.js?v=38.1" defer></script>
+<script src="../../assets/js/canvas.js?v=38.1" defer></script>
+<script src="../../assets/js/scenes.js?v=38.1" defer></script>
+<script src="../../assets/js/guide.js?v=38.1"></script>
+</body>
+</html>

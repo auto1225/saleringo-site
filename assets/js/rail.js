@@ -84,6 +84,13 @@
       secs = thin;
     }
   }
+  /* A page whose body is one tab strip already answers "where am I" better
+     than a rail could: the strip names every part and shows which one is open.
+     The pack pages are exactly that shape - one panelset and a way back - so
+     the rail stands down rather than competing with the control beside it. */
+  var sets = main.querySelectorAll('.panelset');
+  if (sets.length === 1 && main.querySelectorAll(':scope > section').length < 4) return;
+
   if (secs.length < MIN_SECTIONS) return;
   if (document.documentElement.scrollHeight < MIN_PAGE) return;
 

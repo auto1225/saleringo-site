@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&rsquo;s in the Boutique stays pack | Saleringo</title>
+<meta name="description" content="Every field, pipeline stage, guardrail and integration in the Saleringo Boutique stays pack — the CRM behind the call, and the things the AI is not allowed to do.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/stays-pack.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/stays-pack.html">
+<meta property="og:title" content="What’s in the Boutique stays pack">
+<meta property="og:description" content="Every field, pipeline stage, guardrail and integration in the Saleringo Boutique stays pack — the CRM behind the call, and the things the AI is not allowed to do.">
+<meta property="og:image" content="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Guest Messaging for Boutique Hotels">
+<meta name="twitter:description" content="AI guest messaging for boutique hotels. Answers rates and availability in the guest's language, captures direct bookings and holds the room.">
+<meta name="twitter:image" content="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<link rel="alternate" hreflang="en" href="./stays.html">
+<link rel="alternate" hreflang="x-default" href="./stays.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://claude.saleringo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Industries", "item": "https://claude.saleringo.com/en/industries.html"}, {"@type": "ListItem", "position": 3, "name": "AI Guest Messaging for Boutique Hotels", "item": "https://claude.saleringo.com/en/industries/stays.html"}, {"@type": "ListItem", "position": 4, "name": "The Boutique stays pack", "item": "https://claude.saleringo.com/en/industries/stays-pack.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=38.1">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=38.1">
+<style>
+  /* ── WARM HOSPITALITY · boutique stays ───────────────── */
+  .hero{position:relative;overflow:hidden;}
+  .noise{position:absolute;inset:0;pointer-events:none;z-index:1;}
+  /* photographed hero band — the illustrated stage still sits below it */
+  .herotop{min-height:min(72vh,720px);}
+  /* 1900x2850 portrait in a wide hero — hold the band on the shelving and seating */
+  .herotop .bgimg img{filter:brightness(1.29) saturate(1.08) contrast(1.03);object-position:center 46%;}
+  .herotop .scrim{background:linear-gradient(180deg,rgba(9,7,18,0.701) 0%,rgba(9,7,18,0.305) 30%,
+    rgba(11,16,32,0.467) 64%,rgba(11,16,32,0.96) 100%);}
+  .herotop .tint{background:radial-gradient(58% 70% at 16% 44%, rgba(255,168,86,.20), transparent 72%);}
+  .hero-inner{position:relative;z-index:3;padding:150px clamp(22px,4.6vw,56px) 58px;}
+  .hero .hero-panel{max-width:740px;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;
+    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero .micro{margin-top:16px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
+  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#fff;}
+  .stage{position:relative;z-index:2;}
+  .stageimg{position:relative;width:100%;height:clamp(340px,42vw,540px);overflow:hidden;}
+  .stageimg svg{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .stageimg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(7,11,24,.58),rgba(7,11,24,.05) 32%,rgba(7,11,24,.72) 72%,rgba(7,11,24,.95)),
+      linear-gradient(180deg,rgba(7,11,24,.7),transparent 28%,rgba(7,11,24,.62));}
+  .stageover{position:absolute;inset:0;z-index:3;display:flex;align-items:center;}
+  .stageover .wrap{width:100%;display:flex;justify-content:flex-end;}
+  .threadcard{width:412px;max-width:100%;overflow:hidden;}
+  .threadcard .msgthread{border:0;background:transparent;border-radius:0;}
+  .threadcard .rrow{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid rgba(255,255,255,.13);}
+  .fxnote{position:relative;z-index:3;padding:18px 0 76px;font-size:var(--fs-2xs);color:var(--tx3);
+    font-weight:500;max-width:var(--measure);line-height:1.85;}
+
+  .money{background:linear-gradient(180deg,#0A1020,#070C1A);position:relative;}
+  .mtop{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;}
+  .bigfig{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-num);font-weight:600;
+    letter-spacing:-.05em;line-height:.9;}
+  .bigfig span{display:block;margin-top:22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:var(--fs-xs);
+    letter-spacing:0;color:var(--tx2);font-weight:600;line-height:1.8;max-width:350px;
+    -webkit-text-fill-color:var(--tx2);}
+  .figs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;}
+  .fig{padding:24px 22px;border-radius:18px;}
+  .fig .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);}
+  .fig .mth{margin-top:14px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;line-height:1.95;}
+  .fig .mth b{color:#fff;} .fig .mth i{font-style:normal;color:var(--tx3);padding:0 3px;}
+  .fig .out{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;
+    letter-spacing:-.03em;color:#FFC08A;}
+  .fig .d{margin-top:8px;font-size:var(--fs-2xs);color:var(--tx3);line-height:1.65;font-weight:500;}
+  .money .fn{margin-top:34px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:500;line-height:1.85;max-width:860px;}
+
+  .split{}
+  .split .head{max-width:660px;margin-bottom:46px;}
+  .split .body{display:grid;grid-template-columns:1.55fr 1fr;gap:32px;align-items:stretch;}
+  .split .baCol li{color:#5C6878;}
+  .split .baArrow{color:#BCB2A4;}
+  .split .baCol.before h4,.split .baCol.before li i{color:#A8453A;}
+  .split .baCol.after h4,.split .baCol.after li i{color:#0B7878;}
+  .split .quotecard.pending p{color:#5F6B7C;}
+  .split .photocard{margin-bottom:20px;min-height:326px;}
+
+  .inbox{}
+  .staysplit{min-height:470px;margin-bottom:56px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
+    background:#fff;box-shadow:0 32px 78px rgba(11,27,51,.10);}
+  .staysplit .copy{padding:58px 54px;}
+  .hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:52px;}
+  .hcard{background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:24px;
+    box-shadow:0 2px 3px rgba(11,27,51,.03),0 22px 54px rgba(11,27,51,.06);}
+  .hcard .ic{width:32px;height:32px;border-radius:50%;border:1px solid #D5DBE4;color:#0B7878;
+    font-size:var(--fs-xs);font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .hcard b{display:block;margin-top:14px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  .hcard span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.62;color:var(--l-mut);font-weight:500;}
+  .cap{margin-top:16px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.16em;text-transform:uppercase;
+    color:#6F767F;font-weight:700;}
+
+  .honest{position:relative;overflow:hidden;}
+  .honest .cols{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:stretch;}
+  .honest .note{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;line-height:1.8;}
+  .honest .scene-frame{margin-top:64px;}
+
+  .ctaband{text-align:center;}
+  .ctaband .riskrow{margin:44px auto 0;max-width:1040px;text-align:left;}
+  .invite{margin:44px auto 0;max-width:860px;display:flex;align-items:center;gap:20px;text-align:left;
+    flex-wrap:wrap;border:1px solid var(--hair);border-radius:22px;padding:22px 26px;background:rgba(255,255,255,.035);}
+  .invite .tx{flex:1;min-width:250px;}
+  .invite .tx b{display:block;font-size:var(--fs-body);color:#fff;letter-spacing:-.01em;}
+  .invite .tx span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .ctaband .btns{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .ctaband .fine{margin-top:20px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+
+  .faqsec{}
+  .faqsec .head{text-align:center;margin-bottom:44px;}
+
+  .closer{position:relative;text-align:center;overflow:hidden;
+    background:radial-gradient(900px 500px at 50% -6%,rgba(255,168,86,.16),transparent 62%),
+      linear-gradient(180deg,#0B1020,#05080F);}
+  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#fff;line-height:1.06;}
+  .closer .lead{margin:22px auto 0;}
+  .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .closer .more{margin-top:24px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
+  .closer .more a{color:var(--tx2);}
+
+
+  @media (max-width:1000px){
+    .mtop,.honest .cols,.split .body{grid-template-columns:1fr;gap:38px;}
+    .figs,.hgrid{grid-template-columns:1fr;}
+    .herotop{min-height:0;}
+    .hero-inner{padding:126px clamp(22px,4.6vw,56px) 44px;}
+    .staysplit{min-height:0;}
+    .staysplit .copy{padding:44px 24px;}
+    .stageover{position:static;display:block;}
+    .stageover .wrap{justify-content:center;padding-top:0;}
+    .threadcard{margin:-70px auto 0;}
+    .stageimg{height:300px;}
+    .fxnote{padding-top:26px;}
+  }
+
+  /* ══ v4 · CRM surface, honest integrations, multi-location, inline lead form ══ */
+  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
+  .crmduo.rev .m{order:2;}
+  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
+  .ptlist{margin-top:24px;}
+  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
+    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
+  .ptlist li:last-child{border-bottom:0;}
+  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
+  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
+  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
+
+  /* three-state integration status */
+  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
+  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
+  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;}
+  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
+  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
+  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
+  .statcol.road h4{color:#8A9BB4;} .statcol.road h4 i{background:#5B6B84;}
+  .statcol ul{margin-top:14px;}
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+    font-weight:700;border-bottom:1px solid var(--hair);}
+  .statcol li:last-child{border-bottom:0;}
+  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
+  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
+
+  /* multi-location */
+  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
+  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
+  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
+  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
+  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
+  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
+  .mlsite{border:1px solid var(--app-line,rgba(255,255,255,.09));border-radius:13px;padding:15px 16px;
+    background:var(--app-panel,#0E1B2E);}
+  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#fff;}
+  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
+  .mlsite dl{margin-top:11px;}
+  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(255,255,255,.07);}
+  .mlsite .r:first-of-type{border-top:0;}
+  .mlsite .r dt{width:76px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
+    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
+  .mlsite .r dd{color:#DCE6F2;font-weight:600;margin:0;}
+
+  /* inline lead form */
+  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
+  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);text-align:center;}
+  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
+    line-height:1.72;color:var(--tx2);font-weight:500;}
+  .leadbox .eaform{max-width:100%;}
+  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+</style>
+</head>
+<body>
+<header class="hero nophoto">
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v38.1">v38.1</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../index.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../index.html#what-to-ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="./dental.html">Dental</a></li><li><a href="./clinics.html">Clinics &amp; med-spa</a></li><li><a href="./veterinary.html">Veterinary</a></li><li><a href="./senior-care.html">Senior living &amp; care</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home &amp; property</p><ul aria-labelledby="nh-trade-1"><li><a href="./home-services.html">Home services</a></li><li><a href="./pest-control.html">Pest control</a></li><li><a href="./property-management.html">Property management</a></li><li><a href="./real-estate.html">Estate &amp; lettings</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Vehicle, plant &amp; storage</p><ul aria-labelledby="nh-trade-2"><li><a href="./auto-repair.html">Auto repair</a></li><li><a href="./equipment-rental.html">Equipment &amp; tool hire</a></li><li><a href="./self-storage.html">Self-storage</a></li><li><a href="./movers.html">Movers &amp; removals</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Booked by appointment</p><ul aria-labelledby="nh-trade-3"><li><a href="./salons.html">Salons &amp; barbers</a></li><li><a href="./fitness.html">Gyms &amp; studios</a></li><li><a href="./academies.html">Tutoring &amp; academies</a></li><li><a href="./golf.html">Golf &amp; country clubs</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-4"><li><a href="./stays.html" aria-current="page" class="np-here">Boutique stays</a></li><li><a href="./venues.html">Wedding &amp; venues</a></li><li><a href="./restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">Professional &amp; public</p><ul aria-labelledby="nh-trade-5"><li><a href="./legal.html">Legal</a></li><li><a href="./funeral-homes.html">Funeral homes</a></li><li><a href="./universities.html">Universities &amp; admissions</a></li><li><a href="./public-sector.html">Public sector</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">Online &amp; multi-site</p><ul aria-labelledby="nh-trade-6"><li><a href="./ecommerce.html">Online stores</a></li><li><a href="./franchise.html">Franchise &amp; multi-site</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../industries.html">All twenty-five trades · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><i></i>The&nbsp;Boutique stays pack</span>
+    <h1 style="margin-top:26px;">Everything in&nbsp;the&nbsp;pack,
+      <br>and what it will not do.</h1>
+    <p class="sub">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and stages this&nbsp;trade actually works in,
+      and the&nbsp;systems it hands to. The&nbsp;argument for&nbsp;any of&nbsp;it is on
+      <a href="./stays.html">the&nbsp;Boutique stays page</a>.</p>
+  </div>
+</header>
+<main>
+
+<section class="crmsec sec-dark bg-spot t-md" id="the-pack-detail">
+  <div class="wrap">
+    <div class="panelset packset">
+      <div class="pstabs" role="tablist" aria-label="What you get">
+        <button type="button" role="tab" aria-controls="stay-crm" aria-selected="false">The CRM behind the call</button>
+        <button type="button" role="tab" aria-controls="the-pack" aria-selected="false">Everything in the pack</button>
+      </div>
+      <div class="pspanel" id="stay-crm" role="tabpanel" aria-label="The CRM behind the call">
+
+    <div class="head reveal" >
+        <h2 class="h2 onDark" style="margin-top:20px;">A&nbsp;read-back does not fill a&nbsp;room. <br>What this&nbsp;leaves you with is <em style="font-style:normal;color:var(--teal);">a&nbsp;held room and a&nbsp;guest&nbsp;record.</em></h2>
+      <p class="secintro">A&nbsp;midnight reply is only worth what it leaves behind. The&nbsp;other half of&nbsp;Saleringo is
+        a&nbsp;CRM shaped like an&nbsp;arrivals sheet — dates, party size, room type, late arrival and language —
+        moving through&nbsp;the&nbsp;stages your&nbsp;duty manager already works in.</p>
+    </div>
+
+    <div class="appwin reveal" style="margin-top:40px;">
+      <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Booking pipeline</b></span><span class="live">Live</span></div>
+      <div class="split">
+        <div class="rail">
+          <div class="grp">Front desk</div>
+          <span class="it on"><span class="dot"></span>Pipeline<span class="n">26</span></span>
+          <span class="it"><span class="dot"></span>Held requests<span class="n">5</span></span>
+          <span class="it"><span class="dot"></span>Arrivals<span class="n">9</span></span>
+          <span class="it"><span class="dot"></span>Pre-arrival<span class="n">7</span></span>
+          <div class="grp">Insight</div>
+          <span class="it"><span class="dot"></span>Dashboard</span>
+          <span class="it"><span class="dot"></span>Direct vs OTA</span>
+          <div class="grp">Setup</div>
+          <span class="it"><span class="dot"></span>Rates &amp; policies</span>
+          <span class="it"><span class="dot"></span>Room types</span>
+        </div>
+        <div class="pane">
+          <div class="pipeboard">
+            <div class="pipecol s1"><h4 role="presentation" aria-level="3"><span class="sw"></span>New inquiry<span class="ct">8</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">AM</span><span class="nm">A. M.</span></div>
+                <div class="mt">Fri–Sun · 2 guests · double · asked about&nbsp;late check-in</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">WhatsApp · 11:12 PM</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">JV</span><span class="nm">J. V.</span></div>
+                <div class="mt">Nederlands · family room · dates flexible</div>
+                <div class="ft"><span class="tag ai">AI logged</span><span class="chan">Web chat</span></div></div>
+            </div>
+            <div class="pipecol s2"><h4 role="presentation"><span class="sw"></span>Held for&nbsp;a&nbsp;person<span class="ct">5</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">AM</span><span class="nm">A. M.</span></div>
+                <div class="mt">Room held · expires 09:00 · manager confirms</div>
+                <div class="ft"><span class="tag hot">Awaiting you</span><span class="chan">Français</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">KT</span><span class="nm">K. T.</span></div>
+                <div class="mt">Two rooms requested · availability unknown until confirmed</div>
+                <div class="ft"><span class="tag">Held</span><span class="chan">Phone</span></div></div>
+            </div>
+            <div class="pipecol s3"><h4 role="presentation"><span class="sw"></span>Confirmed — direct<span class="ct">6</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">SO</span><span class="nm">S. O.</span></div>
+                <div class="mt">Direct booking · no&nbsp;commission · payment link sent</div>
+                <div class="ft"><span class="tag">Direct</span><span class="chan">No&nbsp;commission</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">DR</span><span class="nm">D. R.</span></div>
+                <div class="mt">Pre-arrival message queued for&nbsp;the&nbsp;day before</div>
+                <div class="ft"><span class="tag">Pre-arrival</span><span class="chan">Queued</span></div></div>
+            </div>
+            <div class="pipecol s4"><h4 role="presentation"><span class="sw"></span>Stayed<span class="ct">7</span></h4>
+              <div class="pcard"><div class="who"><span class="ini">EV</span><span class="nm">E. V.</span></div>
+                <div class="mt">Checked out · review request sent in&nbsp;her&nbsp;language</div>
+                <div class="ft"><span class="tag">Closed</span><span class="chan">Italiano</span></div></div>
+              <div class="pcard"><div class="who"><span class="ini">HN</span><span class="nm">H. N.</span></div>
+                <div class="mt">Repeat guest · preferences carried over</div>
+                <div class="ft"><span class="tag">Closed</span><span class="chan">Direct</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockcap">Product illustration with&nbsp;sample data. Stages, room types, rates and policies are configured for&nbsp;your&nbsp;stay during onboarding.</p>
+
+    <div class="crmduo rev reveal" style="margin-top:64px;">
+      <div class="m">
+        <div class="custcard">
+          <div class="ch"><span class="ini">AM</span>
+            <span><b>A. M. — Friday arrival</b><span>First contact — WhatsApp, 11:12 PM</span></span>
+            <span class="stg">Held for&nbsp;a&nbsp;person</span>
+          </div>
+          <div class="crow"><span class="k">Dates</span><span class="v">Fri–Sun, two nights</span></div>
+          <div class="crow"><span class="k">Party size</span><span class="v">2 adults, no&nbsp;children</span></div>
+          <div class="crow"><span class="k">Room type</span><span class="v">Double, quiet side if possible</span></div>
+          <div class="crow"><span class="k">Late arrival</span><span class="v">Lands 23:00 — on&nbsp;tomorrow's&nbsp;arrivals sheet<span class="aibadge">Auto</span></span></div>
+          <div class="crow"><span class="k">Language</span><span class="v">Français — answered from&nbsp;your&nbsp;approved French set</span></div>
+          <div class="crow"><span class="k">Rate quoted</span><span class="v">From&nbsp;your&nbsp;own rate table <em>— never improvised</em></span></div>
+          <div class="crow"><span class="k">Status</span><span class="v">Room held, not sold. Availability stays unknown until your&nbsp;manager confirms</span></div>
+        </div>
+        <p class="mockcap">Product illustration with&nbsp;sample data — not a&nbsp;guest.</p>
+      </div>
+      <div>
+        <span class="eyebrow"><i></i>The&nbsp;fields a&nbsp;stay actually needs</span>
+        <h3 class="h2 onDark" style="margin-top:18px;">A&nbsp;generic CRM asks for&nbsp;a&nbsp;name. <br>This&nbsp;one asks what time&nbsp;they&nbsp;land.</h3>
+        <ul class="ptlist">
+          <li><i>→</i><span><b>Availability and rates in&nbsp;the&nbsp;guest's&nbsp;language.</b> One rate table, one policy set, answered in&nbsp;whichever language they wrote in.</span></li>
+          <li><i>→</i><span><b>Direct-booking capture.</b> Every&nbsp;inquiry answered before an&nbsp;OTA gets there is a&nbsp;booking with&nbsp;no&nbsp;commission attached — and the&nbsp;report shows you how many.</span></li>
+          <li><i>→</i><span><b>Pre-arrival messages that&nbsp;send themselves.</b> Directions, check-in&nbsp;window, late-arrival instructions — queued from&nbsp;the&nbsp;booking, in&nbsp;their&nbsp;language.</span></li>
+          <li><i>→</i><span><b>Held, never sold.</b> The&nbsp;AI can quote and hold. Confirming a&nbsp;room is your&nbsp;manager's&nbsp;decision, every&nbsp;time.</span></li>
+        </ul>
+        <a class="linkcta" href="../examples.html#stays">Read worked stay conversations&nbsp;&nbsp;&rarr;</a>
+      <a class="linkcta" style="margin-top:28px;" href="../platform.html">See the&nbsp;pipeline it fills</a>
+      </div>
+    </div>
+  
+      </div>
+      <div class="pspanel" id="the-pack" role="tabpanel" aria-label="Everything in the pack">
+
+    <div class="head reveal" >
+      <div class="secrule">
+        <span class="line"></span></div>
+      <h2 class="h2 onDark" style="margin-top:16px;">Dates, party, pet &mdash; <br>and the&nbsp;answer it never&nbsp;gives.</h2>
+      <p class="lead onDark" style="margin-top:16px;">A&nbsp;stay is a&nbsp;date range, a&nbsp;party and a&nbsp;pet, in&nbsp;that order, because each one narrows the&nbsp;units that qualify. The&nbsp;rules run at&nbsp;unit level, not property level: nothing under the&nbsp;party size is offered, a&nbsp;pet-friendly unit is quoted with&nbsp;its fee in&nbsp;the&nbsp;same sentence, and a&nbsp;late arrival gets the&nbsp;self-check-in instructions before they think to&nbsp;ask. Rates come from&nbsp;your&nbsp;channel manager. Whether a&nbsp;room is free is a&nbsp;sentence only a&nbsp;person&nbsp;says.</p>
+    </div>
+
+    <div class="packgrid2 reveal">
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;record carries</span>
+        <div class="pkfields"><div class="pkf"><b>Guest name and contact</b><span>the&nbsp;record key</span></div><div class="pkf"><b>Dates and nights</b><span>drives availability</span></div><div class="pkf"><b>Party size and children</b><span>decides which units qualify</span></div><div class="pkf"><b>Pets</b><span>a&nbsp;yes or no&nbsp;that&nbsp;changes the&nbsp;price</span></div><div class="pkf"><b>Arrival time</b><span>late check-in is an&nbsp;operational fact</span></div><div class="pkf"><b>Channel they came through</b><span>direct or OTA</span></div></div>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What the&nbsp;calendar enforces</span>
+        <ol class="pkrules"><li>A&nbsp;unit under&nbsp;the&nbsp;party size is never offered.</li><li>Pet-friendly units only when a&nbsp;pet is declared &mdash; and the&nbsp;fee is quoted in&nbsp;the&nbsp;same sentence.</li><li>Late arrivals get the&nbsp;self-check-in instructions before they think to&nbsp;ask.</li></ol>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">What a&nbsp;quote is built from</span>
+        <ul class="pkq"><li>Nightly rate &times; nights</li><li>Extra guest and pet fees</li><li>Cleaning and any transfer</li><li>Total with&nbsp;tax, per&nbsp;night and in&nbsp;full</li></ul>
+      </div>
+      <div class="pkcard">
+        <span class="pkl">Who ends up with&nbsp;the&nbsp;work</span>
+        <p class="pktask">Housekeeping is told about&nbsp;the&nbsp;late arrival and the&nbsp;pet before check-in&nbsp;day.</p>
+        <span class="pkl pkl2">Where it stops</span>
+        <p class="pkstop">Confirming a&nbsp;rate the&nbsp;channel manager has not released, or taking payment.</p>
+      </div>
+    </div>
+
+    <div class="pkkpi reveal">
+      <span class="pkl">What you judge it on&nbsp;after ninety days</span>
+      <div class="pkkrow"><span class="pkk">Direct bookings won after hours</span><span class="pkk">Inquiry-to-booking conversion</span><span class="pkk">Average length of&nbsp;stay</span><span class="pkk">Revenue held per&nbsp;unit</span></div>
+    </div>
+    <p class="pkcap"><span class="capnote">Units, rates and fees are read from&nbsp;your&nbsp;channel manager, not invented here. The&nbsp;screen is a&nbsp;mock-up; the&nbsp;fields and rules are what actually&nbsp;ships.</span>Direct bookings won after hours, inquiry-to-booking conversion, average length of&nbsp;stay. Every&nbsp;one of&nbsp;them is a&nbsp;booking an&nbsp;OTA did not take a&nbsp;cut of.</p>
+  
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="packback t-sm sec-dark">
+  <div class="wrap">
+    <p class="pb-line"><b>This is the&nbsp;manifest, not the&nbsp;argument.</b> Why any of&nbsp;it matters — the&nbsp;call that&nbsp;arrives at&nbsp;night, what it costs to&nbsp;miss, what the&nbsp;AI refuses to&nbsp;say — is on the&nbsp;page this&nbsp;came from.</p>
+    <p class="pb-links"><a class="linkcta" href="./stays.html">Back to&nbsp;the&nbsp;Boutique stays page&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="../get-started.html">Get the&nbsp;plan for&nbsp;my&nbsp;trade&nbsp;&nbsp;&rarr;</a></p>
+  </div>
+</section>
+
+<footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v38.1</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><h4 aria-level="3">The product</h4><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><h4>Your trade</h4><div class="ftgrid"><div class="fgrp"><h5>Health &amp; care</h5><a class="lnk" href="./dental.html">Dental</a><a class="lnk" href="./clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="./veterinary.html">Veterinary</a><a class="lnk" href="./senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5>Home &amp; property</h5><a class="lnk" href="./home-services.html">Home services</a><a class="lnk" href="./pest-control.html">Pest control</a><a class="lnk" href="./property-management.html">Property management</a><a class="lnk" href="./real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5>Vehicle, plant &amp; storage</h5><a class="lnk" href="./auto-repair.html">Auto repair</a><a class="lnk" href="./equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="./self-storage.html">Self-storage</a><a class="lnk" href="./movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5>Booked by appointment</h5><a class="lnk" href="./salons.html">Salons &amp; barbers</a><a class="lnk" href="./fitness.html">Gyms &amp; studios</a><a class="lnk" href="./academies.html">Tutoring &amp; academies</a><a class="lnk" href="./golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5>Places &amp; hospitality</h5><a class="lnk" href="./stays.html">Boutique stays</a><a class="lnk" href="./venues.html">Wedding &amp; venues</a><a class="lnk" href="./restaurants.html">Restaurants</a></div><div class="fgrp"><h5>Professional &amp; public</h5><a class="lnk" href="./legal.html">Legal</a><a class="lnk" href="./funeral-homes.html">Funeral homes</a><a class="lnk" href="./universities.html">Universities &amp; admissions</a><a class="lnk" href="./public-sector.html">Public sector</a></div><div class="fgrp"><h5>Online &amp; multi-site</h5><a class="lnk" href="./ecommerce.html">Online stores</a><a class="lnk" href="./franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><h4>Prices &amp; proof</h4><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><h4>Company &amp; trust</h4><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+</main>
+
+
+<!-- sticky conversion bar — IntersectionObserver in site.js -->
+<div class="stickycta">
+  <div class="wrap">
+    <span class="msg">Reception is closed. <b>The&nbsp;room is still held, the&nbsp;record is still written.</b></span>
+    <a class="btn btn-teal" href="./stays.html#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+  </div>
+</div>
+
+<script src="../../assets/js/site.js?v=38.1"></script>
+<script src="../../assets/js/balance.js?v=38.1" defer></script>
+<script src="../../assets/js/panels.js?v=38.1" defer></script>
+<script src="../../assets/js/wrap.js?v=38.1" defer></script>
+<script src="../../assets/js/rail.js?v=38.1" defer></script>
+<script src="../../assets/js/canvas.js?v=38.1" defer></script>
+<script src="../../assets/js/scenes.js?v=38.1" defer></script>
+<script src="../../assets/js/guide.js?v=38.1"></script>
+</body>
+</html>

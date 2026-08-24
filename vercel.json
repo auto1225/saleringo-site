@@ -662,6 +662,381 @@
       "source": "/whatsapp.html",
       "destination": "/en/whatsapp.html",
       "permanent": true
+    },
+    {
+      "source": "/industries/academies-pack",
+      "destination": "/en/industries/academies-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/academies-pack.html",
+      "destination": "/en/industries/academies-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/academies-pack",
+      "destination": "/en/industries/academies-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/auto-repair-pack",
+      "destination": "/en/industries/auto-repair-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/auto-repair-pack.html",
+      "destination": "/en/industries/auto-repair-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/auto-repair-pack",
+      "destination": "/en/industries/auto-repair-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/clinics-pack",
+      "destination": "/en/industries/clinics-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/clinics-pack.html",
+      "destination": "/en/industries/clinics-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/clinics-pack",
+      "destination": "/en/industries/clinics-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/dental-pack",
+      "destination": "/en/industries/dental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/dental-pack.html",
+      "destination": "/en/industries/dental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/dental-pack",
+      "destination": "/en/industries/dental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ecommerce-pack",
+      "destination": "/en/industries/ecommerce-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ecommerce-pack.html",
+      "destination": "/en/industries/ecommerce-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/ecommerce-pack",
+      "destination": "/en/industries/ecommerce-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/equipment-rental-pack",
+      "destination": "/en/industries/equipment-rental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/equipment-rental-pack.html",
+      "destination": "/en/industries/equipment-rental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/equipment-rental-pack",
+      "destination": "/en/industries/equipment-rental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/fitness-pack",
+      "destination": "/en/industries/fitness-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/fitness-pack.html",
+      "destination": "/en/industries/fitness-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/fitness-pack",
+      "destination": "/en/industries/fitness-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/franchise-pack",
+      "destination": "/en/industries/franchise-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/franchise-pack.html",
+      "destination": "/en/industries/franchise-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/franchise-pack",
+      "destination": "/en/industries/franchise-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/funeral-homes-pack",
+      "destination": "/en/industries/funeral-homes-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/funeral-homes-pack.html",
+      "destination": "/en/industries/funeral-homes-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/funeral-homes-pack",
+      "destination": "/en/industries/funeral-homes-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/golf-pack",
+      "destination": "/en/industries/golf-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/golf-pack.html",
+      "destination": "/en/industries/golf-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/golf-pack",
+      "destination": "/en/industries/golf-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/home-services-pack",
+      "destination": "/en/industries/home-services-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/home-services-pack.html",
+      "destination": "/en/industries/home-services-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/home-services-pack",
+      "destination": "/en/industries/home-services-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/legal-pack",
+      "destination": "/en/industries/legal-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/legal-pack.html",
+      "destination": "/en/industries/legal-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/legal-pack",
+      "destination": "/en/industries/legal-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/movers-pack",
+      "destination": "/en/industries/movers-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/movers-pack.html",
+      "destination": "/en/industries/movers-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/movers-pack",
+      "destination": "/en/industries/movers-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/pest-control-pack",
+      "destination": "/en/industries/pest-control-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/pest-control-pack.html",
+      "destination": "/en/industries/pest-control-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/pest-control-pack",
+      "destination": "/en/industries/pest-control-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/property-management-pack",
+      "destination": "/en/industries/property-management-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/property-management-pack.html",
+      "destination": "/en/industries/property-management-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/property-management-pack",
+      "destination": "/en/industries/property-management-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/public-sector-pack",
+      "destination": "/en/industries/public-sector-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/public-sector-pack.html",
+      "destination": "/en/industries/public-sector-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/public-sector-pack",
+      "destination": "/en/industries/public-sector-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/real-estate-pack",
+      "destination": "/en/industries/real-estate-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/real-estate-pack.html",
+      "destination": "/en/industries/real-estate-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/real-estate-pack",
+      "destination": "/en/industries/real-estate-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurants-pack",
+      "destination": "/en/industries/restaurants-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/restaurants-pack.html",
+      "destination": "/en/industries/restaurants-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/restaurants-pack",
+      "destination": "/en/industries/restaurants-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/salons-pack",
+      "destination": "/en/industries/salons-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/salons-pack.html",
+      "destination": "/en/industries/salons-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/salons-pack",
+      "destination": "/en/industries/salons-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/self-storage-pack",
+      "destination": "/en/industries/self-storage-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/self-storage-pack.html",
+      "destination": "/en/industries/self-storage-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/self-storage-pack",
+      "destination": "/en/industries/self-storage-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/senior-care-pack",
+      "destination": "/en/industries/senior-care-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/senior-care-pack.html",
+      "destination": "/en/industries/senior-care-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/senior-care-pack",
+      "destination": "/en/industries/senior-care-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/stays-pack",
+      "destination": "/en/industries/stays-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/stays-pack.html",
+      "destination": "/en/industries/stays-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/stays-pack",
+      "destination": "/en/industries/stays-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/universities-pack",
+      "destination": "/en/industries/universities-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/universities-pack.html",
+      "destination": "/en/industries/universities-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/universities-pack",
+      "destination": "/en/industries/universities-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/venues-pack",
+      "destination": "/en/industries/venues-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/venues-pack.html",
+      "destination": "/en/industries/venues-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/venues-pack",
+      "destination": "/en/industries/venues-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/veterinary-pack",
+      "destination": "/en/industries/veterinary-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/veterinary-pack.html",
+      "destination": "/en/industries/veterinary-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/veterinary-pack",
+      "destination": "/en/industries/veterinary-pack.html",
+      "permanent": true
     }
   ],
   "headers": [
