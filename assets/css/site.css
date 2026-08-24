@@ -3346,3 +3346,20 @@ html .leadbox .eanote,html .altwrap .altnote,html .peopleband .capL{
 .packback .pb-line b{color:var(--tx);}
 .packback .pb-links{margin-top:20px;display:flex;gap:30px;flex-wrap:wrap;}
 .packback .pb-links .linkcta{color:var(--teal);}
+
+/* ── the other language ────────────────────────────────────────────────────
+   One link, in the language it leads to, so a Korean reader landing on the
+   English page recognises it without reading any English first. It is not a
+   flag: a flag names a country, and this names a language - the Korean pages
+   are for anyone who reads Korean, wherever they are. */
+.langsw{display:inline-flex;align-items:center;gap:6px;font-size:14px;
+  letter-spacing:.01em;color:var(--ink-2);text-decoration:none;
+  padding:6px 11px;border-radius:6px;border:1px solid var(--hair);
+  white-space:nowrap;transition:color .18s,border-color .18s,background .18s;}
+.langsw:hover{color:var(--ink);border-color:var(--hair-2);background:var(--tint);}
+.navwrap .langsw{margin-right:2px;}
+.bigfooter .langsw{border-color:rgba(255,255,255,.16);color:rgba(255,255,255,.72);
+  margin-right:10px;}
+.bigfooter .langsw:hover{color:#fff;border-color:rgba(255,255,255,.34);
+  background:rgba(255,255,255,.06);}
+@media (max-width:980px){.navwrap .langsw{display:none;}}

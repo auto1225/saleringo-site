@@ -9,6 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:url" content="https://claude.saleringo.com/en/">
 <meta property="og:title" content="Saleringo — AI Receptionist + CRM for Appointment Businesses">
 <meta property="og:description" content="AI answers your phone, chat and messenger in 30+ languages — then books the job, quotes it from your price list, and files the customer.">
@@ -19,20 +20,39 @@
 <meta name="twitter:title" content="Saleringo — AI Receptionist + CRM for Appointment Businesses">
 <meta name="twitter:description" content="AI answers your phone, chat and messenger — then books the job, quotes it, and files the customer.">
 <meta name="twitter:image" content="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
-<link rel="alternate" hreflang="en" href="./en/index.html">
-<link rel="alternate" hreflang="x-default" href="./en/index.html">
+<link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/index.html">
+<link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/index.html">
+<link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/index.html">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <script>
-  /* One site, one language, one destination. There is no locale branch here:
-     the product answers in 30+ languages, but the site is English and says so. */
-  location.replace('./en/index.html');
+  /* Two sites now, so this page has to choose. It chooses on the browser's
+     stated language and nothing else - not on IP, because where a person is
+     is not what language they read, and a Korean owner travelling should not
+     get the English page any more than a Londoner in Seoul should get the
+     Korean one.
+
+     The choice is a redirect, not a lock: every page carries a switch to the
+     other language, and both are in the sitemap under their own hreflang, so
+     a search engine indexes each on its own terms rather than following this
+     hop. If the browser says nothing, English is the default, which is what
+     x-default above declares. */
+  (function () {
+    var langs = navigator.languages || [navigator.language || 'en'];
+    var ko = false;
+    for (var i = 0; i < langs.length; i++) {
+      if (/^ko\b/i.test(langs[i])) { ko = true; break; }
+      if (/^[a-z]{2}\b/i.test(langs[i])) break;   /* first real preference wins */
+    }
+    location.replace(ko ? './ko/index.html' : './en/index.html');
+  })();
 </script>
 </head>
 <body>
 <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Saleringo — AI receptionist and industry CRM</h1>
 <noscript>
-  <p style="padding:40px;font-family:sans-serif;">
-    <a href="./en/index.html">Continue to Saleringo →</a>
+  <p style="padding:40px;font-family:sans-serif;line-height:2;">
+    <a href="./en/index.html">Continue to Saleringo →</a><br>
+    <a href="./ko/index.html" lang="ko">한국어로 보기 →</a>
   </p>
 </noscript>
 </body>

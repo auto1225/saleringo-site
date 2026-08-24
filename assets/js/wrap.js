@@ -53,12 +53,24 @@
              '.navpanel, .stickycta, .bigfooter';
 
   var MIN_WIDTH = 560;      /* below this a clause is wider than a line */
-  var MIN_WORDS = 14;       /* shorter than this and there is nothing to arrange */
+  /* Korean packs the same sentence into fewer 어절 than English does into
+     words, so the floor that means "long enough to arrange" is lower. */
+  var MIN_WORDS = document.documentElement.lang === 'ko' ? 9 : 14;
 
   /* after these, a line may end */
-  var AFTER = /[,;:.!?—–](["'”’)]*)$/;
+  var AFTER = /[,;:.!?—–·](["'”’)]*)$/;
   /* before these, a line may end */
   var BEFORE = /^(and|but|or|so|because|which|that|while|though|although|unless|rather|instead|before|after|until|since|whereas|yet|for)$/i;
+
+  /* Korean marks its clause ends in the verb, not in punctuation. A sentence
+     can run three clauses with one comma in it, so a breaker that only looks
+     for punctuation finds nothing to work with and the paragraph wraps
+     wherever the measure runs out - the exact fault this file exists to fix.
+     These are the connective endings a Korean sentence actually turns on:
+     -지만, -는데, -면서, -하고, -어서. A line ending on one of them ends
+     where the thought does. */
+  var AFTER_KO = /(지만|는데|면서|하고|하며|이며|어서|아서|이고|으며|므로|처럼|보다|까지|부터)$/;
+  var BEFORE_KO = /^(그리고|하지만|그래서|그러나|그런데|즉|다만|또한|따라서|반면|한편|왜냐하면|예를)$/;
 
   function words(el) {
     return (el.textContent || '').trim().split(/\s+/).length;
@@ -105,8 +117,10 @@
         var after = t.slice(m.index + m[0].length);
         if (!before || !after) continue;
         var lastWord = before.split(/\s+/).pop();
-        var nextWord = after.split(/\s+/)[0].replace(/[^A-Za-z’']/g, '');
-        var ok = AFTER.test(lastWord) || BEFORE.test(nextWord);
+        var nextWord = after.split(/\s+/)[0].replace(/[^A-Za-z’'가-힣]/g, '');
+        var ok = AFTER.test(lastWord) || BEFORE.test(nextWord) ||
+                 AFTER_KO.test(lastWord.replace(/[^가-힣]/g, '')) ||
+                 BEFORE_KO.test(nextWord);
         if (!ok) continue;
         out.push([nodes[i], m.index]);
       }

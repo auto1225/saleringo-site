@@ -1,4 +1,4 @@
-# Saleringo — English product site.
+# Saleringo — product site, English at /en/ and Korean at /ko/.
 User-agent: *
 Allow: /
 

@@ -1,0 +1,45 @@
+/* ── the Korean face, and where a Korean line is allowed to break ──────────
+   Plus Jakarta Sans and Space Grotesk carry no Hangul, so on a Korean page
+   every Korean word was falling through to whatever the operating system
+   happened to offer - Malgun Gothic on Windows, Apple SD Gothic Neo on a Mac,
+   something else on Android - and the page changed shape per machine. So the
+   Korean face is named, and named second so that numbers, currency and any
+   English word inside a Korean sentence still set in the Latin face they were
+   designed for.
+
+   The rule that matters more than the face is word-break: keep-all. A browser
+   will happily break Korean mid-어절, because Hangul syllables are individual
+   characters and nothing in the default rules says otherwise. The result is a
+   line ending in the middle of a word, which no Korean reader would write and
+   every Korean reader notices. keep-all makes the space the only break point,
+   the way it already is in English.                                         */
+html[lang="ko"] body,
+html[lang="ko"] input,
+html[lang="ko"] textarea,
+html[lang="ko"] select,
+html[lang="ko"] button{
+  font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;}
+
+html[lang="ko"] .sg,
+html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,
+html[lang="ko"] .h2,html[lang="ko"] .h2s,
+html[lang="ko"] .nav .logo,html[lang="ko"] .sitefooter .logo,
+html[lang="ko"] .stat .n,html[lang="ko"] .kpi .n,html[lang="ko"] .plan .pr{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif;}
+
+html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,
+html[lang="ko"] .h2,html[lang="ko"] p,html[lang="ko"] li,
+html[lang="ko"] .sub,html[lang="ko"] .lead,html[lang="ko"] .secintro,
+html[lang="ko"] td,html[lang="ko"] th,html[lang="ko"] figcaption,
+html[lang="ko"] .eyebrow,html[lang="ko"] .pilltag,html[lang="ko"] .btn{
+  word-break:keep-all;overflow-wrap:break-word;}
+
+/* Hangul has no ascenders and descenders to speak of, so a line height tuned
+   for Latin text reads tight in Korean. A tenth of a line is enough. */
+html[lang="ko"] p,html[lang="ko"] li,
+html[lang="ko"] .sub,html[lang="ko"] .lead{line-height:1.75;}
+
+/* Korean headline letterforms are square and already dense; the negative
+   tracking that makes a Latin display line sit well closes Hangul up. */
+html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] .h2{letter-spacing:-.02em;}
+html[lang="ko"] .eyebrow{letter-spacing:.02em;}

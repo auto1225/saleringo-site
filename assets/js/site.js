@@ -42,6 +42,90 @@ window.SR_CONFIG = window.SR_CONFIG || {
   var CFG = window.SR_CONFIG;
 
 
+
+/* ── the sentences this file writes at runtime ────────────────────────
+   Everything the chrome says was moved into build/strings/<lang>.json and is
+   rendered at build time. These are the sentences the *script* writes - the
+   receipt after a form is sent, the fallback that appears when there is no
+   endpoint, the notice when a mailto goes nowhere - and every one of them was
+   in English on every page, including the Korean ones. A Korean owner filling
+   in a Korean form was answered in English at the one moment that decides
+   whether they trust the thing.
+
+   So they live here, once, keyed by language, and T() picks by the page's own
+   <html lang>. Adding a sentence means adding it in both columns, which is
+   the point: a missing translation is visible in this file rather than
+   invisible on the page.                                                   */
+  var LANG = (document.documentElement.lang || 'en').slice(0, 2);
+  var STR = {
+    en: {
+      hours: 'Seoul time, UTC+9 - leave a request any time',
+      how: 'One tap writes your message and opens it in your mail app, ' +
+           'Gmail or Outlook \u2014 you press send. ',
+      sending: 'Sending\u2026',
+      gotIt: 'Received. We have it \u2014 there is nothing left for you to send.',
+      copySent: 'A copy is in your inbox now. If it is not there within a minute, look in spam. ',
+      replyBy: 'A person reads every one of these. You will hear back by ',
+      withPlan: ' with a setup plan for your trade attached',
+      andRef: ', and quoting the reference above finds you straight away.',
+      fullStop: '.',
+      fbLead: 'Your message is written. Send it whichever way suits you \u2014 ' +
+              'all three go to the same person.',
+      fbMail: 'Open my mail app',
+      fbCopy: 'Copy it instead',
+      fbAnd: 'and send to ',
+      fbLabel: 'Your message',
+      greeting: 'Hi Saleringo team,',
+      intro: 'I would like to talk about using Saleringo for my business.',
+      bestTime: 'Best time to talk: ',
+      sentFrom: 'Sent from ',
+      subject: 'Saleringo \u2014 ',
+      enquiry: 'enquiry',
+      noMail: 'No email app opened? Write to <b>hello@saleringo.com</b>',
+      copyAddr: 'Copy address',
+      labels: { email: 'Work email', business: 'Business', industry: 'Industry',
+                country: 'Country', website: 'Website / price list', phone: 'Phone',
+                channel: 'Main channel', locations: 'Locations', rooms: 'Rooms',
+                sites: 'Sites', trade: 'Trade', plan: 'Plan viewed', note: 'Notes' },
+      dateLocale: 'en-GB'
+    },
+    ko: {
+      hours: '한국 시간 기준 · 언제든 남겨 주시면 됩니다',
+      how: '누르시면 메일 내용이 작성된 채로 메일 앱이나 Gmail이 열립니다. ' +
+           '보내기만 누르시면 됩니다. ',
+      sending: '보내는 중\u2026',
+      gotIt: '접수되었습니다. 더 보내실 것은 없습니다.',
+      copySent: '보내신 내용의 사본을 이메일로 보내 드렸습니다. 1분 안에 오지 않으면 스팸함을 확인해 주십시오. ',
+      replyBy: '사람이 직접 읽고 답장드립니다. ',
+      withPlan: '까지 우리 매장에 맞춘 응대 안을 함께 보내 드리겠습니다',
+      andRef: '. 위 접수번호를 말씀하시면 바로 찾을 수 있습니다.',
+      fullStop: '.',
+      fbLead: '메일 내용이 작성되었습니다. 편하신 방법으로 보내 주십시오. ' +
+              '세 가지 모두 같은 사람에게 갑니다.',
+      fbMail: '메일 앱으로 열기',
+      fbCopy: '복사하기',
+      fbAnd: '보낼 곳 ',
+      fbLabel: '작성된 메일 내용',
+      greeting: 'Saleringo 담당자님께,',
+      intro: 'Saleringo 도입에 대해 상담받고 싶습니다.',
+      bestTime: '통화 가능한 시간: ',
+      sentFrom: '보낸 페이지: ',
+      subject: 'Saleringo 도입 문의 \u2014 ',
+      enquiry: '문의',
+      noMail: '메일 앱이 열리지 않으면 <b>hello@saleringo.com</b> 으로 보내 주십시오',
+      copyAddr: '주소 복사',
+      labels: { email: '이메일', business: '상호', industry: '업종',
+                country: '국가', website: '홈페이지 / 요금표', phone: '연락처',
+                channel: '주요 문의 경로', locations: '지점 수', rooms: '객실 수',
+                sites: '사이트 수', trade: '업종', plan: '본 요금제', note: '추가 내용' },
+      dateLocale: 'ko-KR'
+    }
+  };
+  function T(k) {
+    var t = STR[LANG] || STR.en;
+    return (k in t) ? t[k] : STR.en[k];
+  }
+
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ── copy-to-clipboard helper (clipboard API + execCommand fallback) ── */
@@ -95,7 +179,7 @@ window.SR_CONFIG = window.SR_CONFIG || {
     });
     document.querySelectorAll('[data-tel-hours]').forEach(function (el) {
       if (!CFG.phoneHours) { el.remove(); return; }
-      el.textContent = CFG.phoneHours;
+      el.textContent = T('hours') || CFG.phoneHours;
     });
   }
   wireConfigCTAs();
@@ -209,8 +293,7 @@ window.SR_CONFIG = window.SR_CONFIG || {
      every page silently goes back to the direct-submit wording. */
   function tellTheTruthAboutForms() {
     if (CFG.formEndpoint && SR_READY !== false) return;
-    var LEAD = 'One tap writes your message and opens it in your mail app, ' +
-               'Gmail or Outlook — you press send. ';
+    var LEAD = T('how');
     /* Only the fine print that sits under a lead form's own submit button.
        The first version matched every .eanote and .sp-fine on the page, which
        put the sentence in three wrong places: the post-submit success message,
@@ -264,7 +347,7 @@ window.SR_CONFIG = window.SR_CONFIG || {
     });
 
     if (CFG.formEndpoint) {
-      if (btn) { btn._label = btn.innerHTML; btn.disabled = true; btn.textContent = 'Sending…'; }
+      if (btn) { btn._label = btn.innerHTML; btn.disabled = true; btn.textContent = T('sending'); }
       postLead(CFG.formEndpoint, payload).then(function (r) {
         return r.json().catch(function () { return {}; });
       }).then(function (j) {
@@ -290,18 +373,18 @@ window.SR_CONFIG = window.SR_CONFIG || {
     var next = new Date();
     next.setDate(next.getDate() + (next.getDay() === 5 ? 3 : next.getDay() === 6 ? 2 : 1));
     /* the page is in English; the reader's device locale is not the page's */
-    var by = next.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+    var by = next.toLocaleDateString(T('dateLocale'),
+                                     { weekday: 'long', day: 'numeric', month: 'long' });
     form.innerHTML =
       '<div class="easent" role="status" tabindex="-1">' +
-        '<b>Received. We have it — there is nothing left for you to send.</b>' +
+        '<b>' + T('gotIt') + '</b>' +
         (reference ? '<code class="earef">' + reference + '</code>' : '') +
         '<span>' +
           (confirmed
-            ? 'A copy is in your inbox now. If it is not there within a minute, look in spam. '
+            ? T('copySent')
             : '') +
-          'A person reads every one of these. You will hear back by <b>' + by + '</b> with a setup ' +
-          'plan for your trade attached' +
-          (reference ? ', and quoting the reference above finds you straight away.' : '.') +
+          T('replyBy') + '<b>' + by + '</b>' + T('withPlan') +
+          (reference ? T('andRef') : T('fullStop')) +
         '</span>' +
       '</div>';
     var box = form.querySelector('.easent');
@@ -319,17 +402,13 @@ window.SR_CONFIG = window.SR_CONFIG || {
      them cover most business users. */
   function composeFallback(form, get) {
     var lines = [
-      'Hi Saleringo team,', '',
-      'I would like to talk about using Saleringo for my business.', ''
+      T('greeting'), '',
+      T('intro'), ''
     ];
     /* Read every named field the form actually has, rather than a fixed list.
        Industry forms add their own — locations, rooms, sites, trade, plan —
        and those are exactly the answers that decide the buyer's plan and price. */
-    var LABEL = {
-      email:'Work email', business:'Business', industry:'Industry', country:'Country',
-      website:'Website / price list', channel:'Main channel', locations:'Locations',
-      rooms:'Rooms', sites:'Sites', trade:'Trade', plan:'Plan viewed', note:'Notes'
-    };
+    var LABEL = T('labels');
     var slots = [];
     Array.prototype.forEach.call(form.elements, function (el) {
       if (!el.name || el.name === 'context' || el.type === 'submit' || el.type === 'button') return;
@@ -345,10 +424,10 @@ window.SR_CONFIG = window.SR_CONFIG || {
       if (!v) return;
       lines.push((LABEL[el.name] || el.name.replace(/_/g, ' ')) + ': ' + v);
     });
-    if (slots.length) lines.push('Best time to talk: ' + slots.join(', '));
-    lines.push('', 'Sent from ' + location.hostname + location.pathname);
+    if (slots.length) lines.push(T('bestTime') + slots.join(', '));
+    lines.push('', T('sentFrom') + location.hostname + location.pathname);
     var body = lines.join('\n');
-    var subj = 'Saleringo — ' + (get('business') || get('email') || 'enquiry');
+    var subj = T('subject') + (get('business') || get('email') || T('enquiry'));
     var TO = 'hello@saleringo.com';
     var eb = encodeURIComponent(body), es = encodeURIComponent(subj);
 
@@ -358,17 +437,16 @@ window.SR_CONFIG = window.SR_CONFIG || {
       fb.className = 'eafallback full';
       fb.setAttribute('data-ea-fallback', '');
       fb.innerHTML =
-        '<p class="eafallback-lead">Your message is written. Send it whichever way suits you — ' +
-        'all three go to the same person.</p>' +
+        '<p class="eafallback-lead">' + T('fbLead') + '</p>' +
         '<div class="eafallback-routes">' +
-          '<a class="btn btn-teal" data-r="mail" href="#">Open my mail app<span class="cir">↗</span></a>' +
+          '<a class="btn btn-teal" data-r="mail" href="#">' + T('fbMail') + '<span class="cir">↗</span></a>' +
           '<a class="btn btn-ghostd" data-r="gmail" target="_blank" rel="noopener" href="#">Gmail<span class="cir">↗</span></a>' +
           '<a class="btn btn-ghostd" data-r="outlook" target="_blank" rel="noopener" href="#">Outlook<span class="cir">↗</span></a>' +
         '</div>' +
-        '<textarea class="eafallback-text" readonly rows="9" aria-label="Your message"></textarea>' +
+        '<textarea class="eafallback-text" readonly rows="9" aria-label="' + T('fbLabel') + '"></textarea>' +
         '<div class="eafallback-row">' +
-          '<button type="button" class="eafallback-copy">Copy it instead</button>' +
-          '<span class="eafallback-addr">and send to <b>' + TO + '</b></span>' +
+          '<button type="button" class="eafallback-copy">' + T('fbCopy') + '</button>' +
+          '<span class="eafallback-addr">' + T('fbAnd') + '<b>' + TO + '</b></span>' +
         '</div>';
       form.appendChild(fb);
       fb.querySelector('.eafallback-copy').addEventListener('click', function () {
@@ -397,10 +475,10 @@ window.SR_CONFIG = window.SR_CONFIG || {
       toast.className = 'mailtonote';
       toast.setAttribute('role', 'status');
       var txt = document.createElement('span');
-      txt.innerHTML = 'No email app opened? Write to <b>hello@saleringo.com</b>';
+      txt.innerHTML = T('noMail');
       var cp = document.createElement('button');
       cp.type = 'button';
-      cp.textContent = 'Copy address';
+      cp.textContent = T('copyAddr');
       cp.addEventListener('click', function () { copyText('hello@saleringo.com', cp); });
       toast.appendChild(txt); toast.appendChild(cp);
       document.body.appendChild(toast);
