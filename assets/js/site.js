@@ -126,6 +126,22 @@ window.SR_CONFIG = window.SR_CONFIG || {
     return (k in t) ? t[k] : STR.en[k];
   }
 
+
+  /* ── the language you chose, remembered ───────────────────────
+     The site guesses a language from the browser at the root, which is right
+     for a first visit and wrong for every visit after someone has told us
+     otherwise. A Korean reader who deliberately switches to English, or an
+     English-speaking owner in Seoul whose browser reports ko, should not have
+     to make the same choice twice.
+
+     So the switch writes the choice down, and the root reads it before it
+     guesses. Nothing else reads it, and clearing site data forgets it. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a.langsw');
+    if (!a) return;
+    try { localStorage.setItem('sr-lang', a.getAttribute('hreflang') || ''); } catch (err) {}
+  });
+
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ── copy-to-clipboard helper (clipboard API + execCommand fallback) ── */

@@ -4,24 +4,9 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/en/index",
-      "destination": "/en/index.html",
-      "permanent": true
-    },
-    {
       "source": "/favicon.ico",
       "destination": "/favicon.svg",
       "permanent": false
-    },
-    {
-      "source": "/industries",
-      "destination": "/en/industries.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/",
-      "destination": "/en/industries.html",
-      "permanent": true
     },
     {
       "source": "/en/about",
@@ -54,48 +39,13 @@
       "permanent": true
     },
     {
+      "source": "/en/index",
+      "destination": "/en/index.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries",
       "destination": "/en/industries.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/academies",
-      "destination": "/en/industries/academies.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/clinics",
-      "destination": "/en/industries/clinics.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/dental",
-      "destination": "/en/industries/dental.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/franchise",
-      "destination": "/en/industries/franchise.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/home-services",
-      "destination": "/en/industries/home-services.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/stays",
-      "destination": "/en/industries/stays.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/venues",
-      "destination": "/en/industries/venues.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/veterinary",
-      "destination": "/en/industries/veterinary.html",
       "permanent": true
     },
     {
@@ -124,6 +74,11 @@
       "permanent": true
     },
     {
+      "source": "/en/sitemap",
+      "destination": "/en/sitemap.html",
+      "permanent": true
+    },
+    {
       "source": "/en/terms",
       "destination": "/en/terms.html",
       "permanent": true
@@ -149,543 +104,13 @@
       "permanent": true
     },
     {
-      "source": "/pricing",
-      "destination": "/en/pricing.html",
-      "permanent": true
-    },
-    {
-      "source": "/platform",
-      "destination": "/en/platform.html",
-      "permanent": true
-    },
-    {
-      "source": "/demo",
-      "destination": "/en/demo.html",
-      "permanent": true
-    },
-    {
-      "source": "/examples",
-      "destination": "/en/examples.html",
-      "permanent": true
-    },
-    {
-      "source": "/voice",
-      "destination": "/en/voice.html",
-      "permanent": true
-    },
-    {
-      "source": "/webchat",
-      "destination": "/en/webchat.html",
-      "permanent": true
-    },
-    {
-      "source": "/whatsapp",
-      "destination": "/en/whatsapp.html",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/en/about.html",
-      "permanent": true
-    },
-    {
-      "source": "/security",
-      "destination": "/en/security.html",
-      "permanent": true
-    },
-    {
-      "source": "/privacy",
-      "destination": "/en/privacy.html",
-      "permanent": true
-    },
-    {
-      "source": "/terms",
-      "destination": "/en/terms.html",
-      "permanent": true
-    },
-    {
-      "source": "/integrations",
-      "destination": "/en/integrations.html",
-      "permanent": true
-    },
-    {
-      "source": "/get-started",
-      "destination": "/en/get-started.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/academies",
-      "destination": "/en/industries/academies.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/academies.html",
-      "destination": "/en/industries/academies.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/auto-repair",
-      "destination": "/en/industries/auto-repair.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/auto-repair.html",
-      "destination": "/en/industries/auto-repair.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/auto-repair",
-      "destination": "/en/industries/auto-repair.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/clinics",
-      "destination": "/en/industries/clinics.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/clinics.html",
-      "destination": "/en/industries/clinics.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/dental",
-      "destination": "/en/industries/dental.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/dental.html",
-      "destination": "/en/industries/dental.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/ecommerce",
-      "destination": "/en/industries/ecommerce.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/ecommerce.html",
-      "destination": "/en/industries/ecommerce.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/ecommerce",
-      "destination": "/en/industries/ecommerce.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/equipment-rental",
-      "destination": "/en/industries/equipment-rental.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/equipment-rental.html",
-      "destination": "/en/industries/equipment-rental.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/equipment-rental",
-      "destination": "/en/industries/equipment-rental.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/fitness",
-      "destination": "/en/industries/fitness.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/fitness.html",
-      "destination": "/en/industries/fitness.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/fitness",
-      "destination": "/en/industries/fitness.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/franchise",
-      "destination": "/en/industries/franchise.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/franchise.html",
-      "destination": "/en/industries/franchise.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/funeral-homes",
-      "destination": "/en/industries/funeral-homes.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/funeral-homes.html",
-      "destination": "/en/industries/funeral-homes.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/funeral-homes",
-      "destination": "/en/industries/funeral-homes.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/golf",
-      "destination": "/en/industries/golf.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/golf.html",
-      "destination": "/en/industries/golf.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/golf",
-      "destination": "/en/industries/golf.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/home-services",
-      "destination": "/en/industries/home-services.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/home-services.html",
-      "destination": "/en/industries/home-services.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/legal",
-      "destination": "/en/industries/legal.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/legal.html",
-      "destination": "/en/industries/legal.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/legal",
-      "destination": "/en/industries/legal.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/movers",
-      "destination": "/en/industries/movers.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/movers.html",
-      "destination": "/en/industries/movers.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/movers",
-      "destination": "/en/industries/movers.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/pest-control",
-      "destination": "/en/industries/pest-control.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/pest-control.html",
-      "destination": "/en/industries/pest-control.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/pest-control",
-      "destination": "/en/industries/pest-control.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/property-management",
-      "destination": "/en/industries/property-management.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/property-management.html",
-      "destination": "/en/industries/property-management.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/property-management",
-      "destination": "/en/industries/property-management.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/public-sector",
-      "destination": "/en/industries/public-sector.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/public-sector.html",
-      "destination": "/en/industries/public-sector.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/public-sector",
-      "destination": "/en/industries/public-sector.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/real-estate",
-      "destination": "/en/industries/real-estate.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/real-estate.html",
-      "destination": "/en/industries/real-estate.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/real-estate",
-      "destination": "/en/industries/real-estate.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/restaurants",
-      "destination": "/en/industries/restaurants.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/restaurants.html",
-      "destination": "/en/industries/restaurants.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/restaurants",
-      "destination": "/en/industries/restaurants.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/salons",
-      "destination": "/en/industries/salons.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/salons.html",
-      "destination": "/en/industries/salons.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/salons",
-      "destination": "/en/industries/salons.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/self-storage",
-      "destination": "/en/industries/self-storage.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/self-storage.html",
-      "destination": "/en/industries/self-storage.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/self-storage",
-      "destination": "/en/industries/self-storage.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/senior-care",
-      "destination": "/en/industries/senior-care.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/senior-care.html",
-      "destination": "/en/industries/senior-care.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/senior-care",
-      "destination": "/en/industries/senior-care.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/stays",
-      "destination": "/en/industries/stays.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/stays.html",
-      "destination": "/en/industries/stays.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/universities",
-      "destination": "/en/industries/universities.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/universities.html",
-      "destination": "/en/industries/universities.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/universities",
-      "destination": "/en/industries/universities.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/venues",
-      "destination": "/en/industries/venues.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/venues.html",
-      "destination": "/en/industries/venues.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/veterinary",
-      "destination": "/en/industries/veterinary.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/veterinary.html",
-      "destination": "/en/industries/veterinary.html",
-      "permanent": true
-    },
-    {
-      "source": "/about.html",
-      "destination": "/en/about.html",
-      "permanent": true
-    },
-    {
-      "source": "/ai-answering-service",
-      "destination": "/en/ai-answering-service.html",
-      "permanent": true
-    },
-    {
-      "source": "/ai-answering-service.html",
-      "destination": "/en/ai-answering-service.html",
-      "permanent": true
-    },
-    {
-      "source": "/cross-border",
-      "destination": "/en/cross-border.html",
-      "permanent": true
-    },
-    {
-      "source": "/cross-border.html",
-      "destination": "/en/cross-border.html",
-      "permanent": true
-    },
-    {
-      "source": "/demo.html",
-      "destination": "/en/demo.html",
-      "permanent": true
-    },
-    {
-      "source": "/examples.html",
-      "destination": "/en/examples.html",
-      "permanent": true
-    },
-    {
-      "source": "/get-started.html",
-      "destination": "/en/get-started.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries.html",
-      "destination": "/en/industries.html",
-      "permanent": true
-    },
-    {
-      "source": "/integrations.html",
-      "destination": "/en/integrations.html",
-      "permanent": true
-    },
-    {
-      "source": "/platform.html",
-      "destination": "/en/platform.html",
-      "permanent": true
-    },
-    {
-      "source": "/pricing.html",
-      "destination": "/en/pricing.html",
-      "permanent": true
-    },
-    {
-      "source": "/privacy.html",
-      "destination": "/en/privacy.html",
-      "permanent": true
-    },
-    {
-      "source": "/security.html",
-      "destination": "/en/security.html",
-      "permanent": true
-    },
-    {
-      "source": "/sitemap",
-      "destination": "/en/sitemap.html",
-      "permanent": true
-    },
-    {
-      "source": "/sitemap.html",
-      "destination": "/en/sitemap.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/sitemap",
-      "destination": "/en/sitemap.html",
-      "permanent": true
-    },
-    {
-      "source": "/terms.html",
-      "destination": "/en/terms.html",
-      "permanent": true
-    },
-    {
-      "source": "/verified-ai",
-      "destination": "/en/verified-ai.html",
-      "permanent": true
-    },
-    {
-      "source": "/verified-ai.html",
-      "destination": "/en/verified-ai.html",
-      "permanent": true
-    },
-    {
-      "source": "/voice.html",
-      "destination": "/en/voice.html",
-      "permanent": true
-    },
-    {
-      "source": "/webchat.html",
-      "destination": "/en/webchat.html",
-      "permanent": true
-    },
-    {
-      "source": "/whatsapp.html",
-      "destination": "/en/whatsapp.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/academies-pack",
-      "destination": "/en/industries/academies-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/academies-pack.html",
-      "destination": "/en/industries/academies-pack.html",
-      "permanent": true
-    },
-    {
       "source": "/en/industries/academies-pack",
       "destination": "/en/industries/academies-pack.html",
       "permanent": true
     },
     {
-      "source": "/industries/auto-repair-pack",
-      "destination": "/en/industries/auto-repair-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/auto-repair-pack.html",
-      "destination": "/en/industries/auto-repair-pack.html",
+      "source": "/en/industries/academies",
+      "destination": "/en/industries/academies.html",
       "permanent": true
     },
     {
@@ -694,13 +119,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/clinics-pack",
-      "destination": "/en/industries/clinics-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/clinics-pack.html",
-      "destination": "/en/industries/clinics-pack.html",
+      "source": "/en/industries/auto-repair",
+      "destination": "/en/industries/auto-repair.html",
       "permanent": true
     },
     {
@@ -709,13 +129,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/dental-pack",
-      "destination": "/en/industries/dental-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/dental-pack.html",
-      "destination": "/en/industries/dental-pack.html",
+      "source": "/en/industries/clinics",
+      "destination": "/en/industries/clinics.html",
       "permanent": true
     },
     {
@@ -724,13 +139,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/ecommerce-pack",
-      "destination": "/en/industries/ecommerce-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/ecommerce-pack.html",
-      "destination": "/en/industries/ecommerce-pack.html",
+      "source": "/en/industries/dental",
+      "destination": "/en/industries/dental.html",
       "permanent": true
     },
     {
@@ -739,13 +149,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/equipment-rental-pack",
-      "destination": "/en/industries/equipment-rental-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/equipment-rental-pack.html",
-      "destination": "/en/industries/equipment-rental-pack.html",
+      "source": "/en/industries/ecommerce",
+      "destination": "/en/industries/ecommerce.html",
       "permanent": true
     },
     {
@@ -754,13 +159,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/fitness-pack",
-      "destination": "/en/industries/fitness-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/fitness-pack.html",
-      "destination": "/en/industries/fitness-pack.html",
+      "source": "/en/industries/equipment-rental",
+      "destination": "/en/industries/equipment-rental.html",
       "permanent": true
     },
     {
@@ -769,13 +169,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/franchise-pack",
-      "destination": "/en/industries/franchise-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/franchise-pack.html",
-      "destination": "/en/industries/franchise-pack.html",
+      "source": "/en/industries/fitness",
+      "destination": "/en/industries/fitness.html",
       "permanent": true
     },
     {
@@ -784,13 +179,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/funeral-homes-pack",
-      "destination": "/en/industries/funeral-homes-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/funeral-homes-pack.html",
-      "destination": "/en/industries/funeral-homes-pack.html",
+      "source": "/en/industries/franchise",
+      "destination": "/en/industries/franchise.html",
       "permanent": true
     },
     {
@@ -799,13 +189,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/golf-pack",
-      "destination": "/en/industries/golf-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/golf-pack.html",
-      "destination": "/en/industries/golf-pack.html",
+      "source": "/en/industries/funeral-homes",
+      "destination": "/en/industries/funeral-homes.html",
       "permanent": true
     },
     {
@@ -814,13 +199,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/home-services-pack",
-      "destination": "/en/industries/home-services-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/home-services-pack.html",
-      "destination": "/en/industries/home-services-pack.html",
+      "source": "/en/industries/golf",
+      "destination": "/en/industries/golf.html",
       "permanent": true
     },
     {
@@ -829,13 +209,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/legal-pack",
-      "destination": "/en/industries/legal-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/legal-pack.html",
-      "destination": "/en/industries/legal-pack.html",
+      "source": "/en/industries/home-services",
+      "destination": "/en/industries/home-services.html",
       "permanent": true
     },
     {
@@ -844,13 +219,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/movers-pack",
-      "destination": "/en/industries/movers-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/movers-pack.html",
-      "destination": "/en/industries/movers-pack.html",
+      "source": "/en/industries/legal",
+      "destination": "/en/industries/legal.html",
       "permanent": true
     },
     {
@@ -859,13 +229,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/pest-control-pack",
-      "destination": "/en/industries/pest-control-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/pest-control-pack.html",
-      "destination": "/en/industries/pest-control-pack.html",
+      "source": "/en/industries/movers",
+      "destination": "/en/industries/movers.html",
       "permanent": true
     },
     {
@@ -874,13 +239,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/property-management-pack",
-      "destination": "/en/industries/property-management-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/property-management-pack.html",
-      "destination": "/en/industries/property-management-pack.html",
+      "source": "/en/industries/pest-control",
+      "destination": "/en/industries/pest-control.html",
       "permanent": true
     },
     {
@@ -889,13 +249,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/public-sector-pack",
-      "destination": "/en/industries/public-sector-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/public-sector-pack.html",
-      "destination": "/en/industries/public-sector-pack.html",
+      "source": "/en/industries/property-management",
+      "destination": "/en/industries/property-management.html",
       "permanent": true
     },
     {
@@ -904,13 +259,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/real-estate-pack",
-      "destination": "/en/industries/real-estate-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/real-estate-pack.html",
-      "destination": "/en/industries/real-estate-pack.html",
+      "source": "/en/industries/public-sector",
+      "destination": "/en/industries/public-sector.html",
       "permanent": true
     },
     {
@@ -919,13 +269,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/restaurants-pack",
-      "destination": "/en/industries/restaurants-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/restaurants-pack.html",
-      "destination": "/en/industries/restaurants-pack.html",
+      "source": "/en/industries/real-estate",
+      "destination": "/en/industries/real-estate.html",
       "permanent": true
     },
     {
@@ -934,13 +279,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/salons-pack",
-      "destination": "/en/industries/salons-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/salons-pack.html",
-      "destination": "/en/industries/salons-pack.html",
+      "source": "/en/industries/restaurants",
+      "destination": "/en/industries/restaurants.html",
       "permanent": true
     },
     {
@@ -949,13 +289,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/self-storage-pack",
-      "destination": "/en/industries/self-storage-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/self-storage-pack.html",
-      "destination": "/en/industries/self-storage-pack.html",
+      "source": "/en/industries/salons",
+      "destination": "/en/industries/salons.html",
       "permanent": true
     },
     {
@@ -964,13 +299,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/senior-care-pack",
-      "destination": "/en/industries/senior-care-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/senior-care-pack.html",
-      "destination": "/en/industries/senior-care-pack.html",
+      "source": "/en/industries/self-storage",
+      "destination": "/en/industries/self-storage.html",
       "permanent": true
     },
     {
@@ -979,13 +309,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/stays-pack",
-      "destination": "/en/industries/stays-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/stays-pack.html",
-      "destination": "/en/industries/stays-pack.html",
+      "source": "/en/industries/senior-care",
+      "destination": "/en/industries/senior-care.html",
       "permanent": true
     },
     {
@@ -994,13 +319,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/universities-pack",
-      "destination": "/en/industries/universities-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/universities-pack.html",
-      "destination": "/en/industries/universities-pack.html",
+      "source": "/en/industries/stays",
+      "destination": "/en/industries/stays.html",
       "permanent": true
     },
     {
@@ -1009,13 +329,8 @@
       "permanent": true
     },
     {
-      "source": "/industries/venues-pack",
-      "destination": "/en/industries/venues-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/venues-pack.html",
-      "destination": "/en/industries/venues-pack.html",
+      "source": "/en/industries/universities",
+      "destination": "/en/industries/universities.html",
       "permanent": true
     },
     {
@@ -1024,19 +339,2710 @@
       "permanent": true
     },
     {
-      "source": "/industries/veterinary-pack",
-      "destination": "/en/industries/veterinary-pack.html",
-      "permanent": true
-    },
-    {
-      "source": "/industries/veterinary-pack.html",
-      "destination": "/en/industries/veterinary-pack.html",
+      "source": "/en/industries/venues",
+      "destination": "/en/industries/venues.html",
       "permanent": true
     },
     {
       "source": "/en/industries/veterinary-pack",
       "destination": "/en/industries/veterinary-pack.html",
       "permanent": true
+    },
+    {
+      "source": "/en/industries/veterinary",
+      "destination": "/en/industries/veterinary.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/about",
+      "destination": "/ko/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/ai-answering-service",
+      "destination": "/ko/ai-answering-service.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/cross-border",
+      "destination": "/ko/cross-border.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/demo",
+      "destination": "/ko/demo.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/examples",
+      "destination": "/ko/examples.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/get-started",
+      "destination": "/ko/get-started.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/index",
+      "destination": "/ko/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries",
+      "destination": "/ko/industries.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/integrations",
+      "destination": "/ko/integrations.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/platform",
+      "destination": "/ko/platform.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/pricing",
+      "destination": "/ko/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/privacy",
+      "destination": "/ko/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/security",
+      "destination": "/ko/security.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/sitemap",
+      "destination": "/ko/sitemap.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/terms",
+      "destination": "/ko/terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/verified-ai",
+      "destination": "/ko/verified-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/voice",
+      "destination": "/ko/voice.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/webchat",
+      "destination": "/ko/webchat.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/whatsapp",
+      "destination": "/ko/whatsapp.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/academies-pack",
+      "destination": "/ko/industries/academies-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/academies",
+      "destination": "/ko/industries/academies.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/auto-repair-pack",
+      "destination": "/ko/industries/auto-repair-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/auto-repair",
+      "destination": "/ko/industries/auto-repair.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/clinics-pack",
+      "destination": "/ko/industries/clinics-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/clinics",
+      "destination": "/ko/industries/clinics.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/dental-pack",
+      "destination": "/ko/industries/dental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/dental",
+      "destination": "/ko/industries/dental.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/ecommerce-pack",
+      "destination": "/ko/industries/ecommerce-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/ecommerce",
+      "destination": "/ko/industries/ecommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/equipment-rental-pack",
+      "destination": "/ko/industries/equipment-rental-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/equipment-rental",
+      "destination": "/ko/industries/equipment-rental.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/fitness-pack",
+      "destination": "/ko/industries/fitness-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/fitness",
+      "destination": "/ko/industries/fitness.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/franchise-pack",
+      "destination": "/ko/industries/franchise-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/franchise",
+      "destination": "/ko/industries/franchise.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/funeral-homes-pack",
+      "destination": "/ko/industries/funeral-homes-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/funeral-homes",
+      "destination": "/ko/industries/funeral-homes.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/golf-pack",
+      "destination": "/ko/industries/golf-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/golf",
+      "destination": "/ko/industries/golf.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/home-services-pack",
+      "destination": "/ko/industries/home-services-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/home-services",
+      "destination": "/ko/industries/home-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/legal-pack",
+      "destination": "/ko/industries/legal-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/legal",
+      "destination": "/ko/industries/legal.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/movers-pack",
+      "destination": "/ko/industries/movers-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/movers",
+      "destination": "/ko/industries/movers.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/pest-control-pack",
+      "destination": "/ko/industries/pest-control-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/pest-control",
+      "destination": "/ko/industries/pest-control.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/property-management-pack",
+      "destination": "/ko/industries/property-management-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/property-management",
+      "destination": "/ko/industries/property-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/public-sector-pack",
+      "destination": "/ko/industries/public-sector-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/public-sector",
+      "destination": "/ko/industries/public-sector.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/real-estate-pack",
+      "destination": "/ko/industries/real-estate-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/real-estate",
+      "destination": "/ko/industries/real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/restaurants-pack",
+      "destination": "/ko/industries/restaurants-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/restaurants",
+      "destination": "/ko/industries/restaurants.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/salons-pack",
+      "destination": "/ko/industries/salons-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/salons",
+      "destination": "/ko/industries/salons.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/self-storage-pack",
+      "destination": "/ko/industries/self-storage-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/self-storage",
+      "destination": "/ko/industries/self-storage.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/senior-care-pack",
+      "destination": "/ko/industries/senior-care-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/senior-care",
+      "destination": "/ko/industries/senior-care.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/stays-pack",
+      "destination": "/ko/industries/stays-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/stays",
+      "destination": "/ko/industries/stays.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/universities-pack",
+      "destination": "/ko/industries/universities-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/universities",
+      "destination": "/ko/industries/universities.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/venues-pack",
+      "destination": "/ko/industries/venues-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/venues",
+      "destination": "/ko/industries/venues.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/veterinary-pack",
+      "destination": "/ko/industries/veterinary-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/veterinary",
+      "destination": "/ko/industries/veterinary.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/about.html",
+      "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "/en/about.html",
+      "permanent": false
+    },
+    {
+      "source": "/about.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/about.html",
+      "permanent": false
+    },
+    {
+      "source": "/about.html",
+      "destination": "/en/about.html",
+      "permanent": false
+    },
+    {
+      "source": "/ai-answering-service",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/ai-answering-service.html",
+      "permanent": false
+    },
+    {
+      "source": "/ai-answering-service",
+      "destination": "/en/ai-answering-service.html",
+      "permanent": false
+    },
+    {
+      "source": "/ai-answering-service.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/ai-answering-service.html",
+      "permanent": false
+    },
+    {
+      "source": "/ai-answering-service.html",
+      "destination": "/en/ai-answering-service.html",
+      "permanent": false
+    },
+    {
+      "source": "/cross-border",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/cross-border.html",
+      "permanent": false
+    },
+    {
+      "source": "/cross-border",
+      "destination": "/en/cross-border.html",
+      "permanent": false
+    },
+    {
+      "source": "/cross-border.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/cross-border.html",
+      "permanent": false
+    },
+    {
+      "source": "/cross-border.html",
+      "destination": "/en/cross-border.html",
+      "permanent": false
+    },
+    {
+      "source": "/demo",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/demo.html",
+      "permanent": false
+    },
+    {
+      "source": "/demo",
+      "destination": "/en/demo.html",
+      "permanent": false
+    },
+    {
+      "source": "/demo.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/demo.html",
+      "permanent": false
+    },
+    {
+      "source": "/demo.html",
+      "destination": "/en/demo.html",
+      "permanent": false
+    },
+    {
+      "source": "/examples",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/examples.html",
+      "permanent": false
+    },
+    {
+      "source": "/examples",
+      "destination": "/en/examples.html",
+      "permanent": false
+    },
+    {
+      "source": "/examples.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/examples.html",
+      "permanent": false
+    },
+    {
+      "source": "/examples.html",
+      "destination": "/en/examples.html",
+      "permanent": false
+    },
+    {
+      "source": "/get-started",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/get-started.html",
+      "permanent": false
+    },
+    {
+      "source": "/get-started",
+      "destination": "/en/get-started.html",
+      "permanent": false
+    },
+    {
+      "source": "/get-started.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/get-started.html",
+      "permanent": false
+    },
+    {
+      "source": "/get-started.html",
+      "destination": "/en/get-started.html",
+      "permanent": false
+    },
+    {
+      "source": "/index",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/index.html",
+      "permanent": false
+    },
+    {
+      "source": "/index",
+      "destination": "/en/index.html",
+      "permanent": false
+    },
+    {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/index.html",
+      "permanent": false
+    },
+    {
+      "source": "/index.html",
+      "destination": "/en/index.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries",
+      "destination": "/en/industries.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries.html",
+      "destination": "/en/industries.html",
+      "permanent": false
+    },
+    {
+      "source": "/integrations",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/integrations.html",
+      "permanent": false
+    },
+    {
+      "source": "/integrations",
+      "destination": "/en/integrations.html",
+      "permanent": false
+    },
+    {
+      "source": "/integrations.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/integrations.html",
+      "permanent": false
+    },
+    {
+      "source": "/integrations.html",
+      "destination": "/en/integrations.html",
+      "permanent": false
+    },
+    {
+      "source": "/platform",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/platform.html",
+      "permanent": false
+    },
+    {
+      "source": "/platform",
+      "destination": "/en/platform.html",
+      "permanent": false
+    },
+    {
+      "source": "/platform.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/platform.html",
+      "permanent": false
+    },
+    {
+      "source": "/platform.html",
+      "destination": "/en/platform.html",
+      "permanent": false
+    },
+    {
+      "source": "/pricing",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/pricing.html",
+      "permanent": false
+    },
+    {
+      "source": "/pricing",
+      "destination": "/en/pricing.html",
+      "permanent": false
+    },
+    {
+      "source": "/pricing.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/pricing.html",
+      "permanent": false
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/en/pricing.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/privacy.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "destination": "/en/privacy.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/privacy.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/en/privacy.html",
+      "permanent": false
+    },
+    {
+      "source": "/security",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/security.html",
+      "permanent": false
+    },
+    {
+      "source": "/security",
+      "destination": "/en/security.html",
+      "permanent": false
+    },
+    {
+      "source": "/security.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/security.html",
+      "permanent": false
+    },
+    {
+      "source": "/security.html",
+      "destination": "/en/security.html",
+      "permanent": false
+    },
+    {
+      "source": "/sitemap",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/sitemap.html",
+      "permanent": false
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/en/sitemap.html",
+      "permanent": false
+    },
+    {
+      "source": "/sitemap.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/sitemap.html",
+      "permanent": false
+    },
+    {
+      "source": "/sitemap.html",
+      "destination": "/en/sitemap.html",
+      "permanent": false
+    },
+    {
+      "source": "/terms",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/terms.html",
+      "permanent": false
+    },
+    {
+      "source": "/terms",
+      "destination": "/en/terms.html",
+      "permanent": false
+    },
+    {
+      "source": "/terms.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/terms.html",
+      "permanent": false
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/en/terms.html",
+      "permanent": false
+    },
+    {
+      "source": "/verified-ai",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/verified-ai.html",
+      "permanent": false
+    },
+    {
+      "source": "/verified-ai",
+      "destination": "/en/verified-ai.html",
+      "permanent": false
+    },
+    {
+      "source": "/verified-ai.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/verified-ai.html",
+      "permanent": false
+    },
+    {
+      "source": "/verified-ai.html",
+      "destination": "/en/verified-ai.html",
+      "permanent": false
+    },
+    {
+      "source": "/voice",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/voice.html",
+      "permanent": false
+    },
+    {
+      "source": "/voice",
+      "destination": "/en/voice.html",
+      "permanent": false
+    },
+    {
+      "source": "/voice.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/voice.html",
+      "permanent": false
+    },
+    {
+      "source": "/voice.html",
+      "destination": "/en/voice.html",
+      "permanent": false
+    },
+    {
+      "source": "/webchat",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/webchat.html",
+      "permanent": false
+    },
+    {
+      "source": "/webchat",
+      "destination": "/en/webchat.html",
+      "permanent": false
+    },
+    {
+      "source": "/webchat.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/webchat.html",
+      "permanent": false
+    },
+    {
+      "source": "/webchat.html",
+      "destination": "/en/webchat.html",
+      "permanent": false
+    },
+    {
+      "source": "/whatsapp",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/whatsapp.html",
+      "permanent": false
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "/en/whatsapp.html",
+      "permanent": false
+    },
+    {
+      "source": "/whatsapp.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/whatsapp.html",
+      "permanent": false
+    },
+    {
+      "source": "/whatsapp.html",
+      "destination": "/en/whatsapp.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/academies-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies-pack",
+      "destination": "/en/industries/academies-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/academies-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies-pack.html",
+      "destination": "/en/industries/academies-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/academies.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies",
+      "destination": "/en/industries/academies.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/academies.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/academies.html",
+      "destination": "/en/industries/academies.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/auto-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair-pack",
+      "destination": "/en/industries/auto-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/auto-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair-pack.html",
+      "destination": "/en/industries/auto-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/auto-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair",
+      "destination": "/en/industries/auto-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/auto-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/auto-repair.html",
+      "destination": "/en/industries/auto-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/clinics-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics-pack",
+      "destination": "/en/industries/clinics-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/clinics-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics-pack.html",
+      "destination": "/en/industries/clinics-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/clinics.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics",
+      "destination": "/en/industries/clinics.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/clinics.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/clinics.html",
+      "destination": "/en/industries/clinics.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/dental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental-pack",
+      "destination": "/en/industries/dental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/dental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental-pack.html",
+      "destination": "/en/industries/dental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/dental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental",
+      "destination": "/en/industries/dental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/dental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/dental.html",
+      "destination": "/en/industries/dental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/ecommerce-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce-pack",
+      "destination": "/en/industries/ecommerce-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/ecommerce-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce-pack.html",
+      "destination": "/en/industries/ecommerce-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/ecommerce.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce",
+      "destination": "/en/industries/ecommerce.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/ecommerce.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/ecommerce.html",
+      "destination": "/en/industries/ecommerce.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/equipment-rental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental-pack",
+      "destination": "/en/industries/equipment-rental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/equipment-rental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental-pack.html",
+      "destination": "/en/industries/equipment-rental-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/equipment-rental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental",
+      "destination": "/en/industries/equipment-rental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/equipment-rental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/equipment-rental.html",
+      "destination": "/en/industries/equipment-rental.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/fitness-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness-pack",
+      "destination": "/en/industries/fitness-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/fitness-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness-pack.html",
+      "destination": "/en/industries/fitness-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/fitness.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness",
+      "destination": "/en/industries/fitness.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/fitness.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/fitness.html",
+      "destination": "/en/industries/fitness.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/franchise-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise-pack",
+      "destination": "/en/industries/franchise-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/franchise-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise-pack.html",
+      "destination": "/en/industries/franchise-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/franchise.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise",
+      "destination": "/en/industries/franchise.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/franchise.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/franchise.html",
+      "destination": "/en/industries/franchise.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/funeral-homes-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes-pack",
+      "destination": "/en/industries/funeral-homes-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/funeral-homes-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes-pack.html",
+      "destination": "/en/industries/funeral-homes-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/funeral-homes.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes",
+      "destination": "/en/industries/funeral-homes.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/funeral-homes.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/funeral-homes.html",
+      "destination": "/en/industries/funeral-homes.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/golf-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf-pack",
+      "destination": "/en/industries/golf-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/golf-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf-pack.html",
+      "destination": "/en/industries/golf-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/golf.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf",
+      "destination": "/en/industries/golf.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/golf.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/golf.html",
+      "destination": "/en/industries/golf.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-services-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services-pack",
+      "destination": "/en/industries/home-services-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-services-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services-pack.html",
+      "destination": "/en/industries/home-services-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-services.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services",
+      "destination": "/en/industries/home-services.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-services.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-services.html",
+      "destination": "/en/industries/home-services.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/legal-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal-pack",
+      "destination": "/en/industries/legal-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/legal-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal-pack.html",
+      "destination": "/en/industries/legal-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/legal.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal",
+      "destination": "/en/industries/legal.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/legal.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/legal.html",
+      "destination": "/en/industries/legal.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/movers-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers-pack",
+      "destination": "/en/industries/movers-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/movers-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers-pack.html",
+      "destination": "/en/industries/movers-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/movers.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers",
+      "destination": "/en/industries/movers.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/movers.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/movers.html",
+      "destination": "/en/industries/movers.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/pest-control-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control-pack",
+      "destination": "/en/industries/pest-control-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/pest-control-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control-pack.html",
+      "destination": "/en/industries/pest-control-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/pest-control.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control",
+      "destination": "/en/industries/pest-control.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/pest-control.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/pest-control.html",
+      "destination": "/en/industries/pest-control.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/property-management-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management-pack",
+      "destination": "/en/industries/property-management-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/property-management-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management-pack.html",
+      "destination": "/en/industries/property-management-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/property-management.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management",
+      "destination": "/en/industries/property-management.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/property-management.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/property-management.html",
+      "destination": "/en/industries/property-management.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/public-sector-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector-pack",
+      "destination": "/en/industries/public-sector-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/public-sector-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector-pack.html",
+      "destination": "/en/industries/public-sector-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/public-sector.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector",
+      "destination": "/en/industries/public-sector.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/public-sector.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/public-sector.html",
+      "destination": "/en/industries/public-sector.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/real-estate-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate-pack",
+      "destination": "/en/industries/real-estate-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/real-estate-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate-pack.html",
+      "destination": "/en/industries/real-estate-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/real-estate.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate",
+      "destination": "/en/industries/real-estate.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/real-estate.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/real-estate.html",
+      "destination": "/en/industries/real-estate.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/restaurants-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants-pack",
+      "destination": "/en/industries/restaurants-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/restaurants-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants-pack.html",
+      "destination": "/en/industries/restaurants-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/restaurants.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants",
+      "destination": "/en/industries/restaurants.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/restaurants.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/restaurants.html",
+      "destination": "/en/industries/restaurants.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/salons-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons-pack",
+      "destination": "/en/industries/salons-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/salons-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons-pack.html",
+      "destination": "/en/industries/salons-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/salons.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons",
+      "destination": "/en/industries/salons.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/salons.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/salons.html",
+      "destination": "/en/industries/salons.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/self-storage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage-pack",
+      "destination": "/en/industries/self-storage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/self-storage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage-pack.html",
+      "destination": "/en/industries/self-storage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/self-storage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage",
+      "destination": "/en/industries/self-storage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/self-storage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/self-storage.html",
+      "destination": "/en/industries/self-storage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/senior-care-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care-pack",
+      "destination": "/en/industries/senior-care-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/senior-care-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care-pack.html",
+      "destination": "/en/industries/senior-care-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/senior-care.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care",
+      "destination": "/en/industries/senior-care.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/senior-care.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/senior-care.html",
+      "destination": "/en/industries/senior-care.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/stays-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays-pack",
+      "destination": "/en/industries/stays-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/stays-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays-pack.html",
+      "destination": "/en/industries/stays-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/stays.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays",
+      "destination": "/en/industries/stays.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/stays.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/stays.html",
+      "destination": "/en/industries/stays.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/universities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities-pack",
+      "destination": "/en/industries/universities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/universities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities-pack.html",
+      "destination": "/en/industries/universities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/universities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities",
+      "destination": "/en/industries/universities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/universities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/universities.html",
+      "destination": "/en/industries/universities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/venues-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues-pack",
+      "destination": "/en/industries/venues-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/venues-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues-pack.html",
+      "destination": "/en/industries/venues-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/venues.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues",
+      "destination": "/en/industries/venues.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/venues.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/venues.html",
+      "destination": "/en/industries/venues.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/veterinary-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary-pack",
+      "destination": "/en/industries/veterinary-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/veterinary-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary-pack.html",
+      "destination": "/en/industries/veterinary-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/veterinary.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary",
+      "destination": "/en/industries/veterinary.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/veterinary.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/veterinary.html",
+      "destination": "/en/industries/veterinary.html",
+      "permanent": false
     }
   ],
   "headers": [
@@ -1046,6 +3052,24 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/:slug.html",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "Accept-Language"
+        }
+      ]
+    },
+    {
+      "source": "/industries/:slug.html",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "Accept-Language"
         }
       ]
     },

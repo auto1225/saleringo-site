@@ -37,11 +37,19 @@
      hop. If the browser says nothing, English is the default, which is what
      x-default above declares. */
   (function () {
+    /* A choice the reader made beats a guess about the reader. */
+    var saved = null;
+    try { saved = localStorage.getItem('sr-lang'); } catch (e) {}
+    if (saved === 'ko' || saved === 'en') {
+      location.replace('./' + saved + '/index.html');
+      return;
+    }
     var langs = navigator.languages || [navigator.language || 'en'];
     var ko = false;
     for (var i = 0; i < langs.length; i++) {
-      if (/^ko\b/i.test(langs[i])) { ko = true; break; }
-      if (/^[a-z]{2}\b/i.test(langs[i])) break;   /* first real preference wins */
+      var tag = String(langs[i]).toLowerCase().split('-')[0];
+      if (tag === 'ko') { ko = true; break; }
+      if (tag.length === 2) break;   /* first real preference wins */
     }
     location.replace(ko ? './ko/index.html' : './en/index.html');
   })();
