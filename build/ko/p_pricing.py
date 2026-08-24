@@ -129,7 +129,7 @@ BODY = """
       <div><b>도입 지원과 초기 설정</b><span>무료</span></div>
     </div>
     <p class="seccap reveal" style="margin-top:18px;">통화 요금은 발신 지역과 회선에 따라 달라지므로,
-      계약 전에 우리 매장 기준으로 계산한 금액을 문서로 먼저 드립니다. 추정치로 시작해서 나중에
+      계약 전에 그 회선과 지역으로 계산한 금액을 문서로 먼저 드립니다. 추정치로 시작해서 나중에
       바뀌는 방식으로는 청구하지 않습니다.</p>
   </div>
 </section>
@@ -210,11 +210,11 @@ BODY = """
 <section class="founding t-lg bg-aurora" id="start">
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="h2 onDark reveal">우리 매장이면 얼마인지,<br>계약 전에 문서로 드립니다.</h2>
-    <p class="sub reveal" style="max-width:none;">업종과 영업시간, 한 달에 받는 전화 수만 알려 주시면
+    <h2 class="h2 onDark reveal">우리 경우에 얼마가 나오는지,<br>계약 전에 문서로 드립니다.</h2>
+    <p class="sub reveal" style="max-width:none;">업종과 영업시간, 한 달에 받는 전화가 몇 통인지만 알려 주시면
       예상 통화량과 월 청구액을 계산해 보내 드립니다. 결제 정보는 그때 받지 않습니다.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="./get-started.html">우리 매장 견적 받기<span class="cir">&#8599;</span></a>
+      <a class="btn btn-teal" href="./get-started.html">우리 조건으로 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="./index.html#how">먼저 작동 방식 보기</a>
     </div>
   </div>
@@ -224,7 +224,7 @@ BODY = """
 </main>
 
 <div class="stickycta"><div class="wrap"><span class="msg">모든 금액 부가세 별도 &middot; 약정 없음.
-  <b>우리 매장 기준 금액을 문서로 받아 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
+  <b>우리 기준으로 계산한 금액을 문서로 받아 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
 page('pricing.html',

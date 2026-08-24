@@ -55,7 +55,7 @@ BODY = """
   <div class="wrap">
     <div class="gswrap">
       <div class="reveal">
-        <h2 class="h2 onDark" style="font-size:var(--fs-h2s);">우리 매장 이야기를 알려 주세요.</h2>
+        <h2 class="h2 onDark" style="font-size:var(--fs-h2s);">어떤 곳인지 알려 주세요.</h2>
         <p class="sub" style="max-width:none;">필수는 두 개뿐입니다. 나머지는 있으면 더 정확한 답을
           드릴 수 있는 것들입니다.</p>
 
@@ -92,7 +92,7 @@ BODY = """
           </div>
           <div class="two">
             <div class="fld">
-              <label for="gBiz">상호 <span class="opt">&mdash; 선택</span></label>
+              <label for="gBiz">상호 또는 병원 이름 <span class="opt">&mdash; 선택</span></label>
               <input id="gBiz" name="business" type="text" autocomplete="organization"
                      placeholder="홈페이지를 같이 보기 위해 여쭙습니다" aria-label="상호">
             </div>
@@ -182,7 +182,7 @@ BODY = """
 """
 
 page('get-started.html',
-     '시작하기 &mdash; 우리 매장 요금표로 만든 AI 응대를 먼저 받아 보세요',
+     '시작하기 &mdash; 우리 요금표로 만든 AI 응대를 먼저 받아 보세요',
      '업종과 요금표만 알려 주시면 그것으로 만든 AI 응대를 영업일 하루 안에 보내 드립니다. '
      '결제 정보는 받지 않습니다. 약정 없음, 세금계산서 발행.',
      BODY.format(NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',

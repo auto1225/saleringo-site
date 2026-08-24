@@ -87,7 +87,7 @@ BODY = """
         예약 시간을 잡고 고객 카드를 만들어 둡니다. 문 닫은 시간에도 그렇습니다.</p>
       <div class="ctas">
         <a class="btn btn-teal" href="#how">3분이면 파악됩니다<span class="cir">&darr;</span></a>
-        <a class="btn btn-ghostd" href="./get-started.html">우리 매장 견적 받기</a>
+        <a class="btn btn-ghostd" href="./get-started.html">우리 조건으로 견적 받기</a>
       </div>
       <p class="heroprice"><b>월 110,000원부터.</b> 전화 응대는 월 820,000원부터.
         <i>부가세 별도 &middot; 약정 없음 &middot; 언제든 해지</i></p>
@@ -134,7 +134,7 @@ BODY = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>놓친 전화 한 통의 값</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">전화를 못 받은 것이 아니라,<br>그 손님을 다음 가게에 넘긴 것입니다.</h2>
-    <p class="sub reveal" style="max-width:none;">사장님이 시술 중이거나 점심 시간이거나 이미 퇴근한 뒤에
+    <p class="sub reveal" style="max-width:none;">진료나 시술이 한창일 때, 점심시간에, 문을 닫은 뒤에
       걸려 온 전화는, 벨이 몇 번 울리다 끊깁니다. 그 손님은 다시 걸지 않습니다.
       검색 결과의 다음 줄에 있는 가게로 겁니다. 그 손실은 어떤 장부에도 적히지 않기 때문에,
       해마다 얼마인지 아무도 모릅니다.</p>
@@ -205,9 +205,9 @@ BODY = """
     <ul class="kolist reveal">
       <li><b>고객 카드</b> &mdash; 이름, 연락처, 무엇을 물었는지, 언제 다시 연락하기로 했는지.</li>
       <li><b>예약</b> &mdash; 캘린더에 바로 들어갑니다. 메모를 남기는 것이 아니라 시간을 잡습니다.</li>
-      <li><b>견적</b> &mdash; 사장님이 넣은 요금표에서 계산합니다. AI가 지어내지 않습니다.</li>
+      <li><b>견적</b> &mdash; 직접 넣으신 요금표에서 계산합니다. AI가 지어내지 않습니다.</li>
       <li><b>통화 기록</b> &mdash; 녹취와 요약, 그리고 AI가 무엇을 근거로 그렇게 답했는지.</li>
-      <li><b>내보내기</b> &mdash; 언제든 전부 내려받을 수 있습니다. 데이터는 사장님 것입니다.</li>
+      <li><b>내보내기</b> &mdash; 언제든 전부 내려받을 수 있습니다. 데이터의 주인은 그 가게입니다.</li>
     </ul>
   </div>
 </section>
@@ -216,7 +216,7 @@ BODY = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>하지 않는 일</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">지어내지 않습니다.<br>모르면 모른다고 하고 사람에게 넘깁니다.</h2>
-    <p class="sub reveal" style="max-width:none;">AI가 잘못 말해서 생기는 손해는 전부 사장님 몫입니다.
+    <p class="sub reveal" style="max-width:none;">AI가 잘못 말해서 생기는 손해는 전부 그 가게가 떠안습니다.
       그래서 답할 수 있는 범위를 좁게 정해 두었고, 그 범위 밖은 답하지 못하도록 막아 두었습니다.
       끄고 켜는 기능이 아니라 제품의 기본값입니다.</p>
     <ul class="kolist reveal">
@@ -248,19 +248,22 @@ BODY = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>업종</span><span class="line"></span></div>
     <h2 class="h2 reveal">우리 업종에서 밤 11시에 걸려 오는 전화는<br>어떤 전화입니까?</h2>
-    <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 업종별로 실제 걸려 올 법한 통화를
-      그대로 적어 두었습니다. 우리 가게에 오는 그 전화가 맞는지 읽어 보고 판단하시면 됩니다.</p>
+    <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 스물다섯 곳 모두,
+      밤에 걸려 올 법한 통화를 하나씩 적어 두었습니다. 아래는 그중 열두 개이고,
+      우리 업종에 오는 그 전화가 맞는지 읽어 보고 판단하시면 됩니다.</p>
     <div class="tradechips reveal">
       <a href="./industries/dental.html">치과</a>
       <a href="./industries/clinics.html">의원 &middot; 피부과</a>
+      <a href="./industries/veterinary.html">동물병원</a>
+      <a href="./industries/senior-care.html">요양</a>
       <a href="./industries/academies.html">학원</a>
       <a href="./industries/salons.html">미용실</a>
-      <a href="./industries/veterinary.html">동물병원</a>
+      <a href="./industries/fitness.html">헬스장</a>
+      <a href="./industries/home-services.html">설비 &middot; 수리</a>
       <a href="./industries/auto-repair.html">자동차 정비</a>
       <a href="./industries/real-estate.html">부동산</a>
+      <a href="./industries/restaurants.html">음식점</a>
       <a href="./industries/venues.html">웨딩홀 &middot; 행사장</a>
-      <a href="./industries/senior-care.html">요양</a>
-      <a href="./industries/fitness.html">헬스장</a>
     </div>
     <p class="ps-foot" style="margin-top:26px;"><a class="linkcta" href="./industries.html">업종 전체 보기{NB}{NB}&rarr;</a></p>
   </div>
@@ -274,7 +277,7 @@ BODY = """
     <p class="sub reveal" style="max-width:none;">먼저 결제하지 않습니다. 업종과 영업시간, 그리고 가장 자주 받는
       질문 세 개만 알려 주시면, 그것으로 만든 응대를 보내 드립니다. 마음에 들지 않으면 거기서 끝내시면 됩니다.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="./get-started.html">우리 매장 견적 받기<span class="cir">&#8599;</span></a>
+      <a class="btn btn-teal" href="./get-started.html">우리 조건으로 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="./pricing.html">먼저 요금부터 보기</a>
     </div>
   </div>
@@ -284,7 +287,7 @@ BODY = """
 </main>
 
 <div class="stickycta"><div class="wrap"><span class="msg">먼저 결제하지 않습니다.
-  <b>우리 요금표로 답하는 것을 먼저 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
+  <b>우리 요금표로 답하는 것을 먼저 읽어 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
 body = BODY.format(NAV=NAV, FOOT=FOOT, NB=NB, HERO=HERO)

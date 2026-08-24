@@ -15,6 +15,9 @@ sys.path.insert(0, HERE)
 os.chdir(os.path.dirname(os.path.dirname(HERE)))
 from shell import page, NAV, FOOT
 from trades import TRADES
+from trades2 import TRADES2
+
+TRADES = TRADES + TRADES2
 
 NB = '&nbsp;'
 
@@ -71,7 +74,7 @@ TPL = """
       <p class="sub">{sub}</p>
       <div class="ctas">
         <a class="btn btn-teal" href="#call">그 통화 읽어 보기<span class="cir">&darr;</span></a>
-        <a class="btn btn-ghostd" href="../get-started.html">우리 매장 견적 받기</a>
+        <a class="btn btn-ghostd" href="../get-started.html">{name} 견적 받기</a>
       </div>
     </div>
   </div>
@@ -82,7 +85,7 @@ TPL = """
 <section class="t-lg sec-dark bg-dusk" id="call">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>그날 밤의 통화</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal">사장님이 자는 동안<br>이렇게 진행됩니다.</h2>
+    <h2 class="h2 onDark reveal">{owner}이 자는 동안<br>이렇게 흘러갑니다.</h2>
     <div class="appwin reveal" style="margin-top:34px;">
       <div class="bar"><i></i><i></i><i></i>
         <span class="tt">{name} &mdash; <b>영업 종료 후</b></span>
@@ -92,7 +95,7 @@ TPL = """
     </div>
     <p class="seccap reveal" style="margin-top:16px;">실제 고객 사례가 아니라, {name} 요금표와 안전 지침을
       넣었을 때 제품이 어떻게 답하는지 보여 주는 예시입니다. 금액은 국내에서 흔히 제시되는 범위이고,
-      실제 안내 금액은 사장님이 넣으신 요금표에서 나옵니다.</p>
+      실제로 안내되는 금액은 {owner}이 넣으신 요금표에서 나옵니다.</p>
   </div>
 </section>
 
@@ -133,6 +136,19 @@ TPL = """
   </div>
 </section>
 
+<section class="packcard t-md sec-dark bg-grid" id="the-pack">
+  <div class="wrap">
+    <a class="pc-link" href="./{slug}-pack.html">
+      <span class="pc-k">{name} 팩</span>
+      <b class="pc-h">팩에 들어 있는 것 전부, 따로 한 장에</b>
+      <span class="pc-d">통화 뒤에 붙는 CRM의 항목과 단계, 어디에 연결되는지,
+        그리고 무엇을 말하지 않는지를 한 장에 적어 두었습니다.
+        주장이 아니라 목록이라서, 목록이 있어야 할 자리에 두었습니다.</span>
+      <span class="pc-go" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
 <section class="t-md sec-light2" id="others">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>다른 업종</span><span class="line"></span></div>
@@ -148,7 +164,7 @@ TPL = """
     <p class="sub reveal" style="max-width:none;">결제 정보는 받지 않습니다. 영업일 하루 안에
       실제 대화를 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="../get-started.html">우리 매장 견적 받기<span class="cir">&#8599;</span></a>
+      <a class="btn btn-teal" href="../get-started.html">{name} 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="../pricing.html">먼저 요금부터 보기</a>
     </div>
   </div>
@@ -191,8 +207,12 @@ def build_trade(t):
 
 GROUPS = [
     ('의료 &middot; 요양', ['dental', 'clinics', 'veterinary', 'senior-care']),
-    ('예약제 &middot; 생활 서비스', ['salons', 'fitness', 'academies']),
-    ('현장 &middot; 공간', ['auto-repair', 'real-estate', 'venues']),
+    ('배우고 가꾸는 곳', ['academies', 'universities', 'salons', 'fitness']),
+    ('집과 건물', ['home-services', 'pest-control', 'property-management', 'real-estate']),
+    ('차 · 짐 · 장비', ['auto-repair', 'movers', 'self-storage', 'equipment-rental']),
+    ('모이는 곳', ['restaurants', 'venues', 'stays', 'golf']),
+    ('전문직 &middot; 공공', ['legal', 'public-sector', 'funeral-homes']),
+    ('온라인 &middot; 여러 점포', ['ecommerce', 'franchise']),
 ]
 
 WALL_CSS = """
@@ -260,6 +280,21 @@ LEAD = {
     'auto-repair': '리프트 아래에서는 못 받는 견적 전화. 범위까지만 말하고 입고를 잡습니다.',
     'real-estate': '임장 나가 있을 때 오는 매물 전화. 조건을 협의하지 않고 임장만 잡습니다.',
     'venues': '&ldquo;그 날짜 되나요&rdquo; 한 문장. 가능 여부와 상담 예약을 그 자리에서 답합니다.',
+    'home-services': '보일러가 멈춘 집은 기다리지 않습니다. 원인은 단정하지 않고, 출장 시간과 기본 비용만 말하고 잡습니다.',
+    'pest-control': '벌레를 본 사람은 그 밤에 겁니다. 박멸을 약속하지 않고, 시공 일정과 금액 범위만 말합니다.',
+    'property-management': '누수와 정전은 근무 시간에 맞춰 일어나지 않습니다. 급한 신고만 골라 당직에게 바로 넘깁니다.',
+    'movers': '짐을 보지 않고 금액을 확정하지 않습니다. 범위만 말하고 방문 견적을 잡습니다.',
+    'restaurants': '스무 명 회식 전화가 점심 피크에 옵니다. 좌석 현황에서만 잡고, 알레르기는 주방으로 넘깁니다.',
+    'stays': '직접 예약이면 수수료가 없습니다. 밤에 온 문의를 그 밤에 받아 객실을 잡습니다.',
+    'golf': '주말 티타임은 먼저 답하는 곳이 가져갑니다. 남은 시간에서만 잡습니다.',
+    'funeral-homes': '가장 급하고 가장 조심스러운 전화입니다. 상품을 권하지 않고 사람에게 바로 넘깁니다.',
+    'legal': '사건 전망을 말하지 않습니다. 사실만 받아 적고 상담 일정을 잡습니다.',
+    'universities': '원서 기간에 같은 질문이 수백 통 옵니다. 공고된 것만 답하고, 판단이 필요하면 담당자에게 넘깁니다.',
+    'public-sector': '민원인은 이미 두 번 돌려진 뒤에 겁니다. 판단하지 않고 담당 부서를 정확히 찾아 줍니다.',
+    'self-storage': '무인으로 돌릴수록 받을 사람이 없습니다. 평수와 공실, 금액을 그 자리에서 답합니다.',
+    'equipment-rental': '내일 쓸 장비는 오늘 밤에 정해집니다. 재고에 있는 것만 잡습니다.',
+    'ecommerce': '결제 직전의 질문 세 가지에 밤에도 답합니다. 재고와 출고일은 지어내지 않습니다.',
+    'franchise': '가맹 문의와 클레임이 같은 번호로 옵니다. 예상 수익은 말하지 않고, 갈라서 담당자에게 보냅니다.',
 }
 
 
