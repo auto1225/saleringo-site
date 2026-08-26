@@ -147,6 +147,84 @@ for lang in ('ko', 'en'):
                              '본문에서 주문서로 가는 링크 %d개 — 요금제는 %d개'
                              % (n, len(P['plans']))))
 
+# ── 7. 페이지가 요금표에 없는 통화를 약속하면 안 된다 ────────────────────
+#      "USD·EUR·GBP·AUD·SGD·KRW·JPY 중 고르실 수 있습니다" 가 세 페이지에
+#      적혀 있었습니다. 그중 둘은 [필수] 동의를 받는 약관이었고, 실제로
+#      존재하는 통화는 KRW 와 USD 둘뿐이며 주문서에는 고를 칸도 없었습니다.
+#      약속을 늘리는 것은 쉽고, 그것이 거짓이 되었는지는 아무도 안 봅니다.
+HAVE = set(P['currencies'])
+MAYBE = {'EUR': '유로', 'GBP': '파운드', 'JPY': '엔', 'AUD': '호주달러',
+         'SGD': '싱가포르달러', 'CAD': '캐나다달러', 'CHF': '스위스프랑',
+         'CNY': '위안', 'INR': '루피', 'BRL': '헤알', 'AED': '디르함'}
+for lang, files in PAGES.items():
+    for fp in files:
+        t = text_of(fp)
+        for code, name in MAYBE.items():
+            if code in HAVE:
+                continue
+            # 상인이 자기 손님에게 유로로 견적을 내는 것은 이 제품이 하는
+            # 일이고, 그 문장은 옳습니다. 문제는 "우리가 당신에게 그 통화로
+            # 청구한다" 는 약속입니다. 청구를 말하는 문장 안에서만 봅니다.
+            for m in re.finditer(r'\b%s\b' % code, t):
+                near = t[max(0, m.start() - 170):m.end() + 170]
+                if not re.search(r'billed in|bill you|pay in|invoice you|charged in'
+                                 r'|청구|결제하실|인보이스', near, re.I):
+                    continue
+                problems.append(('없는 통화', fp,
+                                 '%s(%s) 로 청구한다고 적혀 있으나 요금표에 없습니다 '
+                                 '(있는 것: %s)' % (code, name, ', '.join(sorted(HAVE)))))
+                break
+
+# ── 8. 한국 밖에 세금을 걷는다고 적으면 안 된다 ──────────────────────────
+#      요금표의 tax 는 KR 10% 와 default 0% 둘뿐입니다. "세금은 청구 국가
+#      기준으로 계산됩니다" 는 자기 나라 세금이 붙는다는 뜻으로 읽히는데,
+#      한국 밖 19개국은 전부 0 입니다.
+collected = [k for k, v in P['tax'].items()
+             if k != 'default' and v.get('collected')]
+if collected == ['KR']:
+    LIES = [r'[Tt]ax is (?:added|calculated)[^.]{0,60}based on[^.]{0,40}billing country',
+            r'[Tt]axes are added[^.]{0,60}based on[^.]{0,30}country',
+            r'세금은[^.]{0,30}국가[^.]{0,20}기준으로[^.]{0,20}계산']
+    for lang, files in PAGES.items():
+        for fp in files:
+            t = text_of(fp)
+            for pat in LIES:
+                m = re.search(pat, t)
+                if m:
+                    problems.append(('세금 안내', fp,
+                                     '"%s" — 실제로 세금을 걷는 나라는 한국뿐입니다'
+                                     % m.group(0)[:70]))
+
+# ── 9. 통화 가용 국가는 요금표와 요금 페이지가 같아야 한다 ──────────────
+#      요금 페이지의 표는 여섯 나라를 못박아 두었는데, 요금표에는 세 나라에만
+#      "안 됨" 이 붙어 있었습니다. 그래서 독일·프랑스·일본 … 열 곳의 구매자가
+#      AI 전화가 든 Scale 을 골라도 아무 경고가 뜨지 않았습니다.
+#      전화가 핵심인 요금제를 전화 없이 파는 셈입니다.
+VOICE_OK = {'live', 'soon', 'no'}
+missing_voice = [c['code'] for c in P['countries'] if c.get('voice') not in VOICE_OK]
+if missing_voice:
+    problems.append(('통화 가용성', 'assets/data/pricing.json',
+                     '%s 에 voice 가 없거나 값이 이상합니다 (live/soon/no 중 하나여야 합니다)'
+                     % ', '.join(missing_voice)))
+else:
+    live = sorted(c['name']['en'] for c in P['countries'] if c['voice'] == 'live')
+    fp = 'en/pricing.html'
+    if os.path.exists(fp):
+        t = text_of(fp)
+        for nm in live:
+            if nm not in t:
+                problems.append(('통화 가용성', fp,
+                                 '요금표는 %s 에서 AI 전화가 된다고 하는데 이 페이지에 없습니다' % nm))
+        # 반대 방향: 페이지가 되는 것처럼 적어 둔 나라가 요금표에서는 안 되는 경우
+        for c in P['countries']:
+            if c['voice'] == 'live':
+                continue
+            nm = c['name']['en']
+            if re.search(r'%s\s*[✓✔]' % re.escape(nm), t):
+                problems.append(('통화 가용성', fp,
+                                 '%s 이 되는 것처럼 표에 있는데 요금표는 %s 입니다'
+                                 % (nm, c['voice'])))
+
 # ── 결과 ─────────────────────────────────────────────────────────────────
 if not problems:
     print('요금표와 페이지가 말하는 숫자가 모두 일치합니다.')

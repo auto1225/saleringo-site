@@ -49,6 +49,12 @@ function mockRes() {
   return r;
 }
 
+/* 수신처에 마지막으로 도착한 주문 기록. "서버가 200 을 줬다"와
+   "받는 쪽에 옳은 내용이 도착했다"는 다른 이야기입니다. */
+function lastRecord() {
+  return received.length ? received[received.length - 1] : null;
+}
+
 async function call(method, body, headers) {
   const mod = await import('../api/order.js?t=' + Math.random());
   const req = { method, body, headers: headers || {} };
@@ -175,6 +181,103 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
   eq('카드 + 정기결제 동의 → 200', b.statusCode, 200);
   const c = await call('POST', { ...GOOD, method: 'transfer' });
   eq('계좌이체는 정기결제 동의가 필요 없다', c.statusCode, 200);
+
+  /* 금액은 다듬은 값으로 계산하면서 동의 검사만 원본을 보고 있었습니다.
+     공백 한 칸이면 quote 는 'card' 로 읽고 검사는 못 읽어, 정기결제
+     동의 없이 매월 자동 결제 주문이 접수됐습니다. */
+  const CHOMP = [' card', 'card ', 'card' + String.fromCharCode(10),
+                 String.fromCharCode(9) + 'card'];
+  for (const m of CHOMP) {
+    const d = await call('POST', { ...GOOD, method: m });
+    eq(`method=${JSON.stringify(m)} 로 동의 검사를 건너뛸 수 없다`, d.statusCode, 400);
+    ok('  막힌 이유가 정기결제 동의다', (d.body.fields || []).includes('agreeRecurring'));
+  }
+  const e = await call('POST', { ...GOOD, method: ' card ', agreeRecurring: true });
+  eq('공백이 붙어도 동의만 있으면 접수된다', e.statusCode, 200);
+}
+
+/* ── 7-2. 받은 동의는 기록에 남아야 한다 ────────────────────────────── */
+{
+  /* 검사만 하고 남기지 않으면, 나중에 "동의한 적 없다"는 말이 나왔을 때
+     보여 줄 것이 없습니다. 동의를 받는 이유가 그것입니다. */
+  const r = await call('POST', { ...GOOD, method: 'card', agreeRecurring: true,
+                                 agreeMarketing: true });
+  eq('접수', r.statusCode, 200);
+  const rec = lastRecord();
+  ok('기록에 동의가 남는다', !!(rec && rec.consent));
+  for (const k of ['terms', 'privacy', 'transfer', 'recurring', 'marketing']) {
+    ok(`  ${k} 동의가 true 로 남는다`, rec.consent[k] === true);
+  }
+  ok('  동의 시각이 남는다', typeof rec.consent.at === 'string' && rec.consent.at.length > 10);
+
+  const s2 = await call('POST', { ...GOOD, method: 'transfer', agreeMarketing: false });
+  eq('접수', s2.statusCode, 200);
+  const rec2 = lastRecord();
+  ok('안 받은 동의는 false 로 남는다',
+     rec2.consent.marketing === false && rec2.consent.recurring === false);
+}
+
+/* ── 7-3. AI 전화가 안 되는 나라에는 말해 줘야 한다 ─────────────────── */
+{
+  /* 요금 페이지는 음성이 되는 나라를 여섯 곳으로 못박아 두었는데,
+     요금표에는 세 나라에만 "안 됨" 이 붙어 있었습니다. 그래서 독일·프랑스·
+     일본 … 열 곳의 구매자가 AI 전화가 든 Scale 을 골라도 아무 경고가
+     뜨지 않았습니다. 전화가 핵심인 요금제를 전화 없이 파는 셈입니다. */
+  const P = JSON.parse(
+    (await import('node:fs')).readFileSync('assets/data/pricing.json', 'utf8'));
+  const live = P.countries.filter(c => c.voice === 'live').map(c => c.code);
+  const notLive = P.countries.filter(c => c.voice !== 'live').map(c => c.code);
+
+  ok('음성 가용성이 모든 나라에 적혀 있다',
+     P.countries.every(c => ['live', 'soon', 'no'].includes(c.voice)),
+     P.countries.filter(c => !['live','soon','no'].includes(c.voice)).map(c=>c.code).join(','));
+
+  for (const code of live.slice(0, 3)) {
+    const r = await call('POST', { ...GOOD, plan: 'scale', country: code,
+                                   bizNo: code === 'KR' ? GOOD.bizNo : 'VAT123456',
+                                   lang: 'en' });
+    eq(`${code}: 음성 되는 나라 → 접수`, r.statusCode, 200);
+    ok(`  경고가 붙지 않는다`, r.body.quote.voiceUnavailableHere === false);
+  }
+  for (const code of notLive.slice(0, 4)) {
+    const r = await call('POST', { ...GOOD, plan: 'scale', country: code,
+                                   bizNo: 'VAT123456', lang: 'en' });
+    eq(`${code}: 음성 안 되는 나라 → 접수는 된다`, r.statusCode, 200);
+    ok(`  음성이 안 된다고 알려 준다`, r.body.quote.voiceUnavailableHere === true);
+  }
+}
+
+/* ── 7-4. 사업자 번호는 그 나라 모양대로 받아야 한다 ────────────────── */
+{
+  /* 허용 글자를 너무 좁게 잡으면 멀쩡한 번호가 막힙니다. 멕시코 RFC 에는
+     &, 구형 아일랜드 VAT 에는 + 와 * 가 들어갑니다. 그 사람들은 자기 나라
+     번호를 그대로 쳤을 뿐인데 "올바르지 않습니다" 를 보게 됩니다. */
+  const REAL = [
+    ['MX', 'ABC&850101AB1', '멕시코 RFC 는 & 를 씁니다'],
+    ['IE',  'IE8Z*4928F',   '구형 아일랜드 VAT 는 * 를 씁니다'],
+    ['IE',  'IE8Z+4928F',   '구형 아일랜드 VAT 는 + 도 씁니다'],
+    ['DE',  'DE123456789',  '독일'],
+    ['GB',  'GB 123 4567 89', '영국은 띄어쓰기로 씁니다'],
+    ['ES',  'ES-B12345678', '스페인'],
+    ['IN',  '29ABCDE1234F1Z5', '인도 GSTIN'],
+  ];
+  for (const [code, id, why] of REAL) {
+    const r = await call('POST', { ...GOOD, country: code, bizNo: id, lang: 'en' });
+    eq(`${code} ${id} — ${why}`, r.statusCode, 200);
+  }
+  /* 그렇다고 아무거나 받으면 안 됩니다 */
+  for (const junk of ['<script>', 'ab', '???????']) {
+    const r = await call('POST', { ...GOOD, country: 'DE', bizNo: junk, lang: 'en' });
+    eq(`${JSON.stringify(junk)} 는 막힌다`, r.statusCode, 400);
+  }
+  /* 독일은 세금번호가 필수가 아니라 빈 값이 정상입니다. 필수인 나라에서만
+     빈 값이 막혀야 합니다. */
+  {
+    const r = await call('POST', { ...GOOD, country: 'DE', bizNo: '   ', lang: 'en' });
+    eq('필수가 아닌 나라에서 빈 값은 통과한다', r.statusCode, 200);
+    const k = await call('POST', { ...GOOD, country: 'KR', bizNo: '   ' });
+    eq('필수인 나라에서 빈 값은 막힌다', k.statusCode, 400);
+  }
 }
 
 /* ── 8. 나머지 입력 검증 ────────────────────────────────────────────── */

@@ -72,3 +72,36 @@ else:
         files = sorted(missing[c])
         print('%-22s %3d개 페이지   예: %s' % (c, len(files), files[0]))
     print('\n합계 %d종, 연 %d곳' % (len(missing), sum(len(v) for v in missing.values())))
+
+
+# ── 이름표인가, 진짜 사고인가 ────────────────────────────────────────────
+# 위 목록은 "규칙 없는 클래스"입니다. 아래는 그중 실제로 스타일을 잃은
+# 원소만 골라냅니다. 가진 클래스가 전부 규칙이 없으면 그 원소에는 아무
+# 규칙도 안 붙습니다. t-lg 사고가 정확히 이 모양이었습니다.
+orphans = {}
+for fp in pages:
+    if not os.path.exists(fp):
+        continue
+    s = io.open(fp, encoding='utf-8').read()
+    local = set()
+    for m in re.finditer(r'<style[^>]*>(.*?)</style>', s, re.S):
+        local |= set(re.findall(r'\.(-?[_a-zA-Z][\w-]*)', m.group(1)))
+    known = GLOBAL | local | JS_ONLY
+    for m in re.finditer(r'<(\w+)[^>]*?\sclass="([^"]+)"', s):
+        raw = m.group(2)
+        if '{{' in raw:          # 아직 토큰이 남은 템플릿은 건너뜁니다
+            continue
+        cls = raw.split()
+        if cls and all(c not in known for c in cls):
+            orphans.setdefault(' '.join(cls), []).append(fp.replace(os.sep, '/'))
+
+print()
+if not orphans:
+    print('스타일이 하나도 안 붙는 원소는 없습니다 — 위 목록은 이름표입니다.')
+else:
+    print('!! 가진 클래스가 전부 규칙이 없는 원소 — 여기부터 보십시오:')
+    for k, v in sorted(orphans.items(), key=lambda x: -len(x[1])):
+        print('   %-24s %4d곳   예: %s' % (k, len(v), v[0]))
+    print()
+    print('   묶음용 껍데기라면 그대로 두셔도 됩니다. 여백이나 배치를 맡은')
+    print('   클래스였다면 지금 화면이 비어 보일 것입니다.')

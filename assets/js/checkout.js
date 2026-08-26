@@ -34,14 +34,17 @@
     ko: {
       monthly: '월 이용료', total: '매월 결제 금액', tax: '세금',
       firstLabel: '첫 달은 개시일 기준 일할',
-      firstIf: '오늘 개시한다면 %s (%d/%d일)',
+      firstIf: '오늘 개시한다면 {amount} — 이번 달 {total}일 가운데 {left}일치입니다.',
       notNow: '이 버튼은 접수만 합니다. 지금 청구되는 금액은 없습니다.',
       usage: '사용량 예상 — 청구에 포함되지 않습니다',
       from: '부터', estimateNote: '쓰신 만큼 다음 달에 정산합니다.',
-      overage: '월 %s건이 포함되어 있고, 넘긴 만큼만 건당 %s이 붙습니다. 한도를 미리 걸어 두실 수 있습니다.',
-      discount: '%s 적용 — 처음 %d개월 %d% 할인. 그 뒤에는 월 %s 입니다.',
-      noVoiceHere: '이 나라에서는 AI 전화가 아직 열려 있지 않습니다. 채팅과 메신저는 지금 됩니다. ' +
-                   '이 요금제를 고르시면 담당자가 개통 가능 시점을 먼저 알려 드립니다.',
+      overage: '월 {included}건이 포함되어 있고, 넘긴 만큼만 건당 {rate}이 붙습니다. 한도를 미리 걸어 두실 수 있습니다.',
+      discount: '{name} 적용 — 처음 {months}개월 {percent}% 할인. 그 뒤에는 월 {after} 입니다.',
+      noVoiceHere: '이 나라에서는 AI 전화 회선이 아직 열려 있지 않습니다. 채팅과 메신저는 ' +
+                   '지금 되고, 이 요금제의 나머지도 그대로 씁니다. 회선이 열리기 전에는 ' +
+                   '전화 부분을 시작하지도, 그 몫을 청구하지도 않습니다.',
+      soonVoiceHere: '이 나라는 지금 AI 전화 회선을 여는 중입니다. 채팅과 메신저는 지금 ' +
+                   '됩니다. 개통 날짜가 정해지면 시작 전에 먼저 알려 드립니다.',
       taxNone: '저희는 대한민국 법인이고 귀사 국가에 세무 등록이 없어 세금을 걷지 않습니다. 현지 규정에 따른 신고 의무는 귀사에 남습니다.',
       taxReverse: '리버스 차지 대상입니다. 저희가 세금을 붙이지 않고, 귀사에서 신고하시게 됩니다. 세금 번호를 주시면 인보이스에 찍어 드립니다.',
       required: '필수 항목입니다',
@@ -59,14 +62,17 @@
     en: {
       monthly: 'Monthly', total: 'Charged every month', tax: 'Tax',
       firstLabel: 'First month prorated from the start date',
-      firstIf: 'Starting today that would be %s (%d/%d days)',
+      firstIf: 'Starting today that would be {amount} — {left} of this month’s {total} days.',
       notNow: 'This button records the order. Nothing is charged now.',
       usage: 'Usage estimate — not part of the charge',
       from: ' and up', estimateNote: 'Settled next month on what you actually use.',
-      overage: '%s conversations are included; past that it is %s each. You can cap the month.',
-      discount: '%s applied — %d% off for your first %d months. After that it is %s a month.',
-      noVoiceHere: 'AI phone is not open in your country yet. Chat and messengers work today. ' +
-                   'If you take this plan we will tell you the voice date before anything starts.',
+      overage: '{included} conversations are included; past that it is {rate} each. You can cap the month.',
+      discount: '{name} applied — {percent}% off for your first {months} months. After that it is {after} a month.',
+      noVoiceHere: 'AI phone is not open in your country yet. Chat and messengers work today, ' +
+                   'and the rest of this plan works in full. We will not start the voice part, ' +
+                   'or bill you for it, until a line is live where you are.',
+      soonVoiceHere: 'AI phone is being opened in your country now. Chat and messengers work ' +
+                   'today. We will tell you the date the line goes live before anything starts.',
       taxNone: 'We are a Korean company with no tax registration in your country, so we add no tax. Any local filing duty stays with you.',
       taxReverse: 'This is a reverse-charge sale. We add no tax and you account for it. A tax number you give us goes on the invoice.',
       required: 'Required',
@@ -140,9 +146,37 @@
      3자리입니다. 한 가지 규칙으로 밀어붙이면 010123-4-5678 같은 것이
      나오고, 그걸 본 사람은 자기가 잘못 친 줄 압니다. */
   function fmtPhone(v) {
-    var n = v.replace(/[^0-9]/g, '').slice(0, 11);
-    var head = n.slice(0, 2) === '02' ? 2 : 3;
+    var raw = String(v || '');
+    /* 국제 표기는 손대지 않습니다. +82 10-1234-5678 을 한국 규칙으로 밀면
+       821-0123-4567 이 되어, 친 번호와 다른 번호가 칸에 남습니다. */
+    if (raw.indexOf('+') >= 0) return raw;
+
+    var n = raw.replace(/[^0-9]/g, '');
+
+    /* 국번의 길이는 번호마다 다릅니다. 서울은 두 자리(02), 안심번호와
+       인터넷전화는 네 자리(0505·0507·0303), 나머지는 세 자리입니다.
+       예전에는 이것을 무시하고 숫자를 11자리로 잘라 3-4-4 로 밀어붙였고,
+       그래서 0507-1234-5678 이 050-7123-4567 이 되었습니다. 마지막 자리가
+       사라지고 앞자리가 한 칸씩 밀렸는데, 친 사람은 알아채기 어렵습니다.
+       접수된 번호로 전화를 걸면 다른 사람이 받습니다. */
+    var head;
+    if (/^1[5-9]/.test(n)) {
+      /* 대표번호 1588·1600·1877 — 여덟 자리, 4-4 */
+      if (n.length > 8) return raw;
+      return n.length <= 4 ? n : n.slice(0, 4) + '-' + n.slice(4);
+    } else if (/^0(50|30)/.test(n)) {
+      head = 4;
+    } else if (n.slice(0, 2) === '02') {
+      head = 2;
+    } else {
+      head = 3;
+    }
+
+    /* 아는 모양보다 길면 손대지 않습니다. 모르는 번호를 다듬는 것보다
+       친 그대로 두는 편이 낫습니다. */
+    if (n.length > head + 8) return raw;
     if (n.length <= head) return n;
+
     var rest = n.length - head;
     /* 다 치기 전에는 하이픈을 하나만 넣습니다. 끊을 위치는 마지막 네 자리가
        나와야 정해지는데, 그 전에 미리 끊으면 치는 중에 숫자가 이리저리
@@ -166,7 +200,12 @@
     var v = String(raw || '').trim();
     if (!v) return !c || !c.taxIdRequired;
     if (c && c.taxIdCheck === 'kr') return krBizValid(v);
-    return /^[A-Za-z0-9][A-Za-z0-9 .\-\/]{3,29}$/.test(v);
+    /* 세계의 모든 사업자 번호 규칙을 안다고 주장하지 않고 형식만 봅니다.
+       다만 허용 글자를 너무 좁게 잡으면 멀쩡한 번호가 막힙니다.
+       멕시코 RFC 에는 &(예: ABC&850101AB1), 구형 아일랜드 VAT 에는
+       + 와 * 가 들어갑니다(예: IE8Z*4928F). 그 사람들은 자기 나라
+       번호를 그대로 쳤을 뿐인데 "올바르지 않습니다" 를 보게 됩니다. */
+    return /^[A-Za-z0-9][A-Za-z0-9 .\-\/&+*]{3,29}$/.test(v);
   }
   var emailOk = function (v) { return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v); };
 
@@ -279,8 +318,21 @@
       after: round(list + round(list * rate)),
       net: net, tax: round(net * rate), total: round(net + round(net * rate)),
       firstTotal: round(firstNet + round(firstNet * rate)),
-      voiceGap: !!(plan.voice && c.voice === false)
+      /* 'live' 만 지금 됩니다. 'soon' 은 여는 중, 'no' 는 아직입니다.
+         예전에는 이 값이 세 나라에만 붙어 있어서, 요금 페이지가 "안 된다"고
+         적은 나라의 구매자가 AI 전화가 든 요금제를 골라도 조용했습니다. */
+      voiceGap: !!(plan.voice && c.voice !== 'live') ? (c.voice === 'soon' ? 'soon' : 'no') : ''
     };
+  }
+
+  // 한국어와 영어는 어순이 다릅니다. "처음 3개월 50%" 와 "50% off for your
+  // first 3 months" 는 숫자가 반대로 놓입니다. 자리를 순서로 채우면 한쪽이
+  // 반드시 뒤집히고, 실제로 뒤집혀서 "처음 50개월 3% 할인" 이 나갔습니다.
+  // 이름으로 채우면 어순이 달라도 각자 제자리에 들어갑니다.
+  function fill(tpl, vals) {
+    return String(tpl).replace(/\{(\w+)\}/g, function (m, k) {
+      return Object.prototype.hasOwnProperty.call(vals, k) ? String(vals[k]) : m;
+    });
   }
 
   function paint() {
@@ -300,18 +352,22 @@
     }
     r.push('<div class="sm-total"><span>' + T.total + '</span><b>' + A(q.total) + '</b></div>');
     if (q.disc) {
-      r.push('<p class="sm-note sm-disc">' +
-        T.discount.replace('%s', q.disc.name[LANG]).replace('%d', q.disc.percent)
-                  .replace('%d', q.disc.months).replace('%s', A(q.after)) + '</p>');
+      r.push('<p class="sm-note sm-disc">' + fill(T.discount, {
+        name: q.disc.name[LANG], percent: q.disc.percent,
+        months: q.disc.months, after: A(q.after)
+      }) + '</p>');
     }
     r.push('<p class="sm-notnow">' + T.notNow + '</p>');
-    if (q.voiceGap) r.push('<p class="sm-note sm-warn">' + T.noVoiceHere + '</p>');
+    if (q.voiceGap) {
+      r.push('<p class="sm-note sm-warn">' +
+        (q.voiceGap === 'soon' ? T.soonVoiceHere : T.noVoiceHere) + '</p>');
+    }
     if (!q.collected) {
       r.push('<p class="sm-note sm-tax">' + (q.reverse ? T.taxReverse : T.taxNone) + '</p>');
     }
     r.push('<div class="sm-first"><p>' + T.firstLabel + '</p><p class="sm-note">' +
-      T.firstIf.replace('%s', A(q.firstTotal))
-               .replace('%d', q.pr.remaining).replace('%d', q.pr.daysInMonth) + '</p></div>');
+      fill(T.firstIf, { amount: A(q.firstTotal), left: q.pr.remaining,
+                        total: q.pr.daysInMonth }) + '</p></div>');
     if (q.est.length) {
       r.push('<div class="sm-est"><p>' + T.usage + '</p>' +
         q.est.map(function (e) {
@@ -322,9 +378,10 @@
     }
     if (P.overage) {
       var fmt = new Intl.NumberFormat(LANG === 'ko' ? 'ko-KR' : 'en-US');
-      r.push('<p class="sm-note sm-over">' + T.overage
-        .replace('%s', fmt.format(q.plan.conversations))
-        .replace('%s', A(P.overage.perConversation[q.cur])) + '</p>');
+      r.push('<p class="sm-note sm-over">' + fill(T.overage, {
+        included: fmt.format(q.plan.conversations),
+        rate: A(P.overage.perConversation[q.cur])
+      }) + '</p>');
     }
     box.innerHTML = r.join('');
     var bar = document.querySelector('[data-paybar-total]');
@@ -340,6 +397,20 @@
     var sel = selection();
     var plan = P ? P.plans.filter(function (p) { return p.id === sel.plan; })[0] : null;
     var c = countryOf(sel.country);
+
+    /* 요금제 타일의 금액은 페이지에 박혀 있었습니다. 한국어 페이지에서
+       나라를 미국으로 바꾸면 타일은 "820,000원", 요약은 "$599" 를 같이
+       보여 줬습니다. 자기가 무슨 통화로 얼마를 내는지 알 수 없습니다.
+       국가가 바뀌면 타일도 함께 다시 그립니다. */
+    if (P && c) {
+      P.plans.forEach(function (pl) {
+        var el = document.querySelector('[data-plan-price="' + pl.id + '"]');
+        if (!el) return;
+        var per = el.querySelector('i');
+        el.textContent = money(pl.price[c.currency], c.currency);
+        if (per) el.appendChild(per);
+      });
+    }
 
     var row = document.querySelector('[data-voice-row]');
     if (row) row.hidden = !(plan && plan.voice);
@@ -397,6 +468,8 @@
     var cur = q.currency || 'KRW';
     var monthly = q.monthly ? money(q.monthly.total, cur) : '';
     var first = q.firstMonthIfToday ? money(q.firstMonthIfToday.total, cur) : '';
+    var after = (q.discount && q.afterDiscount)
+      ? money(q.afterDiscount.total, cur) : '';
     var steps = KO
       ? ['영업일 하루 안에 담당자가 확인 연락을 드립니다.',
          '우리 요금표와 영업시간을 받아 응대를 만들어 드립니다.',
@@ -413,6 +486,17 @@
           (first ? (KO ? ' · 첫 달은 개시일 기준 일할(오늘이면 ' : ' · first month prorated (today, ')
                  + first + ')' : '') +
         '</p>' +
+        /* 할인이 끝나면 금액이 두 배가 됩니다. 이 화면과 확인 메일이
+           구매자에게 남는 전부인데, 여기에 할인가만 적혀 있으면 넉 달째
+           청구서를 보고 "듣던 것과 다르다"고 하는 것이 당연합니다. */
+        (after ? '<p class="os-after">' +
+          (KO ? '위 금액은 ' + (q.discount.percent) + '% 할인이 적용된 처음 ' +
+                q.discount.months + '개월치입니다. ' + (q.discount.months + 1) +
+                '개월째부터는 매월 ' + after + ' 입니다.'
+              : 'That is the first ' + q.discount.months + ' months at ' +
+                q.discount.percent + '% off. From month ' + (q.discount.months + 1) +
+                ' it is ' + after + ' a month.') +
+        '</p>' : '') +
         '<p class="os-note"><b>' +
           (KO ? '아직 결제되지 않았습니다.' : 'Nothing has been charged yet.') +
         '</b> ' +
@@ -446,10 +530,26 @@
     if (!slot) return;
     slot.setAttribute('role', 'alert');
     slot.setAttribute('tabindex', '-1');
+    /* 이 배너는 이번 시도에 대한 것입니다. 다음 시도에서는 지워져야 합니다. */
+    slot.setAttribute('data-transient', '1');
     slot.textContent = msg;
     slot.hidden = false;
     slot.scrollIntoView({ behavior: 'smooth', block: 'center' });
     try { slot.focus({ preventScroll: true }); } catch (e) {}
+  }
+
+  /* 한 번 뜬 실패 배너가 사라지지 않아, 다음 시도에서 칸마다 오류가 붙는
+     동안에도 "전송에 실패했습니다. 잠시 뒤 다시 눌러 주세요" 가 위에 남아
+     있었습니다. 두 문구가 서로 다른 말을 하니 어느 쪽을 따라야 할지
+     알 수 없습니다. 접수를 못 받는 상태나 금액을 못 읽은 상태를 알리는
+     배너는 계속 남아야 하므로, 이번 시도 때문에 뜬 것만 지웁니다. */
+  function clearFail() {
+    var slot = $('[data-order-error]');
+    if (!slot || slot.getAttribute('data-transient') !== '1') return;
+    slot.hidden = true;
+    slot.textContent = '';
+    slot.removeAttribute('data-transient');
+    slot.removeAttribute('role');
   }
 
   /* ── 시작 ──────────────────────────────────────────────────────────── */
@@ -537,6 +637,9 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = $('[data-submit]');
+    /* 지난 시도의 실패 배너를 먼저 지웁니다. 남겨 두면 이번 시도의
+       칸 오류와 나란히 서서 서로 다른 말을 합니다. */
+    clearFail();
 
     var firstBad = null;
     $$('input,select,textarea').forEach(function (el) {

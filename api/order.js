@@ -106,7 +106,7 @@ function taxIdOk(c, raw) {
   if (c.taxIdCheck === 'kr') return krBizNoValid(v);
   /* 그 밖의 나라는 형식만 봅니다. 세계의 모든 사업자 번호 규칙을 안다고
      주장하는 것보다, 사람이 보고 확인하는 편이 정직합니다. */
-  return /^[A-Za-z0-9][A-Za-z0-9 .\-\/]{3,29}$/.test(v);
+  return /^[A-Za-z0-9][A-Za-z0-9 .\-\/&+*]{3,29}$/.test(v);
 }
 
 function limited(ip) {
@@ -226,8 +226,9 @@ function quote(sel, now) {
     /* 요금 페이지가 "이 나라는 아직 음성이 안 된다"고 적어 두었습니다.
        그 나라 구매자에게 AI 전화가 든 요금제를 말없이 파는 것은
        곧 환불 요청입니다. */
-    voiceAvailable: c.voice !== false,
-    voiceUnavailableHere: !!(plan.voice && c.voice === false),
+    voiceAvailable: c.voice === 'live',
+    voiceStatus: c.voice || 'no',
+    voiceUnavailableHere: !!(plan.voice && c.voice !== 'live'),
     overage: { perConversation: P.overage.perConversation[cur],
                conversations: plan.conversations },
     vatRate: rate
@@ -298,17 +299,32 @@ function receiptText(o, q, lang) {
   }
   out.push(L('매월 결제 금액: ', 'Charged every month: ') + A(q.monthly.total) +
            (q.taxCollected ? '' : L(' (세금 별도 - 아래 참조)', ' (tax not added - see below)')));
+  /* 할인이 끝나면 금액이 두 배가 됩니다. 그 사실이 이 메일에 없으면,
+     구매자에게 남는 유일한 기록은 할인가 하나뿐입니다. 넉 달째 청구서를
+     보고 "듣던 것과 다르다"고 하는 것이 당연합니다. */
+  if (q.discount && q.afterDiscount) {
+    out.push(L('  위 금액은 ' + q.discount.name.ko + '(' + q.discount.percent + '% 할인)이 ' +
+               '적용된 처음 ' + q.discount.months + '개월치입니다.',
+               '  That is the ' + q.discount.name.en + ' price (' + q.discount.percent +
+               '% off) for your first ' + q.discount.months + ' months.'));
+    out.push(L('  ' + (q.discount.months + 1) + '개월째부터는 매월 ' +
+               A(q.afterDiscount.total) + ' 입니다.',
+               '  From month ' + (q.discount.months + 1) + ' it is ' +
+               A(q.afterDiscount.total) + ' a month.'));
+  }
   out.push(L('결제 수단: ', 'Payment: ') + o.methodName);
   out.push('');
   out.push(L('첫 달은 개시일부터 그 달 말일까지 날짜로 나눠 계산합니다.',
              'The first month is prorated by days from the start date.'));
   out.push(L('개시일이 정해지면 그 날짜로 다시 계산한 확정 금액을 알려 드립니다.',
              'Once the start date is set we send the exact figure.'));
-  out.push(L('참고로 ' + q.firstMonthIfToday.asOf + ' 에 개시한다면 ' +
-             q.firstMonthIfToday.days + '/' + q.firstMonthIfToday.monthDays + '일치인 ' +
-             A(q.firstMonthIfToday.total) + ' 입니다.',
+  /* "6/31일" 은 6월 31일로 읽힙니다. 그런 날짜는 없습니다. */
+  out.push(L('참고로 ' + q.firstMonthIfToday.asOf + ' 에 개시한다면 그 달 ' +
+             q.firstMonthIfToday.monthDays + '일 가운데 ' + q.firstMonthIfToday.days +
+             '일치로 ' + A(q.firstMonthIfToday.total) + ' 입니다.',
              'For reference, starting on ' + q.firstMonthIfToday.asOf + ' would be ' +
-             q.firstMonthIfToday.days + '/' + q.firstMonthIfToday.monthDays + ' days, ' +
+             q.firstMonthIfToday.days + ' of that month’s ' +
+             q.firstMonthIfToday.monthDays + ' days, ' +
              A(q.firstMonthIfToday.total) + '.'));
   out.push('');
   out.push(L('-- 세금 --', '-- Tax --'));
@@ -424,7 +440,7 @@ export default async function handler(req, res) {
     voiceMinutes: body.voiceMinutes, alimtalk: body.alimtalk
   }, new Date());
   if (q.error) return res.status(400).json({ error: q.error });
-  if (body.method === 'card' && body.agreeRecurring !== true) {
+  if (q.recurring === true && body.agreeRecurring !== true) {
     return res.status(400).json({ error: 'invalid', fields: ['agreeRecurring'] });
   }
 
@@ -433,6 +449,14 @@ export default async function handler(req, res) {
   o.orderNo = orderNo(idem);
   o.received = new Date().toISOString();
   o.marketing = body.agreeMarketing === true;
+  /* 위 검사를 통과한 시점이므로 필수 셋은 전부 true 로 확정입니다.
+     받았다는 사실과 받은 시각·주소를 함께 남깁니다. */
+  o.consent = {
+    terms: true, privacy: true, transfer: true,
+    recurring: body.agreeRecurring === true,
+    marketing: o.marketing,
+    at: o.received, ip: ip
+  };
 
   const record = Object.assign({}, o, { ip: ip, quote: q });
   const text = receiptText(o, q, o.lang);

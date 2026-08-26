@@ -178,6 +178,7 @@ CSS = """
     font-family:'Space Grotesk',monospace;font-size:var(--fs-lead);letter-spacing:.06em;}
   .os-money{margin-top:18px;font-size:var(--fs-body);color:var(--tx2);line-height:1.8;}
   .os-money b{color:#fff;}
+  .os-after{margin-top:8px;font-size:var(--fs-sm);color:var(--tx3);line-height:1.7;}
   .os-note{margin-top:16px;font-size:var(--fs-sm);line-height:1.85;color:var(--tx2);}
   .os-note b{color:#fff;}
   .os-steps{margin-top:18px;display:grid;gap:11px;counter-reset:os;}
@@ -220,8 +221,11 @@ def build(lang):
                    'Website chat, lead inbox, bookings. 500 conversations.'),
         'grow': t('카카오톡, 견적, 예약 확인 추가. 월 2,000건 대화.',
                   'Adds messengers, quotes and confirmations. 2,000 conversations.'),
-        'scale': t('AI 전화 추가. 통화 1분당 190원부터.',
-                   'Adds AI phone, from $0.14 a talk minute.'),
+        # 단가를 여기 적으면 나라가 바뀔 때 통화가 어긋납니다. 정확한 단가는
+        # 바로 아래 요약이 고른 나라의 통화로 보여 줍니다.
+        'scale': t('AI 전화 추가. 통화료는 쓰신 만큼 다음 달 정산. 월 6,000건 대화.',
+                   'Adds AI phone; talk time billed next month on actual use. '
+                   '6,000 conversations.'),
     }
     plans = [(pl['id'], pl['name'][lang], price(pl['price'][cur]), blurbs[pl['id']])
              for pl in PR['plans']]
@@ -235,8 +239,8 @@ def build(lang):
         '<label class="pick"><input type="radio" name="plan" value="%s"%s>'
         '<span class="body"><span class="dot"></span>'
         '<span><b>%s</b><em>%s</em></span>'
-        '<span class="pr">%s<i>%s</i></span></span></label>'
-        % (pid, ' checked' if pid == 'grow' else '', nm, desc, ptxt, t('/월', '/mo'))
+        '<span class="pr" data-plan-price="%s">%s<i>%s</i></span></span></label>'
+        % (pid, ' checked' if pid == 'grow' else '', nm, desc, pid, ptxt, t('/월', '/mo'))
         for pid, nm, ptxt, desc in plans)
 
     methods = [
@@ -522,14 +526,14 @@ def build(lang):
         barLbl=t('매월 결제 금액', 'Every month'),
         seller=t(seller_line('ko') + '<br>'
                  '<b>청약철회</b> — 접수 후 서비스 개시 전에는 언제든 취소하실 수 있으며 금액이 청구되지 '
-                 '않습니다. 개시 후에는 「이용약관」 제5조에 따라 해지 신청일부터 그 달 남은 날수만큼 '
-                 '날짜로 계산해 환불합니다. 이미 사용한 통화료 등 사용량 요금은 환불 대상이 아닙니다. '
-                 '위약금은 없습니다.',
+                 '않습니다. 개시 후에는 「이용약관」 제5조에 따라, <b>첫 결제일부터 14일 안에는 전액 '
+                 '환불</b>하고, 그 뒤에는 해지 신청일부터 그 달 남은 날수만큼 날짜로 계산해 환불합니다. '
+                 '이미 사용한 통화료 등 사용량 요금은 게시된 단가로 차감합니다. 위약금은 없습니다.',
                  seller_line('en') + '<br>'
                  '<b>Cancellation</b> — before service starts, cancelling costs nothing and no amount '
                  'is charged. After it starts, &sect;3 of the Terms applies: you can cancel any day, the '
-                 'first payment is refunded in full within 14 days, and after that the service runs to '
-                 'the end of the period you paid for with nothing renewing. Usage already spent is '
+                 'first payment is refunded <b>in full within 14 days</b>, and after that we refund '
+                 'the unused part of the month, counted by date. Nothing renews. Usage already spent is '
                  'deducted at the listed rates. There is no penalty.<br>'
                  'Invoices come from the Korean entity above. Korean customers are billed in won with 10% '
                  'VAT; everywhere else it is US dollars with no tax added by us.'))
