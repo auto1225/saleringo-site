@@ -27,11 +27,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://claude.saleringo.com/ko/index.html"},{"@type":"ListItem","position":2,"name":"시작하기","item":"https://claude.saleringo.com/ko/get-started.html"}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=49.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=49.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=49.0">
-<link rel="stylesheet" href="../assets/css/examples.css?v=49.0">
-<link rel="stylesheet" href="../assets/css/ko.css?v=49.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=50.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=50.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=50.0">
+<link rel="stylesheet" href="../assets/css/examples.css?v=50.0">
+<link rel="stylesheet" href="../assets/css/ko.css?v=50.0">
 <style>
 
   .hero{display:block;padding:150px 0 60px;}
@@ -63,7 +63,7 @@
   <div class="scrim" aria-hidden="true"></div>
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="주 메뉴">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v49.0">v49.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v50.0">v50.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">작동 방식<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">전체 구성</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">플랫폼 &amp; CRM</a></li><li><a href="./platform.html#inside">응대 한 건이 만들어지는 과정</a></li><li><a href="./platform.html#who-next">누구에게 넘기는가</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">응대하는 채널</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI 전화</a></li><li><a href="./webchat.html">웹사이트 채팅</a></li><li><a href="./whatsapp.html">카카오톡 &amp; 메신저</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">함께 붙는 것</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">연동</a></li><li><a href="./verified-ai.html">답변 검증 방식</a></li><li><a href="./ai-answering-service.html">고르기 전에: AI 응대 세 가지</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">실제로 어떻게 하는지<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">직접 보기</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">대화 한 건 보기</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">통화 기록 읽기</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">업종별 실제 사례</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">직접 써 보고 판단하기</p><ul aria-labelledby="nh-see-2"><li><a href="./verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="./about.html">누가 만드는가</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
@@ -203,10 +203,30 @@
     <div class="secrule reveal"><span class="eyebrow"><i></i>준비하실 것</span><span class="line"></span></div>
     <h2 class="h2 reveal">세 가지만 있으면 시작됩니다.</h2>
     <ul class="kolist reveal" style="color:var(--l-tx2);">
-      <li><b>요금표.</b> 사진이어도 되고 엑셀이어도 됩니다. AI는 여기 적힌 금액만 말합니다.</li>
-      <li><b>영업시간과 휴무일.</b> 언제 사람이 받고 언제 AI가 받을지를 정하는 기준입니다.</li>
-      <li><b>하면 안 되는 말.</b> 업종마다 다릅니다. 이것이 가장 중요합니다.</li>
+      <li><b>요금표.</b> 사진이어도 되고 엑셀이어도 되고, 네이버 플레이스에 적어 두신
+        것이어도 됩니다. AI 는 여기 적힌 금액만 말합니다 &mdash; 여기 없는 것을 물으면
+        지어내는 대신 &ldquo;확인 후 연락드리겠습니다&rdquo;로 멈춥니다.
+        그래서 이 자료가 정확할수록 답할 수 있는 범위가 넓어집니다.</li>
+      <li><b>영업시간과 휴무일.</b> 언제 사람이 받고 언제 AI 가 받을지를 정하는 기준입니다.
+        점심시간처럼 사람이 있어도 못 받는 시간을 따로 적어 주시면 그 시간대도 넘깁니다.
+        명절과 임시 휴무는 나중에 화면에서 바꾸실 수 있습니다.</li>
+      <li><b>하면 안 되는 말.</b> 업종마다 다르고, 이것이 가장 중요합니다.
+        치과라면 진단 비슷한 말, 학원이라면 합격 가능성, 부동산이라면 시세 전망.
+        업종별 기본 목록을 저희가 먼저 만들어 드리고, 사장님이 보시고 더하거나
+        빼시면 됩니다.</li>
     </ul>
+
+    <div class="trio reveal" style="margin-top:36px;">
+      <div><b>하루 안에 무엇이 오는가</b><p>사장님 요금표로 실제로 답하는 대화 두세 건을
+        만들어 보내 드립니다. 잘 풀리는 통화 하나와, 일부러 막히게 한 통화 하나를
+        같이 넣습니다 &mdash; 막힐 때 어떻게 멈추는지가 더 중요하기 때문입니다.</p></div>
+      <div><b>그다음에 결정하십니다</b><p>읽어 보시고 아니다 싶으면 거기서 끝내시면
+        됩니다. 결제 정보를 받지 않았으므로 해지하실 것도 없습니다. 보내 드린 자료는
+        요청하시면 지웁니다.</p></div>
+      <div><b>맞다 싶으면 20분</b><p>번호 착신전환과 캘린더 연결을 같이 합니다.
+        대부분 20분 안에 끝나고, 그날부터 받습니다. 맞지 않으면 착신전환만 풀면
+        원래대로입니다.</p></div>
+    </div>
     <p class="seccap reveal" style="margin-top:20px;">보내 주신 자료는 응대를 만드는 데에만 씁니다.
       다른 고객의 AI를 학습시키는 데 쓰지 않습니다. 취급 방식은
       <a href="./privacy.html">개인정보처리방침</a>과 <a href="./security.html">보안</a> 페이지에
@@ -218,7 +238,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v49.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v50.0</span>
         <p>전화 · 채팅 · 메신저를 AI가 대신 받고, 업종별 CRM이 모든 대화를 예약과 견적, 그리고 고객으로 남깁니다.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">이 사이트의 모든 페이지 &mdash; 사이트맵과 둘러보기 <span aria-hidden="true">&rarr;</span></a>
@@ -254,11 +274,11 @@
 </main>
 
 
-<script src="../assets/js/site.js?v=49.0"></script>
-<script src="../assets/js/balance.js?v=49.0" defer></script>
-<script src="../assets/js/panels.js?v=49.0" defer></script>
-<script src="../assets/js/wrap.js?v=49.0" defer></script>
-<script src="../assets/js/rail.js?v=49.0" defer></script>
-<script src="../assets/js/guide.js?v=49.0"></script>
+<script src="../assets/js/site.js?v=50.0"></script>
+<script src="../assets/js/balance.js?v=50.0" defer></script>
+<script src="../assets/js/panels.js?v=50.0" defer></script>
+<script src="../assets/js/wrap.js?v=50.0" defer></script>
+<script src="../assets/js/rail.js?v=50.0" defer></script>
+<script src="../assets/js/guide.js?v=50.0"></script>
 </body>
 </html>
