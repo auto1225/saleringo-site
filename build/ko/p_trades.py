@@ -82,7 +82,7 @@ TPL = """
 
 <main>
 
-<section class="t-lg sec-dark bg-dusk" id="call">
+<section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>그날 밤의 통화</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">{owner}이 자는 동안<br>이렇게 흘러갑니다.</h2>
@@ -99,7 +99,7 @@ TPL = """
   </div>
 </section>
 
-<section class="t-lg sec-dark bg-grid" id="cost">
+<section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>놓쳤을 때</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">{name}에서 못 받은 전화는<br>어디에도 기록되지 않습니다.</h2>
@@ -107,7 +107,7 @@ TPL = """
   </div>
 </section>
 
-<section class="t-lg sec-dark bg-spot" id="refuses">
+<section class="t-md sec-dark bg-spot" id="refuses">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>하지 않는 일</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">{name}에서 기계가<br>말하면 안 되는 것들.</h2>
@@ -118,7 +118,7 @@ TPL = """
   </div>
 </section>
 
-<section class="t-lg sec-light bg-paper" id="crm">
+<section class="t-md sec-light bg-paper" id="crm">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>남는 것</span><span class="line"></span></div>
     <h2 class="h2 reveal">통화가 끝나면<br>이 항목들이 채워져 있습니다.</h2>
@@ -157,7 +157,7 @@ TPL = """
   </div>
 </section>
 
-<section class="founding t-lg bg-aurora" id="start">
+<section class="founding t-xl bg-aurora" id="start">
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
     <h2 class="h2 onDark reveal">{name} 요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
@@ -246,7 +246,7 @@ WALL = """
 
 <main>
 
-<section class="t-lg sec-light bg-paper" id="all">
+<section class="t-md sec-light bg-paper" id="all">
   <div class="wrap">
     {groups}
   </div>

@@ -79,7 +79,7 @@ def doc(slug, kicker, h1, sub, sections, title, desc, crumb):
             '    <p class="updated">최종 개정일 %s</p>' % UPDATED,
             '  </div>',
             '</header>', '', '<main>', '',
-            '<section class="t-lg sec-light bg-paper"><div class="wrap doc">']
+            '<section class="t-md sec-light bg-paper"><div class="wrap doc">']
     for h, inner in sections:
         body.append('<div class="docsec reveal"><h2>%s</h2>%s</div>' % (h, inner))
     body += ['</div></section>', '', FOOT, '</main>']

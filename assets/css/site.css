@@ -3363,3 +3363,74 @@ html .leadbox .eanote,html .altwrap .altnote,html .peopleband .capL{
 .bigfooter .langsw:hover{color:#fff;border-color:rgba(255,255,255,.34);
   background:rgba(255,255,255,.06);}
 @media (max-width:980px){.navwrap .langsw{display:none;}}
+
+/* ── the parts that were only ever written inside one page ─────────────────
+   The lead form, the badges on a mock window's title bar, and the clipping a
+   grain overlay needs were each defined once, inside the <style> block of the
+   one English page that used them. That was fine while there was one page
+   using each. It stopped being fine when a second language grew its own
+   copies of the same components: the Korean lead form came out as raw
+   unstyled HTML, and the "예시 · 가상의 상담" badges rendered as loose text
+   beside the title.
+
+   So they live here, once, and any page that wants to differ still can - a
+   page's own <style> block parses after this sheet and wins. The English
+   pages keep their inline copies and look exactly as they did. */
+
+/* the lead form, wherever it appears */
+.gsform{display:grid;grid-template-columns:1fr;gap:14px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:700px){.two{grid-template-columns:1fr;}}
+.fld{display:grid;gap:7px;}
+.fld label{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tx3);}
+.fld label .opt{color:var(--tx3);opacity:.7;letter-spacing:.02em;text-transform:none;
+  font-weight:600;font-size:var(--fs-2xs);}
+.fld input,.fld select,.fld textarea{width:100%;background:rgba(255,255,255,.045);
+  border:1px solid var(--hair2);border-radius:11px;padding:13px 14px;color:#fff;
+  font-family:inherit;font-size:var(--fs-sm);font-weight:500;
+  transition:border-color .2s var(--ease);}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--teal);}
+.fld select option{background:#0B1B33;color:#fff;}
+.fld textarea{resize:vertical;min-height:88px;line-height:1.6;}
+.slots{display:flex;flex-wrap:wrap;gap:8px;}
+.slotchip{position:relative;}
+.slotchip input{position:absolute;opacity:0;width:0;height:0;}
+.slotchip span{display:inline-block;cursor:pointer;font-size:var(--fs-xs);font-weight:700;
+  border:1px solid var(--hair2);border-radius:999px;padding:9px 15px;color:var(--tx2);
+  transition:all .25s var(--ease);}
+.slotchip input:checked + span{background:rgba(23,189,189,.18);border-color:var(--teal);color:#fff;}
+.slotchip input:focus-visible + span{outline:2px solid var(--teal);outline-offset:3px;}
+.tzline{margin-top:10px;font-size:var(--fs-xs);color:var(--tx3);font-weight:600;line-height:1.7;}
+.tzline b{color:var(--tx2);}
+
+/* the two badges on a mock window's title bar: what it is, and when it was */
+.appwin .bar .illus{margin-left:14px;font-size:var(--fs-2xs);font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--tx3);
+  padding:3px 8px;border:1px solid var(--hair);border-radius:999px;white-space:nowrap;}
+.appwin .bar .closed{margin-left:auto;font-size:var(--fs-2xs);font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--amber);white-space:nowrap;}
+@media (max-width:700px){
+  .appwin .bar .illus{margin-left:0;}
+  .appwin .bar .closed{margin-left:0;}
+}
+
+/* a grain overlay is absolutely positioned; its section has to clip it */
+.founding{position:relative;overflow:hidden;}
+
+/* a list where each line is a claim with its own explanation under it */
+.kolist{margin-top:26px;display:grid;gap:16px;}
+.kolist li{list-style:none;padding-left:26px;position:relative;
+  font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+.kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+  border-radius:50%;border:1.5px solid var(--teal);}
+.kolist li b{color:#fff;}
+.sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+.sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+
+/* The grain overlay is a div whose ::after paints the noise. It has to be
+   taken out of flow, or it sits in the layout as an empty block and the noise
+   lands against whatever happens to be positioned above it. Defined once here
+   for the same reason as the parts above: it was copied into the <style> of
+   every English page that used it, and the Korean pages then had none. */
+.grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}

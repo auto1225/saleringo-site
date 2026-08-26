@@ -80,7 +80,7 @@ TPL = """
 
 <main>
 
-<section class="t-lg sec-dark bg-grid" id="pack">
+<section class="t-md sec-dark bg-grid" id="pack">
   <div class="wrap">
     <div class="packgrid">
 

@@ -77,7 +77,7 @@ BODY = """
 
 <main>
 
-<section class="t-lg sec-dark bg-grid" id="plans">
+<section class="t-md sec-dark bg-grid" id="plans">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>요금제</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">세 개뿐입니다.</h2>
@@ -134,7 +134,7 @@ BODY = """
   </div>
 </section>
 
-<section class="t-lg sec-dark bg-spot" id="alternatives">
+<section class="t-md sec-dark bg-spot" id="alternatives">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>무엇과 비교하는가</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">지금도 이미 비용을 내고 계십니다.<br>다만 청구서가 오지 않을 뿐입니다.</h2>
@@ -165,7 +165,7 @@ BODY = """
   </div>
 </section>
 
-<section class="t-lg sec-light bg-paper" id="not-paying">
+<section class="t-md sec-light bg-paper" id="not-paying">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>내지 않아도 되는 비용</span><span class="line"></span></div>
     <h2 class="h2 reveal">받지 않는 돈을 적어 둡니다.</h2>
@@ -179,7 +179,7 @@ BODY = """
   </div>
 </section>
 
-<section class="t-lg sec-light2" id="faq">
+<section class="t-md sec-light2" id="faq">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>결제와 세금</span><span class="line"></span></div>
     <h2 class="h2 reveal">먼저 물어보시는 것들.</h2>
@@ -207,7 +207,7 @@ BODY = """
   </div>
 </section>
 
-<section class="founding t-lg bg-aurora" id="start">
+<section class="founding t-xl bg-aurora" id="start">
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
     <h2 class="h2 onDark reveal">우리 경우에 얼마가 나오는지,<br>계약 전에 문서로 드립니다.</h2>

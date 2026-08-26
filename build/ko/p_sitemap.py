@@ -74,7 +74,7 @@ body = ['<header class="hero nophoto sec-dark bg-aurora">',
         '    <p class="sub">영어 사이트에 있는 예순아홉 장이 한국어로도 모두 있습니다. '
         '오른쪽 위 English 버튼을 누르면 지금 보고 계신 페이지의 영어판으로 바로 넘어갑니다.</p>',
         '  </div>', '</header>', '', '<main>', '',
-        '<section class="t-lg sec-light bg-paper"><div class="wrap">']
+        '<section class="t-md sec-light bg-paper"><div class="wrap">']
 for h, d, links in GROUPS:
     body.append('<div class="mapgrp reveal"><h2>%s</h2><p>%s</p><div class="maplinks">%s</div></div>'
                 % (h, d, ''.join('<a href="%s">%s</a>' % (u, n) for n, u in links)))

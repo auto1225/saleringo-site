@@ -110,7 +110,7 @@ def pipe(items):
 
 
 def closer(h2, lead, root='./'):
-    return ('<section class="founding t-lg bg-aurora" id="start">\n'
+    return ('<section class="founding t-xl bg-aurora" id="start">\n'
             '  <div class="grainlayer grain" aria-hidden="true"></div>\n'
             '  <div class="wrap">\n'
             '    <h2 class="h2 onDark reveal">%s</h2>\n'
@@ -131,13 +131,13 @@ platform = '\n\n'.join([
   '<a class="btn btn-teal" href="#inside">응대 한 건을 따라가 보기<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./pricing.html">요금 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'inside', '응대 한 건이 만들어지는 과정',
+ sec('t-md sec-dark bg-grid', 'inside', '응대 한 건이 만들어지는 과정',
      '전화가 울리고 나서<br>예약이 잡히기까지, 여섯 단계.',
      '아래 여섯 가지는 순서대로 일어납니다. 어느 하나가 빠지면 그 통화는 '
      '메모 한 줄로 끝납니다.',
      pipe(['전화 · 채팅 도착', '누구인지 확인', '요금표에서 답', '빈 시간 확인',
            '예약 잡기', '고객 카드 저장'])),
- sec('t-lg sec-dark bg-spot', 'crm', 'CRM',
+ sec('t-md sec-dark bg-spot', 'crm', 'CRM',
      '업종의 말로 적힙니다.<br>빈칸을 고쳐 쓰지 않습니다.',
      '치과의 예약 단계와 정비소의 입고 단계는 다릅니다. 부동산의 매물 문의와 학원의 상담 문의도 '
      '다릅니다. 그래서 항목과 단계를 업종별로 미리 만들어 두었습니다.',
@@ -146,7 +146,7 @@ platform = '\n\n'.join([
          ('견적', '직접 넣으신 요금표에서 계산합니다. AI가 금액을 지어내지 않습니다.'),
          ('통화 기록', '녹취와 요약, 그리고 그렇게 답한 근거가 함께 남습니다.'),
          ('내보내기', '전부 내려받을 수 있습니다. 나가는 길을 막지 않는 것도 제품의 일부입니다.')])),
- sec('t-lg sec-light bg-paper', 'who-next', '누구에게 넘기는가',
+ sec('t-md sec-light bg-paper', 'who-next', '누구에게 넘기는가',
      '기계가 멈추는 자리를<br>미리 정해 둡니다.', '',
      ul([('요금표에 없는 질문', '&ldquo;확인 후 연락드리겠습니다&rdquo;로 멈추고, 담당자에게 넘깁니다.'),
          ('판단이 필요한 질문', '진단, 법률 판단, 사건 전망 같은 것은 사람만 합니다.'),
@@ -174,7 +174,7 @@ voice = '\n\n'.join([
   '<a class="btn btn-teal" href="#how">연결 방식 보기<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="tel:+827052770820" data-tel>지금 걸어서 들어 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'how', '연결 방식',
+ sec('t-md sec-dark bg-grid', 'how', '연결 방식',
      '세 가지 중에 고르시면 됩니다.',
      '어떤 방식이든 번호는 그대로입니다. 통신사를 바꾸지 않고, 회선을 새로 놓지 않습니다.',
      trio([('못 받을 때만',
@@ -183,7 +183,7 @@ voice = '\n\n'.join([
             '문을 닫은 시간과 점심시간에만 AI가 받습니다. 시간표는 직접 정하십니다.'),
            ('처음부터 AI가',
             'AI가 먼저 받고, 사람이 필요한 통화만 돌립니다. 문의량이 많은 곳에 맞습니다.')])),
- sec('t-lg sec-dark bg-dusk', 'listen', '실제 통화',
+ sec('t-md sec-dark bg-dusk', 'listen', '실제 통화',
      '사람처럼 들리되,<br>사람인 척하지는 않습니다.',
      '물어보시면 AI라고 답합니다. 그것을 숨기면 그때부터는 신뢰의 문제가 됩니다.',
      '    <div class="appwin reveal" style="margin-top:30px;">\n'
@@ -201,7 +201,7 @@ voice = '\n\n'.join([
      '<div class="nl us"><span class="t"><em>고객</em>12:42</span>'
      '<div class="bub user">아 괜찮아요. 예약만 하면 돼요.</div></div>'
      '</div>\n    </div>\n'),
- sec('t-lg sec-light bg-paper', 'rules', '통화에서 지키는 것',
+ sec('t-md sec-light bg-paper', 'rules', '통화에서 지키는 것',
      '녹음하고, 알리고,<br>지웁니다.', '',
      ul([('녹음한다고 먼저 말합니다.', '통화 시작에 안내가 나갑니다. 원치 않으시면 녹음을 끄고 요약만 남길 수 있습니다.'),
          ('녹취는 그 가게의 것입니다.', '언제든 내려받고, 삭제 요청하면 지웁니다.'),
@@ -229,7 +229,7 @@ webchat = '\n\n'.join([
   '<a class="btn btn-teal" href="#what">무엇을 답하는지 보기<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./pricing.html">요금 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'what', '무엇을 답하는가',
+ sec('t-md sec-dark bg-grid', 'what', '무엇을 답하는가',
      '홈페이지에 이미 있는 것과,<br>어디에도 없는 것.',
      '채팅으로 들어오는 질문의 대부분은 두 가지입니다. 찾기 어려워서 묻는 것과, '
      '아예 적혀 있지 않아서 묻는 것. 앞쪽은 그 자리에서 답하고, 뒤쪽은 예약으로 넘깁니다.',
@@ -237,12 +237,12 @@ webchat = '\n\n'.join([
          ('예약 가능 시간', '캘린더의 빈 시간을 보고 답하고, 그 자리에서 잡습니다.'),
          ('오시는 길과 주차', '적어 두신 안내를 그대로 읽습니다.'),
          ('&ldquo;이런 것도 하나요&rdquo;', '서비스 목록에 있으면 답하고, 없으면 넘깁니다. 만들어 내지 않습니다.')])),
- sec('t-lg sec-dark bg-spot', 'install', '설치',
+ sec('t-md sec-dark bg-spot', 'install', '설치',
      '스크립트 한 줄입니다.',
      '홈페이지를 새로 만들 필요가 없습니다. 워드프레스, 카페24, 아임웹, 직접 만든 사이트 모두 '
      '</body> 앞에 한 줄을 넣으면 됩니다. 넣는 작업은 저희가 해 드립니다.',
      pipe(['한 줄 넣기', '요금표 등록', '말투 확인', '켜기'])),
- sec('t-lg sec-light bg-paper', 'left', '창을 닫아도',
+ sec('t-md sec-light bg-paper', 'left', '창을 닫아도',
      '대화는 남습니다.', '',
      ul([('연락처를 남기면 고객 카드가 생깁니다.', '이름과 번호를 받은 시점부터 그 사람은 문의가 됩니다.'),
          ('안 남겨도 무엇을 물었는지는 남습니다.', '어떤 질문이 반복되는지 보이면 홈페이지를 고칠 수 있습니다.'),
@@ -269,7 +269,7 @@ kakao = '\n\n'.join([
   '<a class="btn btn-teal" href="#why">왜 밀리는지<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./pricing.html">요금 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'why', '왜 밀리는가',
+ sec('t-md sec-dark bg-grid', 'why', '왜 밀리는가',
      '전화는 울리지만<br>메시지는 조용합니다.',
      '전화는 안 받으면 눈에 보입니다. 부재중 목록에 남고, 소리가 납니다. '
      '채널 메시지는 그렇지 않습니다. 알림을 한 번 넘기면 그것으로 끝이고, '
@@ -277,14 +277,14 @@ kakao = '\n\n'.join([
      ul([('가볍게 오는 만큼 많이 옵니다.', '전화를 걸 만큼은 아닌 질문이 전부 여기로 옵니다.'),
          ('답이 늦으면 다르게 읽힙니다.', '전화를 못 받은 것은 바빠서지만, 메시지에 답이 없는 것은 무시로 읽힙니다.'),
          ('밤에 옵니다.', '퇴근하고 누워서 보내는 문의입니다. 그 시간에 답할 사람은 없습니다.')])),
- sec('t-lg sec-dark bg-spot', 'what', '받는 방식',
+ sec('t-md sec-dark bg-spot', 'what', '받는 방식',
      '사람이 답하던 그 말투로<br>같은 내용을 답합니다.',
      '홈페이지 채팅과 전화에서 쓰는 요금표와 규칙이 그대로 적용됩니다. '
      '채널마다 다른 답이 나가면 그것이 더 큰 문제이기 때문입니다.',
      trio([('카카오톡 채널', '채널로 온 문의를 받고, 예약을 잡고, 알림톡으로 확인을 보냅니다.'),
            ('네이버 톡톡', '플레이스에서 넘어온 문의를 같은 내용으로 받습니다.'),
            ('인스타그램 DM', '프로필을 보고 바로 묻는 문의를 받습니다.')])),
- sec('t-lg sec-light bg-paper', 'rules', '지키는 것',
+ sec('t-md sec-light bg-paper', 'rules', '지키는 것',
      '광고로 쓰지 않습니다.', '',
      ul([('먼저 보내지 않습니다.', '문의에 답할 뿐입니다. 수신 동의 없는 광고 발송에 쓰지 않습니다.'),
          ('알림톡은 예약 확인에만.', '「정보통신망법」이 정하는 정보성 메시지 범위 안에서만 보냅니다.'),
@@ -315,7 +315,7 @@ integ = '\n\n'.join([
  '지금 쓰고 계신 제품이 되는지는 확인해서 알려 드립니다.</p>\n'
  '  </div>\n</header>',
  '<main>',
- sec('t-lg sec-dark bg-grid', 'standard', '표준으로 붙는 것',
+ sec('t-md sec-dark bg-grid', 'standard', '표준으로 붙는 것',
      '이 여섯 가지는<br>업종을 가리지 않습니다.', '',
      ul([('전화 회선', '쓰던 대표번호를 그대로 두고 못 받은 전화만 넘기거나, 처음부터 받게 합니다.'),
          ('카카오톡 채널', '채널 문의를 받고 알림톡을 보냅니다.'),
@@ -323,13 +323,13 @@ integ = '\n\n'.join([
          ('구글 · 네이버 캘린더', '예약을 캘린더에 직접 넣습니다. 메모가 아니라 일정입니다.'),
          ('문자', '예약 확인과 전날 알림을 보내고, 발송 기록을 남깁니다.'),
          ('CSV 내보내기와 웹훅', '고객과 상담 내역을 파일로 내보내거나, 쓰시는 시스템으로 바로 보냅니다.')])),
- sec('t-lg sec-dark bg-spot', 'yours', '쓰고 계신 제품',
+ sec('t-md sec-dark bg-spot', 'yours', '쓰고 계신 제품',
      '되는지 확인해서<br>답해 드립니다.',
      '병원 차트 프로그램, 학원 관리 프로그램, 부동산 매물 시스템은 제품마다 다릅니다. '
      '문서로 열려 있는 제품은 대부분 붙고, 닫혀 있으면 CSV와 웹훅으로 우회합니다. '
      '어느 쪽인지는 제품 이름을 알려 주시면 확인해서 말씀드립니다.',
      pipe(['제품 이름 알려 주기', '연결 방식 확인', '가능 여부 회신', '설정'])),
- sec('t-lg sec-light bg-paper', 'no', '안 하는 것',
+ sec('t-md sec-light bg-paper', 'no', '안 하는 것',
      '데이터를 가두지 않습니다.', '',
      ul([('연동 비용을 받지 않습니다.', '위 여섯 가지에 따로 청구하지 않습니다.'),
          ('내보내기를 막지 않습니다.', '언제든 전부 내려받을 수 있습니다. 해지할 때도 마찬가지입니다.'),

@@ -144,7 +144,7 @@ def pipe(items):
 
 
 def closer(h2, lead):
-    return ('<section class="founding t-lg bg-aurora" id="start">\n'
+    return ('<section class="founding t-xl bg-aurora" id="start">\n'
             '  <div class="grainlayer grain" aria-hidden="true"></div>\n'
             '  <div class="wrap">\n'
             '    <h2 class="h2 onDark reveal">%s</h2>\n'
@@ -165,19 +165,19 @@ verified = '\n\n'.join([
   '<a class="btn btn-teal" href="#life">답변 하나를 따라가 보기<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./security.html">보안 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'life', '답변 하나가 만들어지기까지',
+ sec('t-md sec-dark bg-grid', 'life', '답변 하나가 만들어지기까지',
      '네 번 걸러진 뒤에<br>입 밖으로 나갑니다.',
      '아래 네 단계 중 어디에서든 막히면, 그 답은 나가지 않고 &ldquo;확인 후 연락드리겠습니다&rdquo;가 '
      '대신 나갑니다.',
      pipe(['질문 이해', '등록된 자료에서 찾기', '금지 규칙 검사', '답변 또는 사람에게'])),
- sec('t-lg sec-dark bg-spot', 'refuse', '하지 않는 일',
+ sec('t-md sec-dark bg-spot', 'refuse', '하지 않는 일',
      '기능을 끄는 것이 아니라<br>처음부터 막아 둡니다.', '',
      ul([('없는 것을 만들지 않습니다.', '등록된 요금표와 서비스 목록에 없으면 답하지 않습니다. 비슷한 것으로 대신하지도 않습니다.'),
          ('판단하지 않습니다.', '진단, 법률 판단, 사건 전망, 합격 가능성 같은 것은 사람만 합니다.'),
          ('사람인 척하지 않습니다.', '물어보시면 AI라고 답합니다.'),
          ('없는 시간에 예약을 잡지 않습니다.', '캘린더의 빈 시간에서만 잡습니다. 중복 예약은 손님을 돌려보내게 됩니다.'),
          ('안전이 걸리면 붙잡지 않습니다.', '응급 증상, 가스 냄새, 누수 같은 말이 나오면 즉시 사람에게 돌립니다.')])),
- sec('t-lg sec-light bg-paper', 'audit', '감사 기록',
+ sec('t-md sec-light bg-paper', 'audit', '감사 기록',
      '왜 그렇게 답했는지가<br>전부 남습니다.', '',
      ul([('답변마다 근거가 붙습니다.', '요금표의 어느 항목을 보고 그 금액을 말했는지 기록됩니다.'),
          ('막힌 것도 기록됩니다.', '무엇을 물었는데 왜 답하지 않았는지가 남습니다. 이것이 규칙을 고칠 자료가 됩니다.'),
@@ -203,7 +203,7 @@ about = '\n\n'.join([
   '정직한마케팅 주식회사가 만듭니다. 대한민국 법인이고, 서울에 있습니다. '
   '크게 보이려고 쓰는 문장을 이 페이지에 넣지 않았습니다.'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'people', '누가 만드는가',
+ sec('t-md sec-dark bg-grid', 'people', '누가 만드는가',
      '판매 조직이 따로 없습니다.',
      '견적 문의에 답장을 쓰는 사람과 제품을 만드는 사람이 같습니다. '
      '지금 규모에서는 그 편이 정확하고, 규모가 커져도 이 부분은 바꾸지 않을 생각입니다.',
@@ -211,13 +211,13 @@ about = '\n\n'.join([
          ('이메일', 'hello@saleringo.com &mdash; 사람이 읽고 사람이 답합니다.'),
          ('전화', '+82 70-5277-0820 &mdash; 저희 AI가 먼저 받습니다. 그것으로 판단하셔도 됩니다.'),
          ('서비스 지역', '한국어와 영어로 서비스합니다. 응대 자체는 30개 이상의 언어로 합니다.')])),
- sec('t-lg sec-dark bg-spot', 'promise', '약속하는 것',
+ sec('t-md sec-dark bg-spot', 'promise', '약속하는 것',
      '지킬 수 있는 것만<br>적습니다.', '',
      ul([('데이터는 그 가게의 것입니다.', '언제든 전부 내려받을 수 있고, 해지할 때 막지 않습니다.'),
          ('학습에 쓰지 않습니다.', '고객의 대화 내용을 모델 학습에 사용하지 않습니다. 계약서에 넣습니다.'),
          ('약정을 걸지 않습니다.', '위약금이 없습니다. 다음 달부터 청구가 멈춥니다.'),
          ('먼저 보여 드리고 받습니다.', '결제 전에 실제 응대를 만들어 보내 드립니다.')])),
- sec('t-lg sec-light bg-paper', 'not-yet', '아직 못 하는 것',
+ sec('t-md sec-light bg-paper', 'not-yet', '아직 못 하는 것',
      '이것도 같이 적습니다.',
      '못 하는 것을 안 적으면 나중에 그것이 거짓말이 됩니다. '
      '지금 상태를 그대로 적고, 바뀌면 이 문단을 고치겠습니다.',
@@ -245,7 +245,7 @@ guide = '\n\n'.join([
   '할 수 있는 일이 완전히 다릅니다. 계약하기 전에 이 표를 한 번 보십시오. '
   '저희를 고르지 않으셔도 됩니다.'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'three', '세 가지',
+ sec('t-md sec-dark bg-grid', 'three', '세 가지',
      '무엇을 사는지<br>먼저 아셔야 합니다.', '',
      '    <div class="cmpwrap reveal"><table class="cmp">\n'
      '      <thead><tr><th>종류</th><th>하는 일</th><th>못 하는 일</th><th>대략 비용</th></tr></thead>\n'
@@ -264,7 +264,7 @@ guide = '\n\n'.join([
      '<td>판단이 필요한 것은 하지 않습니다. 진단, 법률 판단, 없는 가격은 사람에게 넘깁니다.</td>'
      '<td>월 11만~82만원</td></tr>\n'
      '      </tbody></table></div>\n'),
- sec('t-lg sec-light bg-paper', 'ask', '업체에 물어볼 것',
+ sec('t-md sec-light bg-paper', 'ask', '업체에 물어볼 것',
      '이 일곱 개면<br>대부분 갈립니다.',
      '어느 업체를 고르시든 이 질문들을 그대로 물어보십시오. 저희에게 물으셔도 됩니다.',
      '    <div class="qlist reveal">\n'
@@ -304,7 +304,7 @@ cross = '\n\n'.join([
   '<a class="btn btn-teal" href="#time">시차 문제부터<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./pricing.html">요금 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-grid', 'time', '시차',
+ sec('t-md sec-dark bg-grid', 'time', '시차',
      '미국이 일할 때<br>한국은 자고 있습니다.',
      '한국 시간 밤 열 시는 미국 동부의 아침 아홉 시입니다. 그쪽이 출근해서 문의를 보내는 시간이 '
      '이쪽이 문을 닫은 시간입니다. 다음 날 아침에 답장을 보내면 그때는 그쪽이 퇴근한 뒤이고, '
@@ -312,7 +312,7 @@ cross = '\n\n'.join([
      ul([('밤에 온 문의에 그 밤에 답합니다.', '가격과 배송 기간, 최소 주문 수량 같은 것은 등록해 두면 바로 나갑니다.'),
          ('상대 시간대로 회신 시간을 잡습니다.', '&ldquo;내일 오전&rdquo;이 누구의 오전인지 헷갈리지 않게 적습니다.'),
          ('판단이 필요한 것만 아침으로 넘깁니다.', '단가 협의나 계약 조건은 사람이 봐야 합니다.')])),
- sec('t-lg sec-dark bg-spot', 'lang', '언어',
+ sec('t-md sec-dark bg-spot', 'lang', '언어',
      '손님의 언어로 답하고,<br>기록은 한국어로 남습니다.',
      '영어로 온 문의에는 영어로 답합니다. 일본어면 일본어로, 중국어면 중국어로 답합니다. '
      '그런데 그 내용이 CRM에 남을 때는 한국어 요약이 함께 붙습니다. '
@@ -320,7 +320,7 @@ cross = '\n\n'.join([
      trio([('30개 이상 언어', '응대는 손님의 언어로 합니다.'),
            ('기록은 원문 + 한국어', '원문 그대로와 한국어 요약이 같이 남습니다.'),
            ('말투는 한 번만 정합니다', '언어가 달라도 하지 말아야 할 말은 똑같이 막힙니다.')])),
- sec('t-lg sec-light bg-paper', 'money', '통화와 청구',
+ sec('t-md sec-light bg-paper', 'money', '통화와 청구',
      '원화로 청구하고<br>세금계산서를 발행합니다.',
      '해외 고객을 상대하는 사업이라도 청구는 한국 법인 기준입니다. '
      '원화, 부가세 별도, 전자세금계산서. 달러로 받으실 필요가 없습니다.',
@@ -364,7 +364,7 @@ demo = '\n\n'.join([
   '<a class="btn btn-teal" href="#good">읽어 보기<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./examples.html">업종별로 더 보기</a>'),
  '<main>',
- sec('t-lg sec-dark bg-dusk', 'good', '잘 풀리는 통화',
+ sec('t-md sec-dark bg-dusk', 'good', '잘 풀리는 통화',
      '물어본 것에 답하고,<br>시간을 잡고, 끝냅니다.',
      '가장 흔한 형태입니다. 요금표에 있는 질문이고, 캘린더에 자리가 있고, 손님이 결정합니다.',
      window('미용실 &mdash; <b>화요일 오후 2시</b>', '예시 &middot; 가상의 통화', '시술 중', [
@@ -374,7 +374,7 @@ demo = '\n\n'.join([
             '토요일은 <b>오후 1시</b>와 <b>4시 30분</b>이 비어 있습니다.', True),
        turn('손님', '2:13 PM', '1시로 할게요.'),
        turn('Saleringo', '+7초', '토요일 오후 1시로 잡았습니다. 전날 확인 문자 보내 드리겠습니다.', True)])),
- sec('t-lg sec-dark bg-grid', 'blocked', '막히는 통화',
+ sec('t-md sec-dark bg-grid', 'blocked', '막히는 통화',
      '모르는 것을<br>모른다고 말합니다.',
      '요금표에 없는 항목을 물었습니다. 비슷한 금액으로 대신 답하는 것이 가장 나쁜 선택입니다.',
      window('치과 &mdash; <b>목요일 밤 11시</b>', '예시 &middot; 가상의 통화', '진료 종료', [
@@ -384,7 +384,7 @@ demo = '\n\n'.join([
             '연락 가능한 번호를 남겨 주시겠어요?', True),
        turn('환자', '11:08 PM', '010-0000-0000이요.'),
        turn('Saleringo', '+6초', '남겨 두었습니다. 내일 오전 중에 연락드리겠습니다.', True)])),
- sec('t-lg sec-dark bg-spot', 'handover', '물러나는 통화',
+ sec('t-md sec-dark bg-spot', 'handover', '물러나는 통화',
      '판단이 필요한 순간,<br>기계는 빠집니다.',
      '증상을 말하는 순간부터는 사람의 일입니다. 이 통화에서 AI가 한 일은 예약이 아니라 연결입니다.',
      window('동물병원 &mdash; <b>일요일 밤 10시 51분</b>', '예시 &middot; 가상의 통화', '휴진', [
@@ -425,7 +425,7 @@ examples = '\n\n'.join([
   '묻는 것도, 말하면 안 되는 것도 다릅니다. '
   '우리 업종을 골라서 그 통화가 맞는지 읽어 보십시오.'),
  '<main>',
- sec('t-lg sec-light bg-paper', 'all', '전체',
+ sec('t-md sec-light bg-paper', 'all', '전체',
      '고르시면 그 업종의<br>통화 하나를 그대로 보여 드립니다.', '',
      '    <div class="exwall reveal">' + cards + '</div>\n', dark=False),
  sec('t-md sec-dark bg-grid', 'note', '읽으실 때',

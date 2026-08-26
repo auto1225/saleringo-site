@@ -51,7 +51,7 @@ BODY = """
 
 <main>
 
-<section class="t-lg sec-dark bg-grid" id="form">
+<section class="t-md sec-dark bg-grid" id="form">
   <div class="wrap">
     <div class="gswrap">
       <div class="reveal">
