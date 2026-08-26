@@ -27,7 +27,7 @@ CSS = """
   .heroband{max-width:820px;}
   .nightline{display:grid;gap:16px;padding:26px 24px;}
   .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
-  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(255,255,255,.42);
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(255,255,255,.5);
     text-transform:uppercase;padding-top:9px;}
   .nl .t em{display:block;font-style:normal;color:rgba(255,255,255,.66);
     letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}

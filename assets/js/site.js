@@ -674,4 +674,164 @@ window.SR_CONFIG = window.SR_CONFIG || {
     });
   })();
 
+
+/* 고른 것을 다음 화면까지 나른다.
+ *
+ * 예전에는 이랬습니다. 계산기에서 슬라이더를 움직여 "매달 이만큼이
+ * 새고 있다" 를 본 사람이, 요금 페이지를 거쳐 주문서에 도착하면 그
+ * 숫자가 사라졌습니다. 업종 페이지에서 자기 업종을 골라 읽은 사람도
+ * 주문서에서는 아무 업종도 고르지 않은 사람과 똑같아졌습니다.
+ *
+ * 그래서 담당자가 첫 통화에서 다시 묻습니다 — 방금 화면에서 답한 것을.
+ *
+ * 여기서 나르는 것은 개인정보가 아닙니다. 놓친 문의 수, 건당 값어치,
+ * 업종 같은 사업 추정치입니다. 그래도 주소창에는 넣지 않습니다.
+ * 주소는 브라우저 기록과 서버 로그에 남고, 링크를 공유하면 그대로 따라
+ * 갑니다. 같은 출처 안에서만 도는 sessionStorage 로 충분합니다.
+ *
+ * 주문서에 도착하면 조용히 붙이지 않고 **보이는 칸에 적어 둡니다.**
+ * 자기에 대해 무엇이 함께 전달되는지 모르는 채로 보내게 두지 않습니다.
+ */
+
+  var KEY = 'sr-carry';
+  var TTL = 2 * 60 * 60 * 1000;   /* 두 시간. 주문서 초안과 같은 기준입니다. */
+
+  function read() {
+    var o;
+    try { o = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) { return null; }
+    if (!o || !o.savedAt) return null;
+    if (Date.now() - o.savedAt > TTL) {
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+      return null;
+    }
+    return o;
+  }
+
+  function write(patch) {
+    var o = read() || {};
+    for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) o[k] = patch[k];
+    o.savedAt = Date.now();
+    try { sessionStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {}
+    return o;
+  }
+
+  /* 밖에서 쓸 수 있게 열어 둡니다. 주문서가 이것을 읽습니다. */
+  window.srCarry = { read: read, write: write, clear: function () {
+    try { sessionStorage.removeItem(KEY); } catch (e) {}
+  } };
+
+  var LANG = (document.documentElement.lang || 'ko').slice(0, 2) === 'en' ? 'en' : 'ko';
+  var KO = LANG === 'ko';
+
+  /* ── 1. 계산기 ─────────────────────────────────────────────────────── */
+  /* 이 페이지에 계산기가 있으면, 사람이 슬라이더를 놓을 때마다 적어 둡니다.
+     계산은 그 페이지의 스크립트가 이미 하고 있으므로 결과만 읽습니다. */
+  (function calc() {
+    var missed = document.getElementById('cMissed');
+    if (!missed) return;
+    var ids = ['cMissed', 'cValue', 'cConv', 'cSave'];
+    var outs = ['oBack', 'oCost', 'oNet', 'oPct'];
+
+    function snap() {
+      var v = {};
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) v[id.slice(1).toLowerCase()] = Number(el.value);
+      });
+      outs.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) v[id.slice(1).toLowerCase()] = el.textContent.trim();
+      });
+      write({ calc: v, calcAt: new Date().toISOString() });
+    }
+
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      /* 놓았을 때만 적습니다. 끄는 동안 매번 적으면 저장소를 계속 두드립니다. */
+      el.addEventListener('change', snap);
+    });
+  })();
+
+  /* ── 2. 업종 ───────────────────────────────────────────────────────── */
+  /* 업종 페이지를 열었다는 것 자체가 선택입니다. 주소에서 읽습니다. */
+  (function industry() {
+    var m = location.pathname.match(/\/industries\/([a-z0-9-]+)\.html$/);
+    if (m) {
+      var h1 = document.querySelector('h1');
+      write({
+        industry: m[1],
+        industryName: h1 ? h1.textContent.replace(/\s+/g, ' ').trim().slice(0, 60) : m[1]
+      });
+      return;
+    }
+    /* 업종 목록에서 고른 경우 */
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="/industries/"]');
+      if (!a) return;
+      var mm = (a.getAttribute('href') || '').match(/industries\/([a-z0-9-]+)\.html/);
+      if (!mm) return;
+      write({ industry: mm[1], industryName: a.textContent.replace(/\s+/g, ' ').trim().slice(0, 60) });
+    });
+  })();
+
+  /* ── 3. 데모에서 고른 업종 ─────────────────────────────────────────── */
+  (function demo() {
+    var stage = document.querySelector('[data-demo-trade], #demostage');
+    if (!stage) return;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-trade]');
+      if (!b) return;
+      write({ demoTrade: b.getAttribute('data-trade'),
+              demoTradeName: b.textContent.replace(/\s+/g, ' ').trim().slice(0, 60) });
+    });
+  })();
+
+  /* ── 4. 주문서·문의 폼에 도착했을 때 ───────────────────────────────── */
+  /* 조용히 붙이지 않습니다. 보이는 칸에 적어 두고, 지우실 수 있게 둡니다. */
+  (function land() {
+    var note = document.querySelector('textarea[name="note"], textarea[name="message"]');
+    if (!note) return;
+    var c = read();
+    if (!c) return;
+    if ((note.value || '').trim()) return;   /* 이미 쓰신 것이 있으면 건드리지 않습니다 */
+
+    var lines = [];
+    if (c.industryName || c.demoTradeName) {
+      lines.push(KO
+        ? '업종: ' + (c.industryName || c.demoTradeName)
+        : 'Industry: ' + (c.industryName || c.demoTradeName));
+    }
+    if (c.calc && c.calc.missed) {
+      lines.push(KO
+        ? '계산기에 넣은 값 — 매달 놓치는 문의 ' + c.calc.missed + '건, 건당 ' +
+          c.calc.value + ', 평소 성사율 ' + c.calc.conv + '%'
+        : 'From the calculator — ' + c.calc.missed + ' missed inquiries a month, ' +
+          c.calc.value + ' each, ' + c.calc.conv + '% normally won');
+      if (c.calc.back) {
+        lines.push(KO
+          ? '그때 나온 회수 예상: ' + c.calc.back
+          : 'Estimated recovery shown: ' + c.calc.back);
+      }
+    }
+    if (!lines.length) return;
+
+    note.value = lines.join('\n');
+
+    /* 왜 이 글이 여기 들어와 있는지 말해 줍니다. 설명 없이 채워져 있으면
+       자기가 쓴 줄 알거나, 누가 대신 썼는지 몰라 불안합니다. */
+    var tip = document.createElement('span');
+    tip.className = 'hint';
+    tip.setAttribute('data-carry-note', '');
+    tip.textContent = KO
+      ? '앞 화면에서 고르신 내용을 옮겨 적었습니다. 고치거나 지우셔도 됩니다.'
+      : 'Carried over from what you picked earlier. Edit or clear it as you like.';
+    if (note.parentNode && !note.parentNode.querySelector('[data-carry-note]')) {
+      note.parentNode.appendChild(tip);
+    }
+
+    /* 주문서가 초안을 저장하고 있다면 이 값도 함께 남게 합니다. */
+    note.dispatchEvent(new Event('input', { bubbles: true }));
+  })();
+
 })();
