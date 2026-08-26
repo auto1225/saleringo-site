@@ -273,6 +273,24 @@ about = '\n\n'.join([
          ('학습에 쓰지 않습니다.', '고객의 대화 내용을 모델 학습에 사용하지 않습니다. 계약서에 넣습니다.'),
          ('약정을 걸지 않습니다.', '위약금이 없습니다. 다음 달부터 청구가 멈춥니다.'),
          ('먼저 보여 드리고 받습니다.', '결제 전에 실제 응대를 만들어 보내 드립니다.')])),
+ sec('t-md sec-dark bg-dusk', 'howwesell', '파는 방식',
+     '영업 조직이<br>따로 없습니다.',
+     '문의를 넣으면 영업 담당이 배정되고, 전화가 오고, 두 번째 전화가 오고, 할인 제안이 '
+     '오는 과정이 이 업계의 기본값입니다. 그 과정의 비용은 결국 요금에 들어갑니다.',
+     ul([('먼저 만들어서 보여 드립니다',
+          '요금표를 주시면 그것으로 답하는 대화를 만들어 보내 드립니다. 영업일 하루입니다. '
+          '읽어 보시고 아니다 싶으면 거기서 끝입니다 &mdash; 결제 정보를 받지 않았으므로 '
+          '해지하실 것도 없습니다.'),
+         ('요금이 공개되어 있습니다',
+          '「문의 주시면 안내드립니다」가 이 사이트에 없습니다. 세 요금제 금액, 통화 단가, '
+          '알림톡 단가, 초과 요금이 전부 적혀 있고, 한 달 청구서가 어떻게 생겼는지까지 '
+          '<a class="lnk" href="./pricing.html">요금 페이지</a>에 있습니다.'),
+         ('할인으로 밀어붙이지 않습니다',
+          '창립 고객 할인 하나뿐이고 조건이 공개되어 있습니다. 「오늘까지만」 같은 것을 '
+          '만들지 않습니다. 급하게 결정하게 만들어서 파는 것은 나중에 해지로 돌아옵니다.'),
+         ('두 번째 전화를 걸지 않습니다',
+          '한 번 연락드리고 답이 없으시면 거기서 멈춥니다. 필요하실 때 다시 오시면 됩니다.')])),
+
  sec('t-md sec-light bg-paper', 'not-yet', '아직 못 하는 것',
      '이것도 같이 적습니다.',
      '못 하는 것을 안 적으면 나중에 그것이 거짓말이 됩니다. '
@@ -320,6 +338,23 @@ guide = '\n\n'.join([
      '<td>판단이 필요한 것은 하지 않습니다. 진단, 법률 판단, 없는 가격은 사람에게 넘깁니다.</td>'
      '<td>월 11만~82만원</td></tr>\n'
      '      </tbody></table></div>\n'),
+ sec('t-md sec-dark bg-dusk', 'diff', '셋이 어떻게 다른가',
+     '같은 &ldquo;전화 응대&rdquo;라도<br>할 수 있는 일이 다릅니다.',
+     '이름이 비슷해서 같은 것으로 보이는데, 통화가 끝난 뒤에 무엇이 남느냐에서 갈립니다. '
+     '그리고 남는 것이 무엇이냐가 곧 사장님 일이 줄어드느냐를 정합니다.',
+     ul([('ARS &mdash; 안내만 합니다',
+          '&ldquo;1번을 눌러 주세요&rdquo;입니다. 정해 둔 안내를 읽어 주고 끝나고, 남는 것은 '
+          '없습니다. 손님은 대개 중간에 끊습니다. 가장 싸지만 문의가 기록으로 남지 않으므로 '
+          '다음 날 아무것도 할 수 없습니다.'),
+         ('전화대행 &mdash; 사람이 받아 적습니다',
+          '사람이 받아서 메모를 남깁니다. 「10시 42분, 김OO님, 임플란트 문의, 회신 요망」. '
+          '그 메모를 보고 다시 전화를 걸어야 하므로 <b>통화 한 건이 두 건이 됩니다.</b> '
+          '그리고 대행사 직원은 우리 요금표를 모르므로 금액을 답하지 못합니다.'),
+         ('AI 응대 &mdash; 끝내고 남깁니다',
+          '요금표에서 금액을 답하고, 캘린더에서 예약을 잡고, 확인 문자를 보내고, 고객 카드를 '
+          '남깁니다. 못 하는 것도 분명합니다 &mdash; 판단이 필요한 것과 안전이 걸린 것은 '
+          '사람에게 넘깁니다. 그 선이 어디인지 물어보셔야 합니다.')])),
+
  sec('t-md sec-light bg-paper', 'ask', '업체에 물어볼 것',
      '이 일곱 개면<br>대부분 갈립니다.',
      '어느 업체를 고르시든 이 질문들을 그대로 물어보십시오. 저희에게 물으셔도 됩니다.',
@@ -448,6 +483,25 @@ demo = '\n\n'.join([
   '<a class="btn btn-teal" href="#good">읽어 보기<span class="cir">&darr;</span></a>',
   '<a class="btn btn-ghostd" href="./examples.html">업종별로 더 보기</a>'),
  '<main>',
+ sec('t-md sec-dark bg-spot', 'callnow', '지금 걸어 보십시오',
+     '읽는 것보다<br>거는 것이 빠릅니다.',
+     '아래 통화를 읽으셔도 되지만, 저희 번호로 직접 거시면 30초 안에 판단하실 수 있습니다. '
+     '저희 AI 가 받습니다. 예약을 잡아 보셔도 되고, 일부러 답 못 할 것을 물어보셔도 됩니다 '
+     '&mdash; 오히려 그쪽이 더 알아보기 쉽습니다.',
+     trio([('예약을 잡아 보세요',
+            '「내일 오후에 되나요」라고 물어보십시오. 빈 시간을 제시하고 그 자리에서 잡습니다. '
+            '확인 문자가 오는 것까지 보십시오.'),
+           ('없는 것을 물어보세요',
+            '요금표에 없을 법한 것을 물어보십시오. 지어내는지, 멈추고 넘기는지가 이 제품에서 '
+            '가장 중요한 한 줄입니다.'),
+           ('사람이냐고 물어보세요',
+            '&ldquo;지금 사람이랑 통화하는 건가요&rdquo;라고 물으시면 AI 라고 답합니다. '
+            '숨기지 않습니다.')])
+     + '    <p class="calccta reveal" style="margin-top:26px;">'
+       '<a class="btn btn-teal" href="tel:+827052770820" data-tel>'
+       '지금 걸기 &middot; <b data-tel-label>+82 70-5277-0820</b></a>'
+       '<a class="lnk" href="./get-started.html">우리 요금표로 만든 통화 받아 보기</a></p>'),
+
  sec('t-md sec-dark bg-dusk', 'good', '잘 풀리는 통화',
      '물어본 것에 답하고,<br>시간을 잡고, 끝냅니다.',
      '가장 흔한 형태입니다. 요금표에 있는 질문이고, 캘린더에 자리가 있고, 손님이 결정합니다.',
@@ -524,6 +578,107 @@ examples = '\n\n'.join([
  sec('t-md sec-light bg-paper', 'all', '전체',
      '고르시면 그 업종의<br>통화 하나를 그대로 보여 드립니다.', '',
      '    <div class="exwall reveal">' + cards + '</div>\n', dark=False),
+ '''<section class="t-md sec-dark bg-grid" id="ex-dental">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>치과</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">밤 열한 시에 걸려 오는 전화는<br>대부분 신환입니다.</h2>
+    <p class="sub reveal" style="max-width:none;">이가 아파서 검색하다가 거는 전화입니다. 안 받으면 다음 치과에 겁니다. 기존 환자는 다시 걸지만, 신환은 다시 걸지 않습니다.</p>
+      <div class="appwin reveal">
+        <div class="bar"><i></i><i></i><i></i><span class="tt">치과 &mdash; <b>11:42 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="body nightline"><div class="nl us"><span class="t"><em>환자</em>11:42 PM</span><div class="bub user">어금니 씌운 게 빠졌는데 내일 볼 수 있을까요? 비용도 궁금합니다.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+31초</span><div class="bub ai">네, 확인해 드리겠습니다. 빠진 보철물을 다시 붙이는 경우와 새로 하는 경우가 달라서 보셔야 정확합니다. <b>내일 오전 10시 30분</b>이 비어 있습니다. 지르코니아 크라운을 새로 하시면 <b>1개 55만원</b>이고, 재부착만 되면 그보다 훨씬 낮습니다.</div></div><div class="nl us"><span class="t"><em>환자</em>11:44 PM</span><div class="bub user">그 시간으로 부탁드립니다.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+9초</span><div class="bub ai">예약해 두었습니다. 성함과 연락처 남겨 주시면 확인 문자 보내 드리고, 내일 아침에 한 번 더 알려 드리겠습니다.</div></div></div>
+      </div>
+    <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>
+      <ul class="kolist reveal" style="margin-top:22px;"><li><b>증상을 듣고 병명을 말하지 않습니다.</b>충치인지 치주염인지 신경치료가 필요한지는 보아야 아는 것이고, 전화로 말하면 의료법 위반입니다. AI는 &ldquo;보셔야 정확합니다&rdquo;로 멈추고 예약만 잡습니다.</li><li><b>없는 금액을 만들지 않습니다.</b>원장님이 넣은 요금표에 있는 항목만 말합니다. 없으면 &ldquo;내원하셔서 확인 후 안내드리겠습니다&rdquo;로 넘깁니다.</li><li><b>보험 적용 여부를 단정하지 않습니다.</b>급여와 비급여는 상병과 조건에 따라 갈립니다. 어느 쪽인지는 데스크에서 확인해 알려 드립니다.</li></ul>
+    <p class="seccap reveal" style="margin-top:22px;">통화가 끝나면 이 단계 위에 고객 카드가 놓입니다.</p>
+      <div class="pipe reveal" style="margin-top:20px;"><b>문의 접수</b><i>&rarr;</i><b>예약 확정</b><i>&rarr;</i><b>내원</b><i>&rarr;</i><b>치료 계획 상담</b><i>&rarr;</i><b>진행 · 재예약</b></div>
+    <p class="calccta reveal" style="margin-top:24px;"><a class="lnk" href="./industries/dental.html">치과 페이지 전체 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-spot" id="ex-auto-repair">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>자동차 정비 &middot; 공업사</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">리프트 아래에서는<br>전화를 받을 수 없습니다.</h2>
+    <p class="sub reveal" style="max-width:none;">정비 중에 손을 닦고 나와 전화를 받을 수는 없습니다. 그 사이 걸려 온 견적 문의는 그대로 옆 공업사로 갑니다.</p>
+      <div class="appwin reveal">
+        <div class="bar"><i></i><i></i><i></i><span class="tt">자동차 정비 &mdash; <b>4:47 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="body nightline"><div class="nl us"><span class="t"><em>손님</em>4:47 PM</span><div class="bub user">브레이크에서 쇠 갈리는 소리가 나는데 오늘 볼 수 있나요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+22초</span><div class="bub ai">패드 마모일 가능성이 있지만 보아야 확실합니다. 패드 교체는 <b>앞바퀴 기준 12만원부터</b>이고, 디스크까지 손봐야 하면 달라집니다. 오늘은 <b>오후 6시 이후</b>에 리프트가 비고, 내일은 <b>오전 9시</b>가 가능합니다.</div></div><div class="nl us"><span class="t"><em>손님</em>4:49 PM</span><div class="bub user">내일 9시로 할게요. 차종은 아반떼입니다.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+8초</span><div class="bub ai">내일 오전 9시 입고로 잡았습니다. 차량번호만 남겨 주시면 부품 재고를 미리 확인해 두겠습니다.</div></div></div>
+      </div>
+    <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>
+      <ul class="kolist reveal" style="margin-top:22px;"><li><b>소리만 듣고 원인을 단정하지 않습니다.</b>&ldquo;패드 갈면 됩니다&rdquo;로 끝내지 않습니다. 가능성까지만 말하고 입고 후 확인으로 넘깁니다.</li><li><b>최종 금액을 확정하지 않습니다.</b>요금표의 기본 공임과 부품 가격 범위까지만 말합니다. 견적은 차를 보고 냅니다.</li><li><b>안전과 직결된 증상은 바로 넘깁니다.</b>제동이 안 된다, 연기가 난다, 핸들이 돌아간다 같은 표현이 나오면 예약이 아니라 안내와 연결입니다.</li></ul>
+    <p class="seccap reveal" style="margin-top:22px;">통화가 끝나면 이 단계 위에 고객 카드가 놓입니다.</p>
+      <div class="pipe reveal" style="margin-top:20px;"><b>문의 접수</b><i>&rarr;</i><b>입고 예약</b><i>&rarr;</i><b>입고 · 점검</b><i>&rarr;</i><b>견적 승인</b><i>&rarr;</i><b>작업 · 출고</b></div>
+    <p class="calccta reveal" style="margin-top:24px;"><a class="lnk" href="./industries/auto-repair.html">자동차 정비 페이지 전체 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-dusk" id="ex-academies">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>학원 &middot; 교습소</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">학부모는 아이가 잠든 뒤에<br>전화를 겁니다.</h2>
+    <p class="sub reveal" style="max-width:none;">밤 열 시 반, 학원 문은 닫혔고 원장님은 퇴근했습니다. 그 시간이 학부모가 유일하게 시간이 나는 시간입니다.</p>
+      <div class="appwin reveal">
+        <div class="bar"><i></i><i></i><i></i><span class="tt">학원 &mdash; <b>10:34 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="body nightline"><div class="nl us"><span class="t"><em>학부모</em>10:34 PM</span><div class="bub user">중2 아이인데 수학 반이 어떻게 되나요? 레벨테스트는 언제 보나요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+24초</span><div class="bub ai">중등부는 학교 진도반과 심화반으로 나뉘고, 반 배정은 레벨테스트 결과로 정합니다. 테스트는 <b>평일 오후 4시와 토요일 오전 10시</b>에 있고 30분 걸립니다. 이번 주 토요일 자리가 남아 있습니다.</div></div><div class="nl us"><span class="t"><em>학부모</em>10:36 PM</span><div class="bub user">토요일 10시로 부탁드려요. 수강료도 알 수 있을까요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+11초</span><div class="bub ai">중등 수학 주 3회는 <b>월 34만원</b>입니다. 교재비는 별도이고 학기당 안내드립니다. 토요일 10시로 잡아 두었고, 원장님이 내일 중에 한 번 연락드리겠습니다.</div></div></div>
+      </div>
+    <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>
+      <ul class="kolist reveal" style="margin-top:22px;"><li><b>아이의 수준을 전화로 판단하지 않습니다.</b>&ldquo;그 정도면 심화반 가능합니다&rdquo; 같은 말을 하지 않습니다. 레벨테스트 예약까지만 잡습니다.</li><li><b>성적 향상을 약속하지 않습니다.</b>몇 등급이 오른다는 표현은 쓰지 않습니다. 학원법상 문제이기도 하고, 사실도 아닙니다.</li><li><b>교습비를 임의로 조정하지 않습니다.</b>신고된 교습비만 말합니다. 할인은 원장님이 정해 넣어 둔 것만 안내합니다.</li></ul>
+    <p class="seccap reveal" style="margin-top:22px;">통화가 끝나면 이 단계 위에 고객 카드가 놓입니다.</p>
+      <div class="pipe reveal" style="margin-top:20px;"><b>문의 접수</b><i>&rarr;</i><b>레벨테스트 예약</b><i>&rarr;</i><b>테스트 · 상담</b><i>&rarr;</i><b>반 배정</b><i>&rarr;</i><b>등록</b></div>
+    <p class="calccta reveal" style="margin-top:24px;"><a class="lnk" href="./industries/academies.html">학원 페이지 전체 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="ex-senior-care">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>요양원 &middot; 방문요양 &middot; 주간보호</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">가장 어려운 전화를<br>가장 어려운 상태에서 겁니다.</h2>
+    <p class="sub reveal" style="max-width:none;">부모님을 모실 곳을 찾는 전화입니다. 거는 사람은 지쳐 있고, 무엇부터 물어야 할지도 모릅니다. 이 전화만큼은 사람이 받아야 합니다. 그래서 사람에게 잘 넘기는 것이 전부입니다.</p>
+      <div class="appwin reveal">
+        <div class="bar"><i></i><i></i><i></i><span class="tt">요양 &mdash; <b>8:12 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="body nightline"><div class="nl us"><span class="t"><em>보호자</em>8:12 PM</span><div class="bub user">아버지 요양등급 3등급 나왔는데, 주간보호 하루 얼마나 드나요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+29초</span><div class="bub ai">3등급이시면 주간보호 이용이 가능합니다. 본인부담금은 등급과 소득 구간에 따라 공단에서 정해지고, 저희가 임의로 계산해 드릴 수 없습니다. <b>기본 이용 시간과 식사, 차량 운행 여부</b>는 저희가 바로 안내드릴 수 있습니다. 상담 선생님이 <b>내일 오전 중</b>에 연락드려도 될까요?</div></div><div class="nl us"><span class="t"><em>보호자</em>8:14 PM</span><div class="bub user">네, 오전에 부탁드립니다.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+7초</span><div class="bub ai">내일 오전으로 남겨 두었습니다. 어르신 성함과 등급 판정일을 미리 알려 주시면 상담이 빨라집니다.</div></div></div>
+      </div>
+    <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>
+      <ul class="kolist reveal" style="margin-top:22px;"><li><b>본인부담금을 계산하지 않습니다.</b>등급과 소득 구간에 따라 공단이 정합니다. 기관이 미리 말할 수 있는 숫자가 아닙니다.</li><li><b>등급 판정 결과를 예측하지 않습니다.</b>&ldquo;그 정도면 몇 등급 나옵니다&rdquo; 같은 말을 하지 않습니다.</li><li><b>건강 상태를 판단하지 않습니다.</b>증상을 듣고 어느 서비스가 맞는지 단정하지 않습니다. 방문 상담에서 정할 일입니다.</li></ul>
+    <p class="seccap reveal" style="margin-top:22px;">통화가 끝나면 이 단계 위에 고객 카드가 놓입니다.</p>
+      <div class="pipe reveal" style="margin-top:20px;"><b>문의 접수</b><i>&rarr;</i><b>상담 예약</b><i>&rarr;</i><b>전화 상담</b><i>&rarr;</i><b>방문 상담</b><i>&rarr;</i><b>계약 · 이용 시작</b></div>
+    <p class="calccta reveal" style="margin-top:24px;"><a class="lnk" href="./industries/senior-care.html">요양 페이지 전체 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-spot" id="ex-real-estate">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>부동산 중개</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">매물 문의는<br>사무실에 없을 때 옵니다.</h2>
+    <p class="sub reveal" style="max-width:none;">임장을 나가 있는 시간이 곧 손님이 전화하는 시간입니다. 그 전화 한 통이 다음 계약이 될 수도, 옆 중개사무소의 계약이 될 수도 있습니다.</p>
+      <div class="appwin reveal">
+        <div class="bar"><i></i><i></i><i></i><span class="tt">부동산 &mdash; <b>7:24 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="body nightline"><div class="nl us"><span class="t"><em>문의</em>7:24 PM</span><div class="bub user">네이버에 올라온 그 24평 전세 아직 있나요? 주차는 몇 대인가요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+21초</span><div class="bub ai">해당 매물은 아직 있습니다. 세대당 <b>1대</b> 배정이고 방문 주차는 별도입니다. 보증금은 올려 두신 대로 <b>3억 2천</b>이고, 관리비는 <b>월 12만원</b>입니다. 내일 <b>오전 11시</b>나 <b>오후 3시</b>에 보실 수 있습니다.</div></div><div class="nl us"><span class="t"><em>문의</em>7:26 PM</span><div class="bub user">오후 3시에 볼게요.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+9초</span><div class="bub ai">내일 오후 3시로 잡았습니다. 소장님이 미리 한 번 연락드리고 현장에서 만나 뵙겠습니다. 신분 확인은 현장에서 합니다.</div></div></div>
+      </div>
+    <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>
+      <ul class="kolist reveal" style="margin-top:22px;"><li><b>중개사인 척하지 않습니다.</b>물어보면 AI 응대라고 답합니다. 공인중개사법상 자격 없는 안내를 하지 않기 위한 것입니다.</li><li><b>조건을 협의하지 않습니다.</b>보증금이나 월세를 깎아 주겠다는 말을 하지 않습니다. 등록된 조건만 읽고 임장 예약까지만 잡습니다.</li><li><b>권리관계를 설명하지 않습니다.</b>근저당, 선순위, 전세권 같은 것은 등기부를 보고 중개사가 설명할 일입니다.</li></ul>
+    <p class="seccap reveal" style="margin-top:22px;">통화가 끝나면 이 단계 위에 고객 카드가 놓입니다.</p>
+      <div class="pipe reveal" style="margin-top:20px;"><b>문의 접수</b><i>&rarr;</i><b>임장 예약</b><i>&rarr;</i><b>임장</b><i>&rarr;</i><b>조건 협의</b><i>&rarr;</i><b>계약</b></div>
+    <p class="calccta reveal" style="margin-top:24px;"><a class="lnk" href="./industries/real-estate.html">부동산 페이지 전체 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-dusk" id="ex-venues">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>웨딩홀 &middot; 행사장 &middot; 연회</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">날짜가 있는지부터<br>물어봅니다.</h2>
+    <p class="sub reveal" style="max-width:none;">문의의 첫 문장은 거의 언제나 같습니다. &ldquo;내년 O월 O일 되나요?&rdquo; 그 한 문장에 답하는 데 하루가 걸리면, 그 예식은 다른 홀에서 합니다.</p>
+      <div class="appwin reveal">
+        <div class="bar"><i></i><i></i><i></i><span class="tt">웨딩홀 · 행사장 &mdash; <b>9:41 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="body nightline"><div class="nl us"><span class="t"><em>문의</em>9:41 PM</span><div class="bub user">내년 5월 17일 토요일 오후에 예식 가능한가요? 하객 200명 정도입니다.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+25초</span><div class="bub ai">5월 17일은 <b>오후 1시</b>와 <b>오후 4시</b> 두 타임이 남아 있습니다. 200명이면 <b>그랜드홀</b>이 맞고, 식대는 <b>1인 7만 5천원</b>부터입니다. 보증 인원과 대관료는 타임에 따라 다릅니다. 상담 오시면 정확히 안내드립니다.</div></div><div class="nl us"><span class="t"><em>문의</em>9:43 PM</span><div class="bub user">주말에 상담 가능할까요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+8초</span><div class="bub ai"><b>이번 주 일요일 오전 11시</b>에 자리가 있습니다. 두 분 오시면 되고, 홀도 같이 보실 수 있습니다. 잡아 드릴까요?</div></div></div>
+      </div>
+    <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>
+      <ul class="kolist reveal" style="margin-top:22px;"><li><b>날짜를 임의로 잡아 두지 않습니다.</b>가능 여부와 상담 예약까지입니다. 예식일 확정은 계약으로만 이루어집니다.</li><li><b>견적을 확정하지 않습니다.</b>식대와 대관료의 시작 금액까지만 말합니다. 보증 인원과 옵션은 상담에서 정합니다.</li><li><b>할인을 약속하지 않습니다.</b>프로모션은 등록된 것만 안내합니다. 없는 조건을 만들지 않습니다.</li></ul>
+    <p class="seccap reveal" style="margin-top:22px;">통화가 끝나면 이 단계 위에 고객 카드가 놓입니다.</p>
+      <div class="pipe reveal" style="margin-top:20px;"><b>문의 접수</b><i>&rarr;</i><b>상담 예약</b><i>&rarr;</i><b>상담 · 홀 투어</b><i>&rarr;</i><b>견적 확정</b><i>&rarr;</i><b>계약</b></div>
+    <p class="calccta reveal" style="margin-top:24px;"><a class="lnk" href="./industries/venues.html">웨딩홀 · 행사장 페이지 전체 보기 &rarr;</a></p>
+  </div>
+</section>''',
  sec('t-md sec-dark bg-grid', 'note', '읽으실 때',
      '전부 예시입니다.',
      '실제 고객 사례가 아닙니다. 각 업종의 요금표와 안전 지침을 넣었을 때 제품이 '

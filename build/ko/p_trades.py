@@ -246,6 +246,35 @@ WALL = """
 
 <main>
 
+<section class="t-md sec-dark bg-grid" id="whytrade">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>왜 업종별인가</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">같은 AI에 요금표만<br>바꿔 넣는 것이 아닙니다.</h2>
+    <p class="sub reveal" style="max-width:none;">「업종 맞춤」이라고 적어 두고 실제로는 인사말만
+      바꾸는 제품이 많습니다. 그러면 치과에서도 &ldquo;문의 주셔서 감사합니다&rdquo;로 시작해
+      &ldquo;담당자가 연락드리겠습니다&rdquo;로 끝납니다. 업종이 달라지면 바뀌어야 하는 것은
+      인사말이 아니라 아래 셋입니다.</p>
+
+    <div class="trio reveal" style="margin-top:34px;">
+      <div><b>무엇을 묻는가</b><p>치과에는 &ldquo;씌운 게 빠졌는데 내일 되나요&rdquo;가 오고,
+        정비소에는 &ldquo;시동이 안 걸리는데 얼마쯤 나올까요&rdquo;가 옵니다. 학원에는
+        아이가 잠든 뒤 학부모가 겁니다. 묻는 것이 다르면 되물어야 할 것도 다릅니다.</p></div>
+      <div><b>말하면 안 되는 것이 무엇인가</b><p>이것이 가장 중요합니다. 치과에서 병명을 말하면
+        의료법 위반이고, 학원에서 합격 가능성을 말하면 나중에 책임을 집니다. 정비소는 차를
+        보지 않고 원인을 단정하면 안 되고, 웨딩홀은 날짜를 확정하면 중복 예약이 납니다.
+        업종마다 이 목록이 다르고, 저희는 그것을 먼저 만들어 드립니다.</p></div>
+      <div><b>무엇을 기록해야 하는가</b><p>치과는 신환·구환 구분과 문의한 시술 부위가 남아야 하고,
+        부동산은 희망 조건과 예산대가 남아야 합니다. 일반 CRM 의 빈칸에 이것을 직접 채워 넣는
+        작업이 도입의 절반이고, 대개 거기서 멈춥니다.</p></div>
+    </div>
+
+    <p class="seccap reveal" style="margin-top:22px;">아래 스물다섯 업종은 이 세 가지가 이미
+      만들어져 있습니다. 골라 들어가시면 그 업종의 실제 통화 하나와, 그 업종에서 AI 가
+      하지 않는 것, 그리고 통화 뒤에 남는 CRM 항목을 보실 수 있습니다.
+      <a class="lnk" href="./examples.html">여섯 업종의 통화는 한 페이지에 모아</a> 두었습니다.</p>
+  </div>
+</section>
+
 <section class="t-md sec-light bg-paper" id="all">
   <div class="wrap">
     {groups}
