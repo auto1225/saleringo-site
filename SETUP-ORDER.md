@@ -183,9 +183,22 @@ node build/test_strings.mjs    화면에 나가는 문장과 전화번호 서식
 python build/pricecheck.py     요금표와 페이지의 숫자가 같은지
 python build/policy.py --check 두 언어의 약관이 같은 정책을 말하는지
 python build/a11ycheck.py      키보드와 스크린리더가 같은 화면을 보는지
+python build/mailcheck.py      안내하는 이메일이 실제로 메일을 받는지
+python build/deadclass.py      스타일을 통째로 잃은 원소가 있는지
 python build/routes.py --check 주소 규칙
 python build/build.py          142장 다시 짓기
 ```
+
+`mailcheck` 는 지금 **실패합니다.** saleringo.com 에 MX 레코드가 없어
+`hello@saleringo.com`(142개 페이지에 188번)과 `security@saleringo.com`
+으로 보내는 메일이 전부 반송되기 때문입니다. 주문 접수 실패 안내, 해지
+요청, 문서 요청, 약관의 소송 이전 연락 — 구매자가 막혔을 때 가라고
+안내하는 곳이 전부 이 주소입니다.
+
+도메인에 MX·SPF·DMARC 를 거시면 이 검사가 통과합니다. 그때까지는 주문
+실패 안내가 이메일 대신 「다시 눌러 주십시오」와 「서면 주문 제안 요청」을
+먼저 가리키도록 해 두었습니다 — 주문이 데이터베이스에 남으므로 그쪽이
+사실입니다.
 
 `build/test_commerce.sql` 은 데이터베이스에 직접 물어봅니다 — Supabase
 SQL Editor 에 붙여 넣으십시오.
