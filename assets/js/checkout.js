@@ -552,8 +552,30 @@
     slot.removeAttribute('role');
   }
 
+  /* 요금표에도 페이지와 같은 판 번호를 붙입니다.
+     사이트의 모든 자산에는 ?v= 가 붙는데, 정작 돈의 유일한 출처인
+     요금표만 그냥 부르고 있었습니다. 캐시가 한 시간이라, 새 코드가
+     옛 요금표를 읽는 시간이 배포마다 한 시간씩 생겼습니다.
+     실제로 그 사이 한국 구매자에게 "이 나라는 AI 전화가 안 됩니다"가
+     떴습니다 — 옛 요금표에는 그 값이 아예 없었기 때문입니다.
+     값이 아니라 금액이 어긋났다면 알아채지도 못했을 것입니다.
+     판 번호는 이 파일을 불러온 <script> 태그에서 그대로 가져옵니다.
+     따로 적어 두면 언젠가 한쪽만 올리게 됩니다. */
+  function assetVer() {
+    var me = document.currentScript;
+    if (!me) {
+      var all = document.querySelectorAll('script[src*="checkout.js"]');
+      me = all[all.length - 1];
+    }
+    var m = me && me.src && me.src.match(/[?&]v=([^&]+)/);
+    return m ? m[1] : '';
+  }
+
   /* ── 시작 ──────────────────────────────────────────────────────────── */
-  fetch('/assets/data/pricing.json').then(function (r) { return r.json(); }).then(function (j) {
+  var PRICING_URL = '/assets/data/pricing.json' +
+    (assetVer() ? '?v=' + encodeURIComponent(assetVer()) : '');
+
+  fetch(PRICING_URL).then(function (r) { return r.json(); }).then(function (j) {
     P = j;
     restore();
     var wanted = new URLSearchParams(location.search).get('plan');
