@@ -69,6 +69,52 @@ CSS = """
     font-size:var(--fs-sm);color:var(--tx2);flex-wrap:wrap;}
   .ratebox div b{color:#fff;}
   .ratebox div span{color:var(--teal);font-weight:700;white-space:nowrap;}
+
+  /* ── 이 값에 무엇이 들어 있는가 ───────────────────────────────────
+     한국어 페이지는 요금제 카드만 보여 주고 끝났습니다. 값에 CRM 이
+     들어 있다는 것, 채널마다 얼마인지, 한도를 넘기면 어떻게 되는지를
+     묻지 않고는 아무도 결재를 올리지 않습니다. */
+  .kbuy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+  .kbuy > div{padding:26px 24px;border:1px solid var(--hair-d);border-radius:14px;
+    background:rgba(255,255,255,.03);}
+  .kbuy b{display:block;color:#fff;font-size:var(--fs-lead);margin-bottom:10px;}
+  .kbuy p{font-size:var(--fs-sm);line-height:1.85;color:var(--tx2);}
+  @media (max-width:900px){.kbuy{grid-template-columns:1fr;}}
+
+  .krate{width:100%;border-collapse:collapse;margin-top:30px;font-size:var(--fs-sm);}
+  .krate th,.krate td{padding:14px 12px;text-align:left;border-bottom:1px solid var(--hair-d);
+    vertical-align:top;}
+  .krate th{font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--tx3);font-weight:600;}
+  .krate td:last-child,.krate th:last-child{text-align:right;white-space:nowrap;}
+  .krate b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums;}
+  .krate span{display:block;margin-top:4px;font-size:var(--fs-xs);color:var(--tx3);
+    line-height:1.7;}
+  .kratewrap{overflow-x:auto;}
+
+  .kover{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--hair-d);border:1px solid var(--hair-d);border-radius:14px;overflow:hidden;}
+  .kover > div{background:rgba(255,255,255,.03);padding:24px 22px;}
+  .kover i{display:block;font-style:normal;font-size:var(--fs-2xs);letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:10px;}
+  .kover b{display:block;color:#fff;font-size:var(--fs-body);margin-bottom:8px;}
+  .kover p{font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
+  @media (max-width:900px){.kover{grid-template-columns:1fr;}}
+
+  .kbill{margin-top:34px;max-width:560px;border:1px solid var(--hair-d);border-radius:14px;
+    background:rgba(255,255,255,.03);overflow:hidden;}
+  .kbill .bh{padding:18px 22px;border-bottom:1px solid var(--hair-d);
+    display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+  .kbill .bh b{color:#fff;font-size:var(--fs-body);}
+  .kbill .bh span{font-size:var(--fs-xs);color:var(--tx3);}
+  .kbill .br{display:flex;justify-content:space-between;gap:16px;padding:12px 22px;
+    font-size:var(--fs-sm);color:var(--tx2);}
+  .kbill .br em{font-style:normal;font-variant-numeric:tabular-nums;color:#fff;}
+  .kbill .br.sub{border-top:1px solid var(--hair-d);margin-top:6px;padding-top:14px;}
+  .kbill .br.tot{border-top:2px solid var(--hair-d);padding-top:16px;padding-bottom:20px;}
+  .kbill .br.tot span{color:#fff;font-weight:600;}
+  .kbill .br.tot em{color:var(--teal);font-size:var(--fs-lead);font-weight:600;}
+  .kbillcap{margin-top:14px;font-size:var(--fs-xs);color:var(--tx3);line-height:1.8;}
 """
 
 BODY = """
@@ -154,6 +200,144 @@ BODY = """
   </div>
 </section>
 
+<section class="t-md sec-light bg-paper" id="crm">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>이 값에 무엇이 들어 있는가</span><span class="line"></span></div>
+    <h2 class="h2 reveal">응대는 현관입니다.<br>값을 치르시는 것은 그 뒤의 건물입니다.</h2>
+    <p class="sub reveal">전화를 받아 주는 서비스는 이미 있습니다. 통화가 끝나면 녹취와 메모가
+      남고, 그것을 누군가 다시 읽고 옮겨 적어야 합니다. 그 옮겨 적는 일이 실제 업무의 대부분입니다.
+      Saleringo 는 그 일을 하지 않아도 되게 만듭니다.</p>
+
+    <div class="kbuy reveal">
+      <div>
+        <b>대화가 고객 기록이 됩니다</b>
+        <p>통화든 채팅이든 카카오톡이든, 끝나면 고객 카드 한 장이 남습니다. 이름, 연락처,
+          무엇을 물었는지, 무엇을 약속했는지가 한 곳에 모입니다. 같은 사람이 다음 달에 다시
+          연락하면 그 카드에 이어 붙습니다.</p>
+      </div>
+      <div>
+        <b>예약과 견적이 그 자리에서</b>
+        <p>비어 있는 시간을 확인하고 잡습니다. 등록해 두신 요금표로 견적을 만들어 보냅니다.
+          사람이 나중에 확인해 다시 연락하는 것이 아니라, 통화 중에 끝납니다.</p>
+      </div>
+      <div>
+        <b>다음에 할 일이 누구 것인지</b>
+        <p>확인이 필요한 건은 담당자에게 넘어갑니다. 누구에게 언제 넘어갔는지, 처리됐는지가
+          남습니다. 「그 건 어떻게 됐지」를 다시 묻지 않아도 됩니다.</p>
+      </div>
+    </div>
+
+    <p class="seccap reveal" style="margin-top:22px;">이것은 상위 요금제의 기능이 아닙니다.
+      <b>Start 110,000원부터</b> 세 요금제 모두에 같은 CRM 이 들어 있습니다. 요금제가
+      나뉘는 기준은 CRM 이 아니라 <b>어느 채널로 받는가</b>와 <b>한 달에 몇 건인가</b>입니다.</p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="channels">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>채널 요금</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">채널은 셋,<br>수신함과 청구서는 하나.</h2>
+    <p class="sub reveal">채널마다 다른 도구를 쓰고 채널마다 따로 청구되는 구조가 흔합니다.
+      그러면 어디서 얼마가 나가는지 아무도 모릅니다. 여기서는 세 채널이 한 수신함으로 들어오고,
+      한 장의 세금계산서로 나갑니다.</p>
+
+    <div class="kratewrap reveal">
+      <table class="krate">
+        <thead>
+          <tr><th>채널</th><th>어느 요금제부터</th><th>월정액 밖에서 더 나가는 것</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>홈페이지 채팅</b><span>방문자가 창을 열고 묻습니다. 야간과 주말에 가장 많이 옵니다.</span></td>
+            <td>Start 110,000원<span>월 500건 포함</span></td>
+            <td><b>없음</b><span>월정액 안에서 끝납니다</span></td>
+          </tr>
+          <tr>
+            <td><b>카카오톡 채널</b><span>이미 채널을 쓰고 계시면 그대로 연결합니다.
+              예약 확인과 안내를 알림톡으로 보냅니다.</span></td>
+            <td>Grow 340,000원<span>월 2,000건 포함</span></td>
+            <td><b>알림톡 건당 15원</b><span>보내신 만큼만. 받는 것은 대화 건수에 들어갑니다</span></td>
+          </tr>
+          <tr>
+            <td><b>AI 전화</b><span>실제로 벨이 울리고 사람 목소리로 받습니다.
+              번호는 쓰시던 것을 그대로 두셔도 됩니다.</span></td>
+            <td>Scale 820,000원<span>월 6,000건 포함</span></td>
+            <td><b>통화 1분당 190원부터</b><span>통신사 회선 요금이라 나라마다 다릅니다</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="seccap reveal" style="margin-top:18px;">모든 금액은 부가세 별도입니다.
+      통화료와 알림톡은 <b>쓰신 만큼 다음 달에</b> 정산합니다 &mdash; 미리 사 두는 방식이 아닙니다.
+      쓰지 않으신 달에는 월정액만 나갑니다.</p>
+  </div>
+</section>
+
+<section class="t-md sec-light2" id="bill">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>한 달 청구서</span><span class="line"></span></div>
+    <h2 class="h2 reveal">청구서가<br>이렇게 생겼습니다.</h2>
+    <p class="sub reveal">요금제 카드만 보면 월정액밖에 모릅니다. 실제로 오는 종이는 이렇습니다
+      &mdash; 치과 한 곳이 AI 전화까지 켜고 한 달을 쓴 경우입니다.</p>
+
+    <div class="kbill reveal">
+      <div class="bh"><b>전자세금계산서 &middot; 3월분</b><span>공급가액 기준</span></div>
+      <div class="br"><span>Scale 월정액</span><em>820,000원</em></div>
+      <div class="br"><span>AI 전화 통화료 &middot; 420분 &times; 190원</span><em>79,800원</em></div>
+      <div class="br"><span>알림톡 발송 &middot; 310건 &times; 15원</span><em>4,650원</em></div>
+      <div class="br"><span>대화 초과 &middot; 0건</span><em>0원</em></div>
+      <div class="br sub"><span>공급가액</span><em>904,450원</em></div>
+      <div class="br"><span>부가세 10%</span><em>90,445원</em></div>
+      <div class="br tot"><span>합계</span><em>994,895원</em></div>
+    </div>
+
+    <p class="kbillcap reveal">이 예시에서 월정액 밖으로 나간 것은 84,450원입니다.
+      통화를 한 통도 안 받은 달이면 그 줄이 0원이 되고, 청구서는 월정액과 부가세뿐입니다.
+      <b>청구서에 처음 등장하는 항목은 없습니다</b> &mdash; 위 세 가지 단가가 이 페이지에 적힌 전부입니다.</p>
+
+    <p class="calccta reveal" style="margin-top:26px;">
+      <a class="btn btn-teal" href="./index.html#calculator">우리 숫자로 계산해 보기<span class="cir">&#8599;</span></a>
+      <a class="lnk" href="./checkout.html?plan=scale">이 구성으로 주문서 열기</a>
+    </p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-spot" id="over">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>한도를 넘기면</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">넘기기 전에 알려 드리고,<br>넘기지 않게 막아 드릴 수도 있습니다.</h2>
+    <p class="sub reveal">포함된 대화 건수를 넘기는 달이 옵니다. 그때 어떻게 되는지를
+      청구서를 받고 나서가 아니라 지금 적어 둡니다.</p>
+
+    <div class="kover reveal">
+      <div>
+        <i>80%</i>
+        <b>미리 알려 드립니다</b>
+        <p>포함 건수의 80%에 닿으면 담당자 이메일로 알립니다. 이 달에 넘길 것 같은지
+          그때 판단하실 수 있습니다.</p>
+      </div>
+      <div>
+        <i>100%</i>
+        <b>넘긴 만큼만 붙습니다</b>
+        <p>초과분은 <b>건당 90원</b>입니다. 100건이면 9,000원입니다.
+          요금제가 저절로 올라가지 않고, 다음 달에 다시 원래대로 돌아옵니다.</p>
+      </div>
+      <div>
+        <i>상한</i>
+        <b>아예 막아 두실 수 있습니다</b>
+        <p>월 상한을 걸어 두시면 그 지점에서 AI 응대를 멈춥니다. 청구가 늘어나는 대신
+          멈추는 쪽입니다. 그래도 <b>들어온 문의는 직원분들께 그대로 보입니다</b> &mdash;
+          응대만 멈추고 기록은 계속 남습니다.</p>
+      </div>
+    </div>
+
+    <p class="seccap reveal" style="margin-top:18px;">「대화 한 건」은 한 사람이 한 가지 용건으로
+      주고받은 묶음입니다. 같은 사람이 같은 건으로 세 번 되물어도 한 건입니다. 다음 날 다른 건으로
+      연락하면 그때 두 건째입니다. 메시지 수로 세지 않습니다.</p>
+  </div>
+</section>
+
 <section class="t-md sec-dark bg-spot" id="alternatives">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>무엇과 비교하는가</span><span class="line"></span></div>
@@ -188,42 +372,81 @@ BODY = """
 <section class="t-md sec-light bg-paper" id="not-paying">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>내지 않아도 되는 비용</span><span class="line"></span></div>
-    <h2 class="h2 reveal">받지 않는 돈을 적어 둡니다.</h2>
+    <h2 class="h2 reveal">받지 않는 돈을<br>먼저 적어 둡니다.</h2>
+    <p class="sub reveal">이 업계의 견적서는 아무도 소리 내어 읽지 않는 줄에서 비싸집니다.
+      구축비, 계정 수, 연동비, 나갈 때의 반출비 &mdash; 계약서에 서명한 뒤에 알게 되는 것들입니다.
+      아래 다섯 가지는 전부 0원이고, 그 사실이 서면 주문서에도 그대로 들어갑니다.</p>
     <ul class="kolist reveal" style="color:var(--l-tx2);">
-      <li><b>초기 구축비 없음.</b> 요금표와 영업시간을 넣는 작업은 저희가 합니다.</li>
-      <li><b>약정 없음.</b> 해지 위약금이 없습니다. 다음 달부터 청구가 멈춥니다.</li>
-      <li><b>계정당 과금 없음.</b> 직원이 늘어도 요금은 그대로입니다.</li>
-      <li><b>데이터 반출 비용 없음.</b> 나가실 때 전부 내려받고 나가시면 됩니다.</li>
-      <li><b>연동 비용 없음.</b> 캘린더, 문자, 카카오 채널 연동에 따로 청구하지 않습니다.</li>
+      <li><b>초기 구축비 0원.</b> 요금표와 영업시간, 자주 묻는 것들을 넣어 응대를 만드는 작업은
+        저희가 합니다. 그 작업에 따로 청구하지 않습니다. 다만 사장님 쪽에서 요금표와 영업시간을
+        주셔야 시작할 수 있습니다 &mdash; 그것 없이 만들면 없는 답을 지어내게 됩니다.</li>
+      <li><b>약정 0개월.</b> 해지 위약금이 없습니다. 언제 해지하셔도 다음 달 청구가 멈추고,
+        <b>남은 날수는 날짜로 계산해 돌려 드립니다.</b> 첫 결제일부터 14일 안에는 전액 환불입니다.</li>
+      <li><b>계정당 과금 0원.</b> Start 2명, Grow 5명, Scale 15명까지
+        같은 요금입니다. 직원이 한 명 늘 때마다 값이 오르는 구조가 아닙니다.</li>
+      <li><b>연동비 0원.</b> 캘린더, 문자, 카카오톡 채널을 붙이는 데 따로 청구하지 않습니다.
+        이미 쓰고 계신 것에 붙이는 것이 기본이고, 그것이 안 되면 그렇다고 먼저 말씀드립니다.</li>
+      <li><b>반출비 0원.</b> 나가실 때 고객 기록, 통화 기록, 예약 내역을 전부 파일로 내려받고
+        나가십니다. 데이터를 인질로 잡지 않습니다. 받으신 뒤에는 저희 보유분을 파기합니다.</li>
     </ul>
+    <p class="seccap reveal" style="margin-top:20px;">청구서에 올라가는 항목은
+      <b>월정액 · 통화료 · 알림톡 · 대화 초과</b> 넷뿐입니다. 이 페이지에 단가가 적히지 않은 것은
+      청구서에도 없습니다.</p>
   </div>
 </section>
 
 <section class="t-md sec-light2" id="faq">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>결제와 세금</span><span class="line"></span></div>
-    <h2 class="h2 reveal">먼저 물어보시는 것들.</h2>
+    <h2 class="h2 reveal">카드를 꺼내시기 전에<br>먼저 물어보시는 것들.</h2>
+    <p class="sub reveal">「얼마인가」는 위에 다 적혀 있습니다. 여기는 그 뒤에 오는 질문들입니다
+      &mdash; 세금계산서, 환불, 결제가 실패하면 어떻게 되는지, 그리고 조용히 응대를 멈추지는
+      않는지.</p>
     <div class="qa reveal">
       <div class="q"><b>세금계산서 발행되나요?</b>
-        <p>됩니다. 매월 결제일 기준으로 전자세금계산서를 발행해 드립니다.
-          사업자등록번호와 담당자 이메일만 등록해 두시면 자동으로 나갑니다.</p></div>
-      <div class="q"><b>결제는 어떻게 하나요?</b>
-        <p>신용카드 자동결제와 계좌이체 중에 고르실 수 있습니다.
-          계좌이체는 월 단위 후불로, 사용량이 확정된 뒤에 청구합니다.</p></div>
+        <p>됩니다. 매월 결제일 기준으로 전자세금계산서를 발행해 드립니다. 사업자등록번호와
+          받으실 이메일만 등록해 두시면 자동으로 나갑니다. 주문서에서 세금계산서 받으실 이메일을
+          따로 지정하실 수 있습니다 &mdash; 담당자와 경리 담당이 다른 경우가 많기 때문입니다.</p></div>
+
       <div class="q"><b>부가세는 포함인가요?</b>
-        <p>아닙니다. 이 페이지의 모든 금액은 부가세 별도입니다.
-          실제 청구액은 여기에 10%를 더한 금액입니다.</p></div>
-      <div class="q"><b>통화료가 예상보다 많이 나오면요?</b>
-        <p>월 사용 한도를 미리 걸어 두실 수 있습니다. 한도에 닿으면 더 쓰지 않고 알림을 보냅니다.
-          모르는 사이에 요금이 불어나는 일이 없도록 하려는 것입니다.</p></div>
-      <div class="q"><b>쓰던 번호를 그대로 쓸 수 있나요?</b>
-        <p>됩니다. 번호는 그대로 두고, 못 받은 전화만 AI로 넘기는 방식이 가장 흔합니다.
-          처음부터 AI가 받게 하고 필요할 때만 사람에게 돌리는 방식도 됩니다.</p></div>
-      <div class="q"><b>해지하면 데이터는 어떻게 되나요?</b>
-        <p>해지 신청과 함께 전체 내보내기를 만들어 드립니다. 고객 정보, 상담 기록, 녹취를 포함합니다.
-          내려받으신 뒤 저희 쪽 데이터는 파기합니다. 자세한 보관 기간은
-          <a href="./privacy.html">개인정보처리방침</a>에 적어 두었습니다.</p></div>
+        <p>아닙니다. 이 페이지의 모든 금액은 <b>부가세 별도</b>입니다. 실제 청구액은 여기에
+          10%를 더한 금액입니다. Scale 820,000원이면 청구서에는 902,000원으로 찍힙니다.
+          주문서에서 부가세를 포함한 실제 청구액을 먼저 보여 드립니다.</p></div>
+
+      <div class="q"><b>결제는 어떻게 하나요?</b>
+        <p>카드 정기결제와 계좌이체 중에 고르십니다. 카드는 매월 같은 날 자동으로 결제되고,
+          계좌이체는 사용량이 확정된 뒤 <b>전자세금계산서를 먼저 보내 드리고</b> 받으신 뒤에
+          이체하시는 방식입니다. 계좌이체를 고르시면 저희에게 결제 정보를 맡기지 않으셔도 됩니다.</p></div>
+
+      <div class="q"><b>첫 달은 한 달치를 다 내나요?</b>
+        <p>아닙니다. 개시일부터 그 달 말일까지 <b>날짜로 나눠</b> 계산합니다. 20일에 시작하시면
+          그 달은 열흘치입니다. 개시일이 정해지면 그 날짜로 계산한 확정 금액을 먼저 알려 드리고,
+          그 뒤에 청구합니다.</p></div>
+
+      <div class="q"><b>해지하면 남은 기간은요?</b>
+        <p><b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. 그 뒤에 해지하시면 월 정액 요금 가운데 <b>해지 신청일부터 그 달 남은 날수만큼 날짜로 계산해 환불</b>합니다. 이미 사용하신 통화료·메시지 요금은 게시된 단가로 차감하며 환불 대상이 아닙니다.</p></div>
+
+      <div class="q"><b>자동으로 갱신되나요?</b>
+        <p>카드 정기결제를 고르시면 <b>해지하시기 전까지</b> 매월 같은 날 자동으로 결제됩니다. <b>해지하신 뒤에는 갱신되지 않으며</b>, 이미 결제하신 기간까지는 그대로 이용하실 수 있습니다. 계좌이체를 고르시면 매월 세금계산서를 먼저 보내 드리고 받으신 뒤에 이체하시므로, 자동으로 빠져나가는 금액이 없습니다.</p></div>
+
+      <div class="q"><b>결제가 실패하면 바로 멈추나요?</b>
+        <p>아닙니다. 7일 동안 다시 시도하면서 이메일로 알려 드립니다. 그 뒤에도 해결되지 않으면
+          7일의 유예 기간이 있고, 그동안에도 응대는 계속됩니다. <b>말없이 고객 응대를 멈추는 일은
+          없습니다</b> &mdash; 멈춰야 하는 상황이면 멈추기 전에 먼저 알려 드립니다.</p></div>
+
+      <div class="q"><b>요금이 오르면요?</b>
+        <p>시행 30일 전에 알려 드립니다. 인상에 동의하지 않으시면 그 시점에 해지하실 수
+          있고, 이미 결제하신 기간에는 인상 전 요금이 적용됩니다. 창립 고객 할인을 받고 계신
+          동안에는 그 기간의 금액이 가입 시점에 확정되어 바뀌지 않습니다.</p></div>
+
+      <div class="q"><b>지금 결제하는 건가요?</b>
+        <p>아닙니다. 주문서를 보내시는 것은 청약이고, <b>계약은 서면 주문서에 양측이 서명한 때
+          성립합니다.</b> 그 전까지는 어떤 금액도 청구되지 않습니다. 접수하시면 담당자가 영업일
+          하루 안에 확인 연락을 드리고 서면 주문서를 보내 드립니다.</p></div>
     </div>
+    <p class="seccap reveal" style="margin-top:20px;">여기 적힌 환불·갱신 조건은
+      <a class="lnk" href="./terms.html#sec-5">이용약관 제5조</a>와 같은 문장에서 나옵니다.
+      두 곳이 다른 말을 하지 않도록 한 파일에서 함께 출력합니다.</p>
   </div>
 </section>
 
