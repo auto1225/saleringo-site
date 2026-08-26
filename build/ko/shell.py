@@ -15,7 +15,7 @@ import io
 import os
 
 SITE = 'https://claude.saleringo.com'
-VER = '52.0'
+VER = '53.0'
 FONTS = ('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700'
          '&family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          '&family=Noto+Sans+KR:wght@400;500;700;800&display=swap')
