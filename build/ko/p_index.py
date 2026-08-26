@@ -63,6 +63,39 @@ CSS = """
     border:1px solid #D5DBE4;border-radius:8px;text-decoration:none;
     color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;transition:all .3s var(--ease);}
   .tradechips a:hover{border-color:var(--teal);background:rgba(23,189,189,.08);}
+
+  /* ── 놓친 문의의 값을 재는 계산기 ─────────────────────────────────
+     영문 홈에는 있었고 한국어 홈에는 없었습니다. 그래서 한국어 쪽은
+     "놓친 전화에는 값이 있습니다" 를 말로만 설명하고 끝났습니다.
+     자기 숫자를 넣어 본 사람과 설명만 읽은 사람은 다른 것을 압니다. */
+  .kcalc{background:#0C1526;}
+  .kcbox{margin-top:42px;display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  .kcin,.kcout{background:#0E1727;padding:30px 28px;}
+  .kcrow{margin-bottom:26px;}
+  .kcrow:last-child{margin-bottom:0;}
+  .kcrow label{display:block;font-size:var(--fs-sm);color:var(--tx2);margin-bottom:12px;
+    line-height:1.6;}
+  .kcrow label b{color:var(--teal);font-weight:700;font-variant-numeric:tabular-nums;}
+  .kcrow input[type=range]{width:100%;accent-color:var(--teal);height:22px;cursor:pointer;}
+  .kcrow input[type=range]:focus-visible{outline:2px solid var(--teal);outline-offset:4px;}
+
+  .kcout{display:flex;flex-direction:column;justify-content:center;}
+  .kcline{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding:13px 0;border-bottom:1px solid var(--line);font-size:var(--fs-sm);}
+  .kcline span{color:var(--tx2);}
+  .kcline i{font-style:normal;color:var(--teal);font-variant-numeric:tabular-nums;}
+  .kcline b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .kctotal{border-bottom:0;padding-top:18px;margin-top:6px;border-top:2px solid var(--line);}
+  .kctotal span{color:#fff;font-weight:600;}
+  .kctotal b{font-size:var(--fs-lead);color:var(--teal);}
+  .kcsay{margin-top:18px;font-size:var(--fs-xs);line-height:1.8;color:var(--tx3);}
+  .kccta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;}
+
+  @media (max-width:820px){
+    .kcbox{grid-template-columns:1fr;}
+    .kcin,.kcout{padding:24px 20px;}
+  }
 """
 
 BODY = """
@@ -150,6 +183,53 @@ BODY = """
       업종에 따라 크게 달라지는 값입니다. 우리 가게의 실제 값은
       <a href="./get-started.html" style="color:var(--teal);font-weight:700;">견적 요청</a> 시
       영업시간과 객단가를 알려 주시면 저희가 계산해 드립니다.</p>
+  </div>
+</section>
+
+<section class="kcalc t-xl bg-grid" id="calculator">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>직접 넣어 보십시오</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">지금 얼마가<br>새고 있습니까?</h2>
+    <p class="sub reveal">슬라이더 넷이면 됩니다. 저희 숫자가 아니라 사장님 숫자입니다.
+      <b>아무 데도 보내지 않습니다</b> &mdash; 이 계산은 브라우저 안에서만 돕니다.</p>
+
+    <div class="kcbox reveal">
+      <div class="kcin">
+        <div class="kcrow">
+          <label for="cMissed">매달 놓치는 문의 <b id="vMissed">60</b>건</label>
+          <input id="cMissed" type="range" min="10" max="300" step="5" value="60">
+        </div>
+        <div class="kcrow">
+          <label for="cValue">성사된 문의 한 건의 평균 값어치 <b id="vValue">400,000원</b></label>
+          <input id="cValue" type="range" min="50000" max="2000000" step="50000" value="400000">
+        </div>
+        <div class="kcrow">
+          <label for="cConv">평소 성사되는 비율 <b id="vConv">30%</b></label>
+          <input id="cConv" type="range" min="10" max="60" step="1" value="30">
+        </div>
+        <div class="kcrow">
+          <label for="cSave">그중 되찾을 수 있다고 보시는 비율 <b id="vSave">25%</b></label>
+          <input id="cSave" type="range" min="5" max="60" step="1" value="25">
+        </div>
+      </div>
+
+      <div class="kcout" aria-live="polite">
+        <div class="kcline"><span>매달 새는 금액</span><b id="oLeak">&mdash;</b></div>
+        <div class="kcline"><span>그중 <i id="oPct">25%</i>를 되찾으면</span><b id="oBack">&mdash;</b></div>
+        <div class="kcline"><span>AI 전화 요금과 통화료</span><b id="oCost">&mdash;</b></div>
+        <div class="kcline kctotal"><span>남는 것</span><b id="oNet">&mdash;</b></div>
+        <p class="kcsay" id="oVerdict"></p>
+      </div>
+    </div>
+
+    <p class="seccap reveal" style="margin-top:18px;">계산에 쓰는 요금은 요금 페이지에 적힌 것과 같습니다
+      &mdash; AI 전화가 든 <b>Scale 820,000원/월</b>, 통화 <b>1분당 190원</b>, 한 통 평균 4분.
+      전화를 받는 이야기이므로 전화가 없는 요금제로 빼서 계산하지 않습니다. 부가세는 별도입니다.</p>
+
+    <p class="kccta reveal">
+      <a class="btn btn-teal" href="./pricing.html">요금제 자세히 보기<span class="cir">&#8599;</span></a>
+      <a class="lnk" href="./checkout.html?plan=scale">이 조건으로 주문서 열기</a>
+    </p>
   </div>
 </section>
 
@@ -291,6 +371,8 @@ BODY = """
 """
 
 body = BODY.format(NAV=NAV, FOOT=FOOT, NB=NB, HERO=HERO)
+body = body + "<script>\n/* 놓친 문의의 값을 재는 계산기. 브라우저 안에서만 돌고 아무 데도 보내지\n   않습니다. 금액은 요금표에서 가져온 값을 그대로 씁니다.\n\n   전화를 받는 데 드는 값이므로 AI 전화가 든 Scale 을 뺍니다. 채팅만 있는\n   요금제를 빼면 전화 문제를 전화 없는 요금제로 푼 셈이 되어 계산이 실제보다\n   유리해집니다. 이 절의 값어치는 산수가 정직한 데 있으므로 그렇게 하지\n   않습니다. */\n(function () {\n  var m = document.getElementById('cMissed'),\n      v = document.getElementById('cValue'),\n      c = document.getElementById('cConv'),\n      sv = document.getElementById('cSave');\n  if (!m || !v || !c) return;\n\n  var PLAN_VOICE = 820000, PLAN_CHAT = 110000, VOICE_MIN = 190, AVG_MIN = 4;\n  var nf = new Intl.NumberFormat('ko-KR');\n  function won(n) { return nf.format(Math.round(n)) + '원'; }\n\n  function calc() {\n    var missed = +m.value, value = +v.value, conv = +c.value;\n    var save = (sv ? +sv.value : 25) / 100;\n    var leak = missed * value * (conv / 100);\n    var back = leak * save;\n    var cost = PLAN_VOICE + missed * AVG_MIN * VOICE_MIN;\n    var net = back - cost;\n\n    document.getElementById('vMissed').textContent = nf.format(missed);\n    document.getElementById('vValue').textContent = won(value);\n    document.getElementById('vConv').textContent = conv + '%';\n    if (sv) {\n      document.getElementById('vSave').textContent = sv.value + '%';\n      document.getElementById('oPct').textContent = sv.value + '%';\n    }\n    document.getElementById('oLeak').textContent = won(leak);\n    document.getElementById('oBack').textContent = won(back);\n    document.getElementById('oCost').textContent = '\\u2212' + won(cost);\n    document.getElementById('oNet').textContent = (net >= 0 ? '' : '\\u2212') + won(Math.abs(net));\n\n    var say;\n    if (back < cost) {\n      say = '지금 넣으신 조건에서는 전화를 받는 비용이 되찾는 금액보다 큽니다. '\n          + '홈페이지 채팅만 있는 Start ' + won(PLAN_CHAT) + '/월로 시작하시고, '\n          + '통화량이 늘어나면 그때 전화를 더하시는 편이 낫습니다.';\n    } else if (back < cost * 3) {\n      say = '요금을 내고도 남습니다. 여기서 한 건을 더 되찾을 때마다 그대로 남는 것입니다.';\n    } else {\n      say = '지금 넣으신 조건이라면 통화료까지 포함해 전체 요금의 약 '\n          + Math.round(back / cost) + '배를 덮습니다.';\n    }\n    document.getElementById('oVerdict').textContent = say;\n  }\n\n  [m, v, c, sv].filter(Boolean).forEach(function (el) { el.addEventListener('input', calc); });\n  calc();\n})();\n</script>"
+
 p = page('index.html',
          'Saleringo &mdash; 전화도 받고 예약까지 잡는 AI 응대',
          '전화, 홈페이지 채팅, 카카오톡을 AI가 대신 받고 업종별 CRM에 예약과 고객 카드로 남깁니다. '

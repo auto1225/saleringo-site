@@ -787,6 +787,32 @@ window.SR_CONFIG = window.SR_CONFIG || {
     });
   })();
 
+  /* ── 3-2. 문서 요청 ────────────────────────────────────────────────── */
+  /* DPA·하위 수탁업체 목록·보안 개요는 "요청하시면 보내 드립니다" 로
+     안내합니다. 각 문서가 받는 분의 이름으로 발급되기 때문이고, 그
+     설명은 보안 페이지에 그대로 적혀 있습니다.
+
+     문제는 그 요청이 mailto: 로 가고 있었다는 것입니다. saleringo.com 에
+     MX 가 없어 그 메일은 반송됩니다. 요청한 사람은 답이 없다고
+     생각하고, 회사는 요청이 있었다는 것조차 모릅니다.
+
+     이제 실제로 도착하는 문의 폼으로 보냅니다. */
+  (function docs() {
+    var want;
+    try { want = new URLSearchParams(location.search).get('doc'); } catch (e) { return; }
+    if (!want) return;
+    var NAMES = {
+      dpa:              { ko: '데이터 처리 계약서(DPA)와 표준계약조항(SCC)',
+                          en: 'Data Processing Agreement (DPA) with the SCCs' },
+      subprocessors:    { ko: '하위 수탁업체 목록', en: 'Subprocessor list' },
+      'security-overview': { ko: '보안 개요 문서', en: 'Security overview' },
+      all:              { ko: '검토용 문서 일체', en: 'the review documents' }
+    };
+    var n = NAMES[want];
+    if (!n) return;
+    write({ docRequest: want, docRequestName: n[KO ? 'ko' : 'en'] });
+  })();
+
   /* ── 4. 주문서·문의 폼에 도착했을 때 ───────────────────────────────── */
   /* 조용히 붙이지 않습니다. 보이는 칸에 적어 두고, 지우실 수 있게 둡니다. */
   (function land() {
@@ -797,6 +823,11 @@ window.SR_CONFIG = window.SR_CONFIG || {
     if ((note.value || '').trim()) return;   /* 이미 쓰신 것이 있으면 건드리지 않습니다 */
 
     var lines = [];
+    if (c.docRequestName) {
+      lines.push(KO
+        ? '요청 문서: ' + c.docRequestName
+        : 'Document requested: ' + c.docRequestName);
+    }
     if (c.industryName || c.demoTradeName) {
       lines.push(KO
         ? '업종: ' + (c.industryName || c.demoTradeName)
