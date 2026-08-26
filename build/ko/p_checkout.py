@@ -209,7 +209,10 @@ def build(lang):
     cinfo = PR['currencies'][cur]
 
     def price(n):
-        txt = ('{:,.0f}' if cinfo['decimals'] == 0 else '{:,.2f}').format(n)
+        # 599 는 "$599", 0.14 는 "$0.14". 자리수를 하나로 고정하면 둘 중
+        # 하나가 틀립니다. $599.00 은 금액이 아니라 회계 장부처럼 보입니다.
+        whole = abs(n - round(n)) < 1e-9
+        txt = ('{:,.0f}' if whole else ('{:,.%df}' % cinfo['decimals'])).format(n)
         return (cinfo['symbol'] + txt) if cinfo['position'] == 'before' else (txt + cinfo['symbol'])
 
     blurbs = {
@@ -337,7 +340,7 @@ def build(lang):
             <div class="fld">
               <label for="coPhone">{fPhone} <span class="opt">{optional}</span></label>
               <input id="coPhone" name="phone" type="tel" autocomplete="tel"
-                     placeholder="010-0000-0000" maxlength="13">
+                     placeholder="010-0000-0000" maxlength="24">
             </div>
           </div>
           <div class="fld">

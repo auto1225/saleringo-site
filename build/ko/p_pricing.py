@@ -54,6 +54,15 @@ CSS = """
   .qa .q{padding:22px 0;border-top:1px solid #E3E7EE;}
   .qa .q b{display:block;font-size:var(--fs-lead);color:var(--l-ink);}
   .qa .q p{margin-top:9px;font-size:var(--fs-sm);color:var(--l-tx2);line-height:1.8;}
+  .foundbox{margin-top:32px;padding:26px 24px;border:1px solid var(--teal);
+    border-radius:12px;background:rgba(23,189,189,.07);}
+  .foundbox > b{display:block;font-size:var(--fs-lead);color:#fff;}
+  .foundbox p{margin-top:12px;font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
+  .fb-rows{display:flex;flex-wrap:wrap;gap:22px;margin-top:16px;}
+  .fb-rows span{font-size:var(--fs-sm);color:var(--tx2);}
+  .fb-rows b{color:var(--teal);font-weight:700;font-size:var(--fs-body);}
+  .fb-rows s{color:var(--tx3);}
+  .fb-fine{font-size:var(--fs-xs);color:var(--tx3);}
   .ratebox{margin-top:32px;padding:26px 24px;border:1px solid var(--hair-d);
     border-radius:12px;display:grid;gap:14px;}
   .ratebox div{display:flex;justify-content:space-between;gap:20px;
@@ -122,6 +131,17 @@ BODY = """
         <a class="btn btn-ghostd go" href="./checkout.html?plan=scale">이 요금제로 주문</a>
       </div>
     </div>
+    <div class="foundbox reveal" id="founding">
+      <b>창립 고객 할인 &mdash; 처음 3개월 50%</b>
+      <p>지금 시작하시면 처음 세 달은 위 금액의 절반입니다. 가입 시점에 확정되고,
+        그 사이에 요금이 올라도 그 세 달은 그대로입니다. 넉 달째부터 정가입니다.
+        주문서에 자동으로 반영되므로 따로 코드를 넣지 않으셔도 됩니다.</p>
+      <p class="fb-rows"><span>Start <b>55,000원</b> <s>110,000원</s></span><span>Grow
+        <b>170,000원</b> <s>340,000원</s></span><span>Scale <b>410,000원</b>
+        <s>820,000원</s></span></p>
+      <p class="fb-fine">부가세 별도. 넉 달째부터 각각 110,000 / 340,000 / 820,000원입니다.</p>
+    </div>
+
     <div class="ratebox reveal" id="rates">
       <div><b>AI 전화 &mdash; 통화 요금</b><span>1분당 190원부터</span></div>
       <div><b>카카오톡 알림톡 &mdash; 발송 건당</b><span>건당 15원부터</span></div>
