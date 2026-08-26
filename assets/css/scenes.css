@@ -128,26 +128,6 @@
 .logoslot.light{border-color:#DDE3EB;color:#6F767F;}
 .logoslot.light i{background:#EEF2F6;}
 
-/* testimonial */
-.quotecard{border-radius:22px;padding:28px;position:relative;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);}
-.quotecard.light{background:#fff;border-color:var(--l-hair);box-shadow:0 22px 50px rgba(11,27,51,.08);}
-.quotecard .mark{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:.6;color:var(--teal);opacity:.5;}
-.quotecard p{margin-top:14px;font-size:var(--fs-body);line-height:1.75;color:var(--tx);font-weight:500;}
-.quotecard.light p{color:var(--l-ink);}
-.quotecard .by{margin-top:20px;display:flex;align-items:center;gap:12px;}
-.quotecard .by b{display:block;font-size:var(--fs-xs);color:#fff;}
-.quotecard.light .by b{color:var(--l-ink);}
-.quotecard .by span{display:block;font-size:var(--fs-2xs);color:var(--tx2);font-weight:600;}
-.quotecard.light .by span{color:var(--l-mut);}
-.quotecard .metric{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.10);
-  font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);color:var(--teal);font-weight:600;}
-.quotecard.light .metric{border-color:var(--l-hair);color:#0B7878;}
-.quotecard.pending{border-style:dashed;}
-.quotecard.pending p{color:var(--tx2);font-style:italic;}
-.quotecard.light.pending p{color:var(--l-mut);}
-.quotecard.light .mark{color:var(--teal-ink);opacity:.8;}
-
 /* before / after */
 .baGrid{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:stretch;}
 .baCol{border-radius:20px;padding:26px;}

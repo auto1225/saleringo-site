@@ -1210,7 +1210,7 @@ form.gsform.eaform button{grid-column:auto;}
 /* found by sweeping every page for an element that paints a light ground
    and still resolves --tx2 to the dark theme's value */
 .quotedoc,.browserframe.light,.browserframe.light .bar,.inboxmock,
-.quotecard.light,.qmini,.kconf,.kfact,.handles{
+.qmini,.kconf,.kfact,.handles{
   color:var(--l-ink);
   --tx:var(--l-ink); --tx2:var(--l-mut); --tx3:var(--l-mut2);
   --teal-deep:var(--teal-ink); --amber:var(--amber-ink);
@@ -1219,7 +1219,6 @@ form.gsform.eaform button{grid-column:auto;}
    theme back, or the remap above would turn their text dark-on-dark */
 .sec-light .appwin,.sec-light2 .appwin,.bg-paper .appwin,.bg-clinical .appwin,
 .sec-light .altcol.win,.sec-light2 .altcol.win,.bg-paper .altcol.win,
-.sec-light .quotecard:not(.light),.sec-light2 .quotecard:not(.light),
 .sec-light .endcta,.sec-light2 .endcta,.bg-paper .endcta,
 .navwrap:not(.onlight) .nav,.stickycta,
 .scene-overlay,.appwin,.altcol.win,.endcta,.browserframe:not(.light),
@@ -2590,6 +2589,15 @@ html .bigfooter .ftall{
   display:inline-block;margin-top:14px;font-weight:700;color:var(--teal);
 }
 html .bigfooter .ftall:hover{color:#fff;}
+
+/* On a phone the trade directory is twenty-five links at the site's own 44px
+   touch height — about 830px of footer, on all seventy-one pages, below the
+   thing the reader came for. The links stay in the document; only the grid is
+   folded away, and .ftall ("all twenty-five trades") is the way in. */
+@media (max-width:700px){
+  html .bigfooter .ftgrid{display:none;}
+  html .bigfooter .ftall{margin-top:6px;}
+}
 
 
 
