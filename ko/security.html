@@ -27,11 +27,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://claude.saleringo.com/ko/index.html"},{"@type":"ListItem","position":2,"name":"보안","item":"https://claude.saleringo.com/ko/security.html"}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=47.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=47.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=47.0">
-<link rel="stylesheet" href="../assets/css/examples.css?v=47.0">
-<link rel="stylesheet" href="../assets/css/ko.css?v=47.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=48.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=48.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=48.0">
+<link rel="stylesheet" href="../assets/css/examples.css?v=48.0">
+<link rel="stylesheet" href="../assets/css/ko.css?v=48.0">
 <style>
 
   .hero{display:block;padding:150px 0 56px;}
@@ -78,7 +78,7 @@
   <div class="scrim" aria-hidden="true"></div>
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="주 메뉴">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v47.0">v47.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v48.0">v48.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">작동 방식<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">전체 구성</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">플랫폼 &amp; CRM</a></li><li><a href="./platform.html#inside">응대 한 건이 만들어지는 과정</a></li><li><a href="./platform.html#who-next">누구에게 넘기는가</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">응대하는 채널</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI 전화</a></li><li><a href="./webchat.html">웹사이트 채팅</a></li><li><a href="./whatsapp.html">카카오톡 &amp; 메신저</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">함께 붙는 것</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">연동</a></li><li><a href="./verified-ai.html">답변 검증 방식</a></li><li><a href="./ai-answering-service.html">고르기 전에: AI 응대 세 가지</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">실제로 어떻게 하는지<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">직접 보기</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">대화 한 건 보기</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">통화 기록 읽기</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">업종별 실제 사례</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">직접 써 보고 판단하기</p><ul aria-labelledby="nh-see-2"><li><a href="./verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="./about.html">누가 만드는가</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
@@ -105,17 +105,20 @@
 
 <section class="t-md sec-light bg-paper"><div class="wrap doc">
 <section class="docsec reveal" id="scope"><h2>무엇을 지켜야 하는가</h2><p>Saleringo가 다루는 것은 사업자의 매출 자료와, 그 사업자에게 연락한 사람들의 개인정보입니다. 치과라면 누가 어떤 치료를 물었는지가 남고, 요양기관이라면 어느 가족이 어떤 상황인지가 남습니다. 이것은 유출되면 사과로 끝나지 않는 종류의 자료입니다.</p><p>그래서 이 페이지는 &ldquo;안전합니다&rdquo;라고 쓰는 대신, 실제로 무엇을 하고 있고 무엇을 아직 하지 않았는지를 그대로 적습니다.</p></section>
-<section class="docsec reveal" id="measures"><h2>하고 있는 것</h2><ul><li><b>전송 구간 암호화</b> &mdash; 브라우저와 서버, 서버와 수탁업체 사이 통신에 TLS 1.2 이상을 사용합니다.</li><li><b>저장 시 암호화</b> &mdash; 데이터베이스와 녹음 파일 저장소를 암호화합니다.</li><li><b>사업자 간 데이터 분리</b> &mdash; 모든 조회에 사업자 식별자가 강제로 붙습니다. 다른 가게의 자료가 조회되는 경로 자체를 만들지 않습니다.</li><li><b>접근 최소화와 기록</b> &mdash; 회사 직원이 사업자 데이터에 접근하려면 사유를 남겨야 하고, 접근 기록이 보관됩니다. 이 기록은 요청하시면 보여 드립니다.</li><li><b>관리자 계정 다중 인증</b> &mdash; 회사 내부 관리 도구는 비밀번호만으로 접속할 수 없습니다.</li><li><b>학습 목적 사용 금지</b> &mdash; 계약서에 명시합니다. 수탁업체와의 계약에도 같은 조건을 겁니다.</li><li><b>전체 내보내기</b> &mdash; 언제든 전부 내려받을 수 있습니다. 나가는 길을 막지 않는 것도 보안입니다.</li></ul></section>
+<section class="docsec reveal" id="measures"><h2>하고 있는 것</h2><ul><li><b>전송 구간 암호화</b> &mdash; 브라우저와 서버, 서버와 수탁업체 사이 통신에 TLS 1.2 이상을 사용합니다.</li><li><b>저장 시 암호화</b> &mdash; 데이터베이스와 녹음 파일 저장소를 암호화합니다.</li><li><b>사업자 간 데이터 분리</b> &mdash; 운영 중인 표에는 데이터베이스 계층에서 사업자 식별자가 강제로 붙습니다(row-level security). 다른 가게의 자료가 조회되는 경로 자체를 만들지 않고, 배포할 때마다 교차 조회 시험을 돌립니다. 예외가 둘 있습니다 &mdash; 되돌리기용으로 날짜를 찍어 떠 둔 마이그레이션 스냅숏과, 어느 사업자의 것도 아닌 공통 참조 자료입니다. 앞의 것은 정리 중이고 뒤의 것은 나눌 것이 없습니다. 침투 시험에서 발견되게 두는 것보다 먼저 적습니다.</li><li><b>접근 최소화와 기록</b> &mdash; 회사 직원이 사업자 데이터에 접근하려면 사유를 남겨야 하고, 접근 기록이 보관됩니다. 이 기록은 요청하시면 보여 드립니다.</li><li><b>관리자 계정 다중 인증</b> &mdash; 회사 내부 관리 도구는 비밀번호만으로 접속할 수 없습니다.</li><li><b>학습 목적 사용 금지</b> &mdash; 계약서에 명시합니다. 수탁업체와의 계약에도 같은 조건을 겁니다.</li><li><b>전체 내보내기</b> &mdash; 언제든 전부 내려받을 수 있습니다. 나가는 길을 막지 않는 것도 보안입니다.</li></ul></section>
 <section class="docsec reveal" id="notyet"><h2>아직 하지 않은 것</h2><div class="caution"><b>인증을 보유하고 있지 않습니다.</b><p>ISMS-P, ISO 27001, SOC 2 중 어느 것도 아직 없습니다. 회사가 신생이고, 인증은 운영 이력이 쌓여야 받을 수 있기 때문입니다. 진행 상황이 생기면 이 자리에 날짜와 함께 적겠습니다.</p><p>지금 시점에서 사업자께서 하실 수 있는 확인은 세 가지라고 봅니다. 첫째, 위 목록의 항목을 계약서에 넣어 달라고 요구하십시오. 저희는 넣어 드립니다. 둘째, 접근 기록을 실제로 보여 달라고 하십시오. 보여 드립니다. 셋째, 전체 내보내기를 계약 초기에 한 번 실행해 보십시오. 나갈 수 있는지를 미리 확인해 두는 것이 가장 확실한 검증입니다.</p></div><p>가동률 보장(SLA)도 아직 제공하지 않습니다. 제공할 수 있게 되면 수치와 함께 공개하겠습니다.</p></section>
-<section class="docsec reveal" id="incident"><h2>사고가 났을 때</h2><p>개인정보 유출이 확인되면 「개인정보 보호법」 제34조에 따라 <b>72시간 이내</b>에 해당 사업자에게 알립니다. 법령이 정한 경우에는 개인정보보호위원회 또는 한국인터넷진흥원에도 신고합니다.</p><p>통지에는 무엇이 언제 유출되었는지, 원인이 무엇인지, 어떤 조치를 했는지를 아는 범위에서 그대로 적습니다. 조사 중이라 모르는 부분은 모른다고 적고, 알게 되는 대로 추가로 알립니다.</p></section>
+<section class="docsec reveal" id="where"><h2>데이터가 어디에 있는가</h2><p>운영 서버와 데이터베이스는 <b>대한민국(서울)</b>에 있습니다. 고객 기록, 예약, 통화 녹취와 전사 기록이 여기 저장됩니다.</p><p>다만 <b>응대 문장을 만드는 언어모델은 미국에 있습니다.</b> 대화 내용이 답을 만들기 위해 그쪽으로 전송되고, 그것이 국외 이전입니다. 주문서에서 이 항목에 별도로 동의를 받는 이유가 그것입니다. 동의하지 않으시면 응대 생성 기능을 제공할 수 없고, 그것이 이 제품의 핵심이므로 사실상 이용이 어렵습니다. 계약 전에 먼저 말씀드립니다.</p><p>EU·미국·아시아 다른 지역에 별도 저장 지역이 필요하시면 계약으로 만들 수 있습니다. 지금 이미 있는 것처럼 적지 않습니다 &mdash; 현재 운영은 서울 한 곳입니다.</p><p>어느 회사가 이 데이터를 만지는지는 <a class="lnk" href="./privacy.html#transfer">처리방침 4항의 수탁업체 표</a>에 열 곳 전부 이름으로 적어 두었습니다.</p></section>
+<section class="docsec reveal" id="retention"><h2>얼마나 보관하는가</h2><p>보관기간은 저희가 정하는 것과 법이 정하는 것이 섞여 있습니다. 나눠 적습니다.</p><div class="dtwrap"><table class="dtable"><thead><tr><th>구분</th><th>보관기간</th><th>근거</th></tr></thead><tbody><tr><td>주문·계약·동의 기록</td><td>계약 종료 후 5년</td><td>전자상거래법상 계약·청약철회 기록 5년</td></tr><tr><td>대금 결제 기록</td><td>5년</td><td>전자상거래법상 대금결제 기록 5년</td></tr><tr><td>소비자 불만·분쟁 처리 기록</td><td>3년</td><td>전자상거래법 3년</td></tr><tr><td>도입 문의</td><td>문의일로부터 1년, 또는 삭제 요청 시 즉시</td><td>회사가 정한 기간</td></tr><tr><td>사업자의 고객 대화·통화 기록(수탁 처리)</td><td>사업자가 정한 기간, 미지정 시 24개월</td><td>사업자가 처리 지시로 정합니다</td></tr><tr><td>접속 기록(IP·브라우저)</td><td>3개월</td><td>부정 이용 방지</td></tr></tbody></table></div><p>사업자의 고객 대화는 <b>사장님이 처리 지시로 정하십니다.</b> 저희가 임의로 늘리거나 줄이지 않습니다. 정하지 않으시면 24개월이고, 그 기간이 지나면 지웁니다.</p><p>삭제를 요청하시면 지웁니다. 다만 전자상거래법이 5년 보존을 요구하는 거래 기록은 그 기간 동안 지울 수 없습니다 &mdash; 지울 수 없는 것을 지워 드린다고 말하지 않습니다.</p></section>
+<section class="docsec reveal" id="incident"><h2>사고가 났을 때</h2><p>「개인정보 보호법」은 유출을 안 때로부터 <b>72시간 이내</b>에 정보주체와 보호위원회에 알리도록 하고 있습니다. 저희는 그 기한을 지키고, 다음 순서로 합니다.</p><ul><li><b>막습니다.</b> 원인을 찾기 전에 새는 것을 먼저 멈춥니다.</li><li><b>범위를 확정합니다.</b> 어느 사업자의 어떤 자료가 얼마나 나갔는지. 접근 기록이 남아 있으므로 추측하지 않습니다.</li><li><b>영향받은 사업자께 먼저 알립니다.</b> 공개 공지보다 먼저입니다. 사장님이 고객에게 설명해야 하는 입장이 되시기 때문입니다.</li><li><b>무엇을 고쳤는지 적어 드립니다.</b> 사과문이 아니라 조치 내역입니다.</li></ul><p>아직 사고가 없었습니다. 그래서 이 절은 실적이 아니라 약속입니다. 있었던 것처럼 적지 않습니다.</p></section>
 <section class="docsec reveal" id="vulnerability"><h2>취약점을 발견하셨다면</h2><p>hello@saleringo.com 으로 알려 주십시오. 영업일 기준 <b>2일 이내</b>에 사람이 회신합니다. 선의로 신고해 주신 분께 법적 조치를 취하지 않습니다.</p><p>다만 실제 사업자의 데이터를 열람하거나 서비스를 중단시키는 방식의 시험은 삼가 주시기 바랍니다. 그 자료는 저희 것이 아니라 그 가게와 그 가게 손님의 것입니다.</p></section>
+<section class="docsec reveal" id="review"><h2>보안 검토를 하셔야 한다면</h2><p>회사 규정상 검토 절차가 있는 곳이 있습니다. 필요한 문서를 요청하시면 드립니다.</p><ul><li><b>개인정보 처리 위탁 계약서</b> &mdash; 처리자·수탁자 역할과 의무</li><li><b>수탁업체 목록</b> &mdash; 열 곳 전부, 무슨 일을 하고 어느 나라에 있는지</li><li><b>보안 조치 개요</b> &mdash; 구성, 데이터 흐름, 통제 항목. 보안 점검표에 답하실 수 있게 쓰여 있습니다</li></ul><p>공개해 두지 않는 이유는 각 문서가 받으시는 분의 이름으로 발급되기 때문이지, 없어서가 아닙니다. <a class="lnk" href="./get-started.html?doc=all#request">요청하시면</a> 영업 통화 없이 문서만 보내 드립니다.</p></section>
 </div></section>
 
 <!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v47.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v48.0</span>
         <p>전화 · 채팅 · 메신저를 AI가 대신 받고, 업종별 CRM이 모든 대화를 예약과 견적, 그리고 고객으로 남깁니다.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">이 사이트의 모든 페이지 &mdash; 사이트맵과 둘러보기 <span aria-hidden="true">&rarr;</span></a>
@@ -151,11 +154,11 @@
 </main>
 
 
-<script src="../assets/js/site.js?v=47.0"></script>
-<script src="../assets/js/balance.js?v=47.0" defer></script>
-<script src="../assets/js/panels.js?v=47.0" defer></script>
-<script src="../assets/js/wrap.js?v=47.0" defer></script>
-<script src="../assets/js/rail.js?v=47.0" defer></script>
-<script src="../assets/js/guide.js?v=47.0"></script>
+<script src="../assets/js/site.js?v=48.0"></script>
+<script src="../assets/js/balance.js?v=48.0" defer></script>
+<script src="../assets/js/panels.js?v=48.0" defer></script>
+<script src="../assets/js/wrap.js?v=48.0" defer></script>
+<script src="../assets/js/rail.js?v=48.0" defer></script>
+<script src="../assets/js/guide.js?v=48.0"></script>
 </body>
 </html>
