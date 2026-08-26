@@ -3465,3 +3465,18 @@ html .leadbox .eanote,html .altwrap .altnote,html .peopleband .capL{
    주문서와 주문 조회가 함께 씁니다 — 한쪽에만 두면 다른 쪽은 스타일 없이
    나가고, 그건 오류를 내지 않으므로 아무도 모릅니다. */
 .hint{display:block;margin-top:6px;font-size:var(--fs-xs);color:var(--tx3);line-height:1.6;}
+
+/* 계약 성립 단계. 문장은 assets/data/policy.json 이 정하고, 한국어와 영문
+   약관이 그 하나에서 받아 갑니다. 두 언어에 따로 적어 두었을 때 실제로
+   서로 다른 관할을 말하고 있었습니다. */
+.polsum{margin-bottom:18px;}
+.polsteps{margin:0;padding:0;counter-reset:pol;display:grid;gap:14px;}
+.polsteps li{list-style:none;position:relative;padding-left:38px;counter-increment:pol;}
+.polsteps li::before{content:counter(pol);position:absolute;left:0;top:1px;
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;
+  background:rgba(23,189,189,.14);color:var(--teal);}
+.polsteps li b{display:block;margin-bottom:3px;}
+.polsteps li span{display:block;color:var(--tx2);}
+[data-grade] .polsteps li::before,
+body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);color:var(--teal);}

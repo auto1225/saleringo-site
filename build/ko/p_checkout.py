@@ -178,6 +178,18 @@ CSS = """
     font-family:'Space Grotesk',monospace;font-size:var(--fs-lead);letter-spacing:.06em;}
   .os-money{margin-top:18px;font-size:var(--fs-body);color:var(--tx2);line-height:1.8;}
   .os-money b{color:#fff;}
+  /* 서명 전에 볼 문서를 동의 바로 위에 둡니다. 예전에는 약관과
+     처리방침만 링크되어 있었고, 하위 수탁업체 목록과 데이터 처리 조건은
+     구매 경로 어디에서도 닿을 수 없었습니다. 법무 검토가 정확히 그 둘을
+     요구합니다. */
+  .docbar{margin:20px 0 24px;padding:14px 16px;border-radius:10px;
+    background:rgba(255,255,255,.03);border:1px solid var(--line);
+    display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;}
+  .docbar-l{font-size:var(--fs-xs);font-weight:600;color:#fff;
+    text-transform:uppercase;letter-spacing:.06em;}
+  .docbar .lnk{font-size:var(--fs-sm);}
+  .docbar-n{flex-basis:100%;font-size:var(--fs-xs);color:var(--tx3);line-height:1.6;}
+
   .os-after{margin-top:8px;font-size:var(--fs-sm);color:var(--tx3);line-height:1.7;}
 
 
@@ -413,6 +425,16 @@ def build(lang):
         <div class="coblock">
           <h2><i>5</i>{s4}</h2>
           <p>{s4p}</p>
+
+          <div class="docbar">
+            <span class="docbar-l">{docsLabel}</span>
+            <a class="lnk" href="./terms.html" target="_blank" rel="noopener">{dTerms}</a>
+            <a class="lnk" href="./privacy.html" target="_blank" rel="noopener">{dPrivacy}</a>
+            <a class="lnk" href="{hSub}" target="_blank" rel="noopener">{dSub}</a>
+            <a class="lnk" href="{hDpa}" target="_blank" rel="noopener">{dDpa}</a>
+            <span class="docbar-n">{docsNote}</span>
+          </div>
+
           <div class="agrees">
             <div class="agree">
               <input id="agTerms" type="checkbox" name="agreeTerms" required>
@@ -494,6 +516,15 @@ def build(lang):
         serviceHint=t('청구받으실 나라와 다른 경우에만 골라 주세요.',
                       'Only if it differs from the country we invoice.'),
         fAddress=t('청구 주소', 'Billing address'),
+        docsLabel=t('서명 전에 보실 문서', 'Read before you sign'),
+        dTerms=t('이용약관', 'Terms'),
+        dPrivacy=t('개인정보 처리방침', 'Privacy'),
+        dSub=t('하위 수탁업체 목록', 'Subprocessors'),
+        hSub=t('./privacy.html#transfer', './security.html#subprocessors'),
+        hDpa=t('./security.html#measures', './security.html#dpa'),
+        dDpa=t('데이터 처리와 보안 조치', 'Data processing terms'),
+        docsNote=t('이 네 가지가 동의하시는 내용의 전부입니다. 새 창에서 열립니다.',
+                   'These four are what you are agreeing to. They open in a new tab.'),
         addressPh=t('세금계산서·인보이스에 적힐 주소', 'The address that goes on the invoice'),
         addressHint=t('세금계산서와 인보이스에 그대로 들어갑니다.',
                       'This goes on the tax invoice or invoice exactly as written.'),
