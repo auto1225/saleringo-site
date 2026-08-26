@@ -204,21 +204,37 @@ def build(lang):
     ko = lang == 'ko'
     t = (lambda k, e: k if ko else e)
 
-    plans = [
-        ('start', 'Start', '110,000', t('홈페이지 채팅, 문의 수신함, 예약. 월 500건 대화.',
-                                        'Website chat, lead inbox, bookings. 500 conversations.')),
-        ('grow', 'Grow', '340,000', t('카카오톡, 견적, 예약 확인 추가. 월 2,000건 대화.',
-                                      'Adds messengers, quotes and confirmations. 2,000 conversations.')),
-        ('scale', 'Scale', '820,000', t('AI 전화 추가. 통화 1분당 190원부터.',
-                                        'Adds AI phone, from 190 KRW a talk minute.')),
-    ]
+    PR = json.load(io.open('assets/data/pricing.json', encoding='utf-8'))
+    cur = 'KRW' if ko else 'USD'
+    cinfo = PR['currencies'][cur]
+
+    def price(n):
+        txt = ('{:,.0f}' if cinfo['decimals'] == 0 else '{:,.2f}').format(n)
+        return (cinfo['symbol'] + txt) if cinfo['position'] == 'before' else (txt + cinfo['symbol'])
+
+    blurbs = {
+        'start': t('홈페이지 채팅, 문의 수신함, 예약. 월 500건 대화.',
+                   'Website chat, lead inbox, bookings. 500 conversations.'),
+        'grow': t('카카오톡, 견적, 예약 확인 추가. 월 2,000건 대화.',
+                  'Adds messengers, quotes and confirmations. 2,000 conversations.'),
+        'scale': t('AI 전화 추가. 통화 1분당 190원부터.',
+                   'Adds AI phone, from $0.14 a talk minute.'),
+    }
+    plans = [(pl['id'], pl['name'][lang], price(pl['price'][cur]), blurbs[pl['id']])
+             for pl in PR['plans']]
+
+    countries = ''.join(
+        '<option value="%s"%s>%s</option>'
+        % (c['code'], ' selected' if c['code'] == ('KR' if ko else 'US') else '', c['name'][lang])
+        for c in PR['countries'])
+
     pickrows = ''.join(
         '<label class="pick"><input type="radio" name="plan" value="%s"%s>'
         '<span class="body"><span class="dot"></span>'
         '<span><b>%s</b><em>%s</em></span>'
-        '<span class="pr">%s원<i>%s</i></span></span></label>'
-        % (pid, ' checked' if pid == 'grow' else '', nm, desc, price, t('/월', '/mo'))
-        for pid, nm, price, desc in plans)
+        '<span class="pr">%s<i>%s</i></span></span></label>'
+        % (pid, ' checked' if pid == 'grow' else '', nm, desc, ptxt, t('/월', '/mo'))
+        for pid, nm, ptxt, desc in plans)
 
     methods = [
         ('card', t('카드 정기결제', 'Card, charged monthly'),
@@ -261,7 +277,16 @@ def build(lang):
                aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
 
         <div class="coblock">
-          <h2><i>1</i>{s1}</h2>
+          <h2><i>1</i>{s0}</h2>
+          <p>{s0p}</p>
+          <div class="fld" style="margin-top:20px;max-width:340px;">
+            <label for="coCountry">{fCountry}</label>
+            <select id="coCountry" name="country" required autocomplete="country">{countries}</select>
+          </div>
+        </div>
+
+        <div class="coblock">
+          <h2><i>2</i>{s1}</h2>
           <p>{s1p}</p>
           <div class="picks" role="radiogroup" aria-label="{s1}">{pickrows}</div>
           <div class="usebox">
@@ -270,7 +295,7 @@ def build(lang):
               <input id="coVoice" name="voiceMinutes" type="number" min="0" max="100000" step="10"
                      inputmode="numeric" placeholder="{voicePh}">
             </div>
-            <div class="fld">
+            <div class="fld" data-talk-row hidden>
               <label for="coTalk">{talkLbl}</label>
               <input id="coTalk" name="alimtalk" type="number" min="0" max="100000" step="50"
                      inputmode="numeric" placeholder="{talkPh}">
@@ -279,7 +304,7 @@ def build(lang):
         </div>
 
         <div class="coblock">
-          <h2><i>2</i>{s2}</h2>
+          <h2><i>3</i>{s2}</h2>
           <p>{s2p}</p>
           <div class="two" style="margin-top:22px;">
             <div class="fld">
@@ -287,9 +312,10 @@ def build(lang):
               <input id="coCompany" name="company" type="text" required autocomplete="organization">
             </div>
             <div class="fld">
-              <label for="coBiz">{fBiz}</label>
+              <label for="coBiz"><span data-biz-label>{fBiz}</span>
+                <span class="opt" data-biz-optional hidden>{optional}</span></label>
               <input id="coBiz" name="bizNo" type="text" required inputmode="numeric"
-                     placeholder="000-00-00000" maxlength="12">
+                     placeholder="000-00-00000" maxlength="12" autocomplete="off">
             </div>
           </div>
           <div class="two">
@@ -315,7 +341,7 @@ def build(lang):
             </div>
           </div>
           <div class="fld">
-            <label for="coTax">{fTax} <span class="opt">{optional}</span></label>
+            <label for="coTax"><span data-tax-email-label>{fTax}</span> <span class="opt">{optional}</span></label>
             <input id="coTax" name="taxEmail" type="email" placeholder="tax@company.co.kr">
             <label class="agree" style="padding-left:0;padding-bottom:0;">
               <input type="checkbox" data-same-email>
@@ -330,13 +356,13 @@ def build(lang):
         </div>
 
         <div class="coblock">
-          <h2><i>3</i>{s3}</h2>
+          <h2><i>4</i>{s3}</h2>
           <p>{s3p}</p>
           <div class="picks" role="radiogroup" aria-label="{s3}">{methodrows}</div>
         </div>
 
         <div class="coblock">
-          <h2><i>4</i>{s4}</h2>
+          <h2><i>5</i>{s4}</h2>
           <p>{s4p}</p>
           <div class="agrees">
             <div class="agree">
@@ -395,27 +421,35 @@ def build(lang):
 
     filled = body.format(
         NAV=NAV, FOOT=FOOT, lang=lang, pickrows=pickrows, methodrows=methodrows,
+        countries=countries,
         kick=t('주문', 'Order'),
         h1=t('주문서입니다.<br>2분이면 끝납니다.',
              'The order form.<br>Two minutes, no account.'),
         sub=t('계정을 만들지 않아도 됩니다. 아래를 채우시면 접수되고, '
               '영업일 하루 안에 사람이 확인 연락을 드립니다. '
               '<b>이 화면에서 결제되는 금액은 없습니다.</b>',
-              'No account needed. Fill this in and it is recorded; a person confirms within one '
-              'business day. <b>Nothing is charged on this screen.</b>'),
+              'No account needed, wherever you are. Fill this in and it is recorded; a person confirms '
+              'within one business day. <b>Nothing is charged on this screen.</b>'),
+        s0=t('어디에서 쓰시는지', 'Where you are'),
+        s0p=t('나라에 따라 통화와 세금 처리, 그리고 인보이스에 들어갈 번호가 달라집니다. '
+              '먼저 고르시면 아래 금액이 그 기준으로 바뀝니다.',
+              'Your country sets the currency, how tax is handled, and which number goes on the '
+              'invoice. Pick it first and the figures below follow.'),
+        fCountry=t('사업장이 있는 나라', 'Where your business is'),
         s1=t('무엇을 쓰실지', 'What you are taking'),
         s1p=t('나중에 바꾸실 수 있습니다. 요금제는 매달 올리거나 내릴 수 있고, 위약금이 없습니다.',
               'You can change this later. Plans move up or down monthly, with no penalty.'),
-        voiceLbl=t('한 달 예상 통화 시간 (분)', 'Expected talk minutes a month'),
+        voiceLbl=t('한 달 예상 통화 시간 (분) — 선택', 'Expected talk minutes a month — optional'),
         voicePh=t('예: 600', 'e.g. 600'),
-        talkLbl=t('한 달 예상 알림톡 발송 (건) — 선택', 'Expected notification messages a month — optional'),
+        talkLbl=t('한 달 예상 알림톡 발송 (건) — 선택',
+                  'Expected notification messages a month — optional'),
         talkPh=t('예: 300', 'e.g. 300'),
         s2=t('세금계산서를 받으실 곳', 'Where the tax invoice goes'),
-        s2p=t('사업자등록번호는 입력하시는 대로 확인합니다. 여기서 걸러 두지 않으면 '
-              '세금계산서 발행 단계에서 다시 연락드려야 합니다.',
-              'The registration number is checked as you type. Catching it here saves a second '
-              'round of emails at invoicing.'),
-        fCompany=t('상호', 'Company'), fBiz=t('사업자등록번호', 'Business registration no.'),
+        s2p=t('한국 사업자이시면 사업자등록번호를 입력하시는 대로 확인합니다. 세금계산서 발행에 '
+              '필요하기 때문입니다. 그 밖의 나라에서는 인보이스에 찍을 번호일 뿐이라 선택입니다.',
+              'If you are in Korea the registration number is checked as you type, because the '
+              'tax invoice needs it. Everywhere else it just goes on the invoice, so it is optional.'),
+        fCompany=t('상호', 'Company'), fBiz=t('사업자등록번호', 'Business registration number'),
         fCeo=t('대표자명', 'Representative'), fContact=t('담당자 성명', 'Contact name'),
         fEmail=t('담당자 이메일', 'Contact email'), fPhone=t('연락처', 'Phone'),
         fTax=t('세금계산서 수신 이메일', 'Tax invoice email'),
@@ -447,12 +481,17 @@ def build(lang):
                     ' — I agree to the collection of company name, registration number, representative, '
                     'contact name, email and phone, the tax invoice email and any note you leave, '
                     'for performing the contract and issuing invoices.'),
-        agTransfer=t('<b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 처리가 미국에 있는 '
-                     'Anthropic, PBC 에서 이루어집니다. 대화 내용이 이전되며 연락처 등 식별정보는 '
-                     '가림 처리 후 전송합니다. 동의하지 않으시면 서비스의 핵심 기능을 쓰실 수 없습니다.',
-                     '<b>I agree to the transfer of data outside Korea.</b> Replies are generated by '
-                     'Anthropic, PBC in the United States. Conversation content is transferred with '
-                     'identifying details masked. Without this the core function cannot run.'),
+        agTransfer=t('<b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 언어모델이 미국에서 '
+                     '돌아갑니다. 이전받는 회사와 그 나라는 '
+                     '<a href="./privacy.html#transfer" target="_blank" rel="noopener">개인정보처리방침 4항</a>에 '
+                     '적어 두었습니다. 동의하지 않으시면 서비스의 핵심 기능을 쓰실 수 없습니다.',
+                     '<b>I agree to processing outside my country.</b> The service is operated from '
+                     'South Korea, and the language model that drafts each reply runs in the United '
+                     'States. Every company in that chain is named, with the country it operates in, '
+                     'in <a href="./security.html#subprocessors" target="_blank" rel="noopener">the '
+                     'subprocessor list</a>. For transfers out of the UK or EEA our Data Processing '
+                     'Agreement incorporates the Standard Contractual Clauses &mdash; ask for it at '
+                     'hello@saleringo.com. Without this the core function cannot run.'),
         agRec=t('<b>정기결제에 동의합니다.</b> 등록한 카드로 매월 같은 날 자동 결제되며, '
                 '해지 전까지 계속됩니다. <b>해지는 hello@saleringo.com 으로 한 줄 보내시면 됩니다.</b> '
                 '위약금이 없고, 다음 결제일부터 청구가 멈춥니다.',
@@ -469,11 +508,11 @@ def build(lang):
                'A person confirms first and sends the payment step; nothing is charged before that. '
                'One email cancels it afterwards.'),
         sumTitle=t('주문 요약', 'Your order'),
-        sumFoot=t('요금표의 금액은 <b>부가세 별도</b>이고, 위 합계는 10%를 더한 실제 청구 금액입니다. '
+        sumFoot=t('금액은 <b>세금 별도</b>로 표시하고, 세금이 붙는 경우에만 위 합계에 더합니다. '
                   '첫 달만 <b>개시일부터 그 달 말일까지 날짜로 나눠</b> 청구하며, 개시일이 정해지면 '
                   '그 날짜로 계산한 확정 금액을 먼저 알려 드립니다. '
                   '통화료와 알림톡은 <b>쓰신 만큼 다음 달에</b> 정산합니다.',
-                  'Price-list figures are <b>net of VAT</b>; the total above adds the 10% you actually pay. '
+                  'Figures are shown <b>net of tax</b>; tax is added to the total only where we collect it. '
                   'Only the first month is <b>prorated by days</b>, from the start date, and we send '
                   'the exact figure once that date is set. '
                   'Talk time and messages are settled <b>next month on actual use</b>.'),
@@ -489,7 +528,8 @@ def build(lang):
                  'first payment is refunded in full within 14 days, and after that the service runs to '
                  'the end of the period you paid for with nothing renewing. Usage already spent is '
                  'deducted at the listed rates. There is no penalty.<br>'
-                 'This order is invoiced in Korean won by the entity above, with 10% VAT added.'))
+                 'Invoices come from the Korean entity above. Korean customers are billed in won with 10% '
+                 'VAT; everywhere else it is US dollars with no tax added by us.'))
 
     page('checkout.html',
          t('주문서 &mdash; Saleringo', 'Order &mdash; Saleringo'),

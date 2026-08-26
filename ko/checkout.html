@@ -27,11 +27,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://claude.saleringo.com/ko/index.html"},{"@type":"ListItem","position":2,"name":"주문","item":"https://claude.saleringo.com/ko/checkout.html"}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=38.5">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=38.5">
-<link rel="stylesheet" href="../assets/css/crm.css?v=38.5">
-<link rel="stylesheet" href="../assets/css/examples.css?v=38.5">
-<link rel="stylesheet" href="../assets/css/ko.css?v=38.5">
+<link rel="stylesheet" href="../assets/css/site.css?v=38.9">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=38.9">
+<link rel="stylesheet" href="../assets/css/crm.css?v=38.9">
+<link rel="stylesheet" href="../assets/css/examples.css?v=38.9">
+<link rel="stylesheet" href="../assets/css/ko.css?v=38.9">
 <style>
 
   .hero{display:block;padding:140px 0 40px;}
@@ -189,7 +189,7 @@
   <div class="scrim" aria-hidden="true"></div>
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="주 메뉴">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v38.5">v38.5</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v38.9">v38.9</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">작동 방식<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">전체 구성</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">플랫폼 &amp; CRM</a></li><li><a href="./platform.html#inside">응대 한 건이 만들어지는 과정</a></li><li><a href="./platform.html#who-next">누구에게 넘기는가</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">응대하는 채널</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI 전화</a></li><li><a href="./webchat.html">웹사이트 채팅</a></li><li><a href="./whatsapp.html">카카오톡 &amp; 메신저</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">함께 붙는 것</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">연동</a></li><li><a href="./verified-ai.html">답변 검증 방식</a></li><li><a href="./ai-answering-service.html">고르기 전에: AI 응대 세 가지</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">실제로 어떻게 하는지<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">직접 보기</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">대화 한 건 보기</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">통화 기록 읽기</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">업종별 실제 사례</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">직접 써 보고 판단하기</p><ul aria-labelledby="nh-see-2"><li><a href="./verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="./about.html">누가 만드는가</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
@@ -222,16 +222,25 @@
                aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
 
         <div class="coblock">
-          <h2><i>1</i>무엇을 쓰실지</h2>
+          <h2><i>1</i>어디에서 쓰시는지</h2>
+          <p>나라에 따라 통화와 세금 처리, 그리고 인보이스에 들어갈 번호가 달라집니다. 먼저 고르시면 아래 금액이 그 기준으로 바뀝니다.</p>
+          <div class="fld" style="margin-top:20px;max-width:340px;">
+            <label for="coCountry">사업장이 있는 나라</label>
+            <select id="coCountry" name="country" required autocomplete="country"><option value="KR" selected>대한민국</option><option value="US">미국</option><option value="GB">영국</option><option value="DE">독일</option><option value="FR">프랑스</option><option value="NL">네덜란드</option><option value="ES">스페인</option><option value="IT">이탈리아</option><option value="IE">아일랜드</option><option value="AU">호주</option><option value="NZ">뉴질랜드</option><option value="SG">싱가포르</option><option value="JP">일본</option><option value="CA">캐나다</option><option value="AE">아랍에미리트</option><option value="IN">인도</option><option value="BR">브라질</option><option value="MX">멕시코</option><option value="ZA">남아프리카공화국</option><option value="OTHER">그 밖의 나라</option></select>
+          </div>
+        </div>
+
+        <div class="coblock">
+          <h2><i>2</i>무엇을 쓰실지</h2>
           <p>나중에 바꾸실 수 있습니다. 요금제는 매달 올리거나 내릴 수 있고, 위약금이 없습니다.</p>
           <div class="picks" role="radiogroup" aria-label="무엇을 쓰실지"><label class="pick"><input type="radio" name="plan" value="start"><span class="body"><span class="dot"></span><span><b>Start</b><em>홈페이지 채팅, 문의 수신함, 예약. 월 500건 대화.</em></span><span class="pr">110,000원<i>/월</i></span></span></label><label class="pick"><input type="radio" name="plan" value="grow" checked><span class="body"><span class="dot"></span><span><b>Grow</b><em>카카오톡, 견적, 예약 확인 추가. 월 2,000건 대화.</em></span><span class="pr">340,000원<i>/월</i></span></span></label><label class="pick"><input type="radio" name="plan" value="scale"><span class="body"><span class="dot"></span><span><b>Scale</b><em>AI 전화 추가. 통화 1분당 190원부터.</em></span><span class="pr">820,000원<i>/월</i></span></span></label></div>
           <div class="usebox">
             <div class="fld" data-voice-row hidden>
-              <label for="coVoice">한 달 예상 통화 시간 (분)</label>
+              <label for="coVoice">한 달 예상 통화 시간 (분) — 선택</label>
               <input id="coVoice" name="voiceMinutes" type="number" min="0" max="100000" step="10"
                      inputmode="numeric" placeholder="예: 600">
             </div>
-            <div class="fld">
+            <div class="fld" data-talk-row hidden>
               <label for="coTalk">한 달 예상 알림톡 발송 (건) — 선택</label>
               <input id="coTalk" name="alimtalk" type="number" min="0" max="100000" step="50"
                      inputmode="numeric" placeholder="예: 300">
@@ -240,17 +249,18 @@
         </div>
 
         <div class="coblock">
-          <h2><i>2</i>세금계산서를 받으실 곳</h2>
-          <p>사업자등록번호는 입력하시는 대로 확인합니다. 여기서 걸러 두지 않으면 세금계산서 발행 단계에서 다시 연락드려야 합니다.</p>
+          <h2><i>3</i>세금계산서를 받으실 곳</h2>
+          <p>한국 사업자이시면 사업자등록번호를 입력하시는 대로 확인합니다. 세금계산서 발행에 필요하기 때문입니다. 그 밖의 나라에서는 인보이스에 찍을 번호일 뿐이라 선택입니다.</p>
           <div class="two" style="margin-top:22px;">
             <div class="fld">
               <label for="coCompany">상호</label>
               <input id="coCompany" name="company" type="text" required autocomplete="organization">
             </div>
             <div class="fld">
-              <label for="coBiz">사업자등록번호</label>
+              <label for="coBiz"><span data-biz-label>사업자등록번호</span>
+                <span class="opt" data-biz-optional hidden>— 선택</span></label>
               <input id="coBiz" name="bizNo" type="text" required inputmode="numeric"
-                     placeholder="000-00-00000" maxlength="12">
+                     placeholder="000-00-00000" maxlength="12" autocomplete="off">
             </div>
           </div>
           <div class="two">
@@ -276,7 +286,7 @@
             </div>
           </div>
           <div class="fld">
-            <label for="coTax">세금계산서 수신 이메일 <span class="opt">— 선택</span></label>
+            <label for="coTax"><span data-tax-email-label>세금계산서 수신 이메일</span> <span class="opt">— 선택</span></label>
             <input id="coTax" name="taxEmail" type="email" placeholder="tax@company.co.kr">
             <label class="agree" style="padding-left:0;padding-bottom:0;">
               <input type="checkbox" data-same-email>
@@ -291,13 +301,13 @@
         </div>
 
         <div class="coblock">
-          <h2><i>3</i>어떻게 결제하실지</h2>
+          <h2><i>4</i>어떻게 결제하실지</h2>
           <p>둘 다 매월 청구입니다. 약정이 없어서 언제든 멈추실 수 있습니다.</p>
           <div class="picks" role="radiogroup" aria-label="어떻게 결제하실지"><label class="pick"><input type="radio" name="method" value="card" checked><span class="body"><span class="dot"></span><span><b>카드 정기결제</b><em>카드를 한 번 등록해 두면 매월 같은 날 자동으로 결제됩니다. 사용량이 있는 달은 사용량이 확정된 뒤 합산해 청구합니다.</em></span></span></label><label class="pick"><input type="radio" name="method" value="transfer"><span class="body"><span class="dot"></span><span><b>계좌이체 · 세금계산서 후불</b><em>매월 사용량이 확정되면 전자세금계산서를 먼저 보내 드리고, 받으신 뒤에 이체하시면 됩니다. 결제 정보를 저희에게 맡기지 않아도 됩니다.</em></span></span></label></div>
         </div>
 
         <div class="coblock">
-          <h2><i>4</i>확인과 동의</h2>
+          <h2><i>5</i>확인과 동의</h2>
           <p>오른쪽(휴대폰에서는 아래) 금액을 한 번 더 확인해 주십시오. [필수] 표시가 붙은 항목에 모두 동의하시면 접수됩니다. 카드 정기결제를 고르시면 정기결제 동의가 하나 더 붙습니다.</p>
           <div class="agrees">
             <div class="agree">
@@ -312,7 +322,7 @@
             </div>
             <div class="agree">
               <input id="agTransfer" type="checkbox" name="agreeTransfer" required>
-              <label for="agTransfer"><span class="must">[필수] </span><b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 처리가 미국에 있는 Anthropic, PBC 에서 이루어집니다. 대화 내용이 이전되며 연락처 등 식별정보는 가림 처리 후 전송합니다. 동의하지 않으시면 서비스의 핵심 기능을 쓰실 수 없습니다.</label>
+              <label for="agTransfer"><span class="must">[필수] </span><b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 언어모델이 미국에서 돌아갑니다. 이전받는 회사와 그 나라는 <a href="./privacy.html#transfer" target="_blank" rel="noopener">개인정보처리방침 4항</a>에 적어 두었습니다. 동의하지 않으시면 서비스의 핵심 기능을 쓰실 수 없습니다.</label>
             </div>
             <div class="agree" data-recurring-agree>
               <input id="agRec" type="checkbox" name="agreeRecurring" required>
@@ -335,7 +345,7 @@
       <aside class="sumcard" aria-labelledby="sumh">
         <h3 id="sumh">주문 요약</h3>
         <div data-summary role="status" aria-live="polite"></div>
-        <p class="sumfoot">요금표의 금액은 <b>부가세 별도</b>이고, 위 합계는 10%를 더한 실제 청구 금액입니다. 첫 달만 <b>개시일부터 그 달 말일까지 날짜로 나눠</b> 청구하며, 개시일이 정해지면 그 날짜로 계산한 확정 금액을 먼저 알려 드립니다. 통화료와 알림톡은 <b>쓰신 만큼 다음 달에</b> 정산합니다.</p>
+        <p class="sumfoot">금액은 <b>세금 별도</b>로 표시하고, 세금이 붙는 경우에만 위 합계에 더합니다. 첫 달만 <b>개시일부터 그 달 말일까지 날짜로 나눠</b> 청구하며, 개시일이 정해지면 그 날짜로 계산한 확정 금액을 먼저 알려 드립니다. 통화료와 알림톡은 <b>쓰신 만큼 다음 달에</b> 정산합니다.</p>
       </aside>
 
     </div>
@@ -352,7 +362,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v38.5</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v38.9</span>
         <p>전화 · 채팅 · 메신저를 AI가 대신 받고, 업종별 CRM이 모든 대화를 예약과 견적, 그리고 고객으로 남깁니다.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">이 사이트의 모든 페이지 &mdash; 사이트맵과 둘러보기 <span aria-hidden="true">&rarr;</span></a>
@@ -390,9 +400,9 @@
 <div class="paybar"><span class="lbl">매월 결제 금액</span><span class="amt" data-paybar-total>&mdash;</span></div>
 
 
-<script src="../assets/js/site.js?v=38.5"></script>
-<script src="../assets/js/balance.js?v=38.5" defer></script>
-<script src="../assets/js/wrap.js?v=38.5" defer></script>
-<script src="../assets/js/checkout.js?v=38.5" defer></script>
+<script src="../assets/js/site.js?v=38.9"></script>
+<script src="../assets/js/balance.js?v=38.9" defer></script>
+<script src="../assets/js/wrap.js?v=38.9" defer></script>
+<script src="../assets/js/checkout.js?v=38.9" defer></script>
 </body>
 </html>

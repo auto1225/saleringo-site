@@ -32,16 +32,21 @@
 
   var T = {
     ko: {
-      monthly: '월 이용료', vat: '부가세 10%', total: '매월 결제 금액',
+      monthly: '월 이용료', total: '매월 결제 금액', tax: '세금',
       firstLabel: '첫 달은 개시일 기준 일할',
       firstIf: '오늘 개시한다면 %s (%d/%d일)',
       notNow: '이 버튼은 접수만 합니다. 지금 청구되는 금액은 없습니다.',
       usage: '사용량 예상 — 청구에 포함되지 않습니다',
-      perMonth: '/월', from: '부터',
-      estimateNote: '쓰신 만큼 다음 달에 정산합니다.',
-      overage: '월 %s건을 넘기면 %s건당 %s이 붙습니다. 한도를 미리 걸어 두실 수 있습니다.',
+      from: '부터', estimateNote: '쓰신 만큼 다음 달에 정산합니다.',
+      overage: '월 %s건이 포함되어 있고, 넘긴 만큼만 건당 %s이 붙습니다. 한도를 미리 걸어 두실 수 있습니다.',
+      discount: '%s 적용 — 처음 %d개월 %d% 할인. 그 뒤에는 월 %s 입니다.',
+      noVoiceHere: '이 나라에서는 AI 전화가 아직 열려 있지 않습니다. 채팅과 메신저는 지금 됩니다. ' +
+                   '이 요금제를 고르시면 담당자가 개통 가능 시점을 먼저 알려 드립니다.',
+      taxNone: '저희는 대한민국 법인이고 귀사 국가에 세무 등록이 없어 세금을 걷지 않습니다. 현지 규정에 따른 신고 의무는 귀사에 남습니다.',
+      taxReverse: '리버스 차지 대상입니다. 저희가 세금을 붙이지 않고, 귀사에서 신고하시게 됩니다. 세금 번호를 주시면 인보이스에 찍어 드립니다.',
       required: '필수 항목입니다',
-      bizBad: '사업자등록번호가 올바르지 않습니다. 10자리를 다시 확인해 주세요.',
+      bizBadKR: '사업자등록번호가 올바르지 않습니다. 10자리를 다시 확인해 주세요.',
+      bizBad: '번호 형식을 다시 확인해 주세요.',
       emailBad: '이메일 형식이 올바르지 않습니다.',
       phoneBad: '전화번호를 다시 확인해 주세요.',
       agreeBad: '필수 동의 항목을 확인해 주세요.',
@@ -52,16 +57,21 @@
       noPrice: '요금표를 불러오지 못했습니다. 금액을 확인하실 수 없는 상태로 주문을 받지 않겠습니다. 새로고침해 보시고, 계속 이러면 hello@saleringo.com 으로 알려 주십시오.'
     },
     en: {
-      monthly: 'Monthly', vat: 'VAT 10%', total: 'Every month',
+      monthly: 'Monthly', total: 'Charged every month', tax: 'Tax',
       firstLabel: 'First month prorated from the start date',
       firstIf: 'Starting today that would be %s (%d/%d days)',
       notNow: 'This button records the order. Nothing is charged now.',
       usage: 'Usage estimate — not part of the charge',
-      perMonth: '/mo', from: ' and up',
-      estimateNote: 'Settled next month on what you actually use.',
-      overage: 'Past %s conversations a month, %s more cost %s per block. You can cap it.',
+      from: ' and up', estimateNote: 'Settled next month on what you actually use.',
+      overage: '%s conversations are included; past that it is %s each. You can cap the month.',
+      discount: '%s applied — %d% off for your first %d months. After that it is %s a month.',
+      noVoiceHere: 'AI phone is not open in your country yet. Chat and messengers work today. ' +
+                   'If you take this plan we will tell you the voice date before anything starts.',
+      taxNone: 'We are a Korean company with no tax registration in your country, so we add no tax. Any local filing duty stays with you.',
+      taxReverse: 'This is a reverse-charge sale. We add no tax and you account for it. A tax number you give us goes on the invoice.',
       required: 'Required',
-      bizBad: 'That registration number does not check out. Please look at the 10 digits again.',
+      bizBadKR: 'That registration number does not check out. Please look at the 10 digits again.',
+      bizBad: 'Please check the format of that number.',
       emailBad: 'That email address does not look right.',
       phoneBad: 'Please check the phone number.',
       agreeBad: 'Please tick the required agreements.',
@@ -75,7 +85,20 @@
 
   function $(s, r) { return (r || form).querySelector(s); }
   function $$(s, r) { return [].slice.call((r || form).querySelectorAll(s)); }
-  function won(n) { return new Intl.NumberFormat('ko-KR').format(Math.round(n)) + (KO ? '원' : ' KRW'); }
+  /* 금액을 그 통화의 관습대로 씁니다. 원화는 뒤에 "원", 달러는 앞에 "$".
+     79.00 달러라고 쓰면 아무도 그렇게 읽지 않고, 110000.00 원은 잘못 쓴
+     것처럼 보입니다. */
+  function money(n, cur) {
+    var c = (P && P.currencies[cur]) || { symbol: '', position: 'after', decimals: 0, locale: 'en-US' };
+    /* 599 는 "$599", 0.14 는 "$0.14". 자리수를 하나로 고정하면 둘 중 하나가
+       틀립니다. */
+    var whole = Math.abs(n - Math.round(n)) < 1e-9;
+    var t = new Intl.NumberFormat(c.locale, {
+      minimumFractionDigits: whole ? 0 : c.decimals,
+      maximumFractionDigits: whole ? 0 : c.decimals
+    }).format(n);
+    return c.position === 'before' ? c.symbol + t : t + c.symbol;
+  }
 
   /* ── 저장과 복구 ───────────────────────────────────────────────────── */
   /* 동의는 저장하지도 복원하지도 않습니다. 새로고침 한 번에 동의가
@@ -128,13 +151,22 @@
     var mid = rest >= 8 ? 4 : 3;
     return n.slice(0, head) + '-' + n.slice(head, head + mid) + '-' + n.slice(head + mid);
   }
-  function bizValid(raw) {
+  function krBizValid(raw) {
     var n = String(raw || '').replace(/[^0-9]/g, '');
     if (n.length !== 10) return false;
     var w = [1, 3, 7, 1, 3, 7, 1, 3, 5], sum = 0;
     for (var i = 0; i < 9; i++) sum += Number(n[i]) * w[i];
     sum += Math.floor((Number(n[8]) * 5) / 10);
     return (10 - (sum % 10)) % 10 === Number(n[9]);
+  }
+  /* 검증은 그 번호가 실제로 검증 가능한 나라에서만 합니다. 세계의 모든
+     사업자 번호 규칙을 안다고 주장하면, 멀쩡한 번호를 가진 사람이 통과할
+     수 없는 칸이 생깁니다. */
+  function bizValidFor(c, raw) {
+    var v = String(raw || '').trim();
+    if (!v) return !c || !c.taxIdRequired;
+    if (c && c.taxIdCheck === 'kr') return krBizValid(v);
+    return /^[A-Za-z0-9][A-Za-z0-9 .\-\/]{3,29}$/.test(v);
   }
   var emailOk = function (v) { return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v); };
 
@@ -155,12 +187,19 @@
   }
   function checkField(el) {
     var v = (el.value || '').trim();
+    var c = countryOf(selection().country);
+    if (el.name === 'bizNo') {
+      if (!v) return setErr(el, (c && c.taxIdRequired) ? T.required : '');
+      return setErr(el, bizValidFor(c, v) ? ''
+        : ((c && c.taxIdCheck === 'kr') ? T.bizBadKR : T.bizBad));
+    }
     if (el.hasAttribute('required') && !v && el.type !== 'checkbox') return setErr(el, T.required);
-    if (el.name === 'bizNo' && v) return setErr(el, bizValid(v) ? '' : T.bizBad);
     if (el.type === 'email' && v) return setErr(el, emailOk(v) ? '' : T.emailBad);
     if (el.name === 'phone' && v) {
+      /* 전화번호 규칙은 나라마다 다릅니다. 자리수를 세는 대신 숫자가 몇 개
+         있는지만 봅니다. 그 이상을 검사하면 멀쩡한 번호를 거절합니다. */
       var d = v.replace(/[^0-9]/g, '');
-      return setErr(el, d.length >= 9 && d.length <= 11 ? '' : T.phoneBad);
+      return setErr(el, d.length >= 6 && d.length <= 15 ? '' : T.phoneBad);
     }
     return setErr(el, '');
   }
@@ -169,13 +208,24 @@
   function selection() {
     var plan = $('input[name="plan"]:checked');
     var method = $('input[name="method"]:checked');
+    var cty = $('[name="country"]');
     return {
       plan: plan ? plan.value : '',
       method: method ? method.value : '',
+      country: cty ? cty.value : '',
       voiceMinutes: Number(($('[name="voiceMinutes"]') || {}).value) || 0,
       alimtalk: Number(($('[name="alimtalk"]') || {}).value) || 0
     };
   }
+
+  function countryOf(code) {
+    if (!P) return null;
+    for (var i = 0; i < P.countries.length; i++) {
+      if (P.countries[i].code === code) return P.countries[i];
+    }
+    return null;
+  }
+
   /* 한국 시간으로 오늘이 며칠인가.
   
      이것이 왜 함수여야 하냐면, 화면은 브라우저의 시간대로 돌고 서버는 UTC 로
@@ -201,7 +251,12 @@
   function quote() {
     var sel = selection();
     var plan = P.plans.filter(function (p) { return p.id === sel.plan; })[0];
-    if (!plan) return null;
+    var c = countryOf(sel.country);
+    if (!plan || !c) return null;
+    var cur = c.currency;
+    var rule = P.tax[c.code] || P.tax['default'];
+    var rate = rule.collected ? rule.rate : 0;
+    var round = function (n) { return cur === 'KRW' ? Math.round(n) : Math.round(n * 100) / 100; };
     var pr = proration(new Date());
     var est = [];
     P.usage.forEach(function (u) {
@@ -209,14 +264,22 @@
       if (u.planRequires === 'messenger' && !plan.messenger) return;
       var qty = Math.max(0, Number(sel[u.id]) || 0);
       if (!qty) return;
-      est.push({ label: u.name[LANG], qty: qty, unit: u.unitPrice,
-                 amount: Math.round(qty * u.unitPrice), from: !!u.from });
+      est.push({ label: u.name[LANG], qty: qty, unit: u.unitPrice[cur],
+                 amount: round(qty * u.unitPrice[cur]), from: !!u.from });
     });
-    var firstNet = Math.round(plan.monthly * pr.factor);
+    var list = plan.price[cur];
+    var disc = (P.discount && P.discount.active) ? P.discount : null;
+    var net = disc ? round(list * (100 - disc.percent) / 100) : list;
+    var firstNet = round(net * pr.factor);
     return {
-      plan: plan, pr: pr, est: est,
-      monthNet: plan.monthly, monthVat: Math.round(plan.monthly * P.vatRate),
-      firstNet: firstNet, firstVat: Math.round(firstNet * P.vatRate)
+      plan: plan, country: c, cur: cur, pr: pr, est: est,
+      rate: rate, collected: !!rule.collected, taxLabel: rule.label || null,
+      reverse: !!(c.reverseCharge && !rule.collected),
+      list: list, disc: disc,
+      after: round(list + round(list * rate)),
+      net: net, tax: round(net * rate), total: round(net + round(net * rate)),
+      firstTotal: round(firstNet + round(firstNet * rate)),
+      voiceGap: !!(plan.voice && c.voice === false)
     };
   }
 
@@ -225,45 +288,64 @@
     if (!box || !P) return;
     var q = quote();
     if (!q) { box.innerHTML = ''; return; }
+    var A = function (n) { return money(n, q.cur); };
     var r = [];
     r.push('<div class="sm-plan"><b>' + q.plan.name[LANG] + '</b><span>' +
       q.plan.channels[LANG] + '</span></div>');
-    r.push('<div class="sm-row"><span>' + T.monthly + '</span><b>' + won(q.monthNet) + '</b></div>');
-    r.push('<div class="sm-row"><span>' + T.vat + '</span><b>' + won(q.monthVat) + '</b></div>');
-    /* 매달 같은 금액이 가장 큰 글씨로 옵니다. 날짜에 따라 변하지 않는
-       유일한 숫자이고, 구매자가 결재에 올리는 숫자이기도 합니다. */
-    r.push('<div class="sm-total"><span>' + T.total + '</span><b>' +
-      won(q.monthNet + q.monthVat) + '</b></div>');
+    r.push('<div class="sm-row"><span>' + T.monthly + '</span><b>' +
+      (q.disc ? '<s>' + A(q.list) + '</s> ' : '') + A(q.net) + '</b></div>');
+    if (q.collected) {
+      r.push('<div class="sm-row"><span>' +
+        (q.taxLabel ? q.taxLabel[LANG] : T.tax) + '</span><b>' + A(q.tax) + '</b></div>');
+    }
+    r.push('<div class="sm-total"><span>' + T.total + '</span><b>' + A(q.total) + '</b></div>');
+    if (q.disc) {
+      r.push('<p class="sm-note sm-disc">' +
+        T.discount.replace('%s', q.disc.name[LANG]).replace('%d', q.disc.percent)
+                  .replace('%d', q.disc.months).replace('%s', A(q.after)) + '</p>');
+    }
     r.push('<p class="sm-notnow">' + T.notNow + '</p>');
+    if (q.voiceGap) r.push('<p class="sm-note sm-warn">' + T.noVoiceHere + '</p>');
+    if (!q.collected) {
+      r.push('<p class="sm-note sm-tax">' + (q.reverse ? T.taxReverse : T.taxNone) + '</p>');
+    }
     r.push('<div class="sm-first"><p>' + T.firstLabel + '</p><p class="sm-note">' +
-      T.firstIf.replace('%s', won(q.firstNet + q.firstVat))
+      T.firstIf.replace('%s', A(q.firstTotal))
                .replace('%d', q.pr.remaining).replace('%d', q.pr.daysInMonth) + '</p></div>');
     if (q.est.length) {
       r.push('<div class="sm-est"><p>' + T.usage + '</p>' +
         q.est.map(function (e) {
           return '<div class="sm-row"><span>' + e.label + ' ' +
-            new Intl.NumberFormat('ko-KR').format(e.qty) + '</span><b>' +
-            won(e.amount) + (e.from ? T.from : '') + '</b></div>';
+            new Intl.NumberFormat(LANG === 'ko' ? 'ko-KR' : 'en-US').format(e.qty) +
+            '</span><b>' + A(e.amount) + (e.from ? T.from : '') + '</b></div>';
         }).join('') + '<p class="sm-note">' + T.estimateNote + '</p></div>');
     }
     if (P.overage) {
+      var fmt = new Intl.NumberFormat(LANG === 'ko' ? 'ko-KR' : 'en-US');
       r.push('<p class="sm-note sm-over">' + T.overage
-        .replace('%s', new Intl.NumberFormat('ko-KR').format(q.plan.conversations))
-        .replace('%s', new Intl.NumberFormat('ko-KR').format(P.overage.block))
-        .replace('%s', won(P.overage.blockPrice)) + '</p>');
+        .replace('%s', fmt.format(q.plan.conversations))
+        .replace('%s', A(P.overage.perConversation[q.cur])) + '</p>');
     }
     box.innerHTML = r.join('');
     var bar = document.querySelector('[data-paybar-total]');
-    if (bar) bar.textContent = won(q.monthNet + q.monthVat);
+    if (bar) bar.textContent = A(q.total);
   }
 
-  /* 전화 요금제가 아닐 때 통화 예상 칸을 숨긴다. 고를 수 없는 것을
-     띄워 두면 고를 수 있는 줄 알고 채우게 됩니다. */
-  function syncVoice() {
+  /* 고를 수 없는 것을 띄워 두면 고를 수 있는 줄 알고 채우게 됩니다.
+     그리고 나라가 바뀌면 사업자 번호의 이름과 필수 여부, 전화번호의
+     국번 안내가 함께 바뀌어야 합니다. 라벨이 "사업자등록번호"인 채로
+     미국 구매자에게 남아 있으면, 그 사람은 자기가 낼 수 없는 것을
+     요구받았다고 읽습니다. */
+  function syncCountry() {
     var sel = selection();
     var plan = P ? P.plans.filter(function (p) { return p.id === sel.plan; })[0] : null;
+    var c = countryOf(sel.country);
+
     var row = document.querySelector('[data-voice-row]');
     if (row) row.hidden = !(plan && plan.voice);
+    var talk = document.querySelector('[data-talk-row]');
+    if (talk) talk.hidden = !(plan && plan.messenger);
+
     var rec = document.querySelector('[data-recurring-agree]');
     if (rec) {
       var isCard = sel.method === 'card';
@@ -271,7 +353,30 @@
       var cb = rec.querySelector('input');
       if (cb) { cb.required = isCard; if (!isCard) cb.checked = false; }
     }
+
+    var biz = $('[name="bizNo"]');
+    if (biz && c) {
+      var lab = document.querySelector('[data-biz-label]');
+      var opt = document.querySelector('[data-biz-optional]');
+      if (lab) lab.textContent = c.taxIdLabel[LANG];
+      if (opt) opt.hidden = !!c.taxIdRequired;
+      biz.required = !!c.taxIdRequired;
+      biz.placeholder = c.taxIdPlaceholder || '';
+      biz.setAttribute('inputmode', c.taxIdCheck === 'kr' ? 'numeric' : 'text');
+      biz.setAttribute('maxlength', c.taxIdCheck === 'kr' ? '12' : '30');
+    }
+    var phone = $('[name="phone"]');
+    if (phone && c) phone.placeholder = c.dial ? c.dial + ' …' : '';
+
+    /* 한국 밖에서는 세금계산서가 아니라 인보이스입니다. */
+    var taxLab = document.querySelector('[data-tax-email-label]');
+    if (taxLab) {
+      taxLab.textContent = (sel.country === 'KR')
+        ? (LANG === 'ko' ? '세금계산서 수신 이메일' : 'Tax invoice email')
+        : (LANG === 'ko' ? '인보이스 수신 이메일' : 'Invoice email');
+    }
   }
+  var syncVoice = syncCountry;
 
   function gate() {
     var btn = $('[data-submit]');
@@ -289,9 +394,10 @@
        외부 문자열입니다. 아는 글자만 통과시킵니다. 돈이 오가는 화면에서
        "우리가 만든 값이니 괜찮다"는 가정은 공짜로 두지 않습니다. */
     var no = String(res.orderNo || '').replace(/[^A-Z0-9-]/g, '').slice(0, 20);
-    var monthly = q.monthly ? won(q.monthly.total) : '';
-    var first = q.firstMonthIfToday ? won(q.firstMonthIfToday.total) : '';
-    var steps = ko
+    var cur = q.currency || 'KRW';
+    var monthly = q.monthly ? money(q.monthly.total, cur) : '';
+    var first = q.firstMonthIfToday ? money(q.firstMonthIfToday.total, cur) : '';
+    var steps = KO
       ? ['영업일 하루 안에 담당자가 확인 연락을 드립니다.',
          '우리 요금표와 영업시간을 받아 응대를 만들어 드립니다.',
          '만들어진 응대를 먼저 보시고, 그때 결제 안내를 보내 드립니다.']
@@ -300,26 +406,26 @@
          'You read it first; the payment step comes after that.'];
     form.innerHTML =
       '<div class="ordersent" role="status" tabindex="-1">' +
-        '<b>' + (ko ? '주문이 접수되었습니다.' : 'Your order is in.') + '</b>' +
+        '<b>' + (KO ? '주문이 접수되었습니다.' : 'Your order is in.') + '</b>' +
         '<code class="orderno">' + no + '</code>' +
         '<p class="os-money">' +
-          (ko ? '매월 ' : 'Every month ') + '<b>' + monthly + '</b>' +
-          (first ? (ko ? ' · 첫 달은 개시일 기준 일할(오늘이면 ' : ' · first month prorated (today, ')
+          (KO ? '매월 ' : 'Every month ') + '<b>' + monthly + '</b>' +
+          (first ? (KO ? ' · 첫 달은 개시일 기준 일할(오늘이면 ' : ' · first month prorated (today, ')
                  + first + ')' : '') +
         '</p>' +
         '<p class="os-note"><b>' +
-          (ko ? '아직 결제되지 않았습니다.' : 'Nothing has been charged yet.') +
+          (KO ? '아직 결제되지 않았습니다.' : 'Nothing has been charged yet.') +
         '</b> ' +
-          (ko ? '카드나 계좌에서 빠져나간 금액이 없습니다. 아래 순서로 진행됩니다.'
+          (KO ? '카드나 계좌에서 빠져나간 금액이 없습니다. 아래 순서로 진행됩니다.'
               : 'No money has moved. This is what happens next.') +
         '</p>' +
         '<ol class="os-steps">' + steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' +
         '<p class="os-note">' +
           (res.confirmation
-            ? (ko ? '같은 내용을 이메일로 보내 드렸습니다. 1분 안에 오지 않으면 스팸함을 확인해 주십시오. '
+            ? (KO ? '같은 내용을 이메일로 보내 드렸습니다. 1분 안에 오지 않으면 스팸함을 확인해 주십시오. '
                   : 'A copy is in your inbox. If it is not there within a minute, look in spam. ')
             : '') +
-          (ko ? '주문번호 <b>' + no + '</b> 를 말씀하시면 바로 찾을 수 있습니다. ' +
+          (KO ? '주문번호 <b>' + no + '</b> 를 말씀하시면 바로 찾을 수 있습니다. ' +
                 '취소하시려면 hello@saleringo.com 으로 주문번호와 함께 “취소”라고만 보내 주시면 됩니다.'
               : 'Quote <b>' + no + '</b> and we find you at once. ' +
                 'To cancel, email hello@saleringo.com with the number and the word cancel.') +
@@ -361,7 +467,12 @@
     if (!$('input[name="method"]:checked')) {
       var m = $('input[name="method"]'); if (m) m.checked = true;
     }
-    syncVoice(); paint(); gate();
+    /* 나라의 기본값은 페이지의 언어입니다. 한국어 페이지를 보고 있는
+       사람은 대개 한국 사업자이고, 영어 페이지를 보고 있는 사람은 대개
+       아닙니다. 틀렸으면 첫 칸에서 바로 바꾸면 됩니다. */
+    var cty = $('[name="country"]');
+    if (cty && !cty.value) cty.value = (LANG === 'ko') ? 'KR' : 'US';
+    syncCountry(); paint(); gate();
   }).catch(function () {
     /* 금액을 볼 수 없는 사람에게서 주문을 받지 않습니다. 요약 카드가 빈
        채로 접수되면, 나중에 청구서를 보고 처음 금액을 알게 됩니다. */
@@ -395,12 +506,20 @@
 
   form.addEventListener('input', function (e) {
     var el = e.target;
-    if (el.name === 'bizNo') el.value = fmtBiz(el.value);
-    if (el.name === 'phone') el.value = fmtPhone(el.value);
+    /* 하이픈을 저절로 넣는 것은 한국 번호에서만 맞습니다. VAT 번호에
+       하이픈을 끼워 넣으면 그건 다른 번호가 됩니다. */
+    if (el.name === 'bizNo') {
+      var cc = countryOf(selection().country);
+      if (cc && cc.taxIdCheck === 'kr') el.value = fmtBiz(el.value);
+    }
+    if (el.name === 'phone') {
+      var pc = countryOf(selection().country);
+      if (pc && pc.code === 'KR') el.value = fmtPhone(el.value);
+    }
     if (el.closest('.fld') && el.closest('.fld').classList.contains('has-err')) checkField(el);
-    syncVoice(); paint(); gate(); snapshot();
+    syncCountry(); paint(); gate(); snapshot();
   });
-  form.addEventListener('change', function () { syncVoice(); paint(); gate(); snapshot(); });
+  form.addEventListener('change', function () { syncCountry(); paint(); gate(); snapshot(); });
   form.addEventListener('blur', function (e) {
     if (e.target.name && e.target.tagName !== 'BUTTON') checkField(e.target);
   }, true);
@@ -442,7 +561,7 @@
 
     var sel = selection();
     var payload = {
-      plan: sel.plan, method: sel.method,
+      plan: sel.plan, method: sel.method, country: sel.country,
       voiceMinutes: sel.voiceMinutes, alimtalk: sel.alimtalk,
       lang: LANG,
       idempotencyKey: (form._idem = form._idem ||
@@ -470,7 +589,30 @@
         return { ok: r.ok, status: r.status, body: j };
       });
     }).then(function (out) {
-      if (out.ok && out.body.ok) return receipt(out.body);
+      /* 서버가 받았다고 답한 뒤에는, 화면을 그리다 무엇이 잘못되더라도
+         "실패했다"고 말하지 않습니다. 주문은 이미 접수되었고 메일도 나갔기
+         때문입니다. 그 상태에서 실패 문구를 띄우면 구매자는 다시 누르고,
+         같은 주문이 두 번 들어갑니다. 그래서 성공 경로를 아래 catch 밖으로
+         꺼내고, 화면 조립이 깨지면 최소한 주문번호만이라도 남깁니다. */
+      if (out.ok && out.body && out.body.ok) {
+        try {
+          receipt(out.body);
+        } catch (e) {
+          var no = String(out.body.orderNo || '').replace(/[^A-Z0-9-]/g, '').slice(0, 20);
+          form.innerHTML = '<div class="ordersent" role="status" tabindex="-1"><b>' +
+            (KO ? '주문이 접수되었습니다.' : 'Your order is in.') + '</b>' +
+            (no ? '<code class="orderno">' + no + '</code>' : '') +
+            '<p class="os-note"><b>' +
+            (KO ? '아직 결제되지 않았습니다.' : 'Nothing has been charged yet.') + '</b> ' +
+            (KO ? '영업일 하루 안에 담당자가 연락드립니다. 이 번호를 말씀해 주십시오.'
+                : 'A person will confirm within one business day. Quote this number.') +
+            '</p></div>';
+          try { sessionStorage.removeItem(KEY); } catch (e2) {}
+          var pb = document.querySelector('.paybar');
+          if (pb) pb.remove();
+        }
+        return;
+      }
       if (btn) { btn.disabled = false; btn.innerHTML = btn._label; }
       if (out.status === 503) return fail(T.failDest);
       if (out.body && out.body.fields && out.body.fields.length) {

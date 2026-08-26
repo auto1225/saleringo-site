@@ -68,7 +68,7 @@ CSS = """
 """
 
 
-def doc(slug, kicker, h1, sub, sections, title, desc, crumb):
+def doc(slug, kicker, h1, sub, sections, title, desc, crumb, ids=None):
     body = ['<header class="hero nophoto sec-dark bg-aurora">',
             '  <div class="scrim" aria-hidden="true"></div>',
             '  ' + NAV,
@@ -80,8 +80,12 @@ def doc(slug, kicker, h1, sub, sections, title, desc, crumb):
             '  </div>',
             '</header>', '', '<main>', '',
             '<section class="t-md sec-light bg-paper"><div class="wrap doc">']
-    for h, inner in sections:
-        body.append('<div class="docsec reveal"><h2>%s</h2>%s</div>' % (h, inner))
+    # 조항마다 id 를 답니다. 주문서의 동의문이 "4항에 적어 두었습니다" 라고
+    # 말하면서 그 4항으로 데려가지 못하면, 그건 안 적어 둔 것과 같습니다.
+    for n, (h, inner) in enumerate(sections, 1):
+        sid = ids[n - 1] if ids and n <= len(ids) else 'sec-%d' % n
+        body.append('<section class="docsec reveal" id="%s"><h2>%s</h2>%s</section>'
+                    % (sid, h, inner))
     body += ['</div></section>', '', FOOT, '</main>']
     page(slug, title, desc, '\n'.join(body), css=CSS, grade='trust',
          crumbs=[('홈', 'index.html'), (crumb, slug)])
@@ -346,6 +350,9 @@ SECURITY = [
  '그 자료는 저희 것이 아니라 그 가게와 그 가게 손님의 것입니다.</p>'),
 ]
 
+PRIVACY_IDS = ['scope', 'collected', 'recording', 'transfer', 'thirdparty',
+               'rights', 'disposal', 'measures', 'officer', 'changes']
+
 doc('privacy.html', '개인정보처리방침',
     '무엇을 받아 두고,<br>어디에 두고, 언제 지우는가.',
     '「개인정보 보호법」에 따라 회사가 처리하는 개인정보의 항목과 목적, 보유기간, 위탁과 국외 이전, '
@@ -354,7 +361,7 @@ doc('privacy.html', '개인정보처리방침',
     '개인정보처리방침 &mdash; Saleringo',
     'Saleringo가 수집하는 개인정보의 항목, 목적, 보유기간, 처리위탁과 국외 이전, 통화 녹음 처리 방식, '
     '정보주체의 권리 행사 방법을 「개인정보 보호법」에 따라 공개합니다.',
-    '개인정보처리방침')
+    '개인정보처리방침', ids=PRIVACY_IDS)
 
 doc('terms.html', '이용약관',
     '읽고 결정하실 수 있도록<br>짧게 적었습니다.',

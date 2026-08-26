@@ -58,7 +58,7 @@ async function call(method, body, headers) {
 }
 
 const GOOD = {
-  plan: 'grow', method: 'transfer',
+  plan: 'grow', method: 'transfer', country: 'KR',
   company: '정직한마케팅', bizNo: '220-88-01001',   /* 체크섬이 맞는 번호 */
   contact: '홍길동', email: 'owner@example.co.kr',
   agreeTerms: true, agreePrivacy: true, agreeTransfer: true,
@@ -131,9 +131,9 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
   ok('서버가 계산한 금액이 위조값(1원)을 무시한다',
      q.monthly.total === honest.monthly.total && q.monthly.total > 1,
      q.monthly.total + ' vs ' + honest.monthly.total);
-  ok('부가세가 공급가액의 10%', q.monthly.vat === Math.round(q.monthly.net * 0.1),
-     q.monthly.net + ' / ' + q.monthly.vat);
-  ok('합계 = 공급가액 + 부가세', q.monthly.total === q.monthly.net + q.monthly.vat);
+  ok('한국은 부가세가 공급가액의 10%', q.monthly.tax === Math.round(q.monthly.net * 0.1),
+     q.monthly.net + ' / ' + q.monthly.tax);
+  ok('합계 = 공급가액 + 세금', q.monthly.total === q.monthly.net + q.monthly.tax);
 }
 
 /* ── 5. 사업자등록번호 ──────────────────────────────────────────────── */
@@ -185,7 +185,7 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
     ['이메일 형식', { email: 'not-an-email' }, 'email'],
     ['이메일 빈 값', { email: '' }, 'email'],
     ['세금계산서 이메일 형식', { taxEmail: 'nope' }, 'taxEmail'],
-    ['전화번호 너무 짧음', { phone: '010' }, 'phone']
+    ['전화번호가 숫자 몇 개뿐', { phone: '12' }, 'phone']
   ];
   for (const [label, patch, field] of bad) {
     const r = await call('POST', { ...GOOD, ...patch });
@@ -193,8 +193,13 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
     ok('  ' + field + ' 를 지목', (r.body.fields || []).includes(field),
        JSON.stringify(r.body.fields));
   }
-  const okPhone = await call('POST', { ...GOOD, phone: '010-1234-5678' });
-  eq('하이픈 있는 휴대폰 번호는 통과', okPhone.statusCode, 200);
+  for (const [label, ph] of [['한국 형식', '010-1234-5678'],
+                             ['미국 형식', '+1 (415) 555-0100'],
+                             ['독일 형식', '+49 30 901820'],
+                             ['공백만 있는 국제 형식', '+44 20 7946 0958']]) {
+    const r = await call('POST', { ...GOOD, country: 'US', phone: ph });
+    eq(label + ' 전화번호는 통과', r.statusCode, 200);
+  }
 }
 
 /* ── 9. 요금제와 결제수단 ───────────────────────────────────────────── */
@@ -208,9 +213,16 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
 
   for (const [plan, monthly] of [['start', 110000], ['grow', 340000], ['scale', 820000]]) {
     const q = (await call('POST', { ...GOOD, plan })).body.quote;
-    ok(plan + ' 월 정액이 요금표와 같다', q.monthly.net === monthly,
-       q.monthly.net + ' vs ' + monthly);
-    ok(plan + ' 월 정액은 날짜와 무관하다', q.monthly.net === monthly);
+    ok(plan + ' 정가가 요금표와 같다', q.listPrice === monthly,
+       q.listPrice + ' vs ' + monthly);
+    /* 창립 할인이 켜져 있으면 실제 청구액은 정가의 절반이다. 영문 약관
+       제2조가 "가입 시 확정"이라고 약속한 것이라, 주문서가 정가만 보여
+       주면 그 약관을 어기는 셈이 된다. */
+    if (q.discount) {
+      ok(plan + ' 할인이 정가에 적용된다',
+         q.monthly.net === Math.round(monthly * (100 - q.discount.percent) / 100),
+         q.monthly.net + ' vs ' + monthly);
+    }
   }
 }
 
@@ -289,9 +301,9 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
   const q = (await call('POST', { ...GOOD, plan: 'start' })).body.quote;
   const f = q.firstMonthIfToday;
   ok('남은 날이 이번 달 안에 있다', f.days >= 1 && f.days <= f.monthDays, JSON.stringify(f));
-  const expect = Math.round(110000 * f.days / f.monthDays);
-  ok('첫 달 예시 = 월정액 × 남은날/이번달', f.net === expect, f.net + ' vs ' + expect);
-  ok('첫 달 예시는 한 달치를 넘지 않는다', f.net <= 110000);
+  const expect = Math.round(q.monthly.net * f.days / f.monthDays);
+  ok('첫 달 예시 = 실제 월 청구액 × 남은날/이번달', f.net === expect, f.net + ' vs ' + expect);
+  ok('첫 달 예시는 한 달치를 넘지 않는다', f.net <= q.monthly.net);
   ok('기준일이 서울 날짜로 찍혀 있다', /^\d{4}-\d{2}-\d{2}$/.test(f.asOf || ''), f.asOf);
   /* 화면이 보여준 금액과 서버가 기록하는 금액이 같아야 한다.
      예전에는 화면이 로컬시간, 서버가 UTC 라서 아침마다 하루씩 어긋났다. */
@@ -309,6 +321,78 @@ console.log('사업자등록번호 시험값:', GOOD.bizNo);
   const ctrl = await call('POST', { ...GOOD, company: 'A B\nC' });
   const rec = received[received.length - 1];
   ok('  제어문자를 제거한다', rec && !/[ -]/.test(rec.company), JSON.stringify(rec && rec.company));
+}
+
+
+/* ── 17. 나라가 통화와 세금을 정한다 ────────────────────────────────── */
+{
+  const kr = (await call('POST', { ...GOOD, country: 'KR', plan: 'scale' })).body.quote;
+  eq('한국은 원화', kr.currency, 'KRW');
+  ok('한국은 세금을 걷는다', kr.taxCollected === true);
+  ok('한국 Scale 정가 820,000', kr.listPrice === 820000, String(kr.listPrice));
+  ok('한국 합계 = 청구액 + 10%',
+     kr.monthly.total === kr.monthly.net + Math.round(kr.monthly.net * 0.1),
+     String(kr.monthly.total));
+
+  const us = (await call('POST', { ...GOOD, country: 'US', plan: 'scale', bizNo: '' })).body.quote;
+  eq('미국은 달러', us.currency, 'USD');
+  ok('미국은 세금을 걷지 않는다', us.taxCollected === false);
+  ok('미국 Scale 정가 599', us.listPrice === 599, String(us.listPrice));
+  ok('미국은 합계에 세금이 붙지 않는다', us.monthly.total === us.monthly.net,
+     String(us.monthly.total));
+  ok('미국은 리버스 차지가 아니다', us.reverseCharge === false);
+
+  const de = (await call('POST', { ...GOOD, country: 'DE', plan: 'grow', bizNo: '' })).body.quote;
+  ok('독일은 리버스 차지로 표시된다', de.reverseCharge === true);
+  ok('독일도 세금을 걷지 않는다', de.taxCollected === false);
+  ok('독일 Grow 정가 249', de.listPrice === 249, String(de.listPrice));
+
+  const r = await call('POST', { ...GOOD, country: 'ZZ' });
+  eq('없는 나라 → 400', r.statusCode, 400);
+  eq('  이유', r.body.error, 'invalid');
+  ok('  country 를 지목', (r.body.fields || []).includes('country'));
+
+  const none = await call('POST', { ...GOOD, country: '' });
+  eq('나라 없음 → 400', none.statusCode, 400);
+}
+
+/* ── 18. 사업자 번호는 나라가 정한다 ─────────────────────────────────── */
+{
+  /* 한국: 필수 + 체크섬 */
+  const a = await call('POST', { ...GOOD, country: 'KR', bizNo: '' });
+  eq('한국은 번호가 없으면 400', a.statusCode, 400);
+  ok('  bizNo 를 지목', (a.body.fields || []).includes('bizNo'));
+  const b = await call('POST', { ...GOOD, country: 'KR', bizNo: '1234567890' });
+  eq('한국은 체크섬이 틀리면 400', b.statusCode, 400);
+
+  /* 그 밖의 나라: 선택, 형식만 */
+  for (const code of ['US', 'GB', 'DE', 'AU', 'SG', 'JP', 'BR', 'OTHER']) {
+    const empty = await call('POST', { ...GOOD, country: code, bizNo: '' });
+    eq(code + ' 는 번호 없이도 주문된다', empty.statusCode, 200);
+  }
+  const vat = await call('POST', { ...GOOD, country: 'DE', bizNo: 'DE123456789' });
+  eq('독일 VAT 번호는 그대로 통과', vat.statusCode, 200);
+  const abn = await call('POST', { ...GOOD, country: 'AU', bizNo: '51 824 753 556' });
+  eq('공백 있는 ABN 도 통과', abn.statusCode, 200);
+  const junk = await call('POST', { ...GOOD, country: 'US', bizNo: '<script>' });
+  eq('이상한 문자열은 거절', junk.statusCode, 400);
+  /* 한국 체크섬을 다른 나라에 강요하지 않는다 - 이것이 글로벌 판매를
+     막고 있던 바로 그 규칙이었다 */
+  const krNumInUS = await call('POST', { ...GOOD, country: 'US', bizNo: '1234567890' });
+  eq('미국 구매자에게 한국 체크섬을 요구하지 않는다', krNumInUS.statusCode, 200);
+}
+
+/* ── 19. 금액 표기 ──────────────────────────────────────────────────── */
+{
+  const us = (await call('POST', { ...GOOD, country: 'US', plan: 'scale',
+                                   bizNo: '', voiceMinutes: 1000 })).body.quote;
+  const v = us.estimates.find(e => e.id === 'voiceMinutes');
+  ok('달러 통화료는 소수점 둘째 자리까지', v && v.unit === 0.14, JSON.stringify(v));
+  ok('1000분 = 140 달러', v && v.amount === 140, JSON.stringify(v));
+  const kr = (await call('POST', { ...GOOD, country: 'KR', plan: 'scale',
+                                   voiceMinutes: 1000 })).body.quote;
+  const kv = kr.estimates.find(e => e.id === 'voiceMinutes');
+  ok('원화 통화료는 1000분 = 190,000원', kv && kv.amount === 190000, JSON.stringify(kv));
 }
 
 sink.close();
