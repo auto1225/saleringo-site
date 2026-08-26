@@ -56,7 +56,15 @@
       sending: '접수하는 중…',
       failNet: '전송에 실패했습니다. 잠시 뒤 다시 눌러 주시거나, hello@saleringo.com 으로 보내 주십시오.',
       failDest: '지금은 온라인 접수를 받을 수 없습니다. hello@saleringo.com 으로 보내 주시면 사람이 바로 처리해 드립니다.',
-      offline: '지금은 온라인 주문 접수가 열려 있지 않습니다. 아래를 채워 보내는 대신 hello@saleringo.com 으로 연락 주시면 사람이 바로 처리해 드립니다.',
+      offline: '지금은 온라인 주문 접수가 열려 있지 않습니다. 아래 내용을 그대로 두시고 「서면 주문 제안 요청」을 눌러 주시면, 담당자가 같은 내용으로 서면 주문서를 만들어 보내 드립니다.',
+      proposalCta: '서면 주문 제안 요청',
+      payCta: '주문 접수하기',
+      taxTreat: {
+        vat_charged: '부가세 10% 포함해 청구하고 전자세금계산서를 발행합니다.',
+        reverse: '대리납부(리버스 차지) 대상입니다. 저희가 세금을 붙이지 않고 귀사가 자국에 신고하십니다.',
+        none: '저희는 대한민국 법인이고 귀사 국가에 세무 등록이 없어 세금을 걷지 않습니다.',
+        review: '세금 별도 · 구매 법인 검증 후 서면 주문서에서 확정합니다.'
+      },
       noPrice: '요금표를 불러오지 못했습니다. 금액을 확인하실 수 없는 상태로 주문을 받지 않겠습니다. 새로고침해 보시고, 계속 이러면 hello@saleringo.com 으로 알려 주십시오.'
     },
     en: {
@@ -84,7 +92,15 @@
       sending: 'Sending…',
       failNet: 'That did not go through. Try again in a moment, or send it to hello@saleringo.com.',
       failDest: 'Online orders are not being taken right now. Send it to hello@saleringo.com and a person will pick it up.',
-      offline: 'Online ordering is not open at the moment. Rather than filling this in, write to hello@saleringo.com and a person will pick it up.',
+      offline: 'Online ordering is not open at the moment. Leave what you have entered and press “Request a written order”, and a person will prepare the same order in writing.',
+      proposalCta: 'Request a written order',
+      payCta: 'Place the order',
+      taxTreat: {
+        vat_charged: 'Korean VAT 10% is added and a Korean tax invoice is issued.',
+        reverse: 'This is a reverse-charge sale. We add no tax and you account for it at home.',
+        none: 'We are a Korean company with no tax registration in your country, so we add no tax.',
+        review: 'Tax excluded · confirmed in the written order after we verify the buying entity.'
+      },
       noPrice: 'The price list did not load. We will not take an order while you cannot see the amount. Try reloading; if it keeps happening, tell us at hello@saleringo.com.'
     }
   }[LANG];
@@ -112,26 +128,84 @@
   function isConsent(el) {
     return el.type === 'checkbox' && /^agree/.test(el.name || '');
   }
+  /* 초안은 오래 두지 않습니다. 회사명·사업자등록번호·담당자 이름·이메일·
+     연락처가 기한 없이 브라우저에 남아 있으면, 공용 컴퓨터나 남의 자리에서
+     한 번 열어 본 사람의 정보가 다음 사람에게 그대로 보입니다.
+     탭을 닫으면 sessionStorage 는 지워지지만, 탭을 켜 둔 채로 자리를
+     비우는 일이 훨씬 흔합니다. */
+  var DRAFT_TTL = 2 * 60 * 60 * 1000;   /* 두 시간 */
+
   function snapshot() {
     var o = {};
     $$('input,select,textarea').forEach(function (el) {
       if (!el.name || el.name === 'company_website_hp') return;
       if (isConsent(el)) return;
-      o[el.name] = (el.type === 'checkbox' || el.type === 'radio')
-        ? (el.checked ? el.value || true : undefined) : el.value;
-      if (o[el.name] === undefined) delete o[el.name];
+      /* 페이지의 언어는 그 페이지가 정합니다. 저장했다가 되살리면,
+         영어 주문서를 쓰다 한국어로 바꾼 사람의 제출 언어가 en 으로
+         남습니다. 화면은 한국어인데 접수 언어는 영어인 상태입니다. */
+      if (el.name === 'lang') return;
+
+      if (el.type === 'radio') {
+        /* 라디오는 이름 하나에 여러 칸입니다. 선택된 것만 적어야 합니다.
+           예전에는 미선택 칸이 돌아올 때마다 값을 지웠기 때문에,
+           목록의 마지막에 있는 것을 고르지 않으면 선택이 저장되지
+           않았습니다. 그래서 언어를 바꾸면 요금제가 기본값으로 돌아갔습니다. */
+        if (el.checked) o[el.name] = el.value;
+        return;
+      }
+      if (el.type === 'checkbox') {
+        if (el.checked) o[el.name] = el.value || true;
+        return;
+      }
+      if (el.value !== '') o[el.name] = el.value;
     });
-    try { sessionStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {}
+    try {
+      sessionStorage.setItem(KEY, JSON.stringify({
+        savedAt: Date.now(),
+        /* 멱등성 열쇠도 함께 둡니다. 예전에는 자바스크립트 변수에만
+           있었으므로 새로고침하면 새 열쇠가 생겼고, 응답이 끊긴 주문을
+           다시 누르면 같은 주문이 두 건이 됐습니다. */
+        idem: form._idem || null,
+        fields: o
+      }));
+    } catch (e) {}
   }
+
   function restore() {
-    var o;
-    try { o = JSON.parse(sessionStorage.getItem(KEY) || '{}'); } catch (e) { return; }
+    var raw;
+    try { raw = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) { return; }
+    if (!raw) return;
+
+    /* 옛 형식(칸만 담긴 것)은 만료를 알 수 없으므로 버립니다. */
+    if (!raw.fields || !raw.savedAt) {
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+      return;
+    }
+    if (Date.now() - raw.savedAt > DRAFT_TTL) {
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+      return;
+    }
+
+    if (raw.idem) form._idem = raw.idem;
+
+    var o = raw.fields;
     $$('input,select,textarea').forEach(function (el) {
       if (!el.name || !(el.name in o) || isConsent(el)) return;
+      if (el.name === 'lang') return;
       if (el.type === 'checkbox') el.checked = true;
       else if (el.type === 'radio') { if (el.value === o[el.name]) el.checked = true; }
       else el.value = o[el.name];
     });
+  }
+
+  /* 같은 주문서에는 같은 열쇠. 응답이 끊겨 다시 눌러도 주문은 하나입니다.
+     열쇠는 만들자마자 저장하므로 새로고침을 견딥니다. */
+  function idemKey() {
+    if (!form._idem) {
+      form._idem = 'ck' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+      snapshot();
+    }
+    return form._idem;
   }
 
   /* ── 입력을 치는 대로 다듬는다 ─────────────────────────────────────── */
@@ -412,6 +486,14 @@
       });
     }
 
+    /* 청구 국가와 실제 사용 국가가 다를 수 있습니다. 한국 밖에서만
+       물어봅니다 — 한국 안에서는 거의 언제나 같습니다. */
+    var svc = document.querySelector('[data-service-row]');
+    if (svc) svc.hidden = !(c && c.code !== 'KR');
+
+    /* 나라·요금제·구매 주체가 바뀌면 서버 판정도 바뀝니다. */
+    askServerSoon();
+
     var row = document.querySelector('[data-voice-row]');
     if (row) row.hidden = !(plan && plan.voice);
     var talk = document.querySelector('[data-talk-row]');
@@ -510,8 +592,13 @@
                   : 'A copy is in your inbox. If it is not there within a minute, look in spam. ')
             : '') +
           (KO ? '주문번호 <b>' + no + '</b> 를 말씀하시면 바로 찾을 수 있습니다. ' +
+                '이 화면을 닫으셔도 <a class="lnk" href="./order-status.html?no=' + no + '">주문 조회</a>' +
+                '에서 주문번호와 이메일로 다시 여실 수 있습니다. ' +
                 '취소하시려면 hello@saleringo.com 으로 주문번호와 함께 “취소”라고만 보내 주시면 됩니다.'
               : 'Quote <b>' + no + '</b> and we find you at once. ' +
+                'You can close this and reopen it any time at ' +
+                '<a class="lnk" href="./order-status.html?no=' + no + '">order status</a>' +
+                ' with the number and your email. ' +
                 'To cancel, email hello@saleringo.com with the number and the word cancel.') +
         '</p>' +
       '</div>';
@@ -571,6 +658,86 @@
     return m ? m[1] : '';
   }
 
+  /* ── 이 거래를 화면에서 끝낼 수 있는가 ────────────────────────────── */
+  /*
+     예전에는 화면이 혼자 판단했습니다. 그래서 프랑스 구매자에게
+     "AI 전화가 아직 지원되지 않습니다" 라고 안내하면서도 그 전화가 든
+     Scale $599 를 그대로 주문할 수 있었고, VAT 번호가 없어도 리버스
+     차지라고 적었으며, 독일 개인에게도 세금 0 으로 팔았습니다.
+
+     이제 판정은 서버가 합니다. 화면은 무엇을 골랐는지만 보내고,
+     돌아온 답 그대로 씁니다. 판단이 두 곳에 있으면 언젠가 갈라집니다.
+  */
+  var VERDICT = null;
+  var verdictTimer = null;
+
+  function askServer() {
+    var sel = selection();
+    if (!sel.country || !sel.plan) return;
+    var bt = ($('[name="buyerType"]') || {}).value || '';
+    var biz = ($('[name="bizNo"]') || {}).value || '';
+
+    fetch('/api/quote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        country: sel.country, plan: sel.plan, method: sel.method,
+        buyerType: bt, bizNo: biz,
+        voiceMinutes: sel.voiceMinutes, alimtalk: sel.alimtalk
+      })
+    }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (!j || j.error) return;
+        VERDICT = j;
+        paintVerdict();
+      }).catch(function () {});
+  }
+
+  /* 고르는 중에 매번 묻지 않습니다. 손을 멈추면 그때 한 번 묻습니다. */
+  function askServerSoon() {
+    clearTimeout(verdictTimer);
+    verdictTimer = setTimeout(askServer, 350);
+  }
+
+  function paintVerdict() {
+    var box = document.querySelector('[data-commerce-verdict]');
+    var com = VERDICT && VERDICT.commerce;
+    if (!box || !com) return;
+
+    var lines = [];
+    var treat = com.taxTreatment;
+    lines.push('<b>' + (T.taxTreat[treat] || T.taxTreat.review) + '</b>');
+
+    var bl = com.blockers || [];
+    if (bl.length) {
+      bl.forEach(function (b) {
+        lines.push('<span class="cotax-block">' + (KO ? b.ko : b.en) + '</span>');
+      });
+    }
+    box.innerHTML = lines.join('');
+    box.hidden = false;
+
+    /* 화면에서 확정할 수 없는 거래면, 버튼이 무엇을 하는지 그대로 씁니다.
+       "주문 접수하기" 를 눌렀는데 서면 검토로 넘어가면 속은 기분이 듭니다. */
+    var btn = $('[data-submit]');
+    if (btn && !btn.getAttribute('data-proposal')) {
+      var proposal = !com.orderable;
+      var label = proposal ? T.proposalCta : (btn._orig || btn.textContent);
+      if (!btn._orig) btn._orig = btn.innerHTML;
+      if (proposal) {
+        btn.innerHTML = label;
+        btn.setAttribute('data-route', 'proposal');
+      } else {
+        btn.innerHTML = btn._orig;
+        btn.removeAttribute('data-route');
+      }
+    }
+    var barTotal = document.querySelector('[data-paybar-cta]');
+    if (barTotal) {
+      barTotal.textContent = com.orderable ? T.payCta : T.proposalCta;
+    }
+  }
+
   /* ── 시작 ──────────────────────────────────────────────────────────── */
   var PRICING_URL = '/assets/data/pricing.json' +
     (assetVer() ? '?v=' + encodeURIComponent(assetVer()) : '');
@@ -614,7 +781,16 @@
      알자마자 위에 띄우고, 버튼도 그렇게 바꿉니다. */
   fetch('/api/order').then(function (r) { return r.json(); }).then(function (j) {
     READY = j;
-    if (!j || j.ready) return;
+    if (j && j.ready) return;
+    offlineMode();
+  }).catch(function () { offlineMode(); });
+
+  /* 접수를 받을 수 없으면 주문 버튼을 **없앱니다**.
+     예전에는 "온라인 주문이 열려 있지 않습니다" 라고 적어 두고 바로 아래에
+     살아 있는 「주문 접수하기」 버튼을 함께 보여 줬습니다. 그 버튼은
+     반드시 실패하는 요청을 보냈고, 구매자는 자기가 뭘 잘못했는지 몰랐습니다.
+     한 화면이 서로 반대되는 두 가지를 말하면, 사람은 버튼을 믿습니다. */
+  function offlineMode() {
     var slot = $('[data-order-error]');
     if (slot) {
       slot.setAttribute('role', 'status');
@@ -622,9 +798,25 @@
       slot.hidden = false;
       form.insertBefore(slot, form.firstChild);
     }
-    var b = $('[data-submit]');
-    if (b) b.setAttribute('data-fallback', '1');
-  }).catch(function () {});
+
+    var btn = $('[data-submit]');
+    if (btn && btn.parentNode) {
+      var a = document.createElement('a');
+      a.className = btn.className;
+      a.setAttribute('data-proposal', '1');
+      a.href = KO ? '../ko/index.html#early-access' : '../en/index.html#early-access';
+      a.textContent = T.proposalCta;
+      btn.parentNode.replaceChild(a, btn);
+    }
+
+    /* 결제 바의 버튼도 같은 것으로 바꿉니다. 화면 아래에 고정된 버튼만
+       살아 있으면 위에서 없앤 의미가 없습니다. */
+    var barBtn = document.querySelector('.paybar [data-submit], .paybar button[type="submit"]');
+    if (barBtn && barBtn.parentNode) barBtn.parentNode.removeChild(barBtn);
+
+    /* 엔터로 제출되는 길도 막습니다. */
+    form.setAttribute('data-offline', '1');
+  }
 
   form.addEventListener('input', function (e) {
     var el = e.target;
@@ -638,6 +830,9 @@
       var pc = countryOf(selection().country);
       if (pc && pc.code === 'KR') el.value = fmtPhone(el.value);
     }
+    /* 세금 처리는 구매 주체와 세금번호로 갈립니다. 둘 중 하나가 바뀌면
+       서버에 다시 물어봐야 화면이 사실을 말합니다. */
+    if (el.name === 'buyerType' || el.name === 'bizNo') askServerSoon();
     if (el.closest('.fld') && el.closest('.fld').classList.contains('has-err')) checkField(el);
     syncCountry(); paint(); gate(); snapshot();
   });
@@ -658,6 +853,8 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    /* 접수를 받을 수 없는 상태면 아예 보내지 않습니다. */
+    if (form.getAttribute('data-offline') === '1') return;
     var btn = $('[data-submit]');
     /* 지난 시도의 실패 배너를 먼저 지웁니다. 남겨 두면 이번 시도의
        칸 오류와 나란히 서서 서로 다른 말을 합니다. */
@@ -689,8 +886,7 @@
       plan: sel.plan, method: sel.method, country: sel.country,
       voiceMinutes: sel.voiceMinutes, alimtalk: sel.alimtalk,
       lang: LANG,
-      idempotencyKey: (form._idem = form._idem ||
-        (Date.now().toString(36) + Math.random().toString(36).slice(2, 10)))
+      idempotencyKey: idemKey()
     };
     $$('input,select,textarea').forEach(function (el) {
       if (!el.name || el.disabled) return;

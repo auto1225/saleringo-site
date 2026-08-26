@@ -1,176 +1,196 @@
-/* ── the lead form's other half ───────────────────────────────────────────
-   Everything in front of this file was already right: the form validates, the
-   client only claims a send it observed, and it degrades to a mail composer
-   when the network fails. What was missing was somewhere for a lead to land.
-   SR_CONFIG.formEndpoint was '', so every completed form ended in the
-   visitor's own mail app with the send button still unpressed.
+/* 도입 문의 접수.
+ *
+ * 예전에는 받는 곳(웹훅·슬랙·메일)이 하나도 없으면 ready:false 를
+ * 돌려주고, 화면은 그걸 보고 메일 작성 창을 대신 열었습니다. 그래서
+ * 문의는 어디에도 남지 않았고, 사장님은 누가 왔다 갔는지 알 수 없었습니다.
+ *
+ * 이제 문의는 먼저 데이터베이스에 남습니다. 알림은 그 뒤에 붙는 것이고,
+ * 실패해도 문의는 살아 있습니다.
+ */
+import { rpc, ipHash, dbConfigured } from './_db.js';
 
-   This is the sink. It takes the POST, gives the lead a reference the visitor
-   can quote, writes it to whichever destination the owner has configured, and
-   only then reports success. If nothing is configured it says so plainly with
-   a 503 and the client falls back to the composer — the same behaviour as
-   before, never a silent loss.
-
-   Configure ONE of these in the Vercel project's environment variables:
-
-     LEAD_WEBHOOK_URL   any endpoint that accepts JSON — Zapier, Make, a Google
-                        Apps Script bound to a Sheet, an n8n hook, your own API
-     SLACK_WEBHOOK_URL  an incoming webhook; the lead arrives as a message
-     RESEND_API_KEY     + LEAD_TO_EMAIL and LEAD_FROM_EMAIL — mails the team and
-                        sends the applicant a confirmation with the reference
-
-   Set several and every one of them gets the lead; the response reports which
-   ones actually accepted it. Saving an environment variable in Vercel is
-   enough — the site itself does not change.                                */
-
-const FIELD_LIMIT = 4000;
-const RATE = new Map();               /* per-instance; a speed bump, not a wall */
-
-function ref() {
-  const d = new Date();
-  const day = d.toISOString().slice(0, 10).replace(/-/g, '');
-  let tail = '';
-  for (let i = 0; i < 4; i++) tail += '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'[Math.floor(Math.random() * 32)];
-  return 'SR-' + day + '-' + tail;
-}
-
-/* strip control characters so a header or a log line cannot be forged */
 const CTRL = new RegExp('[\\u0000-\\u001f\\u007f]', 'g');
-function clean(v) {
-  return String(v == null ? '' : v).replace(CTRL, ' ').slice(0, FIELD_LIMIT).trim();
+const FIELD_LIMIT = 4000;
+
+function clean(v, limit) {
+  return String(v == null ? '' : v)
+    .replace(CTRL, ' ')
+    .trim()
+    .slice(0, limit || FIELD_LIMIT);
 }
 
-function configured() {
+function notifiers() {
+  const to = process.env.LEAD_TO_EMAIL;
   return {
     webhook: !!process.env.LEAD_WEBHOOK_URL,
-    slack:   !!process.env.SLACK_WEBHOOK_URL,
-    email:   !!(process.env.RESEND_API_KEY && process.env.LEAD_TO_EMAIL && process.env.LEAD_FROM_EMAIL)
+    slack: !!process.env.SLACK_WEBHOOK_URL,
+    email: !!(process.env.RESEND_API_KEY && to && process.env.LEAD_FROM_EMAIL),
+    to: to,
   };
-}
-
-function limited(ip) {
-  const now = Date.now();
-  const hits = (RATE.get(ip) || []).filter(t => now - t < 60000);
-  hits.push(now);
-  RATE.set(ip, hits);
-  if (RATE.size > 500) RATE.clear();
-  return hits.length > 6;
 }
 
 async function post(url, body, headers) {
   const r = await fetch(url, {
     method: 'POST',
     headers: Object.assign({ 'Content-Type': 'application/json' }, headers || {}),
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   });
   if (!r.ok) throw new Error('HTTP ' + r.status);
   return true;
 }
 
-function lines(lead) {
-  return Object.keys(lead)
-    .filter(k => k !== 'context' && lead[k] !== '' && lead[k] != null)
-    .map(k => k.replace(/_/g, ' ') + ': ' + lead[k]);
+async function sendEmail(to, subject, text, replyTo) {
+  return post(
+    'https://api.resend.com/emails',
+    {
+      from: process.env.LEAD_FROM_EMAIL,
+      to: [to],
+      subject: subject,
+      text: text,
+      reply_to: replyTo || undefined,
+    },
+    { Authorization: 'Bearer ' + process.env.RESEND_API_KEY },
+  );
 }
 
-async function sendEmail(to, subject, text, replyTo) {
-  return post('https://api.resend.com/emails', {
-    from: process.env.LEAD_FROM_EMAIL,
-    to: [to],
-    subject: subject,
-    text: text,
-    reply_to: replyTo || undefined
-  }, { Authorization: 'Bearer ' + process.env.RESEND_API_KEY });
+const BR = String.fromCharCode(10);
+
+function lines(lead, ref) {
+  return [
+    '참조번호: ' + ref,
+    '이름: ' + (lead.name || '-'),
+    '이메일: ' + lead.email,
+    '연락처: ' + (lead.phone || '-'),
+    '회사: ' + (lead.company || '-'),
+    '업종: ' + (lead.industry || '-'),
+    '',
+    lead.message || '(남기신 말씀 없음)',
+    '',
+    '들어온 페이지: ' + (lead.pageUrl || '-'),
+  ].join(BR);
 }
 
 export default async function handler(req, res) {
-  const cfg = configured();
-  const ready = cfg.webhook || cfg.slack || cfg.email;
+  const cfg = notifiers();
 
-  /* The client asks before it promises anything: with no sink configured the
-     form keeps telling the visitor that they are the one who presses send. */
   if (req.method === 'GET') {
     res.setHeader('Cache-Control', 'no-store');
-    return res.status(200).json({ ready: ready, confirmation: cfg.email });
+    return res.status(200).json({
+      /* 문의가 남을 수 있는가. 알림 설정과는 별개입니다. */
+      ready: dbConfigured(),
+      reason: dbConfigured() ? null : 'db_unconfigured',
+      confirmation: cfg.email,
+      notify: cfg.webhook || cfg.slack || cfg.email,
+    });
   }
 
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'GET, POST');
     return res.status(405).json({ error: 'method_not_allowed' });
   }
-
-  /* Never pretend. The client turns this into the mail-composer route. */
-  if (!ready) return res.status(503).json({ error: 'no_destination_configured' });
-
-  const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
-  if (limited(ip)) return res.status(429).json({ error: 'too_many' });
+  if (!dbConfigured()) return res.status(503).json({ error: 'db_unconfigured' });
 
   let body = req.body;
-  if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = null; } }
+  if (typeof body === 'string') {
+    try {
+      body = JSON.parse(body);
+    } catch (e) {
+      body = null;
+    }
+  }
   if (!body || typeof body !== 'object') return res.status(400).json({ error: 'bad_request' });
 
-  /* a field no human ever fills in */
-  if (clean(body.company_website_hp)) return res.status(200).json({ ok: true, reference: ref() });
+  const lead = {
+    lang: clean(body.lang, 8) === 'en' ? 'en' : 'ko',
+    source: clean(body.source, 60) || 'lead-form',
+    name: clean(body.name, 200),
+    email: clean(body.email, 200),
+    phone: clean(body.phone, 60),
+    company: clean(body.company, 200),
+    industry: clean(body.industry, 120),
+    message: clean(body.message, 4000),
+    pageUrl: clean(body.pageUrl, 500),
+    referrer: clean(req.headers.referer, 500),
+    dedupeKey: clean(body.dedupeKey, 120),
+    userAgent: clean(req.headers['user-agent'], 400),
+    ipHash: await ipHash(req),
+    company_website_hp: clean(body.company_website_hp, 200),
+    utm: body.utm && typeof body.utm === 'object' ? body.utm : null,
+    consent: {
+      privacy: body.agreePrivacy === true ? 'true' : 'false',
+      marketing: body.agreeMarketing === true ? 'true' : 'false',
+    },
+  };
 
-  const email = clean(body.email);
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)) return res.status(400).json({ error: 'email_invalid' });
+  const r = await rpc('sales_submit_lead', { p: lead });
 
-  const lead = {};
-  Object.keys(body).forEach(function (k) {
-    if (k === 'company_website_hp') return;
-    if (!/^[a-zA-Z0-9_]{1,40}$/.test(k)) return;
-    const v = clean(body[k]);
-    if (v) lead[k] = v;
-  });
-
-  const reference = ref();
-  const received = new Date().toISOString();
-  const record = Object.assign({ reference: reference, received: received, ip: ip }, lead);
-  const bodyText = 'Reference: ' + reference + '\nReceived: ' + received + '\n\n' + lines(record).join('\n');
-
-  const done = [], failed = [], tries = [];
-
-  if (cfg.webhook) tries.push(['webhook', function () { return post(process.env.LEAD_WEBHOOK_URL, record); }]);
-  if (cfg.slack) tries.push(['slack', function () {
-    return post(process.env.SLACK_WEBHOOK_URL, {
-      text: '*New Saleringo lead* ' + reference + '\n```' + lines(record).join('\n') + '```'
-    });
-  }]);
-  if (cfg.email) tries.push(['email', function () {
-    return sendEmail(process.env.LEAD_TO_EMAIL,
-      'Lead ' + reference + ' — ' + (lead.business || email), bodyText, email);
-  }]);
-
-  for (const pair of tries) {
-    try { await pair[1](); done.push(pair[0]); }
-    catch (err) { failed.push(pair[0] + ': ' + err.message); }
+  if (!r || r.ok !== true) {
+    const code = r && r.error;
+    if (code === 'rate_limited' || code === 'busy') return res.status(429).json({ error: 'too_many' });
+    if (code === 'invalid') return res.status(400).json({ error: 'invalid', fields: r.fields || [] });
+    if (code && code.startsWith('db_')) {
+      console.error('lead db failure: ' + code + ' ' + (r.detail || ''));
+      return res.status(502).json({ error: 'store_failed' });
+    }
+    return res.status(400).json({ error: code || 'invalid' });
   }
+  if (r.ignored) return res.status(200).json({ ok: true, ref: r.ref });
 
-  if (!done.length) {
-    console.error('lead ' + reference + ' delivered nowhere: ' + failed.join(' | '));
-    return res.status(502).json({ error: 'delivery_failed' });
+  const text = lines(lead, r.ref);
+  const done = [];
+  const failed = [];
+  const tries = [];
+  if (cfg.webhook) tries.push(['webhook', () => post(process.env.LEAD_WEBHOOK_URL, { lead, ref: r.ref })]);
+  if (cfg.slack) {
+    tries.push([
+      'slack',
+      () => post(process.env.SLACK_WEBHOOK_URL, { text: '*새 문의* ' + r.ref + BR + '```' + text + '```' }),
+    ]);
   }
-  if (failed.length) console.warn('lead ' + reference + ' partial: ' + failed.join(' | '));
-
-  /* the applicant's copy — sent only once the lead is safely somewhere */
-  let confirmed = false;
   if (cfg.email) {
+    tries.push([
+      'email',
+      () => sendEmail(cfg.to, '문의 ' + r.ref + ' — ' + (lead.company || lead.name || lead.email), text, lead.email),
+    ]);
+  }
+  for (const t of tries) {
     try {
-      await sendEmail(email,
-        'We have your request — ' + reference,
-        'Thank you — your request is with us.\n\n' +
-        'Your reference is ' + reference + '. Quote it in any reply and we can find you straight away.\n\n' +
-        'A person reads every one of these. You will hear back within one business day with a setup\n' +
-        'plan for your trade — not a newsletter, and not an automated sequence.\n\n' +
-        'This is what you sent us:\n\n' + lines(lead).join('\n') + '\n\n' +
-        'If any of it is wrong, reply to this email and we will correct it.\n\n' +
-        'Saleringo\nhttps://claude.saleringo.com\n',
-        process.env.LEAD_TO_EMAIL);
+      await t[1]();
+      done.push(t[0]);
+    } catch (err) {
+      failed.push(t[0] + ': ' + err.message);
+    }
+  }
+  if (failed.length) console.warn('lead ' + r.ref + ' partial notify: ' + failed.join(' | '));
+
+  let confirmed = false;
+  if (cfg.email && !r.duplicate) {
+    const ko = lead.lang !== 'en';
+    try {
+      await sendEmail(
+        lead.email,
+        (ko ? '문의가 접수되었습니다 — ' : 'We have your message — ') + r.ref,
+        (ko
+          ? '문의해 주셔서 감사합니다.' + BR + BR +
+            '아래 내용으로 접수되었습니다. 영업일 하루 안에 담당자가 연락드립니다.' + BR + BR
+          : 'Thank you for getting in touch.' + BR + BR +
+            'We have it as below. A person will reply within one business day.' + BR + BR) +
+          text + BR + BR +
+          'Saleringo' + BR + 'https://claude.saleringo.com' + BR,
+        cfg.to,
+      );
       confirmed = true;
     } catch (err) {
-      console.error('confirmation to ' + email + ' failed: ' + err.message);
+      console.error('lead confirmation to ' + lead.email + ' failed: ' + err.message);
     }
   }
 
-  return res.status(200).json({ ok: true, reference: reference, confirmation: confirmed });
+  return res.status(200).json({
+    ok: true,
+    ref: r.ref,
+    duplicate: !!r.duplicate,
+    stored: true,
+    notified: done.length > 0,
+    confirmation: confirmed,
+  });
 }

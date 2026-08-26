@@ -1,0 +1,166 @@
+{
+  "_comment": "계약·취소·환불·갱신·보관·관할을 담은 유일한 출처입니다. 한국어 페이지와 영문 페이지가 모두 이 파일에서 문장을 받아 갑니다. 두 언어에 따로 적어 두면 언젠가 한쪽만 고치게 되고, 그때 같은 회사가 같은 달에 서로 다른 계약을 말하게 됩니다. 실제로 그렇게 되어 있었습니다 — 한국어 약관은 '전속관할 조항을 두지 않습니다' 라고 했고 영문 약관은 '서울 법원에서 다룬다' 고 했습니다.",
+  "_howToChange": "여기만 고치고 build/build.py 를 다시 돌리십시오. 페이지에 직접 적으면 build/policycheck.py 가 걸러 냅니다.",
+
+  "version": "1.0.0",
+  "effective": "2026-08-27",
+
+  "contractFormation": {
+    "_why": "감사에서 '주문 접수·회사 승인·결제 중 언제 계약이 성립하는지 불명확' 이라는 지적이 나왔습니다. 세 시점이 페이지마다 다르게 읽혔습니다. 여기서 한 번만 정합니다.",
+    "steps": [
+      {
+        "id": "received",
+        "ko": { "title": "주문 접수", "body": "주문서를 보내시면 접수됩니다. 이 단계는 청약이며, 계약이 성립한 것도 결제가 이루어진 것도 아닙니다. 어떤 금액도 청구되지 않습니다." },
+        "en": { "title": "Order received", "body": "Sending the order form records your request. This is an offer — not a contract, and not a payment. Nothing is charged." }
+      },
+      {
+        "id": "under_review",
+        "ko": { "title": "주문 검토", "body": "구매 주체, 청구 국가, 세금 처리, 국가·채널 지원 여부를 확인합니다. 확인 결과에 따라 금액이나 구성이 달라질 수 있으며, 달라지면 먼저 알려 드립니다." },
+        "en": { "title": "Order review", "body": "We confirm the buying entity, billing country, tax treatment, and country and channel eligibility. If that changes the price or the scope, we tell you before anything else happens." }
+      },
+      {
+        "id": "contract_sent",
+        "ko": { "title": "서면 주문서 발송", "body": "계약 주체, 청구 통화, 세금 처리, 결제 일정, 최종 금액, 설정 범위, 계약 기간, 데이터 조건이 적힌 서면 주문서를 보내 드립니다." },
+        "en": { "title": "Written order sent", "body": "You receive a written order stating the seller, billing currency, tax treatment, payment schedule, final total, setup scope, term, and data terms." }
+      },
+      {
+        "id": "contract_signed",
+        "ko": { "title": "계약 성립", "body": "양측이 서면 주문서에 서명한 때에 계약이 성립합니다. 그 전까지는 언제든 아무 대가 없이 그만두실 수 있습니다." },
+        "en": { "title": "Contract formed", "body": "The contract is formed when both sides sign the written order. Until then you can stop at any point at no cost." }
+      },
+      {
+        "id": "payment",
+        "ko": { "title": "결제", "body": "서면 주문서에 적힌 일정에 따라 첫 청구가 발행됩니다. 첫 달은 개시일 기준으로 날짜를 나눠 계산합니다." },
+        "en": { "title": "Payment", "body": "The first invoice follows the schedule in the written order. The first month is prorated by days from the start date." }
+      },
+      {
+        "id": "active",
+        "ko": { "title": "서비스 개시", "body": "응대 설정이 끝나고 확인하신 뒤 서비스가 시작됩니다. 개시일은 서면 주문서에 적힙니다." },
+        "en": { "title": "Service starts", "body": "Service begins after your answering setup is built and you have reviewed it. The start date is stated in the written order." }
+      }
+    ],
+    "summary": {
+      "ko": "계약은 <b>서면 주문서에 양측이 서명한 때</b> 성립합니다. 주문서를 보내신 것만으로는 계약이 성립하지 않으며, 그 단계에서는 어떤 금액도 청구되지 않습니다.",
+      "en": "The contract is formed <b>when both sides sign the written order</b>. Sending the order form does not create a contract, and nothing is charged at that point."
+    }
+  },
+
+  "cancellation": {
+    "beforeStart": {
+      "ko": "서비스 개시 전에는 언제든 취소하실 수 있고, 청구되는 금액이 없습니다.",
+      "en": "Before service starts you can cancel at any time and nothing is charged."
+    },
+    "afterStart": {
+      "ko": "개시 후에도 언제든 해지하실 수 있으며 위약금이 없습니다. hello@saleringo.com 으로 알려 주시면 됩니다.",
+      "en": "After it starts you can cancel any day with no penalty. Email hello@saleringo.com."
+    },
+    "noticeDays": 0
+  },
+
+  "refund": {
+    "_why": "영문 요금 페이지는 '일부 기간은 환불하지 않는다', 영문 약관과 주문서는 '남은 기간을 일할 환불한다' 고 적혀 있었습니다. 어느 쪽이 계약인지는 구매자가 어느 페이지를 봤느냐로 갈렸습니다. 둘 중 하나를 지우면 이미 그 페이지를 읽은 사람에게서 약속을 빼앗는 것이므로, 양쪽을 다 지키는 쪽으로 통일했습니다.",
+    "firstPaymentDays": 14,
+    "prorateAfter": true,
+    "usageRefundable": false,
+    "summary": {
+      "ko": "<b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. 그 뒤에 해지하시면 월 정액 요금 가운데 <b>해지 신청일부터 그 달 남은 날수만큼 날짜로 계산해 환불</b>합니다. 이미 사용하신 통화료·메시지 요금은 게시된 단가로 차감하며 환불 대상이 아닙니다.",
+      "en": "<b>Full refund within 14 days of your first payment.</b> After that, cancelling refunds <b>the unused part of the month, counted by date</b>. Usage you have already run — talk minutes, message volume — is charged at the listed rates and is not refunded."
+    },
+    "companyFault": {
+      "ko": "회사의 귀책으로 서비스를 이용하지 못한 시간에 대해서는 해당 기간의 요금을 환불하거나 다음 달 요금에서 차감합니다.",
+      "en": "For downtime we are responsible for, we refund that period or credit it against the next month."
+    }
+  },
+
+  "renewal": {
+    "_why": "'매월 자동결제' 와 'Nothing renews' 가 같은 구매 흐름 안에 함께 있었습니다. 둘 다 사실이지만 조건이 다릅니다 — 해지 전에는 갱신되고, 해지 후에는 갱신되지 않습니다. 그 조건을 문장에 넣습니다.",
+    "autoRenews": true,
+    "summary": {
+      "ko": "카드 정기결제를 고르시면 <b>해지하시기 전까지</b> 매월 같은 날 자동으로 결제됩니다. <b>해지하신 뒤에는 갱신되지 않으며</b>, 이미 결제하신 기간까지는 그대로 이용하실 수 있습니다. 계좌이체를 고르시면 매월 세금계산서를 먼저 보내 드리고 받으신 뒤에 이체하시므로, 자동으로 빠져나가는 금액이 없습니다.",
+      "en": "With card billing you are charged on the same day each month <b>until you cancel</b>. <b>Nothing renews after you cancel</b>, and you keep the service through the period you already paid for. With bank transfer we invoice you first and you pay on receipt, so nothing is taken automatically."
+    },
+    "priceChangeNoticeDays": 30
+  },
+
+  "retention": {
+    "_why": "한국어와 영문의 보관기간이 서로 달랐습니다. 법정 보존 의무가 있는 것과 우리가 정하는 것을 나눠 적습니다.",
+    "items": [
+      {
+        "id": "order",
+        "days": 1825,
+        "ko": { "label": "주문·계약·동의 기록", "basis": "전자상거래법상 계약·청약철회 기록 5년", "period": "계약 종료 후 5년" },
+        "en": { "label": "Order, contract, and consent records", "basis": "Korean e-commerce law requires 5 years", "period": "5 years after the contract ends" }
+      },
+      {
+        "id": "payment",
+        "days": 1825,
+        "ko": { "label": "대금 결제 기록", "basis": "전자상거래법상 대금결제 기록 5년", "period": "5년" },
+        "en": { "label": "Payment records", "basis": "Korean e-commerce law requires 5 years", "period": "5 years" }
+      },
+      {
+        "id": "complaint",
+        "days": 1095,
+        "ko": { "label": "소비자 불만·분쟁 처리 기록", "basis": "전자상거래법 3년", "period": "3년" },
+        "en": { "label": "Complaint and dispute records", "basis": "Korean e-commerce law requires 3 years", "period": "3 years" }
+      },
+      {
+        "id": "inquiry",
+        "days": 365,
+        "ko": { "label": "도입 문의", "basis": "회사가 정한 기간", "period": "문의일로부터 1년, 또는 삭제 요청 시 즉시" },
+        "en": { "label": "Sales inquiries", "basis": "Our own retention setting", "period": "1 year from the inquiry, or immediately on request" }
+      },
+      {
+        "id": "conversation",
+        "days": 730,
+        "ko": { "label": "사업자의 고객 대화·통화 기록(수탁 처리)", "basis": "사업자가 처리 지시로 정합니다", "period": "사업자가 정한 기간, 미지정 시 24개월" },
+        "en": { "label": "Your customers' conversations and calls (as processor)", "basis": "Set by you as controller", "period": "The period you set; 24 months if you set none" }
+      },
+      {
+        "id": "access",
+        "days": 90,
+        "ko": { "label": "접속 기록(IP·브라우저)", "basis": "부정 이용 방지", "period": "3개월" },
+        "en": { "label": "Access logs (IP, browser)", "basis": "Abuse prevention", "period": "3 months" }
+      }
+    ]
+  },
+
+  "governingLaw": {
+    "_why": "한국어 약관은 '전속관할 조항을 두지 않습니다' 였고 영문 약관은 'heard in the courts of Seoul' 이었습니다. 같은 회사가 언어에 따라 다른 관할을 말했습니다. 구매자에게 불리하지 않은 쪽 — 전속관할 없음 — 으로 통일합니다.",
+    "law": {
+      "ko": "이 약관과 서비스 이용에는 <b>대한민국 법</b>이 적용됩니다. 회사는 대한민국에 등기된 주식회사 어니스트마케팅입니다.",
+      "en": "These terms and the use of the service are governed by <b>Korean law</b>. Saleringo is operated by Honest Marketing Co., Ltd., registered in the Republic of Korea."
+    },
+    "forum": {
+      "ko": "분쟁이 발생한 경우 「민사소송법」이 정하는 관할 법원에 제기합니다. <b>회사는 이용자에게 불리한 전속관할 조항을 두지 않습니다.</b>",
+      "en": "Disputes go to the court with jurisdiction under the Korean Civil Procedure Act. <b>We do not impose an exclusive forum that would disadvantage you.</b>"
+    },
+    "localRights": {
+      "ko": "귀하가 소비자이거나 영국·EEA에 설립된 사업자인 경우, 이 페이지의 어떤 문장도 귀하의 자국 법이 보장하는 권리를 줄이지 않습니다. 현지 법이 이 약관보다 더 많은 것을 보장하면 현지 법이 우선합니다.",
+      "en": "If you are a consumer, or a business established in the UK or the EEA, nothing here reduces the rights your own law gives you. Where local law gives you more than these terms, the local law wins."
+    },
+    "beforeSuing": {
+      "ko": "소송 이전에 먼저 hello@saleringo.com 으로 연락 주시기를 부탁드립니다. 대부분의 문제는 그 편이 빠릅니다.",
+      "en": "Before filing, please write to hello@saleringo.com. Most problems move faster that way."
+    }
+  },
+
+  "taxTreatments": {
+    "_why": "예전에는 한국만 부가세 10%, 나머지 전부 0 이었고, VAT 번호 없이도 리버스 차지로 표시했습니다. 확인할 수 있는 것만 확정하고 나머지는 '검토 중' 으로 남깁니다.",
+    "vat_charged": {
+      "ko": { "label": "부가세 10% 포함 청구", "body": "대한민국 사업자이시므로 게시 금액에 부가가치세 10%가 별도로 붙고, 전자세금계산서를 발행합니다." },
+      "en": { "label": "Korean VAT 10% added", "body": "You are a Korean business, so 10% VAT is added to the listed price and we issue a Korean tax invoice." }
+    },
+    "reverse": {
+      "ko": { "label": "대리납부(리버스 차지)", "body": "저희가 세금을 붙이지 않고 귀사가 자국에 신고·납부하십니다. 알려 주신 VAT 번호가 인보이스에 기재됩니다." },
+      "en": { "label": "Reverse charge", "body": "We add no tax and you account for it in your own country. The VAT number you gave us goes on the invoice." }
+    },
+    "none": {
+      "ko": { "label": "세금 없음", "body": "저희는 대한민국 법인이고 귀사 국가에 세무 등록이 없어 세금을 걷지 않습니다. 현지 규정에 따른 신고 의무는 귀사에 남습니다." },
+      "en": { "label": "No tax added", "body": "We are a Korean company with no tax registration in your country, so we add no tax. Any local filing duty stays with you." }
+    },
+    "review": {
+      "ko": { "label": "세금 별도 · 구매 법인 검증 후 확정", "body": "구매 주체와 청구 국가, 세금번호를 확인한 뒤 서면 주문서에서 세금 처리를 확정합니다. 그 전에는 세전 금액만 표시합니다." },
+      "en": { "label": "Tax excluded · confirmed after we verify the buying entity", "body": "We confirm the tax treatment in the written order after checking the buying entity, billing country, and tax number. Until then only pre-tax amounts are shown." }
+    }
+  }
+}

@@ -140,6 +140,18 @@ window.SR_CONFIG = window.SR_CONFIG || {
     var a = e.target.closest && e.target.closest('a.langsw');
     if (!a) return;
     try { localStorage.setItem('sr-lang', a.getAttribute('hreflang') || ''); } catch (err) {}
+
+    /* 주문서에서 언어를 바꾸면 고른 요금제를 들고 갑니다.
+       예전에는 링크가 맨 주소였으므로, 영어에서 Scale 을 고른 사람이
+       한국어로 바꾸면 기본값인 Grow 로 돌아갔습니다. 고른 것이 조용히
+       바뀌는 것은 금액이 조용히 바뀌는 것과 같습니다. */
+    var plan = document.querySelector('input[name="plan"]:checked');
+    if (!plan) return;
+    try {
+      var u = new URL(a.href, location.href);
+      u.searchParams.set('plan', plan.value);
+      a.href = u.toString();
+    } catch (err) {}
   });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

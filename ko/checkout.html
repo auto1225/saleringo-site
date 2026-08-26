@@ -27,11 +27,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://claude.saleringo.com/ko/index.html"},{"@type":"ListItem","position":2,"name":"주문","item":"https://claude.saleringo.com/ko/checkout.html"}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=41.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=41.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=41.0">
-<link rel="stylesheet" href="../assets/css/examples.css?v=41.0">
-<link rel="stylesheet" href="../assets/css/ko.css?v=41.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=42.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=42.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=42.0">
+<link rel="stylesheet" href="../assets/css/examples.css?v=42.0">
+<link rel="stylesheet" href="../assets/css/ko.css?v=42.0">
 <style>
 
   .hero{display:block;padding:140px 0 40px;}
@@ -159,6 +159,16 @@
   .os-money{margin-top:18px;font-size:var(--fs-body);color:var(--tx2);line-height:1.8;}
   .os-money b{color:#fff;}
   .os-after{margin-top:8px;font-size:var(--fs-sm);color:var(--tx3);line-height:1.7;}
+
+
+  /* 서버가 판정한 세금 처리와, 화면에서 끝낼 수 없는 이유. */
+  .cotax{margin-top:18px;padding:14px 16px;border-radius:10px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);
+    font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .cotax b{display:block;color:#fff;font-weight:600;}
+  .cotax-block{display:block;margin-top:8px;padding-left:14px;position:relative;color:var(--tx2);}
+  .cotax-block::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:6px;
+    border-radius:50%;background:var(--amber, #d8a13a);}
   .os-note{margin-top:16px;font-size:var(--fs-sm);line-height:1.85;color:var(--tx2);}
   .os-note b{color:#fff;}
   .os-steps{margin-top:18px;display:grid;gap:11px;counter-reset:os;}
@@ -190,7 +200,7 @@
   <div class="scrim" aria-hidden="true"></div>
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="주 메뉴">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v41.0">v41.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v42.0">v42.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">작동 방식<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">전체 구성</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">플랫폼 &amp; CRM</a></li><li><a href="./platform.html#inside">응대 한 건이 만들어지는 과정</a></li><li><a href="./platform.html#who-next">누구에게 넘기는가</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">응대하는 채널</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI 전화</a></li><li><a href="./webchat.html">웹사이트 채팅</a></li><li><a href="./whatsapp.html">카카오톡 &amp; 메신저</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">함께 붙는 것</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">연동</a></li><li><a href="./verified-ai.html">답변 검증 방식</a></li><li><a href="./ai-answering-service.html">고르기 전에: AI 응대 세 가지</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">실제로 어떻게 하는지<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">직접 보기</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">대화 한 건 보기</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">통화 기록 읽기</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">업종별 실제 사례</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">직접 써 보고 판단하기</p><ul aria-labelledby="nh-see-2"><li><a href="./verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="./about.html">누가 만드는가</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
@@ -225,10 +235,23 @@
         <div class="coblock">
           <h2><i>1</i>어디에서 쓰시는지</h2>
           <p>나라에 따라 통화와 세금 처리, 그리고 인보이스에 들어갈 번호가 달라집니다. 먼저 고르시면 아래 금액이 그 기준으로 바뀝니다.</p>
-          <div class="fld" style="margin-top:20px;max-width:340px;">
-            <label for="coCountry">사업장이 있는 나라</label>
-            <select id="coCountry" name="country" required autocomplete="country"><option value="KR" selected>대한민국</option><option value="US">미국</option><option value="GB">영국</option><option value="DE">독일</option><option value="FR">프랑스</option><option value="NL">네덜란드</option><option value="ES">스페인</option><option value="IT">이탈리아</option><option value="IE">아일랜드</option><option value="AU">호주</option><option value="NZ">뉴질랜드</option><option value="SG">싱가포르</option><option value="JP">일본</option><option value="CA">캐나다</option><option value="AE">아랍에미리트</option><option value="IN">인도</option><option value="BR">브라질</option><option value="MX">멕시코</option><option value="ZA">남아프리카공화국</option><option value="OTHER">그 밖의 나라</option></select>
+          <div class="two" style="margin-top:20px;">
+            <div class="fld">
+              <label for="coCountry">청구받으실 나라</label>
+              <select id="coCountry" name="country" required autocomplete="country"><option value="KR" selected>대한민국</option><option value="US">미국</option><option value="GB">영국</option><option value="DE">독일</option><option value="FR">프랑스</option><option value="NL">네덜란드</option><option value="ES">스페인</option><option value="IT">이탈리아</option><option value="IE">아일랜드</option><option value="AU">호주</option><option value="NZ">뉴질랜드</option><option value="SG">싱가포르</option><option value="JP">일본</option><option value="CA">캐나다</option><option value="AE">아랍에미리트</option><option value="IN">인도</option><option value="BR">브라질</option><option value="MX">멕시코</option><option value="ZA">남아프리카공화국</option><option value="OTHER">그 밖의 나라</option></select>
+            </div>
+            <div class="fld">
+              <label for="coBuyer">구매 주체</label>
+              <select id="coBuyer" name="buyerType" required><option value="" disabled selected>선택해 주세요</option><option value="business">사업자 (법인·개인사업자)</option><option value="consumer">개인</option><option value="public">공공기관·학교</option></select>
+              <span class="hint">세금 처리가 여기서 갈립니다. 사업자와 개인, 공공기관이 서로 다릅니다.</span>
+            </div>
           </div>
+          <div class="fld" data-service-row hidden>
+            <label for="coServiceCountry">실제로 쓰실 나라 <span class="opt">— 선택</span></label>
+            <select id="coServiceCountry" name="serviceCountry"><option value="">청구 국가와 같습니다</option><option value="KR">대한민국</option><option value="US">미국</option><option value="GB">영국</option><option value="DE">독일</option><option value="FR">프랑스</option><option value="NL">네덜란드</option><option value="ES">스페인</option><option value="IT">이탈리아</option><option value="IE">아일랜드</option><option value="AU">호주</option><option value="NZ">뉴질랜드</option><option value="SG">싱가포르</option><option value="JP">일본</option><option value="CA">캐나다</option><option value="AE">아랍에미리트</option><option value="IN">인도</option><option value="BR">브라질</option><option value="MX">멕시코</option><option value="ZA">남아프리카공화국</option></select>
+            <span class="hint">청구받으실 나라와 다른 경우에만 골라 주세요.</span>
+          </div>
+          <p class="cotax" data-commerce-verdict hidden></p>
         </div>
 
         <div class="coblock">
@@ -263,6 +286,12 @@
               <input id="coBiz" name="bizNo" type="text" required inputmode="numeric"
                      placeholder="000-00-00000" maxlength="12" autocomplete="off">
             </div>
+          </div>
+          <div class="fld">
+            <label for="coAddress">청구 주소</label>
+            <input id="coAddress" name="billingAddress" type="text" required
+                   autocomplete="street-address" placeholder="세금계산서·인보이스에 적힐 주소">
+            <span class="hint">세금계산서와 인보이스에 그대로 들어갑니다.</span>
           </div>
           <div class="two">
             <div class="fld">
@@ -363,7 +392,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v41.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v42.0</span>
         <p>전화 · 채팅 · 메신저를 AI가 대신 받고, 업종별 CRM이 모든 대화를 예약과 견적, 그리고 고객으로 남깁니다.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">이 사이트의 모든 페이지 &mdash; 사이트맵과 둘러보기 <span aria-hidden="true">&rarr;</span></a>
@@ -401,9 +430,9 @@
 <div class="paybar"><span class="lbl">매월 결제 금액</span><span class="amt" data-paybar-total>&mdash;</span></div>
 
 
-<script src="../assets/js/site.js?v=41.0"></script>
-<script src="../assets/js/balance.js?v=41.0" defer></script>
-<script src="../assets/js/wrap.js?v=41.0" defer></script>
-<script src="../assets/js/checkout.js?v=41.0" defer></script>
+<script src="../assets/js/site.js?v=42.0"></script>
+<script src="../assets/js/balance.js?v=42.0" defer></script>
+<script src="../assets/js/wrap.js?v=42.0" defer></script>
+<script src="../assets/js/checkout.js?v=42.0" defer></script>
 </body>
 </html>

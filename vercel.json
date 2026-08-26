@@ -59,6 +59,11 @@
       "permanent": true
     },
     {
+      "source": "/en/order-status",
+      "destination": "/en/order-status.html",
+      "permanent": true
+    },
+    {
       "source": "/en/platform",
       "destination": "/en/platform.html",
       "permanent": true
@@ -406,6 +411,11 @@
     {
       "source": "/ko/integrations",
       "destination": "/ko/integrations.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/order-status",
+      "destination": "/ko/order-status.html",
       "permanent": true
     },
     {
@@ -1046,6 +1056,40 @@
     {
       "source": "/integrations.html",
       "destination": "/en/integrations.html",
+      "permanent": false
+    },
+    {
+      "source": "/order-status",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/order-status.html",
+      "permanent": false
+    },
+    {
+      "source": "/order-status",
+      "destination": "/en/order-status.html",
+      "permanent": false
+    },
+    {
+      "source": "/order-status.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/order-status.html",
+      "permanent": false
+    },
+    {
+      "source": "/order-status.html",
+      "destination": "/en/order-status.html",
       "permanent": false
     },
     {

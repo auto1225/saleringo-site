@@ -179,6 +179,16 @@ CSS = """
   .os-money{margin-top:18px;font-size:var(--fs-body);color:var(--tx2);line-height:1.8;}
   .os-money b{color:#fff;}
   .os-after{margin-top:8px;font-size:var(--fs-sm);color:var(--tx3);line-height:1.7;}
+
+
+  /* 서버가 판정한 세금 처리와, 화면에서 끝낼 수 없는 이유. */
+  .cotax{margin-top:18px;padding:14px 16px;border-radius:10px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);
+    font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .cotax b{display:block;color:#fff;font-weight:600;}
+  .cotax-block{display:block;margin-top:8px;padding-left:14px;position:relative;color:var(--tx2);}
+  .cotax-block::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:6px;
+    border-radius:50%;background:var(--amber, #d8a13a);}
   .os-note{margin-top:16px;font-size:var(--fs-sm);line-height:1.85;color:var(--tx2);}
   .os-note b{color:#fff;}
   .os-steps{margin-top:18px;display:grid;gap:11px;counter-reset:os;}
@@ -235,6 +245,19 @@ def build(lang):
         % (c['code'], ' selected' if c['code'] == ('KR' if ko else 'US') else '', c['name'][lang])
         for c in PR['countries'])
 
+    # 구매 주체가 사업자인지 개인인지 공공기관인지에 따라 세금 처리가
+    # 완전히 달라집니다. 예전에는 묻지 않고 전부 "세금 0" 으로 처리했습니다.
+    buyer_opts = [
+        ('business', t('사업자 (법인·개인사업자)', 'A business (company or sole trader)')),
+        ('consumer', t('개인', 'An individual')),
+        ('public',   t('공공기관·학교', 'A public body or school')),
+    ]
+    buyerTypes = '<option value="" disabled selected>%s</option>' % t('선택해 주세요', 'Choose one')         + ''.join('<option value="%s">%s</option>' % (v, n) for v, n in buyer_opts)
+
+    # 청구 국가와 실제로 서비스를 쓰는 나라가 다를 수 있습니다.
+    serviceCountries = '<option value="">%s</option>' % t('청구 국가와 같습니다', 'Same as billing country')         + ''.join('<option value="%s">%s</option>' % (c['code'], c['name'][lang])
+                  for c in PR['countries'] if c['code'] != 'OTHER')
+
     pickrows = ''.join(
         '<label class="pick"><input type="radio" name="plan" value="%s"%s>'
         '<span class="body"><span class="dot"></span>'
@@ -286,10 +309,23 @@ def build(lang):
         <div class="coblock">
           <h2><i>1</i>{s0}</h2>
           <p>{s0p}</p>
-          <div class="fld" style="margin-top:20px;max-width:340px;">
-            <label for="coCountry">{fCountry}</label>
-            <select id="coCountry" name="country" required autocomplete="country">{countries}</select>
+          <div class="two" style="margin-top:20px;">
+            <div class="fld">
+              <label for="coCountry">{fCountry}</label>
+              <select id="coCountry" name="country" required autocomplete="country">{countries}</select>
+            </div>
+            <div class="fld">
+              <label for="coBuyer">{fBuyer}</label>
+              <select id="coBuyer" name="buyerType" required>{buyerTypes}</select>
+              <span class="hint">{buyerHint}</span>
+            </div>
           </div>
+          <div class="fld" data-service-row hidden>
+            <label for="coServiceCountry">{fServiceCountry} <span class="opt">{optional}</span></label>
+            <select id="coServiceCountry" name="serviceCountry">{serviceCountries}</select>
+            <span class="hint">{serviceHint}</span>
+          </div>
+          <p class="cotax" data-commerce-verdict hidden></p>
         </div>
 
         <div class="coblock">
@@ -324,6 +360,12 @@ def build(lang):
               <input id="coBiz" name="bizNo" type="text" required inputmode="numeric"
                      placeholder="000-00-00000" maxlength="12" autocomplete="off">
             </div>
+          </div>
+          <div class="fld">
+            <label for="coAddress">{fAddress}</label>
+            <input id="coAddress" name="billingAddress" type="text" required
+                   autocomplete="street-address" placeholder="{addressPh}">
+            <span class="hint">{addressHint}</span>
           </div>
           <div class="two">
             <div class="fld">
@@ -442,7 +484,19 @@ def build(lang):
               '먼저 고르시면 아래 금액이 그 기준으로 바뀝니다.',
               'Your country sets the currency, how tax is handled, and which number goes on the '
               'invoice. Pick it first and the figures below follow.'),
-        fCountry=t('사업장이 있는 나라', 'Where your business is'),
+        fCountry=t('청구받으실 나라', 'Where we invoice you'),
+        buyerTypes=buyerTypes,
+        serviceCountries=serviceCountries,
+        fBuyer=t('구매 주체', 'Buying as'),
+        buyerHint=t('세금 처리가 여기서 갈립니다. 사업자와 개인, 공공기관이 서로 다릅니다.',
+                    'This decides the tax treatment. Businesses, individuals, and public bodies differ.'),
+        fServiceCountry=t('실제로 쓰실 나라', 'Where you will actually use it'),
+        serviceHint=t('청구받으실 나라와 다른 경우에만 골라 주세요.',
+                      'Only if it differs from the country we invoice.'),
+        fAddress=t('청구 주소', 'Billing address'),
+        addressPh=t('세금계산서·인보이스에 적힐 주소', 'The address that goes on the invoice'),
+        addressHint=t('세금계산서와 인보이스에 그대로 들어갑니다.',
+                      'This goes on the tax invoice or invoice exactly as written.'),
         s1=t('무엇을 쓰실지', 'What you are taking'),
         s1p=t('나중에 바꾸실 수 있습니다. 요금제는 매달 올리거나 내릴 수 있고, 위약금이 없습니다.',
               'You can change this later. Plans move up or down monthly, with no penalty.'),

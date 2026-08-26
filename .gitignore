@@ -5,3 +5,7 @@
 DEV_SPEC.md
 pages.json
 hoversels.json
+
+# vercel env pull 이 만드는 파일. 이 저장소는 공개이므로 절대 올리지 않는다.
+.env.local
+.env
