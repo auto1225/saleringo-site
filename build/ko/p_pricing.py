@@ -93,7 +93,7 @@ BODY = """
           <li>월 500건 대화</li>
           <li>상담 기록 내려받기</li>
         </ul>
-        <a class="btn btn-ghostd go" href="./get-started.html">이 요금제로 시작</a>
+        <a class="btn btn-ghostd go" href="./checkout.html?plan=start">이 요금제로 주문</a>
       </div>
       <div class="kplan best">
         <span class="nm">Grow</span>
@@ -106,7 +106,7 @@ BODY = """
           <li>예약 확인과 노쇼 방지 안내</li>
           <li>월 2,000건 대화</li>
         </ul>
-        <a class="btn btn-teal go" href="./get-started.html">이 요금제로 시작<span class="cir">&#8599;</span></a>
+        <a class="btn btn-teal go" href="./checkout.html?plan=grow">이 요금제로 주문<span class="cir">&#8599;</span></a>
       </div>
       <div class="kplan">
         <span class="nm">Scale</span>
@@ -119,7 +119,7 @@ BODY = """
           <li>사람에게 돌리기와 야간 전환</li>
           <li>녹취와 요약 보관</li>
         </ul>
-        <a class="btn btn-ghostd go" href="./get-started.html">이 요금제로 시작</a>
+        <a class="btn btn-ghostd go" href="./checkout.html?plan=scale">이 요금제로 주문</a>
       </div>
     </div>
     <div class="ratebox reveal" id="rates">

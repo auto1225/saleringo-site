@@ -57,6 +57,7 @@ OWNER = {
     'whatsapp.html': 'nt-how',
     'demo.html': 'nt-see', 'examples.html': 'nt-see', 'index.html': 'nt-see',
     'get-started.html': 'nt-price', 'pricing.html': 'nt-price',
+    'checkout.html': 'nt-price',
     'cross-border.html': 'nt-trade', 'industries.html': 'nt-trade',
 }
 
@@ -326,5 +327,37 @@ def build(check=False):
     return changed
 
 
+
+def company_check():
+    """주문 화면에 법이 요구하는 판매자 정보가 채워져 있는지 본다.
+
+    「전자상거래 등에서의 소비자보호에 관한 법률」 제13조는 상호, 대표자,
+    사업자등록번호, 주소, 통신판매업 신고번호를 주문 화면에 표시하도록
+    정합니다. build/company.json 에서 비어 있는 값은 화면에 아예 나가지
+    않습니다 - 없는 번호를 지어내는 것보다 낫기 때문입니다. 다만 비어
+    있다는 사실은 빌드할 때마다 알립니다. 실제 주문을 받기 시작하면
+    이것은 선택이 아니라 위반이 됩니다."""
+    p = os.path.join('build', 'company.json')
+    if not os.path.exists(p):
+        return
+    co = json.load(io.open(p, encoding='utf-8'))
+    need = [('bizNo', '사업자등록번호'), ('mailOrderNo', '통신판매업 신고번호'),
+            ('ceo', '대표자명'), ('address', '사업장 주소'),
+            ('privacyOfficer', '개인정보 보호책임자')]
+    miss = []
+    for k, label in need:
+        v = co.get(k)
+        if isinstance(v, dict):
+            v = v.get('ko') or v.get('en')
+        if not v:
+            miss.append(label)
+    if miss:
+        print('')
+        print('  ! 주문 화면의 판매자 정보가 비어 있습니다: ' + ', '.join(miss))
+        print('    build/company.json 에 채우십시오. 전자상거래법 제13조가 요구하는')
+        print('    항목이고, 채우기 전에는 화면에 아예 나가지 않습니다.')
+
+
 if __name__ == '__main__':
     build(check='--check' in sys.argv)
+    company_check()

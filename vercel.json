@@ -19,6 +19,11 @@
       "permanent": true
     },
     {
+      "source": "/en/checkout",
+      "destination": "/en/checkout.html",
+      "permanent": true
+    },
+    {
       "source": "/en/cross-border",
       "destination": "/en/cross-border.html",
       "permanent": true
@@ -361,6 +366,11 @@
     {
       "source": "/ko/ai-answering-service",
       "destination": "/ko/ai-answering-service.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/checkout",
+      "destination": "/ko/checkout.html",
       "permanent": true
     },
     {
@@ -764,6 +774,40 @@
     {
       "source": "/ai-answering-service.html",
       "destination": "/en/ai-answering-service.html",
+      "permanent": false
+    },
+    {
+      "source": "/checkout",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/checkout.html",
+      "permanent": false
+    },
+    {
+      "source": "/checkout",
+      "destination": "/en/checkout.html",
+      "permanent": false
+    },
+    {
+      "source": "/checkout.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/checkout.html",
+      "permanent": false
+    },
+    {
+      "source": "/checkout.html",
+      "destination": "/en/checkout.html",
       "permanent": false
     },
     {

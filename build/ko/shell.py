@@ -15,7 +15,7 @@ import io
 import os
 
 SITE = 'https://claude.saleringo.com'
-VER = '38.4'
+VER = '38.5'
 FONTS = ('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700'
          '&family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          '&family=Noto+Sans+KR:wght@400;500;700;800&display=swap')
@@ -26,20 +26,21 @@ ICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0
 
 
 def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide'),
-         image='', crumbs=None):
+         image='', crumbs=None, lang='ko'):
     deep = '/' in slug
     root = '../' if deep else './'
     a = '../../assets' if deep else '../assets'
-    url = '%s/ko/%s' % (SITE, slug)
+    url = '%s/%s/%s' % (SITE, lang, slug)
     ld = [('{"@context":"https://schema.org","@type":"WebPage","name":"%s",'
            '"description":"%s","url":"%s","isPartOf":{"@type":"WebSite","name":"Saleringo",'
-           '"url":"https://saleringo.com/"},"inLanguage":"ko-KR"}') % (title, desc, url)]
+           '"url":"https://saleringo.com/"},"inLanguage":"%s"}')
+          % (title, desc, url, 'ko-KR' if lang == 'ko' else 'en')]
     if crumbs:
-        items = ','.join('{"@type":"ListItem","position":%d,"name":"%s","item":"%s/ko/%s"}'
-                         % (i + 1, n, SITE, h) for i, (n, h) in enumerate(crumbs))
+        items = ','.join('{"@type":"ListItem","position":%d,"name":"%s","item":"%s/%s/%s"}'
+                         % (i + 1, n, SITE, lang, h) for i, (n, h) in enumerate(crumbs))
         ld.append('{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[%s]}' % items)
 
-    head = ['<!DOCTYPE html>', '<html lang="ko">', '<head>',
+    head = ['<!DOCTYPE html>', '<html lang="%s">' % lang, '<head>',
             '<meta charset="UTF-8">',
             '<meta name="viewport" content="width=device-width, initial-scale=1">',
             '<title>%s</title>' % title,
@@ -47,8 +48,8 @@ def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 
             '<link rel="canonical" href="%s">' % url,
             '<meta property="og:type" content="website">',
             '<meta property="og:site_name" content="Saleringo">',
-            '<meta property="og:locale" content="ko_KR">',
-            '<meta property="og:locale:alternate" content="en_US">',
+            '<meta property="og:locale" content="%s">' % ('ko_KR' if lang == 'ko' else 'en_US'),
+            '<meta property="og:locale:alternate" content="%s">' % ('en_US' if lang == 'ko' else 'ko_KR'),
             '<meta property="og:url" content="%s">' % url,
             '<meta property="og:title" content="%s">' % title,
             '<meta property="og:description" content="%s">' % desc]
@@ -83,7 +84,7 @@ def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 
 
     out = '\n'.join(head) + '\n<body%s>\n' % (' data-grade="%s"' % grade if grade else '') \
         + body.strip() + '\n' + '\n'.join(tail)
-    path = os.path.join('ko', slug)
+    path = os.path.join(lang, slug)
     io.open(path, 'w', encoding='utf-8').write(out)
     return path
 
