@@ -593,6 +593,11 @@ section:has(> .wrap > .head.centered) .faq,
   --accent:var(--teal);
 }
 @media (max-width:900px){ :root{ --pad-xl:96px; --pad-md:64px; --pad-sm:36px; } }
+/* On a phone the three tempos are read as one long pause: a 375px column has
+   no room to inhale, so 96px of nothing between sections just pushes the next
+   argument another half-screen away. Thirteen sections make that about 600px
+   per page. The rhythm is kept — xl is still twice sm — at two thirds the cost. */
+@media (max-width:640px){ :root{ --pad-xl:64px; --pad-md:44px; --pad-sm:28px; --pad-hero:96px; } }
 
 .t-xl{padding:var(--pad-xl) 0;}
 .t-md{padding:var(--pad-md) 0;}
@@ -2589,6 +2594,12 @@ html .bigfooter .ftall{
   display:inline-block;margin-top:14px;font-weight:700;color:var(--teal);
 }
 html .bigfooter .ftall:hover{color:#fff;}
+
+/* 120px of air above the footer plus 60px inside it is a screen and a quarter
+   of nothing between the last argument and the site map, on a phone. */
+@media (max-width:640px){
+  html .bigfooter{margin-top:56px;padding:36px 0 28px;}
+}
 
 /* On a phone the trade directory is twenty-five links at the site's own 44px
    touch height — about 830px of footer, on all seventy-one pages, below the
