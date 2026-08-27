@@ -42,7 +42,9 @@ export default async function handler(req, res) {
     /* 주소창에 이메일이 남는 것을 원치 않는 분이 많습니다. GET 도 받되,
        화면에서는 POST 를 씁니다. */
     const url = new URL(req.url, 'https://claude.saleringo.com');
-    src = { orderNo: url.searchParams.get('no'), email: url.searchParams.get('email') };
+    // 사이트는 ?no= 를 쓰지만, 안내 문서나 메일이 ?orderNo= 라고 쓸 수 있습니다.
+    src = { orderNo: url.searchParams.get('no') || url.searchParams.get('orderNo'),
+            email: url.searchParams.get('email') };
   }
 
   const orderNo = clean(src.orderNo, 40).toUpperCase();
