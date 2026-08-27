@@ -202,3 +202,18 @@ python build/build.py          142장 다시 짓기
 
 `build/test_commerce.sql` 은 데이터베이스에 직접 물어봅니다 — Supabase
 SQL Editor 에 붙여 넣으십시오.
+
+## 2026-08-27 감사 반영
+
+에이전트 셋(이해도·구매 경로·디자인)의 감사 결과 73건 가운데 실질을
+전부 반영했습니다. 서버 쪽에서 바뀐 것 하나:
+
+- `sales.submit_order` — 재시도(같은 멱등 키)의 응답에 **저장된 견적을
+  실어 줍니다.** 예전에는 duplicate 응답에 quote 가 없어 영수 화면의
+  금액이 비었습니다. 마이그레이션 `duplicate_order_returns_stored_quote`.
+- 감사가 만든 시험 주문 `SO-20260827-1005` (probe-audit@example.invalid)
+  는 `rejected` 로 반려해 두었습니다.
+
+검사 목록에 `python build/anchorcheck.py` 가 더해졌습니다 — 쪽 안
+링크가 가리키는 자리(#fragment)가 실제로 있는지. guide.js 의 안내
+투어 정거장도 같이 봅니다. 절을 지우거나 옮길 때마다 도십시오.
