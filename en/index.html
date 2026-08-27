@@ -53,9 +53,9 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=55.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=55.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=55.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=56.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=56.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=56.0">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -92,8 +92,7 @@
   @media (max-width:900px){
     .heroshelf{grid-template-columns:1fr;gap:14px;}
     .heroshelf .appwin,.heroshelf .qmini,.heroshelf .photocap{
-      grid-column:1;grid-row:auto;}
-  }
+      grid-column:1;grid-row:auto;}}
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;
     letter-spacing:-.04em;font-weight:600;color:#fff;margin-top:24px;}
   .hero .sub{margin-top:22px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
@@ -197,26 +196,10 @@
     /* label and value side by side leaves the value two ragged right-aligned
        lines at this width; stack them instead */
     .heroshelf .wokerow{flex-direction:column;gap:2px;}
-    .heroshelf .wokerow span{text-align:left;}
-  }
-
-  /* ── CHANNEL BAND (tilted cards) ── */
-  .chanband{position:relative;}
+    .heroshelf .wokerow span{text-align:left;}}
   .chanband .head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;}
   .chanband .chiprow{justify-content:flex-start;margin:26px 0 46px;}
-  .cascade{display:flex;gap:24px;align-items:flex-start;justify-content:center;position:relative;}
-  .cas-glow{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:1020px;height:460px;
-    background:radial-gradient(closest-side, rgba(23,189,189,.16), transparent 70%);pointer-events:none;}
-  .cas-side{width:308px;flex:none;} .cas-mid{width:512px;flex:none;max-width:94vw;position:relative;z-index:2;}
-  .cas-side.left{margin-top:36px;} .cas-side.right{margin-top:56px;}
   .phonecard .core{padding:0;}
-  .chanlinks{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .chanlink{border:1px solid var(--hair);border-radius:18px;padding:22px 24px;background:rgba(255,255,255,.03);
-    display:flex;align-items:center;gap:14px;transition:border-color .4s var(--ease);}
-  .chanlink:hover{border-color:var(--hair2);}
-  .chanlink .tx b{display:block;font-size:var(--fs-sm);color:#fff;font-weight:700;}
-  .chanlink .tx i{display:block;font-style:normal;font-size:var(--fs-xs);color:var(--tx2);margin-top:3px;font-weight:600;}
-  .chanlink .go{margin-left:auto;color:var(--teal);font-size:var(--fs-body);}
   #cta-gate{height:1px;}
 
   /* ── 2:47 AM STORY — photograph leads, the illustration follows ── */
@@ -255,21 +238,11 @@
   .nightsec .baGrid{margin-top:86px;}
   .nightsec .foot{margin-top:34px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .nightsec .foot a{color:var(--teal);font-weight:600;}
-
-  /* ── WHO ANSWERS FOR YOU TONIGHT — audience photographs ── */
-  .audsec{}
   .audsec .head{display:flex;align-items:flex-end;justify-content:space-between;
     gap:28px;flex-wrap:wrap;margin-bottom:36px;}
-  .audsec .audcard{min-height:296px;}
   .audsec .audcard > img.ph{filter:brightness(1.10) saturate(1.04) contrast(1.05);}
   .audsec .photocap{margin-top:18px;}
-
-  /* ── ALTERNATIVES ── */
-  .altsec{}
   .altsec .head{max-width:660px;margin:0 auto 54px;text-align:center;}
-  .altcol .cost small{font-size:var(--fs-sm);font-weight:500;color:var(--l-mut);letter-spacing:0;}
-  .altcol.win .cost small{color:var(--tx2);}
-  .altsec .note{margin-top:26px;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
 
   /* ── ROI CALCULATOR ── */
   .calcsec{background:#0C1526;}
@@ -277,24 +250,11 @@
   .calcnote{margin-top:6px;font-size:var(--fs-2xs);line-height:1.7;color:var(--tx3);font-weight:500;}
   .calcout .big{font-size:var(--fs-h1);}
   .calcout .top{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;}
-
-  /* ── ONE INBOX + FLOW + STACK — dark plate, white product objects on it.
-        Paired with the ROI calculator above: the leak, then the catch. ── */
-  .inboxsec{}
   .inboxsec .wrap{position:relative;z-index:1;}
   .inboxsec .head{text-align:center;max-width:640px;margin:0 auto 50px;}
-  .inboxsec .cap{margin-top:18px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;
-    text-transform:uppercase;color:var(--tx3);font-weight:700;}
   .inboxsec .cols{margin-top:104px;display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
   .inboxsec .linkcta{color:#fff;border-bottom-color:var(--hair2);}
-  /* the step ladder inherits light styling from site.css — re-tone it for the dark plate */
-  .inboxsec .steps .step{border-bottom-color:var(--hair);}
   .inboxsec .steps .num{background:rgba(255,255,255,.05);border-color:var(--hair2);color:var(--tx2);}
-  .inboxsec .steps .tx b{color:#fff;}
-  .inboxsec .steps .tx span{color:var(--tx2);}
-  .stackband{margin-top:104px;border-top:1px solid var(--hair);padding-top:64px;text-align:center;}
-  .stackband .grplabel{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.22em;color:var(--tx3);
-    text-transform:uppercase;margin:30px 0 16px;}
 
   /* ── INDUSTRIES — light ground, dark bento cards sitting on it ── */
   .indsec{}
@@ -321,24 +281,9 @@
   .igrid .icard.photocard .rank{color:#fff;z-index:3;text-shadow:0 1px 8px rgba(4,8,15,.55);}
   .igrid .icard.photocard .arr{z-index:3;background:rgba(4,8,15,.48);border-color:rgba(255,255,255,.38);
     backdrop-filter:blur(6px);}
-
-  /* ── TRUST / RISK ── */
-  .trustsec{}
-  .trustsec .wrap,.globalsec .wrap,.closer .wrap{position:relative;z-index:1;}
-  .trustsec .head{text-align:center;max-width:620px;margin:0 auto 44px;}
-  .trustsec .logocap{margin-top:16px;text-align:center;font-size:var(--fs-2xs);color:#6F767F;font-weight:600;}
-  .quotes{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  .trustsec .riskrow{margin-top:60px;}
-  .trustsec .verified{margin-top:52px;text-align:center;}
-
-  /* ── GLOBAL ── */
-  .globalsec{position:relative;text-align:center;}
+  .closer .wrap{position:relative;z-index:1;}
+  
   .globalsec .scene-frame{margin:52px auto 0;max-width:940px;}
-  .globalsec .kpiband{margin:52px auto 0;max-width:960px;text-align:left;}
-  .globalsec .langrow{margin:34px auto 0;max-width:760px;}
-
-  /* ── PRICING ── */
-  .pricingsec{}
   .pricingsec .head{text-align:center;max-width:560px;margin:0 auto 56px;}
 
   /* ── EARLY ACCESS ── */
@@ -358,17 +303,8 @@
   .founding .cohort .txt{display:block;font-size:var(--fs-xs);line-height:1.7;
     color:var(--tx2);font-weight:600;max-width:440px;}
   .founding .cohort .txt b{color:#fff;}
-
-  /* ── NIGHT-CITY BAND above the closer ── */
-  .cityband{position:relative;min-height:280px;display:flex;align-items:flex-end;
-    padding-bottom:34px;background:#0C1526;}
-  .cityband::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg, rgba(4,8,15,.22), rgba(4,8,15,.72));}
   .cityband .wrap{width:100%;display:flex;align-items:flex-end;justify-content:space-between;
     gap:24px;flex-wrap:wrap;}
-  .cityband .ln{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
-    font-weight:600;letter-spacing:-.025em;color:#fff;line-height:1.2;}
-  .cityband .sm{font-size:var(--fs-xs);font-weight:600;color:var(--tx2);}
 
   /* ── CLOSER + FOOTER ── */
   .closer{position:relative;text-align:center;overflow:hidden;}
@@ -379,18 +315,11 @@
 
   @media (max-width:1080px){
     .hero-inner{grid-template-columns:1fr;gap:44px;}
-    .hero-scene .scene-overlay{position:static;max-width:none;}
-    .hero-scene .ovwrap{display:grid;gap:10px;margin-top:14px;}
-    .founding .grid{grid-template-columns:1fr;gap:48px;}
-  }
+    .founding .grid{grid-template-columns:1fr;gap:48px;}}
   @media (max-width:900px){
-    .cascade{flex-wrap:wrap;}
-    .cas-side{width:100%;max-width:380px;margin-top:0 !important;}
     .chanlinks,.quotes,.inboxsec .cols{grid-template-columns:1fr;gap:40px;}
     .hero .specstrip{gap:14px;}
-    .nightsec .photosplit .copy{padding:44px 24px;}
-    .cityband{min-height:220px;}
-  }
+    .nightsec .photosplit .copy{padding:44px 24px;}}
 
   /* ── what the conversation leaves behind ── */
   .keepgrid{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
@@ -414,8 +343,7 @@
   .keepsec .seccap{margin-top:34px;}
   @media (max-width:900px){
     .keepgrid{grid-template-columns:1fr;gap:14px;}
-    .fanfig .scenebox{--sh:230px;}
-  }
+    .fanfig .scenebox{--sh:230px;}}
   .dayonerow{margin-top:52px;}
   .dayonerow .dayone{margin-bottom:14px;}
   .dayonerow .proof{max-width:900px;margin-left:auto;margin-right:auto;}
@@ -441,7 +369,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v55.0">v55.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v56.0">v56.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop on" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see" aria-current="true">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -461,12 +389,12 @@
     <div class="heroband hero-panel">
       <span class="eyebrow"><i></i>AI receptionist + the&nbsp;CRM for&nbsp;your&nbsp;trade</span>
       <h1>Most AI answers the&nbsp;call. <br><span style="color:var(--teal);">Ours books the&nbsp;job.</span></h1>
-      <p class="sub">It picks up your&nbsp;phone, your&nbsp;website chat and your&nbsp;messages — in your&nbsp;customer's language — then books the&nbsp;time and writes up the&nbsp;customer.</p>
+      <p class="sub">For&nbsp;businesses that&nbsp;live on&nbsp;appointments — dentists, plumbers, salons, venues, law firms. It picks up your&nbsp;phone, your&nbsp;website chat and your&nbsp;messages — in your&nbsp;customer's language — then books the&nbsp;time and writes up the&nbsp;customer.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#start-here">Start the&nbsp;3-step tour &middot; 2 min<span class="cir">&darr;</span></a>
-        <a class="btn btn-ghostd" href="#early-access">I know what I need &mdash; get my&nbsp;plan</a>
+        <a class="btn btn-teal" href="#start-here">Start the&nbsp;2-step tour &middot; 1 min<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="#early-access">Skip the&nbsp;tour &mdash; send me a&nbsp;setup plan</a>
       </div>
-    <p class="heroprice"><b>From&nbsp;$79/mo.</b> Phone answering from&nbsp;$599. <i>14-day refund · cancel anytime · no&nbsp;setup fee</i></p>
+    <p class="heroprice"><b>Chat and messaging from&nbsp;$79/mo · phone answering from&nbsp;$599/mo.</b> <i>14-day refund · cancel anytime · no&nbsp;setup fee</i></p>
 </div>
 
     <div class="heroshelf">
@@ -583,9 +511,9 @@
 
 <section class="pathsec t-sm sec-dark" id="start-here">
   <div class="wrap">
-    <nav class="startpath reveal" data-startpath aria-label="Try it in three steps">
+    <nav class="startpath reveal" data-startpath aria-label="Try it in two steps">
       <p class="sp-lead"><b>First time here?</b> Two things, about&nbsp;a&nbsp;minute, nothing to&nbsp;install
-        and no&nbsp;email needed. Everything below happens on&nbsp;this&nbsp;page.</p>
+        and no&nbsp;email needed. Both run right here &mdash; nothing to&nbsp;sign up for.</p>
       <ol class="sp-steps">
         <li data-step="#try" data-next="ask it a question" data-focus=".chiprow" data-short="Ask a question" data-cue="Pick your trade" data-sub="Pick a trade, then one of its questions. Six things get filed while you watch.">
           <a href="#try">
@@ -683,7 +611,7 @@
         <div class="ogrid" data-play-out></div>
         <p class="sronly" data-play-sr aria-live="polite"></p>
         <p class="playcap"><span class="capnote">Product illustration with&nbsp;sample data — no&nbsp;named customers, no&nbsp;invented outcomes.</span><br>
-          <b>These&nbsp;six are the&nbsp;product.</b> Ask another question and the&nbsp;same six objects rebuild themselves.</p>
+          <b>These&nbsp;six are the&nbsp;product.</b> Ask another question and the&nbsp;same six objects rebuild themselves. <a class="linkcta" href="./examples.html">Or read six of&nbsp;these written out in&nbsp;full&nbsp;&nbsp;&rarr;</a></p>
       </div>
     </div>
 
@@ -696,7 +624,7 @@
 
 <section class="t-sm sec-dark" id="to-lab">
   <div class="wrap">
-    <p class="sp-lead" style="margin:0;"><b>Not a script &mdash; your&nbsp;numbers.</b> Paste the&nbsp;prices you actually charge and read what it quotes back, in&nbsp;your&nbsp;browser. <a class="linkcta" href="./demo.html#yourprices">Open the&nbsp;price lab&nbsp;&nbsp;&rarr;</a></p>
+    <p class="sr-door"><b>Not a script &mdash; your&nbsp;numbers.</b> Paste the&nbsp;prices you actually charge and read what it quotes back, in&nbsp;your&nbsp;browser. <a class="linkcta" href="./demo.html#yourprices">Open the&nbsp;price lab&nbsp;&nbsp;&rarr;</a></p>
   </div>
 </section>
 
@@ -714,8 +642,8 @@
 
     <div class="head reveal" >
       <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">The&nbsp;call&nbsp;ends. <br>The&nbsp;work is already&nbsp;done.</h2>
-      <p class="lead onDark" style="margin-top:16px;">Every&nbsp;other AI receptionist hands you a&nbsp;message. Saleringo hands you a&nbsp;booked
-        appointment, a&nbsp;priced quote, a&nbsp;customer record and a&nbsp;Monday-morning number — because the&nbsp;CRM underneath it was built for&nbsp;your&nbsp;trade, not for&nbsp;a&nbsp;software company.</p>
+      <p class="lead onDark" style="margin-top:16px;">Most AI receptionists hand you a&nbsp;transcript and a&nbsp;calendar entry, then stop. Saleringo hands you a&nbsp;booked
+        appointment, a&nbsp;priced quote, a&nbsp;customer record and a&nbsp;Monday-morning number — because the&nbsp;customer database underneath it &mdash; the&nbsp;CRM &mdash; was built for&nbsp;your&nbsp;trade, not for&nbsp;a&nbsp;software company.</p>
     </div>
 
     <div class="appwin reveal" style="margin-top:44px;">
@@ -858,7 +786,7 @@
 
 <section class="t-sm sec-dark" id="to-proof">
   <div class="wrap">
-    <p class="sp-lead" style="margin:0;"><b>Don&rsquo;t take our&nbsp;word for&nbsp;it.</b> Six customer lines you can dial right now, the&nbsp;pilot with&nbsp;its&nbsp;denominators, and three things you can check before you spend a&nbsp;cent. <a class="linkcta" href="./about.html#call-them">Ring one of&nbsp;them&nbsp;&nbsp;&rarr;</a></p>
+    <p class="sr-door"><b>Don&rsquo;t take our&nbsp;word for&nbsp;it.</b> Four customer lines and two of&nbsp;our&nbsp;own — all labelled, all dialable right now — plus a&nbsp;six-week pilot with&nbsp;the&nbsp;raw counts printed beside every&nbsp;percentage, and three things you can check before you spend a&nbsp;cent. <a class="linkcta" href="./about.html#call-them">Ring one of&nbsp;them&nbsp;&nbsp;&rarr;</a> <a class="linkcta" href="./about.html#verify-us">Or check us first&nbsp;&nbsp;&rarr;</a></p>
   </div>
 </section>
 
@@ -872,9 +800,9 @@
       <div>
         <div class="secrule"><span class="eyebrow light"><i></i>Built for&nbsp;inquiry businesses</span><span class="line"></span></div>
         <h2 class="h2">Your&nbsp;industry, <br>already spoken&nbsp;here.</h2>
-        <p class="lead" style="margin-top:16px;">Each&nbsp;pack ships the&nbsp;fields, workflows, and guardrails of&nbsp;your&nbsp;trade.</p>
+        <p class="lead" style="margin-top:16px;">A&nbsp;<b>pack</b> is your&nbsp;trade's&nbsp;version of&nbsp;the&nbsp;product: the&nbsp;questions it asks a&nbsp;caller, the&nbsp;stages a&nbsp;job moves through, and the&nbsp;things it refuses to&nbsp;answer without&nbsp;a&nbsp;person. A&nbsp;dentist's&nbsp;pack asks about&nbsp;insurance; a&nbsp;plumber's&nbsp;asks whether the&nbsp;water is&nbsp;off.</p>
       </div>
-      <div class="count sg"><b>4 live</b>+ expanding<br>every&nbsp;month</div>
+      <div class="count sg"><b>5 live</b>+ expanding<br>every&nbsp;month</div>
     </div>
     <div class="igrid reveal">
       <a class="icard photocard ga g1" href="./industries/venues.html">
@@ -911,7 +839,7 @@
         <img class="ph" src="https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
              alt="The reception of a small clinic, empty between appointments"
              loading="lazy" decoding="async" width="800" height="533"
-             srcset="https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank">ONBOARDING</span><span class="arr">→</span>
+             srcset="https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/31844508/pexels-photo-31844508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank is-live">LIVE</span><span class="arr">→</span>
         <span class="lab">Clinics</span><span class="s">Appointments · multilingual · regulation-safe</span></a>
       <a class="icard photocard gf4 g5" href="./industries/academies.html">
         <img class="ph" src="https://images.pexels.com/photos/16125015/pexels-photo-16125015.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
@@ -932,7 +860,7 @@
              srcset="https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/11677347/pexels-photo-11677347.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw"><span class="rank">CROSS-BORDER</span><span class="arr">→</span>
         <span class="lab">Selling across&nbsp;time zones?</span><span class="s">Multilingual, 24/7 — built for&nbsp;it</span></a>
     
-    <p class="seccap">Four of&nbsp;these&nbsp;answer live today. The&nbsp;rest are the&nbsp;ones customers asked for, in&nbsp;the&nbsp;order they asked &mdash; which is why the&nbsp;list is short and named rather than long and aspirational.</p>
+    <p class="seccap">Four of&nbsp;these&nbsp;answer live today. The&nbsp;rest are the&nbsp;ones customers asked for, in&nbsp;the&nbsp;order they asked &mdash; which is why the&nbsp;list is short and named rather than long and aspirational. <a class="linkcta" href="./industries.html">Find your&nbsp;own trade&nbsp;&nbsp;&rarr;</a></p>
   </div>
   </div>
 </section>
@@ -940,7 +868,7 @@
 <section class="calcsec t-xl bg-grid" id="calculator">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><i></i>Run your&nbsp;own numbers</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 3 &middot; drag the&nbsp;sliders</span>
+      <span class="eyebrow"><i></i>Run your&nbsp;own numbers</span><span class="tryme"><i aria-hidden="true">⬤</i>Step 2 &middot; drag the&nbsp;sliders</span>
       <h2 class="h2 onDark" style="margin-top:22px;font-size:var(--fs-h2);">How much is&nbsp;leaking <br>out of&nbsp;your&nbsp;business?</h2>
       <p class="lead onDark" style="margin-top:16px;">Four sliders. Your&nbsp;numbers, not ours. Nothing is sent anywhere — this&nbsp;runs in&nbsp;your&nbsp;browser.</p>
     </div>
@@ -974,7 +902,7 @@
         <div class="lbl">of&nbsp;revenue you would have won if someone had answered</div>
         <div class="split">
           <div><span>Recovered at&nbsp;<b id="oPct" style="color:var(--teal);">25%</b></span><b id="oBack">$1,800</b></div>
-          <div><span>Saleringo Scale (from&nbsp;$599/mo) + metered voice, at&nbsp;your&nbsp;volume</span><b id="oCost">−$633</b></div>
+          <div><span>Saleringo Scale (from&nbsp;$599/mo) + talk time at&nbsp;$0.14 a&nbsp;minute, at&nbsp;your&nbsp;volume</span><b id="oCost">−$633</b></div>
           <div><span>Left over, every&nbsp;month</span><b id="oNet">$1,167</b></div>
         </div>
         <div class="verdict" id="oVerdict">At&nbsp;the&nbsp;rate you set, that&nbsp;covers the&nbsp;whole bill about&nbsp;3× over — voice minutes included.</div>
@@ -986,11 +914,11 @@
     <div class="planstrip reveal">
       <div class="ps-head"><b>And the&nbsp;plans themselves</b><span>Voice and messaging are billed by&nbsp;usage, because they cost us&nbsp;by&nbsp;usage. Every&nbsp;number is printed before you speak to&nbsp;anyone.</span></div>
       <ul class="ps-list">
-        <li><b>Start</b><span class="ps-p">$79<i>/mo</i></span><span class="ps-d">Website chat, lead inbox, bookings. 500 AI&nbsp;conversations.</span></li>
+        <li><b>Start</b><span class="ps-p">$79<i>/mo</i></span><span class="ps-d">Website chat, lead inbox, bookings. 500 AI&nbsp;conversations a&nbsp;month &mdash; one customer, one day, however many messages.</span></li>
         <li><b>Grow</b><span class="ps-p">$249<i>/mo</i></span><span class="ps-d">Adds WhatsApp, quotes and automations. 2,000 conversations.</span></li>
         <li><b>Scale</b><span class="ps-p">from $599<i>/mo</i></span><span class="ps-d">Adds AI&nbsp;phone, from $0.14 a&nbsp;minute of&nbsp;talk time.</span></li>
       </ul>
-      <p class="ps-foot"><a class="linkcta" href="pricing.html">Every&nbsp;plan, every&nbsp;limit, in&nbsp;full&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="pricing.html#alternatives">Or compare it with&nbsp;a&nbsp;receptionist, an&nbsp;answering service and doing nothing&nbsp;&nbsp;&rarr;</a></p>
+      <p class="ps-foot"><a class="linkcta" href="pricing.html">Every&nbsp;plan, every&nbsp;limit, in&nbsp;full&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="pricing.html#plans">What counts as one conversation&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="pricing.html#alternatives">Or compare it with&nbsp;a&nbsp;receptionist, an&nbsp;answering service and doing nothing&nbsp;&nbsp;&rarr;</a></p>
     </div>
   </section>
 
@@ -1003,7 +931,7 @@
       <p class="lead onDark" style="margin-top:20px;">Saleringo is onboarding its&nbsp;founding cohort right now. Early businesses get terms and attention that&nbsp;won't exist later.</p>
       <div class="fbens">
         <span class="b"><i>%</i><span><b>50% off for&nbsp;3 months</b> — founding pricing, locked before general availability.</span></span>
-        <span class="b"><i>1:1</i><span><b>Priority onboarding</b> — we build your&nbsp;knowledge base with&nbsp;you.</span></span>
+        <span class="b"><i>1:1</i><span><b>Priority onboarding</b> — we sit with&nbsp;you and write the&nbsp;answers it is allowed to&nbsp;give.</span></span>
         <span class="b"><i>→</i><span><b>Roadmap input</b> — founding customers pick the&nbsp;next integrations we build.</span></span>
       </div>
       <div class="cohort reveal">
@@ -1017,7 +945,7 @@
       <div class="gradborder"><div style="padding:32px;">
         <h3 class="sg" style="font-size:var(--fs-h3);font-weight:600;color:#fff;letter-spacing:-.02em;">Request a&nbsp;founding&nbsp;invite</h3>
         <p style="margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;">A&nbsp;human reads every&nbsp;one of&nbsp;these. Tell us the&nbsp;channel that&nbsp;hurts most and we'll start there.</p>
-        <form class="eaform" data-earlyaccess style="margin-top:22px;">
+        <form class="eaform" data-earlyaccess method="post" style="margin-top:22px;">
           <input type="hidden" name="context" value="Homepage early access">
           <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
           <input type="text" name="business" placeholder="Business name" aria-label="Business name">
@@ -1125,7 +1053,7 @@
 <section class="closer bg-spot" id="closer">
   <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="concline reveal">Six phone numbers you can dial tonight, a&nbsp;demo you can try to&nbsp;break, a&nbsp;price lab that&nbsp;runs on&nbsp;your&nbsp;own list, and one pilot with&nbsp;its&nbsp;denominators printed beside it. What we have not shown you is a&nbsp;customer testimonial, because we do not have one worth printing yet.</p>
+    <p class="concline reveal">A&nbsp;demo you can try to&nbsp;break, right here. <a href="./about.html#call-them">Six phone numbers you can dial tonight.</a> <a href="./demo.html#yourprices">A&nbsp;price lab that&nbsp;runs on&nbsp;your&nbsp;own list.</a> <a href="./about.html#pilot">One six-week pilot, with&nbsp;the&nbsp;raw counts beside every&nbsp;percentage.</a> What we have not shown you is a&nbsp;customer testimonial, because we do not have one worth printing yet.</p>
     <h2 class="reveal">Tonight, someone will&nbsp;call. <br>Let's&nbsp;make&nbsp;sure <br><em>someone&nbsp;answers.</em></h2>
     <p class="lead onDark reveal">Join the&nbsp;founding cohort — 50% off for&nbsp;3 months, onboarding with&nbsp;a&nbsp;human, answers your&nbsp;customers can trust.</p>
     <div class="ctas reveal">
@@ -1138,7 +1066,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</span><span class="ver ver-f">v55.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v56.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1178,21 +1106,21 @@
 <!-- sticky conversion bar -->
 <div class="stickycta" id="stickybar">
   <div class="wrap">
-    <span class="msg"><b>Tonight's&nbsp;calls are still going to&nbsp;voicemail.</b> Founding cohort — 50% off for&nbsp;3 months.</span>
+    <span class="msg"><b>Tonight's&nbsp;calls are still going to&nbsp;voicemail.</b> We're new — early businesses get 50% off for&nbsp;3&nbsp;months.</span>
     <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=55.0"></script>
-<script src="../assets/js/balance.js?v=55.0" defer></script>
-<script src="../assets/js/panels.js?v=55.0" defer></script>
-<script src="../assets/js/wrap.js?v=55.0" defer></script>
-<script src="../assets/js/rail.js?v=55.0" defer></script>
-<script src="../assets/js/canvas.js?v=55.0" defer></script>
-<script src="../assets/js/scenes.js?v=55.0" defer></script>
-<script src="../assets/js/play.js?v=55.0"></script>
-<script src="../assets/js/guide.js?v=55.0"></script>
-<script src="../assets/js/pricelab.js?v=55.0"></script>
+<script src="../assets/js/site.js?v=56.0"></script>
+<script src="../assets/js/balance.js?v=56.0" defer></script>
+<script src="../assets/js/panels.js?v=56.0" defer></script>
+<script src="../assets/js/wrap.js?v=56.0" defer></script>
+<script src="../assets/js/rail.js?v=56.0" defer></script>
+<script src="../assets/js/canvas.js?v=56.0" defer></script>
+<script src="../assets/js/scenes.js?v=56.0" defer></script>
+<script src="../assets/js/play.js?v=56.0"></script>
+<script src="../assets/js/guide.js?v=56.0"></script>
+<script src="../assets/js/pricelab.js?v=56.0"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {

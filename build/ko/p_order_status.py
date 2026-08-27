@@ -39,6 +39,9 @@ CSS = """
   .ostrack li::before{content:'';position:absolute;left:-7px;top:3px;width:12px;height:12px;
     border-radius:50%;background:var(--bg);border:2px solid var(--line);}
   .ostrack li.done::before{background:var(--teal);border-color:var(--teal);}
+  /* 밟지 않고 지나간 단계 — 체크도 빈 동그라미도 아닌, 흐릿한 선 */
+  .ostrack li.skipped{opacity:.45;}
+  .ostrack li.skipped::before{background:transparent;border-style:dashed;}
   .ostrack li.now::before{background:var(--teal);border-color:var(--teal);
     box-shadow:0 0 0 5px rgba(23,189,189,.18);}
   .ostrack b{display:block;font-size:var(--fs-sm);font-weight:600;color:var(--tx3);}

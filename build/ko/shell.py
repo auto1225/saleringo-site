@@ -15,7 +15,7 @@ import io
 import os
 
 SITE = 'https://claude.saleringo.com'
-VER = '55.0'
+VER = '56.0'
 FONTS = ('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700'
          '&family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          '&family=Noto+Sans+KR:wght@400;500;700;800&display=swap')
@@ -93,8 +93,10 @@ def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 
     head += ['<link rel="stylesheet" href="%s/css/site.css?v=%s">' % (a, VER),
              '<link rel="stylesheet" href="%s/css/scenes.css?v=%s">' % (a, VER),
              '<link rel="stylesheet" href="%s/css/crm.css?v=%s">' % (a, VER),
-             '<link rel="stylesheet" href="%s/css/examples.css?v=%s">' % (a, VER),
-             '<link rel="stylesheet" href="%s/css/ko.css?v=%s">' % (a, VER)]
+             '<link rel="stylesheet" href="%s/css/examples.css?v=%s">' % (a, VER)]
+    if lang == 'ko':
+        # ko.css 는 전부 html[lang="ko"] 아래라 영어 쪽에서는 빈 요청이었습니다
+        head += ['<link rel="stylesheet" href="%s/css/ko.css?v=%s">' % (a, VER)]
     if css:
         head += ['<style>', css.rstrip(), '</style>']
     head += ['<!--#alt--><!--/#alt-->', '</head>']

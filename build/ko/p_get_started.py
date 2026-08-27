@@ -59,7 +59,7 @@ BODY = """
         <p class="sub" style="max-width:none;">필수는 두 개뿐입니다. 나머지는 있으면 더 정확한 답을
           드릴 수 있는 것들입니다.</p>
 
-        <form class="gsform eaform" data-earlyaccess style="margin-top:30px;">
+        <form class="gsform eaform" data-earlyaccess method="post" style="margin-top:30px;">
           <input type="hidden" name="context" value="한국어 시작하기 페이지">
           <input type="hidden" name="locale" value="ko-KR">
           <div class="two">

@@ -43,3 +43,11 @@ html[lang="ko"] .sub,html[lang="ko"] .lead{line-height:1.75;}
    tracking that makes a Latin display line sit well closes Hangul up. */
 html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] .h2{letter-spacing:-.02em;}
 html[lang="ko"] .eyebrow{letter-spacing:.02em;}
+
+/* 푸터가 keep-all 목록에서 빠져 있었습니다 — 150px 열에서 어절이
+   중간에 꺾였고, 라틴 대문자용 자간 .18em 이 정사각 한글에 그대로
+   걸려 있었습니다. */
+html[lang="ko"] h4, html[lang="ko"] h5,
+html[lang="ko"] .bigfooter .lnk{word-break:keep-all;}
+html[lang="ko"] .bigfooter h4{letter-spacing:.04em;}
+html[lang="ko"] .bigfooter h5{letter-spacing:.02em;}

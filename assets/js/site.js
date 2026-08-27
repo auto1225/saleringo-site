@@ -823,6 +823,13 @@ window.SR_CONFIG = window.SR_CONFIG || {
     if ((note.value || '').trim()) return;   /* 이미 쓰신 것이 있으면 건드리지 않습니다 */
 
     var lines = [];
+    /* 주문서가 닫혀 있어 서면 주문으로 건너오신 경우 — 「같은 내용으로
+       만들어 드린다」는 약속이 여기서 사실이 됩니다. */
+    if (c.orderDraft) {
+      lines.push(KO
+        ? '주문서에 적으신 내용: ' + c.orderDraft
+        : 'From the order form: ' + c.orderDraft);
+    }
     if (c.docRequestName) {
       lines.push(KO
         ? '요청 문서: ' + c.docRequestName

@@ -16,6 +16,9 @@
      15.6:1 where it was 17.5:1 - and the panels above them now separate. */
   --bg0:#0A1120; --bg1:#0D1728; --panel:#12233D;
   --hair:rgba(255,255,255,.08); --hair2:rgba(255,255,255,.14);
+  /* 193곳이 이미 쓰고 있는데 정의가 없던 토큰. var() 가 깨지면 border
+     축약 전체가 무효가 되어 체크아웃의 테두리가 조용히 사라졌습니다. */
+  --hair-d:rgba(255,255,255,.12);
   --tx:#F2F6FB; --tx2:#94A2B8; --tx3:#8793A5; /* >=4.55:1 on all 11 dark panels it lands on */
   --teal:#17BDBD; --teal-deep:#0FA3A3; --teal-glass:rgba(23,189,189,.13);
   /* light-surface inks. --teal/--amber are tuned for the dark theme and sit at
@@ -25,6 +28,7 @@
   --l-mut2:#656D78;     /* >=4.51:1 on all 11 light surfaces */
   /* light sections */
   --l-bg:#F6F8FA; --l-bg2:#FDFDFE; --l-ink:#0B1B33; --l-mut:#5A6779; --l-hair:#E7EBF1;
+  --l-tx2:var(--l-mut);   /* 102곳이 쓰는 이름 — 정의가 없어 부모 잉크를 상속했었습니다 */
   /* functional */
   --amber:#E8A44C; --red:#D96A5E; --green:#3AC98A;
   --ease:cubic-bezier(.32,.72,0,1);
@@ -137,7 +141,7 @@ a{text-decoration:none;color:inherit;}
 .lead{font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
 .lead.onDark{color:var(--tx2);}
 .linkcta{display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-sm);font-weight:700;color:inherit;
-  border-bottom:1.5px solid var(--l-ink);padding-bottom:5px;}
+  border-bottom:1.5px solid currentColor;padding-bottom:5px;}
 
 .tray{background:#EDF0F4;border:1px solid #E2E7EE;border-radius:30px;padding:10px;
   box-shadow:0 2px 3px rgba(11,27,51,.03),0 40px 90px rgba(11,27,51,.10);}
@@ -271,7 +275,7 @@ section:has(> .wrap > .head.centered) .faq,
 
 /* ── responsive ── */
 @media (max-width: 900px){
-  .wrap{padding:0 22px;}
+  
   .nav .links,.nav .sep,.nav .loc{display:none;}
   .nav .burger{display:flex;}
   .statgrid{flex-direction:column;gap:44px;}
@@ -1405,6 +1409,11 @@ span.x,.no > span.x{color:#A8453A;}    /* was #D96A5E on #FDF6F4 */
   background:rgba(255,255,255,.03);display:flex;}
 .pathsec .sp-steps > li > a{flex-direction:column;gap:12px;height:100%;padding:18px 18px 16px;}
 .pathsec .sp-lead{max-width:var(--measure);}
+/* 절 하나를 딴 쪽으로 옮기고 남긴 한 줄짜리 문. .sp-lead 의 옷을 같은
+   조리법으로 — 저 규칙이 .startpath 밑에만 있어 여기선 맨몸이었습니다. */
+.sr-door{margin:0 auto;max-width:var(--measure);font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);}
+.sr-door b{color:var(--tx);}
+
 .pathsec .sp-t{margin-top:auto;padding-top:10px;}
 .pathsec .sp-b{flex:1;}
 @media (max-width:900px){
@@ -2289,7 +2298,7 @@ html .bigfooter .brand{
   font-size:var(--fs-label);font-weight:600;color:var(--tx3);
 }
 .smanch a:hover{color:#fff;border-color:var(--hair2);background:rgba(255,255,255,.05);}
-.tourcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;}
+.tourcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:18px;}
 .tourcard{
   display:flex;flex-direction:column;gap:8px;
   border:1px solid var(--hair2);border-radius:20px;padding:22px 24px;

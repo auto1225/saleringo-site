@@ -166,7 +166,8 @@
     out.push(row(T.order, '<span class="osno">' + esc(d.orderNo) + '</span>'));
     out.push(row(T.company, esc(d.company)));
     out.push(row(T.country, esc(d.billingCountry)));
-    out.push(row(T.plan, esc(d.plan)));
+    var planName = {start: 'Start', grow: 'Grow', scale: 'Scale'}[d.plan] || d.plan;
+    out.push(row(T.plan, esc(planName)));
     if (d.monthly) out.push(row(T.monthly, esc(money(d.monthly.total, cur))));
     if (d.afterDiscount) out.push(row(T.after, esc(money(d.afterDiscount, cur))));
     if (d.firstMonth && d.firstMonth.total != null) {
@@ -184,7 +185,12 @@
       out.push('<ul class="ostrack">');
       FLOW.forEach(function (st, i) {
         var s = T.steps[st];
-        var cls = i < idx ? 'done' : (i === idx ? 'now' : '');
+        /* 온라인 주문은 proposal_sent 를 건너뜁니다. 밟지 않은 단계에
+           체크를 그리면 「보낸 적 없는 제안서를 보냈다」가 됩니다 —
+           timeline 에 시각이 있는 단계만 done 입니다. */
+        var cls = i === idx ? 'now'
+                : (i < idx && reached[st]) ? 'done'
+                : (i < idx) ? 'skipped' : '';
         var at = reached[st] ? '<span>' + esc(when(reached[st])) + '</span>' : '';
         out.push('<li class="' + cls + '"><b>' + esc(s[0]) + '</b>' +
                  '<span>' + esc(s[1]) + '</span>' + at + '</li>');

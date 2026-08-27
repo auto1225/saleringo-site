@@ -54,7 +54,7 @@
       phoneBad: '전화번호를 다시 확인해 주세요.',
       agreeBad: '필수 동의 항목을 확인해 주세요.',
       sending: '접수하는 중…',
-      failNet: '전송에 실패했습니다. <b>입력하신 내용은 그대로 남아 있습니다.</b> 잠시 뒤 다시 눌러 주십시오. 같은 주문이 두 번 접수되는 일은 없습니다. 계속 안 되면 hello@saleringo.com 으로 보내 주십시오.',
+      failNet: '전송에 실패했습니다. 입력하신 내용은 그대로 남아 있습니다. 잠시 뒤 다시 눌러 주십시오. 같은 주문이 두 번 접수되는 일은 없습니다. 계속 안 되면 hello@saleringo.com 으로 보내 주십시오.',
       failDest: '지금은 온라인 접수를 받을 수 없습니다. 위 「서면 주문 제안 요청」을 눌러 주시면 담당자가 같은 내용으로 서면 주문서를 만들어 보내 드립니다.',
       offline: '지금은 온라인 주문 접수가 열려 있지 않습니다. 아래 내용을 그대로 두시고 「서면 주문 제안 요청」을 눌러 주시면, 담당자가 같은 내용으로 서면 주문서를 만들어 보내 드립니다.',
       proposalCta: '서면 주문 제안 요청',
@@ -90,7 +90,7 @@
       phoneBad: 'Please check the phone number.',
       agreeBad: 'Please tick the required agreements.',
       sending: 'Sending…',
-      failNet: 'That did not go through. <b>What you entered is still here.</b> Try again in a moment — the same order cannot be recorded twice. If it keeps failing, send it to hello@saleringo.com.',
+      failNet: 'That did not go through. What you entered is still here. Try again in a moment — the same order cannot be recorded twice. If it keeps failing, send it to hello@saleringo.com.',
       failDest: 'Online orders are not being taken right now. Press “Request a written order” above and a person will prepare the same order in writing.',
       offline: 'Online ordering is not open at the moment. Leave what you have entered and press “Request a written order”, and a person will prepare the same order in writing.',
       proposalCta: 'Request a written order',
@@ -494,10 +494,18 @@
     /* 나라·요금제·구매 주체가 바뀌면 서버 판정도 바뀝니다. */
     askServerSoon();
 
+    /* 숨은 칸의 값은 그대로 전송되고 있었습니다 — Scale 에서 넣은
+       통화량이 Start 주문에 실려 갔습니다. 숨기면 지웁니다. */
     var row = document.querySelector('[data-voice-row]');
-    if (row) row.hidden = !(plan && plan.voice);
+    if (row) {
+      row.hidden = !(plan && plan.voice);
+      if (row.hidden) { var vi = row.querySelector('input'); if (vi) vi.value = ''; }
+    }
     var talk = document.querySelector('[data-talk-row]');
-    if (talk) talk.hidden = !(plan && plan.messenger);
+    if (talk) {
+      talk.hidden = !(plan && plan.messenger);
+      if (talk.hidden) { var ti = talk.querySelector('input'); if (ti) ti.value = ''; }
+    }
 
     var rec = document.querySelector('[data-recurring-agree]');
     if (rec) {
@@ -548,7 +556,10 @@
        "우리가 만든 값이니 괜찮다"는 가정은 공짜로 두지 않습니다. */
     var no = String(res.orderNo || '').replace(/[^A-Z0-9-]/g, '').slice(0, 20);
     var cur = q.currency || 'KRW';
-    var monthly = q.monthly ? money(q.monthly.total, cur) : '';
+    /* 재시도(멱등 중복)의 응답에는 quote 가 실려 오지 않습니다. 그때
+       「매월 __」 처럼 빈 금액을 그리는 것보다, 금액 줄을 빼고 주문
+       조회로 안내하는 쪽이 맞습니다. */
+    var monthly = (q.monthly && q.monthly.total != null) ? money(q.monthly.total, cur) : '';
     var first = q.firstMonthIfToday ? money(q.firstMonthIfToday.total, cur) : '';
     var after = (q.discount && q.afterDiscount)
       ? money(q.afterDiscount.total, cur) : '';
@@ -563,11 +574,15 @@
       '<div class="ordersent" role="status" tabindex="-1">' +
         '<b>' + (KO ? '주문이 접수되었습니다.' : 'Your order is in.') + '</b>' +
         '<code class="orderno">' + no + '</code>' +
-        '<p class="os-money">' +
+        (monthly ? '<p class="os-money">' +
           (KO ? '매월 ' : 'Every month ') + '<b>' + monthly + '</b>' +
           (first ? (KO ? ' · 첫 달은 개시일 기준 일할(오늘이면 ' : ' · first month prorated (today, ')
                  + first + ')' : '') +
-        '</p>' +
+        '</p>' : '<p class="os-money">' +
+          (KO ? '금액은 <a class="lnk" href="./order-status.html?no=' + no +
+                '">주문 조회</a>에서 확인하실 수 있습니다.'
+              : 'The amounts are on <a class="lnk" href="./order-status.html?no=' + no +
+                '">your order page</a>.') + '</p>') +
         /* 할인이 끝나면 금액이 두 배가 됩니다. 이 화면과 확인 메일이
            구매자에게 남는 전부인데, 여기에 할인가만 적혀 있으면 넉 달째
            청구서를 보고 "듣던 것과 다르다"고 하는 것이 당연합니다. */
@@ -586,6 +601,14 @@
               : 'No money has moved. This is what happens next.') +
         '</p>' +
         '<ol class="os-steps">' + steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' +
+        ((res.route === 'proposal' && res.blockers && res.blockers.length)
+          ? '<p class="os-note">' +
+            (KO ? '이 주문은 서면 주문서로 진행됩니다 — ' : 'This order continues as a written order — ') +
+            res.blockers.map(function (b) {
+              /* 서버는 {ko, en} 짝으로 보냅니다 */
+              return String((b && (KO ? b.ko : b.en)) || '').replace(/[<>]/g, '');
+            }).join(' · ') + '</p>'
+          : '') +
         '<p class="os-note">' +
           (res.confirmation
             ? (KO ? '같은 내용을 이메일로 보내 드렸습니다. 1분 안에 오지 않으면 스팸함을 확인해 주십시오. '
@@ -687,10 +710,23 @@
       })
     }).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) {
-        if (!j || j.error) return;
+        if (!j || j.error) { quoteQuiet(); return; }
         VERDICT = j;
         paintVerdict();
-      }).catch(function () {});
+      }).catch(function () { quoteQuiet(); });
+  }
+
+  /* 견적 서버가 잠시 조용할 때. 예전에는 아무 말 없이 넘어갔고,
+     서면 주문 경로의 구매자가 그 사실을 모른 채 접수를 눌렀습니다.
+     판정을 지어내지 않고, 확인이 접수 뒤에 온다는 사실만 적습니다. */
+  function quoteQuiet() {
+    if (VERDICT) return;               /* 이미 받은 판정이 있으면 그대로 */
+    var slot = document.querySelector('[data-commerce-verdict]');
+    if (!slot) return;
+    slot.hidden = false;
+    slot.textContent = KO
+      ? '세금과 접수 가능 여부는 접수 뒤 이메일로 확인해 드립니다.'
+      : 'Tax and availability are confirmed by email after you order.';
   }
 
   /* 고르는 중에 매번 묻지 않습니다. 손을 멈추면 그때 한 번 묻습니다. */
@@ -732,9 +768,13 @@
         btn.removeAttribute('data-route');
       }
     }
-    var barTotal = document.querySelector('[data-paybar-cta]');
-    if (barTotal) {
-      barTotal.textContent = com.orderable ? T.payCta : T.proposalCta;
+    /* 결제 막대에는 단추가 없고 「Every month · 금액」뿐입니다. 제안
+       경로에서도 금액은 참이지만, 이 주문이 화면에서 끝나지 않는다는
+       사실은 막대도 말해야 합니다. */
+    var barLbl = document.querySelector('.paybar .lbl');
+    if (barLbl) {
+      if (!barLbl._orig) barLbl._orig = barLbl.textContent;
+      barLbl.textContent = com.orderable ? barLbl._orig : T.proposalCta;
     }
   }
 
@@ -790,6 +830,21 @@
      살아 있는 「주문 접수하기」 버튼을 함께 보여 줬습니다. 그 버튼은
      반드시 실패하는 요청을 보냈고, 구매자는 자기가 뭘 잘못했는지 몰랐습니다.
      한 화면이 서로 반대되는 두 가지를 말하면, 사람은 버튼을 믿습니다. */
+  function carryDraft() {
+    if (!window.srCarry) return;
+    var take = ['company', 'country', 'plan', 'email', 'contact'];
+    var parts = [];
+    take.forEach(function (k) {
+      var el = k === 'plan' ? form.querySelector('[name="plan"]:checked')
+                            : $('[name="' + k + '"]');
+      var v = el && (el.value || '').trim();
+      if (v) parts.push(k + ': ' + v);
+    });
+    if (parts.length) {
+      window.srCarry.write({ orderDraft: parts.join(' · '), orderDraftLang: LANG });
+    }
+  }
+
   function offlineMode() {
     var slot = $('[data-order-error]');
     if (slot) {
@@ -806,8 +861,15 @@
       a.setAttribute('data-proposal', '1');
       a.href = KO ? '../ko/index.html#early-access' : '../en/index.html#early-access';
       a.textContent = T.proposalCta;
+      /* 「같은 내용으로 만들어 드린다」를 사실로: 문의 폼의 메모 칸에
+         보이게 옮겨 적힐 요약을 싣습니다. site.js 의 srCarry 가 받습니다. */
+      a.addEventListener('click', function () { carryDraft(); });
       btn.parentNode.replaceChild(a, btn);
     }
+
+    /* 접수가 닫혔으면 금액 막대도 접습니다. */
+    var pbar = document.querySelector('.paybar');
+    if (pbar) pbar.style.display = 'none';
 
     /* 결제 바의 버튼도 같은 것으로 바꿉니다. 화면 아래에 고정된 버튼만
        살아 있으면 위에서 없앤 의미가 없습니다. */
@@ -935,11 +997,14 @@
         return;
       }
       if (btn) { btn.disabled = false; btn.innerHTML = btn._label; }
-      if (out.status === 503) return fail(T.failDest);
+      if (out.status === 503) { offlineMode(); return fail(T.failDest); }
       if (out.body && out.body.fields && out.body.fields.length) {
-        var el = $('[name="' + out.body.fields[0] + '"]');
+        /* 서버는 세금 번호를 taxId 라고 부릅니다. 화면의 칸은 bizNo 입니다. */
+        var fname = out.body.fields[0] === 'taxId' ? 'bizNo' : out.body.fields[0];
+        var el = $('[name="' + fname + '"]');
         if (el) {
-          setErr(el, el.name === 'bizNo' ? T.bizBad : T.required);
+          setErr(el, el.name === 'bizNo' ? T.bizBad
+                   : el.type === 'checkbox' ? T.agreeBad : T.required);
           (el.closest('.fld') || el).scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
