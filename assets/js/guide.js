@@ -164,7 +164,7 @@ var SR_TOURS = {
     steps: [
       { u: 'verified-ai.html', h: '#life',        lab: 'One answer' },
       { u: 'verified-ai.html', h: '#audit',       lab: 'The audit trail' },
-      { u: 'index.html',       h: '#what-to-ask', lab: 'What to ask' },
+      { u: 'ai-answering-service.html', h: '#ask', lab: 'What to ask' },
       { u: 'pricing.html',     h: '#not-paying',  lab: 'Not paying for' },
       { u: 'security.html',    h: '#measures',    lab: 'The measures' },
       { u: 'privacy.html',     h: '#your-rights', lab: 'Your rights' }
@@ -199,7 +199,7 @@ var SR_TOURS = {
     steps: [
       { u: 'demo.html',     h: '#yourprices',   lab: 'Your prices' },
       { u: 'index.html',    h: '#try',          lab: 'Try it here' },
-      { u: 'index.html',    h: '#call-them',    lab: 'Call our AI' },
+      { u: 'about.html',    h: '#call-them',    lab: 'Call our AI' },
       { u: 'examples.html', h: '#pick-a-trade', lab: 'A real call' },
       { u: 'index.html',    h: '#calculator',   lab: 'The arithmetic' },
       { u: 'about.html',    h: '#people',       lab: 'Who built it' }

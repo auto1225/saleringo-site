@@ -28,6 +28,25 @@ for p in PAGES:
                                set(re.findall(r'\sname="([^"]+)"', s))
 
 bad = []
+
+# guide.js 의 안내 투어 정거장도 페이지 속 자리를 가리킵니다. href 가
+# 아니라서 아래 본검사에는 안 걸리는데, 실제로 두 번 끊어진 적이
+# 있습니다 — 절을 옮기고 투어를 잊는 것이 정확히 그 사고입니다.
+GUIDE = "assets/js/guide.js"
+if os.path.exists(GUIDE):
+    g = io.open(GUIDE, encoding="utf-8").read()
+    for m in re.finditer(r"u:\s*'([a-z0-9/.-]+\.html)'\s*,\s*h:\s*'#([a-z0-9-]+)'", g):
+        page, frag = m.group(1), m.group(2)
+        for lang in ("en", "ko"):
+            target = os.path.normpath(os.path.join(lang, page))
+            if target not in ids:
+                continue
+            if frag not in ids[target]:
+                # 한국어에 절이 없어서 그 언어의 투어가 건너뛰는 것은
+                # build.py 의 규칙과 같아 en 만 오류로 봅니다
+                if lang == "en":
+                    bad.append((GUIDE, "%s#%s" % (page, frag), target))
+
 for p in PAGES:
     s = io.open(p, encoding="utf-8").read()
     for href in re.findall(r'href="([^"]*#[^"]+)"', s):
