@@ -25,8 +25,29 @@ ICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0
         "text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E")
 
 
+def og_image_of(slug):
+    """같은 이름의 영문 쪽에서 og:image 를 가져온다.
+
+    한국어 38쪽에 og:image 가 없었습니다. 카카오톡 공유 미리보기가
+    이 태그를 읽으므로 한국 사업에는 빈칸이 실제 손실입니다. 영문
+    쪽은 전부 갖고 있고 사진도 같은 사진이 맞으므로, 따로 안 주면
+    영문 것을 씁니다.
+    """
+    import re
+    p = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+        os.path.abspath(__file__)))), 'en', slug)
+    try:
+        m = re.search(r'property="og:image" content="([^"]*)"',
+                      io.open(p, encoding='utf-8').read())
+        return m.group(1) if m else ''
+    except OSError:
+        return ''
+
+
 def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide'),
          image='', crumbs=None, lang='ko'):
+    if not image:
+        image = og_image_of(slug)
     deep = '/' in slug
     root = '../' if deep else './'
     a = '../../assets' if deep else '../assets'
