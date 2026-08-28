@@ -89,6 +89,11 @@
       "permanent": true
     },
     {
+      "source": "/en/status",
+      "destination": "/en/status.html",
+      "permanent": true
+    },
+    {
       "source": "/en/terms",
       "destination": "/en/terms.html",
       "permanent": true
@@ -441,6 +446,11 @@
     {
       "source": "/ko/sitemap",
       "destination": "/ko/sitemap.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/status",
+      "destination": "/ko/status.html",
       "permanent": true
     },
     {
@@ -1260,6 +1270,40 @@
     {
       "source": "/sitemap.html",
       "destination": "/en/sitemap.html",
+      "permanent": false
+    },
+    {
+      "source": "/status",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/status.html",
+      "permanent": false
+    },
+    {
+      "source": "/status",
+      "destination": "/en/status.html",
+      "permanent": false
+    },
+    {
+      "source": "/status.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/status.html",
+      "permanent": false
+    },
+    {
+      "source": "/status.html",
+      "destination": "/en/status.html",
       "permanent": false
     },
     {

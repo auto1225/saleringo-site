@@ -27,10 +27,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Front Desk for Tutoring & Academies","item":"https://claude.saleringo.com/en/industries/academies.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=59.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=59.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=59.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=59.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=60.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=60.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=60.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=60.0">
 <style>
   /* page-specific: tutoring & test prep landing */
   /* full-bleed photo hero — block layout overrides .photohero's flex */
@@ -206,6 +206,21 @@
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
     border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/academies.html">
@@ -230,7 +245,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v59.0">v59.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v60.0">v60.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -494,6 +509,56 @@
       </div>
     </div>
     <p class="statnote">If your&nbsp;school-management software is not named above, ask us before there is anything to&nbsp;cancel. Hearing it now costs you a&nbsp;phone call. Hearing it after the&nbsp;invoice costs you a&nbsp;term.</p>
+  </div>
+</section>
+
+<section class="t-md sec-light bg-paper" id="playbook">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow light"><i></i>The playbook</span><span class="line"></span></div>
+    <h2 class="h2 reveal">What each door captures &mdash;<br>and the work it becomes.</h2>
+    <p class="lead reveal">At&nbsp;an&nbsp;academy the&nbsp;three doors feed one CRM: the&nbsp;question is answered from&nbsp;director-approved facts, and what the&nbsp;parent said becomes a&nbsp;record, a&nbsp;booking and a&nbsp;follow-up — not a&nbsp;memo on&nbsp;the&nbsp;desk for&nbsp;the&nbsp;morning.</p>
+
+    <div class="trio reveal" style="margin-top:30px;">
+      <div><b>✆ AI phone</b><p>The&nbsp;7:42 AM absence call: which student, which sessions, and the&nbsp;fee question that&nbsp;came with&nbsp;it. The&nbsp;admin half is absorbed on&nbsp;the&nbsp;call — absences recorded, tutor notified, the&nbsp;catch-up hour offered — and the&nbsp;money half is written down, dates attached, for&nbsp;a&nbsp;person.</p></div>
+      <div><b>💬 Website chat</b><p>The&nbsp;Sunday-evening comparison shopper: the&nbsp;student's grade and subject, the&nbsp;goal, the&nbsp;schedule constraint and any sibling — plus which page they were asking from. Tuition is quoted from&nbsp;the&nbsp;published sheet; a&nbsp;discount question is routed, never argued.</p></div>
+      <div><b>✓ Messaging</b><p>Your&nbsp;WhatsApp Business number joins the&nbsp;same inbox, so the&nbsp;9:50 PM inquiry keeps one thread: grade, subject, parent contact and the&nbsp;booked placement slot — and any handoff reaches your&nbsp;staff inside the&nbsp;parent's own thread.</p></div>
+    </div>
+
+    <h3 class="h3 reveal" style="margin-top:34px;">The record it writes</h3>
+    <div class="dtwrap reveal"><table class="dtable">
+      <thead><tr><th>CRM field</th><th>Comes from</th><th>Verified how</th></tr></thead>
+      <tbody>
+        <tr><td><b>Parent — name &amp; contact</b></td><td>The&nbsp;thread itself: WhatsApp, web chat or the&nbsp;call</td><td>Record created against the&nbsp;parent — the&nbsp;one who pays and decides — with&nbsp;the&nbsp;student attached</td></tr>
+        <tr><td><b>Student — grade &amp; subject</b></td><td>The&nbsp;parent's first message ("grade 9, maths")</td><td>Extracted from&nbsp;the&nbsp;conversation into&nbsp;the&nbsp;record automatically, not re-typed from&nbsp;a&nbsp;memo</td></tr>
+        <tr><td><b>Goal</b></td><td>Asked in&nbsp;conversation</td><td>Filed as its&nbsp;own row on&nbsp;the&nbsp;lead card — "raise score before the&nbsp;spring test date"</td></tr>
+        <tr><td><b>Placement test</b></td><td>The&nbsp;slots your&nbsp;director opened</td><td>Only open slots are ever offered; booked with&nbsp;a&nbsp;confirmation and a&nbsp;day-before reminder</td></tr>
+        <tr><td><b>Tuition quoted</b></td><td>Your&nbsp;published sheet</td><td>Approved by&nbsp;your&nbsp;director before go-live; stated as published, never negotiated</td></tr>
+        <tr><td><b>Schedule constraint</b></td><td>The&nbsp;parent's reply ("not Wednesdays")</td><td>Written to&nbsp;the&nbsp;record as a&nbsp;field, not a&nbsp;note — only classes that&nbsp;fit are offered again</td></tr>
+        <tr><td><b>Sibling</b></td><td>Mentioned in&nbsp;passing</td><td>Attached to&nbsp;the&nbsp;same parent record with&nbsp;year and subject — ready for&nbsp;the&nbsp;seasonal campaign</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">The work it readies</h3>
+    <ul class="kolist reveal">
+      <li><b>Discount &amp; sibling-rate questions</b> — flagged to&nbsp;your&nbsp;director with&nbsp;the&nbsp;conversation attached; the&nbsp;parent is told to&nbsp;expect the&nbsp;reply tomorrow, and free placement slots stay held in&nbsp;the&nbsp;meantime.</li>
+      <li><b>Fee-pause requests</b> — routed to&nbsp;the&nbsp;office with&nbsp;the&nbsp;absence dates already attached; someone comes back to&nbsp;the&nbsp;parent the&nbsp;same day.</li>
+      <li><b>The enrolment offer</b> — your&nbsp;director assigns the&nbsp;level after the&nbsp;test; the&nbsp;offer goes out the&nbsp;hour the&nbsp;decision lands, with&nbsp;the&nbsp;real seat count.</li>
+      <li><b>The held seat</b> — held until Thursday, and the&nbsp;desk does not have to&nbsp;remember: the&nbsp;Wednesday-evening nudge is queued rather than the&nbsp;hold quietly expiring.</li>
+    </ul>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">What stays a human decision</h3>
+    <ul class="kolist reveal">
+      <li><b>Scores and admissions.</b> No&nbsp;outcome is promised in&nbsp;any wording — the&nbsp;question is handed to&nbsp;your&nbsp;director with&nbsp;the&nbsp;full parent conversation.</li>
+      <li><b>Class placement.</b> The&nbsp;placement test informs; your&nbsp;director decides. The&nbsp;AI books the&nbsp;test and delivers the&nbsp;lead.</li>
+      <li><b>Tuition.</b> Quoted exactly as published. Discounts and fee pauses go straight to&nbsp;a&nbsp;person.</li>
+    </ul>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">Before / after</h3>
+    <div class="trio reveal">
+      <div><b>Before</b><p>The&nbsp;parent messages at&nbsp;8:41 PM; the&nbsp;desk closed hours ago. The&nbsp;question waits on&nbsp;a&nbsp;memo until the&nbsp;desk opens at&nbsp;ten — and the&nbsp;callback reaches a&nbsp;parent who has usually already visited whoever answered first.</p></div>
+      <div><b>After</b><p>Answered at&nbsp;once from&nbsp;director-approved facts, the&nbsp;placement test booked for&nbsp;Saturday 2 PM — and by&nbsp;9:04 PM the&nbsp;lead card holds grade, subject, goal and the&nbsp;sibling, with&nbsp;the&nbsp;reminder and follow-up queued.</p></div>
+      <div><b>Your first 14 days</b><p>The&nbsp;pilot is the&nbsp;first 14 days. You judge it on&nbsp;the&nbsp;record it kept — the&nbsp;placement tests booked and the&nbsp;parents filed — and if it has not earned its&nbsp;place, the&nbsp;refund is in&nbsp;full. The&nbsp;cost is the&nbsp;published plan rate, with&nbsp;the&nbsp;first month pro-rated.</p></div>
+    </div>
   </div>
 </section>
 
@@ -811,7 +876,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v59.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v60.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -836,6 +901,7 @@
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
         <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../status.html">Status & incidents</a>
         <a class="lnk" href="../sitemap.html">Site map</a></div>
     </div>
     <div class="base">
@@ -856,13 +922,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=59.0"></script>
-<script src="../../assets/js/balance.js?v=59.0" defer></script>
-<script src="../../assets/js/panels.js?v=59.0" defer></script>
-<script src="../../assets/js/wrap.js?v=59.0" defer></script>
-<script src="../../assets/js/rail.js?v=59.0" defer></script>
-<script src="../../assets/js/canvas.js?v=59.0" defer></script>
-<script src="../../assets/js/scenes.js?v=59.0" defer></script>
-<script src="../../assets/js/guide.js?v=59.0"></script>
+<script src="../../assets/js/site.js?v=60.0"></script>
+<script src="../../assets/js/balance.js?v=60.0" defer></script>
+<script src="../../assets/js/panels.js?v=60.0" defer></script>
+<script src="../../assets/js/wrap.js?v=60.0" defer></script>
+<script src="../../assets/js/rail.js?v=60.0" defer></script>
+<script src="../../assets/js/canvas.js?v=60.0" defer></script>
+<script src="../../assets/js/scenes.js?v=60.0" defer></script>
+<script src="../../assets/js/guide.js?v=60.0"></script>
 </body>
 </html>

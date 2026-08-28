@@ -53,6 +53,20 @@ CSS = """
     text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
     transition:all .3s var(--ease);}
   .otherwall a:hover{border-color:var(--teal);background:rgba(23,189,189,.08);}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 """
 
 TPL = """
@@ -127,7 +141,7 @@ TPL = """
     <div class="fieldgrid reveal">{fields}</div>
   </div>
 </section>
-
+{playbook}
 <section class="t-md sec-dark bg-grid" id="pipeline">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>진행 단계</span><span class="line"></span></div>
@@ -178,6 +192,64 @@ TPL = """
 """
 
 
+PB = """
+<section class="t-md sec-light bg-paper" id="playbook">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow light"><i></i>The playbook</span><span class="line"></span></div>
+    <h2 class="h2 reveal">What each door captures &mdash;<br>and the work it becomes.</h2>
+    <p class="lead reveal">{lead}</p>
+
+    <div class="trio reveal" style="margin-top:30px;">
+      <div><b>✆ AI phone</b><p>{phone}</p></div>
+      <div><b>💬 Website chat</b><p>{chat}</p></div>
+      <div><b>✓ Messaging</b><p>{msg}</p></div>
+    </div>
+
+    <h3 class="h3 reveal" style="margin-top:34px;">The record it writes</h3>
+    <div class="dtwrap reveal"><table class="dtable">
+      <thead><tr><th>CRM field</th><th>Comes from</th><th>Verified how</th></tr></thead>
+      <tbody>{rows}</tbody>
+    </table></div>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">The work it readies</h3>
+    <ul class="kolist reveal">{tasks}</ul>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">What stays a human decision</h3>
+    <ul class="kolist reveal">{human}</ul>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">Before / after</h3>
+    <div class="trio reveal">
+      <div><b>Before</b><p>{before}</p></div>
+      <div><b>After</b><p>{after}</p></div>
+      <div><b>Your first 14 days</b><p>{days}</p></div>
+    </div>
+  </div>
+</section>
+"""
+
+
+def build_playbook(t):
+    """playbook 데이터가 있는 업종에만 절을 렌더한다.
+
+    내용은 전부 그 업종 dict 에 이미 있는 것 - 통화 대사, 거부 목록,
+    CRM 항목과 단계 - 의 재배치다. 마지막 칸의 파일럿 14일·전액 환불·
+    첫 달 일할 계산은 사이트 공통의 사실이라 여기서 한 번만 조립한다.
+    """
+    pb = t.get('playbook')
+    if not pb:
+        return ''
+    rows = ''.join('<tr><td><b>%s</b></td><td>%s</td><td>%s</td></tr>' % r
+                   for r in pb['record'])
+    tasks = ''.join('<li><b>%s</b>%s &rarr; %s</li>' % k for k in pb['tasks'])
+    human = ''.join('<li><b>%s</b>%s</li>' % h for h in pb['human'])
+    days = ('파일럿은 첫 14일입니다. 판단 근거는 실제 응대 기록 &mdash; %s &mdash; 이고, '
+            '아니다 싶으시면 전액 환불입니다. 비용은 요금제 그대로이고, '
+            '첫 달만 일할로 계산합니다.' % pb['proof'])
+    return PB.format(lead=pb['lead'], phone=pb['phone'], chat=pb['chat'],
+                     msg=pb['msg'], rows=rows, tasks=tasks, human=human,
+                     before=pb['before'], after=pb['after'], days=days)
+
+
 def build_trade(t):
     turns = []
     for who, when, what in t['call']:
@@ -193,7 +265,8 @@ def build_trade(t):
 
     ctx = dict(t)
     ctx.update(NAV=NAV, FOOT=FOOT, turns=''.join(turns), refuse=refuse,
-               fields=fields, stages=stages, others=others)
+               fields=fields, stages=stages, others=others,
+               playbook=build_playbook(t))
     body = TPL.format(**ctx)
     page('industries/%s.html' % t['slug'],
          '%s AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법' % t['name'],

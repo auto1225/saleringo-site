@@ -31,10 +31,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Intake for Small Law Firms","item":"https://claude.saleringo.com/en/industries/legal.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=59.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=59.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=59.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=59.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=60.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=60.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=60.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=60.0">
 <style>
   /* ── LEGAL · archetype: THE GATE ─────────────────────────── */
   /* the only pack in the product where a check blocks scheduling
@@ -203,6 +203,21 @@
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
     border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/legal.html">
@@ -225,7 +240,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v59.0">v59.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v60.0">v60.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -454,6 +469,56 @@
       <span class="pc-d">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and pipeline stages this&nbsp;trade works in, the&nbsp;systems it hands to, and every&nbsp;refusal written down. It is a&nbsp;manifest, so it lives where a&nbsp;manifest belongs rather than in&nbsp;the&nbsp;middle of&nbsp;an&nbsp;argument.</span>
       <span class="pc-go" aria-hidden="true">&rarr;</span>
     </a>
+  </div>
+</section>
+
+<section class="t-md sec-light bg-paper" id="playbook">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow light"><i></i>The playbook</span><span class="line"></span></div>
+    <h2 class="h2 reveal">What each door captures &mdash;<br>and the work it becomes.</h2>
+    <p class="lead reveal">At&nbsp;a&nbsp;firm the&nbsp;three doors run the&nbsp;same gate — practice list, opposing party, conflict check, and only then a&nbsp;held time. What each channel writes onto&nbsp;the&nbsp;matter, and who acts on&nbsp;it in&nbsp;the&nbsp;morning.</p>
+
+    <div class="trio reveal" style="margin-top:30px;">
+      <div><b>✆ AI phone</b><p>The&nbsp;11:20 PM call: the&nbsp;matter checked against the&nbsp;practice list, the&nbsp;opposing party taken by&nbsp;name, the&nbsp;$250 consultation quoted from&nbsp;the&nbsp;published schedule, every&nbsp;date preserved as given — and the&nbsp;no-retainer wording said on&nbsp;the&nbsp;call itself.</p></div>
+      <div><b>💬 Website chat</b><p>The&nbsp;Friday 19:45 deadline question: refused a&nbsp;number in&nbsp;any wording, but the&nbsp;dates captured verbatim — served the&nbsp;12th, hearing the&nbsp;30th — the&nbsp;matter marked urgent, your&nbsp;out-of-hours instruction sent unedited, plus the&nbsp;page the&nbsp;visitor wrote from.</p></div>
+      <div><b>✓ Messaging</b><p>The&nbsp;22:40 family matter, on&nbsp;the&nbsp;channel the&nbsp;client chose: "don't ring the&nbsp;house" stored as an&nbsp;enforced rule, not a&nbsp;note — no&nbsp;calls, no&nbsp;voicemail, this&nbsp;channel only — with&nbsp;the&nbsp;safe hours recorded and applied to&nbsp;every&nbsp;later message.</p></div>
+    </div>
+
+    <h3 class="h3 reveal" style="margin-top:34px;">The record it writes</h3>
+    <div class="dtwrap reveal"><table class="dtable">
+      <thead><tr><th>CRM field</th><th>Comes from</th><th>Verified how</th></tr></thead>
+      <tbody>
+        <tr><td><b>Matter type</b></td><td>The&nbsp;caller's description</td><td>Checked against your&nbsp;practice list before a&nbsp;fee is mentioned; a&nbsp;matter you don't take becomes a&nbsp;referral</td></tr>
+        <tr><td><b>Opposing party &amp; related names</b></td><td>Asked before any time is offered</td><td>The&nbsp;gate's only input — run against the&nbsp;firm's own conflicts list; a&nbsp;solicitor clears or declines</td></tr>
+        <tr><td><b>Fee quoted</b></td><td>Your&nbsp;published fee schedule</td><td>The&nbsp;answer trace shows the&nbsp;schedule it came from&nbsp;and the&nbsp;partner who approved it; no&nbsp;total is ever estimated</td></tr>
+        <tr><td><b>Dates</b></td><td>The&nbsp;caller's own account</td><td>Preserved verbatim — served the&nbsp;12th, hearing the&nbsp;30th — never turned into&nbsp;a&nbsp;deadline</td></tr>
+        <tr><td><b>Consultation</b></td><td>The&nbsp;firm's calendar</td><td>Held provisionally only; nothing is confirmed by&nbsp;software — a&nbsp;cleared conflict check confirms it</td></tr>
+        <tr><td><b>Contact rules</b></td><td>The&nbsp;client's instruction</td><td>Stored as an&nbsp;enforced rule and applied to&nbsp;every&nbsp;later message — a&nbsp;safety field, not a&nbsp;preference</td></tr>
+        <tr><td><b>Urgency</b></td><td>Time pressure in&nbsp;the&nbsp;account</td><td>Flagged urgent so the&nbsp;matter sorts to&nbsp;the&nbsp;top of&nbsp;the&nbsp;queue on&nbsp;Monday morning</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">The work it readies</h3>
+    <ul class="kolist reveal">
+      <li><b>The conflict check</b> — queued the&nbsp;moment the&nbsp;names are taken; a&nbsp;solicitor runs it first thing, and the&nbsp;held slot is confirmed or released on&nbsp;their&nbsp;decision.</li>
+      <li><b>The urgent pile</b> — flagged matters sort first on&nbsp;Monday morning, with&nbsp;the&nbsp;account and the&nbsp;dates verbatim, before anything else is read.</li>
+      <li><b>The declined matter</b> — one sentence, no&nbsp;reason, the&nbsp;hold released and the&nbsp;firm's referral list sent the&nbsp;same morning.</li>
+      <li><b>The engagement letter</b> — cost sensitivity is noted on&nbsp;the&nbsp;matter, so the&nbsp;solicitor who has seen the&nbsp;papers leads with&nbsp;the&nbsp;total.</li>
+    </ul>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">What stays a human decision</h3>
+    <ul class="kolist reveal">
+      <li><b>The merits.</b> Whether somebody has a&nbsp;case is a&nbsp;solicitor's judgement on&nbsp;the&nbsp;papers — never opined on, not even as a&nbsp;hedge.</li>
+      <li><b>Deadlines.</b> No&nbsp;limitation period or filing date is ever stated. The&nbsp;dates are recorded as given and a&nbsp;solicitor confirms the&nbsp;one that&nbsp;applies.</li>
+      <li><b>The conflict decision.</b> The&nbsp;AI runs the&nbsp;names; a&nbsp;person clears or declines — and a&nbsp;declined check is never explained.</li>
+    </ul>
+
+    <h3 class="h3 reveal" style="margin-top:30px;">Before / after</h3>
+    <div class="trio reveal">
+      <div><b>Before</b><p>Served on&nbsp;Friday afternoon; the&nbsp;caller rings at&nbsp;11:20 PM. The&nbsp;office is closed for&nbsp;the&nbsp;weekend, voicemail answers — and by&nbsp;Monday morning they have reached somebody else.</p></div>
+      <div><b>After</b><p>Answered at&nbsp;11:20 PM: the&nbsp;matter screened, the&nbsp;other side's name taken, the&nbsp;fee quoted, Tuesday 14:00 held provisionally. Cleared by&nbsp;a&nbsp;person at&nbsp;08:12 — and only then confirmed.</p></div>
+      <div><b>Your first 14 days</b><p>The&nbsp;pilot is the&nbsp;first 14 days. You judge it on&nbsp;the&nbsp;record it kept — the&nbsp;matters screened, the&nbsp;dates preserved, the&nbsp;checks run — and if it has not earned its&nbsp;place, the&nbsp;refund is in&nbsp;full. The&nbsp;cost is the&nbsp;published plan rate, with&nbsp;the&nbsp;first month pro-rated.</p></div>
+    </div>
   </div>
 </section>
 
@@ -997,7 +1062,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v59.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v60.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1022,6 +1087,7 @@
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
         <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../status.html">Status & incidents</a>
         <a class="lnk" href="../sitemap.html">Site map</a></div>
     </div>
     <div class="base">
@@ -1041,13 +1107,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=59.0"></script>
-<script src="../../assets/js/balance.js?v=59.0" defer></script>
-<script src="../../assets/js/panels.js?v=59.0" defer></script>
-<script src="../../assets/js/wrap.js?v=59.0" defer></script>
-<script src="../../assets/js/rail.js?v=59.0" defer></script>
-<script src="../../assets/js/canvas.js?v=59.0" defer></script>
-<script src="../../assets/js/scenes.js?v=59.0" defer></script>
-<script src="../../assets/js/guide.js?v=59.0"></script>
+<script src="../../assets/js/site.js?v=60.0"></script>
+<script src="../../assets/js/balance.js?v=60.0" defer></script>
+<script src="../../assets/js/panels.js?v=60.0" defer></script>
+<script src="../../assets/js/wrap.js?v=60.0" defer></script>
+<script src="../../assets/js/rail.js?v=60.0" defer></script>
+<script src="../../assets/js/canvas.js?v=60.0" defer></script>
+<script src="../../assets/js/scenes.js?v=60.0" defer></script>
+<script src="../../assets/js/guide.js?v=60.0"></script>
 </body>
 </html>
