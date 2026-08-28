@@ -287,8 +287,8 @@ def build(lang):
         ('transfer', t('계좌이체 · 세금계산서 후불', 'Bank transfer against an invoice'),
          t('매월 사용량이 확정되면 전자세금계산서를 먼저 보내 드리고, 받으신 뒤에 이체하시면 됩니다. '
            '결제 정보를 저희에게 맡기지 않아도 됩니다.',
-           'We invoice first &mdash; a Korean tax invoice in Korea, a plain invoice everywhere '
-           'else &mdash; and you transfer after you have it. No payment details are held by us. '
+           'We invoice first &mdash; a Korean tax invoice in Korea, a plain invoice elsewhere '
+           '&mdash; and you transfer after you have it. We hold no payment details. '
            'International transfers carry your bank&rsquo;s fee.')),
     ]
     methodrows = ''.join(
@@ -512,8 +512,8 @@ def build(lang):
         buyerTypes=buyerTypes,
         serviceCountries=serviceCountries,
         fBuyer=t('구매 주체', 'Buying as'),
-        buyerHint=t('세금 처리가 여기서 갈립니다 &mdash; 그리고 이 화면에서 확정되는지, 서면 '
-                    '주문서로 가는지도 여기서 갈립니다. 개인과 공공기관은 서면으로 진행됩니다.',
+        buyerHint=t('세금 처리가 여기서 갈립니다. 이 화면에서 끝나는지, 서면 주문서로 가는지도 '
+                    '갈립니다. 개인과 공공기관은 서면으로 진행됩니다.',
                     'This decides the tax treatment &mdash; and whether the order can finish on '
                     'this screen. Individuals and public bodies continue as a written order.'),
         fServiceCountry=t('실제로 쓰실 나라', 'Where you will actually use it'),
@@ -542,13 +542,12 @@ def build(lang):
         talkPh=t('예: 300', 'e.g. 300'),
         s2=t('세금계산서를 받으실 곳', 'Where the tax invoice goes'),
         s2p=t('한국 사업자이시면 사업자등록번호를 입력하시는 대로 확인합니다. 세금계산서 발행에 '
-              '필요하기 때문입니다. 그 밖의 나라에서는 인보이스에 찍는 번호라 선택입니다 '
-              '&mdash; 다만 EU 사업자가 VAT 번호를 비우시면 이 화면에서 끝나지 않고 '
-              '서면 주문서로 진행됩니다.',
+              '필요하기 때문입니다. 그 밖의 나라에서는 인보이스에 찍는 번호라 선택입니다. '
+              '다만 EU 사업자가 VAT 번호를 비우시면 서면 주문서로 진행됩니다.',
               'If you are in Korea the registration number is checked as you type, because the '
-              'tax invoice needs it. Everywhere else it goes on the invoice and is optional &mdash; '
-              'except that an EU business leaving its VAT number blank continues as a '
-              'written order rather than finishing on this screen.'),
+              'tax invoice needs it. Everywhere else it just goes on the invoice, so it is optional. '
+              'One exception: an EU business that leaves its VAT number blank continues as a '
+              'written order.'),
         fCompany=t('상호', 'Company'), fBiz=t('사업자등록번호', 'Business registration number'),
         fCeo=t('대표자명', 'Representative'), fContact=t('담당자 성명', 'Contact name'),
         fEmail=t('담당자 이메일', 'Contact email'), fPhone=t('연락처', 'Phone'),
@@ -576,24 +575,24 @@ def build(lang):
         lTerms=t('이용약관', 'Terms of service'), lPrivacy=t('개인정보처리방침', 'Privacy policy'),
         agTerms=t('에 동의합니다.', ' — I agree.'),
         agPrivacy=t('에 따른 개인정보 수집·이용에 동의합니다. 수집 항목은 상호, 사업자등록번호, '
-                    '대표자명, 담당자 성명·이메일·연락처, 세금계산서 수신 이메일, 그리고 남겨 주신 '
-                    '메모이며, 계약 이행과 세금계산서 발행에 씁니다.',
+                    '대표자명, 담당자 성명·이메일·연락처, 세금계산서 수신 이메일, 남겨 주신 '
+                    '메모입니다. 계약 이행과 세금계산서 발행에 씁니다.',
                     ' — I agree to the collection of company name, registration number, representative, '
-                    'contact name, email and phone, the tax invoice email and any note you leave, '
-                    'for performing the contract and issuing invoices.'),
+                    'contact name, email and phone, the tax invoice email and any note you leave. '
+                    'We use these to perform the contract and issue invoices.'),
         agTransfer=t('<b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 언어모델이 미국에서 '
-                     '돌아갑니다. 이전받는 회사와 그 나라는 '
+                     '돌아갑니다. 이전받는 회사와 나라는 '
                      '<a href="./privacy.html#transfer" target="_blank" rel="noopener">개인정보처리방침 4항</a>에 '
-                     '적어 두었습니다. 영국·EEA 밖 이전에는 표준계약조항(SCC)을 담은 데이터 처리 '
-                     '계약을 두고 있고, hello@saleringo.com 으로 요청하시면 드립니다. '
-                     '동의하지 않으시면 서비스의 핵심 기능을 쓰실 수 없습니다.',
-                     '<b>I agree to processing outside my country.</b> The service is operated from '
-                     'South Korea, and the language model that drafts each reply runs in the United '
-                     'States. Every company in that chain is named, with the country it operates in, '
-                     'in <a href="./security.html#subprocessors" target="_blank" rel="noopener">the '
-                     'subprocessor list</a>. For transfers out of the UK or EEA our Data Processing '
-                     'Agreement incorporates the Standard Contractual Clauses &mdash; ask for it at '
-                     'hello@saleringo.com. Without this the core function cannot run.'),
+                     '있습니다. 영국·EEA 밖 이전은 표준계약조항(SCC)을 담은 데이터 처리 계약을 '
+                     '따릅니다. 계약서는 hello@saleringo.com 으로 요청하시면 드립니다. '
+                     '동의하지 않으시면 핵심 기능을 쓰실 수 없습니다.',
+                     '<b>I agree to processing outside my country.</b> The language model that '
+                     'drafts replies runs in the United States. '
+                     '<a href="./security.html#subprocessors" target="_blank" rel="noopener">The '
+                     'subprocessor list</a> names each company and its country. For transfers out '
+                     'of the UK or EEA, our Data Processing Agreement includes the Standard '
+                     'Contractual Clauses; ask at hello@saleringo.com. '
+                     'Without it the core function cannot run.'),
         agRec=t('<b>정기결제에 동의합니다.</b> 등록한 카드로 매월 같은 날 자동 결제되며, '
                 '해지 전까지 계속됩니다. <b>해지는 hello@saleringo.com 으로 한 줄 보내시면 됩니다.</b> '
                 '위약금이 없고, 다음 결제일부터 청구가 멈춥니다.',
@@ -604,7 +603,7 @@ def build(lang):
                 'Send me product notes by email. Declining changes nothing about the service.'),
         cta=t('주문 접수하기', 'Place the order'),
         fine=t('누르시면 위 내용이 저희에게 접수됩니다. <b>결제는 이 단계에서 이루어지지 않습니다.</b> '
-               '담당자가 확인한 뒤 결제 안내를 보내 드리고, 그 전까지는 어떤 금액도 청구되지 않습니다. '
+               '담당자가 확인한 뒤 결제 안내를 보내 드립니다. 그 전까지는 어떤 금액도 청구되지 않습니다. '
                '접수 후에도 이메일 한 통으로 취소하실 수 있습니다.',
                'This records your order with us. <b>No payment is taken at this step.</b> '
                'A person confirms first and sends the payment step; nothing is charged before that. '
@@ -617,27 +616,27 @@ def build(lang):
                    'will prepare the same order in writing.'),
         sumTitle=t('주문 요약', 'Your order'),
         sumFoot=t('금액은 <b>세금 별도</b>로 표시하고, 세금이 붙는 경우에만 위 합계에 더합니다. '
-                  '첫 달만 <b>개시일부터 그 달 말일까지 날짜로 나눠</b> 청구하며, 개시일이 정해지면 '
-                  '그 날짜로 계산한 확정 금액을 먼저 알려 드립니다. '
+                  '첫 달만 <b>개시일부터 그 달 말일까지 날짜로 나눠</b> 청구합니다. '
+                  '개시일이 정해지면 확정 금액을 먼저 알려 드립니다. '
                   '통화료와 알림톡은 <b>쓰신 만큼 다음 달에</b> 정산합니다.',
                   'Figures are shown <b>net of tax</b>; tax is added to the total only where we collect it. '
-                  'Only the first month is <b>prorated by days</b>, from the start date, and we send '
-                  'the exact figure once that date is set. '
+                  'Only the first month is <b>prorated by days</b> from the start date. '
+                  'We send the exact figure once that date is set. '
                   'Talk time and messages are settled <b>next month on actual use</b>.'),
         barLbl=t('매월 결제 금액', 'Every month'),
         seller=t(seller_line('ko') + '<br>'
-                 '<b>청약철회</b> — 접수 후 서비스 개시 전에는 언제든 취소하실 수 있으며 금액이 청구되지 '
-                 '않습니다. 개시 후에는 「이용약관」 제5조에 따라, <b>첫 결제일부터 14일 안에는 전액 '
-                 '환불</b>하고, 그 뒤에는 해지 신청일부터 그 달 남은 날수만큼 날짜로 계산해 환불합니다. '
-                 '이미 사용한 통화료 등 사용량 요금은 게시된 단가로 차감합니다. 위약금은 없습니다.',
+                 '<b>청약철회</b> — 서비스 개시 전에는 언제든 취소하실 수 있고, 금액이 청구되지 않습니다. '
+                 '개시 후에는 「이용약관」 제5조를 따릅니다. <b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. '
+                 '그 뒤에는 해지 신청일부터 그 달 말일까지를 날짜로 계산해 환불합니다. '
+                 '이미 쓰신 통화료 등 사용량 요금은 게시된 단가로 차감합니다. 위약금은 없습니다.',
                  seller_line('en') + '<br>'
-                 '<b>Cancellation</b> — before service starts, cancelling costs nothing and no amount '
-                 'is charged. After it starts, &sect;4 of the Terms applies: you can cancel any day, the '
-                 'first payment is refunded <b>in full within 14 days</b>, and after that we refund '
-                 'the unused part of the month, counted by date. Nothing renews. Usage already spent is '
-                 'deducted at the listed rates. There is no penalty.<br>'
-                 'Invoices come from the Korean entity above. Korean customers are billed in won with 10% '
-                 'VAT; everywhere else it is US dollars with no tax added by us.'))
+                 '<b>Cancellation</b> — before service starts, cancelling costs nothing. '
+                 'After it starts, &sect;4 of the Terms applies: cancel any day. The first payment is '
+                 'refunded <b>in full within 14 days</b>; after that we refund the unused days of the '
+                 'month. Usage already spent is deducted at the listed rates. Nothing renews; there is '
+                 'no penalty.<br>'
+                 'Invoices come from the Korean entity above: won plus 10% VAT in Korea, US dollars '
+                 'with no tax added by us everywhere else.'))
 
     page('checkout.html',
          t('주문서 &mdash; Saleringo', 'Order &mdash; Saleringo'),
