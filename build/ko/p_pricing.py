@@ -146,6 +146,7 @@ BODY = """
           <li>문의 수신함과 고객 카드</li>
           <li>캘린더 예약 잡기</li>
           <li>월 500건 대화</li>
+          <li>지점 1곳</li>
           <li>상담 기록 내려받기</li>
         </ul>
         <a class="btn btn-ghostd go" href="./checkout.html?plan=start">이 요금제로 주문</a>
@@ -160,6 +161,7 @@ BODY = """
           <li>요금표 기반 견적 발송</li>
           <li>예약 확인과 노쇼 방지 안내</li>
           <li>월 2,000건 대화</li>
+          <li>지점 3곳까지</li>
         </ul>
         <a class="btn btn-teal go" href="./checkout.html?plan=grow">이 요금제로 주문<span class="cir">&#8599;</span></a>
       </div>
@@ -173,15 +175,18 @@ BODY = """
           <li>통화 1분당 190원부터</li>
           <li>사람에게 돌리기와 야간 전환</li>
           <li>녹취와 요약 보관</li>
+          <li>지점 10곳까지</li>
         </ul>
         <a class="btn btn-ghostd go" href="./checkout.html?plan=scale">이 요금제로 주문</a>
       </div>
     </div>
     <div class="foundbox reveal" id="founding">
-      <b>창립 고객 할인 &mdash; 처음 3개월 50%</b>
+      <b>창립 고객 할인 &mdash; 이번 회차 5팀, 처음 3개월 50%</b>
       <p>지금 시작하시면 처음 세 달은 위 금액의 절반입니다. 가입 시점에 확정되고,
         그 사이에 요금이 올라도 그 세 달은 그대로입니다. 넉 달째부터 정가입니다.
-        주문서에 자동으로 반영되므로 따로 코드를 넣지 않으셔도 됩니다.</p>
+        주문서에 자동으로 반영되므로 따로 코드를 넣지 않으셔도 됩니다.
+        이번 회차는 <b>5팀 한정</b>입니다 &mdash; 저희가 손으로 온보딩할 수 있는 수가
+        그만큼이기 때문이고, 마감 시계가 아니라 정원입니다.</p>
       <p class="fb-rows"><span>Start <b>55,000원</b> <s>110,000원</s></span><span>Grow
         <b>170,000원</b> <s>340,000원</s></span><span>Scale <b>410,000원</b>
         <s>820,000원</s></span></p>
@@ -192,11 +197,11 @@ BODY = """
       <div><b>AI 전화 &mdash; 통화 요금</b><span>1분당 190원부터</span></div>
       <div><b>카카오톡 알림톡 &mdash; 발송 건당</b><span>건당 15원부터</span></div>
       <div><b>추가 대화 &mdash; 한도 초과분</b><span>100건당 9,000원</span></div>
-      <div><b>도입 지원과 초기 설정</b><span>무료</span></div>
+      <div><b>설치비 &mdash; 셀프서브 설정 기본</b><span>0원</span></div>
     </div>
-    <p class="seccap reveal" style="margin-top:18px;">통화 요금은 발신 지역과 회선에 따라 달라지므로,
-      계약 전에 그 회선과 지역으로 계산한 금액을 문서로 먼저 드립니다. 추정치로 시작해서 나중에
-      바뀌는 방식으로는 청구하지 않습니다.</p>
+    <p class="seccap reveal" style="margin-top:18px;">통화 요금은 발신 지역과 회선에 따라 달라집니다.
+      그래서 계약 전에 사장님 쪽 회선과 지역으로 계산한 금액을 문서로 먼저 드립니다. 추정치로
+      시작해서 나중에 바뀌는 방식으로는 청구하지 않습니다.</p>
   </div>
 </section>
 
@@ -230,6 +235,61 @@ BODY = """
     <p class="seccap reveal" style="margin-top:22px;">이것은 상위 요금제의 기능이 아닙니다.
       <b>Start 110,000원부터</b> 세 요금제 모두에 같은 CRM 이 들어 있습니다. 요금제가
       나뉘는 기준은 CRM 이 아니라 <b>어느 채널로 받는가</b>와 <b>한 달에 몇 건인가</b>입니다.</p>
+  </div>
+</section>
+
+
+<section class="t-md sec-dark bg-spot" id="quote-builder">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>내 한 달 만들기</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">우리 가게 숫자를 넣으면,<br>묻기 전에 한 달이 보입니다.</h2>
+    <p class="lead onDark reveal" style="margin-top:14px;">위 요금표와 같은 숫자를 <b>사장님 통화량</b> 기준으로 다시 늘어놓은 것입니다.
+      추정치는 추정치라고 적혀 있고, 세금과 접수 가능 여부는 이 화면이 아니라 서버가 판정합니다.</p>
+
+    <div class="qbgrid reveal" data-qb>
+      <div class="qbcard">
+        <p class="lbl">우리 가게 구성</p>
+        <div class="qbrow">
+          <b>사업장이 있는 나라</b>
+          <select data-qb-country aria-label="나라"></select>
+        </div>
+        <div class="qbrow">
+          <b>어느 문을 받게 할까요?</b>
+          <div class="qbchan">
+            <label><input type="checkbox" checked disabled> 홈페이지 채팅 &mdash; 기본</label>
+            <label><input type="checkbox" data-qb-msg> 메신저·알림톡</label>
+            <label><input type="checkbox" data-qb-voice> AI 전화</label>
+          </div>
+          <p class="qbplan" data-qb-plan></p>
+        </div>
+        <div class="qbrow" data-qb-row-calls hidden>
+          <b>한 달 통화 수 &middot; 평균 통화 시간</b>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <input type="number" data-qb-calls value="150" min="0" max="10000" step="10" aria-label="월 통화 수" style="max-width:150px;">
+            <select data-qb-mins aria-label="평균 분" style="max-width:150px;">
+              <option value="2">약 2분</option><option value="3" selected>약 3분</option><option value="4">약 4분</option>
+            </select>
+          </div>
+        </div>
+        <div class="qbrow" data-qb-row-talks hidden>
+          <b>한 달 알림톡 발송 수</b>
+          <input type="number" data-qb-talks value="300" min="0" max="100000" step="50" aria-label="월 알림톡 수" style="max-width:150px;">
+        </div>
+      </div>
+
+      <div class="qbcard" data-qb-live>
+        <p class="lbl">예상되는 한 달</p>
+        <p style="margin-top:12px;" data-qb-sum></p>
+        <p class="qbtax" data-qb-tax>세금과 접수 가능 여부는 주문서에서 확인됩니다.</p>
+        <ul class="qbinc" data-qb-inc></ul>
+        <div class="qbnote" data-qb-note></div>
+        <div class="ctas" style="margin-top:18px;">
+          <a class="btn btn-teal" href="./checkout.html" data-qb-go>이 구성 그대로 주문서로<span class="cir">&#8599;</span></a>
+        </div>
+        <p class="qb-split" style="margin-top:10px;">접수하시면 접수번호와 다음 절차를 바로 안내드리고, 결제는 담당자 확인 뒤에 진행됩니다.</p>
+      </div>
+    </div>
+    <noscript><p class="lead onDark">이 계산기는 자바스크립트로 움직입니다 &mdash; 위 요금표의 숫자가 그대로 유효합니다.</p></noscript>
   </div>
 </section>
 
@@ -332,9 +392,9 @@ BODY = """
       </div>
     </div>
 
-    <p class="seccap reveal" style="margin-top:18px;">「대화 한 건」은 한 사람이 한 가지 용건으로
-      주고받은 묶음입니다. 같은 사람이 같은 건으로 세 번 되물어도 한 건입니다. 다음 날 다른 건으로
-      연락하면 그때 두 건째입니다. 메시지 수로 세지 않습니다.</p>
+    <p class="seccap reveal" style="margin-top:18px;">「대화 한 건」은 <b>같은 손님이 같은 채널에서
+      24시간 안에</b> 주고받은 것 전부입니다. 그 사이에 세 번 되물어도 한 건입니다. 24시간이 지나
+      다시 연락하시거나 다른 채널로 옮겨 오시면 그때 새 한 건입니다. 메시지 수로 세지 않습니다.</p>
   </div>
 </section>
 
@@ -377,9 +437,10 @@ BODY = """
       구축비, 계정 수, 연동비, 나갈 때의 반출비 &mdash; 계약서에 서명한 뒤에 알게 되는 것들입니다.
       아래 다섯 가지는 전부 0원이고, 그 사실이 서면 주문서에도 그대로 들어갑니다.</p>
     <ul class="kolist reveal" style="color:var(--l-tx2);">
-      <li><b>초기 구축비 0원.</b> 요금표와 영업시간, 자주 묻는 것들을 넣어 응대를 만드는 작업은
-        저희가 합니다. 그 작업에 따로 청구하지 않습니다. 다만 사장님 쪽에서 요금표와 영업시간을
-        주셔야 시작할 수 있습니다 &mdash; 그것 없이 만들면 없는 답을 지어내게 됩니다.</li>
+      <li><b>초기 구축비 0원.</b> 설치비를 받지 않습니다. 기본은 요금표와 영업시간, 자주 묻는
+        것들을 사장님이 직접 넣으시는 셀프서브 설정이고, 이번 회차 창립 고객 5팀은 저희가 옆에서
+        손으로 설정을 도와 드립니다. 그 이상 &mdash; 지식베이스 전체를 저희가 대신 구축하는 작업 &mdash; 은
+        유료 부가 서비스이고, 작업을 시작하기 전에 견적을 먼저 알려 드립니다.</li>
       <li><b>약정 0개월.</b> 해지 위약금이 없습니다. 언제 해지하셔도 다음 달 청구가 멈추고,
         <b>남은 날수는 날짜로 계산해 돌려 드립니다.</b> 첫 결제일부터 14일 안에는 전액 환불입니다.</li>
       <li><b>계정당 과금 0원.</b> Start 2명, Grow 5명, Scale 15명까지
@@ -387,7 +448,9 @@ BODY = """
       <li><b>연동비 0원.</b> 캘린더, 문자, 카카오톡 채널을 붙이는 데 따로 청구하지 않습니다.
         이미 쓰고 계신 것에 붙이는 것이 기본이고, 그것이 안 되면 그렇다고 먼저 말씀드립니다.</li>
       <li><b>반출비 0원.</b> 나가실 때 고객 기록, 통화 기록, 예약 내역을 전부 파일로 내려받고
-        나가십니다. 데이터를 인질로 잡지 않습니다. 받으신 뒤에는 저희 보유분을 파기합니다.</li>
+        나가십니다. 데이터를 인질로 잡지 않습니다. <b>해지일부터 30일 안에는</b> 언제든 전체를
+        반출하실 수 있고, 그 뒤에 저희 보유분을 삭제합니다. 통화 녹음은 백업까지
+        <b>90일 안에</b> 파기합니다.</li>
     </ul>
     <p class="seccap reveal" style="margin-top:20px;">청구서에 올라가는 항목은
       <b>월정액 · 통화료 · 알림톡 · 대화 초과</b> 넷뿐입니다. 이 페이지에 단가가 적히지 않은 것은
@@ -444,9 +507,25 @@ BODY = """
           성립합니다.</b> 그 전까지는 어떤 금액도 청구되지 않습니다. 접수하시면 담당자가 영업일
           하루 안에 확인 연락을 드리고 서면 주문서를 보내 드립니다.</p></div>
     </div>
-    <p class="seccap reveal" style="margin-top:20px;">여기 적힌 환불·갱신 조건은
-      <a class="lnk" href="./terms.html#sec-5">이용약관 제5조</a>와 같은 문장에서 나옵니다.
-      두 곳이 다른 말을 하지 않도록 한 파일에서 함께 출력합니다.</p>
+    <p class="seccap reveal" style="margin-top:20px;">여기 적힌 환불·갱신 조건과
+      <a class="lnk" href="./terms.html#sec-6">이용약관 제5조</a>는 한 원문에서 함께 출력됩니다.
+      그래서 두 곳이 다른 말을 할 수 없습니다.</p>
+  </div>
+</section>
+
+<section class="t-md sec-light bg-paper" id="managed">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>이 페이지 밖의 상품</span><span class="line"></span></div>
+    <h2 class="h2 reveal">지점이 많거나<br>도입을 맡기고 싶으시다면.</h2>
+    <p class="sub reveal" style="max-width:none;">이 페이지의 요금제는 사장님이 직접 설정하는
+      셀프서브 상품입니다. 그것과 별도로, 대화 설계부터 시스템 연동, 시험, 개시까지 저희가 함께
+      진행하는 <b>매니지드(관리형) 도입 상품</b>이 있습니다. <b>60일 파일럿</b>과 <b>서면으로 정한
+      범위</b>로 진행하고, <b>월 $1,500부터</b>이며 구축비는 견적으로 정합니다. 다른 상품이고 다른
+      가격이지만 같은 회사입니다. 지점 한 곳을 이번 주에 돌리고 싶으시면 이 페이지에 계시면 되고,
+      지점 스무 곳과 구매 절차가 있으시면 그쪽이 맞습니다.</p>
+    <p class="calccta reveal" style="margin-top:22px;">
+      <a class="lnk" href="https://global.saleringo.com/en/pricing" rel="noopener">관리형 프로그램 보기 &rarr;</a>
+    </p>
   </div>
 </section>
 
@@ -475,5 +554,6 @@ page('pricing.html',
      'Saleringo 요금제와 통화 단가를 전부 공개합니다. 월 110,000원부터, 부가세 별도, 약정 없음, '
      '세금계산서 발행. 직원 채용, 전화대행과 비교한 표도 함께 실었습니다.',
      BODY.format(NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
+     scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'quotebuild'),
      crumbs=[('홈', 'index.html'), ('요금', 'pricing.html')])
 print('wrote ko/pricing.html')

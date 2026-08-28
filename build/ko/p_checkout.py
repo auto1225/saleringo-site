@@ -524,7 +524,7 @@ def build(lang):
         dTerms=t('이용약관', 'Terms'),
         dPrivacy=t('개인정보 처리방침', 'Privacy'),
         dSub=t('하위 수탁업체 목록', 'Subprocessors'),
-        hSub=t('./privacy.html#transfer', './security.html#subprocessors'),
+        hSub=t('./security.html#subprocessors', './security.html#subprocessors'),
         hDpa=t('./security.html#measures', './security.html#dpa'),
         dDpa=t('데이터 처리와 보안 조치', 'Data processing terms'),
         docsNote=t('이 네 가지가 동의하시는 내용의 전부입니다. 새 창에서 열립니다.',
@@ -582,8 +582,8 @@ def build(lang):
                     'We use these to perform the contract and issue invoices.'),
         agTransfer=t('<b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 언어모델이 미국에서 '
                      '돌아갑니다. 이전받는 회사와 나라는 '
-                     '<a href="./privacy.html#transfer" target="_blank" rel="noopener">개인정보처리방침 4항</a>에 '
-                     '있습니다. 영국·EEA 밖 이전은 표준계약조항(SCC)을 담은 데이터 처리 계약을 '
+                     '<a href="./security.html#subprocessors" target="_blank" rel="noopener">보안 페이지의 '
+                     '수탁업체 표</a>에 있습니다. 영국·EEA 밖 이전은 표준계약조항(SCC)을 담은 데이터 처리 계약을 '
                      '따릅니다. 계약서는 hello@saleringo.com 으로 요청하시면 드립니다. '
                      '동의하지 않으시면 핵심 기능을 쓰실 수 없습니다.',
                      '<b>I agree to processing outside my country.</b> The language model that '
@@ -627,7 +627,7 @@ def build(lang):
         seller=t(seller_line('ko') + '<br>'
                  '<b>청약철회</b> — 서비스 개시 전에는 언제든 취소하실 수 있고, 금액이 청구되지 않습니다. '
                  '개시 후에는 「이용약관」 제5조를 따릅니다. <b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. '
-                 '그 뒤에는 해지 신청일부터 그 달 말일까지를 날짜로 계산해 환불합니다. '
+                 '그 뒤에는 해지 신청일부터 그 달 말일까지 남은 날수만큼 날짜로 계산해 환불합니다. '
                  '이미 쓰신 통화료 등 사용량 요금은 게시된 단가로 차감합니다. 위약금은 없습니다.',
                  seller_line('en') + '<br>'
                  '<b>Cancellation</b> — before service starts, cancelling costs nothing. '

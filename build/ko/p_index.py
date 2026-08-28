@@ -116,11 +116,17 @@ BODY = """
     <div class="heroband hero-panel">
       <span class="eyebrow"><i></i>AI 응대 + 업종별{NB}CRM</span>
       <h1>대부분의 AI는 전화를 받습니다.<br><span style="color:var(--teal);">저희는 예약까지 잡습니다.</span></h1>
-      <p class="sub">전화와 홈페이지 채팅, 카카오톡을 대신 받고, 상담 내용을 그대로 받아 적어
-        예약 시간을 잡고 고객 카드를 만들어 둡니다. 문 닫은 시간에도 그렇습니다.</p>
+      <p class="sub">전화·홈페이지 채팅·카카오톡의 모든 상담이 <b>확인된 고객 카드 한 장</b>과
+        <b>담당자가 있는 다음 할 일 하나</b>가 됩니다 &mdash; 예약, 견적, 기한까지.
+        문 닫은 시간에도 그렇습니다.</p>
+      <div class="herotrio">
+        <a href="./voice.html"><b>✆ AI 전화</b><span>이름·연락처·용건·시간을 받아 적음</span></a>
+        <a href="./webchat.html"><b>💬 홈페이지 채팅</b><span>어느 페이지에서 물었는지까지</span></a>
+        <a href="./whatsapp.html"><b>✓ 카카오톡</b><span>계정이 붙어 대화가 이어짐</span></a>
+      </div>
       <div class="ctas">
-        <a class="btn btn-teal" href="#how">3분이면 파악됩니다<span class="cir">&darr;</span></a>
-        <a class="btn btn-ghostd" href="./get-started.html">우리 조건으로 견적 받기</a>
+        <a class="btn btn-teal" href="#demo60">60초 데모 실행<span class="cir">&#9654;</span></a>
+        <a class="btn btn-ghostd" href="#trades">내 업종 사례 선택</a>
       </div>
       <p class="heroprice"><b>월 110,000원부터.</b> 전화 응대는 월 820,000원부터.
         <i>부가세 별도 &middot; 약정 없음 &middot; 언제든 해지</i></p>
@@ -163,6 +169,75 @@ BODY = """
 
 <main>
 
+
+<!-- 60초 데모 — 스스로 재생되는 제품 시연. 수치는 사이트가 이미
+     공표한 것과 같고, 시뮬레이션이라고 화면에 적혀 있다. -->
+<section class="d60sec t-xl sec-dark bg-grid" id="demo60">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>60초 데모</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">전화 한 통이 예약·견적·고객 카드·기한이<br>되는 60초를 그대로 보세요.</h2>
+    <p class="lead onDark reveal" style="margin-top:14px;">각본이 있는 시연 &middot; 예시 데이터 &middot; 수치는 실제 페이지들이 공표한 그대로입니다.
+      진짜가 듣고 싶으시면 <a class="lnk" data-tel-link href="tel:+827052770820">지금 AI에게 전화</a>해 보세요.</p>
+
+    <div class="reveal" data-d60 style="margin-top:26px;">
+      <div class="d60head">
+        <button class="btn btn-teal" type="button" data-d60-play aria-pressed="false">&#9654; 60초 재생</button>
+        <button class="d60voice" type="button" data-d60-voice aria-pressed="false">&#128266; 음성 &mdash; 브라우저 합성음이며, 실제 상담 음성이 아닙니다</button>
+      </div>
+
+      <div class="d60prog" aria-hidden="true">
+        <div class="d60bar"><i data-d60-bar></i></div>
+        <div class="d60ticks" data-d60-ticks></div>
+      </div>
+
+      <div class="d60stage">
+        <div class="appwin">
+          <div class="bar"><i></i><i></i><i></i>
+            <span class="tt">김지은 손님 &mdash; <b>화요일 밤 11:42</b></span>
+            <span class="illus">시뮬레이션 &middot; 예시 데이터</span>
+            <span class="closed">영업 종료</span></div>
+          <div class="body nightline d60convo" data-d60-convo aria-live="polite"></div>
+        </div>
+
+        <div class="d60col">
+          <div class="d60card">
+            <p class="lbl">받아 적은 것 &mdash; 항목마다 출처가 붙습니다</p>
+            <div data-d60-fields></div>
+          </div>
+
+          <div class="d60card d60rec" data-d60-record>
+            <p class="lbl">고객 카드 &mdash; 채널이 셋이어도 카드는 한 장</p>
+            <div class="who"><b>김지은</b> <span data-d60-chans><i class="d60ph">전화</i></span></div>
+            <p class="d60match" data-d60-match hidden>같은 손님 &mdash; 전화번호로 이어 붙임, 대화 계속</p>
+            <div data-d60-work></div>
+          </div>
+
+          <div class="d60card d60hand" data-d60-handoff hidden>
+            <p class="lbl">사람에게 넘어감 &mdash; 담당자가 받는 것</p>
+            <ul>
+              <li>두 채널의 대화 전체</li>
+              <li>받아 적은 항목 전부, 출처와 함께</li>
+              <li>멈춘 이유: 보험 보장은 판단이 필요한 일이라서</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="d60flowbox" data-scene="d60flow" aria-hidden="true"></div>
+      <p class="scenecap">문은 셋 &mdash; 전화·채팅·메신저 &mdash; 나오는 카드는 하나. 선은 장식이고, 사실은 전부 위의 글에 있습니다.</p>
+
+      <div class="d60end" data-d60-end hidden>
+        <a class="btn btn-teal" href="#trades">내 업종에서는 어떻게 되는지 보기</a>
+        <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">실제 AI에게 전화 &mdash; 양식 없이</a>
+        <a class="lnk" href="?tour=master#demo60" style="align-self:center;">6걸음 안내 여정 &rarr;</a>
+      </div>
+    </div>
+    <noscript><p class="lead onDark">이 데모는 자바스크립트로 움직입니다. 줄거리만 적으면: 밤 전화를 3초 만에 받아,
+      사장님 요금표로 안내하고, 빈 시간에 예약을 잡고, 담당자와 기한이 있는 고객 카드로 남깁니다.
+      다음 날 같은 손님이 카카오톡으로 물으면 같은 카드에 이어집니다.</p></noscript>
+  </div>
+</section>
+
 <section class="t-xl sec-dark bg-grid" id="cost">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>놓친 전화 한 통의 값</span><span class="line"></span></div>
@@ -179,10 +254,10 @@ BODY = """
       <div class="stat"><span class="n">0원</span>
         <p>놓친 전화가 장부에 남기는 금액. 그래서 이 비용만 유일하게 관리되지 않습니다.</p></div>
     </div>
-    <p class="seccap reveal" style="margin-top:18px;">위 숫자는 특정 조사 결과를 인용한 것이 아니라
-      업종에 따라 크게 달라지는 값입니다. 우리 가게의 실제 값은
+    <p class="seccap reveal" style="margin-top:18px;">위 숫자는 특정 조사 결과를 인용한 것이
+      아닙니다. 실제 값은 업종에 따라 크게 다릅니다.
       <a href="./get-started.html" style="color:var(--teal);font-weight:700;">견적 요청</a> 시
-      영업시간과 객단가를 알려 주시면 저희가 계산해 드립니다.</p>
+      영업시간과 객단가를 알려 주시면, 우리 가게의 값은 저희가 계산해 드립니다.</p>
 
     <div class="trio reveal" style="margin-top:34px;">
       <div><b>밤 11시 42분</b><p>문을 닫은 뒤에 걸려 온 전화입니다. 벨이 다섯 번 울리고
@@ -193,7 +268,8 @@ BODY = """
         받을 수 없습니다. 통화 중에 걸려 온 두 번째 전화는 아예 신호도 안 갑니다.
         이 시간대가 하루 문의의 상당 부분을 차지합니다.</p></div>
       <div><b>토요일 오후 3시</b><p>주말에 알아보고 월요일에 결정하는 것이 사람들의
-        순서입니다. 그 이틀 동안 답이 없으면, 월요일에 결정할 후보에서 빠져 있습니다.</p></div>
+        순서입니다. 그 이틀 동안 답이 없으면, 우리 가게는 월요일의 후보 명단에서
+        이미 빠져 있습니다.</p></div>
     </div>
     <p class="seccap reveal" style="margin-top:20px;">이 셋의 공통점은
       <b>기록이 남지 않는다는 것</b>입니다. 매출이 줄어든 것은 보이는데 왜 줄었는지는
@@ -239,7 +315,8 @@ BODY = """
 
     <p class="seccap reveal" style="margin-top:18px;">계산에 쓰는 요금은 요금 페이지에 적힌 것과 같습니다
       &mdash; AI 전화가 든 <b>Scale 820,000원/월</b>, 통화 <b>1분당 190원</b>, 한 통 평균 4분.
-      전화를 받는 이야기이므로 전화가 없는 요금제로 빼서 계산하지 않습니다. 부가세는 별도입니다.</p>
+      전화를 받는 계산이므로, 전화가 없는 더 싼 요금제로 바꿔 숫자를 유리하게 만들지 않습니다.
+      부가세는 별도입니다.</p>
 
     <p class="kccta reveal">
       <a class="btn btn-teal" href="./pricing.html">요금제 자세히 보기<span class="cir">&#8599;</span></a>
@@ -310,8 +387,8 @@ BODY = """
         Scale 820,000원/월에 들어 있고 통화료가 별도입니다.</li>
       <li><b>홈페이지 채팅 &mdash; 가격을 묻기 가장 편한 곳</b>
         전화로 가격을 묻는 것이 부담스러운 분들이 여기서는 묻습니다. 그 문의가 예약이
-        됩니다. 보고 계신 페이지를 알기 때문에 임플란트 페이지에서 연 분과 첫 화면에서
-        연 분에게 같은 것을 묻지 않습니다. Start 110,000원/월부터.</li>
+        됩니다. 손님이 어느 페이지에서 창을 열었는지 알기 때문에, 임플란트 페이지에서
+        연 분과 첫 화면에서 연 분에게 던지는 첫 질문이 다릅니다. Start 110,000원/월부터.</li>
       <li><b>카카오톡 &mdash; 한국에서 가장 많이 쌓이는 곳</b>
         이미 열어 두신 채널에 그대로 붙습니다. 예약 확인과 전날 알림이 알림톡으로
         나가는데, 문자보다 잘 읽혀서 노쇼가 줄어듭니다. Grow 340,000원/월부터.</li>
@@ -415,9 +492,9 @@ BODY = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>업종</span><span class="line"></span></div>
     <h2 class="h2 reveal">우리 업종에서 밤 11시에 걸려 오는 전화는<br>어떤 전화입니까?</h2>
-    <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 스물다섯 곳 모두,
-      밤에 걸려 올 법한 통화를 하나씩 적어 두었습니다. 아래는 그중 열두 개이고,
-      우리 업종에 오는 그 전화가 맞는지 읽어 보고 판단하시면 됩니다.</p>
+    <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 업종 페이지 스물다섯 곳마다
+      밤에 걸려 올 법한 통화를 하나씩 적어 두었습니다. 아래는 그중 열두 곳입니다.
+      읽어 보시고, 우리 가게에 실제로 걸려 오는 전화와 같은지 판단하시면 됩니다.</p>
     <div class="tradechips reveal">
       <a href="./industries/dental.html">치과</a>
       <a href="./industries/clinics.html">의원 &middot; 피부과</a>
@@ -465,5 +542,6 @@ p = page('index.html',
          '전화, 홈페이지 채팅, 카카오톡을 AI가 대신 받고 업종별 CRM에 예약과 고객 카드로 남깁니다. '
          '월 110,000원부터, 약정 없음, 부가세 별도.',
          body, css=CSS, grade='voice',
+         scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'canvas', 'scenes', 'demo60'),
          image=HERO + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630')
 print('wrote', p)

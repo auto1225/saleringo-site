@@ -159,6 +159,32 @@
    the same way whatever they end up calling it.
    ═══════════════════════════════════════════════════════════════════════════ */
 var SR_TOURS = {
+  /* The whole journey, buyer-shaped: understand → pick your trade →
+     hear it live → see the work it leaves → price it → order it.
+     Six steps, one per decision the buyer actually makes. The Korean
+     site has different mid-journey anchors, so the steps branch on the
+     document language rather than pointing at ids that page lacks. */
+  master: (document.documentElement.lang || '').indexOf('ko') === 0 ? {
+    title: '전체 여정 · 6걸음',
+    steps: [
+      { u: 'index.html',    h: '#demo60',        lab: '1 · 60초로 이해' },
+      { u: 'index.html',    h: '#trades',        lab: '2 · 내 업종 선택' },
+      { u: 'demo.html',     h: '',               lab: '3 · 상담 체험' },
+      { u: 'index.html',    sel: '#crm',         lab: '4 · 남는 업무 확인' },
+      { u: 'pricing.html',  h: '#quote-builder', lab: '5 · 비용 계산' },
+      { u: 'checkout.html', h: '#order',         lab: '6 · 도입 요청' }
+    ]
+  } : {
+    title: 'The whole journey',
+    steps: [
+      { u: 'index.html',    h: '#demo60',        lab: '1 · See it end to end' },
+      { u: 'index.html',    h: '#trades',        lab: '2 · Pick your trade' },
+      { u: 'about.html',    h: '#call-them',     lab: '3 · Call the live AI' },
+      { u: 'index.html',    h: '#after',         lab: '4 · The work it leaves' },
+      { u: 'pricing.html',  h: '#quote-builder', lab: '5 · Price your month' },
+      { u: 'checkout.html', h: '#order',         lab: '6 · Send the order' }
+    ]
+  },
   refuses: {
     title: 'What it refuses to do',
     steps: [

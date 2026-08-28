@@ -830,6 +830,30 @@
      살아 있는 「주문 접수하기」 버튼을 함께 보여 줬습니다. 그 버튼은
      반드시 실패하는 요청을 보냈고, 구매자는 자기가 뭘 잘못했는지 몰랐습니다.
      한 화면이 서로 반대되는 두 가지를 말하면, 사람은 버튼을 믿습니다. */
+  /* 가격 페이지의 「내 한 달 만들기」가 실어 보낸 구성.
+     사용자가 이미 만진 필드는 이기지 않습니다 — 프리필은 빈칸에만. */
+  (function restoreFromBuilder() {
+    if (!window.srCarry) return;
+    var c = window.srCarry.read() || {};
+    if (c.qbCountry) {
+      var sel = $('[name="country"]');
+      if (sel && !sel.value) { sel.value = c.qbCountry; sel.dispatchEvent(new Event('change', { bubbles: true })); }
+      var sv = $('[name="serviceCountry"]');
+      if (sv && !sv.value) sv.value = c.qbCountry;
+    }
+    if (c.qbPlan) {
+      var r = form.querySelector('[name="plan"][value="' + c.qbPlan + '"]');
+      if (r && !form.querySelector('[name="plan"]:checked')) {
+        r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    }
+    ['qbVoiceMinutes', 'qbAlimtalk'].forEach(function (k) {
+      var name = k === 'qbVoiceMinutes' ? 'voiceMinutes' : 'alimtalk';
+      var el = $('[name="' + name + '"]');
+      if (el && !el.value && c[k]) { el.value = c[k]; el.dispatchEvent(new Event('input', { bubbles: true })); }
+    });
+  })();
+
   function carryDraft() {
     if (!window.srCarry) return;
     var take = ['company', 'country', 'plan', 'email', 'contact'];
