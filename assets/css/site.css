@@ -3628,3 +3628,7 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
 .dtable thead th{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
 .dtable tr:last-child td,.dtable tr:last-child th{border-bottom:0;}
 .h3{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:700;letter-spacing:-.02em;}
+
+/* photosplit — 풀블리드 밴드의 내용 상한. 밴드 배경은 절이 칠하므로
+   내용만 가운데로 모으면 초광폭에서 텍스트 반쪽이 팔을 못 벌린다. */
+.photosplit{max-width:1520px;margin-left:auto;margin-right:auto;}

@@ -35,7 +35,7 @@ UPDATED = '2026년 8월 24일'
 
 CSS = """
   .hero{display:block;padding:150px 0 56px;}
-  .doc{max-width:none;}
+  .doc{max-width:860px;}
   /* Clause blocks are separated by a rule with real space on both sides of
      it. The first version had them share an edge - padding inside, border on
      top - which reads as one continuous slab and, more practically, means two
