@@ -3708,3 +3708,7 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
   main [class*="grid"] > .seccap, main [class*="grid"] > p{min-width:0;}
   .seccap .linkcta{display:inline;}
 }
+/* 업종 절 캡션이 2단 컬럼으로 조판되어 폰에서 둘째 단이 화면 밖에 놓였다 — 폰은 1단 */
+@media (max-width:700px){
+  .seccap,.igrid .seccap,.indsec .seccap{column-count:1 !important;columns:auto !important;}
+}
