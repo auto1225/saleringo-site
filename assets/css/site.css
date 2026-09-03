@@ -3696,3 +3696,9 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
   .d60ticks{flex-wrap:wrap;gap:6px 14px;justify-content:flex-start;}
   .seccap{white-space:normal;overflow-wrap:anywhere;}
 }
+/* 2열 격자(.inbcols/.instcols 등)의 트랙이 720px SVG 의 최소폭으로 팽창하지 않게 —
+   폰에서는 어차피 1열이다 */
+@media (max-width:700px){
+  main [class*="cols"]{grid-template-columns:minmax(0,1fr) !important;}
+  .scene-frame,.scene{min-width:0;max-width:100%;}
+}
