@@ -3669,3 +3669,16 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
   .concl,.photosplit .copy,.cnp,.cnl{overflow-wrap:anywhere;}
   .btn{max-width:100%;white-space:normal;}
 }
+
+/* ═══════ 모바일 잔여 2차 — 쪽 로컬 규칙이 뒤에 실려 이겨 버리므로 여기만 !important ═══════
+   측정 근거(375px): .reggrid 3열 515px>324 · .dispcols 트랙이 자식 최소폭으로 431px 팽창 ·
+   .riskrow 2열 335px>324 · .tlrow 카드 403. 격자 트랙은 minmax(0,1fr) 로 팽창을 막고,
+   카드 안 긴 구절은 어디서든 꺾이게 한다. */
+@media (max-width:700px){
+  .reggrid{grid-template-columns:1fr !important;}
+  .dispcols{grid-template-columns:minmax(0,1fr) !important;}
+  .dispside,.dispside *{min-width:0;overflow-wrap:anywhere;}
+  .riskrow{grid-template-columns:1fr !important;}
+  .tlrow{grid-template-columns:minmax(0,1fr) !important;}
+  .tlrow,.tlrow>*{min-width:0;overflow-wrap:anywhere;}
+}
