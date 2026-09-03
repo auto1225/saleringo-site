@@ -45,7 +45,7 @@
       text: t('앞니가 깨졌어요. 크라운이 얼마고, 이번 주에 볼 수 있나요?',
               'I chipped a front tooth. How much is a crown, and can anyone see me this week?') } },
     { at: 7, mark: 'answer', bub: { who: 'ai', when: '+3 sec',
-      text: t('크라운은 재료에 따라 $1,100~1,600이고, 검진과 X-ray 후에 확정됩니다. 목요일 10:30이나 금요일 8:00이 비어 있습니다. 어느 쪽이 좋으세요?',
+      text: t('지르코니아 크라운은 55만원이고, 검진과 X-ray 후에 확정됩니다. 목요일 10:30이나 금요일 8:00이 비어 있습니다. 어느 쪽이 좋으세요?',
               'A crown runs $1,100 to $1,600 depending on the material, confirmed after an exam and X-ray. I have Thursday 10:30 or Friday 8:00 — which suits you?') },
       field: { k: t('요청', 'Request'), v: t('앞니 크라운 — 이번 주', 'Front-tooth crown — this week'),
                src: t('통화에서', 'from the call'), ok: true } },
@@ -60,7 +60,7 @@
     { at: 22, mark: 'booked', crm: true,
       work: { icon: '✓', k: t('예약 확정', 'Booked'), v: t('목 10:30 · 캘린더에 들어감 · 확인 문자 발송', 'Thu 10:30 · in your calendar · confirmation sent') } },
     { at: 26, work: { icon: '#', k: 'Estimate #2461',
-      v: t('크라운 $1,100–1,600 + 검진 $95 — 사장님 요금표에서', 'Crown $1,100–1,600 + exam $95 — from your own fee schedule') } },
+      v: t('지르코니아 크라운 55만원 — 사장님 요금표에서', 'Crown $1,100–1,600 + exam $95 — from your own fee schedule') } },
     { at: 30, work: { icon: '@', k: t('담당·기한', 'Owner & due'),
       v: t('데스크 담당 배정 · 목 09:00까지 차트 준비', 'assigned to the desk · chart ready by Thu 9:00') } },
     { at: 33.5, work: { icon: '↻', k: t('후속 예약', 'Follow-up queued'),
@@ -68,7 +68,7 @@
 
     /* B — same customer, second channel */
     { at: 39, mark: 'merged',
-      bub: { who: 'sys', text: t('다음 날 아침 — 같은 손님이 WhatsApp으로.', 'Next morning — the same customer, on WhatsApp.') } },
+      bub: { who: 'sys', text: t('다음 날 아침 — 같은 손님이 카카오톡으로.', 'Next morning — the same customer, on WhatsApp.') } },
     { at: 41, bub: { who: 'user', chan: 'wa', when: '7:40 AM',
       text: t('어제 예약한 김지은인데, 주차가 되나요?', 'Hi, J. Kim from last night — is there parking?') },
       merge: true },
@@ -151,7 +151,7 @@
     } else {
       row.className = 'nl ' + (b.who === 'ai' ? 'sr' : 'us');
       var chanTag = b.chan === 'wa'
-        ? '<i class="d60chan">WhatsApp</i>' : '';
+        ? '<i class="d60chan">' + t('카카오톡', 'WhatsApp') + '</i>' : '';
       row.innerHTML =
         '<span class="t"><em>' + (b.who === 'ai' ? 'Saleringo' : t('손님', 'Customer')) + '</em>' +
         (b.when ? esc(b.when) : '') + '</span>' +
@@ -188,7 +188,7 @@
     record.classList.add('merged');
     var chip = record.querySelector('[data-d60-chans]');
     if (chip) chip.innerHTML +=
-      ' <i class="d60wa">WhatsApp</i>';
+      ' <i class="d60wa">' + t('카카오톡', 'WhatsApp') + '</i>';
     var note = record.querySelector('[data-d60-match]');
     if (note) { note.hidden = false; }
   }

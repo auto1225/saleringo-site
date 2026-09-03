@@ -158,6 +158,8 @@
    resolves on arrival. The six trade pages still being written will resolve
    the same way whatever they end up calling it.
    ═══════════════════════════════════════════════════════════════════════════ */
+var SR_KO = (document.documentElement.lang || '').indexOf('ko') === 0;
+function SR_T(ko, en) { return SR_KO ? ko : en; }
 var SR_TOURS = {
   /* The whole journey, buyer-shaped: understand → pick your trade →
      hear it live → see the work it leaves → price it → order it.
@@ -185,7 +187,17 @@ var SR_TOURS = {
       { u: 'checkout.html', h: '#order',         lab: 'Send the order' }
     ]
   },
-  refuses: {
+  refuses: SR_KO ? {
+    title: '하지 않는 일',
+    steps: [
+      { u: 'verified-ai.html', h: '#life',    lab: '답 하나의 일생' },
+      { u: 'verified-ai.html', h: '#audit',   lab: '감사 기록' },
+      { u: 'ai-answering-service.html', h: '#ask', lab: '무엇을 물을까' },
+      { u: 'pricing.html',     h: '#not-paying', lab: '안 내는 돈' },
+      { u: 'security.html',    h: '#measures', lab: '보안 조치' },
+      { u: 'privacy.html',     sel: '#rights',   lab: '내 권리' }
+    ]
+  } : {
     title: 'What it refuses to do',
     steps: [
       { u: 'verified-ai.html', h: '#life',        lab: 'One answer' },
@@ -196,7 +208,18 @@ var SR_TOURS = {
       { u: 'privacy.html',     h: '#your-rights', lab: 'Your rights' }
     ]
   },
-  keeps: {
+  keeps: SR_KO ? {
+    title: '무엇을 받아 적고 남기는가',
+    steps: [
+      { u: 'index.html',        sel: '#crm',      lab: '남는 기록' },
+      { u: 'platform.html',     h: '#inside',     lab: '답 하나의 속' },
+      { u: 'voice.html',        sel: '#cando',      lab: '전화가 하는 일' },
+      { u: 'webchat.html',      sel: '#left',       lab: '채팅이 남기는 것' },
+      { u: 'whatsapp.html',     sel: '#what',       lab: '메신저가 남기는 것' },
+      { u: 'integrations.html', sel: '#standard',   lab: '어디로 동기화' },
+      { u: 'privacy.html',      sel: '#disposal',   lab: '그리고 지운다' }
+    ]
+  } : {
     title: 'What it captures and keeps',
     steps: [
       { u: 'index.html',        h: '#what-it-keeps',    lab: 'What it keeps' },
@@ -208,7 +231,18 @@ var SR_TOURS = {
       { u: 'privacy.html',      h: '#your-rights',      lab: 'And deletes' }
     ]
   },
-  costs: {
+  costs: SR_KO ? {
+    title: '비용은 얼마인가',
+    steps: [
+      { u: 'pricing.html',      h: '#alternatives',  lab: '무엇과 비교되나' },
+      { u: 'pricing.html',      h: '#plans',         lab: '요금제' },
+      { u: 'pricing.html',      h: '#channels',      lab: '채널별' },
+      { u: 'pricing.html',      h: '#quote-builder', lab: '내 한 달' },
+      { u: 'pricing.html',      h: '#not-paying',    lab: '안 내는 돈' },
+      { u: 'pricing.html',      sel: '#bill',          lab: '청구서 모양' },
+      { u: 'cross-border.html', sel: '#tz',            lab: '두 시간대' }
+    ]
+  } : {
     title: 'What it costs',
     steps: [
       { u: 'pricing.html',      h: '#alternatives',   lab: 'Compared to' },
@@ -220,13 +254,22 @@ var SR_TOURS = {
       { u: 'cross-border.html', h: '#both-timezones', lab: 'Two timezones' }
     ]
   },
-  proof: {
+  proof: SR_KO ? {
+    title: '되는지 증명',
+    steps: [
+      { u: 'demo.html',     sel: '#callnow',    lab: '지금 전화' },
+      { u: 'index.html',    h: '#demo60',     lab: '60초 데모' },
+      { u: 'examples.html', sel: '#all',        lab: '통화 예시' },
+      { u: 'index.html',    h: '#calculator', lab: '계산' },
+      { u: 'about.html',    h: '#people',     lab: '누가 만드나' }
+    ]
+  } : {
     title: 'Prove it works',
     steps: [
       { u: 'demo.html',     h: '#yourprices',   lab: 'Your prices' },
       { u: 'index.html',    h: '#try',          lab: 'Try it here' },
       { u: 'about.html',    h: '#call-them',    lab: 'Call our AI' },
-      { u: 'examples.html', h: '#pick-a-trade', lab: 'A real call' },
+      { u: 'examples.html', h: '#pick-a-trade', lab: 'A worked call' },
       { u: 'index.html',    h: '#calculator',   lab: 'The arithmetic' },
       { u: 'about.html',    h: '#people',       lab: 'Who built it' }
     ]
@@ -240,7 +283,7 @@ var SR_TOURS = {
         { u: p, sel: '[id$="-crm"]',                  lab: 'Your CRM' },
         { u: p, h: '#worked-examples',                lab: 'Worked examples' },
         { u: p, h: '#the-pack',                       lab: 'In the pack' },
-        { u: 'examples.html', h: '#pick-a-trade',     lab: 'A real call' },
+        { u: 'examples.html', h: '#pick-a-trade',     lab: 'A worked call' },
         { u: 'pricing.html',  h: '#plans',            lab: 'What it costs' }
       ];
     }
@@ -659,11 +702,11 @@ window.__SR_TOUR = SR_TOUR;
 
     var s = steps[nextIdx];
     setMsg([
-      { tag: 'span', cls: 'stepnum', text: (nextIdx + 1) + ' of ' + steps.length },
+      { tag: 'span', cls: 'stepnum', text: SR_KO ? (steps.length + '걸음 중 ' + (nextIdx + 1)) : ((nextIdx + 1) + ' of ' + steps.length) },
       { text: ' Next: ' },
       { tag: 'b', text: s.next }
     ]);
-    setBtn('Take me there', s.id);
+    setBtn(SR_T('거기로', 'Take me there'), s.id);
     bar.setAttribute('data-guide', 'step');
   }
 
@@ -796,7 +839,7 @@ window.__SR_TOUR = SR_TOUR;
   /* ── where am I ─────────────────────────────────────────────────────────
      Pages live at /en/x.html and /en/industries/x.html, so a step's page is
      stored relative to /en/ and resolved against the current depth. */
-  var here = location.pathname.replace(/^.*\/en\//, '');
+  var here = location.pathname.replace(/^.*\/(en|ko)\//, '');
   if (!here || /\/$/.test(here)) here = 'index.html';
   var deep = here.indexOf('/') > -1;
   var base = deep ? '../' : './';
@@ -827,7 +870,7 @@ window.__SR_TOUR = SR_TOUR;
      Same element, same classes, same CSS as the in-page rail. */
   var rail = document.createElement('nav');
   rail.className = 'guiderail tourrail';
-  rail.setAttribute('aria-label', 'Site tour: ' + def.title);
+  rail.setAttribute('aria-label', SR_T('둘러보기: ', 'Site tour: ') + def.title);
 
   var head = document.createElement('p');
   head.className = 'gr-head';
@@ -849,7 +892,7 @@ window.__SR_TOUR = SR_TOUR;
     a.appendChild(dot); a.appendChild(lab);
     /* the rail is the only place the full sentence exists on a phone, where
        .gr-lab is hidden and the dot is all that is left */
-    a.setAttribute('aria-label', 'Step ' + (i + 1) + ' of ' + steps.length + ': ' + s.lab);
+    a.setAttribute('aria-label', (SR_KO ? (steps.length + '걸음 중 ' + (i + 1)) : ('Step ' + (i + 1) + ' of ' + steps.length)) + ': ' + s.lab);
     li.appendChild(a);
     list.appendChild(li);
     railItems.push(li);
@@ -860,7 +903,7 @@ window.__SR_TOUR = SR_TOUR;
   var stop = document.createElement('a');
   stop.className = 'gr-stop';
   stop.href = base + here + '?tour=off';
-  stop.textContent = 'End tour';
+  stop.textContent = SR_T('여정 끝내기', 'End tour');
   rail.appendChild(stop);
 
   /* ── dock it, exactly where the in-page rail docks ──────────────────────
@@ -907,11 +950,11 @@ window.__SR_TOUR = SR_TOUR;
     if (!barBtn) return;
     if (next === -1) {
       barBtn.setAttribute('href', base + 'get-started.html');
-      barBtn.textContent = 'That is the whole subject — get my plan';
+      barBtn.textContent = SR_T('여기까지가 전부입니다 — 견적 받기', 'That is the whole subject — get my plan');
       bar.setAttribute('data-tour', 'done');
     } else {
       barBtn.setAttribute('href', hrefOf(steps[next]));
-      barBtn.textContent = (next + 1) + ' of ' + steps.length + ' · ' + steps[next].lab;
+      barBtn.textContent = (SR_KO ? (steps.length + '걸음 중 ' + (next + 1)) : ((next + 1) + ' of ' + steps.length)) + ' · ' + steps[next].lab;
       bar.setAttribute('data-tour', 'step');
     }
     var cir = document.createElement('span');

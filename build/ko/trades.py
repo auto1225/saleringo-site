@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""열 개 업종, 열 개의 실제 통화.
+"""열 개 업종, 열 개의 예시 통화.
 
 The English trade pages each argue one trade's case. These do the same, but
 the argument is different in Korea, so none of this is translated:

@@ -28,9 +28,9 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "See a Full Conversation, and What It Filed | Saleringo", "description": "See a full conversation on phone, chat and messenger \u2014 and what it produced: the booking held, the quote built, the customer record written.", "url": "https://claude.saleringo.com/en/demo.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=68.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=68.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=68.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=69.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=69.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=69.0">
 <style>
   /* hero — a photograph carries it; .photohero's flex centring is not wanted here
      because the header also holds the nav and the night-timeline strip */
@@ -54,15 +54,10 @@
   .dhero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.045em;font-weight:600;color:#fff;max-width:16ch;margin-inline:auto;}
   .dhero .sub{margin:22px auto 0;font-size:var(--fs-body);line-height:1.7;color:var(--tx2);font-weight:500;}
 
-  /* channel tab bar */
-  .chtabs{margin-top:40px;display:inline-flex;gap:6px;border:1px solid var(--hair2);border-radius:999px;padding:6px;
-    background:rgba(255,255,255,.05);backdrop-filter:blur(10px);}
-  .chtab{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-size:var(--fs-xs);font-weight:700;color:var(--tx2);
-    border:0;border-radius:999px;padding:11px 22px;background:transparent;cursor:pointer;transition:all .4s var(--ease);}
-  .chtab i{width:8px;height:8px;border-radius:50%;font-style:normal;opacity:.6;}
-  .chtab:hover{color:#fff;}
-  .chtab.on{background:rgba(255,255,255,.10);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.12) inset;}
-  .chtab.on i{opacity:1;}
+  /* the night strip's figures, repeated as text — at phone width the SVG's
+     10px labels shrink to a third of that, so the numbers live here too */
+  .nightstrip .stripfigs{margin:12px auto 0;max-width:720px;text-align:center;font-size:var(--fs-2xs);line-height:1.7;color:var(--tx3);font-weight:600;}
+  .nightstrip .stripfigs b{color:var(--tx2);font-weight:700;}
 
   /* demo stage */
   .stage{position:relative;}
@@ -74,16 +69,18 @@
   .bigdemo .demo-body{min-height:330px;}
   .stagehint{position:relative;text-align:center;margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
 
-  /* phone panel */
-  .callstage{position:relative;display:flex;justify-content:center;}
-  .callstage .phoneframe{width:340px;max-width:94vw;}
-  .callstage .callcard{padding:26px 20px 18px;}
+  /* the other two channels — the chip above switches the stage, the pages
+     that go deeper live elsewhere */
+  .chanlinks{position:relative;max-width:900px;margin:34px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;}
+  .chanlink{display:flex;flex-direction:column;gap:9px;padding:20px 22px;border:1px solid var(--hair);border-radius:18px;
+    background:rgba(255,255,255,.03);color:inherit;text-decoration:none;transition:border-color .3s var(--ease);}
+  .chanlink:hover{border-color:var(--hair2);}
+  .chanlink .chanbadge{align-self:flex-start;}
+  .chanlink b{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.2;}
+  .chanlink .d{font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
+  .chanlink em{font-style:normal;font-size:var(--fs-xs);font-weight:700;color:#fff;margin-top:auto;padding-top:4px;}
 
-  /* whatsapp panel */
-  .wagrid{position:relative;max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;}
-  .walab{padding:12px 18px 0;font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:var(--tx3);text-transform:uppercase;}
-
-  /* trades band — the eight chips above have faces */
+  /* trades band — the chips above have faces */
   .tradesec{position:relative;}
   .tradesec .wrap{position:relative;z-index:1;}
   .tradesec .head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:34px;}
@@ -109,25 +106,14 @@
 
   /* ── THE OUTCOME BLOCK ────────────────────────────────────────────
      A chat window on its own is a toy. What makes it a product is the
-     four objects the conversation leaves behind: a pipeline card, a&nbsp;held slot, a priced quote and a written customer record. Every
-     panel below the conversation shows them. ── */
-  .outcome{position:relative;max-width:1080px;margin:46px auto 0;}
-  .outcome .oh{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
-    padding-bottom:16px;border-bottom:1px solid var(--hair);}
-  .outcome .oh .ol{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;
-    letter-spacing:-.025em;color:#fff;}
-  .outcome .oh .ot{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;}
-  .outcome .oh .ot b{color:var(--teal);}
+     objects the conversation leaves behind: a pipeline card, a&nbsp;held slot, a priced quote, a written customer record,
+     a staff task and a follow-up. The grid beside the conversation shows them, built by play.js. ── */
   .ogrid{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;}
   .obox{min-width:0;}
   .obl{display:flex;align-items:center;gap:9px;margin-bottom:11px;font-size:var(--fs-label);font-weight:800;
     letter-spacing:.18em;text-transform:uppercase;color:var(--tx3);}
   .obl em{font-style:normal;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);color:var(--teal);letter-spacing:.06em;}
   .obl i{flex:1;height:1px;background:var(--hair);font-style:normal;}
-  .ocap{margin-top:18px;font-size:var(--fs-2xs);line-height:1.7;color:var(--tx3);font-weight:600;text-align:center;}
-  .outcome .pipecol{background:rgba(255,255,255,.03);}
-  .outcome.tight{margin-top:34px;max-width:900px;}
-  .outcome.tight .ogrid{gap:14px;}
   @media (max-width:900px){.ogrid{grid-template-columns:1fr;}}
 
   /* honesty note */
@@ -155,8 +141,7 @@
   .bigfooter{margin-top:130px;}
 
   @media (max-width:900px){
-    .chtabs{flex-wrap:wrap;justify-content:center;border-radius:24px;}
-    .wagrid{grid-template-columns:1fr;}
+    .chanlinks{grid-template-columns:1fr;}
     .aside-grid{grid-template-columns:1fr;}
     .startsec .cols{grid-template-columns:1fr;gap:56px;}
   }
@@ -177,7 +162,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v69.0">v69.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop on" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see" aria-current="true">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html" aria-current="page" class="np-here">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -185,7 +170,7 @@
     <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="./pricing.html#plans">Plans and prices</a></li><li><a href="./checkout.html">Order form</a></li><li><a href="./pricing.html#crm">What the CRM includes</a></li><li><a href="./pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="./pricing.html#alternatives">What you are comparing against</a></li><li><a href="./pricing.html#not-paying">What you are not paying for</a></li><li><a href="./pricing.html#calculator">Missed-call calculator</a></li><li><a href="./pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="./pricing.html#countries">Countries and currencies</a></li><li><a href="./cross-border.html">Cross-border businesses</a></li><li><a href="./get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="./security.html">Security &amp; trust</a></li><li><a href="./security.html#measures">The measures, listed</a></li><li><a href="./security.html#subprocessors">Subprocessors</a></li><li><a href="./security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="./about.html">About us</a></li><li><a href="./privacy.html">Privacy policy</a></li><li><a href="./privacy.html#your-rights">Your rights</a></li><li><a href="./terms.html">Terms of service</a></li><li><a href="./sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
   </span>
-  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <a class="telcta" data-tel href="tel:+827052770820" title="Korean number — international rates apply. AI answers first."><span aria-hidden="true">&#9990;</span><b data-tel-label>+82 70-5277-0820</b></a>
   <a class="langsw" href="../ko/demo.html" hreflang="ko" lang="ko">한국어</a>
   <span class="sep"></span>
   <a class="btn btn-white" href="./get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
@@ -197,11 +182,6 @@
     <span class="eyebrow"><i></i>Full conversations · 3 channels · 25 trades</span><span class="tryme"><i aria-hidden="true">⬤</i>Pick a&nbsp;channel and a&nbsp;trade &middot; then a&nbsp;question</span>
     <h1 style="margin-top:28px;">Watch it answer. Then see what&nbsp;it&nbsp;filed.</h1>
     <p class="sub">The&nbsp;same AI on&nbsp;a&nbsp;phone call, a&nbsp;website chat and a&nbsp;WhatsApp thread — answering from&nbsp;facts you approved, handing the&nbsp;hard question to&nbsp;a&nbsp;person. Then, under&nbsp;every&nbsp;conversation, the&nbsp;part most demos never show you: the&nbsp;slot it held, the&nbsp;quote it priced, the&nbsp;record it wrote and the&nbsp;pipeline card it created.</p>
-    <div class="chtabs" role="tablist" aria-label="Choose a channel">
-      <button class="chtab on" role="tab" aria-selected="true" data-tab="chat"><i style="background:var(--chan-chat);"></i>Web chat</button>
-      <button class="chtab" role="tab" aria-selected="false" data-tab="phone"><i style="background:var(--chan-voice);"></i>Phone call</button>
-      <button class="chtab" role="tab" aria-selected="false" data-tab="wa"><i style="background:var(--chan-msg);"></i>WhatsApp</button>
-    </div>
   </div>
 
   <div class="nightstrip">
@@ -267,6 +247,7 @@
   <text x="500" y="30" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" text-anchor="middle" letter-spacing="2.6">ONE ORDINARY TUESDAY NIGHT</text>
 </svg>
     </div>
+    <p class="stripfigs">Five inquiries between closing at&nbsp;18:00 and opening at&nbsp;06:00 — <b>chat&nbsp;19:12</b> · <b>WhatsApp&nbsp;21:40</b> · <b>WhatsApp&nbsp;23:04</b> · <b>call&nbsp;02:47</b> · <b>chat&nbsp;05:12</b>.</p>
   </div>
 </header>
 
@@ -276,14 +257,14 @@
   <div class="wrap">
     <div class="glow" aria-hidden="true"></div>
 
-    <!-- ── PANEL: WEB CHAT ── -->
-    <div id="panel-chat" data-panel="chat" role="tabpanel" aria-label="Web chat demo" data-play data-play-trade="dental">
+    <!-- ── THE STAGE — one channel picker, one trade row, one conversation ── -->
+    <div data-play data-play-trade="dental">
       <div class="chanpick reveal" role="tablist" aria-label="Choose the channel they came in on">
         <span class="cpl">They came in&nbsp;on</span>
-        <button class="chip" role="tab" aria-selected="true" data-playchan="phone" type="button">Phone</button>
-        <button class="chip" role="tab" aria-selected="false" data-playchan="web" type="button">Web chat</button>
+        <button class="chip on" role="tab" aria-selected="true" data-playchan="web" type="button">Web chat</button>
+        <button class="chip" role="tab" aria-selected="false" data-playchan="phone" type="button">Phone</button>
         <button class="chip" role="tab" aria-selected="false" data-playchan="msg" type="button">Messenger</button>
-        <span class="cpn" data-play-channote>Spoken. Transcribed as it goes.</span>
+        <span class="cpn" data-play-channote>Typed on&nbsp;your&nbsp;website, 11pm.</span>
       </div>
       <div class="chiprow" role="tablist" aria-label="Choose your trade">
         <button class="chip" role="tab" aria-selected="false" aria-controls="demostage" data-playtrade="dental" type="button">Dental</button>
@@ -334,270 +315,20 @@
         The&nbsp;facts, the&nbsp;price list and the&nbsp;handoff rules all change with&nbsp;the&nbsp;trade.</div>
     </div>
 
-
-    <div id="panel-phone" data-panel="phone" role="tabpanel" aria-label="Phone call demo" hidden>
-      <div class="chiprow" role="tablist" aria-label="Choose a call scenario">
-        <button class="chip on" data-call="home" role="tab" aria-selected="true">Home Services</button>
-        <button class="chip" data-call="dental" role="tab" aria-selected="false">Dental</button>
-        <button class="chip" data-call="venues" role="tab" aria-selected="false">Wedding &amp; Venues</button>
-      </div>
-      <div class="callstage"><div class="phoneframe"><div class="screen">
-        <div class="notch"></div>
-
-        <div data-callscene="home">
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-a">MR</span>
-              <span class="who"><b>Incoming call</b><span>+1 (214) ••• ••38 · 2:47 AM</span></span>
-              <span class="timer sg">01:12</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">My&nbsp;AC died and it’s&nbsp;95°F (35°C) out. Can anyone come tonight?</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">I’m sorry to&nbsp;hear that. I can hold tomorrow’s&nbsp;first slot at&nbsp;8 AM, or book an&nbsp;emergency visit tonight — the&nbsp;after-hours call-out is <em>$180</em>. Which works for&nbsp;you?</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Tonight. And… I think I can smell gas by&nbsp;the&nbsp;furnace in&nbsp;the&nbsp;closet.</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">Please step away from&nbsp;the&nbsp;furnace now — I’m connecting you to&nbsp;our&nbsp;<em>on-call tech</em> as we speak. If the&nbsp;smell is strong, hang up and call your&nbsp;local emergency number first.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ CRM updated · job created, tech dispatched</span></div>
-        </div>
-
-        <div data-callscene="dental" hidden>
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-d">SK</span>
-              <span class="who"><b>Incoming call</b><span>+1 (312) ••• ••74 · 9:12 PM</span></span>
-              <span class="timer sg">00:58</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Hi — roughly how much is an&nbsp;implant?</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">A&nbsp;single implant runs <em>$1,900 to&nbsp;$2,600</em>, depending on&nbsp;the&nbsp;fixture and whether bone grafting is needed. The&nbsp;exact price is confirmed after an&nbsp;exam and X-ray — shall I book one?</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Actually, my&nbsp;tooth is killing me right now.</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">That&nbsp;sounds urgent — please hold one moment, I’m putting you through&nbsp;to&nbsp;our&nbsp;<em>on-call line</em> now.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ CRM updated · routed to&nbsp;on-call, record created</span></div>
-        </div>
-
-        <div data-callscene="venues" hidden>
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-c">EJ</span>
-              <span class="who"><b>Incoming call</b><span>+1 (615) ••• ••21 · 8:40 PM</span></span>
-              <span class="timer sg">01:34</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">We’re planning for&nbsp;about&nbsp;120 guests in&nbsp;October — any Saturdays still open?</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">Yes — October 12 and 26 are open. Weekend receptions start at&nbsp;<em>$9,800</em> for&nbsp;up to&nbsp;150 guests, dinner included. Would you like to&nbsp;see the&nbsp;hall?</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Can you guarantee the&nbsp;12th for&nbsp;us right now?</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">Holding a&nbsp;date needs a&nbsp;person — I’ve booked you a&nbsp;<em>tour for&nbsp;Saturday at&nbsp;11</em>, and our&nbsp;events manager will call you in&nbsp;the&nbsp;morning to&nbsp;talk dates.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ CRM updated · tour booked Sat 11:00</span></div>
-        </div>
-
-      </div></div></div>
-      <div class="stagehint">Same brain, out loud — the&nbsp;AI speaks in&nbsp;a&nbsp;natural voice on&nbsp;your&nbsp;existing number and routes emergencies to&nbsp;a&nbsp;person in&nbsp;real time.</div>
-
-      <!-- ── what the call produced — switches with the scenario chips above ── -->
-      <div class="outcome tight" data-callscene="home">
-        <div class="oh">
-          <span class="ol">The&nbsp;caller hung up. The&nbsp;job already exists.</span>
-          <span class="ot">Call ended 02:48 AM · record written <b>02:48 AM</b></span>
-        </div>
-        <div class="ogrid">
-          <div class="obox">
-            <span class="obl"><em>01</em>Pipeline card + dispatch<i></i></span>
-            <div class="appwin tight">
-              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
-              <div class="body">
-                <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s2"><div class="hl4" role="presentation" aria-level="2"><span class="sw"></span>Consultation booked<span class="ct">4</span></div>
-                    <div class="pcard"><div class="who"><span class="ini">MR</span><span class="nm">M. R.</span></div>
-                      <div class="mt">Emergency AC call-out — on-call tech dispatched, gas smell flagged</div>
-                      <div class="ft"><span class="tag hot">Safety</span><span class="tag ai">AI logged</span><span class="amt">$180</span></div></div>
-                  </div>
-                </div>
-                <p style="margin-top:12px;font-size:var(--fs-2xs);color:var(--app-tx3);font-weight:600;line-height:1.6;">The&nbsp;guardrail fired before the&nbsp;booking did: gas smell → step away, call your&nbsp;local emergency number, route to&nbsp;a&nbsp;human. The&nbsp;card records that&nbsp;it happened.</p>
-              </div>
-            </div>
-          </div>
-          <div class="obox">
-            <span class="obl"><em>02</em>Customer record written<i></i></span>
-            <div class="custcard">
-              <div class="ch"><span class="ini">MR</span>
-                <span><b>M. R.</b><span>First contact — phone, 2:47 AM</span></span>
-                <span class="stg">Dispatched</span>
-              </div>
-              <div class="crow"><span class="k">Summary</span><span class="v">AC failed overnight in&nbsp;95°F (35°C) heat. Quoted the&nbsp;$180 after-hours call-out, accepted. Reported a&nbsp;gas smell mid-call.<span class="aibadge">AI written</span></span></div>
-              <div class="crow"><span class="k">Collected</span><span class="v">Address · fault · urgency · access instructions</span></div>
-              <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti warm"><i></i>Stressed, urgent</span></span></div>
-              <div class="crow"><span class="k">Next action</span><span class="v">On-call tech notified — safety escalation logged<span class="aibadge">Auto</span></span></div>
-            </div>
-          </div>
-        </div>
-        <p class="ocap">Product illustration with&nbsp;sample data. Fields, stages and guardrails are configured per&nbsp;trade.</p>
-      </div>
-
-      <div class="outcome tight" data-callscene="dental" hidden>
-        <div class="oh">
-          <span class="ol">The&nbsp;caller hung up. The&nbsp;patient already exists.</span>
-          <span class="ot">Call ended 9:13 PM · record written <b>9:13 PM</b></span>
-        </div>
-        <div class="ogrid">
-          <div class="obox">
-            <span class="obl"><em>01</em>Pipeline card + routing<i></i></span>
-            <div class="appwin tight">
-              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
-              <div class="body">
-                <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s1"><div class="hl4" role="presentation" aria-level="3"><span class="sw"></span>New inquiry<span class="ct">7</span></div>
-                    <div class="pcard"><div class="who"><span class="ini">SK</span><span class="nm">S. K.</span></div>
-                      <div class="mt">Implant price asked, then reported acute pain — routed to&nbsp;on-call</div>
-                      <div class="ft"><span class="tag hot">Urgent</span><span class="tag ai">AI logged</span><span class="chan">Phone · 9:12 PM</span></div></div>
-                  </div>
-                </div>
-                <p style="margin-top:12px;font-size:var(--fs-2xs);color:var(--app-tx3);font-weight:600;line-height:1.6;">No&nbsp;clinical advice was given, because the&nbsp;guardrail forbids it. The&nbsp;pain report became a&nbsp;routing decision, not an&nbsp;answer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="obox">
-            <span class="obl"><em>02</em>Customer record written<i></i></span>
-            <div class="custcard">
-              <div class="ch"><span class="ini">SK</span>
-                <span><b>S. K.</b><span>First contact — phone, 9:12 PM</span></span>
-                <span class="stg">Routed to&nbsp;on-call</span>
-              </div>
-              <div class="crow"><span class="k">Summary</span><span class="v">Asked the&nbsp;implant range; quoted $1,900–$2,600 from&nbsp;the&nbsp;fee guide with&nbsp;the&nbsp;exam caveat. Then reported acute pain.<span class="aibadge">AI written</span></span></div>
-              <div class="crow"><span class="k">Collected</span><span class="v">Insurer · pain level · new or recall · callback number</span></div>
-              <div class="crow"><span class="k">Sentiment</span><span class="v"><span class="senti warm"><i></i>In&nbsp;pain, price-aware</span></span></div>
-              <div class="crow"><span class="k">Next action</span><span class="v">On-call line connected live — exam slot offered at&nbsp;8:30 AM<span class="aibadge">Auto</span></span></div>
-            </div>
-          </div>
-        </div>
-        <p class="ocap">Product illustration with&nbsp;sample data. Fields, stages and guardrails are configured per&nbsp;trade.</p>
-      </div>
-
-      <div class="outcome tight" data-callscene="venues" hidden>
-        <div class="oh">
-          <span class="ol">The&nbsp;caller hung up. The&nbsp;tour is on&nbsp;the&nbsp;calendar.</span>
-          <span class="ot">Call ended 8:42 PM · quote sent <b>8:46 PM</b></span>
-        </div>
-        <div class="ogrid">
-          <div class="obox">
-            <span class="obl"><em>01</em>Pipeline card + tour hold<i></i></span>
-            <div class="appwin tight">
-              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
-              <div class="body">
-                <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s2"><div class="hl4" role="presentation"><span class="sw"></span>Consultation booked<span class="ct">4</span></div>
-                    <div class="pcard"><div class="who"><span class="ini">EJ</span><span class="nm">E. &amp; J.</span></div>
-                      <div class="mt">Hall tour, Sat 11:00 — calendar invite sent</div>
-                      <div class="ft"><span class="tag">Calendar</span><span class="tag hot">Hot</span><span class="amt">$9,800</span></div></div>
-                  </div>
-                </div>
-                <p style="margin-top:12px;font-size:var(--fs-2xs);color:var(--app-tx3);font-weight:600;line-height:1.6;">The&nbsp;guardrail holds a&nbsp;tour but never confirms a&nbsp;date. The&nbsp;card carries the&nbsp;request so a&nbsp;person can.</p>
-              </div>
-            </div>
-          </div>
-          <div class="obox">
-            <span class="obl"><em>02</em>Quote built from&nbsp;your&nbsp;price list<i></i></span>
-            <div class="quotedoc">
-              <div class="qh">
-                <div><b>Estimate #2461</b><div class="qm">Prepared automatically · 4 minutes after the&nbsp;call ended</div></div>
-                <span class="qs">Sent</span>
-              </div>
-              <div class="qline"><span class="d">Base package</span><span class="s">Sat · 120 guests, dinner included</span><span class="v">$9,800</span></div>
-              <div class="qline"><span class="d">Extended hours</span><span class="s">+2 h</span><span class="v">$480</span></div>
-              <div class="qline"><span class="d">Add-on — premium set</span><span class="s">from&nbsp;price list</span><span class="v">$620</span></div>
-              <div class="qline tot"><span class="d">Total</span><span class="v">$10,900</span></div>
-              <p class="qf">Generated from&nbsp;your&nbsp;own price list, option matrix and discount rules.</p>
-            </div>
-          </div>
-        </div>
-        <p class="ocap">Product illustration with&nbsp;sample data. Fields, stages and guardrails are configured per&nbsp;trade.</p>
-      </div>
-    </div>
-
-    <!-- ── PANEL: WHATSAPP ── -->
-    <div id="panel-wa" data-panel="wa" role="tabpanel" aria-label="WhatsApp demo" hidden>
-      <div class="wagrid">
-        <div class="shell"><div class="core" style="padding:0;">
-          <div class="walab">Scenario · Stays — late check-in</div>
-          <div class="msgthread" style="border:0;border-radius:0;">
-            <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
-              <span><b>Saleringo · your&nbsp;inn</b><br><span>WhatsApp Business · online</span></span></div>
-            <div class="mbody">
-              <div class="m in">Hi! Do you have a&nbsp;double room this&nbsp;Friday? We land at&nbsp;11 pm — late check-in&nbsp;ok?</div>
-              <div class="m out">Yes — late check-in is self-service after 10 pm, and a&nbsp;double is open Friday at&nbsp;$320 including breakfast. Want me to&nbsp;hold it?<span class="tick">✓✓</span></div>
-              <div class="m in">Yes please!</div>
-              <div class="m out">Done — held until noon tomorrow. Our&nbsp;manager confirms before any payment.<span class="tick">✓✓</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ CRM updated · guest record created, hold logged</span></div>
-        </div></div>
-
-        <div class="shell"><div class="core" style="padding:0;">
-          <div class="walab">Scenario · Wedding &amp; Venues — inquiry</div>
-          <div class="msgthread" style="border:0;border-radius:0;">
-            <div class="mhead"><span class="avatar av-b" style="width:30px;height:30px;font-size:var(--fs-2xs);">S</span>
-              <span><b>Saleringo · your&nbsp;venue</b><br><span>WhatsApp Business · online</span></span></div>
-            <div class="mbody">
-              <div class="m in">Hi! Do you host weddings for&nbsp;around 120 guests? What would October cost?</div>
-              <div class="m out">We do — Saturday receptions start at&nbsp;$9,800 for&nbsp;up to&nbsp;150 guests, dinner included. October 12 and 26 are still open.<span class="tick">✓✓</span></div>
-              <div class="m in">Great — could we come see the&nbsp;hall this&nbsp;weekend?</div>
-              <div class="m out">Of&nbsp;course. Saturday tour slots: 11:00 or 14:00 — which suits you? I’ll send a&nbsp;calendar invite.<span class="tick">✓✓</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ CRM updated · tour booked</span></div>
-        </div></div>
-      </div>
-      <div class="stagehint">Official WhatsApp Business API — your&nbsp;number, approved templates, and every&nbsp;thread in&nbsp;the&nbsp;same inbox as calls and chats.</div>
-
-      <!-- ── what the two threads produced ── -->
-      <div class="outcome tight">
-        <div class="oh">
-          <span class="ol">Two threads. Two rooms held, two records written.</span>
-          <span class="ot">Both while the&nbsp;desk was closed. <b>0 staff minutes.</b></span>
-        </div>
-        <div class="ogrid">
-          <div class="obox">
-            <span class="obl"><em>01</em>Both cards on&nbsp;the&nbsp;board<i></i></span>
-            <div class="appwin tight">
-              <div class="bar"><i></i><i></i><i></i><span class="tt">Saleringo — <b>Pipeline</b></span><span class="live">Live</span></div>
-              <div class="body">
-                <div class="pipeboard" style="grid-template-columns:1fr;">
-                  <div class="pipecol s2"><div class="hl4" role="presentation"><span class="sw"></span>Consultation booked<span class="ct">4</span></div>
-                    <div class="pcard"><div class="who"><span class="ini">LA</span><span class="nm">Late arrival · double</span></div>
-                      <div class="mt">Friday, $320 incl. breakfast — held until noon, no&nbsp;payment taken</div>
-                      <div class="ft"><span class="tag">Calendar</span><span class="tag ai">AI logged</span><span class="chan">WhatsApp · 11:04 PM</span></div></div>
-                    <div class="pcard"><div class="who"><span class="ini">EJ</span><span class="nm">E. &amp; J.</span></div>
-                      <div class="mt">Hall tour, Sat 11:00 — calendar invite sent</div>
-                      <div class="ft"><span class="tag hot">Hot</span><span class="amt">$9,800</span></div></div>
-                  </div>
-                </div>
-                <p style="margin-top:12px;font-size:var(--fs-2xs);color:var(--app-tx3);font-weight:600;line-height:1.6;">Same board as the&nbsp;phone and web-chat cards. One person writing from&nbsp;two channels merges into&nbsp;one record.</p>
-              </div>
-            </div>
-          </div>
-          <div class="obox">
-            <span class="obl"><em>02</em>Guest record written<i></i></span>
-            <div class="custcard">
-              <div class="ch"><span class="ini">LA</span>
-                <span><b>Late arrival · double</b><span>First contact — WhatsApp, 11:04 PM</span></span>
-                <span class="stg">Hold logged</span>
-              </div>
-              <div class="crow"><span class="k">Summary</span><span class="v">Landing 11 PM Friday, asked about&nbsp;late check-in. Quoted the&nbsp;$320 direct rate including breakfast; room held until noon.<span class="aibadge">AI written</span></span></div>
-              <div class="crow"><span class="k">Collected</span><span class="v">Dates · guests · arrival time · language</span></div>
-              <div class="crow"><span class="k">Guardrail</span><span class="v">No&nbsp;payment taken — your&nbsp;manager confirms availability first</span></div>
-              <div class="crow"><span class="k">Next action</span><span class="v">Confirmation reminder at&nbsp;9:00 AM if not yet actioned<span class="aibadge">Auto</span></span></div>
-            </div>
-          </div>
-        </div>
-        <p class="ocap">Product illustration with&nbsp;sample data. Booking a&nbsp;room is a&nbsp;hold, never a&nbsp;charge — that&nbsp;rule is set by&nbsp;you, not by&nbsp;us.</p>
-      </div>
+    <!-- ── the other two channels go deeper on their own pages ── -->
+    <div class="chanlinks reveal">
+      <a class="chanlink" href="./voice.html">
+        <span class="chanbadge voice">Phone</span>
+        <b>Same brain, out&nbsp;loud.</b>
+        <span class="d">The&nbsp;AI speaks in&nbsp;a&nbsp;natural voice on&nbsp;your&nbsp;existing number and routes emergencies to&nbsp;a&nbsp;person in&nbsp;real time.</span>
+        <em>AI phone, on&nbsp;its own page&nbsp;&nbsp;→</em>
+      </a>
+      <a class="chanlink" href="./whatsapp.html">
+        <span class="chanbadge msg">WhatsApp</span>
+        <b>Same inbox, from&nbsp;the&nbsp;app they already have&nbsp;open.</b>
+        <span class="d">Official WhatsApp Business API — your&nbsp;number, approved templates, and every&nbsp;thread in&nbsp;the&nbsp;same inbox as calls and chats.</span>
+        <em>WhatsApp &amp; messengers, on&nbsp;their own page&nbsp;&nbsp;→</em>
+      </a>
     </div>
 
     <!-- ── SHARED: what just happened + CRM ── -->
@@ -622,13 +353,13 @@
 
       <div class="shell crm2 acard"><div class="core">
         <div class="k">MEANWHILE, IN&nbsp;YOUR&nbsp;CRM</div>
-        <div class="nm">Emma &amp; James<span class="time sg">2:47 AM</span></div>
-        <div class="row" style="margin-top:8px;"><span class="rk">Date</span><span class="rv">Oct 12 (Sat)</span></div>
+        <div class="nm">E. &amp; J.<span class="time sg">2:47 AM</span></div>
+        <div class="row" style="margin-top:8px;"><span class="rk">Date</span><span class="rv">Oct 12 (Sat) · held 7 days</span></div>
         <div class="row"><span class="rk">Guests</span><span class="rv">120</span></div>
-        <div class="row"><span class="rk">Quote</span><span class="rv">$9,800 sent</span></div>
-        <div class="row"><span class="rk">Owner</span><span class="rv">Your&nbsp;team · handoff</span></div>
+        <div class="row"><span class="rk">Quote</span><span class="rv">Estimate #2461 · $11,000 sent</span></div>
+        <div class="row"><span class="rk">Owner</span><span class="rv">Coordinator assigned</span></div>
         <span class="slot">Venue tour · Sat 11:00</span>
-        <div class="mut">Sample record from&nbsp;the&nbsp;venues conversation — created and logged while the&nbsp;chat happened, reminder queued.</div>
+        <div class="mut">Sample record from&nbsp;the&nbsp;Wedding &amp; Venues script above — written while the&nbsp;chat happened, follow-up cadence started.</div>
       </div></div>
     </div>
 
@@ -636,8 +367,8 @@
       <span class="ic">i</span>
       <div>
         <b>Straight about&nbsp;what this is: the&nbsp;conversations here are scripted, and the&nbsp;CRM screens are illustrations with&nbsp;sample data.</b>
-        <p>They replay representative cases: a&nbsp;grounded answer, a&nbsp;clean handoff, six objects left behind. We will not fake a&nbsp;live answer and pretend it came from&nbsp;your&nbsp;business. For&nbsp;answers built on&nbsp;<em style="font-style:normal;color:#fff;">your</em>&nbsp;prices, calendar and rules, book the&nbsp;20-minute session — bring your&nbsp;hardest question. Nothing goes live until your&nbsp;team signs off on&nbsp;every&nbsp;fact.</p>
-        <p style="margin-top:12px;"><a class="linkcta" data-book data-fallback="./index.html#early-access" href="./index.html#early-access" style="font-size:var(--fs-xs);color:#fff;border-bottom-color:var(--hair2);">Book 20 minutes and bring your&nbsp;question&nbsp;&nbsp;→</a></p>
+        <p>They replay representative cases: a&nbsp;grounded answer, a&nbsp;clean handoff, six objects left behind. We will not fake a&nbsp;live answer and pretend it came from&nbsp;your&nbsp;business. For&nbsp;answers built on&nbsp;<em style="font-style:normal;color:#fff;">your</em>&nbsp;prices, calendar and rules, email us your&nbsp;hardest question — a&nbsp;person reads it and replies. Nothing goes live until your&nbsp;team signs off on&nbsp;every&nbsp;fact.</p>
+        <p style="margin-top:12px;"><a class="linkcta" href="mailto:hello@saleringo.com?subject=My%20hardest%20customer%20question" style="font-size:var(--fs-xs);color:#fff;border-bottom-color:var(--hair2);">Email us your&nbsp;hardest question&nbsp;&nbsp;→</a></p>
       </div>
     </div>
   </div>
@@ -702,7 +433,7 @@
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <div class="secrule"><span class="eyebrow"><i></i>Eight trades, one set of&nbsp;rules</span><span class="line"></span></div>
+        <div class="secrule"><span class="eyebrow"><i></i>Twenty-five trades, one set of&nbsp;rules</span><span class="line"></span></div>
         <h2 class="h2 onDark" style="margin-top:8px;">Every&nbsp;chip&nbsp;above <br>is somebody&rsquo;s Tuesday night.</h2>
       </div>
       <p class="lead onDark" style="margin:0;">The&nbsp;script changes with&nbsp;the&nbsp;trade. What never changes: an&nbsp;approved fact, or a&nbsp;person.</p>
@@ -845,37 +576,25 @@
 </section>
 
 <!-- ═══════ CLOSER + BIG FOOTER ═══════ -->
-<!-- CONCLUSION: every path names what it taught and where it goes next -->
-<section class="concsec t-sm sec-dark">
-  <div class="wrap">
-    <div class="concwrap reveal">
-      <div class="concl">
-        <span class="cnl">You have read it work</span>
-        <p class="cnp">Now the&nbsp;useful question is what it does with&nbsp;your&nbsp;prices, your&nbsp;calendar and your&nbsp;rules &mdash; and what that&nbsp;costs for&nbsp;a&nbsp;business your&nbsp;size.</p>
-      </div>
-      <a class="btn btn-teal concbtn" href="./pricing.html">See the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">&#8599;</span></a>
-    </div>
-  </div>
-</section>
-
+<!-- CONCLUSION: one exit. The page showed what the answers look like; the
+     next question is what they cost. The only other link goes back up the
+     page, to the reader's own prices. -->
 <section class="closer bg-spot" id="closer">
   <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="reveal">Liked the&nbsp;answers? <br><em>Make them&nbsp;yours.</em></h2>
-    <p class="lead onDark reveal">The&nbsp;real product runs on&nbsp;your&nbsp;facts, your&nbsp;calendar and your&nbsp;price list — and files every&nbsp;conversation into&nbsp;your&nbsp;own pipeline. Join the&nbsp;founding cohort, or book 20&nbsp;minutes and bring your&nbsp;hardest customer questions.</p>
+    <h2 class="reveal">You have read it&nbsp;work. <br><em>Now see what it&nbsp;costs.</em></h2>
+    <p class="lead onDark reveal">The&nbsp;scripts above run on&nbsp;facts we wrote. The&nbsp;product runs on&nbsp;yours — your&nbsp;prices, your&nbsp;calendar, your&nbsp;rules — and files every&nbsp;conversation into&nbsp;your&nbsp;own pipeline. The&nbsp;useful question now is what that&nbsp;costs for&nbsp;a&nbsp;business your&nbsp;size.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="./index.html#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="./pricing.html">See what it costs for&nbsp;my&nbsp;size<span class="cir">↗</span></a>
+      <a class="btn btn-teal" href="./pricing.html#plans">See the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
     </div>
-      <p class="heroscroll"><a href="./index.html#start-here">New here? Start with&nbsp;the&nbsp;two-step tour &mdash; about&nbsp;a&nbsp;minute&nbsp;&nbsp;&rarr;</a></p>
-    <div class="trust">Wondering what it costs? <a href="./pricing.html" style="color:var(--tx2);">See pricing ↗</a></div>
+    <p class="more reveal"><a href="#yourprices">Not sold by a&nbsp;script? Run it on&nbsp;your&nbsp;own prices first&nbsp;&nbsp;&uarr;</a></p>
   </div>
 
   <!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v69.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -910,7 +629,7 @@
   </div></footer>
 <!--/#footer-->
 </section>
-<nav data-startpath data-compact data-title="What to try here" data-end="#closer" data-end-label="Get my plan" aria-label="What to try here">
+<nav data-startpath data-compact data-title="What to try here" data-end="#closer" data-end-label="See the plan" aria-label="What to try here">
   <ol>
     <li data-step="#demostage" data-short="Pick a trade" data-next="pick a trade and a channel" data-focus=".chiprow" data-cue="Pick a trade" data-sub="Every trade answers with its own rules. Pick yours, then ask it something hard."><a href="#demostage"><b>Pick a&nbsp;trade</b></a></li>
     <li data-step="#yourprices" data-short="Use your prices" data-next="paste your own price list" data-focus="#labinput" data-cue="Paste here" data-sub="Paste a few lines of your own prices, then ask it something they do not cover."><a href="#yourprices"><b>Use your&nbsp;prices</b></a></li>
@@ -921,48 +640,29 @@
 <!-- sticky conversion bar -->
 <div class="stickycta">
   <div class="wrap">
-    <span class="msg"><b>Bring your&nbsp;own question.</b> Book 20 minutes and we will run it against your&nbsp;prices, your&nbsp;calendar and your&nbsp;rules.</span>
-    <a class="btn btn-teal" data-book data-fallback="./index.html#early-access" href="./index.html#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
+    <span class="msg"><b>Bring your&nbsp;own question.</b> Run it on&nbsp;your&nbsp;own prices above — then see what a&nbsp;month costs for&nbsp;a&nbsp;business your&nbsp;size.</span>
+    <a class="btn btn-teal" href="./pricing.html#plans">See the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=68.0"></script>
-<script src="../assets/js/balance.js?v=68.0" defer></script>
-<script src="../assets/js/panels.js?v=68.0" defer></script>
-<script src="../assets/js/wrap.js?v=68.0" defer></script>
-<script src="../assets/js/rail.js?v=68.0" defer></script>
-<script src="../assets/js/guide.js?v=68.0"></script>
-<script src="../assets/js/play.js?v=68.0"></script>
-<script src="../assets/js/pricelab.js?v=68.0"></script>
+<script src="../assets/js/site.js?v=69.0"></script>
+<script src="../assets/js/balance.js?v=69.0" defer></script>
+<script src="../assets/js/panels.js?v=69.0" defer></script>
+<script src="../assets/js/wrap.js?v=69.0" defer></script>
+<script src="../assets/js/rail.js?v=69.0" defer></script>
+<script src="../assets/js/guide.js?v=69.0"></script>
+<script src="../assets/js/play.js?v=69.0"></script>
+<script src="../assets/js/pricelab.js?v=69.0"></script>
 <script>
 (function () {
   'use strict';
-  /* channel tab switcher */
-  var tabs = document.querySelectorAll('.chtab');
-  function pick(name) {
-    tabs.forEach(function (t) {
-      var on = t.getAttribute('data-tab') === name;
-      t.classList.toggle('on', on);
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    document.querySelectorAll('[data-panel]').forEach(function (p) {
-      p.hidden = p.getAttribute('data-panel') !== name;
-    });
-  }
-  tabs.forEach(function (t) {
-    t.addEventListener('click', function () { pick(t.getAttribute('data-tab')); });
-  });
-  /* phone call scenario switcher */
-  document.querySelectorAll('[data-call]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      document.querySelectorAll('[data-call]').forEach(function (c) { c.classList.remove('on'); });
-      b.classList.add('on');
-      var k = b.getAttribute('data-call');
-      document.querySelectorAll('[data-callscene]').forEach(function (s) {
-        s.hidden = s.getAttribute('data-callscene') !== k;
-      });
-    });
-  });
+  /* One channel picker, and it opens on Web chat. play.js seeds its own
+     default channel when it initialises, and the badge, the note and the
+     chip state all follow that choice — so the page switches the chip
+     through play.js's own handler rather than editing three things by hand
+     and drifting from it. Runs before first paint, so nothing flickers. */
+  var web = document.querySelector('[data-play] [data-playchan="web"]');
+  if (web && web.getAttribute('aria-selected') !== 'true') web.click();
 })();
 </script>
 </body>

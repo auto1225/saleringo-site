@@ -260,7 +260,7 @@ def build(lang):
     # 구매 주체가 사업자인지 개인인지 공공기관인지에 따라 세금 처리가
     # 완전히 달라집니다. 예전에는 묻지 않고 전부 "세금 0" 으로 처리했습니다.
     buyer_opts = [
-        ('business', t('사업자 (법인·개인사업자)', 'A business (company or sole trader)')),
+        ('business', t('사업자 (법인·개인사업자)', 'A business (company, sole proprietor or sole trader)')),
         ('consumer', t('개인', 'An individual')),
         ('public',   t('공공기관·학교', 'A public body or school')),
     ]
@@ -280,10 +280,12 @@ def build(lang):
 
     methods = [
         ('card', t('카드 정기결제', 'Card, charged monthly'),
-         t('카드를 한 번 등록해 두면 매월 같은 날 자동으로 결제됩니다. '
-           '사용량이 있는 달은 사용량이 확정된 뒤 합산해 청구합니다.',
-           'Register a card once; it is charged on the same day each month. '
-           'Usage is added once it is final.')),
+         t('카드 등록은 서면 주문서에 명시된 결제사와 진행되며 여기서는 청구되지 않습니다. '
+           '등록 뒤에는 매월 같은 날 자동으로 결제되고, 사용량이 있는 달은 사용량이 확정된 뒤 '
+           '합산해 청구합니다.',
+           'Card registration happens with the payment provider named in the written order; '
+           'nothing is charged here. After that the card is charged on the same day each month, '
+           'and usage is added once it is final.')),
         ('transfer', t('계좌이체 · 세금계산서 후불', 'Bank transfer against an invoice'),
          t('매월 사용량이 확정되면 전자세금계산서를 먼저 보내 드리고, 받으신 뒤에 이체하시면 됩니다. '
            '결제 정보를 저희에게 맡기지 않아도 됩니다.',
@@ -370,9 +372,9 @@ def build(lang):
             </div>
             <div class="fld">
               <label for="coBiz"><span data-biz-label>{fBiz}</span>
-                <span class="opt" data-biz-optional hidden>{optional}</span></label>
+                <span class="opt" data-biz-optional hidden>{bizOpt}</span></label>
               <input id="coBiz" name="bizNo" type="text" required inputmode="numeric"
-                     placeholder="000-00-00000" maxlength="12" autocomplete="off">
+                     placeholder="{bizPh}" maxlength="12" autocomplete="off">
             </div>
           </div>
           <div class="fld">
@@ -395,17 +397,17 @@ def build(lang):
             <div class="fld">
               <label for="coEmail">{fEmail}</label>
               <input id="coEmail" name="email" type="email" required autocomplete="email"
-                     placeholder="name@company.co.kr">
+                     placeholder="{emailPh}">
             </div>
             <div class="fld">
               <label for="coPhone">{fPhone} <span class="opt">{optional}</span></label>
               <input id="coPhone" name="phone" type="tel" autocomplete="tel"
-                     placeholder="010-0000-0000" maxlength="24">
+                     placeholder="{phonePh}" maxlength="24">
             </div>
           </div>
           <div class="fld">
             <label for="coTax"><span data-tax-email-label>{fTax}</span> <span class="opt">{optional}</span></label>
-            <input id="coTax" name="taxEmail" type="email" placeholder="tax@company.co.kr">
+            <input id="coTax" name="taxEmail" type="email" placeholder="{taxPh}">
             <label class="agree" style="padding-left:0;padding-bottom:0;">
               <input type="checkbox" data-same-email>
               <span style="font-size:var(--fs-xs);color:var(--tx3);font-weight:600;">{sameEmail}</span>
@@ -498,11 +500,14 @@ def build(lang):
         kick=t('주문', 'Order'),
         h1=t('주문서입니다.<br>2분이면 끝납니다.',
              'The order form.<br>Two minutes, no account.'),
-        sub=t('계정을 만들지 않아도 됩니다. 아래를 채우시면 접수되고, '
-              '영업일 하루 안에 사람이 확인 연락을 드립니다. '
+        sub=t('아래를 채우시면 접수됩니다. 순서는 넷입니다: '
+              '<b>접수 &rarr; 응대 제작 &rarr; 서면 주문서 서명 &rarr; 결제</b>. '
+              '영업일 하루 안에 사람이 확인 연락을 드리고, '
               '<b>이 화면에서 결제되는 금액은 없습니다.</b>',
-              'No account needed, wherever you are. Fill this in and it is recorded; a person confirms '
-              'within one business day. <b>Nothing is charged on this screen.</b>'),
+              'Fill this in and it is recorded. Four steps, in this order: '
+              '<b>order recorded &rarr; answering built &rarr; written order signed &rarr; payment</b>. '
+              'A person confirms within one business day, and '
+              '<b>nothing is charged on this screen.</b>'),
         s0=t('어디에서 쓰시는지', 'Where you are'),
         s0p=t('나라에 따라 통화와 세금 처리, 그리고 인보이스에 들어갈 번호가 달라집니다. '
               '먼저 고르시면 아래 금액이 그 기준으로 바뀝니다.',
@@ -526,9 +531,13 @@ def build(lang):
         dSub=t('하위 수탁업체 목록', 'Subprocessors'),
         hSub=t('./security.html#subprocessors', './security.html#subprocessors'),
         hDpa=t('./security.html#measures', './security.html#dpa'),
-        dDpa=t('데이터 처리와 보안 조치', 'Data processing terms'),
-        docsNote=t('이 네 가지가 동의하시는 내용의 전부입니다. 새 창에서 열립니다.',
-                   'These four are what you are agreeing to. They open in a new tab.'),
+        dDpa=t('데이터 처리 방식', 'How data is processed'),
+        docsNote=t('동의하시는 것은 이용약관과 개인정보 처리방침입니다. 수탁업체 목록과 처리 방식은 '
+                   '참고용이고, DPA(데이터 처리 계약) 자체는 서면 주문서와 함께 서명합니다. '
+                   '새 창에서 열립니다.',
+                   'You are agreeing to the Terms and the Privacy policy; the other two are for '
+                   'reference. The DPA itself comes with the written order for signature. '
+                   'They open in a new tab.'),
         addressPh=t('세금계산서·인보이스에 적힐 주소', 'The address that goes on the invoice'),
         addressHint=t('세금계산서와 인보이스에 그대로 들어갑니다.',
                       'This goes on the tax invoice or invoice exactly as written.'),
@@ -540,14 +549,13 @@ def build(lang):
         talkLbl=t('한 달 예상 알림톡 발송 (건) — 선택',
                   'Expected notification messages a month — optional'),
         talkPh=t('예: 300', 'e.g. 300'),
-        s2=t('세금계산서를 받으실 곳', 'Where the tax invoice goes'),
-        s2p=t('한국 사업자이시면 사업자등록번호를 입력하시는 대로 확인합니다. 세금계산서 발행에 '
-              '필요하기 때문입니다. 그 밖의 나라에서는 인보이스에 찍는 번호라 선택입니다. '
-              '다만 EU 사업자가 VAT 번호를 비우시면 서면 주문서로 진행됩니다.',
-              'If you are in Korea the registration number is checked as you type, because the '
-              'tax invoice needs it. Everywhere else it just goes on the invoice, so it is optional. '
-              'One exception: an EU business that leaves its VAT number blank continues as a '
-              'written order.'),
+        s2=t('청구 정보', 'Billing details'),
+        s2p=t('한국 사업자는 사업자등록번호를 입력하시는 대로 확인합니다 — 세금계산서에 필요합니다. '
+              '영국·EU 사업자는 VAT 번호가 있어야 온라인으로 끝나고, 비우시면 서면 주문서로 진행됩니다. '
+              '그 밖의 나라에서는 인보이스에 찍는 번호라 선택입니다.',
+              'In Korea the registration number is checked as you type; the tax invoice needs it. '
+              'A UK or EU business needs its VAT number to finish online — left blank, the order '
+              'continues in writing. Elsewhere the number only goes on the invoice, so it is optional.'),
         fCompany=t('상호', 'Company'), fBiz=t('사업자등록번호', 'Business registration number'),
         fCeo=t('대표자명', 'Representative'), fContact=t('담당자 성명', 'Contact name'),
         fEmail=t('담당자 이메일', 'Contact email'), fPhone=t('연락처', 'Phone'),
@@ -561,6 +569,11 @@ def build(lang):
                  'Your trade, your hours, the booking software you already use — '
                  'it makes the first call much shorter.'),
         optional=t('— 선택', '— optional'),
+        bizOpt=t('— 온라인 주문에 필요 (영국·EU 사업자)', '— needed to order online (UK/EU businesses)'),
+        bizPh=t('000-00-00000', ''),
+        emailPh=t('name@company.co.kr', 'name@yourbusiness.com'),
+        phonePh=t('010-0000-0000', '+1 …'),
+        taxPh=t('tax@company.co.kr', 'billing@yourbusiness.com'),
         s3=t('어떻게 결제하실지', 'How you will pay'),
         s3p=t('둘 다 매월 청구입니다. 약정이 없어서 언제든 멈추실 수 있습니다.',
               'Both are billed monthly. There is no term, so you can stop at any time.'),
@@ -575,24 +588,26 @@ def build(lang):
         lTerms=t('이용약관', 'Terms of service'), lPrivacy=t('개인정보처리방침', 'Privacy policy'),
         agTerms=t('에 동의합니다.', ' — I agree.'),
         agPrivacy=t('에 따른 개인정보 수집·이용에 동의합니다. 수집 항목은 상호, 사업자등록번호, '
-                    '대표자명, 담당자 성명·이메일·연락처, 세금계산서 수신 이메일, 남겨 주신 '
-                    '메모입니다. 계약 이행과 세금계산서 발행에 씁니다.',
-                    ' — I agree to the collection of company name, registration number, representative, '
-                    'contact name, email and phone, the tax invoice email and any note you leave. '
-                    'We use these to perform the contract and issue invoices.'),
-        agTransfer=t('<b>개인정보 국외 이전에 동의합니다.</b> 응대 문장을 만드는 언어모델이 미국에서 '
-                     '돌아갑니다. 이전받는 회사와 나라는 '
+                    '대표자명, 담당자 성명·이메일·연락처, 청구 주소, 세금계산서 수신 이메일, 남겨 주신 '
+                    '메모, 그리고 접속 기록(IP 주소 해시값·브라우저 정보)입니다. 계약 이행과 '
+                    '세금계산서 발행에 쓰고, 접속 기록은 중복 접수를 막고 유량을 제한하는 데만 씁니다.',
+                    ' — I agree to the collection of company name, registration or tax number, '
+                    'representative, contact name, email and phone, billing address, the invoice email, '
+                    'any note you leave, and a connection record (a hash of your IP address and your '
+                    'browser details). We use these to perform the contract and issue invoices; the '
+                    'connection record only to stop duplicate submissions and to rate-limit.'),
+        agTransfer=t('<b>개인정보 국외 이전에 동의합니다.</b> 고객 정보는 대한민국(서울)에 저장되고, '
+                     '답변은 미국의 언어모델이 만듭니다. 이전받는 회사와 나라는 '
                      '<a href="./security.html#subprocessors" target="_blank" rel="noopener">보안 페이지의 '
-                     '수탁업체 표</a>에 있습니다. 영국·EEA 밖 이전은 표준계약조항(SCC)을 담은 데이터 처리 계약을 '
-                     '따릅니다. 계약서는 hello@saleringo.com 으로 요청하시면 드립니다. '
+                     '수탁업체 표</a>에 있습니다. 데이터 처리 계약(DPA)에는 EU 표준계약조항(SCC)과 '
+                     'UK Addendum/IDTA 가 들어 있고, 서면 주문서와 함께 드립니다. '
                      '동의하지 않으시면 핵심 기능을 쓰실 수 없습니다.',
-                     '<b>I agree to processing outside my country.</b> The language model that '
-                     'drafts replies runs in the United States. '
+                     '<b>I agree to processing outside my country.</b> Customer records are stored in '
+                     'South Korea (Seoul); replies are drafted by a language model in the United States. '
                      '<a href="./security.html#subprocessors" target="_blank" rel="noopener">The '
-                     'subprocessor list</a> names each company and its country. For transfers out '
-                     'of the UK or EEA, our Data Processing Agreement includes the Standard '
-                     'Contractual Clauses; ask at hello@saleringo.com. '
-                     'Without it the core function cannot run.'),
+                     'subprocessor list</a> names each company and its country. Our Data Processing '
+                     'Agreement carries the EU Standard Contractual Clauses plus the UK Addendum/IDTA, '
+                     'and comes with the written order. Without this the core function cannot run.'),
         agRec=t('<b>정기결제에 동의합니다.</b> 등록한 카드로 매월 같은 날 자동 결제되며, '
                 '해지 전까지 계속됩니다. <b>해지는 hello@saleringo.com 으로 한 줄 보내시면 됩니다.</b> '
                 '위약금이 없고, 다음 결제일부터 청구가 멈춥니다.',
@@ -601,12 +616,13 @@ def build(lang):
                 'No penalty, and billing stops from the next cycle.'),
         agMkt=t('제품 소식과 사용 팁을 이메일로 받겠습니다. 안 받으셔도 서비스 이용에 지장이 없습니다.',
                 'Send me product notes by email. Declining changes nothing about the service.'),
-        cta=t('주문 접수하기', 'Place the order'),
+        cta=t('주문 접수하기 — 오늘 결제 없음', 'Place the order — nothing charged tonight'),
         fine=t('누르시면 위 내용이 저희에게 접수됩니다. <b>결제는 이 단계에서 이루어지지 않습니다.</b> '
-               '담당자가 확인한 뒤 결제 안내를 보내 드립니다. 그 전까지는 어떤 금액도 청구되지 않습니다. '
-               '접수 후에도 이메일 한 통으로 취소하실 수 있습니다.',
+               '담당자가 확인하고 응대를 만든 뒤 서면 주문서를 보내 드리며, 결제는 양측이 서명한 다음입니다. '
+               '그 전까지는 어떤 금액도 청구되지 않습니다. 접수 후에도 이메일 한 통으로 취소하실 수 있습니다.',
                'This records your order with us. <b>No payment is taken at this step.</b> '
-               'A person confirms first and sends the payment step; nothing is charged before that. '
+               'A person confirms, we build your answering, and the written order follows; payment comes '
+               'only after both sides have signed it. Nothing is charged before that. '
                'One email cancels it afterwards.'),
         noscript=t('이 주문서는 자바스크립트로 동작합니다. 스크립트를 켜시거나, '
                    'hello@saleringo.com 으로 상호·나라·요금제를 보내 주시면 같은 내용으로 '
@@ -641,9 +657,9 @@ def build(lang):
     page('checkout.html',
          t('주문서 &mdash; Saleringo', 'Order &mdash; Saleringo'),
          t('계정 없이 2분이면 끝나는 주문서. 부가세와 첫 달 일할계산까지 금액을 먼저 보여 드리고, '
-           '결제는 확인 연락 뒤에 진행합니다.',
+           '결제는 서면 주문서에 서명한 뒤에 진행합니다.',
            'A two-minute order form, no account. Every figure including VAT and the prorated first '
-           'month is shown before you commit; payment comes after a person confirms.'),
+           'month is shown before you commit; payment comes after the written order is signed.'),
          filled, css=CSS, grade='trust',
          scripts=('site', 'balance', 'wrap', 'checkout'), lang=lang,
          image='https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',

@@ -35,6 +35,16 @@ CSS = """
   .gsaside .tel{margin-top:24px;padding-top:20px;border-top:1px solid var(--hair-d);
     font-size:var(--fs-sm);color:var(--tx2);line-height:1.8;}
   .gsaside .tel b{display:block;color:#fff;font-size:var(--fs-lead);}
+  .gsorder{margin-top:14px;font-size:var(--fs-sm);font-weight:700;}
+  /* 개인정보 동의 한 줄. site.css 의 .eaform input 이 모든 input 에 칸 모양
+     (테두리·둥근 모서리·width:100%)을 씌우므로 체크박스만 되돌립니다. */
+  .gsagree{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;margin-top:4px;}
+  .gsagree input{width:20px;height:20px;margin-top:2px;padding:0;border-radius:4px;
+    accent-color:var(--teal);cursor:pointer;}
+  .gsagree label{font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);cursor:pointer;
+    font-weight:500;letter-spacing:0;text-transform:none;}
+  .gsagree label a{color:var(--teal);font-weight:700;}
+  .gsagree label .opt{color:var(--tx3);font-weight:600;}
 """
 
 BODY = """
@@ -43,8 +53,9 @@ BODY = """
   {NAV}
   <div class="wrap hero-inner">
     <span class="eyebrow"><i></i>시작하기</span>
-    <h1 style="margin-top:24px;">결제부터 하지 않습니다.<br>우리 요금표로 답하는 것을 먼저 보십시오.</h1>
-    <p class="sub">아래 내용을 남겨 주시면, 그것으로 만든 응대를 영업일 기준 하루 안에 보내 드립니다.
+    <h1 style="margin-top:24px;">결제부터 하지 않습니다.<br>우리 요금표로 답하는 것을 먼저 들어 보십시오.</h1>
+    <p class="sub">아래 내용을 남겨 주시면, 보내 주신 요금표로 첫 답변세트를 만들고 고객이 자주 묻는
+      질문 10개에 AI 가 답하는 녹음을 영업일 기준 하루 안에 보내 드립니다.
       마음에 들지 않으면 거기서 끝내시면 됩니다. 결제 정보는 이 단계에서 받지 않습니다.</p>
   </div>
 </header>
@@ -56,10 +67,11 @@ BODY = """
     <div class="gswrap">
       <div class="reveal">
         <h2 class="h2 onDark" style="font-size:var(--fs-h2s);">어떤 곳인지 알려 주세요.</h2>
-        <p class="sub" style="max-width:none;">필수는 두 개뿐입니다. 나머지는 있으면 더 정확한 답을
-          드릴 수 있는 것들입니다.</p>
+        <p class="sub" style="max-width:none;">필수는 이메일과 업종, 그리고 개인정보 동의뿐입니다. 나머지는
+          있으면 더 정확한 답을 드릴 수 있는 것들입니다.</p>
+        <p class="gsorder"><a class="lnk" href="./checkout.html">이미 결정하셨으면 주문서로 &rarr;</a></p>
 
-        <form class="gsform eaform" data-earlyaccess method="post" style="margin-top:30px;">
+        <form class="gsform eaform" data-earlyaccess method="post" style="margin-top:24px;">
           <input type="hidden" name="context" value="한국어 시작하기 페이지">
           <input type="hidden" name="locale" value="ko-KR">
           <div class="two">
@@ -138,6 +150,12 @@ BODY = """
               aria-label="더 알려 주실 것"></textarea>
           </div>
 
+          <div class="gsagree">
+            <input id="gAgree" type="checkbox" name="agreePrivacy" required>
+            <label for="gAgree"><a href="./privacy.html" target="_blank" rel="noopener">개인정보 처리방침</a>에 따라
+              남겨 주신 정보를 답장과 응대 제작에 쓰는 데 동의합니다. <span class="opt">&mdash; 필수</span></label>
+          </div>
+
           <button class="btn btn-teal" type="submit" style="justify-self:start;margin-top:6px;">보내기<span class="cir">&#8599;</span></button>
           <p class="eanote" style="font-size:var(--fs-xs);color:var(--tx3);font-weight:600;line-height:1.7;">
             약정 없음 &middot; 언제든 해지 &middot; 세금계산서 발행 &middot; 남겨 주신 정보를 판매하거나 제3자에게 제공하지 않습니다.
@@ -149,13 +167,13 @@ BODY = """
         <h3>보내신 다음에 일어나는 일</h3>
         <ol>
           <li><b>영업일 하루 안에 답장</b>사람이 씁니다. 자동 회신이 아닙니다.</li>
-          <li><b>우리 요금표로 만든 응대</b>보내 주신 자료로 실제 대화를 만들어, 읽어 보실 수 있게 드립니다.</li>
+          <li><b>질문 10개 녹음</b>보내 주신 자료로 첫 답변세트를 만들고, 고객이 자주 묻는 질문 10개에 AI 가 답하는 녹음을 드립니다. 각본으로 만든 예시이지 실제 통화가 아닙니다.</li>
           <li><b>20분 통화</b>맞다 싶으면 그때 시작 일정과 금액을 정합니다.</li>
           <li><b>아니면 여기서 끝</b>연락처를 남겨 두지 않습니다. 삭제해 달라고 하시면 삭제합니다.</li>
         </ol>
         <p class="tel"><b>전화가 더 편하시면</b>
           <a data-tel href="tel:+827052770820"><b data-tel-label>+82 70-5277-0820</b></a>
-          로 걸어 주십시오. 저희 AI가 먼저 받습니다. 그 통화를 듣고 판단하셔도 됩니다.</p>
+          로 걸어 주십시오. 언제 거셔도 저희 AI 가 먼저 받습니다. 그 통화를 듣고 판단하셔도 됩니다.</p>
       </aside>
     </div>
   </div>
@@ -180,15 +198,15 @@ BODY = """
     </ul>
 
     <div class="trio reveal" style="margin-top:36px;">
-      <div><b>하루 안에 무엇이 오는가</b><p>사장님 요금표로 실제로 답하는 대화 두세 건을
-        만들어 보내 드립니다. 잘 풀리는 통화 하나와, 일부러 막히게 한 통화 하나를
-        같이 넣습니다 &mdash; 막힐 때 어떻게 멈추는지가 더 중요하기 때문입니다.</p></div>
+      <div><b>하루 안에 무엇이 오는가</b><p>사장님 요금표로 답하는 질문 10개 녹음입니다.
+        요금표에 있는 것은 그대로 답하고, 없는 것은 지어내는 대신 멈추는 것까지 같이
+        들으실 수 있습니다 &mdash; 막힐 때 어떻게 멈추는지가 더 중요하기 때문입니다.</p></div>
       <div><b>그다음에 결정하십니다</b><p>읽어 보시고 아니다 싶으면 거기서 끝내시면
         됩니다. 결제 정보를 받지 않았으므로 해지하실 것도 없습니다. 보내 드린 자료는
         요청하시면 지웁니다.</p></div>
-      <div><b>맞다 싶으면 20분</b><p>번호 착신전환과 캘린더 연결을 같이 합니다.
-        대부분 20분 안에 끝나고, 그날부터 AI가 전화를 받습니다. 맞지 않으면
-        착신전환만 풀면 원래대로입니다.</p></div>
+      <div><b>맞다 싶으면 설정</b><p>요금표와 영업시간을 사장님이 직접 넣으시는
+        셀프서브 설정이 기본이고, 이번 회차 창립 고객 5팀은 첫 답변세트를 저희가 같이 씁니다.
+        번호 착신전환을 걸면 그때부터 AI 가 받고, 맞지 않으면 착신전환만 풀면 원래대로입니다.</p></div>
     </div>
     <p class="seccap reveal" style="margin-top:20px;">보내 주신 자료는 응대를 만드는 데에만 씁니다.
       다른 고객의 AI를 학습시키는 데 쓰지 않습니다. 취급 방식은
@@ -202,9 +220,9 @@ BODY = """
 """
 
 page('get-started.html',
-     '시작하기 &mdash; 우리 요금표로 만든 AI 응대를 먼저 받아 보세요',
-     '업종과 요금표만 알려 주시면 그것으로 만든 AI 응대를 영업일 하루 안에 보내 드립니다. '
-     '결제 정보는 받지 않습니다. 약정 없음, 세금계산서 발행.',
+     '시작하기 &mdash; 우리 요금표로 질문 10개에 답하는 AI 녹음을 먼저 받아 보세요',
+     '업종과 요금표만 알려 주시면, 그 요금표로 고객 질문 10개에 답하는 AI 녹음을 영업일 하루 안에 '
+     '보내 드립니다. 결제 정보는 받지 않습니다. 약정 없음, 세금계산서 발행.',
      BODY.format(NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
      crumbs=[('홈', 'index.html'), ('시작하기', 'get-started.html')])
 print('wrote ko/get-started.html')

@@ -108,7 +108,23 @@ export default async function handler(req, res) {
     phone: clean(body.phone, 60),
     company: clean(body.company, 200),
     industry: clean(body.industry, 120),
-    message: clean(body.message, 4000),
+    message: (function () {
+      /* get-started 폼의 업종·웹사이트·채널·희망 시간 같은 칸은 DB 열이 없다.
+         버리지 않고 메모 뒤에 줄로 붙인다 — 담당자가 읽는 것은 결국 이 칸이다. */
+      var base = clean(body.message, 3000);
+      var known = { lang: 1, source: 1, name: 1, email: 1, phone: 1, company: 1, industry: 1,
+                    message: 1, pageUrl: 1, dedupeKey: 1, utm: 1, company_website_hp: 1,
+                    agreePrivacy: 1, agreeMarketing: 1, pageContext: 1 };
+      var extra = [];
+      Object.keys(body || {}).forEach(function (k) {
+        if (known[k]) return;
+        var v = body[k];
+        if (typeof v !== 'string' && typeof v !== 'number' && typeof v !== 'boolean') return;
+        var t = clean(String(v), 300);
+        if (t) extra.push(clean(k, 40) + ': ' + t);
+      });
+      return clean(base + (extra.length ? '\n\n' + extra.join('\n') : ''), 4000);
+    })(),
     pageUrl: clean(body.pageUrl, 500),
     referrer: clean(req.headers.referer, 500),
     dedupeKey: clean(body.dedupeKey, 120),

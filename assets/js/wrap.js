@@ -46,7 +46,7 @@
               'main h1, main h2, main .h2, main h3, main .sl-foot, main .secfoot';
 
   /* interface, not prose */
-  var SKIP = '.appwin, .bub, .exturn, .calmock, .pipeboard, .quotedoc, .custcard, ' +
+  var SKIP = '[data-qb], .qbcard, [aria-live], [data-commerce-verdict], [data-d60], .d60card, [data-status-live], .appwin, .bub, .exturn, .calmock, .pipeboard, .quotedoc, .custcard, ' +
              '.kpitiles, .repcard, .ledger, .transcript, .funnelrow, .browserframe, ' +
              '.msgthread, .callcard, .demo-body, .widget, .inboxmock, .queueboard, ' +
              '.colboard, .rampboard, td, th, .pstabs, .chiprow, .exfilter, .guiderail, ' +

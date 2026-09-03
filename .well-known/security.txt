@@ -1,10 +1,14 @@
 # Saleringo — vulnerability reporting
-# The security page states a reporting address and a good-faith promise; this
+# The security page states a reporting route and a good-faith promise; this
 # file is the machine-readable form of the same statement, at the location a
 # researcher's tooling looks first. It is the one piece of security evidence
 # that can honestly be published rather than sent on request.
+#
+# The contact is the request form, not a mailbox: saleringo.com has no MX
+# record yet, so mail to security@saleringo.com bounces. The form stores the
+# report and a person reads it. When the mailbox exists it is added here.
 
-Contact: mailto:security@saleringo.com
+Contact: https://claude.saleringo.com/en/get-started.html#request
 Expires: 2027-08-12T00:00:00.000Z
 Preferred-Languages: en, ko
 Canonical: https://claude.saleringo.com/.well-known/security.txt

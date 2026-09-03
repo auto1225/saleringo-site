@@ -5,8 +5,8 @@
 
 주문을 넣으면 성공 화면이 뜨고 주문번호가 나오는데, 새로고침하면
 사라졌습니다. 그리고 그 번호를 다시 조회할 곳이 사이트에 없었습니다.
-확인 메일이 안 왔거나 지웠으면, 자기가 무엇을 얼마에 주문했는지
-확인할 방법이 아무 데도 없었습니다.
+접수 화면을 닫고 나면 (확인 메일은 아직 없습니다) 자기가 무엇을 얼마에
+주문했는지 확인할 방법이 아무 데도 없었습니다.
 
 번호만으로는 열리지 않습니다. 접수할 때 쓴 이메일이 함께 맞아야
 합니다. 번호를 찍어 보는 것만으로 남의 주문 내용이 열리면 안 됩니다.
@@ -94,15 +94,15 @@ def build(lang):
             h1=t("접수한 주문을 다시 열어 보기", "Look up an order you placed"),
             lead=t(
                 "주문번호와 접수할 때 쓰신 이메일을 넣으시면, 무엇을 얼마에 접수하셨는지와 "
-                "지금 어느 단계인지 보여 드립니다. 확인 메일을 못 받으셨어도 여기서 보실 수 있습니다.",
+                "지금 어느 단계인지 보여 드립니다. 접수 화면을 닫으셨어도 여기서 다시 보실 수 있습니다.",
                 "Enter the order number and the email you used. You will see what was recorded, "
-                "at what price, and where it stands — even if the confirmation email never "
-                "reached you.",
+                "at what price, and where it stands — even after you have closed the "
+                "confirmation screen.",
             ),
             fNo=t("주문번호", "Order number"),
             noHint=t(
-                "접수 화면과 확인 메일에 적힌 SO- 로 시작하는 번호입니다.",
-                "The SO- number shown on the confirmation screen and in the email.",
+                "접수 화면에 적힌 SO- 로 시작하는 번호입니다.",
+                "The SO- number shown on the confirmation screen.",
             ),
             fEmail=t("접수할 때 쓰신 이메일", "The email you used"),
             emailHint=t(

@@ -291,6 +291,15 @@ window.SR_CONFIG = window.SR_CONFIG || {
       w.innerHTML = '<label>Company website<input type="text" name="company_website_hp" ' +
                     'tabindex="-1" autocomplete="off"></label>';
       forms[i].appendChild(w);
+      if (!forms[i].querySelector('[name="agreePrivacy"]')) {
+        var c = document.createElement('label');
+        c.className = 'eaconsent';
+        c.innerHTML = '<input type="checkbox" name="agreePrivacy" required> ' +
+          (((document.documentElement.lang || '').indexOf('ko') === 0) ? '<a class="lnk" href="./privacy.html">개인정보 처리방침</a>에 따라 연락받는 데 동의합니다.'
+                         : 'I agree to be contacted under the <a class="lnk" href="./privacy.html">privacy policy</a>.');
+        var sub = forms[i].querySelector('button[type="submit"], [type="submit"]');
+        if (sub && sub.parentNode === forms[i]) forms[i].insertBefore(c, sub); else forms[i].appendChild(c);
+      }
     }
   })();
 

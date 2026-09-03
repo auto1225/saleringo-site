@@ -7,6 +7,8 @@ and repeating it is the point. What is never repeated is the content: no two
 of these pages share a sentence, because no two of these trades lose a call
 the same way.
 """
+import io
+import json
 import os
 import sys
 
@@ -18,6 +20,10 @@ from trades import TRADES
 from trades2 import TRADES2
 
 TRADES = TRADES + TRADES2
+
+# 요금은 assets/data/pricing.json 하나에서만 읽는다. 페이지에 숫자를 직접
+# 적어 두면 요금표가 바뀔 때 한쪽만 고쳐지고, 그 순간 이 페이지가 거짓말이 된다.
+PR = json.load(io.open('assets/data/pricing.json', encoding='utf-8'))
 
 NB = '&nbsp;'
 
@@ -53,7 +59,15 @@ CSS = """
     text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
     transition:all .3s var(--ease);}
   .otherwall a:hover{border-color:var(--teal);background:rgba(23,189,189,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:12px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#fff;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#fff;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
   /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
   #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
   @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
   #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:24px 24px 26px;}
@@ -129,6 +143,19 @@ TPL = """
       {name} 응대를 만들 때 처음부터 막아 두는 것입니다. 여기에 걸리면 AI는 답하지 않고
       사람에게 넘깁니다.</p>
     <ul class="kolist reveal">{refuse}</ul>
+    <div class="ifwrong reveal">
+      <b>사고가 나면</b>
+      <ul>
+        <li>AI 응답의 오류로 손해가 생기면, 저희 배상 책임은 <b>그 사고가 난 달로부터 직전 3개월간
+          지급하신 요금의 합계</b>가 한도입니다. 저희의 고의 또는 중대한 과실로 인한 손해는 이 한도와
+          관계없이 법이 정하는 바에 따라 배상합니다. <a href="../terms.html#sec-8">약관 제7조 &rarr;</a></li>
+        <li>통화마다 녹음(끄실 수 있습니다)과 요약, 그리고 무엇을 근거로 답했는지가 기록으로 남습니다.
+          그 기록의 권리는 {owner}께 있고, 언제든 전부 내려받으실 수 있습니다.
+          <a href="../terms.html#sec-9">약관 제8조 &rarr;</a></li>
+        <li>응대 문장은 미국에 있는 언어모델이 만듭니다. 고객 기록, 예약, 통화 녹취는 서울의 운영 서버에
+          저장됩니다. <a href="../security.html#where">데이터가 어디에 있는가 &rarr;</a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -175,8 +202,8 @@ TPL = """
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
     <h2 class="h2 onDark reveal">{name} 요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
-    <p class="sub reveal" style="max-width:none;">결제 정보는 받지 않습니다. 영업일 하루 안에
-      실제 대화를 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
+    <p class="sub reveal" style="max-width:none;">결제 정보는 받지 않습니다. 손님이 가장 자주 묻는 질문 열 개에
+      그 요금표로 답하는 녹음을 영업일 하루 안에 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
     <div class="ctas reveal">
       <a class="btn btn-teal" href="../get-started.html">{name} 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="../pricing.html">먼저 요금부터 보기</a>
@@ -188,40 +215,40 @@ TPL = """
 </main>
 
 <div class="stickycta"><div class="wrap"><span class="msg">{name} 요금표로 만든 응대를
-  <b>먼저 읽어 보고 결정하세요.</b></span><a class="btn btn-teal" href="../get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
+  <b>먼저 들어 보고 결정하세요.</b></span><a class="btn btn-teal" href="../get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
 
 PB = """
 <section class="t-md sec-light bg-paper" id="playbook">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow light"><i></i>The playbook</span><span class="line"></span></div>
-    <h2 class="h2 reveal">What each door captures &mdash;<br>and the work it becomes.</h2>
+    <div class="secrule reveal"><span class="eyebrow light"><i></i>플레이북</span><span class="line"></span></div>
+    <h2 class="h2 reveal">문마다 무엇을 받아 적고,<br>어떤 업무가 되는가.</h2>
     <p class="lead reveal">{lead}</p>
 
     <div class="trio reveal" style="margin-top:30px;">
-      <div><b>✆ AI phone</b><p>{phone}</p></div>
-      <div><b>💬 Website chat</b><p>{chat}</p></div>
-      <div><b>✓ Messaging</b><p>{msg}</p></div>
+      <div><b>✆ AI 전화</b><p>{phone}</p></div>
+      <div><b>💬 홈페이지 채팅</b><p>{chat}</p></div>
+      <div><b>✓ 메신저</b><p>{msg}</p></div>
     </div>
 
-    <h3 class="h3 reveal" style="margin-top:34px;">The record it writes</h3>
+    <h3 class="h3 reveal" style="margin-top:34px;">남는 기록</h3>
     <div class="dtwrap reveal"><table class="dtable">
-      <thead><tr><th>CRM field</th><th>Comes from</th><th>Verified how</th></tr></thead>
+      <thead><tr><th>항목</th><th>출처</th><th>확인 방법</th></tr></thead>
       <tbody>{rows}</tbody>
     </table></div>
 
-    <h3 class="h3 reveal" style="margin-top:30px;">The work it readies</h3>
+    <h3 class="h3 reveal" style="margin-top:30px;">준비되는 업무</h3>
     <ul class="kolist reveal">{tasks}</ul>
 
-    <h3 class="h3 reveal" style="margin-top:30px;">What stays a human decision</h3>
+    <h3 class="h3 reveal" style="margin-top:30px;">사람이 판단하는 것</h3>
     <ul class="kolist reveal">{human}</ul>
 
-    <h3 class="h3 reveal" style="margin-top:30px;">Before / after</h3>
+    <h3 class="h3 reveal" style="margin-top:30px;">전·후</h3>
     <div class="trio reveal">
-      <div><b>Before</b><p>{before}</p></div>
-      <div><b>After</b><p>{after}</p></div>
-      <div><b>Your first 14 days</b><p>{days}</p></div>
+      <div><b>전</b><p>{before}</p></div>
+      <div><b>후</b><p>{after}</p></div>
+      <div><b>첫 14일</b><p>{days}</p></div>
     </div>
   </div>
 </section>
@@ -245,6 +272,16 @@ def build_playbook(t):
     days = ('파일럿은 첫 14일입니다. 판단 근거는 실제 응대 기록 &mdash; %s &mdash; 이고, '
             '아니다 싶으시면 전액 환불입니다. 비용은 요금제 그대로이고, '
             '첫 달만 일할로 계산합니다.' % pb['proof'])
+    # 아래 한 줄의 숫자는 pricing.json 에서 온다. 여기에 손으로 적지 않는다.
+    scale = [p for p in PR['plans'] if p['id'] == 'scale'][0]
+    voice = [u for u in PR['usage'] if u['id'] == 'voiceMinutes'][0]
+    disc = PR.get('discount') or {}
+    price = ('AI 전화 포함 Scale {0:,}원/월 + 통화 분당 {1:,}원, 부가세 별도'
+             .format(scale['price']['KRW'], voice['unitPrice']['KRW']))
+    if disc.get('active'):
+        price += ' &middot; 처음 %d개월 %d%%' % (disc['months'], disc['percent'])
+    days += ('<br><br>%s. <a href="../checkout.html?plan=scale">Scale 주문서 열기 &rarr;</a>'
+             % price)
     return PB.format(lead=pb['lead'], phone=pb['phone'], chat=pb['chat'],
                      msg=pb['msg'], rows=rows, tasks=tasks, human=human,
                      before=pb['before'], after=pb['after'], days=days)
@@ -271,7 +308,7 @@ def build_trade(t):
     page('industries/%s.html' % t['slug'],
          '%s AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법' % t['name'],
          '%s에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. '
-         '실제 통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.' % t['name'],
+         '통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.' % t['name'],
          body, css=CSS, grade='voice',
          image=t['photo'] + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
          crumbs=[('홈', 'index.html'), ('업종', 'industries.html'),
@@ -342,7 +379,7 @@ WALL = """
     </div>
 
     <p class="seccap reveal" style="margin-top:22px;">아래 스물다섯 업종은 이 세 가지가 이미
-      만들어져 있습니다. 골라 들어가시면 그 업종의 실제 통화 하나와, 그 업종에서 AI가
+      만들어져 있습니다. 골라 들어가시면 그 업종의 통화 예시 하나와, 그 업종에서 AI가
       하지 않는 것, 그리고 통화 뒤에 남는 CRM 항목을 보실 수 있습니다.
       <a class="lnk" href="./examples.html">여섯 업종의 통화는 한 페이지에 모아</a> 두었습니다.</p>
   </div>

@@ -27,8 +27,10 @@ CSS = """
   .planwall{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px;}
   @media (max-width:900px){.planwall{grid-template-columns:1fr;}}
   .kplan{padding:30px 26px;border:1px solid var(--hair-d);border-radius:14px;
-    background:rgba(255,255,255,.03);display:flex;flex-direction:column;}
+    background:rgba(255,255,255,.03);display:flex;flex-direction:column;position:relative;}
   .kplan.best{border-color:var(--teal);background:rgba(23,189,189,.06);}
+  .kplan .rec{position:absolute;top:-13px;left:24px;padding:5px 12px;border-radius:999px;
+    background:var(--teal);color:#06131F;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.08em;}
   .kplan .nm{font-size:var(--fs-sm);letter-spacing:.12em;text-transform:uppercase;
     color:var(--tx2);}
   .kplan .pr{margin-top:12px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;
@@ -152,6 +154,7 @@ BODY = """
         <a class="btn btn-ghostd go" href="./checkout.html?plan=start">이 요금제로 주문</a>
       </div>
       <div class="kplan best">
+        <span class="rec">추천</span>
         <span class="nm">Grow</span>
         <span class="pr">340,000원<i>/월</i></span>
         <span class="vat">부가세 별도 &middot; 약정 없음</span>
@@ -357,7 +360,7 @@ BODY = """
       <b>청구서에 처음 등장하는 항목은 없습니다</b> &mdash; 위 세 가지 단가가 이 페이지에 적힌 전부입니다.</p>
 
     <p class="calccta reveal" style="margin-top:26px;">
-      <a class="btn btn-teal" href="./index.html#calculator">우리 숫자로 계산해 보기<span class="cir">&#8599;</span></a>
+      <a class="btn btn-teal" href="#quote-builder">우리 숫자로 계산해 보기<span class="cir">&uarr;</span></a>
       <a class="lnk" href="./checkout.html?plan=scale">이 구성으로 주문서 열기</a>
     </p>
   </div>
@@ -437,10 +440,9 @@ BODY = """
       구축비, 계정 수, 연동비, 나갈 때의 반출비 &mdash; 계약서에 서명한 뒤에 알게 되는 것들입니다.
       아래 다섯 가지는 전부 0원이고, 그 사실이 서면 주문서에도 그대로 들어갑니다.</p>
     <ul class="kolist reveal" style="color:var(--l-tx2);">
-      <li><b>초기 구축비 0원.</b> 설치비를 받지 않습니다. 기본은 요금표와 영업시간, 자주 묻는
-        것들을 사장님이 직접 넣으시는 셀프서브 설정이고, 이번 회차 창립 고객 5팀은 저희가 옆에서
-        손으로 설정을 도와 드립니다. 그 이상 &mdash; 지식베이스 전체를 저희가 대신 구축하는 작업 &mdash; 은
-        유료 부가 서비스이고, 작업을 시작하기 전에 견적을 먼저 알려 드립니다.</li>
+      <li><b>초기 구축비 0원.</b> 설치비를 받지 않습니다. 설정은 셀프서브가 기본이고, 이번 회차
+        5팀은 첫 답변 세트를 저희가 같이 씁니다. 그 이상 &mdash; 지식베이스 전체를 저희가 대신
+        구축하는 작업 &mdash; 은 유료 부가 서비스이고, 작업을 시작하기 전에 견적을 먼저 알려 드립니다.</li>
       <li><b>약정 0개월.</b> 해지 위약금이 없습니다. 언제 해지하셔도 다음 달 청구가 멈추고,
         <b>남은 날수는 날짜로 계산해 돌려 드립니다.</b> 첫 결제일부터 14일 안에는 전액 환불입니다.</li>
       <li><b>계정당 과금 0원.</b> Start 2명, Grow 5명, Scale 15명까지
@@ -520,8 +522,9 @@ BODY = """
     <p class="sub reveal" style="max-width:none;">이 페이지의 요금제는 사장님이 직접 설정하는
       셀프서브 상품입니다. 그것과 별도로, 대화 설계부터 시스템 연동, 시험, 개시까지 저희가 함께
       진행하는 <b>매니지드(관리형) 도입 상품</b>이 있습니다. <b>60일 파일럿</b>과 <b>서면으로 정한
-      범위</b>로 진행하고, <b>월 $1,500부터</b>이며 구축비는 견적으로 정합니다. 다른 상품이고 다른
-      가격이지만 같은 회사입니다. 지점 한 곳을 이번 주에 돌리고 싶으시면 이 페이지에 계시면 되고,
+      범위</b>로 진행하고, <b>월 $1,500부터</b>입니다. 별도 상품이라 소재 국가와 관계없이
+      <b>미국 달러로 청구</b>되고(<a class="lnk" href="./terms.html#sec-5">약관 제4조</a>의 예외),
+      구축비는 견적으로 정합니다. 다른 상품이고 다른 가격이지만 같은 회사입니다. 지점 한 곳을 이번 주에 돌리고 싶으시면 이 페이지에 계시면 되고,
       지점 스무 곳과 구매 절차가 있으시면 그쪽이 맞습니다.</p>
     <p class="calccta reveal" style="margin-top:22px;">
       <a class="lnk" href="https://global.saleringo.com/en/pricing" rel="noopener">관리형 프로그램 보기 &rarr;</a>
@@ -532,12 +535,13 @@ BODY = """
 <section class="founding t-xl bg-aurora" id="start">
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="h2 onDark reveal">우리 경우에 얼마가 나오는지,<br>계약 전에 문서로 드립니다.</h2>
-    <p class="sub reveal" style="max-width:none;">업종과 영업시간, 한 달에 받는 전화가 몇 통인지만 알려 주시면
-      예상 통화량과 월 청구액을 계산해 보내 드립니다. 결제 정보는 그때 받지 않습니다.</p>
+    <h2 class="h2 onDark reveal">우리 경우에 얼마가 나오는지,<br>주문 전에 숫자로 보입니다.</h2>
+    <p class="sub reveal" style="max-width:none;">위 계산기에 한 달 통화량을 넣으면 예상 청구액이 그 자리에서 나오고,
+      그 구성 그대로 주문서로 이어집니다. 먼저 사람과 이야기하고 싶으시면 상담부터 하셔도 됩니다 &mdash;
+      결제 정보는 그때 받지 않습니다.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="./get-started.html">우리 조건으로 견적 받기<span class="cir">&#8599;</span></a>
-      <a class="btn btn-ghostd" href="./index.html#how">먼저 작동 방식 보기</a>
+      <a class="btn btn-teal" href="#quote-builder">내 한 달 계산 &rarr; 주문서<span class="cir">&uarr;</span></a>
+      <a class="btn btn-ghostd" href="./get-started.html">먼저 상담</a>
     </div>
   </div>
 </section>
@@ -546,7 +550,7 @@ BODY = """
 </main>
 
 <div class="stickycta"><div class="wrap"><span class="msg">모든 금액 부가세 별도 &middot; 약정 없음.
-  <b>우리 기준으로 계산한 금액을 문서로 받아 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
+  <b>내 한 달을 계산해 그대로 주문서로.</b> <a class="lnk" href="./get-started.html">먼저 상담</a></span><a class="btn btn-teal" href="#quote-builder">내 한 달 계산 &rarr; 주문서<span class="cir">&uarr;</span></a></div></div>
 """
 
 page('pricing.html',

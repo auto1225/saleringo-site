@@ -26,7 +26,12 @@
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (j) {
       if (j && j.ready) {
-        paint('ok', KO ? '● 주문 접수 — 정상 작동' : '● Order intake — operational');
+        var quiet = !j.notify || !j.confirmation;
+        paint(quiet ? 'warn' : 'ok', KO
+          ? (quiet ? '● 주문 접수 — 정상 · 확인 메일·담당자 알림은 아직 미설정 (접수번호로 조회)'
+                   : '● 주문 접수 — 정상 작동')
+          : (quiet ? '● Order intake — operational · confirmation email and alerts not set up yet (use your order number)'
+                   : '● Order intake — operational'));
       } else if (j) {
         paint('warn', KO ? '● 주문 접수 — 서면 주문으로 전환됨' : '● Order intake — written orders only right now');
       } else {

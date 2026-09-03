@@ -82,6 +82,24 @@ CSS = """
     color:var(--l-tx2);}
   .excard em{display:block;margin-top:12px;font-style:normal;font-size:var(--fs-sm);
     color:var(--teal);font-weight:700;}
+  /* ══ 회사 소개 · 파일럿 수치와 걸어 볼 수 있는 회선 ══ */
+  .statrow,.livegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:880px){.statrow,.livegrid{grid-template-columns:1fr;}}
+  .statcard,.livecard{padding:22px 22px 20px;border:1px solid var(--hair-d);border-radius:12px;}
+  .statcard.hi{border-color:var(--teal);}
+  .livecard.ours{border-style:dashed;}
+  .statcard .sl,.livecard .lt{display:block;font-size:var(--fs-2xs);letter-spacing:.12em;
+    text-transform:uppercase;color:rgba(255,255,255,.6);}
+  .statcard .sv{display:block;margin-top:8px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;
+    font-size:var(--fs-h2s);font-weight:600;color:#fff;letter-spacing:-.03em;}
+  .statcard .sd{display:block;margin-top:4px;font-size:var(--fs-xs);color:var(--teal);font-weight:700;}
+  .statcard .sn,.livecard p{margin-top:10px;font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);}
+  .livecard b{display:block;margin-top:8px;font-size:var(--fs-lead);color:#fff;}
+  .livecard .lnum{display:inline-block;margin-top:8px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;
+    font-size:var(--fs-lead);font-weight:600;color:var(--teal);text-decoration:none;}
+  .proofnote,.livenote{margin-top:26px;display:grid;gap:12px;}
+  .proofnote p,.livenote p{font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
+  .proofnote b,.livenote b{color:#fff;}
 """
 
 
@@ -240,7 +258,7 @@ page('verified-ai.html', '답변 검증 방식 &mdash; 지어내지 않게 막�
 # ══ 2 · 회사 소개 ════════════════════════════════════════════════════════
 about = '\n\n'.join([
  hero_plain('회사 소개',
-  '작은 회사입니다.<br>전화하면 사람이 받습니다.',
+  '작은 회사입니다.<br>전화하면 AI가 먼저 받습니다.',
   '정직한마케팅 주식회사가 만듭니다. 대한민국 법인이고, 서울에 있습니다. '
   '크게 보이려고 쓰는 문장을 이 페이지에 넣지 않았습니다.'),
  '<main>',
@@ -274,13 +292,15 @@ about = '\n\n'.join([
           '자기 가게의 어시스턴트를 개선하는 데 자기 데이터를 쓰는 것도 기본은 꺼져 있고, '
           '서면으로 동의하신 경우에만 켭니다. 계약서에 넣습니다.'),
          ('약정을 걸지 않습니다.', '위약금이 없습니다. 다음 달부터 청구가 멈춥니다.'),
-         ('먼저 보여 드리고 받습니다.', '결제 전에 실제 응대를 만들어 보내 드립니다.')])),
+         ('먼저 보여 드리고 받습니다.', '결제 전에, 손님이 가장 자주 묻는 질문 열 개에 우리 요금표로 답하는 '
+          '녹음을 만들어 보내 드립니다.')])),
  sec('t-md sec-dark bg-dusk', 'howwesell', '파는 방식',
      '영업 조직이<br>따로 없습니다.',
      '문의를 넣으면 영업 담당이 배정되고, 전화가 오고, 두 번째 전화가 오고, 할인 제안이 '
      '오는 과정이 이 업계의 기본값입니다. 그 과정의 비용은 결국 요금에 들어갑니다.',
      ul([('먼저 만들어서 보여 드립니다',
-          '요금표를 주시면 그것으로 답하는 대화를 만들어 보내 드립니다. 영업일 하루입니다. '
+          '요금표를 주시면, 손님이 가장 자주 묻는 질문 열 개에 그것으로 답하는 녹음을 만들어 '
+          '보내 드립니다. 영업일 하루입니다. '
           '읽어 보시고 아니다 싶으면 거기서 끝입니다 &mdash; 결제 정보를 받지 않았으므로 '
           '해지하실 것도 없습니다.'),
          ('요금이 공개되어 있습니다',
@@ -293,6 +313,77 @@ about = '\n\n'.join([
          ('두 번째 전화를 걸지 않습니다',
           '한 번 연락드리고 답이 없으시면 거기서 멈춥니다. 필요하실 때 다시 오시면 됩니다.')])),
 
+ # 아래 두 절은 영문 about 의 #pilot · #call-them 과 같은 사실을 말한다. 번호, 고객 넷과
+ # 자사 회선 둘의 구분, 파일럿의 기간과 분모까지 같다. 여기 숫자를 바꾸려면 영문도 같이 바꾼다.
+ '''<section class="t-md sec-dark bg-grid" id="pilot">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>파일럿 &middot; 분모까지</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">한 곳에서 여섯 주를 돌리고,<br>일어난 일을 세었습니다.</h2>
+    <p class="sub reveal" style="max-width:none;">이 사이트의 다른 절은 전부 주장입니다. 측정값이 들어 있는 절은
+      이것 하나입니다 &mdash; 2026년 7월 1일부터 8월 13일까지 행사장 한 곳에서 Saleringo를 돌린 기록입니다.
+      표본이 작아서, 숫자마다 분모를 옆에 적어 두었습니다. 판단은 직접 하시면 됩니다.</p>
+    <div class="statrow reveal">
+      <div class="statcard"><span class="sl">영업시간 밖의 상담</span><b class="sv">61%</b><span class="sd">세션 23회 중 14회</span>
+        <p class="sn">대화의 대부분은 데스크에 아무도 없을 때 있었습니다.</p></div>
+      <div class="statcard"><span class="sl">밤에 이루어진 대화</span><b class="sv">58%</b><span class="sd">대화 158건 기준, 18:00&ndash;09:00</span>
+        <p class="sn">문 닫은 뒤에 조금 오는 것이 아니라, 대화의 과반입니다.</p></div>
+      <div class="statcard hi"><span class="sl">두 시간에 몰림</span><b class="sv">39%</b><span class="sd">62건, 18:00&ndash;20:00</span>
+        <p class="sn">손님이 퇴근한 뒤의 한 시간이, 문 닫은 시간 중 가장 바쁜 시간입니다.</p></div>
+      <div class="statcard"><span class="sl">연락처가 남은 비율</span><b class="sv">64%</b><span class="sd">웹채팅 세션 14회 중 9회</span>
+        <p class="sn">답한 질문 하나가, 다시 걸 수 있는 이름과 번호가 되었습니다.</p></div>
+      <div class="statcard"><span class="sl">영업시간 밖의 구매 의도 문의</span><b class="sv">5건 중 4건</b><span class="sd">보수적으로 셌습니다</span>
+        <p class="sn">견적, 예약, 가능 여부를 묻는 문의입니다. 구경이 아닙니다.</p></div>
+      <div class="statcard"><span class="sl">하루 문의 수, 7월 &rarr; 8월</span><b class="sv">&times;3.7</b><span class="sd">하루 0.29건 &rarr; 1.08건</span>
+        <p class="sn">저희가 원인이라고 주장하지 않습니다. 아래 주석을 보십시오.</p></div>
+    </div>
+    <div class="proofnote reveal">
+      <p><b>정확히 무엇인가.</b> 행사장 한 곳, 여섯 주 &mdash; 2026년 7월 1일부터 8월 13일까지. 세션 23회와 대화 158건이고,
+        저희 시험 트래픽은 뺐습니다. 파일럿이지 고객 기반이 아니고, 그 이상으로 적은 적이 없습니다.</p>
+      <p><b>주장하지 않는 것.</b> 하루 문의 수 &times;3.7은 관찰일 뿐입니다. 같은 몇 주 동안 광고와 계절, 검색량이
+        함께 움직였고 그것을 분리하지 않았으므로, Saleringo가 원인이라고 말하지 않습니다. 시간대 수치는 자신 있게
+        말합니다 &mdash; 사람들이 언제 물었는지를 보여 주지, 얼마나 많이 물었는지는 아닙니다.</p>
+    </div>
+  </div>
+</section>''',
+
+ '''<section class="t-md sec-dark bg-spot" id="call-them">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>지금 걸어 볼 수 있는 번호 여섯 개</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">저희 말을 믿지 마시고,<br>직접 한 곳에 걸어 보십시오.</h2>
+    <p class="sub reveal" style="max-width:none;">지금 Saleringo를 쓰고 있는 곳들입니다. 아래 번호 어디든 걸면 AI가 받습니다 &mdash;
+      저희 것이 아니라 그 가게의 AI가, 그 가게의 요금표와 캘린더와 규칙으로. 난처한 질문을 해 보십시오.
+      의원과 웨딩홀이 같은 질문을 얼마나 다르게 다루는지 비교해 보십시오. 말을 건 언어로 답합니다.</p>
+    <div class="livegrid reveal">
+      <div class="livecard"><span class="lt">웨딩홀 &middot; 제주</span><b>H&eacute;ritique Jeju</b>
+        <a class="lnum" href="tel:+827052770821">+82 70-5277-0821</a>
+        <p>예식 가능한 날짜, 홀, 견적, 투어 예약을 물어보십시오.</p></div>
+      <div class="livecard"><span class="lt">의원</span><b>Songjeong Saebom Clinic</b>
+        <a class="lnum" href="tel:+827052770825">+82 70-5277-0825</a>
+        <p>진료 시간, 어느 진료과에서 무엇을 보는지, 예약을 물어보십시오. 어디서 멈추고 사람에게 넘기는지 보십시오.</p></div>
+      <div class="livecard"><span class="lt">전국 단위 산업 협회</span><b>한국정보통신진흥협회(KAIT)</b>
+        <a class="lnum" href="tel:+827052770824">+82 70-5277-0824</a>
+        <p>대국민 문의 회선입니다. 명의도용 확인, 자격검정, 통신 민원. 예약보다 무거운 일이지만 규칙은 같습니다.</p></div>
+      <div class="livecard"><span class="lt">컨택센터 운영사</span><b>The M Company</b>
+        <a class="lnum" href="tel:+827052770823">+82 70-5277-0823</a>
+        <p>매장 위치, 영업시간처럼 자주 오는 질문. 팀의 하루를 잡아먹는 그 단순한 양입니다.</p></div>
+      <div class="livecard ours"><span class="lt">저희 회선</span><b>Saleringo</b>
+        <a class="lnum" href="tel:+827052770820">+82 70-5277-0820</a>
+        <p>요금이 얼마인지, 만드는 데 얼마나 걸리는지, 우리 업종에 맞는지 물어보십시오. 전화 받는 AI를 파는 회사이니,
+          저희 전화부터 잘 받아야 합니다.</p></div>
+      <div class="livecard ours"><span class="lt">저희 회선 &middot; 골프</span><b>Saleringo Golf CC</b>
+        <a class="lnum" href="tel:+827052770822">+82 70-5277-0822</a>
+        <p>고객이 아니라 시연용입니다. 진짜 골프장을 번거롭게 하지 않고 티타임 예약을 들어 보실 수 있게 만들었습니다.</p></div>
+    </div>
+    <div class="livenote reveal">
+      <p><b>여섯 중 둘은 저희 것이고, 표시해 두었습니다.</b> H&eacute;ritique Jeju, Songjeong Saebom Clinic, KAIT, The M Company는
+        고객입니다. Saleringo와 Saleringo Golf CC는 저희 회선입니다. 어느 것이 어느 것인지 알아내시게 두기보다 먼저 말씀드립니다.</p>
+      <p><b>어디에 거는 것인가.</b> 한국 번호이고, 이 가게들의 손님을 받는 것과 같은 AI가 받습니다. 말을 건 언어로 답합니다 &mdash;
+        영어든 일본어든 무엇이든. 통화료는 거시는 분의 요금제대로 부과되고, 녹음은 답변 품질을 높이는 데 씁니다.</p>
+      <p><b>먼저 물어보지 않고도 걸 수 있는 번호 여섯 개</b>는 저희가 직접 타이핑한 인용문보다 더 어려운 종류의 증거입니다.</p>
+    </div>
+  </div>
+</section>''',
+
  sec('t-md sec-light bg-paper', 'not-yet', '아직 못 하는 것',
      '이것도 같이 적습니다.',
      '못 하는 것을 안 적으면 나중에 그것이 거짓말이 됩니다. '
@@ -300,13 +391,16 @@ about = '\n\n'.join([
      ul([('보안 인증이 없습니다.', 'ISMS-P, ISO 27001, SOC 2 중 어느 것도 아직 없습니다. 운영 이력이 쌓여야 받을 수 있습니다.'),
          ('가동률 보장(SLA)이 없습니다.', '제공할 수 있게 되면 수치와 함께 공개하겠습니다.'),
          ('이용약관의 법률 검토가 끝나지 않았습니다.', '저희가 직접 쓴 상태이고, 그 사실을 <a href="./terms.html">약관</a>에 적어 두었습니다.'),
-         ('고객 사례를 아직 못 보여 드립니다.', '신생 회사입니다. 사이트의 모든 대화는 예시라고 표시해 두었습니다.')]),
+         ('이름을 걸고 인용할 서면 후기가 아직 없습니다.',
+          '회선을 공개 중인 고객은 <a class="lnk" href="#call-them">네 곳</a>이고, 직접 걸어 보실 수 있습니다. '
+          '다만 인용해도 된다고 서면으로 허락한 후기는 아직 없습니다. '
+          '사이트의 대화는 전부 예시라고 표시해 두었습니다.')]),
      dark=False),
  closer('궁금한 것이 있으면<br>그냥 물어보십시오.',
         '영업 전화를 드리지 않습니다. 답만 드리고, 아니다 싶으시면 거기서 끝입니다.'),
  FOOT, '</main>'])
 
-page('about.html', '회사 소개 &mdash; 전화하면 사람이 받는 작은 회사 | Saleringo',
+page('about.html', '회사 소개 &mdash; 전화하면 AI가 먼저 받는 작은 회사 | Saleringo',
      '정직한마케팅 주식회사가 만듭니다. 약속하는 것과 아직 못 하는 것을 함께 적었습니다. '
      '보안 인증과 SLA는 아직 없습니다.',
      about, css=CSS, grade='trust',
@@ -552,7 +646,8 @@ demo = '\n\n'.join([
      '제품이 어떻게 답하는지 보여 주는 예시이고, 금액은 국내에서 흔히 제시되는 범위입니다. '
      '실제로 안내되는 금액은 직접 넣으신 요금표에서 나옵니다.', '', dark=False),
  closer('우리 요금표로 만든 통화를<br>직접 읽어 보십시오.',
-        '업종과 요금표만 보내 주시면, 위와 같은 대화를 만들어 영업일 하루 안에 보내 드립니다.'),
+        '업종과 요금표만 보내 주시면, 손님이 가장 자주 묻는 질문 열 개에 그 요금표로 답하는 녹음을 '
+        '영업일 하루 안에 보내 드립니다.'),
  FOOT, '</main>'])
 
 page('demo.html', '대화 한 건 보기 &mdash; 잘 풀리는 통화, 막히는 통화, 물러나는 통화 | Saleringo',
@@ -572,10 +667,10 @@ cards = ''.join(
 
 examples = '\n\n'.join([
  hero_plain('업종별 사례',
-  '스물다섯 업종,<br>스물다섯 개의 다른 전화.',
+  '여섯 업종,<br>여섯 건의 예시 통화.',
   '치과에 밤에 걸려 오는 전화와 정비소에 오후에 걸려 오는 전화는 다른 전화입니다. '
-  '묻는 것도, 말하면 안 되는 것도 다릅니다. '
-  '우리 업종을 골라서 그 통화가 맞는지 읽어 보십시오.'),
+  '묻는 것도, 말하면 안 되는 것도 다릅니다. 여섯 업종의 각본을 통화 그대로 실었고, '
+  '나머지 업종은 아래 목록에서 골라 그 업종 페이지에서 읽으시면 됩니다.'),
  '<main>',
  sec('t-md sec-light bg-paper', 'all', '전체',
      '고르시면 그 업종의<br>통화 하나를 그대로 보여 드립니다.', '',
@@ -690,9 +785,9 @@ examples = '\n\n'.join([
         '요금표와 영업시간, 그리고 하면 안 되는 말 몇 가지만 알려 주시면 됩니다.'),
  FOOT, '</main>'])
 
-page('examples.html', '업종별 사례 &mdash; 스물다섯 업종의 실제 통화 | Saleringo',
-     '치과, 의원, 학원, 미용실, 정비소, 부동산 등 스물다섯 업종에서 밤에 걸려 오는 전화를 '
-     '업종별로 그대로 실었습니다.',
+page('examples.html', '업종별 사례 &mdash; 예시 통화 여섯 건 | Saleringo',
+     '치과, 정비소, 학원, 요양, 부동산, 웨딩홀 여섯 업종의 예시 통화를 각본 그대로 실었습니다. '
+     '스물다섯 업종 전체는 업종 페이지에서 하나씩 읽을 수 있습니다.',
      examples, css=CSS, grade='trust',
      crumbs=[('홈', 'index.html'), ('업종별 사례', 'examples.html')])
 

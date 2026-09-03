@@ -3676,3 +3676,15 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
 .hl5{font-size:.83em;}
 /* 시각적으로 숨긴 제목 — 문서 개요에만 존재 */
 .vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+/* 금액이 든 SVG 장면은 375px 에서 4px 글자가 된다 — 가로 스크롤을 허용해 크기를 지킨다 */
+@media (max-width:620px){
+  .scene-frame{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .scene-frame svg{min-width:720px;}
+}
+/* 저대비 다섯 곳 (측정 3.79 · 2.2 · 2.1 : 1) */
+.nl .t i{opacity:1;color:var(--tx2);font-size:14px;}
+@media (max-width:700px){ .d60ticks span{font-size:12px;opacity:.7;} }
+.cmp .lim{color:var(--amber-ink,#9A6B1F);}
+/* 레일은 히어로를 지나기 전엔 보이지 않는다 — 첫 화면의 '시작' 지시는 하나 */
+.stickycta.hasguide:not(.show){transform:translateY(120%);}

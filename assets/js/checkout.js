@@ -377,7 +377,7 @@
       if (u.planRequires === 'messenger' && !plan.messenger) return;
       var qty = Math.max(0, Number(sel[u.id]) || 0);
       if (!qty) return;
-      est.push({ label: u.name[LANG], qty: qty, unit: u.unitPrice[cur],
+      est.push({ label: u.name[LANG], qty: qty, unit: u.unitPrice[cur], unitName: (u.unit && u.unit[LANG]) || '',
                  amount: round(qty * u.unitPrice[cur]), from: !!u.from });
     });
     var list = plan.price[cur];
@@ -446,7 +446,7 @@
       r.push('<div class="sm-est"><p>' + T.usage + '</p>' +
         q.est.map(function (e) {
           return '<div class="sm-row"><span>' + e.label + ' ' +
-            new Intl.NumberFormat(LANG === 'ko' ? 'ko-KR' : 'en-US').format(e.qty) +
+            new Intl.NumberFormat(LANG === 'ko' ? 'ko-KR' : 'en-US').format(e.qty) + (e.unitName ? (LANG === 'ko' ? e.unitName : ' ' + e.unitName) : '') +
             '</span><b>' + A(e.amount) + (e.from ? T.from : '') + '</b></div>';
         }).join('') + '<p class="sm-note">' + T.estimateNote + '</p></div>');
     }
@@ -503,7 +503,7 @@
     }
     var talk = document.querySelector('[data-talk-row]');
     if (talk) {
-      talk.hidden = !(plan && plan.messenger);
+      talk.hidden = !(plan && plan.messenger && sel.country === 'KR');
       if (talk.hidden) { var ti = talk.querySelector('input'); if (ti) ti.value = ''; }
     }
 
@@ -570,6 +570,10 @@
       : ['A person confirms within one business day.',
          'We build your answering from your price list and hours.',
          'You read it first; the payment step comes after that.'];
+    if (!(READY && READY.confirmation)) {
+      steps.unshift(KO ? '확인 메일은 아직 발송되지 않습니다 — 이 번호를 적어 두시거나 주문 조회 페이지를 이용해 주세요.'
+                       : 'No confirmation email is sent yet — write this number down, or use the order status page.');
+    }
     form.innerHTML =
       '<div class="ordersent" role="status" tabindex="-1">' +
         '<b>' + (KO ? '주문이 접수되었습니다.' : 'Your order is in.') + '</b>' +
@@ -725,8 +729,8 @@
     if (!slot) return;
     slot.hidden = false;
     slot.textContent = KO
-      ? '세금과 접수 가능 여부는 접수 뒤 이메일로 확인해 드립니다.'
-      : 'Tax and availability are confirmed by email after you order.';
+      ? '세금과 접수 가능 여부는 접수 뒤 담당자가 확인합니다 — 주문 조회 페이지에서 보실 수 있습니다.'
+      : 'Tax and availability are settled after you order — you can follow it on the order status page.';
   }
 
   /* 고르는 중에 매번 묻지 않습니다. 손을 멈추면 그때 한 번 묻습니다. */
@@ -739,6 +743,13 @@
     var box = document.querySelector('[data-commerce-verdict]');
     var com = VERDICT && VERDICT.commerce;
     if (!box || !com) return;
+    var bt = ($('[name="buyerType"]') || {}).value || '';
+    if (!bt) {
+      box.innerHTML = '<b>' + (KO ? '구매 주체를 고르시면 세금과 온라인 주문 가능 여부가 정해집니다.'
+                                 : 'Pick \u201cBuying as\u201d and we settle tax and online ordering.') + '</b>';
+      box.hidden = false;
+      return;
+    }
 
     var lines = [];
     var treat = com.taxTreatment;
@@ -798,6 +809,8 @@
     if (!$('input[name="plan"]:checked')) {
       var g = $('input[name="plan"][value="grow"]'); if (g) g.checked = true;
     }
+    /* 가격 페이지에서 실어 보낸 구성은 초안과 기본값을 이긴다 — 여기서, 초안 복원 뒤에 */
+    restoreFromBuilder();
     if (!$('input[name="method"]:checked')) {
       var m = $('input[name="method"]'); if (m) m.checked = true;
     }
@@ -837,7 +850,7 @@
      한 화면이 서로 반대되는 두 가지를 말하면, 사람은 버튼을 믿습니다. */
   /* 가격 페이지의 「내 한 달 만들기」가 실어 보낸 구성.
      사용자가 이미 만진 필드는 이기지 않습니다 — 프리필은 빈칸에만. */
-  (function restoreFromBuilder() {
+  function restoreFromBuilder() {
     if (!window.srCarry) return;
     var c = window.srCarry.read() || {};
     if (!c.qbPlan && !c.qbCountry) return;
@@ -860,7 +873,8 @@
       if (el && c[k]) { el.value = c[k]; el.dispatchEvent(new Event('input', { bubbles: true })); }
     });
     window.srCarry.write({ qbPlan: '', qbCountry: '', qbVoiceMinutes: '', qbAlimtalk: '' });
-  })();
+    snapshot();
+  }
 
   function carryDraft() {
     if (!window.srCarry) return;
@@ -891,7 +905,7 @@
       var a = document.createElement('a');
       a.className = btn.className;
       a.setAttribute('data-proposal', '1');
-      a.href = KO ? '../ko/index.html#early-access' : '../en/index.html#early-access';
+      a.href = './get-started.html#request';
       a.textContent = T.proposalCta;
       /* 「같은 내용으로 만들어 드린다」를 사실로: 문의 폼의 메모 칸에
          보이게 옮겨 적힐 요약을 싣습니다. site.js 의 srCarry 가 받습니다. */

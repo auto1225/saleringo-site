@@ -103,6 +103,11 @@
 
     var base = plan.price[cur];
     var total = base + usage;
+    /* 창립 할인은 주문서가 자동 적용한다 — 설정기가 정가만 보이면 한 클릭 뒤 숫자가 바뀐다 */
+    var disc = P.discount && P.discount.active !== false && P.discount.percent ? P.discount : null;
+    var discounted = disc ? Math.round(base * (1 - disc.percent / 100)) + usage : total;
+    var taxRule = P.tax && (P.tax[c.code] || P.tax['default']);
+    var taxOn = taxRule && taxRule.collected && taxRule.rate;
 
     if (planEl) planEl.innerHTML =
       '<b>' + plan.name[KO ? 'ko' : 'en'] + '</b> — ' +
@@ -110,9 +115,13 @@
         'your channels decide the plan. The CRM is identical on all three.');
 
     if (sumEl) sumEl.innerHTML =
-      '<span class="qb-big">' + fmt(total, cur) + t('/월', '/mo') + '</span>' +
+      '<span class="qb-big">' + fmt(discounted, cur) + t('/월', '/mo') + '</span>' +
+      (disc ? '<span class="qb-split">' + t('처음 ' + disc.months + '개월 ' + disc.percent + '% 할인 · 그 뒤 ' + fmt(total, cur) + '/월',
+                                             'First ' + disc.months + ' months at ' + disc.percent + '% off · then ' + fmt(total, cur) + '/mo') + '</span>' : '') +
       '<span class="qb-split">' + fmt(base, cur) + ' ' + t('요금제', 'plan') +
       (usage ? ' + ' + fmt(usage, cur) + ' ' + t('사용량(추정)', 'usage (est.)') : '') + '</span>' +
+      (taxOn ? '<span class="qb-split">' + t('부가세 ' + Math.round(taxRule.rate * 100) + '% 별도 · 합계 ' + fmt(discounted * (1 + taxRule.rate), cur),
+                                              'Tax ' + Math.round(taxRule.rate * 100) + '% added · ' + fmt(discounted * (1 + taxRule.rate), cur)) + '</span>' : '') +
       '<span class="qb-split">' + t('최초 구축비 0원 · 약정 없음', 'Setup fee $0 · no contract') + '</span>';
 
     if (noteEl) {

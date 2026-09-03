@@ -28,8 +28,8 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Security & Data \u2014 In Plain English First | Saleringo", "description": "How your customers' data is handled, in plain English first and technical detail second. GDPR roles, data regions, retention and our DPA.", "url": "https://claude.saleringo.com/en/security.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=68.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=68.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=69.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=69.0">
 <style>
   /* page-specific: trust center layouts */
   /* the hero is a photograph; .photohero's flex centring is overridden because the
@@ -86,6 +86,9 @@
   .measures .head{text-align:center;max-width:600px;margin:0 auto 60px;}
   .measures .lead{margin-top:20px;}
   .secgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  /* four more cards, added because reviewers ask for them — two-up so the
+     row does not end on one orphan card; the honest "not yet" lives inside */
+  .secgrid.four{grid-template-columns:repeat(2,1fr);margin-top:16px;}
   .scard{background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:28px 26px;
     box-shadow:0 2px 3px rgba(11,27,51,.03),0 20px 50px rgba(11,27,51,.06);}
   .scard .ic{width:38px;height:38px;border-radius:12px;background:#E3F5F5;color:#0B7878;display:flex;align-items:center;justify-content:center;}
@@ -154,7 +157,7 @@
 
   @media (max-width:900px){
     .roles .cols,.docs .cols,.vuln .cols{grid-template-columns:1fr;gap:44px;}
-    .secgrid,.pol3{grid-template-columns:1fr;}
+    .secgrid,.secgrid.four,.pol3{grid-template-columns:1fr;}
   }
 </style>
 <!--#alt-->
@@ -173,7 +176,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v69.0">v69.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -181,7 +184,7 @@
     <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="./pricing.html#plans">Plans and prices</a></li><li><a href="./checkout.html">Order form</a></li><li><a href="./pricing.html#crm">What the CRM includes</a></li><li><a href="./pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="./pricing.html#alternatives">What you are comparing against</a></li><li><a href="./pricing.html#not-paying">What you are not paying for</a></li><li><a href="./pricing.html#calculator">Missed-call calculator</a></li><li><a href="./pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="./pricing.html#countries">Countries and currencies</a></li><li><a href="./cross-border.html">Cross-border businesses</a></li><li><a href="./get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop on" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust" aria-current="true">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="./security.html" aria-current="page" class="np-here">Security &amp; trust</a></li><li><a href="./security.html#measures">The measures, listed</a></li><li><a href="./security.html#subprocessors">Subprocessors</a></li><li><a href="./security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="./about.html">About us</a></li><li><a href="./privacy.html">Privacy policy</a></li><li><a href="./privacy.html#your-rights">Your rights</a></li><li><a href="./terms.html">Terms of service</a></li><li><a href="./sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
   </span>
-  <a class="telcta" data-tel href="tel:+827052770820"><span aria-hidden="true">&#10054;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <a class="telcta" data-tel href="tel:+827052770820" title="Korean number — international rates apply. AI answers first."><span aria-hidden="true">&#9990;</span><b data-tel-label>+82 70-5277-0820</b></a>
   <a class="langsw" href="../ko/security.html" hreflang="ko" lang="ko">한국어</a>
   <span class="sep"></span>
   <a class="btn btn-white" href="./get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
@@ -351,7 +354,32 @@
       <div class="scard">
         <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 4v5c0 4.5-3.4 7.5-8 9-4.6-1.5-8-4.5-8-9V8z"/><path d="M12 9v4M12 16h.01"/></svg></span>
         <b>Incident response</b>
-        <p>A&nbsp;defined incident process: detection, severity classification, containment, and a&nbsp;commitment to&nbsp;notify affected customers without&nbsp;undue delay. Under&nbsp;Korea's&nbsp;Personal Information Protection Act we notify affected data subjects and the&nbsp;Personal Information Protection Commission within&nbsp;<b>72 hours</b> — and we apply that&nbsp;standard to&nbsp;every&nbsp;customer, wherever you are.</p>
+        <p>A&nbsp;defined incident process: detection, severity classification, containment, and notification without&nbsp;undue delay. Two cases, because the&nbsp;roles differ. <b>Data we control ourselves</b> &mdash; your&nbsp;account, your&nbsp;order, your&nbsp;inquiry &mdash; we notify the&nbsp;people affected and Korea's&nbsp;Personal Information Protection Commission within&nbsp;<b>72 hours</b>, as the&nbsp;Personal Information Protection Act requires. <b>Your&nbsp;customers' data</b>, where you are the&nbsp;controller and we are the&nbsp;processor: we notify <em>you</em> within&nbsp;<b>72 hours</b> of&nbsp;learning of&nbsp;a&nbsp;breach, with&nbsp;what we know and what we have contained; whether and how your&nbsp;customers are told is your&nbsp;decision as controller, and we help you make it. Both standards apply to&nbsp;every&nbsp;customer, wherever you are.</p>
+      </div>
+    </div>
+    <!-- Four cards a security reviewer asks about next. Where a control does not
+         exist yet the card says "not yet" instead of implying it; a promise is
+         printed only once it is a fact. -->
+    <div class="secgrid four reveal">
+      <div class="scard">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+        <b>Backups &amp; recovery</b>
+        <p>The&nbsp;database host (Supabase, on&nbsp;AWS ap-northeast-2) takes the&nbsp;backups; a&nbsp;record you delete leaves them within&nbsp;<b>90 days</b>. <b>Not yet:</b> a&nbsp;rehearsed restore with&nbsp;a&nbsp;measured recovery time. We do not print a&nbsp;recovery-time promise until a&nbsp;restore has actually been run against a&nbsp;clock.</p>
+      </div>
+      <div class="scard">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg></span>
+        <b>Subprocessor changes</b>
+        <p>The&nbsp;list below changes the&nbsp;day a&nbsp;subprocessor does, and the&nbsp;review date on&nbsp;this&nbsp;page moves with&nbsp;it. <b>Not yet fixed:</b> how many days' notice you get before a&nbsp;change, and a&nbsp;right to&nbsp;cancel without&nbsp;charge if you object. When the&nbsp;DPA sets those, the&nbsp;numbers go here &mdash; we would rather say &ldquo;not decided&rdquo; than print a&nbsp;notice period the&nbsp;contract does not back.</p>
+      </div>
+      <div class="scard">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg></span>
+        <b>Your&nbsp;users' access</b>
+        <p>Each&nbsp;seat on&nbsp;your&nbsp;plan is its&nbsp;own login; there is no&nbsp;shared password to&nbsp;pass around. <b>Not yet:</b> roles inside your&nbsp;account, enforced two-factor for&nbsp;your&nbsp;staff, and single sign-on. The&nbsp;multi-factor requirement above is for&nbsp;our&nbsp;administrators on&nbsp;production, not for&nbsp;your&nbsp;users &mdash; this&nbsp;card says so rather than let the&nbsp;two be confused.</p>
+      </div>
+      <div class="scard">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4.5a4 4 0 0 0-5 5L4 15v5h5l5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-2.5z"/></svg></span>
+        <b>Patching</b>
+        <p>Dependencies and the&nbsp;runtime are updated with&nbsp;each&nbsp;release, and every&nbsp;release runs the&nbsp;cross-tenant tests first. <b>Not yet:</b> a&nbsp;fixed patch window or a&nbsp;published time-to-fix for&nbsp;critical vulnerabilities. A&nbsp;small team can promise &ldquo;we patch as we release&rdquo;; it cannot honestly promise a&nbsp;24-hour SLA, so we don't.</p>
       </div>
     </div>
     <div class="kpiband reveal" style="margin-top:16px;">
@@ -440,7 +468,7 @@
 </svg>
     </div>
 
-    <div class="certnote reveal">Third-party certifications are in&nbsp;progress and will be published here when audited — we don't show badges before the&nbsp;report exists.</div>
+    <div class="certnote reveal">Third-party certifications: none yet. If an&nbsp;audit starts, the&nbsp;date goes here first — we don't show badges before the&nbsp;report exists.</div>
 
     <div class="reveal" id="regulated" style="margin-top:34px;border:1px solid rgba(232,164,76,.3);
          background:rgba(232,164,76,.05);border-radius:18px;padding:26px 28px;">
@@ -455,6 +483,11 @@
         <b>So raise it in&nbsp;your&nbsp;first email, not your&nbsp;last.</b> Tell us a&nbsp;BAA is a&nbsp;condition of&nbsp;purchase,
         and you get a&nbsp;written answer before you pay us anything. If it is not the&nbsp;answer you need, you will know
         early enough to&nbsp;go elsewhere — we would rather lose the&nbsp;deal than sell around the&nbsp;question.</p>
+      <p style="margin-top:12px;font-size:var(--fs-sm);line-height:1.75;color:var(--l-mut);font-weight:500;max-width:var(--measure);">
+        <b>Where that&nbsp;stands today: we cannot sign a&nbsp;BAA yet.</b> A&nbsp;BAA from&nbsp;us would have to&nbsp;rest on&nbsp;BAAs
+        with&nbsp;every&nbsp;subprocessor that&nbsp;would see patient data — the&nbsp;model providers and the&nbsp;database host — and we do
+        not yet have those in&nbsp;place with&nbsp;them. Until we do, the&nbsp;written answer to&nbsp;a&nbsp;HIPAA-covered use is <b>no</b>.
+        The&nbsp;day that&nbsp;changes, the&nbsp;date and the&nbsp;subprocessors covered go here before anywhere else.</p>
       <p style="margin-top:12px;font-size:var(--fs-sm);line-height:1.75;color:var(--l-mut);font-weight:500;max-width:var(--measure);">
         Everything above this&nbsp;box is true without&nbsp;a&nbsp;certificate: per-customer isolation tested on&nbsp;every&nbsp;release,
         encryption in&nbsp;transit, multi-factor authentication on&nbsp;production access, no&nbsp;training that&nbsp;serves
@@ -487,7 +520,7 @@
       <div class="tray"><div class="paper">
         <span class="pilltag pt-teal">Training</span>
         <h3>How your&nbsp;data is used&nbsp;for&nbsp;AI</h3>
-        <p>Your&nbsp;business knowledge and conversations are used to&nbsp;answer your&nbsp;customers. <b>We do not use one customer's&nbsp;data to&nbsp;train models that&nbsp;serve another&nbsp;customer.</b> Model improvement using your&nbsp;data is off by&nbsp;default and requires your&nbsp;written opt-in.</p>
+        <p>Your&nbsp;business knowledge and conversations are used to&nbsp;answer your&nbsp;customers. <b>We do not use one customer's&nbsp;data to&nbsp;train models that&nbsp;serve another&nbsp;customer.</b> Model improvement using your&nbsp;data is off by&nbsp;default and requires your&nbsp;written opt-in. The&nbsp;answer itself is drafted by&nbsp;a&nbsp;model we reach through&nbsp;OpenAI's and xAI's APIs, in&nbsp;the&nbsp;United States; under&nbsp;the&nbsp;API terms we use, what we send is <b>not used to&nbsp;train their models</b>. How long they retain it on&nbsp;their side, and whether our&nbsp;account is on&nbsp;zero-data-retention, are contract terms recorded in&nbsp;the&nbsp;DPA &mdash; we do not quote a&nbsp;number here that&nbsp;we have not confirmed.</p>
       </div></div>
     </div>
     <div class="figstack reveal">
@@ -533,22 +566,27 @@
       <h2 class="h2" style="margin-top:16px;">Every&nbsp;company in&nbsp;the&nbsp;chain, <br>by&nbsp;name.</h2>
       <p class="lead" style="margin-top:16px;">A&nbsp;security page that&nbsp;says &ldquo;we use industry-leading providers&rdquo;
         is telling you nothing. These are the&nbsp;actual companies that&nbsp;process some part of&nbsp;your&nbsp;data, what each&nbsp;one does,
-        and where it sits. If one changes, this&nbsp;list changes with&nbsp;it.</p>
+        and where the&nbsp;data physically sits while they hold it &mdash; not where the&nbsp;company is registered. If one changes, this&nbsp;list changes with&nbsp;it.</p>
     </div>
 
     <div class="sptable">
-      <div class="sprow sph"><span>Provider</span><span>What it does</span><span>Where</span></div>
-      <div class="sprow"><span class="spn">OpenAI, L.L.C.</span><span>Language model that&nbsp;drafts the&nbsp;answer</span><span class="spl">United States</span></div>
-      <div class="sprow"><span class="spn">xAI Corp.</span><span>Alternate language model</span><span class="spl">United States</span></div>
-      <div class="sprow"><span class="spn">Supabase Inc.</span><span>Application database and authentication</span><span class="spl">United States</span></div>
-      <div class="sprow"><span class="spn">Vercel Inc.</span><span>Application hosting and delivery</span><span class="spl">United States</span></div>
-      <div class="sprow"><span class="spn">Google LLC</span><span>Cloud infrastructure</span><span class="spl">United States</span></div>
-      <div class="sprow"><span class="spn">Resend Inc.</span><span>Transactional email</span><span class="spl">United States</span></div>
-      <div class="sprow"><span class="spn">Naver Cloud Corp.</span><span>Regional hosting</span><span class="spl">South Korea</span></div>
+      <div class="sprow sph"><span>Provider</span><span>What it does</span><span>Where the&nbsp;data sits</span></div>
+      <div class="sprow"><span class="spn">OpenAI, L.L.C.</span><span>Language model that&nbsp;drafts the&nbsp;answer, reached through&nbsp;its&nbsp;API</span><span class="spl">United States</span></div>
+      <div class="sprow"><span class="spn">xAI Corp.</span><span>Alternate language model, reached through&nbsp;its&nbsp;API</span><span class="spl">United States</span></div>
+      <div class="sprow"><span class="spn">Supabase Inc.</span><span>Application database and authentication &mdash; the&nbsp;operational records</span><span class="spl">DB on&nbsp;AWS ap-northeast-2 (Seoul)</span></div>
+      <div class="sprow"><span class="spn">Amazon Web Services, Inc.</span><span>The&nbsp;cloud under&nbsp;that&nbsp;database &mdash; Supabase runs on&nbsp;it</span><span class="spl">ap-northeast-2 (Seoul)</span></div>
+      <div class="sprow"><span class="spn">Vercel Inc.</span><span>Hosts this&nbsp;website and the&nbsp;order and inquiry endpoints that&nbsp;pass your&nbsp;form to&nbsp;the&nbsp;database</span><span class="spl">United States</span></div>
+      <div class="sprow"><span class="spn">Google LLC</span><span>Google Calendar, only if you connect one &mdash; bookings are written into&nbsp;your&nbsp;own calendar with&nbsp;the&nbsp;customer's details; also serves this&nbsp;site's&nbsp;web fonts</span><span class="spl">United States</span></div>
+      <div class="sprow"><span class="spn">Meta Platforms, Inc.</span><span>WhatsApp Business Platform &mdash; delivers the&nbsp;WhatsApp messages and templates</span><span class="spl">United States</span></div>
+      <div class="sprow"><span class="spn">Resend Inc.</span><span>Transactional email &mdash; order and inquiry confirmations</span><span class="spl">United States</span></div>
+      <div class="sprow"><span class="spn">Naver Cloud Corp.</span><span>Hosting in&nbsp;Korea; which components sit there is named in&nbsp;the&nbsp;subprocessor list document rather than guessed here</span><span class="spl">South Korea</span></div>
       <div class="sprow"><span class="spn">Kakao Corp.</span><span>KakaoTalk business channel delivery</span><span class="spl">South Korea</span></div>
       <div class="sprow"><span class="spn">Solapi Co., Ltd.</span><span>SMS and alert delivery</span><span class="spl">South Korea</span></div>
-      <div class="sprow"><span class="spn">UniCN Co., Ltd.</span><span>Telephony carriage</span><span class="spl">South Korea</span></div>
+      <div class="sprow"><span class="spn">UniCN Co., Ltd.</span><span>Telephony carriage for&nbsp;Korean numbers. For&nbsp;any other country the&nbsp;line carrier is fixed in&nbsp;your&nbsp;written order form, not assumed here</span><span class="spl">South Korea</span></div>
     </div>
+    <p class="spnote"><b>Payment provider: none yet.</b> Card registration starts only after we have contracted a&nbsp;payment
+      provider, and that&nbsp;provider is named in&nbsp;this&nbsp;table before it takes a&nbsp;card. Until then an&nbsp;order is a&nbsp;request
+      and nothing is charged at&nbsp;that&nbsp;stage.</p>
     <p class="spnote">Conversation content is processed on&nbsp;servers in&nbsp;the&nbsp;United States. If your&nbsp;organisation
       cannot accept that&nbsp;transfer, say so before you buy &mdash; not after &mdash; and we will tell you plainly
       whether we can serve you.</p>
@@ -561,12 +599,16 @@
     </div>
 
     <div class="retgrid">
+      <div class="retcard"><b>Your&nbsp;setting</b><span>Conversations &amp; CRM records while you are a&nbsp;customer</span>
+        <p>You set the&nbsp;period as controller; if you never set one, the&nbsp;default is <b>24 months</b>, and when it lapses they go.</p></div>
       <div class="retcard"><b>30 days</b><span>Account and CRM data after you cancel</span>
         <p>Your&nbsp;window to&nbsp;export. After it, deletion.</p></div>
       <div class="retcard"><b>90 days</b><span>Call recordings after termination</span>
         <p>Then destroyed, including from&nbsp;backups.</p></div>
+      <div class="retcard"><b>90 days</b><span>Backups</span>
+        <p>A&nbsp;record you delete is purged from&nbsp;backups within&nbsp;90&nbsp;days of&nbsp;the&nbsp;deletion.</p></div>
       <div class="retcard"><b>12 months</b><span>Call metadata</span>
-        <p>Held to&nbsp;meet telecoms record-keeping duties.</p></div>
+        <p>Held to&nbsp;meet South Korean telecoms record-keeping duties.</p></div>
       <div class="retcard"><b>3 months</b><span>Access logs and IP addresses</span>
         <p>Security forensics only, never marketing.</p></div>
       <div class="retcard"><b>5 years</b><span>Transaction and billing records</span>
@@ -615,7 +657,7 @@
       <div class="sl-cols">
         <div class="sl-col sl-live">
           <span class="sl-tag">Built and running today</span>
-          <p class="sl-note">In&nbsp;the&nbsp;product now. You can see it in&nbsp;your&nbsp;own account during a&nbsp;trial.</p>
+          <p class="sl-note">In&nbsp;the&nbsp;product now. You can see it in&nbsp;your&nbsp;own account during your&nbsp;first 14&nbsp;days (the&nbsp;refund window).</p>
           <ul>
             <li><b>Tenant isolation</b>Row-level security at&nbsp;the&nbsp;database layer, with&nbsp;cross-tenant tests in&nbsp;CI on&nbsp;every&nbsp;release.</li>
             <li><b>Encryption</b>TLS&nbsp;1.2+ in&nbsp;transit, AES-256 at&nbsp;rest, on&nbsp;every&nbsp;object listed in&nbsp;retention.</li>
@@ -629,7 +671,7 @@
           <p class="sl-note">Real documents with&nbsp;version numbers, sent to&nbsp;a&nbsp;named party. Not published, because each&nbsp;one is issued to&nbsp;you.</p>
           <ul>
             <li><b>DPA, with&nbsp;the&nbsp;SCCs</b>Controller/processor roles under&nbsp;UK &amp; EU&nbsp;GDPR. v1.2, 12&nbsp;Aug&nbsp;2026.</li>
-            <li><b>Subprocessor list</b>The&nbsp;ten companies named above, in&nbsp;a&nbsp;form you can attach to&nbsp;a&nbsp;contract. v1.4.</li>
+            <li><b>Subprocessor list</b>The&nbsp;same companies as the&nbsp;table above, in&nbsp;a&nbsp;form you can attach to&nbsp;a&nbsp;contract. v1.4.</li>
             <li><b>Security overview</b>Architecture, data flows and controls, written for&nbsp;questionnaires. v1.1.</li>
             <li><b>Retention</b>The&nbsp;periods on&nbsp;this&nbsp;page are the&nbsp;ones the&nbsp;DPA commits us&nbsp;to.</li>
           </ul>
@@ -650,8 +692,8 @@
     <div class="ownerbox reveal">
       <b>Who owns this&nbsp;page, and when it was last checked</b>
       <ul>
-        <li><span class="k">Owner</span><span class="v">Founder and data-protection contact &mdash; <a href="mailto:security@saleringo.com">security@saleringo.com</a>. Saleringo is a&nbsp;small company; there is no&nbsp;security department to&nbsp;point at, and the&nbsp;person accountable for&nbsp;every&nbsp;statement on&nbsp;this&nbsp;page reads that&nbsp;address.</span></li>
-        <li><span class="k">Statement version</span><span class="v">2.0, published 12&nbsp;August&nbsp;2026</span></li>
+        <li><span class="k">Owner</span><span class="v">Founder and data-protection contact &mdash; reached through&nbsp;the&nbsp;<a href="./get-started.html#request">request form</a>, which is the&nbsp;route that&nbsp;reaches a&nbsp;person today. Saleringo is a&nbsp;small company; there is no&nbsp;security department to&nbsp;point at, and the&nbsp;person accountable for&nbsp;every&nbsp;statement on&nbsp;this&nbsp;page reads what arrives there.</span></li>
+        <li><span class="k">Statement version</span><span class="v">2.1, published 3&nbsp;September&nbsp;2026 &mdash; subprocessor table, retention, incident roles and the&nbsp;BAA position restated</span></li>
         <li><span class="k">Last reviewed</span><span class="v">12&nbsp;August&nbsp;2026, against the&nbsp;live configuration and the&nbsp;subprocessor contracts</span></li>
         <li><span class="k">Next review</span><span class="v">12&nbsp;February&nbsp;2027, or the&nbsp;day a&nbsp;subprocessor changes &mdash; whichever comes first</span></li>
         <li><span class="k">Independent audit</span><span class="v">None yet. There is no&nbsp;SOC&nbsp;2 report and no&nbsp;ISO&nbsp;27001 certificate for&nbsp;Saleringo today. Everything on&nbsp;this&nbsp;page is our&nbsp;own attestation, written to&nbsp;be checked rather than believed. If a&nbsp;third-party report is a&nbsp;condition of&nbsp;your&nbsp;purchase, we are not ready for&nbsp;you yet &mdash; which is a&nbsp;more useful answer than a&nbsp;badge.</span></li>
@@ -666,13 +708,13 @@
     <div class="reveal">
       <span class="eyebrow light"><i></i>Vulnerability reporting</span>
       <h2 class="h2" style="margin-top:24px;">Found something? <br>Tell us&nbsp;first.</h2>
-      <p class="lead">We welcome good-faith security research. If you believe you've found a&nbsp;vulnerability in&nbsp;Saleringo, write to&nbsp;us before disclosing it anywhere else.</p>
-      <span class="secaddr sg">security@saleringo.com</span>
-      <p class="note"><b>Published, not on&nbsp;request:</b> the&nbsp;same statement is machine-readable at <a href="/.well-known/security.txt"><code>/.well-known/security.txt</code></a> &mdash; the&nbsp;address, the&nbsp;expiry, the&nbsp;languages and a&nbsp;link back to&nbsp;this&nbsp;policy, at&nbsp;the&nbsp;location a&nbsp;researcher&rsquo;s&nbsp;tooling checks first. It is the&nbsp;one piece of&nbsp;security evidence we can honestly publish rather than send to&nbsp;a&nbsp;named party.</p>
+      <p class="lead">We welcome good-faith security research. If you believe you've found a&nbsp;vulnerability in&nbsp;Saleringo, tell us before disclosing it anywhere else &mdash; through&nbsp;the&nbsp;request form, which is the&nbsp;route that&nbsp;reaches a&nbsp;person today.</p>
+      <a class="secaddr sg" href="./get-started.html#request">Report it through&nbsp;the&nbsp;request form&nbsp;&rarr;</a>
+      <p class="note"><b>Published, not on&nbsp;request:</b> the&nbsp;same statement is machine-readable at <a href="/.well-known/security.txt"><code>/.well-known/security.txt</code></a> &mdash; the&nbsp;contact route, the&nbsp;expiry, the&nbsp;languages and a&nbsp;link back to&nbsp;this&nbsp;policy, at&nbsp;the&nbsp;location a&nbsp;researcher&rsquo;s&nbsp;tooling checks first. It is the&nbsp;one piece of&nbsp;security evidence we can honestly publish rather than send to&nbsp;a&nbsp;named party.</p>
       <p class="note">Please include steps to&nbsp;reproduce, and don't access data that&nbsp;isn't yours while testing. We won't pursue action against good-faith research that&nbsp;follows this&nbsp;process.</p>
     </div>
     <div class="steps reveal">
-      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Report</b><span>Email the&nbsp;details — what you found, where, and how to&nbsp;reproduce it</span></span><span class="tail pilltag pt-line">security@</span></div>
+      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Report</b><span>Send the&nbsp;details through&nbsp;the&nbsp;form — what you found, where, and how to&nbsp;reproduce it</span></span><span class="tail pilltag pt-line">Form</span></div>
       <div class="step"><span class="num">02</span><span class="tx"><b>Acknowledgment</b><span>A&nbsp;human replies within&nbsp;two business days, and we begin triage with&nbsp;a&nbsp;severity assessment</span></span><span class="tail pilltag pt-dark">Triage</span></div>
       <div class="step"><span class="num">03</span><span class="tx"><b>Fix &amp; verify</b><span>We remediate, test the&nbsp;fix, and keep you informed of&nbsp;progress</span></span><span class="tail pilltag pt-teal">In&nbsp;progress</span></div>
       <div class="step"><span class="num">04</span><span class="tx"><b>Disclosure</b><span>We coordinate timing with&nbsp;you and credit researchers who want it</span></span><span class="tail pilltag pt-teal">Resolved</span></div>
@@ -702,17 +744,17 @@
     <h2 class="reveal">Ask&nbsp;us the&nbsp;awkward <br>question <em>first.</em></h2>
     <p class="lead onDark reveal">Twenty minutes, a&nbsp;person, and whatever you are worried about — where your&nbsp;customers&rsquo; records live, what the&nbsp;AI is allowed to&nbsp;say, what your&nbsp;pipeline and reports look like on&nbsp;a&nbsp;Monday morning. Bring the&nbsp;security questionnaire too if you have one.</p>
     <div class="ctas reveal">
-      <a class="btn btn-teal" href="mailto:hello@saleringo.com?subject=Security%20review%20%E2%80%94%20questionnaire%20and%20documents">Send us your&nbsp;security questionnaire<span class="cir">↗</span></a>
+      <a class="btn btn-teal" href="./get-started.html?doc=all#request">Send us your&nbsp;security questionnaire<span class="cir">↗</span></a>
       <a class="btn btn-ghostd" href="./pricing.html">See what it costs for&nbsp;my&nbsp;size<span class="cir">↗</span></a>
     </div>
-      <p class="heroscroll"><a href="./index.html#start-here">New here? Start with&nbsp;the&nbsp;two-step tour &mdash; about&nbsp;a&nbsp;minute&nbsp;&nbsp;&rarr;</a></p>
+      <p class="heroscroll"><a href="./index.html#demo60">New here? Start with&nbsp;the&nbsp;two-step tour &mdash; about&nbsp;a&nbsp;minute&nbsp;&nbsp;&rarr;</a></p>
     <div class="trust">14-day refund · Cancel anytime · No&nbsp;lock-in. Documents on&nbsp;this&nbsp;page are available on&nbsp;request during evaluation.</div>
   </div>
   <!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v69.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -758,13 +800,13 @@
 
 <div class="stickycta"><div class="wrap"><span class="msg">Due diligence done? <b>The&nbsp;next step costs nothing and proves more than this&nbsp;page.</b></span><a class="btn btn-teal" href="./get-started.html">Get my&nbsp;plan<span class="cir">↗</span></a></div></div>
 
-<script src="../assets/js/site.js?v=68.0"></script>
-<script src="../assets/js/balance.js?v=68.0" defer></script>
-<script src="../assets/js/panels.js?v=68.0" defer></script>
-<script src="../assets/js/wrap.js?v=68.0" defer></script>
-<script src="../assets/js/rail.js?v=68.0" defer></script>
-<script src="../assets/js/guide.js?v=68.0"></script>
-<script src="../assets/js/canvas.js?v=68.0" defer></script>
-<script src="../assets/js/scenes.js?v=68.0" defer></script>
+<script src="../assets/js/site.js?v=69.0"></script>
+<script src="../assets/js/balance.js?v=69.0" defer></script>
+<script src="../assets/js/panels.js?v=69.0" defer></script>
+<script src="../assets/js/wrap.js?v=69.0" defer></script>
+<script src="../assets/js/rail.js?v=69.0" defer></script>
+<script src="../assets/js/guide.js?v=69.0"></script>
+<script src="../assets/js/canvas.js?v=69.0" defer></script>
+<script src="../assets/js/scenes.js?v=69.0" defer></script>
 </body>
 </html>
