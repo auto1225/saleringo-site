@@ -129,6 +129,7 @@ def build(lang):
             "Check what was recorded on your order and where it stands, using your order "
             "number and the email you used.",
         ),
+        image='https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
         body,
         css=CSS,
         grade="trust",

@@ -127,6 +127,7 @@ def build(lang):
            "and what we lack said plainly."),
          body, css=CSS, grade="trust",
          scripts=("site", "balance", "panels", "wrap", "rail", "guide", "status"),
+         image='https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
          lang=lang,
          crumbs=[(t("홈", "Home"), "index.html"), (t("상태", "Status"), "status.html")])
 

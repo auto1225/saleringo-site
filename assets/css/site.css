@@ -525,7 +525,7 @@ section:has(> .wrap > .head.centered) .faq,
 .bigfooter .brand .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;color:#fff;font-size:var(--fs-lead);}
 .bigfooter .brand .logo b{color:var(--teal);}
 .bigfooter .brand p{margin-top:14px;font-size:var(--fs-xs);line-height:1.8;color:var(--tx3);font-weight:500;max-width:240px;}
-.bigfooter h4{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--tx2);margin-bottom:16px;}
+.bigfooter h3{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--tx2);margin-bottom:16px;}
 .bigfooter .lnk{display:block;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;padding:5px 0;}
 .bigfooter .lnk:hover{color:var(--tx);}
 .bigfooter .base{margin-top:50px;padding-top:24px;border-top:1px solid var(--hair);display:flex;
@@ -3682,3 +3682,7 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
   .tlrow{grid-template-columns:minmax(0,1fr) !important;}
   .tlrow,.tlrow>*{min-width:0;overflow-wrap:anywhere;}
 }
+/* WhatsApp 지역 격자의 진짜 원인: 모바일 1열에서도 4·5번째 카드의
+   nth-child span 3 규칙(특이도 0,2,0)이 살아 남아 암시적 트랙 두 개를
+   만들었다. 모든 카드를 한 트랙에 앉힌다. */
+@media (max-width:700px){ .reggrid > *{grid-column:auto !important;} }

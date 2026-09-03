@@ -646,6 +646,7 @@ def build(lang):
            'month is shown before you commit; payment comes after a person confirms.'),
          filled, css=CSS, grade='trust',
          scripts=('site', 'balance', 'wrap', 'checkout'), lang=lang,
+         image='https://images.pexels.com/photos/8422729/pexels-photo-8422729.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
          crumbs=[(t('홈', 'Home'), 'index.html'), (t('주문', 'Order'), 'checkout.html')])
 
 
