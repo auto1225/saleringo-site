@@ -149,7 +149,7 @@
     fetch('/api/quote', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ country: sel.country, plan: sel.plan, buyerType: 'business',
+      body: JSON.stringify({ country: sel.country, plan: sel.plan, method: 'card', buyerType: 'business',
                              voiceMinutes: sel.voiceMinutes, alimtalk: sel.alimtalk })
     }).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) {
@@ -168,9 +168,17 @@
           review:      t('세금 처리는 주문 확인 때 확정됩니다.', 'Tax treatment is confirmed with your order.')
         };
         lines.push(TREAT[com.taxTreatment] || TREAT.review);
+        /* 세금번호·구매자 유형처럼 주문서에서 넣을 것이 "없다"는 판정은
+           여기서는 막힘이 아니라 예고입니다. 회선 없음 같은 진짜 막힘만 굵게. */
+        var soft = /_required$/;
         (com.blockers || []).forEach(function (b) {
+          if (soft.test(b.code || '')) return;
           lines.push('<b>' + (KO ? b.ko : b.en) + '</b>');
         });
+        if ((com.blockers || []).some(function (b) { return soft.test(b.code || ''); })) {
+          lines.push(t('확정 세금은 주문서에서 사업자·세금번호를 넣으시면 그 자리에서 계산됩니다.',
+                       'The exact tax line is settled on the order form once you enter your business and tax details.'));
+        }
         taxEl.innerHTML = lines.join('<br>');
       }).catch(function () { /* the note above already covers the quiet case */ });
   }

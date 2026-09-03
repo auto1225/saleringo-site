@@ -755,9 +755,14 @@
 
     /* 화면에서 확정할 수 없는 거래면, 버튼이 무엇을 하는지 그대로 씁니다.
        "주문 접수하기" 를 눌렀는데 서면 검토로 넘어가면 속은 기분이 듭니다. */
+    /* 아직 안 채운 칸(구매자 유형·세금번호) 때문에 서버가 "판정 보류"를
+       돌려준 것은 서면 경로가 아니라 "마저 채우라"는 뜻입니다. 그때 버튼을
+       「서면 주문 요청」으로 바꾸면 첫 방문자는 온라인 주문이 없다고 읽습니다.
+       회선 없음처럼 화면에서 풀 수 없는 막힘일 때만 바꿉니다. */
+    var hard = bl.some(function (b) { return !/_required$/.test(b.code || ''); });
     var btn = $('[data-submit]');
     if (btn && !btn.getAttribute('data-proposal')) {
-      var proposal = !com.orderable;
+      var proposal = !com.orderable && hard;
       var label = proposal ? T.proposalCta : (btn._orig || btn.textContent);
       if (!btn._orig) btn._orig = btn.innerHTML;
       if (proposal) {
@@ -774,7 +779,7 @@
     var barLbl = document.querySelector('.paybar .lbl');
     if (barLbl) {
       if (!barLbl._orig) barLbl._orig = barLbl.textContent;
-      barLbl.textContent = com.orderable ? barLbl._orig : T.proposalCta;
+      barLbl.textContent = (com.orderable || !hard) ? barLbl._orig : T.proposalCta;
     }
   }
 
@@ -835,23 +840,26 @@
   (function restoreFromBuilder() {
     if (!window.srCarry) return;
     var c = window.srCarry.read() || {};
+    if (!c.qbPlan && !c.qbCountry) return;
+    /* 「이 구성 그대로 주문서로」를 누른 것은 명시적 선택이므로 주문서의
+       기본값(미국·Grow)을 이깁니다. 한 번 적용하면 키를 지워, 나중에 손으로
+       바꾼 것을 새로고침이 되돌리지 않게 합니다. */
     if (c.qbCountry) {
       var sel = $('[name="country"]');
-      if (sel && !sel.value) { sel.value = c.qbCountry; sel.dispatchEvent(new Event('change', { bubbles: true })); }
+      if (sel) { sel.value = c.qbCountry; sel.dispatchEvent(new Event('change', { bubbles: true })); }
       var sv = $('[name="serviceCountry"]');
-      if (sv && !sv.value) sv.value = c.qbCountry;
+      if (sv) sv.value = c.qbCountry;
     }
     if (c.qbPlan) {
       var r = form.querySelector('[name="plan"][value="' + c.qbPlan + '"]');
-      if (r && !form.querySelector('[name="plan"]:checked')) {
-        r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true }));
-      }
+      if (r) { r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true })); }
     }
     ['qbVoiceMinutes', 'qbAlimtalk'].forEach(function (k) {
       var name = k === 'qbVoiceMinutes' ? 'voiceMinutes' : 'alimtalk';
       var el = $('[name="' + name + '"]');
-      if (el && !el.value && c[k]) { el.value = c[k]; el.dispatchEvent(new Event('input', { bubbles: true })); }
+      if (el && c[k]) { el.value = c[k]; el.dispatchEvent(new Event('input', { bubbles: true })); }
     });
+    window.srCarry.write({ qbPlan: '', qbCountry: '', qbVoiceMinutes: '', qbAlimtalk: '' });
   })();
 
   function carryDraft() {

@@ -3632,3 +3632,23 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
 /* photosplit — 풀블리드 밴드의 내용 상한. 밴드 배경은 절이 칠하므로
    내용만 가운데로 모으면 초광폭에서 텍스트 반쪽이 팔을 못 벌린다. */
 .photosplit{max-width:1520px;margin-left:auto;margin-right:auto;}
+
+/* ═══════ 모바일 실사용 검증에서 잡힌 넘침 5종 (2026-09-01) ═══════ */
+@media (max-width:700px){
+  /* 통화 창 상단 바: 「예시·가상의 통화」「영업시간 밖」 라벨이 한 줄에서 밀려나 잘림 */
+  .appwin .bar{flex-wrap:wrap;row-gap:6px;}
+  .appwin .bar .closed{margin-left:0;}
+  /* 요금 쪽 제목 옆 「직접 해 보세요」 알약: 제목보다 길면 다음 줄로 */
+  .tryme{white-space:normal;margin-left:0;margin-top:8px;max-width:100%;}
+  /* 업종 쪽 사례 탭: 화면보다 길면 가로 스크롤 (모바일 탭의 표준 동작) */
+  .srjs .pstabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    padding-bottom:6px;scrollbar-width:thin;}
+  .srjs .pstabs > *{flex:none;}
+  /* 캡션 속 링크가 한 단어처럼 취급되어 뷰포트 밖으로 */
+  .seccap .linkcta,.scenecap .linkcta{display:inline;white-space:normal;}
+  /* 비교표: 감싸는 스크롤 상자가 없어도 표 스스로 가로 스크롤 */
+  .cmp{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
+/* 안내 링의 닫기 단추: 26px 은 손가락 표적으로 작음 — 그림은 두고 표적만 44px */
+.fr-x{width:32px;height:32px;right:-16px;top:-16px;font-size:16px;}
+.fr-x::before{content:"";position:absolute;inset:-6px;}
