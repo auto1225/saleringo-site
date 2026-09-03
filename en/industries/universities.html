@@ -27,10 +27,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Front Desk for Universities & Admissions Offices","item":"https://claude.saleringo.com/en/industries/universities.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=67.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=68.0">
 <style>
   /* page-specific: universities & international admissions landing */
   /* full-bleed photo hero — block layout overrides .photohero's flex */
@@ -169,14 +169,14 @@
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
   .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
-  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
-  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
   .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
-  .statcol.road h4{color:#8A9BB4;} .statcol.road h4 i{background:#5B6B84;}
+  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
+  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
   .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
     font-weight:700;border-bottom:1px solid var(--hair);}
@@ -226,7 +226,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v67.0">v67.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -472,21 +472,21 @@
       <p class="secintro">Procurement asks this&nbsp;question in&nbsp;week six and gets a&nbsp;footnote. An&nbsp;office signing for&nbsp;a&nbsp;whole cycle deserves it in&nbsp;the&nbsp;open, before the&nbsp;paperwork.</p>
     </div>
     <div class="statgrid reveal">
-      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
         <ul>
           <li>Zapier<span>Push applicant records and stage changes into&nbsp;whatever you already run</span></li>
           <li>CSV export<span>Enquiries, documents outstanding, refusals and the&nbsp;whole pipeline, whenever you ask</span></li>
           <li>Saleringo's&nbsp;own inbox &amp; scheduler<span>WhatsApp and website chat in&nbsp;one place, adviser appointments on&nbsp;their&nbsp;own calendar</span></li>
         </ul>
       </div>
-      <div class="statcol man"><h4 role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</h4>
+      <div class="statcol man"><div class="hl4" role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</div>
         <ul>
           <li>Your&nbsp;student record system<span>No&nbsp;direct link to&nbsp;any SRS or SIS. Records reach it through&nbsp;Zapier or a&nbsp;CSV import</span></li>
           <li>Your&nbsp;applicant portal<span>Same path. The&nbsp;AI can send the&nbsp;portal link and the&nbsp;upload link; it does not read the&nbsp;portal</span></li>
           <li>Deposit and fee payment<span>It sends your&nbsp;existing payment link and never touches card details</span></li>
         </ul>
       </div>
-      <div class="statcol road"><h4 role="heading" aria-level="3"><i></i>In&nbsp;build</h4>
+      <div class="statcol road"><div class="hl4" role="heading" aria-level="3"><i></i>In&nbsp;build</div>
         <ul>
           <li>Student record system integrations<span>On the&nbsp;roadmap; founding institutions vote on&nbsp;what ships next. We will not name a&nbsp;month we cannot stand behind</span></li>
           <li>Single sign-on for&nbsp;applicant identity<span>So a&nbsp;file question can be answered to&nbsp;a&nbsp;verified applicant without a&nbsp;human step</span></li>
@@ -531,7 +531,7 @@
           <div class="exturn"><span class="who">Applicant</span>Uploaded. When will I hear?</div>
           <div class="exturn"><span class="who">Saleringo</span>Your&nbsp;office publishes a&nbsp;ten-working-day target for&nbsp;this&nbsp;programme, so that&nbsp;is what I'll&nbsp;tell you — and I'll&nbsp;message you if it slips, rather than leaving you counting.</div>
           <div class="exout">
-            <h5 role="presentation">What it left behind</h5>
+            <div class="hl5" role="presentation">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Fee and deposit quoted from&nbsp;the&nbsp;<b>2026</b> page, with&nbsp;the&nbsp;year stated out loud</span><span class="amt">$24,000/yr</span></div>
             <div class="exrow"><i>✓</i><span>Transcript captured at&nbsp;02:44 and attached to&nbsp;a&nbsp;new applicant record</span></div>
             <div class="exrow"><i>✓</i><span>Source page stored against every&nbsp;figure quoted</span></div>
@@ -550,7 +550,7 @@
           <div class="exturn"><span class="who">Applicant</span>The&nbsp;line has been engaged for&nbsp;forty minutes.</div>
           <div class="exturn"><span class="who">Saleringo</span>I&nbsp;know. I've&nbsp;taken your&nbsp;grades, your&nbsp;UCAS number and your&nbsp;subject, put you in&nbsp;the&nbsp;Clearing queue with&nbsp;all of&nbsp;it already written down, and you'll&nbsp;get a&nbsp;call back rather than a&nbsp;redial. If you'd&nbsp;rather keep holding, that&nbsp;is fine too, and your&nbsp;place in&nbsp;the&nbsp;queue stays.</div>
           <div class="exout">
-            <h5 role="presentation">What it left behind</h5>
+            <div class="hl5" role="presentation">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Vacancy status read from&nbsp;the&nbsp;list published that&nbsp;morning, not from&nbsp;memory</span></div>
             <div class="exrow"><i>✓</i><span>Grades and UCAS number captured before a&nbsp;tutor picked up, so the&nbsp;call starts at&nbsp;minute two</span></div>
             <div class="exrow"><i>✓</i><span>A&nbsp;caller who would have hung up on&nbsp;the&nbsp;engaged tone is still in&nbsp;the&nbsp;queue</span></div>
@@ -569,7 +569,7 @@
           <div class="exturn"><span class="who">Applicant</span>An&nbsp;agent gave me a&nbsp;figure already.</div>
           <div class="exturn hand"><span class="who">Saleringo</span>Then please check it against the&nbsp;official government guidance rather than against me. I've&nbsp;booked you fifteen minutes with&nbsp;our&nbsp;international student advice team on&nbsp;Thursday, and I've&nbsp;written your&nbsp;question into&nbsp;your&nbsp;file word for&nbsp;word so you don't have to&nbsp;explain it twice.</div>
           <div class="exout">
-            <h5 role="presentation">What it left behind</h5>
+            <div class="hl5" role="presentation">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Refusal given with&nbsp;the&nbsp;reason named, not a&nbsp;vague deflection</span></div>
             <div class="exrow"><i>✓</i><span>Adviser appointment booked at&nbsp;quarter past eleven at&nbsp;night</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;applicant's&nbsp;own words preserved on&nbsp;the&nbsp;file for&nbsp;the&nbsp;adviser</span></div>
@@ -588,7 +588,7 @@
           <div class="exturn"><span class="who">Agent</span>It was agreed with&nbsp;your&nbsp;recruitment manager.</div>
           <div class="exturn hand"><span class="who">Saleringo</span>Very likely — and she is the&nbsp;person who should confirm it, not me. I've&nbsp;sent her&nbsp;your&nbsp;agency name and the&nbsp;four programmes, and she'll&nbsp;come back today. I'd&nbsp;rather you wait a&nbsp;few hours for&nbsp;a&nbsp;figure that&nbsp;holds than take one from&nbsp;me that&nbsp;doesn't.</div>
           <div class="exout">
-            <h5 role="presentation">What it left behind</h5>
+            <div class="hl5" role="presentation">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Published tuition and scholarship close stated exactly as&nbsp;printed</span><span class="amt">$24,000/yr</span></div>
             <div class="exrow"><i>✓</i><span>Four prospective applicants captured against the&nbsp;agency record</span></div>
             <div class="exrow"><i>✓</i><span>Commercial question routed to&nbsp;the&nbsp;named person who owns it</span></div>
@@ -607,7 +607,7 @@
           <div class="exturn"><span class="who">Caller</span>I'm&nbsp;paying for&nbsp;it.</div>
           <div class="exturn hand"><span class="who">Saleringo</span>I&nbsp;understand, and it doesn't change the&nbsp;answer. What I&nbsp;can do is send you the&nbsp;published decision timeline and the&nbsp;form she can use to&nbsp;add you as&nbsp;a&nbsp;nominated contact — two minutes, and then someone here can talk to&nbsp;you properly.</div>
           <div class="exout">
-            <h5 role="presentation">What it left behind</h5>
+            <div class="hl5" role="presentation">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Nothing case-specific disclosed to&nbsp;an&nbsp;unverified caller</span></div>
             <div class="exrow"><i>✓</i><span>Published timeline and the&nbsp;nominated-contact form sent instead of&nbsp;a&nbsp;flat no</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;attempt, the&nbsp;refusal and the&nbsp;reason written to&nbsp;the&nbsp;audit log</span></div>
@@ -626,7 +626,7 @@
           <div class="exturn"><span class="who">Applicant</span>I sat the&nbsp;test but the&nbsp;result isn't out until April.</div>
           <div class="exturn hand"><span class="who">Saleringo</span>Then that&nbsp;is worth telling an&nbsp;officer rather than leaving in&nbsp;the&nbsp;system as&nbsp;silence. I've&nbsp;noted the&nbsp;test date and the&nbsp;result date on&nbsp;your&nbsp;file and flagged it for&nbsp;the&nbsp;team today. Whether anything can be done about&nbsp;the&nbsp;deadline is their&nbsp;call, and I&nbsp;am not going to&nbsp;promise you it can.</div>
           <div class="exout">
-            <h5 role="presentation">What it left behind</h5>
+            <div class="hl5" role="presentation">What it left behind</div>
             <div class="exrow"><i>✓</i><span>The&nbsp;actual missing document named, not "please complete your&nbsp;application"</span></div>
             <div class="exrow"><i>✓</i><span>Timed against your&nbsp;published funding deadline, not a&nbsp;generic drip</span></div>
             <div class="exrow"><i>✓</i><span>Test date and result date written to&nbsp;the&nbsp;file and flagged to&nbsp;a&nbsp;person</span></div>
@@ -801,27 +801,27 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v67.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="fcol"><h3 aria-level="3">The product</h3><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+      <div class="fcol"><div class="hl3">The product</div><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
         <a class="lnk" href="../voice.html">AI phone</a>
         <a class="lnk" href="../webchat.html">Website chat</a>
         <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
         <a class="lnk" href="../integrations.html">Integrations</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
-      <div class="fcol ftrades"><h3 aria-level="3">Your trade</h3><div class="ftgrid"><div class="fgrp"><h5 aria-level="4">Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5 aria-level="4">Home &amp; property</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5 aria-level="4">Vehicle, plant &amp; storage</h5><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5 aria-level="4">Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5 aria-level="4">Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><h5 aria-level="4">Professional &amp; public</h5><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html" aria-current="page">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><h5 aria-level="4">Online &amp; multi-site</h5><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
-      <div class="fcol"><h3 aria-level="3">Prices &amp; proof</h3><a class="lnk" href="../pricing.html">Pricing</a>
+      <div class="fcol ftrades"><div class="hl3">Your trade</div><div class="ftgrid"><div class="fgrp"><div class="hl5">Health &amp; care</div><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><div class="hl5">Home &amp; property</div><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><div class="hl5">Vehicle, plant &amp; storage</div><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><div class="hl5">Booked by appointment</div><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><div class="hl5">Places &amp; hospitality</div><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><div class="hl5">Professional &amp; public</div><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html" aria-current="page">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><div class="hl5">Online &amp; multi-site</div><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><div class="hl3">Prices &amp; proof</div><a class="lnk" href="../pricing.html">Pricing</a>
         <a class="lnk" href="../pricing.html#plans">Plans</a>
         <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
         <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
         <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
         <a class="lnk" href="../demo.html">See a conversation</a>
         <a class="lnk" href="../get-started.html">Get my plan</a></div>
-      <div class="fcol"><h3 aria-level="3">Company &amp; trust</h3><a class="lnk" href="../about.html">About</a>
+      <div class="fcol"><div class="hl3">Company &amp; trust</div><a class="lnk" href="../about.html">About</a>
         <a class="lnk" href="../security.html">Security &amp; trust</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
@@ -847,13 +847,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=67.0"></script>
-<script src="../../assets/js/balance.js?v=67.0" defer></script>
-<script src="../../assets/js/panels.js?v=67.0" defer></script>
-<script src="../../assets/js/wrap.js?v=67.0" defer></script>
-<script src="../../assets/js/rail.js?v=67.0" defer></script>
-<script src="../../assets/js/canvas.js?v=67.0" defer></script>
-<script src="../../assets/js/scenes.js?v=67.0" defer></script>
-<script src="../../assets/js/guide.js?v=67.0"></script>
+<script src="../../assets/js/site.js?v=68.0"></script>
+<script src="../../assets/js/balance.js?v=68.0" defer></script>
+<script src="../../assets/js/panels.js?v=68.0" defer></script>
+<script src="../../assets/js/wrap.js?v=68.0" defer></script>
+<script src="../../assets/js/rail.js?v=68.0" defer></script>
+<script src="../../assets/js/canvas.js?v=68.0" defer></script>
+<script src="../../assets/js/scenes.js?v=68.0" defer></script>
+<script src="../../assets/js/guide.js?v=68.0"></script>
 </body>
 </html>

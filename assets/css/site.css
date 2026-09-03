@@ -525,7 +525,7 @@ section:has(> .wrap > .head.centered) .faq,
 .bigfooter .brand .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;color:#fff;font-size:var(--fs-lead);}
 .bigfooter .brand .logo b{color:var(--teal);}
 .bigfooter .brand p{margin-top:14px;font-size:var(--fs-xs);line-height:1.8;color:var(--tx3);font-weight:500;max-width:240px;}
-.bigfooter h3{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--tx2);margin-bottom:16px;}
+.bigfooter .hl3,.bigfooter h3{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--tx2);margin-bottom:16px;}
 .bigfooter .lnk{display:block;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;padding:5px 0;}
 .bigfooter .lnk:hover{color:var(--tx);}
 .bigfooter .base{margin-top:50px;padding-top:24px;border-top:1px solid var(--hair);display:flex;
@@ -724,8 +724,7 @@ body[data-chan] .chip.on{background:var(--accent-glass);
 @media (max-width:900px){.proofgrid{grid-template-columns:1fr;}}
 .proofcard{border:1px solid var(--l-hair);border-radius:16px;padding:24px;background:#fff;}
 .proofcard .num{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:700;
-  color:var(--teal-ink);letter-spacing:.02em;}
-.proofcard h4{margin-top:10px;font-size:var(--fs-body);color:var(--l-ink);letter-spacing:-.02em;}
+  color:var(--teal-ink);letter-spacing:.02em;}.proofcard h4,.proofcard .hl4{margin-top:10px;font-size:var(--fs-body);color:var(--l-ink);letter-spacing:-.02em;}
 .proofcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
 .proofcard .lnkrow{margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;}
 .proofcard .lnkrow a{font-size:var(--fs-xs);font-weight:700;color:var(--l-ink);
@@ -987,17 +986,13 @@ body:has(.stickycta.show) .totop{bottom:calc(22px + var(--stickycta-h,124px));}
 /* ═══ ONE CLOSER GAP ════════════════════════════════════════════
    about / cross-border / security already used the token and render
    correctly; the other eighteen pages each picked their own number. */
-.closer{padding-top:var(--pad-xl) !important;}
-
-
-/* ═══ NO ORPHANS, NO WIDOWS ═════════════════════════════════════
+.closer{padding-top:var(--pad-xl) !important;}/* ═══ NO ORPHANS,NO WIDOWS ═════════════════════════════════════
    A heading that drops one word onto its own line ("…your own price
    / list.") reads as amateur however good the type is. `balance`
    evens the line lengths of short blocks; `pretty` stops body copy
-   ending on a single word. Both are ignored by older engines, so
+   ending on a single word. Both are ignored by older engines,so
    there is no fallback to write. */
-h1,h2,h3,h4,h5,.h1,.h2,.h3,.display,
-.hero h1,.head h2,.khead h2,.secintro h2{
+h1,h2,h3,h4,h5,.h1,.h2,.h3,.display,.hero h1,.head h2,.khead h2,.secintro h2,.hl4,.hl5{
   text-wrap:balance;
 }
 p,.lead,.sub,li,figcaption,.labwhy,.sn,.statnote,.proofnote p,.pipecap,
@@ -1306,18 +1301,9 @@ form.gsform.eaform button{grid-column:auto;}
 .sec-light .fbar i,.bg-paper .fbar i,.bg-clinical .fbar i,
 .sec-light li > i,.sec-light2 li > i,.bg-paper li > i,.bg-clinical li > i,
 .sec-light .steprow i,.sec-light2 .steprow i{color:#0A7272;}
-.sec-light .no > i,.sec-light2 .no > i,.sec-light .x > i{color:#A8453A;}
-
-/* before/after columns appear on both grounds; the markers were only ever
+.sec-light .no > i,.sec-light2 .no > i,.sec-light .x > i{color:#A8453A;}/* before/after columns appear on both grounds; the markers were only ever
    tuned for the dark one */
-.sec-light .baCol.after li i,.sec-light2 .baCol.after li i,
-.bg-paper .baCol.after li i,.bg-clinical .baCol.after li i,
-.sec-light .baCol.after h4,.sec-light2 .baCol.after h4,
-.bg-paper .baCol.after h4,.bg-clinical .baCol.after h4{color:#0A7272;}
-.sec-light .baCol.before li i,.sec-light2 .baCol.before li i,
-.bg-paper .baCol.before li i,.bg-clinical .baCol.before li i,
-.sec-light .baCol.before h4,.sec-light2 .baCol.before h4,
-.bg-paper .baCol.before h4,.bg-clinical .baCol.before h4{color:#A8453A;}
+.sec-light .baCol.after li i,.sec-light2 .baCol.after li i,.bg-paper .baCol.after li i,.bg-clinical .baCol.after li i,.sec-light .baCol.after h4,.sec-light2 .baCol.after h4,.bg-paper .baCol.after h4,.bg-clinical .baCol.after h4,.sec-light .baCol.after .hl4,.sec-light2 .baCol.after .hl4,.bg-paper .baCol.after .hl4,.bg-clinical .baCol.after .hl4{color:#0A7272;}.sec-light .baCol.before li i,.sec-light2 .baCol.before li i,.bg-paper .baCol.before li i,.bg-clinical .baCol.before li i,.sec-light .baCol.before h4,.sec-light2 .baCol.before h4,.bg-paper .baCol.before h4,.bg-clinical .baCol.before h4,.sec-light .baCol.before .hl4,.sec-light2 .baCol.before .hl4,.bg-paper .baCol.before .hl4,.bg-clinical .baCol.before .hl4{color:#A8453A;}
 .sec-light .baArrow,.sec-light2 .baArrow,.bg-paper .baArrow,.bg-clinical .baArrow{color:#656D78;}
 /* the roadmap arrow on integrations sits on the section ground, not a pill */
 .sec-light .ptlist li > i,.sec-light2 .ptlist li > i{color:#0A7272;}
@@ -2230,12 +2216,10 @@ html .bigfooter .brand{
 .bigfooter .cols{grid-template-columns:1.35fr 1fr 2.05fr 1fr 1fr;gap:44px;}
 .bigfooter .fcol{min-width:0;}
 .bigfooter .ftgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 22px;}
-.bigfooter .fgrp{min-width:0;}
-.bigfooter h5{
+.bigfooter .fgrp{min-width:0;}.bigfooter h5,.bigfooter .hl5{
   margin:0 0 2px;font-size:var(--fs-label);font-weight:800;letter-spacing:.1em;
   text-transform:uppercase;color:var(--tx3);
-}
-.bigfooter .fgrp + .fgrp h5{margin-top:12px;}
+}.bigfooter .fgrp + .fgrp h5,.bigfooter .fgrp + .fgrp .hl5{margin-top:12px;}
 /* Footer links measured 31px tall against the site's own 44px rule. */
 .bigfooter .lnk{display:flex;align-items:center;min-height:44px;padding:2px 0;}
 .bigfooter .lnk[aria-current="page"]{color:var(--tx);}
@@ -2342,8 +2326,7 @@ html .bigfooter .brand{
    `overflow-wrap:anywhere` is a safety net rather than a style: it only breaks
    inside a word when there is no other opportunity at all. It is scoped to
    360px and below so it can never touch a width anyone composes for. */
-@media (max-width:360px){
-  h1,h2,h3,h4,.h1,.h2{overflow-wrap:anywhere;}
+@media (max-width:360px){h1,h2,h3,h4,.h1,.h2,.hl4{overflow-wrap:anywhere;}
 }
 
 /* ── the last controls under the touch floor ──────────────────────────────
@@ -3686,3 +3669,10 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
    nth-child span 3 규칙(특이도 0,2,0)이 살아 남아 암시적 트랙 두 개를
    만들었다. 모든 카드를 한 트랙에 앉힌다. */
 @media (max-width:700px){ .reggrid > *{grid-column:auto !important;} }
+
+/* 제목에서 라벨로 내려온 것들(.hl3/.hl4/.hl5)은 UA 가 주던 굵기를 잃는다 — 돌려준다.
+   h5 의 UA 크기(.83em)도. 클래스가 있는 문맥은 자기 규칙이 이긴다. */
+.hl3,.hl4,.hl5{font-weight:700;}
+.hl5{font-size:.83em;}
+/* 시각적으로 숨긴 제목 — 문서 개요에만 존재 */
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}

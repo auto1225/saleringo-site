@@ -204,7 +204,7 @@ def prune(out, lang, root, here):
         before = out
         for pat, tag in ((r'<ul[^>]*>\s*</ul>', None),
                          (r'<div class="np-col">(?:(?!<li>).)*?</div>', None),
-                         (r'<div class="fgrp">(?:(?!class="lnk").)*?</div>', None),
+                         (r'<div class="fgrp">(?:<div class="hl5">[^<]*</div>)?(?:(?!class="lnk")(?!<div).)*?</div>', None),
                          (r'<p class="np-foot">(?:(?!<a ).)*?</p>', None)):
             out = re.sub(pat, '', out, flags=re.S)
         # a top-level panel whose columns have all gone takes its button with it

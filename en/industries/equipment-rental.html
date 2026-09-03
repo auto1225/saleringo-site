@@ -31,10 +31,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Hire Desk for Equipment, Tool & Plant Hire","item":"https://claude.saleringo.com/en/industries/equipment-rental.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=67.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=68.0">
 <style>
   /* ── YARD AT FIRST LIGHT · equipment, tool & plant hire ───────────────── */
   .hero{position:relative;overflow:hidden;}
@@ -91,8 +91,8 @@
   .split .body{display:grid;grid-template-columns:1.55fr 1fr;gap:32px;align-items:stretch;}
   .split .baCol li{color:#5C6878;}
   .split .baArrow{color:#BCB2A4;}
-  .split .baCol.before h4,.split .baCol.before li i{color:#A8453A;}
-  .split .baCol.after h4,.split .baCol.after li i{color:#0B7878;}
+  .split .baCol.before .hl4,.split .baCol.before li i{color:#A8453A;}
+  .split .baCol.after .hl4,.split .baCol.after li i{color:#0B7878;}
   .split .quotecard.pending p{color:#5F6B7C;}
   .split .photocard{margin-bottom:20px;min-height:326px;}
 
@@ -172,14 +172,14 @@
   /* this page stacks the three states in a single column beside the copy */
   #integrations{grid-template-columns:1fr;margin-top:0;}
   .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
-  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
-  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
   .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
-  .statcol.road h4{color:#8A9BB4;} .statcol.road h4 i{background:#5B6B84;}
+  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
+  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
   .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
     font-weight:700;border-bottom:1px solid var(--hair);}
@@ -220,7 +220,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v67.0">v67.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -357,7 +357,7 @@
     <div class="body reveal">
       <div class="baGrid">
         <div class="baCol before">
-          <h4 role="heading" aria-level="3">Nobody picks up</h4>
+          <div class="hl4" role="heading" aria-level="3">Nobody picks up</div>
           <ul>
             <li><i>✕</i>Rings out. No&nbsp;voicemail left — trade customers almost never do</li>
             <li><i>✕</i>The&nbsp;machine goes on&nbsp;hire somewhere else before you open</li>
@@ -368,7 +368,7 @@
         </div>
         <div class="baArrow" aria-hidden="true">→</div>
         <div class="baCol after">
-          <h4 role="heading" aria-level="3">Saleringo answers</h4>
+          <div class="hl4" role="heading" aria-level="3">Saleringo answers</div>
           <ul>
             <li><i>✓</i>Answered on&nbsp;the&nbsp;second ring, before the&nbsp;yard gates are open</li>
             <li><i>✓</i>Day, weekend and week rate quoted — plus transport, fuel and waiver</li>
@@ -472,20 +472,20 @@
       </div>
       <div class="reveal">
         <div class="statgrid" id="integrations">
-          <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+          <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
             <ul>
               <li>Calendar sync — Google · Outlook<span>Reservations and collection dates land on&nbsp;your&nbsp;real calendar</span></li>
               <li>Zapier &amp; direct feeds<span>Push enquiries into&nbsp;the&nbsp;stack you already run</span></li>
               <li>Customer and enquiry export — CSV<span>Reconcile against any hire system in&nbsp;minutes</span></li>
             </ul>
           </div>
-          <div class="statcol man"><h4 role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</h4>
+          <div class="statcol man"><div class="hl4" role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</div>
             <ul>
               <li>inspHire · MCS · Syrinx · Point of&nbsp;Rental<span>No&nbsp;direct link. Enquiries reach them through&nbsp;CSV export or Zapier, reconciled by&nbsp;a&nbsp;person on&nbsp;the&nbsp;desk</span></li>
               <li>Your&nbsp;telematics and workshop records<span>Same path. Availability is never written back automatically, which is why every&nbsp;machine is reserved rather than put on&nbsp;hire</span></li>
             </ul>
           </div>
-          <div class="statcol road"><h4 role="heading" aria-level="3"><i></i>In&nbsp;build</h4>
+          <div class="statcol road"><div class="hl4" role="heading" aria-level="3"><i></i>In&nbsp;build</div>
             <ul>
               <li>Two-way hire system connection<span>Live availability by&nbsp;category, depot and date range is the&nbsp;most requested item on&nbsp;the&nbsp;roadmap and founding customers vote on&nbsp;the&nbsp;order. We will not name a&nbsp;month we cannot stand behind</span></li>
             </ul>
@@ -596,7 +596,7 @@
           <div class="exturn"><span class="who">Saleringo</span>Then the&nbsp;1.5 won't go through: it's 990 across the&nbsp;tracks
             on&nbsp;your&nbsp;list. The&nbsp;micro will. I've reserved the&nbsp;micro for&nbsp;the&nbsp;same dates and noted the&nbsp;gate width and that&nbsp;the&nbsp;ground has had a&nbsp;week of&nbsp;rain. The&nbsp;desk confirms it at&nbsp;seven — I can't put it on&nbsp;hire myself.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Answered at&nbsp;06:40, twenty minutes before anyone was at&nbsp;the&nbsp;counter</span><span class="amt">£285 week</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;week rate offered because it beat the&nbsp;day rate — not because he asked</span></div>
             <div class="exrow"><i>✓</i><span>Transport quoted <b>both ways</b>, and the&nbsp;waiver, fuel and deposit named up front</span><span class="amt">£45 each way</span></div>
@@ -618,7 +618,7 @@
           <div class="exturn"><span class="who">Visitor</span>Nobody usually tells me that&nbsp;bit until I'm stood at&nbsp;the&nbsp;counter.</div>
           <div class="exturn"><span class="who">Saleringo</span>I've put all of&nbsp;it in&nbsp;writing to&nbsp;the&nbsp;number you're on, so you can paste it straight into&nbsp;your&nbsp;own quote. The&nbsp;figures are your&nbsp;depot's&nbsp;published ones, not estimates.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Consumables, fuel and waiver named in&nbsp;the&nbsp;same breath as the&nbsp;rate</span></div>
             <div class="exrow"><i>✓</i><span>Week rate offered against a&nbsp;five-day job, from&nbsp;the&nbsp;rate card's&nbsp;own rules</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;whole thing sent in&nbsp;writing — the&nbsp;counter argument never happens</span></div>
@@ -641,7 +641,7 @@
             this&nbsp;morning, so a&nbsp;swap may well be quicker than a&nbsp;call-out — but whether it goes out, and whether today
             counts as hire time, is the&nbsp;fitter's&nbsp;and the&nbsp;desk's&nbsp;call. I've put both questions in&nbsp;front of&nbsp;them.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Duty fitter reached at&nbsp;07:55 on&nbsp;a&nbsp;Saturday with&nbsp;unit number, site and fault</span></div>
             <div class="exrow"><i>✓</i><span>A&nbsp;possible swap already checked against this&nbsp;morning's&nbsp;sheet</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;hire-time question raised for&nbsp;the&nbsp;desk before the&nbsp;customer had to&nbsp;argue it</span></div>
@@ -662,7 +662,7 @@
           <div class="exturn"><span class="who">Caller</span>He's&nbsp;got a&nbsp;card somewhere in&nbsp;the&nbsp;van.</div>
           <div class="exturn hand"><span class="who">Saleringo</span>Then bring it, and the&nbsp;desk checks it at&nbsp;the&nbsp;counter with&nbsp;the&nbsp;card in&nbsp;hand. I've&nbsp;recorded that&nbsp;you say he holds one, flagged the&nbsp;hire as needing that&nbsp;check before release, and reserved the&nbsp;machine in&nbsp;the&nbsp;meantime so you don't lose the&nbsp;week.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Your&nbsp;own hire terms quoted verbatim, not summarised or softened</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;hire flagged as release-blocked until the&nbsp;check is done at&nbsp;the&nbsp;counter</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;machine still reserved, so refusing to&nbsp;guess didn't cost you the&nbsp;hire</span></div>
@@ -686,7 +686,7 @@
             call attached, plus the&nbsp;collection note showing when transport was next in&nbsp;that&nbsp;postcode. She'll&nbsp;have the&nbsp;facts
             in&nbsp;front of&nbsp;her&nbsp;rather than your&nbsp;word against the&nbsp;system's.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Off-hire logged with&nbsp;a&nbsp;reference and a&nbsp;timestamp, sent in&nbsp;writing</span><span class="amt">15:40 Fri</span></div>
             <div class="exrow"><i>✓</i><span>Collection added to&nbsp;the&nbsp;transport list instead of&nbsp;waiting for&nbsp;Monday</span></div>
             <div class="exrow"><i>✓</i><span>Flagged for&nbsp;the&nbsp;account manager with&nbsp;the&nbsp;call, not a&nbsp;summary of&nbsp;it</span></div>
@@ -707,7 +707,7 @@
           <div class="exturn"><span class="who">Customer</span>Nobody there till nine. And no, it's&nbsp;all mud round the&nbsp;side.</div>
           <div class="exturn"><span class="who">Saleringo</span>Both noted on&nbsp;the&nbsp;job. I've&nbsp;put the&nbsp;ground condition in&nbsp;front of&nbsp;the&nbsp;transport desk, because unloading onto&nbsp;mud is their&nbsp;call and not mine, and asked them whether the&nbsp;slot can start after nine. They'll&nbsp;come back to&nbsp;you — I'm&nbsp;not going to&nbsp;promise you a&nbsp;time they haven't set.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>The&nbsp;slot the&nbsp;transport desk actually set, repeated back the&nbsp;day before</span><span class="amt">08:00–12:00</span></div>
             <div class="exrow"><i>✓</i><span>Ground conditions surfaced 18 hours early instead of&nbsp;by&nbsp;a&nbsp;stuck lorry</span></div>
             <div class="exrow"><i>✓</i><span>Nobody-on-site-till-nine caught before a&nbsp;wasted delivery and a&nbsp;re-run charge</span></div>
@@ -943,27 +943,27 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v67.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="fcol"><h3 aria-level="3">The product</h3><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+      <div class="fcol"><div class="hl3">The product</div><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
         <a class="lnk" href="../voice.html">AI phone</a>
         <a class="lnk" href="../webchat.html">Website chat</a>
         <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
         <a class="lnk" href="../integrations.html">Integrations</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
-      <div class="fcol ftrades"><h3 aria-level="3">Your trade</h3><div class="ftgrid"><div class="fgrp"><h5 aria-level="4">Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5 aria-level="4">Home &amp; property</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5 aria-level="4">Vehicle, plant &amp; storage</h5><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html" aria-current="page">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5 aria-level="4">Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5 aria-level="4">Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><h5 aria-level="4">Professional &amp; public</h5><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><h5 aria-level="4">Online &amp; multi-site</h5><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
-      <div class="fcol"><h3 aria-level="3">Prices &amp; proof</h3><a class="lnk" href="../pricing.html">Pricing</a>
+      <div class="fcol ftrades"><div class="hl3">Your trade</div><div class="ftgrid"><div class="fgrp"><div class="hl5">Health &amp; care</div><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><div class="hl5">Home &amp; property</div><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><div class="hl5">Vehicle, plant &amp; storage</div><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html" aria-current="page">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><div class="hl5">Booked by appointment</div><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><div class="hl5">Places &amp; hospitality</div><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><div class="hl5">Professional &amp; public</div><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><div class="hl5">Online &amp; multi-site</div><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><div class="hl3">Prices &amp; proof</div><a class="lnk" href="../pricing.html">Pricing</a>
         <a class="lnk" href="../pricing.html#plans">Plans</a>
         <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
         <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
         <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
         <a class="lnk" href="../demo.html">See a conversation</a>
         <a class="lnk" href="../get-started.html">Get my plan</a></div>
-      <div class="fcol"><h3 aria-level="3">Company &amp; trust</h3><a class="lnk" href="../about.html">About</a>
+      <div class="fcol"><div class="hl3">Company &amp; trust</div><a class="lnk" href="../about.html">About</a>
         <a class="lnk" href="../security.html">Security &amp; trust</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
@@ -989,13 +989,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=67.0"></script>
-<script src="../../assets/js/balance.js?v=67.0" defer></script>
-<script src="../../assets/js/panels.js?v=67.0" defer></script>
-<script src="../../assets/js/wrap.js?v=67.0" defer></script>
-<script src="../../assets/js/rail.js?v=67.0" defer></script>
-<script src="../../assets/js/canvas.js?v=67.0" defer></script>
-<script src="../../assets/js/scenes.js?v=67.0" defer></script>
-<script src="../../assets/js/guide.js?v=67.0"></script>
+<script src="../../assets/js/site.js?v=68.0"></script>
+<script src="../../assets/js/balance.js?v=68.0" defer></script>
+<script src="../../assets/js/panels.js?v=68.0" defer></script>
+<script src="../../assets/js/wrap.js?v=68.0" defer></script>
+<script src="../../assets/js/rail.js?v=68.0" defer></script>
+<script src="../../assets/js/canvas.js?v=68.0" defer></script>
+<script src="../../assets/js/scenes.js?v=68.0" defer></script>
+<script src="../../assets/js/guide.js?v=68.0"></script>
 </body>
 </html>

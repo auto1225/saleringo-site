@@ -135,9 +135,7 @@
 /* the "after" column is the relief in this argument, so it is the lit one:
    a warmer tint, a brighter edge and a soft glow under it */
 .baCol.after{background:linear-gradient(165deg,rgba(23,189,189,.20),rgba(23,189,189,.09));
-  border:1px solid rgba(23,189,189,.46);box-shadow:0 22px 60px -34px rgba(23,189,189,.55);}
-.baCol h4{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}
-.baCol.before h4{color:#E58C81;} .baCol.after h4{color:var(--teal);}
+  border:1px solid rgba(23,189,189,.46);box-shadow:0 22px 60px -34px rgba(23,189,189,.55);}.baCol h4,.baCol .hl4{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}.baCol.before h4,.baCol.before .hl4{color:#E58C81;}.baCol.after h4,.baCol.after .hl4{color:var(--teal);}
 .baCol ul{list-style:none;display:grid;gap:12px;}
 .baCol li{font-size:var(--fs-xs);line-height:1.65;color:var(--tx);font-weight:500;display:flex;gap:10px;}
 .baCol li i{flex:none;font-style:normal;font-weight:800;}
@@ -176,9 +174,7 @@
 .altgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:22px;overflow:hidden;border:1px solid var(--l-hair);}
 .altcol{padding:26px 22px;background:#fff;border-right:1px solid var(--l-hair);}
 .altcol:last-child{border-right:0;}
-.altcol.win{background:linear-gradient(180deg,#0B1B33,#08121F);color:#fff;}
-.altcol h4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}
-.altcol.win h4{color:var(--teal);}
+.altcol.win{background:linear-gradient(180deg,#0B1B33,#08121F);color:#fff;}.altcol h4,.altcol .hl4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}.altcol.win h4,.altcol.win .hl4{color:var(--teal);}
 .altcol .cost{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
   font-weight:600;letter-spacing:-.03em;color:var(--l-ink);
   /* This is sized for a price, and a price never wraps. A trade that puts a
@@ -398,17 +394,17 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 @media (max-width:760px){
   .altgrid,.altgrid.five{grid-template-columns:1fr;}
   .altcol{border-right:0;}
-}
-
-/* ── the four-day timeline on get-started ──────────────────────────────────
-   These two class names carried no rules at all, so every h4 and p in the
+}/* ── the four-day timeline on get-started ──────────────────────────────────
+   These two class names carried no rules at all,so every h4 and p in the
    block inherited the dark theme's #FFF and rendered white on a #F6F8FA
-   section — the whole "first week, honestly" story was invisible. Four equal
-   columns that fold to two and then one, with the day marker as the anchor. */
-/* Renamed from .tl: that also matched .scene-overlay.tl, the top-left chip
-   used on ten pages, and turned each of them into a four-column grid 44px
+   section — the whole "first week,honestly" story was invisible. Four equal
+   columns that fold to two and then one,with the day marker as the anchor. */
+/* Renamed from .tl: that also matched .scene-overlay.tl,the top-left chip
+   used on ten pages,and turned each of them into a four-column grid 44px
    below where it belonged. */
-.tline{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+.tline,so every .hl4 and p in the
+   block inherited the dark theme's #FFF and rendered white on a #F6F8FA
+   section — the whole "first week{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
 /* Four columns with no breakpoint at all: at 375 each step was 65px wide and
    "We read your business" needed 108, so every card on the timeline was cut
    off mid-word. Two up on a tablet, one on a phone. */
@@ -420,8 +416,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .tlstep::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,var(--teal-ink),rgba(12,132,132,0));}
 .tlstep .d{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-label);font-weight:800;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink);}
-.tlstep h4{margin-top:12px;font-size:var(--fs-lead);font-weight:700;letter-spacing:-.02em;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink);}.tlstep h4,.tlstep .hl4{margin-top:12px;font-size:var(--fs-lead);font-weight:700;letter-spacing:-.02em;
   line-height:1.25;color:var(--l-ink);text-wrap:balance;}
 .tlstep p{margin-top:10px;font-size:var(--fs-sm);line-height:1.7;color:var(--l-mut);
   font-weight:500;text-wrap:pretty;}

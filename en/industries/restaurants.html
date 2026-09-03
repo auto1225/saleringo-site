@@ -31,10 +31,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Reservations & Function Line for Restaurants","item":"https://claude.saleringo.com/en/industries/restaurants.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=67.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=68.0">
 <style>
   /* ── RESTAURANTS · archetype: THE FUNCTION INQUIRY ────────────────────
      The page deliberately does not open on a dinner reservation. Reservations
@@ -196,14 +196,14 @@
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
   .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
-  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
-  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
   .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
-  .statcol.road h4{color:#8A9BB4;} .statcol.road h4 i{background:#5B6B84;}
+  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
+  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
   .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
     font-weight:700;border-bottom:1px solid var(--hair);}
@@ -242,10 +242,10 @@
   /* the honest-status grid sits on this page's white band */
   .intsec .statcol{border-color:var(--l-hair);background:#fff;}
   .intsec .statcol.now{border-color:rgba(15,163,163,.34);background:rgba(15,163,163,.05);}
-  .intsec .statcol.now h4{color:#0B7878;}
+  .intsec .statcol.now .hl4{color:#0B7878;}
   .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(232,164,76,.06);}
-  .intsec .statcol.man h4{color:#8D642F;}
-  .intsec .statcol.road h4{color:#656D78;}
+  .intsec .statcol.man .hl4{color:#8D642F;}
+  .intsec .statcol.road .hl4{color:#656D78;}
   .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
   .intsec .statcol li span{color:var(--l-mut);}
   .intsec .statnote{color:#656D78;}
@@ -273,7 +273,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v67.0">v67.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -435,7 +435,7 @@
 
     <div class="baGrid reveal">
       <div class="baCol before">
-        <h4 role="heading" aria-level="3">Tonight · without&nbsp;an&nbsp;answer</h4>
+        <div class="hl4" role="heading" aria-level="3">Tonight · without&nbsp;an&nbsp;answer</div>
         <ul>
           <li><i>✕</i><span><b style="color:#fff;">10:40 PM</b> — the&nbsp;phone rings out over&nbsp;a&nbsp;full room. Nobody hears it.</span></li>
           <li><i>✕</i><span><b style="color:#fff;">10:48 PM</b> — she emails two other places, because she needs three numbers by&nbsp;morning.</span></li>
@@ -445,7 +445,7 @@
       </div>
       <div class="baArrow" aria-hidden="true">→</div>
       <div class="baCol after">
-        <h4>Tonight · with&nbsp;Saleringo answering</h4>
+        <div class="hl4">Tonight · with&nbsp;Saleringo answering</div>
         <ul>
           <li><i>✓</i><span><b style="color:#fff;">10:40 PM</b> — answered on&nbsp;the&nbsp;second ring. Date, service, covers and occasion captured.</span></li>
           <li><i>✓</i><span><b style="color:#fff;">10:41 PM</b> — room hire, peak minimum spend and per-head set menu quoted from&nbsp;your&nbsp;own function sheet.</span></li>
@@ -670,20 +670,20 @@
     </div>
 
     <div class="statgrid reveal" id="integrations">
-      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
         <ul>
           <li>Zapier &amp; direct feeds<span>Push functions and stage changes into&nbsp;whatever runs your&nbsp;book</span></li>
           <li>CSV export<span>Inquiries, held dates, functions and the&nbsp;whole pipeline, whenever you ask</span></li>
           <li>Google &amp; Outlook Calendar<span>Held dates and confirmed functions land on&nbsp;your&nbsp;real calendar</span></li>
         </ul>
       </div>
-      <div class="statcol man"><h4><i></i>Bridge for&nbsp;now</h4>
+      <div class="statcol man"><div class="hl4"><i></i>Bridge for&nbsp;now</div>
         <ul>
           <li>OpenTable · Resy · SevenRooms<span>No&nbsp;direct link. Bookings reach them through&nbsp;Zapier or CSV export</span></li>
           <li>TheFork · Toast · Square<span>Same path — nothing is ripped out and nothing is migrated</span></li>
         </ul>
       </div>
-      <div class="statcol road"><h4><i></i>In&nbsp;build</h4>
+      <div class="statcol road"><div class="hl4"><i></i>In&nbsp;build</div>
         <ul>
           <li>Direct reservation-platform integrations<span>Founding customers vote on&nbsp;the&nbsp;build order. We would rather hand you nothing than a&nbsp;date that&nbsp;slips</span></li>
         </ul>
@@ -769,7 +769,7 @@
           <div class="exturn"><span class="who">Caller</span>That's&nbsp;the&nbsp;number I need. Can you hold it?</div>
           <div class="exturn"><span class="who">Saleringo</span>Held for&nbsp;72 hours. The&nbsp;deposit is <b>$300</b> and the&nbsp;cancellation terms are 14 days — I've sent the&nbsp;payment link rather than taking a&nbsp;card, and the&nbsp;date releases automatically if the&nbsp;deposit isn't paid.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Function card created — date, service, covers, occasion and room</span><span class="amt">$1,800 min</span></div>
             <div class="exrow"><i>✓</i><span>Quote built from&nbsp;the&nbsp;function sheet on&nbsp;three separate lines, peak minimum applied automatically</span></div>
             <div class="exrow"><i>✓</i><span>Date held on&nbsp;a&nbsp;clock, not on&nbsp;a&nbsp;maybe — released by&nbsp;itself if nothing is paid</span></div>
@@ -787,7 +787,7 @@
           <div class="exturn hand"><span class="who">Saleringo</span>I'm not going to&nbsp;answer that, and I'd rather say so plainly than give you a&nbsp;comfortable half-answer. Whether a&nbsp;dish is safe for&nbsp;a&nbsp;severe allergy is the&nbsp;kitchen's&nbsp;call — nobody else in&nbsp;this&nbsp;building is allowed to&nbsp;make it, including me.</div>
           <div class="exturn"><span class="who">Saleringo</span>I've written it on&nbsp;the&nbsp;function sheet exactly as you said it, the&nbsp;booking is marked <b>unconfirmed until the&nbsp;kitchen answers</b>, and the&nbsp;question has gone to&nbsp;the&nbsp;head chef tonight rather than in&nbsp;the&nbsp;morning. He replies to&nbsp;you directly.</div>
           <div class="exout">
-            <h5 aria-level="4">What it left behind</h5>
+            <div class="hl5" aria-level="4">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Allergy recorded verbatim — not summarised, not turned into&nbsp;a&nbsp;tick box</span></div>
             <div class="exrow"><i>✓</i><span>Booking blocked from&nbsp;confirming on&nbsp;that&nbsp;point alone</span></div>
             <div class="exrow"><i>✓</i><span>Head chef asked the&nbsp;same night, with&nbsp;the&nbsp;date and covers attached</span></div>
@@ -806,7 +806,7 @@
           <div class="exturn"><span class="who">Saleringo</span>What genuinely exists tonight is <b>6:15</b> on&nbsp;the&nbsp;first sitting or <b>9:30</b> on&nbsp;the&nbsp;second. If neither works I'll put you on&nbsp;the&nbsp;waitlist for&nbsp;8 and message you the&nbsp;moment a&nbsp;cancellation lands — the&nbsp;waitlist is real, and it moves on&nbsp;a&nbsp;Saturday.</div>
           <div class="exturn"><span class="who">Caller</span>9:30's&nbsp;fine.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Booked into&nbsp;the&nbsp;second sitting with&nbsp;the&nbsp;real turn time respected</span></div>
             <div class="exrow"><i>✓</i><span>Guest added to&nbsp;the&nbsp;waitlist for&nbsp;the&nbsp;sitting they wanted</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;refusal converted — because it came with&nbsp;two real alternatives, not an&nbsp;apology</span></div>
@@ -825,7 +825,7 @@
           <div class="exturn"><span class="who">Visitor</span>Any chance for&nbsp;the&nbsp;Thursday of&nbsp;that&nbsp;week?</div>
           <div class="exturn"><span class="who">Saleringo</span>That&nbsp;Thursday has kitchen capacity for&nbsp;an&nbsp;off-site of&nbsp;this&nbsp;size — it's&nbsp;a&nbsp;capacity rule rather than a&nbsp;table, so I'm checking the&nbsp;pass, not the&nbsp;floor. Held for&nbsp;72 hours, and I'll need dietary requirements at&nbsp;least a&nbsp;week out so the&nbsp;kitchen can plan rather than improvise.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Off-site inquiry priced per&nbsp;head, with&nbsp;no&nbsp;room hire invented to&nbsp;fit the&nbsp;template</span><span class="amt">$38/head</span></div>
             <div class="exrow"><i>✓</i><span>Checked against kitchen capacity rather than the&nbsp;floor plan — a&nbsp;different rule, correctly applied</span></div>
             <div class="exrow"><i>✓</i><span>Dietary deadline stated up front, so the&nbsp;kitchen is not told on&nbsp;the&nbsp;morning</span></div>
@@ -844,7 +844,7 @@
           <div class="exturn"><span class="who">Visitor</span>And if I want to&nbsp;push on&nbsp;the&nbsp;price?</div>
           <div class="exturn hand"><span class="who">Saleringo</span>Then that&nbsp;is a&nbsp;conversation with&nbsp;the&nbsp;owner and I'll put it in&nbsp;front of&nbsp;her today, with&nbsp;the&nbsp;date and covers attached. I'm not going to&nbsp;invent a&nbsp;discount to&nbsp;keep you in&nbsp;the&nbsp;chat.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Minimum spend held under&nbsp;pressure; nothing improvised to&nbsp;win the&nbsp;inquiry</span><span class="amt">$1,800 min</span></div>
             <div class="exrow"><i>✓</i><span>Written quote sent inside the&nbsp;conversation, itemised</span></div>
             <div class="exrow"><i>✓</i><span>Routed to&nbsp;the&nbsp;owner with&nbsp;the&nbsp;date attached, so the&nbsp;inquiry is not simply lost</span></div>
@@ -863,7 +863,7 @@
           <div class="exturn"><span class="who">Caller</span>What if I can't do it before I board?</div>
           <div class="exturn"><span class="who">Saleringo</span>The&nbsp;date is held for&nbsp;72 hours from&nbsp;now, so a&nbsp;flight doesn't cost you it. If the&nbsp;deposit hasn't landed by&nbsp;then, the&nbsp;date releases and I'll tell you before it does rather than after.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Deposit rule and cancellation terms stated exactly as written</span><span class="amt">$300 deposit</span></div>
             <div class="exrow"><i>✓</i><span>Payment link sent to&nbsp;the&nbsp;venue's&nbsp;own provider, inside the&nbsp;conversation</span></div>
             <div class="exrow"><i>✓</i><span>Hold window explained, with&nbsp;a&nbsp;warning before the&nbsp;release, not after it</span></div>
@@ -1077,27 +1077,27 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v67.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="fcol"><h3 aria-level="3">The product</h3><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+      <div class="fcol"><div class="hl3">The product</div><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
         <a class="lnk" href="../voice.html">AI phone</a>
         <a class="lnk" href="../webchat.html">Website chat</a>
         <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
         <a class="lnk" href="../integrations.html">Integrations</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
-      <div class="fcol ftrades"><h3 aria-level="3">Your trade</h3><div class="ftgrid"><div class="fgrp"><h5 aria-level="4">Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5 aria-level="4">Home &amp; property</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5 aria-level="4">Vehicle, plant &amp; storage</h5><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5 aria-level="4">Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5 aria-level="4">Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html" aria-current="page">Restaurants</a></div><div class="fgrp"><h5 aria-level="4">Professional &amp; public</h5><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><h5 aria-level="4">Online &amp; multi-site</h5><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
-      <div class="fcol"><h3 aria-level="3">Prices &amp; proof</h3><a class="lnk" href="../pricing.html">Pricing</a>
+      <div class="fcol ftrades"><div class="hl3">Your trade</div><div class="ftgrid"><div class="fgrp"><div class="hl5">Health &amp; care</div><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><div class="hl5">Home &amp; property</div><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><div class="hl5">Vehicle, plant &amp; storage</div><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><div class="hl5">Booked by appointment</div><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><div class="hl5">Places &amp; hospitality</div><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html" aria-current="page">Restaurants</a></div><div class="fgrp"><div class="hl5">Professional &amp; public</div><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><div class="hl5">Online &amp; multi-site</div><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><div class="hl3">Prices &amp; proof</div><a class="lnk" href="../pricing.html">Pricing</a>
         <a class="lnk" href="../pricing.html#plans">Plans</a>
         <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
         <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
         <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
         <a class="lnk" href="../demo.html">See a conversation</a>
         <a class="lnk" href="../get-started.html">Get my plan</a></div>
-      <div class="fcol"><h3 aria-level="3">Company &amp; trust</h3><a class="lnk" href="../about.html">About</a>
+      <div class="fcol"><div class="hl3">Company &amp; trust</div><a class="lnk" href="../about.html">About</a>
         <a class="lnk" href="../security.html">Security &amp; trust</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
@@ -1123,13 +1123,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=67.0"></script>
-<script src="../../assets/js/balance.js?v=67.0" defer></script>
-<script src="../../assets/js/panels.js?v=67.0" defer></script>
-<script src="../../assets/js/wrap.js?v=67.0" defer></script>
-<script src="../../assets/js/rail.js?v=67.0" defer></script>
-<script src="../../assets/js/canvas.js?v=67.0" defer></script>
-<script src="../../assets/js/scenes.js?v=67.0" defer></script>
-<script src="../../assets/js/guide.js?v=67.0"></script>
+<script src="../../assets/js/site.js?v=68.0"></script>
+<script src="../../assets/js/balance.js?v=68.0" defer></script>
+<script src="../../assets/js/panels.js?v=68.0" defer></script>
+<script src="../../assets/js/wrap.js?v=68.0" defer></script>
+<script src="../../assets/js/rail.js?v=68.0" defer></script>
+<script src="../../assets/js/canvas.js?v=68.0" defer></script>
+<script src="../../assets/js/scenes.js?v=68.0" defer></script>
+<script src="../../assets/js/guide.js?v=68.0"></script>
 </body>
 </html>

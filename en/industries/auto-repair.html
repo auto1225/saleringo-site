@@ -31,10 +31,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Auto Repair & Collision","item":"https://claude.saleringo.com/en/industries/auto-repair.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=67.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=68.0">
 <style>
   /* ── AUTO REPAIR · archetype: THE SHOP AFTER THE SHUTTER COMES DOWN ──
      The hero is a real independent garage at night, roller shutter half
@@ -233,14 +233,14 @@
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
   .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
-  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
-  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
+  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
   .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
-  .statcol.road h4{color:#8A9BB4;} .statcol.road h4 i{background:#5B6B84;}
+  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
+  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
   .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
     font-weight:700;border-bottom:1px solid var(--hair);}
@@ -279,10 +279,10 @@
   /* the honest-status grid sits on this page's white band */
   .intsec .statcol{border-color:var(--l-hair);background:#fff;}
   .intsec .statcol.now{border-color:rgba(15,163,163,.34);background:rgba(15,163,163,.05);}
-  .intsec .statcol.now h4{color:#0B7878;}
+  .intsec .statcol.now .hl4{color:#0B7878;}
   .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(232,164,76,.06);}
-  .intsec .statcol.man h4{color:#8D642F;}
-  .intsec .statcol.road h4{color:#656D78;}
+  .intsec .statcol.man .hl4{color:#8D642F;}
+  .intsec .statcol.road .hl4{color:#656D78;}
   .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
   .intsec .statcol li span{color:var(--l-mut);}
   .intsec .statnote{color:#656D78;}
@@ -325,7 +325,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v67.0">v67.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -498,7 +498,7 @@
 
     <div class="baGrid reveal">
       <div class="baCol before">
-        <h4 role="heading" aria-level="3">This&nbsp;evening · without&nbsp;an&nbsp;answer</h4>
+        <div class="hl4" role="heading" aria-level="3">This&nbsp;evening · without&nbsp;an&nbsp;answer</div>
         <ul>
           <li><i>✕</i><span><b style="color:#fff;">6:48 PM</b> — the&nbsp;call rings out. A&nbsp;voicemail greeting plays to&nbsp;somebody sitting in&nbsp;a&nbsp;lay-by.</span></li>
           <li><i>✕</i><span><b style="color:#fff;">6:53 PM</b> — she dials the&nbsp;next shop in&nbsp;the&nbsp;list. Somebody picks up.</span></li>
@@ -508,7 +508,7 @@
       </div>
       <div class="baArrow" aria-hidden="true">→</div>
       <div class="baCol after">
-        <h4>This&nbsp;evening · with&nbsp;Saleringo answering</h4>
+        <div class="hl4">This&nbsp;evening · with&nbsp;Saleringo answering</div>
         <ul>
           <li><i>✓</i><span><b style="color:#fff;">6:48 PM</b> — answered on&nbsp;the&nbsp;second ring. Plate, engine code, symptom and when it happens, all captured.</span></li>
           <li><i>✓</i><span><b style="color:#fff;">6:50 PM</b> — diagnostic quoted at&nbsp;<b>$95</b> and the&nbsp;<b>$145</b> labour rate stated. The&nbsp;repair itself is refused a&nbsp;number.</span></li>
@@ -705,7 +705,7 @@
     </div>
 
     <div class="statgrid reveal" id="integrations">
-      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
         <ul>
           <li>Zapier &amp;&nbsp;direct feeds<span>Push job cards, ceilings and stage changes into&nbsp;whatever runs your&nbsp;workshop</span></li>
           <li>CSV export<span>Calls, job cards, estimates and the&nbsp;whole pipeline, whenever you ask</span></li>
@@ -713,13 +713,13 @@
           <li>Saleringo's&nbsp;own inbox &amp;&nbsp;scheduler<span>Phone, web chat and messaging in&nbsp;one place, with&nbsp;the&nbsp;job card written</span></li>
         </ul>
       </div>
-      <div class="statcol build"><h4><i></i>Bridge for&nbsp;now</h4>
+      <div class="statcol build"><div class="hl4"><i></i>Bridge for&nbsp;now</div>
         <ul>
           <li>Garage management systems<span>No&nbsp;direct link to&nbsp;any of&nbsp;them yet. Job cards reach them through&nbsp;Zapier or CSV export — minutes, not hours</span></li>
           <li>Parts catalogues and estimating platforms<span>Same path. The&nbsp;AI captures the&nbsp;vehicle identity; your&nbsp;parts desk still places the&nbsp;order</span></li>
         </ul>
       </div>
-      <div class="statcol build"><h4><i></i>In&nbsp;build</h4>
+      <div class="statcol build"><div class="hl4"><i></i>In&nbsp;build</div>
         <ul>
           <li>Direct workshop integrations<span>Founding customers vote on&nbsp;the&nbsp;build order. A&nbsp;date we cannot hold is worth less to&nbsp;you than no&nbsp;date at&nbsp;all</span></li>
         </ul>
@@ -855,7 +855,7 @@
             One last thing: under&nbsp;<b>$250</b> we get on&nbsp;with&nbsp;it; over&nbsp;it, somebody rings you before anything is touched.
             Does that&nbsp;work?</div>
           <div class="exout">
-            <h5 role="heading" aria-level="3">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Job card written — plate, symptom verbatim, deadline and the&nbsp;quoted diagnostic</span><span class="amt">$95</span></div>
             <div class="exrow"><i>✓</i><span>Ramp 1 booked at&nbsp;8:00, from&nbsp;the&nbsp;real workshop diary</span></div>
             <div class="exrow"><i>✓</i><span><b>Authorisation ceiling agreed on&nbsp;the&nbsp;call</b> — before the&nbsp;ramp, not after the&nbsp;invoice</span><span class="amt">$250</span></div>
@@ -880,7 +880,7 @@
             a&nbsp;figure I&nbsp;can't stand behind. I've written "grinding under&nbsp;braking" on&nbsp;the&nbsp;card in&nbsp;your&nbsp;words and flagged it
             as safety-related, so it's&nbsp;looked at&nbsp;first. Tomorrow 8:00 or&nbsp;11:30?</div>
           <div class="exout">
-            <h5 role="heading" aria-level="4">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="4">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Symptom recorded <b>verbatim</b> and flagged as a&nbsp;safety-related complaint</span></div>
             <div class="exrow"><i>✓</i><span>Ramp booked anyway — the&nbsp;refusal did not end the&nbsp;conversation</span><span class="amt">$95</span></div>
             <div class="exrow"><i>✕</i><span>No&nbsp;repair price, after being asked twice. The&nbsp;second ask is the&nbsp;one that&nbsp;matters.</span></div>
@@ -904,7 +904,7 @@
           <div class="exturn hand"><span class="who">Saleringo</span>Still not my&nbsp;call to&nbsp;make. I've paged the&nbsp;owner because
             of&nbsp;the&nbsp;steering and the&nbsp;smell, and he'll ring you directly. I'm not going to&nbsp;tell you it's&nbsp;probably fine.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Approved safety wording read first, recovery offered second — always in&nbsp;that&nbsp;order</span><span class="amt">$120</span></div>
             <div class="exrow"><i>✓</i><span>Owner paged <b>in&nbsp;parallel</b> on&nbsp;the&nbsp;safety keywords, not instead</span></div>
             <div class="exrow"><i>✓</i><span>Marked a&nbsp;safety escalation, so it is the&nbsp;first card the&nbsp;controller opens at&nbsp;half&nbsp;seven</span></div>
@@ -927,7 +927,7 @@
           <div class="exturn"><span class="who">Saleringo</span>Sent. The&nbsp;ramp is held for&nbsp;you until 12:30, and your&nbsp;reply
             goes on&nbsp;the&nbsp;job card with&nbsp;the&nbsp;time on&nbsp;it — so nobody is relying on&nbsp;anyone's&nbsp;memory of&nbsp;a&nbsp;phone call.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Work stopped at&nbsp;the&nbsp;ceiling <b>automatically</b> — not because somebody remembered</span><span class="amt">$250</span></div>
             <div class="exrow"><i>✓</i><span>Estimate sent and the&nbsp;ramp held rather than released</span></div>
             <div class="exrow"><i>✓</i><span>Approval recorded against the&nbsp;job card with&nbsp;a&nbsp;timestamp</span></div>
@@ -951,7 +951,7 @@
             and that&nbsp;happens whoever ends up paying. A&nbsp;courtesy car is <b>$25</b> a&nbsp;day on&nbsp;our&nbsp;card, and whether your&nbsp;policy
             picks that&nbsp;up is their&nbsp;answer, not mine. I've held one against the&nbsp;job.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Claim reference and insurer captured before the&nbsp;estimator opened the&nbsp;file</span></div>
             <div class="exrow"><i>✓</i><span>Assessment booked regardless of&nbsp;who is paying — the&nbsp;job did not wait on&nbsp;the&nbsp;claim</span></div>
             <div class="exrow"><i>✓</i><span>Courtesy car quoted from&nbsp;your&nbsp;own card and held against the&nbsp;job</span><span class="amt">$25/day</span></div>
@@ -974,7 +974,7 @@
           <div class="exturn"><span class="who">Saleringo</span>On&nbsp;the&nbsp;card. He'll quote it once it's&nbsp;up — I'm not going
             to&nbsp;price a&nbsp;year-old advisory sight unseen.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>A&nbsp;ramp hour booked a&nbsp;week before the&nbsp;customer thought about&nbsp;it</span><span class="amt">$60</span></div>
             <div class="exrow"><i>✓</i><span>Due date read from&nbsp;the&nbsp;vehicle record, not from&nbsp;anyone's&nbsp;memory</span></div>
             <div class="exrow"><i>✓</i><span>Last year's&nbsp;advisory surfaced and attached to&nbsp;the&nbsp;new job card</span></div>
@@ -1175,27 +1175,27 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v67.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="fcol"><h3 aria-level="3">The product</h3><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+      <div class="fcol"><div class="hl3">The product</div><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
         <a class="lnk" href="../voice.html">AI phone</a>
         <a class="lnk" href="../webchat.html">Website chat</a>
         <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
         <a class="lnk" href="../integrations.html">Integrations</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
-      <div class="fcol ftrades"><h3 aria-level="3">Your trade</h3><div class="ftgrid"><div class="fgrp"><h5 aria-level="4">Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5 aria-level="4">Home &amp; property</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5 aria-level="4">Vehicle, plant &amp; storage</h5><a class="lnk" href="../industries/auto-repair.html" aria-current="page">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5 aria-level="4">Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5 aria-level="4">Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><h5 aria-level="4">Professional &amp; public</h5><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><h5 aria-level="4">Online &amp; multi-site</h5><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
-      <div class="fcol"><h3 aria-level="3">Prices &amp; proof</h3><a class="lnk" href="../pricing.html">Pricing</a>
+      <div class="fcol ftrades"><div class="hl3">Your trade</div><div class="ftgrid"><div class="fgrp"><div class="hl5">Health &amp; care</div><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><div class="hl5">Home &amp; property</div><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><div class="hl5">Vehicle, plant &amp; storage</div><a class="lnk" href="../industries/auto-repair.html" aria-current="page">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><div class="hl5">Booked by appointment</div><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><div class="hl5">Places &amp; hospitality</div><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><div class="hl5">Professional &amp; public</div><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><div class="hl5">Online &amp; multi-site</div><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><div class="hl3">Prices &amp; proof</div><a class="lnk" href="../pricing.html">Pricing</a>
         <a class="lnk" href="../pricing.html#plans">Plans</a>
         <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
         <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
         <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
         <a class="lnk" href="../demo.html">See a conversation</a>
         <a class="lnk" href="../get-started.html">Get my plan</a></div>
-      <div class="fcol"><h3 aria-level="3">Company &amp; trust</h3><a class="lnk" href="../about.html">About</a>
+      <div class="fcol"><div class="hl3">Company &amp; trust</div><a class="lnk" href="../about.html">About</a>
         <a class="lnk" href="../security.html">Security &amp; trust</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
@@ -1221,13 +1221,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=67.0"></script>
-<script src="../../assets/js/balance.js?v=67.0" defer></script>
-<script src="../../assets/js/panels.js?v=67.0" defer></script>
-<script src="../../assets/js/wrap.js?v=67.0" defer></script>
-<script src="../../assets/js/rail.js?v=67.0" defer></script>
-<script src="../../assets/js/canvas.js?v=67.0" defer></script>
-<script src="../../assets/js/scenes.js?v=67.0" defer></script>
-<script src="../../assets/js/guide.js?v=67.0"></script>
+<script src="../../assets/js/site.js?v=68.0"></script>
+<script src="../../assets/js/balance.js?v=68.0" defer></script>
+<script src="../../assets/js/panels.js?v=68.0" defer></script>
+<script src="../../assets/js/wrap.js?v=68.0" defer></script>
+<script src="../../assets/js/rail.js?v=68.0" defer></script>
+<script src="../../assets/js/canvas.js?v=68.0" defer></script>
+<script src="../../assets/js/scenes.js?v=68.0" defer></script>
+<script src="../../assets/js/guide.js?v=68.0"></script>
 </body>
 </html>

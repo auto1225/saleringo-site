@@ -28,10 +28,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Veterinary Practices","item":"https://claude.saleringo.com/en/industries/veterinary.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=67.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=67.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=68.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=68.0">
 <style>
   /* ── VETERINARY · archetype: NIGHT PRACTICE ────────────────────
      opens dark and quiet, because that is when this trade's hardest
@@ -114,14 +114,14 @@
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
   .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
-  .statcol h4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
+  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
-  .statcol h4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
+  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now h4{color:#6FE3B0;} .statcol.now h4 i{background:#3AC98A;}
-  .statcol.build h4{color:#8FBAFF;} .statcol.build h4 i{background:#5B9DFF;}
+  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
+  .statcol.build .hl4{color:#8FBAFF;} .statcol.build .hl4 i{background:#5B9DFF;}
   .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man h4{color:#E8A44C;} .statcol.man h4 i{background:#E8A44C;}
+  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
   .statcol ul{margin-top:14px;}
   .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
     font-weight:700;border-bottom:1px solid var(--hair);}
@@ -205,7 +205,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v67.0">v67.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v68.0">v68.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -373,7 +373,7 @@
             does nail clips. The&nbsp;nurse has <b>Thursday 11:40</b> or <b>Friday 09:15</b> at&nbsp;Riverside. If you want the&nbsp;check
             done at&nbsp;the&nbsp;same visit I'll put it with&nbsp;a&nbsp;vet who sees rabbits rather than splitting it into&nbsp;two trips.</div>
           <div class="exout">
-            <h5 role="heading" aria-level="4">What it left behind</h5>
+            <div class="hl5" role="heading" aria-level="4">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Booked with&nbsp;a&nbsp;clinician marked in&nbsp;your&nbsp;setup as seeing that&nbsp;species</span></div>
             <div class="exrow"><i>✓</i><span>Two appointments merged into&nbsp;one visit by&nbsp;your&nbsp;own rule, not improvised</span></div>
             <div class="exrow"><i>✓</i><span>New patient record opened with&nbsp;species, age and owner contact</span></div>
@@ -391,7 +391,7 @@
             extractions are needed, plus <b>$95</b> for&nbsp;pre-anaesthetic bloods. Whether they are necessary for&nbsp;her is a&nbsp;clinical call and the&nbsp;vet will make it at&nbsp;the&nbsp;pre-op check — what I can tell you is that&nbsp;your&nbsp;practice
             recommends them over&nbsp;eight years old. I have a&nbsp;pre-op slot Monday 09:30. Shall I hold it?</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Existing estimate restated exactly, from&nbsp;your&nbsp;own weight-banded list</span><span class="amt">$420–580</span></div>
             <div class="exrow"><i>✓</i><span>Pre-op check held; record moved to&nbsp;<b>Appointment booked</b></span></div>
             <div class="exrow"><i>✕</i><span>The&nbsp;"is it necessary" half was handed to&nbsp;the&nbsp;vet, not answered</span></div>
@@ -410,7 +410,7 @@
             attached. I've noted that&nbsp;she has about&nbsp;two days left, because that's&nbsp;the&nbsp;part that&nbsp;decides how quickly
             they come back to&nbsp;you.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Request queued to&nbsp;the&nbsp;duty vet with&nbsp;the&nbsp;record already open</span></div>
             <div class="exrow"><i>✓</i><span>The&nbsp;urgent detail — days of&nbsp;medication remaining — captured and flagged</span></div>
             <div class="exrow"><i>✕</i><span>No&nbsp;drug named, no&nbsp;quantity confirmed, no&nbsp;timing suggested</span></div>
@@ -429,7 +429,7 @@
             reply STOP and I'll leave you alone.</div>
           <div class="exturn"><span class="who">Owner</span>Saturday please.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Overdue booster chased without&nbsp;anyone opening a&nbsp;list</span></div>
             <div class="exrow"><i>✓</i><span>Booked into&nbsp;the&nbsp;nurse clinic; next annual reminder set on&nbsp;the&nbsp;same record</span></div>
             <div class="exrow"><i>✓</i><span>Opt-out honoured in&nbsp;the&nbsp;message itself, not buried in&nbsp;a&nbsp;footer</span></div>
@@ -448,7 +448,7 @@
             without&nbsp;a&nbsp;vet's&nbsp;referral on&nbsp;the&nbsp;record, so I've asked Riverside to&nbsp;confirm it and flagged you for&nbsp;a&nbsp;callback
             today. Westfield's&nbsp;own number and hours are on&nbsp;their&nbsp;way to&nbsp;you now.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Answered from&nbsp;the&nbsp;branch that&nbsp;actually has the&nbsp;equipment, not the&nbsp;one they dialled</span></div>
             <div class="exrow"><i>✓</i><span>Referral requirement stated instead of&nbsp;quietly booked around</span></div>
             <div class="exrow"><i>✓</i><span>Callback queued at&nbsp;the&nbsp;referring branch, record shared between both</span></div>
@@ -465,7 +465,7 @@
           <div class="exturn hand"><span class="who">Saleringo</span>I'm not going to&nbsp;answer that, and I'm sorry — it isn't
             a&nbsp;question for&nbsp;me. I'm connecting you to&nbsp;the&nbsp;on-call vet now. Stay on&nbsp;the&nbsp;line; they'll have his&nbsp;record in&nbsp;front of&nbsp;them and I've told them what you said.</div>
           <div class="exout">
-            <h5>What it left behind</h5>
+            <div class="hl5">What it left behind</div>
             <div class="exrow"><i>✓</i><span>Connected to&nbsp;the&nbsp;on-call number you nominated, in&nbsp;the&nbsp;first sentence</span></div>
             <div class="exrow"><i>✓</i><span>Record opened with&nbsp;the&nbsp;owner's&nbsp;words passed on, so nothing had to&nbsp;be repeated</span></div>
             <div class="exrow"><i>✓</i><span>Flagged for&nbsp;a&nbsp;follow-up call by&nbsp;a&nbsp;named member of&nbsp;your&nbsp;team</span></div>
@@ -577,7 +577,7 @@
         after they have already paid. Here it is where you can see it — and the&nbsp;middle column says so rather than listing something aspirational.</p>
     </div>
     <div class="statgrid reveal">
-      <div class="statcol now"><h4 role="heading" aria-level="3"><i></i>Live today</h4>
+      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
         <ul>
           <li>Google Calendar &amp; Outlook Calendar<span>Two-way. Real availability is read before a&nbsp;slot is offered, and the&nbsp;booking is written back</span></li>
           <li>Your&nbsp;existing phone number<span>Forward everything, or only the&nbsp;calls nobody picks up in&nbsp;a&nbsp;few rings</span></li>
@@ -586,12 +586,12 @@
           <li>Saleringo's&nbsp;own inbox &amp; scheduler<span>Every conversation lands here, with&nbsp;bookings on&nbsp;their&nbsp;own calendar</span></li>
         </ul>
       </div>
-      <div class="statcol build"><h4><i></i>In&nbsp;build</h4>
+      <div class="statcol build"><div class="hl4"><i></i>In&nbsp;build</div>
         <ul>
           <li>Nothing veterinary-specific sits here today<span>When a&nbsp;direct link to&nbsp;a&nbsp;practice-management system is genuinely being built, this&nbsp;column is where it will appear — and it still will not get a&nbsp;date</span></li>
         </ul>
       </div>
-      <div class="statcol build"><h4><i></i>Bridge for&nbsp;now</h4>
+      <div class="statcol build"><div class="hl4"><i></i>Bridge for&nbsp;now</div>
         <ul>
           <li>Your&nbsp;practice-management system<span>No&nbsp;direct link, whichever one you run. Records reach it through&nbsp;Zapier or a&nbsp;CSV your&nbsp;desk imports</span></li>
           <li>Your&nbsp;accounts and reminder tools<span>Same path. A&nbsp;bridge means a&nbsp;person or an&nbsp;automation does a&nbsp;step — that is a&nbsp;real cost, and it is the&nbsp;usual reason software like this&nbsp;quietly stops being used</span></li>
@@ -719,27 +719,27 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v67.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v68.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="fcol"><h3 aria-level="3">The product</h3><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+      <div class="fcol"><div class="hl3">The product</div><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
         <a class="lnk" href="../voice.html">AI phone</a>
         <a class="lnk" href="../webchat.html">Website chat</a>
         <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
         <a class="lnk" href="../integrations.html">Integrations</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
-      <div class="fcol ftrades"><h3 aria-level="3">Your trade</h3><div class="ftgrid"><div class="fgrp"><h5 aria-level="4">Health &amp; care</h5><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html" aria-current="page">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><h5 aria-level="4">Home &amp; property</h5><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><h5 aria-level="4">Vehicle, plant &amp; storage</h5><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><h5 aria-level="4">Booked by appointment</h5><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><h5 aria-level="4">Places &amp; hospitality</h5><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><h5 aria-level="4">Professional &amp; public</h5><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><h5 aria-level="4">Online &amp; multi-site</h5><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
-      <div class="fcol"><h3 aria-level="3">Prices &amp; proof</h3><a class="lnk" href="../pricing.html">Pricing</a>
+      <div class="fcol ftrades"><div class="hl3">Your trade</div><div class="ftgrid"><div class="fgrp"><div class="hl5">Health &amp; care</div><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html" aria-current="page">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><div class="hl5">Home &amp; property</div><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><div class="hl5">Vehicle, plant &amp; storage</div><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><div class="hl5">Booked by appointment</div><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><div class="hl5">Places &amp; hospitality</div><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><div class="hl5">Professional &amp; public</div><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><div class="hl5">Online &amp; multi-site</div><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All twenty-five trades →</a></div>
+      <div class="fcol"><div class="hl3">Prices &amp; proof</div><a class="lnk" href="../pricing.html">Pricing</a>
         <a class="lnk" href="../pricing.html#plans">Plans</a>
         <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
         <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
         <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
         <a class="lnk" href="../demo.html">See a conversation</a>
         <a class="lnk" href="../get-started.html">Get my plan</a></div>
-      <div class="fcol"><h3 aria-level="3">Company &amp; trust</h3><a class="lnk" href="../about.html">About</a>
+      <div class="fcol"><div class="hl3">Company &amp; trust</div><a class="lnk" href="../about.html">About</a>
         <a class="lnk" href="../security.html">Security &amp; trust</a>
         <a class="lnk" href="../verified-ai.html">How answers are checked</a>
         <a class="lnk" href="../privacy.html">Privacy policy</a>
@@ -764,13 +764,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=67.0"></script>
-<script src="../../assets/js/balance.js?v=67.0" defer></script>
-<script src="../../assets/js/panels.js?v=67.0" defer></script>
-<script src="../../assets/js/wrap.js?v=67.0" defer></script>
-<script src="../../assets/js/rail.js?v=67.0" defer></script>
-<script src="../../assets/js/canvas.js?v=67.0" defer></script>
-<script src="../../assets/js/scenes.js?v=67.0" defer></script>
-<script src="../../assets/js/guide.js?v=67.0"></script>
+<script src="../../assets/js/site.js?v=68.0"></script>
+<script src="../../assets/js/balance.js?v=68.0" defer></script>
+<script src="../../assets/js/panels.js?v=68.0" defer></script>
+<script src="../../assets/js/wrap.js?v=68.0" defer></script>
+<script src="../../assets/js/rail.js?v=68.0" defer></script>
+<script src="../../assets/js/canvas.js?v=68.0" defer></script>
+<script src="../../assets/js/scenes.js?v=68.0" defer></script>
+<script src="../../assets/js/guide.js?v=68.0"></script>
 </body>
 </html>
