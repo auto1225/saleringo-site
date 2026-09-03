@@ -3702,3 +3702,7 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
   main [class*="cols"]{grid-template-columns:minmax(0,1fr) !important;}
   .scene-frame,.scene{min-width:0;max-width:100%;}
 }
+/* 캡션 속 링크는 폰에서 제 줄을 갖는다 — 인라인 흐름이 어떤 이유로든 밖으로 밀리지 않게 */
+@media (max-width:700px){
+  .seccap .linkcta{display:block;margin-top:8px;width:max-content;max-width:100%;float:none;position:static;}
+}
