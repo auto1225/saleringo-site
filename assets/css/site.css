@@ -3688,3 +3688,11 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
 .cmp .lim{color:var(--amber-ink,#9A6B1F);}
 /* 레일은 히어로를 지나기 전엔 보이지 않는다 — 첫 화면의 '시작' 지시는 하나 */
 .stickycta.hasguide:not(.show){transform:translateY(120%);}
+/* 금액 SVG 장면: 쪽 로컬 .scene-frame.x 규칙(특이도 0,2,0)이 overflow:hidden 을 이겨
+   720px 로 키운 SVG 가 잘렸다 — 모바일에서만 스크롤을 강제한다 */
+@media (max-width:620px){
+  .scene-frame,.scene{overflow-x:auto !important;overflow-y:hidden;-webkit-overflow-scrolling:touch;}
+  .scene-frame > svg,.scene > svg{min-width:720px;}
+  .d60ticks{flex-wrap:wrap;gap:6px 14px;justify-content:flex-start;}
+  .seccap{white-space:normal;overflow-wrap:anywhere;}
+}
