@@ -3652,3 +3652,20 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(23,189,189,.14);co
 /* 안내 링의 닫기 단추: 26px 은 손가락 표적으로 작음 — 그림은 두고 표적만 44px */
 .fr-x{width:32px;height:32px;right:-16px;top:-16px;font-size:16px;}
 .fr-x::before{content:"";position:absolute;inset:-6px;}
+
+/* ═══════ 모바일 전수 스캔 잔여 (144쪽 @375, 2026-09-01) ═══════ */
+@media (max-width:700px){
+  /* WhatsApp 쪽: 지역 카드 6열 격자에 모바일 규칙이 없었다 */
+  .reggrid{grid-template-columns:repeat(2,1fr);}
+  /* 24시간 창 타임라인 SVG(viewBox 1000): 고유 폭으로 그려져 화면을 넘었다 */
+  .tlpanel svg{width:100%;max-width:100%;height:auto;}
+  /* 업종 쪽 문자 스레드 목업: 안쪽 요소의 최소 폭이 카드를 밀어냈다 */
+  .msgthread,.msgthread *{max-width:100%;min-width:0;}
+  /* 위험 되돌림 행: 두 열이 375 에서 카드 패딩까지 더하면 넘친다 */
+  .riskrow{grid-template-columns:1fr;}
+  /* 한국어 요금표 */
+  .krate{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  /* &nbsp; 로 이어 붙인 긴 구절과 단추가 몇 px 넘치는 것 — 어디서든 꺾일 수 있게 */
+  .concl,.photosplit .copy,.cnp,.cnl{overflow-wrap:anywhere;}
+  .btn{max-width:100%;white-space:normal;}
+}
