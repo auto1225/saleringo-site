@@ -15,7 +15,7 @@ import io
 import os
 
 SITE = 'https://claude.saleringo.com'
-VER = '77.0'
+VER = '78.0'
 FONTS = ('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700'
          '&family=IBM+Plex+Sans:wght@400;500;600;700'
          '&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap')

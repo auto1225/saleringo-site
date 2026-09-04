@@ -353,3 +353,20 @@ html body[data-chan="chat"]{--accent:#2C63B8 !important;--accent-deep:#24518F !i
 html body[data-chan="msg"],html body[data-chan="messaging"]{--accent:#2F855A !important;--accent-deep:#1E9E63 !important;--accent-glass:rgba(47,133,90,.10) !important;}
 html body .hero.photohero:has(.mapwide,.scene-frame,.stagegrid,.thumbstrip,.phframe,.phoneframe,.stage,.appwin) .bgimg{display:none !important;}
 html body .hero.photohero:has(.mapwide,.scene-frame,.stagegrid,.thumbstrip,.phframe,.phoneframe,.stage,.appwin) :is(.hero-inner .hero-panel,.hero-inner.hero-panel,.heroinner .hero-panel,.hero-inner .heroband){max-width:none !important;}
+/* phones: copy first; the hero photo frame folds away and the copy takes the full width */
+@media (max-width:900px){
+  html body .hero.photohero .bgimg{display:none !important;}
+  html body .hero.photohero:not(:has(.heroshelf)) :is(.hero-inner.hero-panel,.hero-inner .heroband,.heroinner .hero-panel){max-width:none !important;}
+  html body .hero.photohero:not(:has(.heroshelf)) .heroinner{min-height:0 !important;}
+  html body .hero.photohero:not(:has(.heroshelf)){padding-top:72px !important;padding-bottom:40px !important;}
+}
+@media (max-width:900px){
+  html body .hero.photohero .bgimg.bgimg.bgimg{display:none !important;}
+  html body .hero.photohero .heroband.heroband.heroband,html body .hero.photohero .hero-panel.hero-panel.hero-panel{max-width:none !important;width:auto !important;}
+  html body .hero.photohero h1{max-width:none !important;}
+}
+/* page gutter on phones and tablets (the 56px gutter is for desktop only) */
+@media (max-width:900px){html body .wrap{padding-left:24px !important;padding-right:24px !important;}}
+@media (max-width:620px){html body .wrap{padding-left:18px !important;padding-right:18px !important;}}
+/* Korean headings keep their authored line breaks on phones; hiding <br> glued words together (“동안이렇게”) */
+@media (max-width:620px){html[lang^="ko"] body :is(h1,h2,h3,.h2) br{display:inline !important;}}
