@@ -25,7 +25,7 @@ def ph(i):
 
 TRADES2 = [
 {
- 'slug': 'home-services', 'owner': '사장님', 'name': '설비 · 수리', 'photo': ph('5463587'),
+ 'slug': 'home-services', 'owner': '사장님', 'name': '설비 · 수리', 'photo': ph('32588548'),
  'kicker': '설비 &middot; 수리 &middot; 인테리어 시공',
  'h1': '물이 새는 집에서는<br>두 번째 업체에 겁니다.',
  'sub': '보일러가 멈추고 배관이 터진 사람은 기다리지 않습니다. '
@@ -90,7 +90,7 @@ TRADES2 = [
  },
 },
 {
- 'slug': 'pest-control', 'owner': '사장님', 'name': '방역 · 해충방제', 'photo': ph('9246012'),
+ 'slug': 'pest-control', 'owner': '사장님', 'name': '방역 · 해충방제', 'photo': ph('4176541'),
  'kicker': '방역 &middot; 해충방제',
  'h1': '바퀴벌레를 본 사람은<br>지금 전화합니다.',
  'sub': '내일 아침까지 기다리는 사람은 없습니다. 본 그 자리에서 검색하고, '
@@ -119,7 +119,7 @@ TRADES2 = [
  'stages': ['문의 접수', '시공 예약', '현장 시공', '재시공 안내', '정기 관리 전환'],
 },
 {
- 'slug': 'property-management', 'owner': '소장님', 'name': '건물관리', 'photo': ph('3547267'),
+ 'slug': 'property-management', 'owner': '소장님', 'name': '건물관리', 'photo': ph('35707771'),
  'kicker': '건물관리 &middot; 시설관리',
  'h1': '관리사무소 전화는<br>퇴근한 뒤에 울립니다.',
  'sub': '누수와 정전, 주차 시비는 근무 시간에 맞춰 일어나지 않습니다. '
@@ -332,7 +332,7 @@ TRADES2 = [
  'stages': ['문의 접수', '티타임 확보', '확인 · 입금', '라운드', '재예약 · 대기 안내'],
 },
 {
- 'slug': 'funeral-homes', 'owner': '담당자님', 'name': '장례식장', 'photo': ph('12534775'),
+ 'slug': 'funeral-homes', 'owner': '담당자님', 'name': '장례식장', 'photo': ph('7317665'),
  'kicker': '장례식장 &middot; 상조',
  'h1': '이 전화만큼은<br>기다리게 하면 안 됩니다.',
  'sub': '거는 사람은 방금 가족을 잃었습니다. '
@@ -457,7 +457,7 @@ TRADES2 = [
  'stages': ['문의 접수', '단순 안내 종결', '담당자 연결', '상담', '접수 완료'],
 },
 {
- 'slug': 'public-sector', 'owner': '담당자님', 'name': '공공기관', 'photo': ph('9129106'),
+ 'slug': 'public-sector', 'owner': '담당자님', 'name': '공공기관', 'photo': ph('6627907'),
  'kicker': '공공기관 &middot; 주민센터 &middot; 공단',
  'h1': '민원 전화는<br>화가 난 상태로 걸려 옵니다.',
  'sub': '이미 두 번 돌려졌고, 세 번째로 거는 전화입니다. '

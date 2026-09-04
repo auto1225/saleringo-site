@@ -484,7 +484,7 @@ page('ai-answering-service.html',
 
 # ══ 4 · 해외 대상 ════════════════════════════════════════════════════════
 cross = '\n\n'.join([
- hero_photo('29123790', '해외 대상 사업',
+ hero_photo('4173228', '해외 대상 사업',
   '한국이 잘 때<br>주문이 들어옵니다.',
   '해외로 파는 회사와 외국인 손님을 받는 가게는 같은 문제를 겪습니다. '
   '문의가 오는 시간에 답할 사람이 없다는 것입니다.',
@@ -551,7 +551,7 @@ page('cross-border.html', '해외 대상 사업 &mdash; 한국이 잘 때 오는
      '해외로 파는 회사와 외국인 손님을 받는 가게를 위한 시차·언어 대응. '
      '30개 이상 언어로 답하고 기록은 한국어 요약과 함께 남습니다. 원화 청구, 세금계산서 발행.',
      cross, css=CSS, grade='voice',
-     image=(PH % ('29123790', '29123790')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
+     image=(PH % ('4173228', '4173228')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
      crumbs=[('홈', 'index.html'), ('해외 대상 사업', 'cross-border.html')])
 
 
@@ -572,7 +572,7 @@ def window(title, note, closed, turns):
 
 
 demo = '\n\n'.join([
- hero_photo('18441167', '대화 한 건 보기',
+ hero_photo('36713414', '대화 한 건 보기',
   '설명을 읽는 것보다<br>통화를 읽는 편이 빠릅니다.',
   '아래 세 가지는 각각 다른 상황입니다. 잘 풀리는 통화, 막히는 통화, '
   '그리고 기계가 물러나야 하는 통화. 세 번째가 가장 중요합니다.',
@@ -654,7 +654,7 @@ page('demo.html', '대화 한 건 보기 &mdash; 잘 풀리는 통화, 막히는
      '미용실 예약, 치과의 없는 가격, 동물병원 응급. 세 가지 상황에서 AI가 어떻게 답하고 '
      '어디에서 물러나는지 통화 그대로 실었습니다.',
      demo, css=CSS, grade='voice',
-     image=(PH % ('18441167', '18441167')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
+     image=(PH % ('36713414', '36713414')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
      crumbs=[('홈', 'index.html'), ('대화 한 건 보기', 'demo.html')])
 
 

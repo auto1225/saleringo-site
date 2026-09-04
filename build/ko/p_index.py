@@ -19,7 +19,7 @@ os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 from shell import page, NAV, FOOT
 
 NB = '&nbsp;'
-HERO = 'https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg'
+HERO = 'https://images.pexels.com/photos/36713414/pexels-photo-36713414.jpeg'
 
 CSS = """
   .hero{position:relative;overflow:hidden;display:block;padding-bottom:96px;}

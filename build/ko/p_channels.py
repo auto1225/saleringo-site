@@ -248,7 +248,7 @@ page('platform.html', '플랫폼과 CRM &mdash; 받는 것으로 끝나지 않�
 
 # ══ 2 · AI 전화 ══════════════════════════════════════════════════════════
 voice = '\n\n'.join([
- hero_photo('19061187', 'AI 전화',
+ hero_photo('8101355', 'AI 전화',
   '쓰던 번호를 그대로 두고<br>못 받은 전화만 넘길 수 있습니다.',
   '번호를 바꾸지 않습니다. 명함과 간판, 네이버 플레이스에 적힌 그 번호 그대로 두고, '
   '벨이 몇 번 울린 뒤에도 아무도 받지 않을 때만 AI가 받습니다.',
@@ -346,7 +346,7 @@ page('voice.html', 'AI 전화 &mdash; 쓰던 번호 그대로, 못 받은 전화
      '번호를 바꾸지 않고 못 받은 전화만 AI가 받습니다. 연결 방식 세 가지, 통화 녹음 처리, '
      '분당 190원부터의 통화료를 적었습니다.',
      voice, css=CSS, grade='voice',
-     image=(PH % ('19061187', '19061187')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
+     image=(PH % ('8101355', '8101355')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
      crumbs=[('홈', 'index.html'), ('AI 전화', 'voice.html')])
 
 
@@ -437,7 +437,7 @@ page('webchat.html', '홈페이지 채팅 &mdash; 가격을 못 찾아 나가는
 
 # ══ 4 · 카카오톡 ═════════════════════════════════════════════════════════
 kakao = '\n\n'.join([
- hero_photo('31080810', '카카오톡 &amp; 메신저',
+ hero_photo('10375889', '카카오톡 &amp; 메신저',
   '채널에 쌓인 안 읽은 문의는<br>대부분 예약이었습니다.',
   '카카오톡 채널로 오는 문의는 전화보다 가볍게 옵니다. 그래서 더 많이 오고, 더 많이 밀립니다. '
   '사흘 뒤에 답장하면 그 손님은 이미 다른 곳에 다녀왔습니다.',
@@ -516,7 +516,7 @@ page('whatsapp.html', '카카오톡 &amp; 메신저 응대 &mdash; 밀린 문의
      '카카오톡 채널, 네이버 톡톡, 인스타그램 DM으로 온 문의를 전화·홈페이지 채팅과 같은 내용으로 '
      '답하고 예약까지 잡습니다. 광고 발송에는 쓰지 않습니다.',
      kakao, css=CSS, grade='chat',
-     image=(PH % ('31080810', '31080810')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
+     image=(PH % ('10375889', '10375889')) + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
      crumbs=[('홈', 'index.html'), ('카카오톡과 메신저', 'whatsapp.html')])
 
 

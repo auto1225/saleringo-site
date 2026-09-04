@@ -137,7 +137,7 @@ html[lang^="ko"] .reccard .rc-lbl{text-transform:none;font-size:13px;}
 .reccard .rc-val{margin:0;font-weight:500;color:#141A1F;line-height:1.45;}
 .reccard .rc-note{margin:2px 0 0;font-size:13px;color:#616B75;line-height:1.5;}
 .reccard .rc-foot{margin:0;font-size:13px;color:#616B75;border-top:1px solid #EEEAE2;padding-top:12px;line-height:1.5;}
-.hero-inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center;padding-top:96px !important;padding-bottom:88px;}
+.hero-inner:has(.heroshelf){display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center;padding-top:96px !important;padding-bottom:88px;}
 .hero .heroband{max-width:640px;}
 .hero .sub{font-size:clamp(17px,1.35vw,20px);line-height:1.5;margin-top:24px;max-width:560px;}
 html[lang^="ko"] .hero .sub{line-height:1.75;font-size:clamp(16px,1.25vw,18px);}
@@ -185,7 +185,7 @@ html[lang^="ko"] .hero .sub{line-height:1.75;font-size:clamp(16px,1.25vw,18px);}
 .by .avatar,.av-c{color:#FFFFFF;}
 
 /* ── Fixes found on the first render ──────────────────────────────── */
-.hero-inner{display:grid !important;}
+.hero-inner:has(.heroshelf){display:grid !important;}
 h1 span[style*="--teal"],h2 span[style*="--teal"],.h2 span[style*="--teal"],h1 span[style*="--accent"],h2 span[style*="--accent"],
 h1 .teal,h2 .teal,.h2 .teal,h1 em,h2 em,.h2 em{color:inherit !important;font-style:normal;}
 .bub{border-radius:14px;box-shadow:none;}
@@ -296,3 +296,60 @@ html body .fld select option,html body select option{background:#FFFFFF !importa
 .reccard .pill{white-space:nowrap;}
 .reccard .rc-top{flex-wrap:wrap;}
 html body .avatar,html body .av,html body .av-b,html body .av-c{color:#FFFFFF !important;}
+
+/* ── Photo heroes: the photo stands beside the copy, never behind it ── */
+html body .hero.photohero{min-height:0 !important;padding:0 0 64px !important;position:relative;}
+html body .hero.photohero:not(:has(.heroshelf,.hero-split,.herogrid,.herostage)) .bgimg{display:block !important;position:absolute;top:112px;bottom:64px;
+  right:max(20px,calc((100% - 1240px)/2 + 56px));width:min(38%,440px);border-radius:14px;overflow:hidden;z-index:0;pointer-events:none;
+  border:1px solid #E2DDD3;box-shadow:0 1px 2px rgba(20,26,31,.05),0 24px 48px -32px rgba(20,26,31,.22);}
+html body .hero.photohero .bgimg img{width:100%;height:100%;object-fit:cover;animation:none !important;transform:none !important;filter:none !important;opacity:1 !important;}
+html body .hero.photohero .heroinner,html body .hero.photohero .hero-inner{position:relative;z-index:1;}
+html body .hero.photohero:not(:has(.heroshelf)) .heroinner{min-height:400px;}
+html body .hero.photohero:not(:has(.heroshelf)) .heroinner .hero-panel,html body .hero.photohero:not(:has(.heroshelf)) .hero-inner .heroband{max-width:56%;}
+@media (max-width:900px){
+  html body .hero.photohero:not(:has(.heroshelf,.hero-split,.herogrid,.herostage)) .bgimg{position:static;width:auto;height:220px;margin:20px 20px 0;}
+  html body .hero.photohero:not(:has(.heroshelf)) .heroinner{min-height:0;}
+  html body .hero.photohero:not(:has(.heroshelf)) .heroinner .hero-panel,html body .hero.photohero:not(:has(.heroshelf)) .hero-inner .heroband{max-width:none;}
+}
+html body .hero.photohero:not(:has(.heroshelf,.hero-split,.herogrid,.herostage)) .bgimg{inset:auto !important;left:auto !important;top:112px !important;bottom:64px !important;
+  right:max(20px,calc((100% - 1240px)/2 + 56px)) !important;width:min(38%,440px) !important;height:auto !important;transform:none !important;}
+html body .hero.photohero .bgimg::before,html body .hero.photohero .bgimg::after{display:none !important;}
+@media (max-width:900px){html body .hero.photohero:not(:has(.heroshelf,.hero-split,.herogrid,.herostage)) .bgimg{position:static !important;width:auto !important;height:220px !important;margin:20px 20px 0;}}
+/* hero photo frame: fixed height, never the whole header */
+html body .hero.photohero:not(:has(.heroshelf,.hero-split,.herogrid,.herostage)) .bgimg{bottom:auto !important;height:460px !important;}
+html body .hero.photohero:not(:has(.heroshelf)) .heroinner{min-height:380px;}
+html body .hero.photohero:not(:has(.heroshelf)) .heroinner .hero-panel,html body .hero.photohero:not(:has(.heroshelf)) .hero-inner .heroband{max-width:56% !important;width:auto !important;}
+html body .hero.photohero .hero-panel h1,html body .hero.photohero .heroband h1{max-width:none !important;}
+/* decorative glows that still took up room */
+html body .aur,html body .glow,html body .hglow,html body .aurora,html body .spot,html body .orb{display:none !important;}
+/* a hero that already carries its own visual (phone frame, stage, mock) keeps the photo out of the way */
+html body .hero.photohero:has(.heroinner :is(img,canvas,svg,.phframe,.phoneframe,.stage,.stageimg,.mock,.appwin)) .bgimg,
+html body .hero.photohero:has(.hero-inner :is(img,canvas,svg,.phframe,.phoneframe,.stage,.stageimg,.mock,.appwin)) .bgimg{display:none !important;}
+html body .hero.photohero:has(.heroinner :is(img,canvas,svg,.phframe,.phoneframe,.stage,.stageimg,.mock,.appwin)) .heroinner .hero-panel{max-width:none !important;}
+html body .hero.photohero:not(:has(.heroshelf)) .hero-inner .hero-panel{max-width:56% !important;width:auto !important;}
+/* the two-column hero grid is for the home page only (copy + record card); other heroes flow */
+html body .hero-inner:has(.heroshelf){display:grid !important;}
+html body .hero-inner.hero-panel{display:block !important;}
+html body .hero.photohero:not(:has(.heroshelf)) .hero-inner.hero-panel,
+html body .hero.photohero:not(:has(.heroshelf)) .hero-inner .heroband,
+html body .hero.photohero:not(:has(.heroshelf)) .heroinner .hero-panel{max-width:56% !important;width:auto !important;}
+html body .hero.photohero:has(.heroinner :is(img,canvas,svg,.phframe,.phoneframe,.stage,.stageimg,.mock,.appwin)) .heroinner .hero-panel,
+html body .hero.photohero:has(.hero-inner :is(img,canvas,svg,.phframe,.phoneframe,.stage,.stageimg,.mock,.appwin)) .hero-inner.hero-panel{max-width:none !important;}
+/* industry & product heroes: a size that keeps the poster line-breaks to three or four lines */
+html body .hero.photohero:not(:has(.heroshelf)) h1{font-size:clamp(34px,3.6vw,50px);}
+html[lang^="ko"] body .hero.photohero:not(:has(.heroshelf)) h1{font-size:clamp(28px,3.2vw,44px);}
+html body .hero.photohero:not(:has(.heroshelf)){padding-top:104px !important;}
+html body .hero .sub,html body .hero .lead{color:#3B454D !important;opacity:1 !important;}
+html body .hero.photohero:has(.hero-inner :is(.scene-frame,.mapwide,.stagegrid,.thumbstrip)) .bgimg,
+html body .hero.photohero:has(.heroinner :is(.scene-frame,.mapwide,.stagegrid,.thumbstrip)) .bgimg{display:none !important;}
+html body .hero.photohero:has(.hero-inner :is(.scene-frame,.mapwide,.stagegrid,.thumbstrip)) .hero-inner .hero-panel{max-width:none !important;}
+/* one display face per language, whatever a page-local style once said */
+html:not([lang^="ko"]) body :is(h1,h2,.h2){font-family:'Bricolage Grotesque','IBM Plex Sans',sans-serif !important;font-weight:600 !important;letter-spacing:-.02em !important;}
+html[lang^="ko"] body :is(h1,h2,.h2){font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif !important;font-weight:700 !important;letter-spacing:-.02em !important;}
+/* one accent: industry pages that tinted themselves amber, purple or blue come back to the brand teal;
+   the three channel colours (voice · chat · messaging) keep their meaning */
+html body,html body[data-chan="voice"]{--accent:#0B7878 !important;--accent-deep:#0A5F5F !important;--accent-glass:rgba(11,120,120,.10) !important;}
+html body[data-chan="chat"]{--accent:#2C63B8 !important;--accent-deep:#24518F !important;--accent-glass:rgba(44,99,184,.10) !important;}
+html body[data-chan="msg"],html body[data-chan="messaging"]{--accent:#2F855A !important;--accent-deep:#1E9E63 !important;--accent-glass:rgba(47,133,90,.10) !important;}
+html body .hero.photohero:has(.mapwide,.scene-frame,.stagegrid,.thumbstrip,.phframe,.phoneframe,.stage,.appwin) .bgimg{display:none !important;}
+html body .hero.photohero:has(.mapwide,.scene-frame,.stagegrid,.thumbstrip,.phframe,.phoneframe,.stage,.appwin) :is(.hero-inner .hero-panel,.hero-inner.hero-panel,.heroinner .hero-panel,.hero-inner .heroband){max-width:none !important;}

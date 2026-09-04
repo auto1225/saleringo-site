@@ -165,7 +165,7 @@ TRADES = [
  },
 },
 {
- 'slug': 'academies', 'owner': '원장님', 'name': '학원', 'photo': ph('17735127'),
+ 'slug': 'academies', 'owner': '원장님', 'name': '학원', 'photo': ph('6238038'),
  'kicker': '학원 &middot; 교습소',
  'h1': '학부모는 아이가 잠든 뒤에<br>전화를 겁니다.',
  'sub': '밤 열 시 반, 학원 문은 닫혔고 원장님은 퇴근했습니다. '
@@ -349,7 +349,7 @@ TRADES = [
  },
 },
 {
- 'slug': 'real-estate', 'owner': '소장님', 'name': '부동산', 'photo': ph('12805822'),
+ 'slug': 'real-estate', 'owner': '소장님', 'name': '부동산', 'photo': ph('8482517'),
  'kicker': '부동산 중개',
  'h1': '매물 문의는<br>사무실에 없을 때 옵니다.',
  'sub': '임장을 나가 있는 시간이 곧 손님이 전화하는 시간입니다. '
@@ -439,7 +439,7 @@ TRADES = [
  'stages': ['문의 접수', '상담 예약', '상담 · 홀 투어', '견적 확정', '계약'],
 },
 {
- 'slug': 'senior-care', 'owner': '원장님', 'name': '요양', 'photo': ph('18429307'),
+ 'slug': 'senior-care', 'owner': '원장님', 'name': '요양', 'photo': ph('18429371'),
  'kicker': '요양원 &middot; 방문요양 &middot; 주간보호',
  'h1': '가장 어려운 전화를<br>가장 어려운 상태에서 겁니다.',
  'sub': '부모님을 모실 곳을 찾는 전화입니다. 거는 사람은 지쳐 있고, 무엇부터 물어야 할지도 모릅니다. '
