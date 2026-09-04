@@ -18,6 +18,8 @@ os.chdir(os.path.dirname(os.path.dirname(HERE)))
 from shell import page, NAV, FOOT
 from trades import TRADES
 from trades2 import TRADES2
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import illus
 
 TRADES = TRADES + TRADES2
 
@@ -112,13 +114,13 @@ TPL = """
 
 <section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>그날 밤의 통화</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal">{owner}이 자는 동안<br>이렇게 흘러갑니다.</h2>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>{when_eyebrow}</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">{when_h2}</h2>
     <div class="appwin reveal" style="margin-top:34px;">
       <div class="bar"><i></i><i></i><i></i>
-        <span class="tt">{name} &mdash; <b>영업 종료 후</b></span>
+        <span class="tt">{name} &mdash; <b>{when_tt}</b></span>
         <span class="illus">예시 &middot; 가상의 상담</span>
-        <span class="closed">문 닫은 시간</span></div>
+        <span class="closed">{when_badge}</span></div>
       <div class="body nightline">{turns}</div>
     </div>
     <p class="seccap reveal" style="margin-top:16px;">실제 고객 사례가 아니라, {name} 요금표와 안전 지침을
@@ -131,7 +133,7 @@ TPL = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>놓쳤을 때</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">{name}에서 못 받은 전화는<br>어디에도 기록되지 않습니다.</h2>
-    <p class="sub reveal" style="max-width:none;">{cost}</p>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">{cost}</p>{ill_night}</div>
   </div>
 </section>
 
@@ -142,7 +144,7 @@ TPL = """
     <p class="sub reveal" style="max-width:none;">아래 네 가지는 설정으로 끄고 켜는 기능이 아니라,
       {name} 응대를 만들 때 처음부터 막아 두는 것입니다. 여기에 걸리면 AI는 답하지 않고
       사람에게 넘깁니다.</p>
-    <ul class="kolist reveal">{refuse}</ul>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;">{refuse}</ul>{ill_handoff}</div>
     <div class="ifwrong reveal">
       <b>사고가 나면</b>
       <ul>
@@ -165,7 +167,7 @@ TPL = """
     <h2 class="h2 reveal">통화가 끝나면<br>이 항목들이 채워져 있습니다.</h2>
     <p class="sub reveal" style="max-width:none;">{name}용 CRM에는 {name}의 항목이 들어 있습니다.
       범용 CRM의 빈칸을 우리 업종에 맞게 고쳐 가며 쓰는 것이 아니라, 첫날부터 우리 업종의 말로 적힙니다.</p>
-    <div class="fieldgrid reveal">{fields}</div>
+    <div class="illrow reveal">{ill_card}<div class="fieldgrid" style="margin-top:0;">{fields}</div></div>
   </div>
 </section>
 {playbook}
@@ -174,6 +176,7 @@ TPL = """
     <div class="secrule reveal"><span class="eyebrow"><i></i>진행 단계</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">문의가 어디까지 왔는지<br>한 줄로 보입니다.</h2>
     <div class="pipe reveal">{stages}</div>
+    <div class="illwide reveal">{ill_pipe}</div>
   </div>
 </section>
 
@@ -194,6 +197,7 @@ TPL = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>다른 업종</span><span class="line"></span></div>
     <h2 class="h2 reveal">우리 업종이 여기 없어도<br>대부분 만들 수 있습니다.</h2>
+    <div class="photowall reveal">{others_photos}</div>
     <div class="otherwall reveal">{others}</div>
   </div>
 </section>
@@ -201,13 +205,14 @@ TPL = """
 <section class="founding t-xl bg-aurora" id="start">
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="h2 onDark reveal">{name} 요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
-    <p class="sub reveal" style="max-width:none;">결제 정보는 받지 않습니다. 손님이 가장 자주 묻는 질문 열 개에
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">{name} 요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
+    <p class="sub" style="max-width:none;">결제 정보는 받지 않습니다. 손님이 가장 자주 묻는 질문 열 개에
       그 요금표로 답하는 녹음을 영업일 하루 안에 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
-    <div class="ctas reveal">
+    <div class="ctas">
       <a class="btn btn-teal" href="../get-started.html">{name} 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="../pricing.html">먼저 요금부터 보기</a>
-    </div>
+    </div></div>{ill_morning}</div>
   </div>
 </section>
 
@@ -287,6 +292,20 @@ def build_playbook(t):
                      before=pb['before'], after=pb['after'], days=days)
 
 
+def other_photos(t):
+    """같은 묶음의 업종을 먼저, 그다음 나머지로 여덟 곳. 사진은 각 업종 페이지의 대표 사진."""
+    mine = [g for _, g in GROUPS if t['slug'] in g]
+    order = [s for s in (mine[0] if mine else []) if s != t['slug']]
+    order += [o['slug'] for o in TRADES if o['slug'] not in order and o['slug'] != t['slug']]
+    by = {o['slug']: o for o in TRADES}
+    out = []
+    for s in order[:8]:
+        o = by[s]
+        out.append('<a href="./%s.html"><img src="%s?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>%s</b></a>'
+                   % (o['slug'], o['photo'], o['name']))
+    return ''.join(out)
+
+
 def build_trade(t):
     turns = []
     for who, when, what in t['call']:
@@ -301,9 +320,19 @@ def build_trade(t):
                      for o in TRADES if o['slug'] != t['slug'])
 
     ctx = dict(t)
+    w = t.get('when') or {}
+    ctx.update(when_eyebrow=w.get('eyebrow', '그날 밤의 통화'),
+               when_h2=w.get('h2', '%s이 자는 동안<br>이렇게 흘러갑니다.' % t['owner']),
+               when_tt=w.get('tt', '영업 종료 후'), when_badge=w.get('badge', '문 닫은 시간'))
     ctx.update(NAV=NAV, FOOT=FOOT, turns=''.join(turns), refuse=refuse,
                fields=fields, stages=stages, others=others,
                playbook=build_playbook(t))
+    ctx.update(ill_night=illus.figure(illus.night('ko'), '하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.'),
+               ill_handoff=illus.figure(illus.handoff('ko', question=t['call'][0][2][:40]), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체와 받아 적은 항목이 함께 갑니다.'),
+               ill_card=illus.figure(illus.card('ko', rows=[(f, None, '통화에서') for f in t['fields'][:4]]), '통화가 끝나면 이 카드가 채워져 있습니다. 항목마다 어디서 나온 값인지가 붙습니다.'),
+               ill_pipe=illus.figure(illus.pipeline('ko', stages=t['stages'][:5]), '{name}의 단계 그대로입니다. 지금 몇 건이 어느 단계에 있는지 한눈에 보입니다.'.format(name=t['name'])),
+               ill_morning=illus.figure(illus.morning('ko'), '밤사이 받은 것이 아침 화면에 이렇게 놓여 있습니다.'),
+               others_photos=other_photos(t))
     body = TPL.format(**ctx)
     page('industries/%s.html' % t['slug'],
          '%s AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법' % t['name'],
@@ -335,6 +364,7 @@ WALL_CSS = """
   .wallcard{display:block;padding:26px 24px;border:1px solid #D5DBE4;border-radius:8px;
     text-decoration:none;transition:all .35s var(--ease);}
   .wallcard:hover{border-color:var(--teal);background:rgba(11,120,120,.05);}
+  .wallcard img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:14px;background:#E2DDD3;}
   .wallcard b{display:block;font-size:var(--fs-lead);color:var(--l-ink);}
   .wallcard span{display:block;margin-top:9px;font-size:var(--fs-sm);line-height:1.75;
     color:var(--l-tx2);}
@@ -378,8 +408,8 @@ WALL = """
         작업이 도입의 절반이고, 도입은 대개 거기서 멈춥니다.</p></div>
     </div>
 
-    <p class="seccap reveal" style="margin-top:22px;">아래 스물다섯 업종은 이 세 가지가 이미
-      만들어져 있습니다. 골라 들어가시면 그 업종의 통화 예시 하나와, 그 업종에서 AI가
+    <p class="seccap reveal" style="margin-top:22px;">지금 운영 중인 팩은 <b>예식장·행사장과 의원 두 가지</b>입니다. 아래 나머지 업종은
+      항목·단계·하지 않는 말의 초안까지 준비해 두었고, 요청하시면 그 업종으로 만들어 드립니다. 골라 들어가시면 그 업종의 통화 예시 하나와, 그 업종에서 AI가
       하지 않는 것, 그리고 통화 뒤에 남는 CRM 항목을 보실 수 있습니다.
       <a class="lnk" href="./examples.html">여섯 업종의 통화는 한 페이지에 모아</a> 두었습니다.</p>
   </div>
@@ -397,7 +427,7 @@ WALL = """
     <h2 class="h2 onDark reveal">목록에 없다고<br>안 되는 것은 아닙니다.</h2>
     <p class="sub reveal" style="max-width:none;">업종별 CRM이란 결국 항목과 단계, 그리고 하면 안 되는 말의
       목록입니다. 요금표와 영업시간, 그리고 &ldquo;이 말은 절대 하면 안 된다&rdquo;는 것 몇 가지만
-      알려 주시면 만들 수 있습니다. 한의원, 세무사무소, 스튜디오, 펜션, 공업사 모두 같은 방식입니다.</p>
+      알려 주시면 만들 수 있습니다. 한의원, 세무사무소, 사진 스튜디오, 산후조리원, 카센터 프랜차이즈처럼 위 목록에 없는 곳도 같은 방식입니다.</p>
     <div class="ctas reveal">
       <a class="btn btn-teal" href="./get-started.html">우리 업종으로 만들어 보기<span class="cir">&#8599;</span></a>
     </div>
@@ -442,8 +472,8 @@ def build_wall():
     out = []
     for title, slugs in GROUPS:
         cards = ''.join(
-            '<a class="wallcard" href="./industries/%s.html"><b>%s</b><span>%s</span>'
-            '<em>통화 읽어 보기 &rarr;</em></a>' % (s, by[s]['name'], LEAD[s]) for s in slugs)
+            '<a class="wallcard" href="./industries/%s.html"><img src="%s?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=315&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="315"><b>%s</b><span>%s</span>'
+            '<em>통화 읽어 보기 &rarr;</em></a>' % (s, by[s]['photo'], by[s]['name'], LEAD[s]) for s in slugs)
         out.append('<div class="wallgrp reveal"><h2>%s</h2><div class="wallrow">%s</div></div>'
                    % (title, cards))
     page('industries.html',

@@ -13,6 +13,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import illus
 from shell import page, NAV, FOOT
 
 NB = '&nbsp;'
@@ -197,6 +200,7 @@ BODY = """
         빼시면 됩니다.</li>
     </ul>
 
+    {ILL_FLOW}
     <div class="trio reveal" style="margin-top:36px;">
       <div><b>하루 안에 무엇이 오는가</b><p>사장님 요금표로 답하는 질문 10개 녹음입니다.
         요금표에 있는 것은 그대로 답하고, 없는 것은 지어내는 대신 멈추는 것까지 같이
@@ -223,6 +227,6 @@ page('get-started.html',
      '시작하기 &mdash; 우리 요금표로 질문 10개에 답하는 AI 녹음을 먼저 받아 보세요',
      '업종과 요금표만 알려 주시면, 그 요금표로 고객 질문 10개에 답하는 AI 녹음을 영업일 하루 안에 '
      '보내 드립니다. 결제 정보는 받지 않습니다. 약정 없음, 세금계산서 발행.',
-     BODY.format(NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
+     BODY.format(ILL_FLOW='<div class="illwide reveal">' + illus.figure(illus.flow3('ko'), '세 가지를 보내 주시면 이 순서로 움직입니다.') + '</div>', NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
      crumbs=[('홈', 'index.html'), ('시작하기', 'get-started.html')])
 print('wrote ko/get-started.html')

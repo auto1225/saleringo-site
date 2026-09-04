@@ -1,0 +1,138 @@
+{
+ "ko": [
+  {
+   "file": "01-ai.mp3",
+   "who": "ai",
+   "text": "안녕하세요, 밝은미소치과입니다. 지금은 진료가 끝난 시간이지만, 예약과 문의는 제가 도와드릴 수 있어요. 무엇을 도와드릴까요?",
+   "dur": 13.78
+  },
+  {
+   "file": "02-user.mp3",
+   "who": "user",
+   "text": "저기, 앞니가 깨졌는데요… 크라운 하면 얼마나 하고, 이번 주에 볼 수 있을까요?",
+   "dur": 6.91
+  },
+  {
+   "file": "03-ai.mp3",
+   "who": "ai",
+   "text": "많이 놀라셨겠어요. 저희 요금표 기준으로 지르코니아 크라운은 55만원이고, 정확한 금액은 검진과 엑스레이 후에 확정됩니다. 이번 주는 목요일 오전 10시 30분과 금요일 오전 8시가 비어 있어요. 어느 쪽이 편하세요?",
+   "dur": 21.72
+  },
+  {
+   "file": "04-user.mp3",
+   "who": "user",
+   "text": "목요일이요.",
+   "dur": 1.78
+  },
+  {
+   "file": "05-ai.mp3",
+   "who": "ai",
+   "text": "네, 목요일 10시 30분으로 잡아 드릴게요. 성함과 연락처를 말씀해 주시겠어요?",
+   "dur": 9.07
+  },
+  {
+   "file": "06-user.mp3",
+   "who": "user",
+   "text": "김지은이고요, 010-4482-5137이에요.",
+   "dur": 5.81
+  },
+  {
+   "file": "07-ai.mp3",
+   "who": "ai",
+   "text": "김지은 님, 목요일 10시 30분 예약되었습니다. 확인 문자를 지금 보내 드리고, 처음 오시는 거라 위치와 주차 안내도 함께 넣어 드릴게요. 혹시 지금 많이 아프신가요?",
+   "dur": 16.75
+  },
+  {
+   "file": "08-user.mp3",
+   "who": "user",
+   "text": "조금 시린 정도예요.",
+   "dur": 2.38
+  },
+  {
+   "file": "09-ai.mp3",
+   "who": "ai",
+   "text": "그러시면 목요일까지 찬 음식은 피해 주시고, 통증이 갑자기 심해지면 이 번호로 다시 전화 주세요. 밤에도 제가 받습니다. 목요일에 뵙겠습니다.",
+   "dur": 14.18
+  },
+  {
+   "file": "10-user.mp3",
+   "who": "user",
+   "text": "네, 감사합니다.",
+   "dur": 2.59
+  },
+  {
+   "file": "11-ai.mp3",
+   "who": "ai",
+   "text": "감사합니다. 편안한 밤 되세요.",
+   "dur": 5.14
+  }
+ ],
+ "en": [
+  {
+   "file": "01-ai.mp3",
+   "who": "ai",
+   "text": "Thanks for calling Brightside Dental. We're closed for the night, but I can book appointments and answer questions. How can I help?",
+   "dur": 7.01
+  },
+  {
+   "file": "02-user.mp3",
+   "who": "user",
+   "text": "Hi — I chipped a front tooth. How much is a crown, and can anyone see me this week?",
+   "dur": 5.35
+  },
+  {
+   "file": "03-ai.mp3",
+   "who": "ai",
+   "text": "I'm sorry, that's never fun. From our fee schedule, a crown runs eleven hundred to sixteen hundred dollars depending on the material, and the exact figure is confirmed after an exam and X-ray. This week I have Thursday at ten thirty or Friday at eight. Which works better?",
+   "dur": 16.61
+  },
+  {
+   "file": "04-user.mp3",
+   "who": "user",
+   "text": "Thursday, please.",
+   "dur": 1.56
+  },
+  {
+   "file": "05-ai.mp3",
+   "who": "ai",
+   "text": "Thursday at ten thirty it is. Can I get your name and a mobile number?",
+   "dur": 4.15
+  },
+  {
+   "file": "06-user.mp3",
+   "who": "user",
+   "text": "It's Jane Kim, five five five, zero one four seven.",
+   "dur": 4.1
+  },
+  {
+   "file": "07-ai.mp3",
+   "who": "ai",
+   "text": "Thank you, Jane. You're booked for Thursday at ten thirty. I'm texting you a confirmation now, with directions and parking since it's your first visit. Is the tooth hurting right now?",
+   "dur": 10.63
+  },
+  {
+   "file": "08-user.mp3",
+   "who": "user",
+   "text": "It's a little sensitive, that's all.",
+   "dur": 2.28
+  },
+  {
+   "file": "09-ai.mp3",
+   "who": "ai",
+   "text": "Then avoid very cold food until Thursday, and if the pain gets worse, call this number again — I answer at night too. We'll see you Thursday.",
+   "dur": 8.62
+  },
+  {
+   "file": "10-user.mp3",
+   "who": "user",
+   "text": "Great, thanks.",
+   "dur": 1.42
+  },
+  {
+   "file": "11-ai.mp3",
+   "who": "ai",
+   "text": "Thank you. Have a good night.",
+   "dur": 1.87
+  }
+ ]
+}

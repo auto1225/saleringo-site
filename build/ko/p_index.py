@@ -17,6 +17,10 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from shell import page, NAV, FOOT
+from trades import TRADES
+from trades2 import TRADES2
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import illus
 
 NB = '&nbsp;'
 HERO = 'https://images.pexels.com/photos/36713414/pexels-photo-36713414.jpeg'
@@ -108,16 +112,16 @@ BODY = """
       <h1>대부분의 AI는 전화를 받습니다.<br>저희는 예약까지 잡습니다.</h1>
       <p class="sub">전화·홈페이지 채팅·카카오톡의 모든 상담이 고객 카드 한 장과, 담당자가 정해진 다음 할 일 하나로 남습니다. 예약, 견적, 기한까지. 문 닫은 시간에도.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#demo60">60초 데모 보기</a>
+        <a class="btn btn-teal" href="#demo60">데모 보고 듣기</a>
         <a class="btn btn-ghostd" href="./pricing.html">요금 보기&nbsp;&rarr;</a>
       </div>
-      <p class="heroprice"><b>월 110,000원부터 &middot; 14일 환불 &middot; 최초 구축비 0원.</b> <i>치과, 설비, 미용실, 예식장, 법률사무소.</i></p>
+      <p class="heroprice"><b>월 110,000원부터 &middot; 14일 환불 &middot; 최초 구축비 0원.</b> <i>지금 운영 중: 예식장·행사장, 의원. 그 밖의 업종은 요청하시면 만들어 드립니다.</i></p>
     </div>
 
     <div class="heroshelf">
-      <div class="reccard" aria-label="60초 데모의 예시 기록">
+      <div class="reccard" aria-label="데모의 예시 기록">
         <div class="rc-top">
-          <span class="pill"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10l4 4 8-8"></path></svg>응답 &middot; 오후 11:48</span>
+          <span class="pill"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10l4 4 8-8"></path></svg>응답 &middot; 오후 11:42</span>
           <span class="rc-when">화요일 &middot; 영업 종료 후</span>
         </div>
         <div>
@@ -131,7 +135,7 @@ BODY = """
           <div class="rc-row"><span class="rc-lbl">담당·기한</span><div><p class="rc-val">데스크 &middot; 목 09:00까지 차트 준비</p><p class="rc-note">자동 배정 &middot; 팀 전체에 보임</p></div></div>
           <div class="rc-row"><span class="rc-lbl">후속</span><div><p class="rc-val">D+2 안내 문자 초안</p><p class="rc-note">사장님이 확인하기 전에는 발송되지 않습니다</p></div></div>
         </div>
-        <p class="rc-foot">60초 데모의 예시 기록입니다. 이름과 금액은 예시입니다.</p>
+        <p class="rc-foot">데모의 예시 기록입니다. 이름과 금액은 예시입니다.</p>
       </div>
     </div>
   </div>
@@ -140,69 +144,79 @@ BODY = """
 <main>
 
 
-<!-- 60초 데모 — 스스로 재생되는 제품 시연. 수치는 사이트가 이미
+<!-- 데모 — 스스로 재생되는 제품 시연(음성 포함). 수치는 사이트가 이미
      공표한 것과 같고, 시뮬레이션이라고 화면에 적혀 있다. -->
 <section class="d60sec t-xl sec-dark bg-grid" id="demo60">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>60초 데모</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal">전화 한 통이 예약·견적·고객 카드·기한이<br>되는 60초를 그대로 보세요.</h2>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>데모 &middot; 약 2분 30초</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">전화 한 통이 예약·견적·고객 카드·기한이<br>되는 과정을 그대로 보고, 들어 보세요.</h2>
     <p class="lead onDark reveal" style="margin-top:14px;">각본이 있는 시연 &middot; 예시 데이터 &middot; 수치는 실제 페이지들이 공표한 그대로입니다.
       진짜가 듣고 싶으시면 <a class="lnk" data-tel-link href="tel:+827052770820">지금 AI에게 전화</a>해 보세요.</p>
 
-    <div class="reveal" data-d60 style="margin-top:26px;">
-      <div class="d60head">
-        <button class="btn btn-teal" type="button" data-d60-play aria-pressed="false">&#9654; 60초 재생</button>
-        <button class="d60voice" type="button" data-d60-voice aria-pressed="false">&#128266; 음성 &mdash; 브라우저 합성음이며, 실제 상담 음성이 아닙니다</button>
-      </div>
-
-      <div class="d60prog" aria-hidden="true">
-        <div class="d60bar"><i data-d60-bar></i></div>
-        <div class="d60ticks" data-d60-ticks></div>
+    <div class="reveal d60v2" data-d60 data-d60-audio="../assets/audio/demo/">
+      <div class="d60tabs" role="tablist" aria-label="장">
+        <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · 밤 11:42, 전화</b><span data-d60-range="1" data-base="깨진 앞니 · 견적 · 목요일 예약">깨진 앞니 · 견적 · 목요일 예약</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · 다음 날 아침, 카카오톡</b><span data-d60-range="2" data-base="주차 질문 · 보험 질문은 사람에게">주차 질문 · 보험 질문은 사람에게</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 오전 9:00, 사장님 화면</b><span data-d60-range="3" data-base="예약 · 견적서 · 담당 · 답변 대기">예약 · 견적서 · 담당 · 답변 대기</span></button>
       </div>
 
       <div class="d60stage">
-        <div class="appwin">
-          <div class="bar"><i></i><i></i><i></i>
-            <span class="tt">김지은 손님 &mdash; <b>화요일 밤 11:42</b></span>
-            <span class="illus">시뮬레이션 &middot; 예시 데이터</span>
-            <span class="closed">영업 종료</span></div>
-          <div class="body nightline d60convo" data-d60-convo aria-live="polite"></div>
+        <div class="d60call">
+          <div class="d60callhead">
+            <span class="d60avatar" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h3l1.5 3.5-2 1.2a9 9 0 0 0 5.3 5.3l1.2-2 3.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A13.5 13.5 0 0 1 2.5 5.1 1.5 1.5 0 0 1 4 3.5z"></path></svg></span>
+            <div class="d60callwho"><b>밝은미소치과 · <span data-d60-callstate>수신 전화</span></b><span class="mono">화요일 11:42 PM · 영업 종료 후 · 가상의 치과</span></div>
+            <span class="d60tag">시연 · 예시 데이터</span>
+          </div>
+          <div class="d60wavewrap"><canvas data-d60-wave width="720" height="52" aria-hidden="true"></canvas><span class="d60speaker" data-d60-speaker aria-live="polite"></span></div>
+          <div class="d60convo" data-d60-convo aria-live="polite"></div>
+          <div class="d60ctl">
+            <button class="btn btn-teal" type="button" data-d60-play aria-pressed="false">&#9654; 재생 — 듣고 보기</button>
+            <button class="btn btn-ghostd" type="button" data-d60-caption aria-pressed="false">자막만 보기</button>
+            <button class="btn btn-ghostd" type="button" data-d60-restart>처음부터</button>
+            <button class="btn btn-ghostd" type="button" data-d60-video>&#9655; 영상으로 보기</button>
+            <div class="d60prog" aria-hidden="true"><span class="mono" data-d60-time>0:00</span><div class="d60bar"><i data-d60-bar></i></div><span class="mono" data-d60-total>&ndash;:&ndash;&ndash;</span></div>
+          </div>
         </div>
 
         <div class="d60col">
-          <div class="d60card">
-            <p class="lbl">받아 적은 것 &mdash; 항목마다 출처가 붙습니다</p>
-            <div data-d60-fields></div>
-          </div>
-
+          <div class="d60card"><p class="lbl">받아 적은 것 — 항목마다 출처가 붙습니다</p><div data-d60-fields></div></div>
           <div class="d60card d60rec" data-d60-record>
-            <p class="lbl">고객 카드 &mdash; 채널이 셋이어도 카드는 한 장</p>
+            <p class="lbl">고객 카드 — 채널이 셋이어도 카드는 한 장</p>
             <div class="who"><b>김지은</b> <span data-d60-chans><i class="d60ph">전화</i></span></div>
-            <p class="d60match" data-d60-match hidden>같은 손님 &mdash; 전화번호로 이어 붙임, 대화 계속</p>
+            <p class="d60match" data-d60-match hidden>같은 손님 — 전화번호로 이어 붙임, 대화 계속</p>
             <div data-d60-work></div>
           </div>
-
           <div class="d60card d60hand" data-d60-handoff hidden>
-            <p class="lbl">사람에게 넘어감 &mdash; 담당자가 받는 것</p>
-            <ul>
-              <li>두 채널의 대화 전체</li>
-              <li>받아 적은 항목 전부, 출처와 함께</li>
-              <li>멈춘 이유: 보험 보장은 판단이 필요한 일이라서</li>
-            </ul>
+            <p class="lbl">사람에게 넘어감 — 담당자가 받는 것</p>
+            <ul><li>두 채널의 대화 전체</li><li>받아 적은 항목 전부, 출처와 함께</li><li>멈춘 이유: 보험 보장은 서류에 있는 사실이 아니라 판단입니다</li></ul>
           </div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">사장님 아침 화면 — 9:00에 놓여 있는 것</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
-      <div class="d60flowbox" data-scene="d60flow" aria-hidden="true"></div>
-      <p class="scenecap">문은 셋 &mdash; 전화·채팅·메신저 &mdash; 나오는 카드는 하나. 선은 장식이고, 사실은 전부 위의 글에 있습니다.</p>
+      <p class="scenecap">각본이 있는 시연 · 예시 데이터 · 두 목소리는 이 데모를 위해 만든 합성 음성입니다 · 금액은 사이트가 공개한 요금표와 같습니다. 진짜 AI 음성은 <a data-tel-link href="tel:+827052770820">070-5277-0820</a>으로 들어 보세요.</p>
+
+      <dialog class="d60dlg" data-d60-dialog aria-label="같은 데모를 영상으로 — 2분 26초">
+        <div class="d60dlghead"><b>같은 데모를 영상으로 — 2분 26초</b><span>가로형 · 세로형 두 가지가 있습니다. 소리를 켜 주세요.</span>
+          <span class="d60cuts"><button type="button" class="on" data-d60-cut="">가로형</button><button type="button" data-d60-cut="-vertical">세로형</button></span>
+          <button type="button" class="d60x" data-d60-close aria-label="닫기">&#215;</button></div>
+        <video controls playsinline preload="none" poster="../assets/video/demo-ko.jpg" data-d60-vid data-src="../assets/video/demo-ko"></video>
+      </dialog>
 
       <div class="d60end" data-d60-end hidden>
-        <a class="btn btn-teal" href="#trades">내 업종에서는 어떻게 되는지 보기</a>
-        <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">실제 AI에게 전화 &mdash; 양식 없이</a>
-        <a class="lnk" href="?tour=master#demo60" style="align-self:center;">6걸음 안내 여정 &rarr;</a>
+        <p class="d60summary" data-d60-summary></p>
+        <div class="d60endrow">
+          <a class="btn btn-teal" href="#trades">내 업종으로 같은 흐름 보기</a>
+          <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">지금 AI에게 전화해 보기</a>
+          <span class="telnote">AI가 먼저 받습니다</span>
+          <a class="lnk" href="?tour=master#demo60">6단계 안내 여정 →</a>
+        </div>
       </div>
     </div>
-    <noscript><p class="lead onDark">이 데모는 자바스크립트로 움직입니다. 줄거리만 적으면: 밤 전화를 3초 만에 받아,
+    
+    
+    
+    <noscript><p class="lead onDark">이 데모는 자바스크립트로 움직입니다. 줄거리만 적으면: 밤 전화를 두 번째 벨에 받아,
       사장님 요금표로 안내하고, 빈 시간에 예약을 잡고, 담당자와 기한이 있는 고객 카드로 남깁니다.
       다음 날 같은 손님이 카카오톡으로 물으면 같은 카드에 이어집니다.</p></noscript>
   </div>
@@ -212,10 +226,10 @@ BODY = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>놓친 전화 한 통의 값</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">전화를 못 받은 것이 아니라,<br>그 손님을 다음 가게에 넘긴 것입니다.</h2>
-    <p class="sub reveal" style="max-width:none;">진료나 시술이 한창일 때, 점심시간에, 문을 닫은 뒤에
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">진료나 시술이 한창일 때, 점심시간에, 문을 닫은 뒤에
       걸려 온 전화는, 벨이 몇 번 울리다 끊깁니다. 그 손님은 다시 걸지 않습니다.
       검색 결과의 다음 줄에 있는 가게로 겁니다. 그 손실은 어떤 장부에도 적히지 않기 때문에,
-      해마다 얼마인지 아무도 모릅니다.</p>
+      해마다 얼마인지 아무도 모릅니다.</p>{ILL_NIGHT}</div>
     <div class="ksum reveal">
       <div class="stat"><span class="n">밤 · 점심</span>
         <p>소상공인 문의 전화가 가장 많이 끊기는 두 구간입니다. 사람이 자리에 없는 시간이기 때문입니다.</p></div>
@@ -313,6 +327,7 @@ BODY = """
           <p>통화가 끝나면 누가, 왜, 언제 걸었고 무엇을 약속했는지가 업종별 CRM에 기록됩니다.
             녹취와 요약, 그리고 다음에 할 일까지 함께 남습니다.</p></div></div>
     </div>
+    <div class="illwide reveal">{ILL_FLOW}</div>
     <p class="seccap reveal" style="margin-top:20px;">셋째 단계가 이 제품의 이유입니다.
       받아 주기만 하는 서비스의 결과물은 메모 한 줄이고, 그 한 줄을 보고 다시 걸어야
       하므로 <b>통화 한 건이 두 건이 됩니다.</b></p>
@@ -334,6 +349,7 @@ BODY = """
         <p>실제 통화입니다. 사람 목소리로 받고, 묻고, 예약을 잡고, 필요하면 사람에게 돌립니다.</p>
         <span class="pr">월 820,000원 + 분당 190원부터</span></div>
     </div>
+    <div class="illwide reveal">{ILL_CH}</div>
     <p class="seccap reveal" style="margin-top:22px;">모든 금액은 부가세 별도입니다.
       통화와 메시지는 사용한 만큼 청구됩니다. 저희도 사용한 만큼 원가가 들기 때문입니다.
       <a href="./pricing.html" style="color:var(--teal);font-weight:700;">요금 전체 보기</a></p>
@@ -351,13 +367,13 @@ BODY = """
     <p class="sub reveal" style="max-width:none;">치과의 예약 단계와 정비소의 입고 단계는 다릅니다.
       부동산의 매물 문의와 학원의 상담 문의도 다릅니다. 그래서 항목과 단계를 업종별로 미리 만들어 두었습니다.
       첫날부터 우리 업종의 말로 적힙니다.</p>
-    <ul class="kolist reveal">
+    <div class="illrow reveal">{ILL_CARD}<ul class="kolist" style="margin-top:0;">
       <li><b>고객 카드</b> &mdash; 이름, 연락처, 무엇을 물었는지, 언제 다시 연락하기로 했는지.</li>
       <li><b>예약</b> &mdash; 캘린더에 바로 들어갑니다. 메모를 남기는 것이 아니라 시간을 잡습니다.</li>
       <li><b>견적</b> &mdash; 직접 넣으신 요금표에서 계산합니다. AI가 지어내지 않습니다.</li>
       <li><b>통화 기록</b> &mdash; 녹취와 요약, 그리고 AI가 무엇을 근거로 그렇게 답했는지.</li>
       <li><b>내보내기</b> &mdash; 언제든 전부 내려받을 수 있습니다. 데이터의 주인은 그 가게입니다.</li>
-    </ul>
+    </ul></div>
   </div>
 </section>
 
@@ -368,7 +384,7 @@ BODY = """
     <p class="sub reveal" style="max-width:none;">AI가 잘못 말해서 생기는 손해는 전부 그 가게가 떠안습니다.
       그래서 답할 수 있는 범위를 좁게 정해 두었고, 그 범위 밖은 답하지 못하도록 막아 두었습니다.
       끄고 켜는 기능이 아니라 제품의 기본값입니다.</p>
-    <ul class="kolist reveal">
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;">
       <li><b>없는 금액을 만들지 않습니다.</b>
         등록된 요금표에 없으면 답하지 않습니다. 비슷한 것으로 대신하지도 않습니다.
         &ldquo;대략 이 정도&rdquo;가 가장 위험합니다 &mdash; 그 금액을 들은 손님은
@@ -382,7 +398,7 @@ BODY = """
       <li><b>사람인 척하지 않습니다.</b>
         물어보시면 AI라고 답합니다. 나중에 알게 되는 것이 처음부터 아는 것보다
         훨씬 나쁩니다.</li>
-    </ul>
+    </ul>{ILL_HAND}</div>
     <p class="seccap reveal" style="margin-top:18px;">막힌 것도 전부 기록됩니다.
       <b>자주 막히는 질문이 곧 요금표에 빠진 항목</b>이고, 그것을 채우면 다음 달에는
       답합니다. <a class="lnk" href="./verified-ai.html">답변 검증 방식</a>에
@@ -404,7 +420,7 @@ BODY = """
     </div>
 
     <p class="seccap reveal" style="margin-top:20px;">셋 다 같은 CRM 이 들어 있습니다.
-      차이는 <b>어느 채널로 받는가</b>와 <b>한 달에 몇 건인가</b>뿐입니다.
+      차이는 <b>어느 채널로 받는가</b>, <b>한 달에 몇 건인가</b>, 그리고 지점 수와 계정 수입니다.
       약정 없이 매달 요금제를 바꾸실 수 있습니다.
       첫 결제일부터 14일 안에는 전액 환불, 그 뒤 해지는 남은 날수만큼
       돌려 드립니다. <a class="lnk" href="./pricing.html">요금 페이지</a>에
@@ -419,6 +435,7 @@ BODY = """
     <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 업종 페이지 스물다섯 곳마다
       밤에 걸려 올 법한 통화를 하나씩 적어 두었습니다. 아래는 그중 열두 곳입니다.
       읽어 보시고, 우리 가게에 실제로 걸려 오는 전화와 같은지 판단하시면 됩니다.</p>
+    <div class="photowall reveal">{TRADE_PHOTOS}</div>
     <div class="tradechips reveal">
       <a href="./industries/dental.html">치과</a>
       <a href="./industries/clinics.html">의원 &middot; 피부과</a>
@@ -441,13 +458,14 @@ BODY = """
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>시작하기</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal">요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
-    <p class="sub reveal" style="max-width:none;">먼저 결제하지 않습니다. 업종과 요금표, 그리고 손님이 가장 자주 묻는
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
+    <p class="sub" style="max-width:none;">먼저 결제하지 않습니다. 업종과 요금표, 그리고 손님이 가장 자주 묻는
       질문 열 개만 알려 주시면, 그 열 개에 답하는 녹음을 만들어 보내 드립니다. 마음에 들지 않으면 거기서 끝내시면 됩니다.</p>
-    <div class="ctas reveal">
+    <div class="ctas">
       <a class="btn btn-teal" href="./get-started.html">우리 조건으로 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="./pricing.html">먼저 요금부터 보기</a>
-    </div>
+    </div></div>{ILL_MORNING}</div>
   </div>
 </section>
 
@@ -458,7 +476,17 @@ BODY = """
   <b>우리 요금표로 답하는 것을 먼저 읽어 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
-body = BODY.format(NAV=NAV, FOOT=FOOT, NB=NB, HERO=HERO)
+_T = {t['slug']: t for t in TRADES + TRADES2}
+_WALL = ['dental', 'clinics', 'veterinary', 'senior-care', 'academies', 'salons', 'fitness', 'home-services', 'auto-repair', 'real-estate', 'restaurants', 'venues']
+TRADE_PHOTOS = ''.join('<a href="./industries/%s.html"><img src="%s?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>%s</b></a>'
+                       % (s, _T[s]['photo'], _T[s]['name']) for s in _WALL)
+body = BODY.format(NAV=NAV, FOOT=FOOT, NB=NB, HERO=HERO, TRADE_PHOTOS=TRADE_PHOTOS,
+                   ILL_NIGHT=illus.figure(illus.night('ko'), '하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.'),
+                   ILL_FLOW=illus.figure(illus.flow3('ko')),
+                   ILL_CH=illus.figure(illus.channels('ko'), '세 채널이 한 수신함으로 들어오고, 한 장의 세금계산서로 나갑니다.'),
+                   ILL_CARD=illus.figure(illus.card('ko'), '통화가 끝나면 남는 카드입니다. 항목마다 어디서 나온 값인지가 붙습니다. 예시 데이터.'),
+                   ILL_HAND=illus.figure(illus.handoff('ko'), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체가 함께 갑니다.'),
+                   ILL_MORNING=illus.figure(illus.morning('ko'), '녹음을 들어 보신 뒤에 결정하시면, 아침 화면은 이렇게 채워져 있습니다.'))
 body = body + "<script>\n/* 놓친 문의의 값을 재는 계산기. 브라우저 안에서만 돌고 아무 데도 보내지\n   않습니다. 금액은 요금표에서 가져온 값을 그대로 씁니다.\n\n   전화를 받는 데 드는 값이므로 AI 전화가 든 Scale 을 뺍니다. 채팅만 있는\n   요금제를 빼면 전화 문제를 전화 없는 요금제로 푼 셈이 되어 계산이 실제보다\n   유리해집니다. 이 절의 값어치는 산수가 정직한 데 있으므로 그렇게 하지\n   않습니다. */\n(function () {\n  var m = document.getElementById('cMissed'),\n      v = document.getElementById('cValue'),\n      c = document.getElementById('cConv'),\n      sv = document.getElementById('cSave');\n  if (!m || !v || !c) return;\n\n  var PLAN_VOICE = 820000, PLAN_CHAT = 110000, VOICE_MIN = 190, AVG_MIN = 4;\n  var nf = new Intl.NumberFormat('ko-KR');\n  function won(n) { return nf.format(Math.round(n)) + '원'; }\n\n  function calc() {\n    var missed = +m.value, value = +v.value, conv = +c.value;\n    var save = (sv ? +sv.value : 25) / 100;\n    var leak = missed * value * (conv / 100);\n    var back = leak * save;\n    var cost = PLAN_VOICE + missed * AVG_MIN * VOICE_MIN;\n    var net = back - cost;\n\n    document.getElementById('vMissed').textContent = nf.format(missed);\n    document.getElementById('vValue').textContent = won(value);\n    document.getElementById('vConv').textContent = conv + '%';\n    if (sv) {\n      document.getElementById('vSave').textContent = sv.value + '%';\n      document.getElementById('oPct').textContent = sv.value + '%';\n    }\n    document.getElementById('oLeak').textContent = won(leak);\n    document.getElementById('oBack').textContent = won(back);\n    document.getElementById('oCost').textContent = '\\u2212' + won(cost);\n    document.getElementById('oNet').textContent = (net >= 0 ? '' : '\\u2212') + won(Math.abs(net));\n\n    var say;\n    if (back < cost) {\n      say = '지금 넣으신 조건에서는 전화를 받는 비용이 되찾는 금액보다 큽니다. '\n          + '홈페이지 채팅만 있는 Start ' + won(PLAN_CHAT) + '/월로 시작하시고, '\n          + '통화량이 늘어나면 그때 전화를 더하시는 편이 낫습니다.';\n    } else if (back < cost * 3) {\n      say = '요금을 내고도 남습니다. 여기서 한 건을 더 되찾을 때마다 그대로 남는 것입니다.';\n    } else {\n      say = '지금 넣으신 조건이라면 통화료까지 포함해 전체 요금의 약 '\n          + Math.round(back / cost) + '배를 덮습니다.';\n    }\n    document.getElementById('oVerdict').textContent = say;\n  }\n\n  [m, v, c, sv].filter(Boolean).forEach(function (el) { el.addEventListener('input', calc); });\n  calc();\n})();\n</script>"
 
 p = page('index.html',
@@ -466,6 +494,6 @@ p = page('index.html',
          '전화, 홈페이지 채팅, 카카오톡을 AI가 대신 받고 업종별 CRM에 예약과 고객 카드로 남깁니다. '
          '월 110,000원부터, 약정 없음, 부가세 별도.',
          body, css=CSS, grade='voice',
-         scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'canvas', 'scenes', 'demo60'),
+         scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'canvas', 'scenes', 'demofull'),
          image=HERO + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630')
 print('wrote', p)

@@ -17,6 +17,9 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 os.chdir(os.path.dirname(os.path.dirname(HERE)))
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import illus
 from shell import page, NAV, FOOT
 
 NB = '&nbsp;'
@@ -84,7 +87,20 @@ def hero_photo(photo, kicker, h1, sub, cta1, cta2):
             '</header>' % (p, p, p, p, NAV, kicker, h1, sub, cta1, cta2))
 
 
+
+EXTRA = {
+ 'inside': '    <div class="illwide reveal">' + illus.figure(illus.flow3('ko'), '응대 한 건이 지나가는 세 단계입니다.') + '</div>\n',
+ 'crm': '    <div class="illwide reveal">' + illus.figure(illus.card('ko'), '통화가 끝나면 남는 카드입니다. 항목마다 출처가 붙습니다. 예시 데이터.') + '</div>\n',
+ 'who-next': '    <div class="illwide reveal">' + illus.figure(illus.handoff('ko'), '넘길 때는 대화 전체와 받아 적은 항목, 멈춘 이유가 함께 갑니다.') + '</div>\n',
+ 'how': '    <div class="illwide reveal">' + illus.figure(illus.channels('ko'), '쓰던 번호를 그대로 두고 착신전환만 겁니다. 세 채널이 한 수신함으로 들어옵니다.') + '</div>\n',
+ 'rules': '    <div class="illwide reveal">' + illus.figure(illus.handoff('ko'), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다.') + '</div>\n',
+ 'what': '    <div class="illwide reveal">' + illus.figure(illus.channels('ko'), '어느 채널로 오든 같은 사실로 답하고, 한 수신함에 남습니다.') + '</div>\n',
+ 'why': '    <div class="illwide reveal">' + illus.figure(illus.night('ko'), '문의는 문 닫은 시간에 몰립니다. 그 시간에 읽지 않은 메시지가 밀린 메시지입니다.') + '</div>\n',
+}
+
+
 def sec(cls, sid, eyebrow, h2, lead, inner='', dark=True):
+    inner = inner + EXTRA.get(sid, '')
     return ('<section class="%s" id="%s">\n  <div class="wrap">\n'
             '    <div class="secrule reveal"><span class="eyebrow"><i></i>%s</span>'
             '<span class="line"></span></div>\n'
@@ -402,7 +418,7 @@ webchat = '\n\n'.join([
           '색과 인사말, 여는 위치를 가게에 맞춥니다. 남의 서비스처럼 보이는 창을 '
           '붙여 두면 사람들이 안 엽니다.'),
          ('요금', 'Start 110,000원/월부터 쓰실 수 있습니다. 채팅은 월정액 안에서 '
-          '끝나고 별도 사용료가 없습니다.')]),
+          '끝납니다 — 포함된 대화 건수(Start 월 500건) 안에서는 추가 사용료가 없습니다.')]),
      dark=False),
  sec('t-md sec-dark bg-grid', 'what', '무엇을 답하는가',
      '홈페이지에 이미 있는 것과,<br>어디에도 없는 것.',
@@ -412,7 +428,7 @@ webchat = '\n\n'.join([
          ('예약 가능 시간', '캘린더의 빈 시간을 보고 답하고, 그 자리에서 잡습니다.'),
          ('오시는 길과 주차', '적어 두신 안내를 그대로 읽습니다.'),
          ('&ldquo;이런 것도 하나요&rdquo;', '서비스 목록에 있으면 답하고, 없으면 넘깁니다. 만들어 내지 않습니다.')])),
- sec('t-md sec-dark bg-spot', 'install', '설치',
+ sec('t-md sec-dark bg-spot', 'install', '설치는 저희가 합니다',
      '스크립트 한 줄입니다.',
      '홈페이지를 새로 만들 필요가 없습니다. 워드프레스, 카페24, 아임웹, 직접 만든 사이트 모두 '
      '&lt;/body&gt; 앞에 한 줄을 넣으면 됩니다. 넣는 작업은 저희가 해 드립니다.',
@@ -482,9 +498,9 @@ kakao = '\n\n'.join([
           '보낼 수 있고, 저희 제품은 그 선을 넘도록 만들어져 있지 않습니다.'),
          ('친구 추가 유도 &mdash; 하지 않습니다',
           '문의하러 온 분에게 친구 추가를 조건으로 걸지 않습니다.'),
-         ('심야 발송 &mdash; 막아 둡니다',
-          '밤 9시부터 아침 8시까지는 광고성 메시지를 보내지 않습니다. '
-          '예약 확인처럼 손님이 요청하신 안내는 시간과 무관하게 나갑니다.')]),
+         ('심야 발송 &mdash; 애초에 해당이 없습니다',
+          '저희 제품은 광고성 메시지를 보내지 않습니다. 예약 확인처럼 손님이 요청하신 거래 안내만 나가고, '
+          '그것은 정보통신망법의 야간 광고 제한을 받지 않습니다.')]),
      dark=False),
  sec('t-md sec-dark bg-grid', 'why', '왜 밀리는가',
      '전화는 울리지만<br>메시지는 조용합니다.',
@@ -506,7 +522,7 @@ kakao = '\n\n'.join([
      ul([('먼저 보내지 않습니다.', '문의에 답할 뿐입니다. 수신 동의 없는 광고 발송에 쓰지 않습니다.'),
          ('알림톡은 예약 확인에만.', '「정보통신망법」이 정하는 정보성 메시지 범위 안에서만 보냅니다.'),
          ('사람인 척하지 않습니다.', '물어보시면 AI라고 답합니다.'),
-         ('발송 건당 요금입니다.', '알림톡은 건당 15원부터이고, 청구서에 건수가 그대로 나옵니다.')]),
+         ('발송 건당 요금입니다.', '알림톡은 건당 15원이고, 청구서에 건수가 그대로 나옵니다.')]),
      dark=False),
  closer('채널에 밀려 있는 문의를<br>지금 세어 보십시오.',
         '몇 건인지 알려 주시면, 그중 몇 건이 예약이 되었을지 같이 계산해 드립니다.'),

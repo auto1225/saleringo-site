@@ -18,6 +18,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import illus
 from shell import page, NAV, FOOT
 
 NB = '&nbsp;'
@@ -175,6 +178,7 @@ BODY = """
         <ul>
           <li>Grow의 모든 기능</li>
           <li>AI 전화 응대</li>
+          <li>월 6,000건 대화</li>
           <li>통화 1분당 190원부터</li>
           <li>사람에게 돌리기와 야간 전환</li>
           <li>녹취와 요약 보관</li>
@@ -198,7 +202,7 @@ BODY = """
 
     <div class="ratebox reveal" id="rates">
       <div><b>AI 전화 &mdash; 통화 요금</b><span>1분당 190원부터</span></div>
-      <div><b>카카오톡 알림톡 &mdash; 발송 건당</b><span>건당 15원부터</span></div>
+      <div><b>카카오톡 알림톡 &mdash; 발송 건당</b><span>건당 15원</span></div>
       <div><b>추가 대화 &mdash; 한도 초과분</b><span>100건당 9,000원</span></div>
       <div><b>설치비 &mdash; 셀프서브 설정 기본</b><span>0원</span></div>
     </div>
@@ -235,6 +239,7 @@ BODY = """
       </div>
     </div>
 
+    {ILL_CARD}
     <p class="seccap reveal" style="margin-top:22px;">이것은 상위 요금제의 기능이 아닙니다.
       <b>Start 110,000원부터</b> 세 요금제 모두에 같은 CRM 이 들어 있습니다. 요금제가
       나뉘는 기준은 CRM 이 아니라 <b>어느 채널로 받는가</b>와 <b>한 달에 몇 건인가</b>입니다.</p>
@@ -455,8 +460,8 @@ BODY = """
         <b>90일 안에</b> 파기합니다.</li>
     </ul>
     <p class="seccap reveal" style="margin-top:20px;">청구서에 올라가는 항목은
-      <b>월정액 · 통화료 · 알림톡 · 대화 초과</b> 넷뿐입니다. 이 페이지에 단가가 적히지 않은 것은
-      청구서에도 없습니다.</p>
+      <b>월정액 · 통화료 · 알림톡 · 대화 초과</b> 넷입니다. 지식베이스 대행 구축과 매니지드 도입은
+      별도 견적으로 따로 청구되며, 착수 전에 금액을 먼저 드립니다. 이 페이지에 단가가 적히지 않은 것은 정기 청구서에 없습니다.</p>
   </div>
 </section>
 
@@ -557,7 +562,7 @@ page('pricing.html',
      '요금 &mdash; Saleringo AI 응대 &middot; 월 110,000원부터',
      'Saleringo 요금제와 통화 단가를 전부 공개합니다. 월 110,000원부터, 부가세 별도, 약정 없음, '
      '세금계산서 발행. 직원 채용, 전화대행과 비교한 표도 함께 실었습니다.',
-     BODY.format(NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
+     BODY.format(ILL_CARD='<div class="illwide reveal">' + illus.figure(illus.card('ko'), '세 요금제 모두에 같은 카드가 남습니다. 예시 데이터.') + '</div>', NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
      scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'quotebuild'),
      crumbs=[('홈', 'index.html'), ('요금', 'pricing.html')])
 print('wrote ko/pricing.html')

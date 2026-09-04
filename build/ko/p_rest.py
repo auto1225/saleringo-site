@@ -19,6 +19,12 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 os.chdir(os.path.dirname(os.path.dirname(HERE)))
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import illus
+from trades import TRADES as _TR1
+from trades2 import TRADES2 as _TR2
+_T = {t['slug']: t for t in _TR1 + _TR2}
 from shell import page, NAV, FOOT
 from trades import TRADES
 from trades2 import TRADES2
@@ -136,7 +142,21 @@ def hero_plain(kicker, h1, sub):
             '    <p class="sub">%s</p>\n  </div>\n</header>' % (NAV, kicker, h1, sub))
 
 
+
+# 절마다 붙는 그림 (build/illus.py). 글만 있던 절에 구조를 그려 넣는다.
+EXTRA = {
+ 'life': '    <div class="illwide reveal">' + illus.figure(illus.flow3('ko'), '답변 하나가 지나가는 세 단계: 사장님이 넣은 사실, 채널을 가리지 않는 응대, 그리고 남는 기록.') + '</div>\n',
+ 'refuse': '    <div class="illwide reveal">' + illus.figure(illus.handoff('ko'), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체가 함께 갑니다.') + '</div>\n',
+ 'why': '    <div class="illwide reveal">' + illus.figure(illus.night('ko'), '문을 연 시간은 하루의 절반이 안 됩니다. 전화는 나머지 시간에도 옵니다.') + '</div>\n',
+ 'promise': '    <div class="illwide reveal">' + illus.figure(illus.handoff('ko'), '약속의 핵심은 이 문입니다. 지어내지 않고, 모르면 사람에게 넘깁니다.') + '</div>\n',
+ 'howwesell': '    <div class="illwide reveal">' + illus.figure(illus.morning('ko'), '먼저 결제하지 않습니다. 녹음을 들어 보신 뒤에 시작하시면 아침 화면이 이렇게 채워집니다.') + '</div>\n',
+ 'diff': '    <div class="illwide reveal">' + illus.figure(illus.flow3('ko'), '세 종류의 서비스가 갈리는 지점은 셋째 칸입니다. 통화 뒤에 무엇이 남는가.') + '</div>\n',
+ 'time': '    <div class="illwide reveal">' + illus.figure(illus.night('ko'), '여기가 밤이면 저쪽은 낮입니다. 문 닫은 시간에 오는 문의가 해외 손님에게는 평일 낮의 문의입니다.') + '</div>\n',
+}
+
+
 def sec(cls, sid, eyebrow, h2, lead, inner='', dark=True):
+    inner = inner + EXTRA.get(sid, '')
     return ('<section class="%s" id="%s">\n  <div class="wrap">\n'
             '    <div class="secrule reveal"><span class="eyebrow"><i></i>%s</span>'
             '<span class="line"></span></div>\n'
@@ -328,8 +348,8 @@ about = '\n\n'.join([
       <div class="statcard"><span class="sl">밤에 이루어진 대화</span><b class="sv">58%</b><span class="sd">대화 158건 기준, 18:00&ndash;09:00</span>
         <p class="sn">문 닫은 뒤에 조금 오는 것이 아니라, 대화의 과반입니다.</p></div>
       <div class="statcard hi"><span class="sl">두 시간에 몰림</span><b class="sv">39%</b><span class="sd">62건, 18:00&ndash;20:00</span>
-        <p class="sn">손님이 퇴근한 뒤의 한 시간이, 문 닫은 시간 중 가장 바쁜 시간입니다.</p></div>
-      <div class="statcard"><span class="sl">연락처가 남은 비율</span><b class="sv">64%</b><span class="sd">웹채팅 세션 14회 중 9회</span>
+        <p class="sn">손님이 퇴근한 뒤의 두 시간이, 문 닫은 시간 중 가장 바쁜 시간입니다.</p></div>
+      <div class="statcard"><span class="sl">연락처가 남은 비율</span><b class="sv">64%</b><span class="sd">영업시간 밖 세션 14회 중 9회</span>
         <p class="sn">답한 질문 하나가, 다시 걸 수 있는 이름과 번호가 되었습니다.</p></div>
       <div class="statcard"><span class="sl">영업시간 밖의 구매 의도 문의</span><b class="sv">5건 중 4건</b><span class="sd">보수적으로 셌습니다</span>
         <p class="sn">견적, 예약, 가능 여부를 묻는 문의입니다. 구경이 아닙니다.</p></div>
@@ -379,7 +399,7 @@ about = '\n\n'.join([
         고객입니다. Saleringo와 Saleringo Golf CC는 저희 회선입니다. 어느 것이 어느 것인지 알아내시게 두기보다 먼저 말씀드립니다.</p>
       <p><b>어디에 거는 것인가.</b> 한국 번호이고, 이 가게들의 손님을 받는 것과 같은 AI가 받습니다. 말을 건 언어로 답합니다 &mdash;
         영어든 일본어든 무엇이든. 통화료는 거시는 분의 요금제대로 부과되고, 녹음은 답변 품질을 높이는 데 씁니다.</p>
-      <p><b>먼저 물어보지 않고도 걸 수 있는 번호 여섯 개</b>는 저희가 직접 타이핑한 인용문보다 더 어려운 종류의 증거입니다.</p>
+      <p><b>먼저 물어보지 않고도 걸 수 있는 번호 여섯 개</b>는 저희가 직접 타이핑한 인용문보다 꾸며 내기 어려운 증거입니다.</p>
     </div>
   </div>
 </section>''',
@@ -538,9 +558,9 @@ cross = '\n\n'.join([
  sec('t-md sec-light bg-paper', 'money', '통화와 청구',
      '원화로 청구하고<br>세금계산서를 발행합니다.',
      '해외 고객을 상대하는 사업이라도 청구는 한국 법인 기준입니다. '
-     '원화, 부가세 별도, 전자세금계산서. 청구서를 달러로 받으실 일이 없습니다.',
+     '이 페이지의 요금제는 원화로만 청구합니다 — 부가세 별도, 전자세금계산서. 달러 청구는 별도 상품인 매니지드 도입에만 해당합니다.',
      ul([('요금은 원화입니다.', '환율에 따라 달라지지 않습니다.'),
-         ('세금계산서가 나갑니다.', '사업자등록번호만 등록해 두시면 매달 자동으로 발행됩니다.'),
+         ('세금계산서가 나갑니다.', '사업자등록번호를 등록해 두시면 매달 사용량이 확정된 뒤 전자세금계산서를 보내 드립니다.'),
          ('통화료는 발신 지역별로 다릅니다.', '해외로 거는 통화가 있으면 계약 전에 지역별 단가를 문서로 드립니다.')]),
      dark=False),
  closer('어느 나라에서<br>몇 시에 문의가 오는지 알려 주십시오.',
@@ -674,6 +694,7 @@ examples = '\n\n'.join([
  '<main>',
  sec('t-md sec-light bg-paper', 'all', '전체',
      '고르시면 그 업종의<br>통화 하나를 그대로 보여 드립니다.', '',
+     '    <div class="photowall reveal">' + ''.join('<a href="#ex-%s"><img src="%s?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>%s</b></a>' % (t['slug'], t['photo'], t['name']) for t in [_T[x] for x in ('dental', 'auto-repair', 'academies', 'senior-care', 'real-estate', 'venues')]) + '</div>\n'
      '    <div class="exwall reveal">' + cards + '</div>\n', dark=False),
  '''<section class="t-md sec-dark bg-grid" id="ex-dental">
   <div class="wrap">
@@ -698,7 +719,7 @@ examples = '\n\n'.join([
     <h2 class="h2 onDark reveal">리프트 아래에서는<br>전화를 받을 수 없습니다.</h2>
     <p class="sub reveal" style="max-width:none;">정비 중에 손을 닦고 나와 전화를 받을 수는 없습니다. 그 사이 걸려 온 견적 문의는 그대로 옆 공업사로 갑니다.</p>
       <div class="appwin reveal">
-        <div class="bar"><i></i><i></i><i></i><span class="tt">자동차 정비 &mdash; <b>4:47 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">영업시간 밖</span></div>
+        <div class="bar"><i></i><i></i><i></i><span class="tt">자동차 정비 &mdash; <b>4:47 PM</b></span><span class="illus">예시 &middot; 가상의 통화</span><span class="closed">작업 중</span></div>
         <div class="body nightline"><div class="nl us"><span class="t"><em>손님</em>4:47 PM</span><div class="bub user">브레이크에서 쇠 갈리는 소리가 나는데 오늘 볼 수 있나요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+22초</span><div class="bub ai">패드 마모일 가능성이 있지만 보아야 확실합니다. 패드 교체는 <b>앞바퀴 기준 12만원부터</b>이고, 디스크까지 손봐야 하면 달라집니다. 오늘은 <b>오후 6시 이후</b>에 리프트가 비고, 내일은 <b>오전 9시</b>가 가능합니다.</div></div><div class="nl us"><span class="t"><em>손님</em>4:49 PM</span><div class="bub user">내일 9시로 할게요. 차종은 아반떼입니다.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+8초</span><div class="bub ai">내일 오전 9시 입고로 잡았습니다. 차량번호만 남겨 주시면 부품 재고를 미리 확인해 두겠습니다.</div></div></div>
       </div>
     <p class="seccap reveal" style="margin-top:22px;">이 업종에서 <b>AI가 하지 않는 것</b></p>

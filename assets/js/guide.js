@@ -169,7 +169,7 @@ var SR_TOURS = {
   master: (document.documentElement.lang || '').indexOf('ko') === 0 ? {
     title: '전체 여정 · 6걸음',
     steps: [
-      { u: 'index.html',    h: '#demo60',        lab: '60초로 이해' },
+      { u: 'index.html',    h: '#demo60',        lab: '데모로 이해' },
       { u: 'index.html',    h: '#trades',        lab: '내 업종 선택' },
       { u: 'demo.html',     h: '',               lab: '상담 체험' },
       { u: 'index.html',    sel: '#crm',         lab: '남는 업무 확인' },
@@ -258,7 +258,7 @@ var SR_TOURS = {
     title: '되는지 증명',
     steps: [
       { u: 'demo.html',     sel: '#callnow',    lab: '지금 전화' },
-      { u: 'index.html',    h: '#demo60',     lab: '60초 데모' },
+      { u: 'index.html',    h: '#demo60',     lab: '데모 보고 듣기' },
       { u: 'examples.html', sel: '#all',        lab: '통화 예시' },
       { u: 'index.html',    h: '#calculator', lab: '계산' },
       { u: 'about.html',    h: '#people',     lab: '누가 만드나' }

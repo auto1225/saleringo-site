@@ -22,6 +22,8 @@ os.chdir(os.path.dirname(os.path.dirname(HERE)))
 from shell import page, NAV, FOOT
 from trades import TRADES
 from trades2 import TRADES2
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import illus
 
 ALL = TRADES + TRADES2
 NB = '&nbsp;'
@@ -82,12 +84,12 @@ TPL = """
 
 <section class="t-md sec-dark bg-grid" id="pack">
   <div class="wrap">
+    <div class="packphoto reveal"><img src="{photo}?auto=compress&amp;cs=tinysrgb&amp;w=1600&amp;h=640&amp;fit=crop" alt="" width="1600" height="640" loading="lazy" decoding="async"><span>{name} &mdash; 이 팩은 이 현장의 전화를 위해 만든 것입니다. 사진은 예시입니다.</span></div>
     <div class="packgrid">
 
       <div class="packblock reveal" id="fields">
         <h2>통화가 끝나면 채워져 있는 칸</h2>
-        <p class="why">빈 CRM을 받아 {name}에 맞게 고쳐 쓰는 것이 아닙니다.
-          이 항목들이 처음부터 들어 있고, 첫 통화부터 여기에 적힙니다.</p>
+        <p class="why">{packstatus}</p>
         <div class="fieldgrid">{fields}</div>
       </div>
 
@@ -96,6 +98,7 @@ TPL = """
         <p class="why">지금 몇 건이 어느 단계에 있는지 한 줄로 보입니다.
           {name}에서 실제로 일이 흘러가는 순서 그대로입니다.</p>
         <div class="pipe">{stages}</div>
+        <div class="illwide">{ill_pipe}</div>
       </div>
 
       <div class="packblock reveal" id="links">
@@ -144,13 +147,25 @@ CARD = """<section class="packcard t-md sec-dark bg-grid" id="the-pack">
 </section>"""
 
 
+LIVE = ('venues', 'clinics')
+
+
+def pack_status(t):
+    if t['slug'] in LIVE:
+        return ('빈 CRM을 받아 %s에 맞게 고쳐 쓰는 것이 아닙니다. 이 항목들이 처음부터 들어 있고, '
+                '첫 통화부터 여기에 적힙니다. 이 팩은 지금 운영 중입니다.' % t['name'])
+    return ('이 업종 팩은 <b>아직 운영 중이 아닙니다</b>. 아래는 요청하시면 그대로 만들어 드리는 설계안입니다. '
+            '항목·단계·하지 않는 말의 초안까지 준비되어 있어, 요금표와 영업시간을 주시면 며칠 안에 켤 수 있습니다.')
+
+
 def build_pack(t):
     fields = ''.join('<span>%s</span>' % f for f in t['fields'])
     stages = '<i>&rarr;</i>'.join('<b>%s</b>' % s for s in t['stages'])
     links = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in LINKS)
     refuse = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in t['refuse'])
     body = TPL.format(NAV=NAV, FOOT=FOOT, NB=NB, fields=fields, stages=stages,
-                      links=links, refuse=refuse, slug=t['slug'], name=t['name'])
+                      links=links, refuse=refuse, slug=t['slug'], name=t['name'], packstatus=pack_status(t),
+                      photo=t['photo'], ill_pipe=illus.figure(illus.pipeline('ko', stages=t['stages'][:5])))
     page('industries/%s-pack.html' % t['slug'],
          '%s 팩에 들어 있는 것 &mdash; Saleringo' % t['name'],
          '%s용 CRM의 항목과 진행 단계, 연동되는 곳, 그리고 AI가 하지 않는 일을 '

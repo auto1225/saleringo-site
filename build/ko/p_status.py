@@ -76,9 +76,9 @@ def build(lang):
         '      <p class="lbl">', t("장애 이력", "Incident history"), "</p>\n",
         '      <p class="stnone">',
         t("게시된 장애가 아직 없습니다. 장애가 나면 이 자리에 <b>무엇이 &middot; 언제부터 언제까지 &middot; "
-          "누구에게 영향 &middot; 무엇을 고쳤는지</b> 형식으로 남고, 진행 중 주문이 있는 분께는 이메일로도 갑니다.",
+          "누구에게 영향 &middot; 무엇을 고쳤는지</b> 형식으로 남습니다. 지금은 자동 메일 발송이 없어 이 페이지가 유일한 공지 창구입니다.",
           "No incidents published yet. When one happens it is recorded here as <b>what &middot; from&ndash;to "
-          "&middot; who was affected &middot; what we fixed</b>, and anyone with an order in flight is emailed."),
+          "&middot; who was affected &middot; what we fixed</b>. For now this page is the only notice; no automatic email is sent yet."),
         "</p>\n    </div>\n\n",
 
         '    <div class="stcard reveal">\n',
@@ -107,10 +107,10 @@ def build(lang):
           "The <a class=\"lnk\" href=\"./pricing.html#countries\">country table on the pricing page</a> lists line status per country."),
         "</span></div>\n",
         '      <div class="strow"><b>', t("실제 상담 음성", "Hearing the real voice"), "</b><span>",
-        t("언어별 녹음 샘플은 준비 중입니다. 지금은 <a class=\"lnk\" href=\"./index.html#demo60\">60초 데모</a>나 "
+        t("언어별 녹음 샘플은 준비 중입니다. 지금은 <a class=\"lnk\" href=\"./index.html#demo60\">홈의 데모</a>나 "
           "실제 데모 번호로 직접 들어 보시는 것이 정확합니다.",
           "Per-language recorded samples are in preparation. Today the accurate way is the "
-          "<a class=\"lnk\" href=\"./index.html#demo60\">60-second demo</a> or dialling a live demo number."),
+          "<a class=\"lnk\" href=\"./index.html#demo60\">demo on the home page</a> or dialling a live demo number."),
         "</span></div>\n",
         "    </div>\n",
 

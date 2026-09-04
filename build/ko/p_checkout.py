@@ -329,6 +329,7 @@ def build(lang):
             <div class="fld">
               <label for="coCountry">{fCountry}</label>
               <select id="coCountry" name="country" required autocomplete="country">{countries}</select>
+              <p class="fhint">{curnote}</p>
             </div>
             <div class="fld">
               <label for="coBuyer">{fBuyer}</label>
@@ -497,6 +498,7 @@ def build(lang):
     filled = body.format(
         NAV=NAV, FOOT=FOOT, lang=lang, pickrows=pickrows, methodrows=methodrows,
         countries=countries,
+        curnote=t('대한민국 외 국가를 고르시면 영문 요금 페이지의 달러 금액으로 청구됩니다.', 'Korean businesses are billed in won, as shown on the Korean pricing page.'),
         kick=t('주문', 'Order'),
         h1=t('주문서입니다.<br>2분이면 끝납니다.',
              'The order form.<br>Two minutes, no account.'),
