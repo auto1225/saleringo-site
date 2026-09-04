@@ -23,12 +23,13 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Sell Across Borders While You Sleep | Saleringo", "description": "Sell across borders while you sleep. Answer overseas buyers in their language and timezone, quote in their currency, and book the call.", "url": "https://claude.saleringo.com/en/cross-border.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=75.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=76.0">
 <style>
   /* ── CROSS-BORDER · archetype: WORLD MAP ────────────────── */
   /* aurora hero built around a full-bleed map, scenarios told
@@ -38,7 +39,7 @@
   /* hero photograph: lifted so the picture reads as a place, not a fill */
   /* scrim rescaled off the sheet default: the copy corner is 0.45, the
      foot anchor stays dark so the hand-off to the next section has no seam */
-  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.449) 0%,rgba(4,8,15,0.275) 45%,rgba(4,8,15,0.86) 100%);}
+  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.449) 0%,rgba(255,255,255,0.275) 45%,rgba(255,255,255,0.86) 100%);}
   .hero .bgimg img{filter:brightness(1.5) saturate(1.15) contrast(1.04);}
   .hero{position:relative;overflow:hidden;padding-bottom:96px;display:block;}
   .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
@@ -61,24 +62,24 @@
     .hero-panel .whofor,.hero-panel .whotxt{order:6;}
   }
   /* type scale is owned by site.css (--fs-h1/--fs-h2); only its voice lives here */
-  .hero h1{margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);
-    line-height:1.05;letter-spacing:-.045em;font-weight:600;color:#fff;max-width:15ch;margin-left:auto;margin-right:auto;}
+  .hero h1{margin-top:26px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);
+    line-height:1.05;letter-spacing:-.045em;font-weight:600;color:#141A1F;max-width:15ch;margin-left:auto;margin-right:auto;}
   .hero h1 em{font-style:normal;color:var(--teal);}
   .hero .sub{margin:24px auto 0;font-size:var(--fs-lead);line-height:1.7;color:var(--tx2);font-weight:500;}
   .hero .ctas{margin-top:32px;display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;}
   .hero .specstrip{margin-top:24px;}
   .hero .whotxt{margin-top:14px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;}
-  .hero .whotxt b{color:#fff;}
+  .hero .whotxt b{color:#141A1F;}
   .mapwide{position:relative;z-index:2;margin:56px auto 0;max-width:1240px;padding:0 56px;}
   .tzrow{position:relative;z-index:2;max-width:1240px;margin:18px auto 0;padding:0 32px;
     display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .tz{border:1px solid var(--hair);border-radius:18px;padding:18px 20px;background:rgba(255,255,255,.04);}
+  .tz{border:1px solid var(--hair);border-radius:14px;padding:18px 20px;background:rgba(20,26,31,.052);}
   .tz .z{font-size:var(--fs-label);letter-spacing:.18em;font-weight:800;color:var(--tx3);text-transform:uppercase;}
-  .tz .t{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.035em;color:#fff;margin-top:6px;}
+  .tz .t{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.035em;color:#141A1F;margin-top:6px;}
   .tz .t em{font-style:normal;font-size:var(--fs-xs);font-weight:500;color:var(--tx2);margin-left:8px;letter-spacing:0;}
   .tz .n{margin-top:8px;font-size:var(--fs-xs);color:var(--tx2);font-weight:500;line-height:1.6;}
   .tz.buyer .t{color:var(--teal);}
-  .tz.win{background:linear-gradient(160deg,rgba(23,189,189,.16),rgba(8,18,31,.6));border-color:rgba(23,189,189,.35);}
+  .tz.win{background:linear-gradient(160deg,rgba(11,120,120,.16),rgba(255,255,255,.6));border-color:rgba(11,120,120,.35);}
 
   /* ── scenarios on a skyline (paper) ── */
   .bg-paper > .wrap{position:relative;z-index:1;}
@@ -88,23 +89,23 @@
   .scenes .scene-frame{max-width:1080px;margin:0 auto;}
   .scenegrid{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .scenegrid .photocard{min-height:420px;}
-  .scenegrid .photocard p em{font-style:normal;font-weight:700;color:#fff;}
+  .scenegrid .photocard p em{font-style:normal;font-weight:700;color:#141A1F;}
   .scenes .foot{margin:28px auto 0;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
   .scenes .capL{margin:14px auto 0;text-align:center;font-size:var(--fs-2xs);letter-spacing:.04em;
-    font-weight:600;color:#656D78;}
+    font-weight:600;color:#616B75;}
 
   /* ── overnight proof (dark grid) ── */
-  .proof{background:#0B1424;position:relative;}
+  .proof{background:#F6F4EE;position:relative;}
   .proof .cols{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start;}
   .proof .lead{margin-top:18px;}
   .tpoints{margin-top:28px;display:grid;gap:13px;}
   .tpoints .p{display:flex;gap:13px;align-items:flex-start;font-size:var(--fs-xs);color:var(--tx2);font-weight:500;line-height:1.6;}
   .tpoints .p i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--teal-glass);
-    border:1px solid rgba(23,189,189,.4);color:var(--teal);font-size:var(--fs-2xs);font-weight:800;font-style:normal;
+    border:1px solid rgba(11,120,120,.4);color:var(--teal);font-size:var(--fs-2xs);font-weight:800;font-style:normal;
     display:flex;align-items:center;justify-content:center;margin-top:1px;}
-  .tpoints .p b{color:#fff;}
+  .tpoints .p b{color:#141A1F;}
   .stackvis{display:grid;gap:16px;}
-  .phframe{position:relative;margin:34px 0 0;border-radius:22px;overflow:hidden;aspect-ratio:16/10;
+  .phframe{position:relative;margin:34px 0 0;border-radius:14px;overflow:hidden;aspect-ratio:16/10;
     border:1px solid var(--hair2);box-shadow:0 26px 60px rgba(3,8,16,.55);}
   .phframe img.ph{position:absolute;inset:0;}
   .capD{margin-top:10px;font-size:var(--fs-2xs);letter-spacing:.04em;font-weight:600;color:var(--tx3);}
@@ -113,30 +114,30 @@
   .why{color:var(--l-ink);}
   .why .head{text-align:center;max-width:620px;margin:0 auto 50px;}
   .whygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .wcard{background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:30px 28px;
-    box-shadow:0 2px 3px rgba(11,27,51,.03),0 24px 60px rgba(11,27,51,.06);}
-  .wcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  .wcard{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:30px 28px;
+    box-shadow:0 2px 3px rgba(20,26,31,.03),0 24px 60px rgba(20,26,31,.06);}
+  .wcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
   .wcard .n em{font-style:normal;color:var(--teal-deep);}
   .wcard b{display:block;margin-top:12px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
   .wcard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
   .altwrap{margin-top:70px;}
   .altwrap .alth{text-align:center;max-width:600px;margin:0 auto 34px;}
-  .altwrap .altnote{margin-top:16px;text-align:center;font-size:var(--fs-2xs);color:#656D78;font-weight:500;}
-  .honest{max-width:820px;margin:64px auto 0;border:1px solid #F0E0C8;background:#FDF9F2;border-radius:20px;padding:30px 34px;}
+  .altwrap .altnote{margin-top:16px;text-align:center;font-size:var(--fs-2xs);color:#616B75;font-weight:500;}
+  .honest{max-width:820px;margin:64px auto 0;border:1px solid #F0E0C8;background:#FDF9F2;border-radius:14px;padding:30px 34px;}
   .honest .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.22em;color:#8D642F;text-transform:uppercase;}
-  .honest h3{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:var(--l-ink);}
+  .honest h3{margin-top:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:var(--l-ink);}
   .honest p{margin-top:10px;font-size:var(--fs-xs);line-height:1.8;color:var(--l-mut);font-weight:500;}
   .honest p b{color:var(--l-ink);}
 /* ── closer ── */
   .closer{position:relative;padding:var(--pad-xl) 0 0;text-align:center;overflow:hidden;}
   .closer .riskrow{margin-bottom:70px;text-align:left;}
-  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
-    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#141A1F;line-height:1.07;}
   .closer .lead{margin:22px auto 0;}
   .closer .eaform{margin-top:40px;text-align:left;}
   .eabadges{grid-column:span 2;display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:2px;}
   .eabadges span{font-size:var(--fs-2xs);font-weight:700;color:var(--tx2);border:1px solid var(--hair2);
-    border-radius:999px;padding:7px 15px;background:rgba(255,255,255,.03);}
+    border-radius:999px;padding:7px 15px;background:rgba(20,26,31,.039);}
   @media (max-width:760px){.eabadges{grid-column:span 1;}}
   .closer .alt{margin-top:24px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .closer .alt a{color:var(--teal);font-weight:700;}
@@ -176,7 +177,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -196,7 +197,7 @@
     <div class="hero-panel">
       <span class="eyebrow"><i></i>Cross-border · sell across&nbsp;time zones</span>
       <h1>Your&nbsp;buyers are&nbsp;awake <br><em>when you&nbsp;aren’t.</em></h1>
-      <p class="sub">When it’s&nbsp;a&nbsp;lazy afternoon on&nbsp;their&nbsp;side of&nbsp;the&nbsp;world, it’s&nbsp;3 AM at&nbsp;your&nbsp;front desk. Saleringo answers in&nbsp;their language, on&nbsp;their&nbsp;clock — then <b style="color:#fff;">books the&nbsp;slot, quotes from&nbsp;your&nbsp;own price list, files the&nbsp;customer and marks the&nbsp;hot ones</b>. By&nbsp;the&nbsp;time you make coffee, the&nbsp;night is already in&nbsp;your pipeline.</p>
+      <p class="sub">When it’s&nbsp;a&nbsp;lazy afternoon on&nbsp;their&nbsp;side of&nbsp;the&nbsp;world, it’s&nbsp;3 AM at&nbsp;your&nbsp;front desk. Saleringo answers in&nbsp;their language, on&nbsp;their&nbsp;clock — then <b style="color:#141A1F;">books the&nbsp;slot, quotes from&nbsp;your&nbsp;own price list, files the&nbsp;customer and marks the&nbsp;hot ones</b>. By&nbsp;the&nbsp;time you make coffee, the&nbsp;night is already in&nbsp;your pipeline.</p>
       <div class="ctas">
         <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
         <a class="btn btn-ghostd" href="./index.html#demo60">Start the&nbsp;2-step tour &middot; 1 min</a>
@@ -219,10 +220,10 @@
     <radialGradient id="waGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".9"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
     <linearGradient id="waArc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#17BDBD" stop-opacity=".1"/><stop offset=".5" stop-color="#17BDBD" stop-opacity=".9"/><stop offset="1" stop-color="#5B9DFF" stop-opacity=".1"/></linearGradient>
     <pattern id="waDots" width="14" height="14" patternUnits="userSpaceOnUse">
-      <circle cx="3" cy="3" r="1.6" fill="#2A4763"/>
+      <circle cx="3" cy="3" r="1.6" fill="#141A1F"/>
     </pattern>
   </defs>
-  <rect width="1000" height="520" fill="#0C1526"/>
+  <rect width="1000" height="520" fill="#141A1F"/>
   <g fill="url(#waDots)">
     <path d="M120 130 q60-40 130-26 q60 12 84 54 q10 40-24 66 q-50 34-110 22 q-60-14-84-54 q-14-36 4-62 z"/>
     <path d="M250 300 q40-16 66 10 q26 28 12 78 q-14 52-48 74 q-30 18-42-16 q-14-44 0-96 q8-34 12-50 z"/>
@@ -578,7 +579,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -627,13 +628,13 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=75.0"></script>
-<script src="../assets/js/balance.js?v=75.0" defer></script>
-<script src="../assets/js/panels.js?v=75.0" defer></script>
-<script src="../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../assets/js/rail.js?v=75.0" defer></script>
-<script src="../assets/js/canvas.js?v=75.0" defer></script>
-<script src="../assets/js/scenes.js?v=75.0" defer></script>
-<script src="../assets/js/guide.js?v=75.0"></script>
+<script src="../assets/js/site.js?v=76.0"></script>
+<script src="../assets/js/balance.js?v=76.0" defer></script>
+<script src="../assets/js/panels.js?v=76.0" defer></script>
+<script src="../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../assets/js/rail.js?v=76.0" defer></script>
+<script src="../assets/js/canvas.js?v=76.0" defer></script>
+<script src="../assets/js/scenes.js?v=76.0" defer></script>
+<script src="../assets/js/guide.js?v=76.0"></script>
 </body>
 </html>

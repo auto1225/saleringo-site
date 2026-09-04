@@ -24,13 +24,14 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it slow my site down?","acceptedAnswer":{"@type":"Answer","text":"No. The widget loads asynchronously after your page renders, weighs about 40KB, and never blocks your content. If our CDN were unreachable, your site loads without the widget \u2014 nothing breaks and nothing errors on your page."}},{"@type":"Question","name":"Does it detect the visitor's language?","acceptedAnswer":{"@type":"Answer","text":"Yes. It detects the language a visitor writes in and replies in that language. Your approved facts stay in one source language; translations are generated per conversation, and the lead record notes which language was used so your reply can match."}},{"@type":"Question","name":"How does the handoff to a human work?","acceptedAnswer":{"@type":"Answer","text":"When a question falls outside your approved facts \u2014 or hits a topic you flagged, like contracts, payments, or medical advice \u2014 the widget tells the visitor a person will follow up, collects their&nbsp;contact details, and notifies your team by email and in the Saleringo inbox with the full transcript. During business hours, your team can also take over the chat live."}},{"@type":"Question","name":"What data does it store, and where?","acceptedAnswer":{"@type":"Answer","text":"Conversation transcripts and the lead fields you configure. No cookie is set for visitors who never open the widget. The operational database is in South Korea (Seoul); other regions are available by contract. The model that drafts the answer runs on US servers either way. You can delete a conversation or a whole lead record from the dashboard, and deletion removes it from the knowledge base too. Full detail is on our Security & Trust and Privacy pages."}},{"@type":"Question","name":"Can it run alongside my existing chat widget?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set Saleringo to the opposite corner and run both while you evaluate \u2014 many teams do this for a couple of weeks. When you switch, removing the old widget is the only change; your&nbsp;Saleringo install stays the same three lines."}}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=75.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=76.0">
 <style>
   /* ═══ PRODUCT-UI SHOWCASE — light-first page ═══ */
   body{background:#F4F8FB;}
@@ -39,17 +40,17 @@
   .khead.mid{margin:0 auto;text-align:center;}
 
   /* nav sits on a LIGHT hero here — restyle, same markup */
-  .hero .nav{background:rgba(255,255,255,.74);border-color:rgba(11,27,51,.10);
-    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 46px rgba(11,27,51,.12);}
+  .hero .nav{background:rgba(20,26,31,.74);border-color:rgba(20,26,31,.10);
+    box-shadow:0 1px 0 rgba(20,26,31,.9) inset,0 18px 46px rgba(20,26,31,.12);}
   .hero .nav .logo{color:var(--l-ink);}
-  .hero .nav .links{color:#5A6779;}
+  .hero .nav .links{color:#4B555E;}
   .hero .nav .links a:hover,.hero .nav .links .on{color:var(--l-ink);}
-  .hero .nav .sep{background:rgba(11,27,51,.14);}
-  .hero .nav .loc{color:#5A6779;}
-  .hero .nav .btn-white{background:var(--l-ink);color:#fff;box-shadow:0 14px 32px rgba(11,27,51,.26);}
-  .hero .nav .btn-white .cir{background:rgba(255,255,255,.18);color:#fff;}
+  .hero .nav .sep{background:rgba(20,26,31,.14);}
+  .hero .nav .loc{color:#4B555E;}
+  .hero .nav .btn-white{background:var(--l-ink);color:#141A1F;box-shadow:0 14px 32px rgba(20,26,31,.26);}
+  .hero .nav .btn-white .cir{background:rgba(20,26,31,.234);color:#141A1F;}
   .hero .nav .burger span{background:var(--l-ink);}
-  .hero .nav .links.open{background:rgba(255,255,255,.98);border-color:rgba(11,27,51,.10);}
+  .hero .nav .links.open{background:rgba(20,26,31,.98);border-color:rgba(20,26,31,.10);}
 
   /* ═══ PHOTOGRAPHY — real images carry this page (see assets/PHOTOS.md) ═══ */
   /* the hero stacks nav + grid + band, so it cannot stay a flex row */
@@ -60,11 +61,11 @@
      screen belongs to the install snippet — the thing this page sells. */
   .heroground{position:absolute;inset:0;z-index:0;pointer-events:none;
     background:
-      radial-gradient(1100px 620px at 22% 18%, #FFFFFF 0%, rgba(255,255,255,0) 62%),
+      radial-gradient(1100px 620px at 22% 18%, #FFFFFF 0%, rgba(20,26,31,0) 62%),
       radial-gradient(900px 560px at 88% 8%, rgba(217,236,244,.7) 0%, rgba(217,236,244,0) 60%),
       linear-gradient(180deg,#F7FAFC 0%,#EEF4F8 100%);}
   .heroground::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
-    background:linear-gradient(90deg,rgba(11,27,51,0),rgba(11,27,51,.12) 22%,rgba(11,27,51,.12) 78%,rgba(11,27,51,0));}
+    background:linear-gradient(90deg,rgba(20,26,31,0),rgba(20,26,31,.12) 22%,rgba(20,26,31,.12) 78%,rgba(20,26,31,0));}
   /* The panel sat on a photo and needed glass. It sits on a flat ground now,
      so the blur and the translucency are decoration with nothing to do. */
   .heropanel2{position:relative;z-index:2;}
@@ -101,19 +102,19 @@
               mask-image:linear-gradient(180deg,transparent 0%,#000 42%,#000 78%,transparent 99%);
       -webkit-mask-composite:source-over; mask-composite:add;}}
   .heropanel2 .sub{}
-  .hero-panel.lt{background:rgba(255,255,255,.82);backdrop-filter:blur(20px) saturate(1.18);
-    border-color:rgba(11,27,51,.09);padding:38px 40px;
-    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 34px 84px rgba(11,27,51,.16);}
-  .herowho{margin-top:26px;padding-top:20px;border-top:1px solid rgba(11,27,51,.10);
+  .hero-panel.lt{background:rgba(20,26,31,.82);backdrop-filter:blur(20px) saturate(1.18);
+    border-color:rgba(20,26,31,.09);padding:38px 40px;
+    box-shadow:0 1px 0 rgba(20,26,31,.9) inset,0 34px 84px rgba(20,26,31,.16);}
+  .herowho{margin-top:26px;padding-top:20px;border-top:1px solid rgba(20,26,31,.10);
     display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
   .herowho .wt{font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:600;max-width:280px;}
   .herowho .wt b{color:var(--l-ink);}
   /* split photo band, dropped into a light paper card */
-  .psband{border-radius:24px;overflow:hidden;background:#fff;border:1px solid #EDE5D8;
-    box-shadow:0 2px 3px rgba(11,27,51,.03),0 30px 70px rgba(11,27,51,.09);}
+  .psband{border-radius:14px;overflow:hidden;background:#fff;border:1px solid #EDE5D8;
+    box-shadow:0 2px 3px rgba(20,26,31,.03),0 30px 70px rgba(20,26,31,.09);}
   .psband .photosplit{min-height:436px;}
   .psband .copy{padding:54px 50px;}
-  .psband .copy h3{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
+  .psband .copy h3{margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);
     font-weight:600;letter-spacing:-.04em;color:var(--l-ink);line-height:1.12;}
   .psband .copy p{margin-top:15px;font-size:var(--fs-sm);line-height:1.76;color:var(--l-mut);font-weight:500;max-width:430px;}
   .psband .copy .kv{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;}
@@ -125,10 +126,10 @@
   .closerband{max-width:1128px;margin:0 auto;border-radius:26px;min-height:334px;
     display:flex;align-items:flex-end;text-align:left;box-shadow:0 40px 90px rgba(0,0,0,.46);}
   .closerband .cbcopy{padding:34px 40px;max-width:660px;}
-  .closerband .cbt{display:block;margin-top:14px;font-family:'Space Grotesk',sans-serif;
-    font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.035em;color:#fff;line-height:1.16;}
+  .closerband .cbt{display:block;margin-top:14px;font-family:'Bricolage Grotesque',sans-serif;
+    font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.035em;color:#141A1F;line-height:1.16;}
   .closerband .cbs{display:block;margin-top:11px;font-size:var(--fs-xs);line-height:1.72;
-    color:rgba(255,255,255,.76);font-weight:500;max-width:520px;}
+    color:rgba(20,26,31,.76);font-weight:500;max-width:520px;}
   @media (max-width:760px){.psband .copy{padding:34px 24px;}.closerband .cbcopy{padding:26px 22px;}}
 
   /* ── hero — code-first, asymmetric. The snippet IS the hero object,
@@ -141,25 +142,25 @@
     grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center;}
   .herogrid > *{min-width:0;}
   .hcopy{text-align:left;}
-  .hero h1{margin-top:22px;font-family:'Space Grotesk',sans-serif;max-width:14ch;
+  .hero h1{margin-top:22px;font-family:'Bricolage Grotesque',sans-serif;max-width:14ch;
     line-height:1.02;letter-spacing:-.05em;font-weight:600;color:var(--l-ink);}
   .hero h1 .quiet{color:#63718A;}
   .hero h1 em{font-style:normal;color:#2C6FE0;}
   .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.72;color:var(--l-mut);font-weight:500;}
   .hero .ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
-  .specline{margin-top:26px;padding-top:18px;border-top:1px solid rgba(11,27,51,.10);
+  .specline{margin-top:26px;padding-top:18px;border-top:1px solid rgba(20,26,31,.10);
     font-size:var(--fs-xs);line-height:1.9;color:var(--l-mut);font-weight:600;max-width:440px;}
   .specline b{color:var(--l-ink);}
-  .hcode .gradborder{box-shadow:0 40px 90px rgba(11,27,51,.18);}
+  .hcode .gradborder{box-shadow:0 40px 90px rgba(20,26,31,.18);}
   .codecap{margin-top:16px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;text-align:center;}
   .heroband{position:relative;z-index:2;margin:56px auto 0;display:flex;gap:10px;
     justify-content:center;align-items:center;flex-wrap:wrap;}
   .heroband .bandlab{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;
-    text-transform:uppercase;color:#656D78;margin-right:6px;}
+    text-transform:uppercase;color:#616B75;margin-right:6px;}
   /* ── cost of inaction + alternatives ── */
   .costsec .costnums{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .costnum{background:#fff;border:1px solid #EDE5D8;border-radius:20px;padding:30px 28px;
-    box-shadow:0 2px 3px rgba(11,27,51,.03),0 24px 60px rgba(11,27,51,.06);}
+  .costnum{background:#fff;border:1px solid #EDE5D8;border-radius:14px;padding:30px 28px;
+    box-shadow:0 2px 3px rgba(20,26,31,.03),0 24px 60px rgba(20,26,31,.06);}
   .costnum .t{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#6F767F;}
   .costnum .n{margin-top:14px;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.04em;color:var(--l-ink);line-height:1;}
   .costnum p{margin-top:14px;font-size:var(--fs-xs);line-height:1.75;color:var(--l-mut);font-weight:500;}
@@ -167,23 +168,23 @@
   .costsec .costfoot a{color:#0B7878;font-weight:700;}
   .costsec .altwrap{margin-top:70px;}
   .costsec .altwrap .cap{text-align:center;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;
-    text-transform:uppercase;color:#656D78;margin-bottom:24px;}
-  .costsec .altnote{margin-top:18px;text-align:center;font-size:var(--fs-2xs);color:#656D78;font-weight:500;}
+    text-transform:uppercase;color:#616B75;margin-bottom:24px;}
+  .costsec .altnote{margin-top:18px;text-align:center;font-size:var(--fs-2xs);color:#616B75;font-weight:500;}
   .proofslot{max-width:830px;margin:60px auto 0;}
   .secpad .riskrow{margin-top:44px;}
   .closer .riskrow.short{grid-template-columns:repeat(2,1fr);max-width:640px;margin-left:auto;margin-right:auto;}
   @media (max-width:900px){.costsec .costnums{grid-template-columns:1fr;}}
   .scenecap{margin-top:16px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.14em;
-    text-transform:uppercase;color:#656D78;font-weight:700;}
+    text-transform:uppercase;color:#616B75;font-weight:700;}
   @media (max-width:1000px){.herogrid{grid-template-columns:1fr;gap:44px;}}
 
   /* ── install snippet ── */
   .instcols{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:center;}
-  .gradborder>.browserframe{border-radius:23px;border:0;box-shadow:none;}
+  .gradborder>.browserframe{border-radius:14px;border:0;box-shadow:none;}
   .codeblk{padding:22px 24px;font-family:'Consolas','SF Mono',monospace;font-size:var(--fs-xs);line-height:1.95;
-    color:#D5DFEC;overflow-x:auto;white-space:pre;}
-  .codeblk .c-com{color:var(--tx3);} .codeblk .c-tag{color:#5B9DFF;}
-  .codeblk .c-attr{color:#17BDBD;} .codeblk .c-str{color:#E8A44C;}
+    color:#141A1F;overflow-x:auto;white-space:pre;}
+  .codeblk .c-com{color:var(--tx3);} .codeblk .c-tag{color:#2C63B8;}
+  .codeblk .c-attr{color:#0B7878;} .codeblk .c-str{color:#B7791F;}
   .sniprow{display:flex;gap:8px;flex-wrap:wrap;padding:13px 22px;border-top:1px solid var(--hair);}
   .instlist{margin-top:26px;display:grid;gap:13px;}
   .instlist .b{display:flex;gap:13px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.62;color:var(--l-mut);font-weight:500;}
@@ -193,11 +194,11 @@
 
   /* ── watch it think (dark) ── */
   .thinkcols{display:grid;grid-template-columns:1.06fr .94fr;gap:46px;align-items:stretch;margin-top:38px;}
-  .gradborder>.core{border-radius:23px;border:0;background:linear-gradient(180deg,#0D1A30,#091224);}
+  .gradborder>.core{border-radius:14px;border:0;background:linear-gradient(180deg,#FFFFFF,#FFFFFF);}
   .tsteps{display:grid;gap:14px;}
-  .tstep{border:1px solid var(--hair);border-radius:18px;padding:20px 22px;background:rgba(255,255,255,.035);}
-  .tstep .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);font-weight:600;letter-spacing:.2em;color:var(--chan-chat);}
-  .tstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.01em;}
+  .tstep{border:1px solid var(--hair);border-radius:14px;padding:20px 22px;background:rgba(20,26,31,.046);}
+  .tstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:600;letter-spacing:.2em;color:var(--chan-chat);}
+  .tstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.01em;}
   .tstep p{margin-top:7px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
   .tstep .tags{margin-top:13px;display:flex;gap:7px;flex-wrap:wrap;}
   .tnote{margin-top:16px;font-size:var(--fs-xs);color:var(--tx3);font-weight:600;line-height:1.7;}
@@ -205,53 +206,53 @@
   /* ── widget customization (white) ── */
   .custsec{background:#fff;}
   .swatchrow{margin:30px auto 0;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;}
-  .sw{width:38px;height:38px;border-radius:12px;box-shadow:0 8px 18px rgba(11,27,51,.16);position:relative;}
-  .sw.on:after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--fs-sm);font-weight:800;}
+  .sw{width:38px;height:38px;border-radius:8px;box-shadow:0 8px 18px rgba(20,26,31,.16);position:relative;}
+  .sw.on:after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#141A1F;font-size:var(--fs-sm);font-weight:800;}
   .swlbl{font-size:var(--fs-xs);font-weight:700;color:#6F767F;letter-spacing:.06em;}
   .custgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:44px auto 0;}
   .wpage{position:relative;height:326px;background:#F3F5F8;padding:22px 22px 0;overflow:hidden;}
-  .wpage.dkpage{background:#101C31;}
+  .wpage.dkpage{background:#FFFFFF;}
   .wline{height:10px;border-radius:5px;background:#E2E7EE;margin-bottom:12px;}
-  .dkpage .wline{background:rgba(255,255,255,.08);}
-  .widget{position:absolute;bottom:18px;right:18px;width:238px;border-radius:16px;overflow:hidden;
-    background:#fff;box-shadow:0 24px 50px rgba(11,27,51,.28);border:1px solid var(--l-hair);}
-  .widget.dk{right:auto;left:18px;background:#0B1B33;border-color:rgba(255,255,255,.12);}
+  .dkpage .wline{background:rgba(20,26,31,.104);}
+  .widget{position:absolute;bottom:18px;right:18px;width:238px;border-radius:14px;overflow:hidden;
+    background:#fff;box-shadow:0 24px 50px rgba(20,26,31,.28);border:1px solid var(--l-hair);}
+  .widget.dk{right:auto;left:18px;background:#141A1F;border-color:rgba(20,26,31,.156);}
   .widget .whead{display:flex;align-items:center;gap:9px;padding:12px 14px;background:var(--teal-deep);color:#fff;}
   .widget.dk .whead{background:#2C6FE0;}
   .widget .whead b{font-size:var(--fs-xs);}
   .widget .whead span{display:block;font-size:var(--fs-label);opacity:.85;font-weight:600;}
   .widget .wdot{width:7px;height:7px;border-radius:50%;background:#7BF5C8;flex:none;}
   .widget .wbody{padding:12px;display:flex;flex-direction:column;gap:8px;}
-  .widget .wb{max-width:88%;font-size:var(--fs-2xs);line-height:1.5;padding:8px 11px;border-radius:11px;font-weight:500;}
+  .widget .wb{max-width:88%;font-size:var(--fs-2xs);line-height:1.5;padding:8px 11px;border-radius:8px;font-weight:500;}
   .widget .wb.bot{align-self:flex-start;background:#F0F3F7;color:var(--l-ink);border-bottom-left-radius:4px;}
-  .widget.dk .wb.bot{background:rgba(255,255,255,.08);color:#E2EAF3;}
+  .widget.dk .wb.bot{background:rgba(20,26,31,.104);color:#141A1F;}
   .widget .wb.vis{align-self:flex-end;background:var(--teal-deep);color:#fff;border-bottom-right-radius:4px;}
   .widget.dk .wb.vis{background:#2C6FE0;}
   .widget .winput{margin:0 12px 12px;border:1px solid #E2E7EE;border-radius:999px;padding:8px 13px;font-size:var(--fs-2xs);color:#6F767F;font-weight:500;}
   /* The dark widget's placeholder measured 3.29:1 — the light widget's
      #6F767F was reaching it. Stated with enough specificity to hold, and
      one step brighter than --tx3 so it clears on the navy either way. */
-  .widget.dk .winput,.widget.dk div.winput{border-color:rgba(255,255,255,.14);color:#9AA6B8;}
+  .widget.dk .winput,.widget.dk div.winput{border-color:rgba(20,26,31,.182);color:#9AA6B8;}
   .launcher{position:absolute;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;
-    background:var(--teal-deep);box-shadow:0 14px 28px rgba(15,163,163,.4);}
+    background:var(--teal-deep);box-shadow:0 14px 28px rgba(10,95,95,.4);}
   .custcap{margin-top:14px;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
   .custcap b{color:var(--l-ink);}
 
   /* ── funnel ── */
   .funflow{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .fstep{position:relative;background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:22px;
-    box-shadow:0 2px 3px rgba(11,27,51,.03),0 22px 50px rgba(11,27,51,.07);}
+  .fstep{position:relative;background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px;
+    box-shadow:0 2px 3px rgba(20,26,31,.03),0 22px 50px rgba(20,26,31,.07);}
   .fstep:not(:last-child):after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);
-    color:#C6CEDA;font-size:var(--fs-lead);font-weight:700;z-index:2;}
-  .fstep .fn{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);font-weight:600;letter-spacing:.2em;color:#6F767F;}
-  .fstep svg{display:block;width:100%;height:auto;margin:14px 0 16px;border-radius:12px;background:#F3F6FA;border:1px solid var(--l-hair);}
+    color:#141A1F;font-size:var(--fs-lead);font-weight:700;z-index:2;}
+  .fstep .fn{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:600;letter-spacing:.2em;color:#6F767F;}
+  .fstep svg{display:block;width:100%;height:auto;margin:14px 0 16px;border-radius:8px;background:#F3F6FA;border:1px solid var(--l-hair);}
   .fstep b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
   .fstep p{margin-top:7px;font-size:var(--fs-xs);line-height:1.68;color:var(--l-mut);font-weight:500;}
   .funfoot{margin-top:30px;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
   .funfoot b{color:var(--l-ink);}
 
   /* ── inbox + world (dark) ── */
-  .inbsec{background:linear-gradient(180deg,#071021 0%,#0C1526 100%);}
+  .inbsec{background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 100%);}
   .worldband{margin-top:96px;display:grid;grid-template-columns:.8fr 1.2fr;gap:46px;align-items:center;}
 
   /* ── pricing ── */
@@ -260,21 +261,21 @@
   .incl .r{display:flex;gap:12px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.6;color:var(--l-mut);font-weight:500;}
   .incl .r i{flex:none;color:#0B7878;font-style:normal;font-weight:800;}
   .incl .r b{color:var(--l-ink);}
-  .meter{margin-top:24px;background:#fff;border:1px solid var(--l-hair);border-radius:16px;padding:18px 20px;}
+  .meter{margin-top:24px;background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:18px 20px;}
   .meter .t{display:flex;font-size:var(--fs-xs);font-weight:700;color:var(--l-mut);}
-  .meter .t b{margin-left:auto;color:var(--l-ink);font-family:'Space Grotesk',sans-serif;}
+  .meter .t b{margin-left:auto;color:var(--l-ink);font-family:'Bricolage Grotesque',sans-serif;}
   .meter .bar{margin-top:11px;height:7px;border-radius:4px;background:#EAEFF4;overflow:hidden;}
-  .meter .bar i{display:block;height:100%;width:62%;border-radius:4px;background:linear-gradient(90deg,#17BDBD,#2C6FE0);}
+  .meter .bar i{display:block;height:100%;width:62%;border-radius:4px;background:linear-gradient(90deg,#0B7878,#2C6FE0);}
   .meter .s{margin-top:10px;font-size:var(--fs-2xs);color:var(--l-mut);font-weight:600;}
 
   /* ── AFTER THE CHAT — the CRM half ── */
-  .crmsec{background:linear-gradient(180deg,#0C1526 0%,#08131F 60%,#0C1526 100%);}
+  .crmsec{background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 60%,#FFFFFF 100%);}
   .crmsec .khead{max-width:800px;}
   .crmtrio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px;align-items:stretch;}
-  .crmtrio .cw h3{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-lead);font-weight:600;color:#fff;
+  .crmtrio .cw h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-lead);font-weight:600;color:#141A1F;
     letter-spacing:-.02em;line-height:1.24;}
   .crmtrio .cw p{margin-top:9px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
-  .crmtrio .cw p b{color:#fff;}
+  .crmtrio .cw p b{color:#141A1F;}
   .crmtrio .cw{margin-bottom:15px;}
   .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
   .crmfoot{margin-top:38px;text-align:center;}
@@ -283,7 +284,7 @@
   /* the ask, inline — the funnel used to end in a mail client */
   .leadwrap{max-width:680px;margin:58px auto 0;text-align:left;}
   .leadcard{padding:34px 36px;}
-  .leadcard h3{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;color:#fff;letter-spacing:-.025em;}
+  .leadcard h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h3);font-weight:600;color:#141A1F;letter-spacing:-.025em;}
   .leadsub{margin-top:10px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
   .leadcard .eaform{margin-top:22px;max-width:none;}
   .badgerow{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;
@@ -292,13 +293,13 @@
   .badgerow span{white-space:nowrap;}
   @media (max-width:760px){.leadcard{padding:26px 22px;}}
 
-  .crmsec .linkcta{color:#fff;border-bottom-color:var(--hair2);}
-  .crmsec .pilltag{background:rgba(255,255,255,.07);color:var(--app-tx2);
+  .crmsec .linkcta{color:#141A1F;border-bottom-color:var(--hair2);}
+  .crmsec .pilltag{background:rgba(20,26,31,.091);color:var(--app-tx2);
     border:1px solid var(--app-line);font-weight:700;}
   /* ── closer + footer ── */
   .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{margin-top:56px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);
-    font-weight:600;letter-spacing:-.045em;color:#fff;line-height:1.06;}
+  .closer h2{margin-top:56px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);
+    font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.06;}
   .closer .lead{margin:22px auto 0;}
   .closer .ctas{margin-top:36px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
 
@@ -315,9 +316,9 @@
     .custgrid,.funflow{grid-template-columns:1fr;}
     .fstep:after{display:none;}
     .widget{width:206px;}
-    .scene-overlay{padding:9px 11px;border-radius:12px;max-width:52%;}
+    .scene-overlay{padding:9px 11px;border-radius:8px;max-width:52%;}
     .scene-overlay b{font-size:var(--fs-2xs);} .scene-overlay span{font-size:var(--fs-label);}
-    .hcode .gradborder{border-radius:20px;}
+    .hcode .gradborder{border-radius:14px;}
   }
 
   .fansec .fanfig .scenebox{--sh:210px;}
@@ -356,7 +357,7 @@
 
   <!--#nav-->
 <div class="navwrap onlight"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop on" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how" aria-current="true">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html" aria-current="page" class="np-here">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -407,12 +408,12 @@
   </div>
 
   <div class="wrap heroband">
-    <span class="bandlab">Drops into</span>&nbsp;<span class="intchip light"><i style="background:#0FA3A3;"></i>WordPress</span>
-    <span class="intchip light"><i style="background:#0FA3A3;"></i>Shopify</span>
-    <span class="intchip light"><i style="background:#0FA3A3;"></i>Squarespace</span>
-    <span class="intchip light"><i style="background:#0FA3A3;"></i>Wix</span>
-    <span class="intchip light"><i style="background:#0FA3A3;"></i>Webflow</span>
-    <span class="intchip light"><i style="background:#0FA3A3;"></i>Hand-built HTML</span>
+    <span class="bandlab">Drops into</span>&nbsp;<span class="intchip light"><i style="background:#0A5F5F;"></i>WordPress</span>
+    <span class="intchip light"><i style="background:#0A5F5F;"></i>Shopify</span>
+    <span class="intchip light"><i style="background:#0A5F5F;"></i>Squarespace</span>
+    <span class="intchip light"><i style="background:#0A5F5F;"></i>Wix</span>
+    <span class="intchip light"><i style="background:#0A5F5F;"></i>Webflow</span>
+    <span class="intchip light"><i style="background:#0A5F5F;"></i>Hand-built HTML</span>
   </div>
 </header>
 
@@ -437,7 +438,7 @@
 <svg viewBox="0 0 1000 620" role="img" aria-label="A real business website with the Saleringo launcher open in the corner: a visitor asks about a service and gets a straight answer without leaving the page.">
   <defs>
     <linearGradient id="wcWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7FAFC"/><stop offset="1" stop-color="#E8EFF5"/></linearGradient>
-    <linearGradient id="wcHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12294E"/><stop offset="1" stop-color="#0B7878"/></linearGradient>
+    <linearGradient id="wcHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#0B7878"/></linearGradient>
     <radialGradient id="wcGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".26"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
   </defs>
   <rect width="1000" height="620" fill="url(#wcWall)"/>
@@ -445,79 +446,79 @@
 
   <!-- the customer's own website, unchanged -->
   <g transform="translate(48,40)">
-    <rect width="904" height="540" rx="14" fill="#FFFFFF" stroke="#D9E3EC" stroke-width="1.5"/>
-    <rect width="904" height="42" rx="14" fill="#F1F5F9"/><rect y="28" width="904" height="14" fill="#F1F5F9"/>
-    <circle cx="26" cy="21" r="4.5" fill="#C9D6E2"/><circle cx="42" cy="21" r="4.5" fill="#C9D6E2"/><circle cx="58" cy="21" r="4.5" fill="#C9D6E2"/>
-    <rect x="330" y="13" width="244" height="16" rx="8" fill="#E3EAF1"/>
+    <rect width="904" height="540" rx="14" fill="#F6F4EE" stroke="#141A1F" stroke-width="1.5"/>
+    <rect width="904" height="42" rx="14" fill="#F6F4EE"/><rect y="28" width="904" height="14" fill="#F6F4EE"/>
+    <circle cx="26" cy="21" r="4.5" fill="#F6F4EE"/><circle cx="42" cy="21" r="4.5" fill="#F6F4EE"/><circle cx="58" cy="21" r="4.5" fill="#F6F4EE"/>
+    <rect x="330" y="13" width="244" height="16" rx="8" fill="#F6F4EE"/>
     <text x="452" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#8FA0B2" text-anchor="middle" font-weight="600">northside-hvac.com</text>
 
     <!-- site nav -->
-    <rect x="34" y="62" width="96" height="12" rx="6" fill="#0B1B33"/>
-    <g fill="#C4D0DC">
+    <rect x="34" y="62" width="96" height="12" rx="6" fill="#F6F4EE"/>
+    <g fill="#F6F4EE">
       <rect x="560" y="64" width="54" height="8" rx="4"/><rect x="630" y="64" width="48" height="8" rx="4"/>
       <rect x="694" y="64" width="60" height="8" rx="4"/>
     </g>
-    <rect x="774" y="56" width="96" height="26" rx="13" fill="#0B1B33"/>
-    <text x="822" y="73" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">Get a&nbsp;quote</text>
+    <rect x="774" y="56" width="96" height="26" rx="13" fill="#F6F4EE"/>
+    <text x="822" y="73" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#F6F4EE" text-anchor="middle" font-weight="700">Get a&nbsp;quote</text>
 
     <!-- the page's own hero -->
     <rect x="34" y="98" width="836" height="212" rx="12" fill="url(#wcHero)"/>
-    <rect x="70" y="140" width="330" height="20" rx="10" fill="#FFFFFF" opacity=".92"/>
-    <rect x="70" y="172" width="252" height="20" rx="10" fill="#FFFFFF" opacity=".92"/>
-    <rect x="70" y="212" width="300" height="9" rx="4.5" fill="#FFFFFF" opacity=".45"/>
-    <rect x="70" y="230" width="246" height="9" rx="4.5" fill="#FFFFFF" opacity=".45"/>
+    <rect x="70" y="140" width="330" height="20" rx="10" fill="#F6F4EE" opacity=".92"/>
+    <rect x="70" y="172" width="252" height="20" rx="10" fill="#F6F4EE" opacity=".92"/>
+    <rect x="70" y="212" width="300" height="9" rx="4.5" fill="#F6F4EE" opacity=".45"/>
+    <rect x="70" y="230" width="246" height="9" rx="4.5" fill="#F6F4EE" opacity=".45"/>
     <rect x="70" y="258" width="132" height="30" rx="15" fill="#17BDBD"/>
 
     <!-- service cards -->
     <g>
-      <rect x="34" y="330" width="264" height="122" rx="10" fill="#F7FAFC" stroke="#E4EBF2"/>
-      <rect x="56" y="356" width="110" height="10" rx="5" fill="#0B1B33"/>
-      <rect x="56" y="380" width="200" height="7" rx="3.5" fill="#C4D0DC"/>
-      <rect x="56" y="396" width="164" height="7" rx="3.5" fill="#C4D0DC"/>
-      <rect x="320" y="330" width="264" height="122" rx="10" fill="#F7FAFC" stroke="#E4EBF2"/>
-      <rect x="342" y="356" width="94" height="10" rx="5" fill="#0B1B33"/>
-      <rect x="342" y="380" width="200" height="7" rx="3.5" fill="#C4D0DC"/>
-      <rect x="342" y="396" width="140" height="7" rx="3.5" fill="#C4D0DC"/>
-      <rect x="606" y="330" width="264" height="122" rx="10" fill="#F7FAFC" stroke="#E4EBF2"/>
-      <rect x="628" y="356" width="120" height="10" rx="5" fill="#0B1B33"/>
-      <rect x="628" y="380" width="188" height="7" rx="3.5" fill="#C4D0DC"/>
+      <rect x="34" y="330" width="264" height="122" rx="10" fill="#F6F4EE" stroke="#141A1F"/>
+      <rect x="56" y="356" width="110" height="10" rx="5" fill="#F6F4EE"/>
+      <rect x="56" y="380" width="200" height="7" rx="3.5" fill="#F6F4EE"/>
+      <rect x="56" y="396" width="164" height="7" rx="3.5" fill="#F6F4EE"/>
+      <rect x="320" y="330" width="264" height="122" rx="10" fill="#F6F4EE" stroke="#141A1F"/>
+      <rect x="342" y="356" width="94" height="10" rx="5" fill="#F6F4EE"/>
+      <rect x="342" y="380" width="200" height="7" rx="3.5" fill="#F6F4EE"/>
+      <rect x="342" y="396" width="140" height="7" rx="3.5" fill="#F6F4EE"/>
+      <rect x="606" y="330" width="264" height="122" rx="10" fill="#F6F4EE" stroke="#141A1F"/>
+      <rect x="628" y="356" width="120" height="10" rx="5" fill="#F6F4EE"/>
+      <rect x="628" y="380" width="188" height="7" rx="3.5" fill="#F6F4EE"/>
     </g>
-    <rect x="34" y="482" width="300" height="8" rx="4" fill="#DCE5ED"/>
-    <rect x="34" y="500" width="220" height="8" rx="4" fill="#DCE5ED"/>
+    <rect x="34" y="482" width="300" height="8" rx="4" fill="#F6F4EE"/>
+    <rect x="34" y="500" width="220" height="8" rx="4" fill="#F6F4EE"/>
   </g>
 
   <!-- the widget, open in the corner of that page -->
   <g transform="translate(596,236)">
-    <rect width="330" height="316" rx="18" fill="#FFFFFF" stroke="#CFEAEA" stroke-width="2"/>
-    <rect width="330" height="56" rx="18" fill="#0B1B33"/><rect y="38" width="330" height="18" fill="#0B1B33"/>
+    <rect width="330" height="316" rx="18" fill="#F6F4EE" stroke="#141A1F" stroke-width="2"/>
+    <rect width="330" height="56" rx="18" fill="#F6F4EE"/><rect y="38" width="330" height="18" fill="#F6F4EE"/>
     <circle cx="30" cy="28" r="11" fill="#17BDBD"/>
-    <text x="52" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#fff" font-weight="700">Northside HVAC</text>
+    <text x="52" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#F6F4EE" font-weight="700">Northside HVAC</text>
     <text x="52" y="42" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#94A2B8" font-weight="600">Answers now · a&nbsp;person can take over</text>
 
     <g font-family="Plus Jakarta Sans,sans-serif">
-      <rect x="18" y="76" width="212" height="46" rx="12" fill="#EFF3F7"/>
-      <text x="34" y="96" font-size="12.5" fill="#4A5A6B" font-weight="600">Do you do same-day AC</text>
-      <text x="34" y="112" font-size="12.5" fill="#4A5A6B" font-weight="600">repair in&nbsp;Plano?</text>
+      <rect x="18" y="76" width="212" height="46" rx="12" fill="#F6F4EE"/>
+      <text x="34" y="96" font-size="12.5" fill="#F6F4EE" font-weight="600">Do you do same-day AC</text>
+      <text x="34" y="112" font-size="12.5" fill="#F6F4EE" font-weight="600">repair in&nbsp;Plano?</text>
 
-      <rect x="60" y="132" width="252" height="64" rx="12" fill="#E3F5F5"/>
-      <text x="76" y="152" font-size="12.5" fill="#0B4F4F" font-weight="600">Yes — Plano is in&nbsp;our&nbsp;service</text>
-      <text x="76" y="168" font-size="12.5" fill="#0B4F4F" font-weight="600">area. Same-day call-out is $95,</text>
-      <text x="76" y="184" font-size="12.5" fill="#0B4F4F" font-weight="600">applied to&nbsp;the&nbsp;repair.</text>
-      <rect x="60" y="202" width="126" height="20" rx="10" fill="#DFF3F3"/>
+      <rect x="60" y="132" width="252" height="64" rx="12" fill="#F6F4EE"/>
+      <text x="76" y="152" font-size="12.5" fill="#F6F4EE" font-weight="600">Yes — Plano is in&nbsp;our&nbsp;service</text>
+      <text x="76" y="168" font-size="12.5" fill="#F6F4EE" font-weight="600">area. Same-day call-out is $95,</text>
+      <text x="76" y="184" font-size="12.5" fill="#F6F4EE" font-weight="600">applied to&nbsp;the&nbsp;repair.</text>
+      <rect x="60" y="202" width="126" height="20" rx="10" fill="#F6F4EE"/>
       <text x="123" y="216" font-size="9.5" fill="#0B7878" text-anchor="middle" font-weight="800">✓ FROM&nbsp;YOUR&nbsp;FACTS</text>
 
-      <rect x="18" y="232" width="188" height="30" rx="12" fill="#EFF3F7"/>
-      <text x="34" y="252" font-size="12.5" fill="#4A5A6B" font-weight="600">Book me for&nbsp;this&nbsp;afternoon</text>
+      <rect x="18" y="232" width="188" height="30" rx="12" fill="#F6F4EE"/>
+      <text x="34" y="252" font-size="12.5" fill="#F6F4EE" font-weight="600">Book me for&nbsp;this&nbsp;afternoon</text>
 
       <rect x="18" y="272" width="294" height="30" rx="15" fill="#0FA3A3"/>
-      <text x="165" y="292" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="700">✓ Booked 14:00–16:00 · lead saved</text>
+      <text x="165" y="292" font-size="12.5" fill="#F6F4EE" text-anchor="middle" font-weight="700">✓ Booked 14:00–16:00 · lead saved</text>
     </g>
   </g>
 
   <!-- the launcher it grew out of -->
   <g transform="translate(908,568)">
     <circle r="30" fill="#0FA3A3"/>
-    <path d="M-11 -5 h22 M-11 3 h14" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-11 -5 h22 M-11 3 h14" stroke="#141A1F" stroke-width="3" stroke-linecap="round"/>
   </g>
 </svg>
       </div>
@@ -640,13 +641,13 @@
 
     <div class="swatchrow reveal">
       <span class="swlbl">BRAND COLOR</span>
-      <span class="sw on" style="background:#0FA3A3;"></span>
+      <span class="sw on" style="background:#0A5F5F;"></span>
       <span class="sw" style="background:#2C6FE0;"></span>
       <span class="sw" style="background:#7A5CC7;"></span>
       <span class="sw" style="background:#C7695C;"></span>
-      <span class="sw" style="background:#E8A44C;"></span>
+      <span class="sw" style="background:#B7791F;"></span>
       <span class="sw" style="background:#1E9E63;"></span>
-      <span class="sw" style="background:#0B1B33;"></span>
+      <span class="sw" style="background:#141A1F;"></span>
       <span class="swlbl">OR PASTE A&nbsp;HEX</span>
     </div>
 
@@ -776,7 +777,7 @@
         <span class="fn">STEP 03</span>
         <svg viewBox="0 0 240 108" role="img" aria-label="A structured lead record is filled in automatically">
           <rect x="20" y="10" width="200" height="88" rx="10" fill="#fff" stroke="#E2E7EE"/>
-          <rect x="34" y="24" width="62" height="8" rx="4" fill="#0B1B33"/>
+          <rect x="34" y="24" width="62" height="8" rx="4" fill="#141A1F"/>
           <rect x="34" y="44" width="52" height="6" rx="3" fill="#C9D6E2"/><rect x="112" y="42" width="94" height="10" rx="5" fill="#EEF2F7"/>
           <rect x="34" y="62" width="46" height="6" rx="3" fill="#C9D6E2"/><rect x="112" y="60" width="94" height="10" rx="5" fill="#EEF2F7"/>
           <rect x="34" y="80" width="56" height="6" rx="3" fill="#C9D6E2"/><rect x="112" y="78" width="94" height="10" rx="5" fill="#DFF3F3"/>
@@ -789,7 +790,7 @@
         <span class="fn">STEP 04</span>
         <svg viewBox="0 0 240 108" role="img" aria-label="A calendar slot is booked and a reminder is queued">
           <rect x="30" y="12" width="180" height="84" rx="10" fill="#fff" stroke="#E2E7EE"/>
-          <rect x="30" y="12" width="180" height="18" rx="10" fill="#0B1B33"/>
+          <rect x="30" y="12" width="180" height="18" rx="10" fill="#141A1F"/>
           <rect x="44" y="19" width="40" height="5" rx="2.5" fill="rgba(255,255,255,.6)"/>
           <g fill="#EEF2F7">
             <rect x="44" y="40" width="26" height="18" rx="4"/><rect x="78" y="40" width="26" height="18" rx="4"/>
@@ -1281,7 +1282,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1331,13 +1332,13 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=75.0"></script>
-<script src="../assets/js/balance.js?v=75.0" defer></script>
-<script src="../assets/js/panels.js?v=75.0" defer></script>
-<script src="../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../assets/js/rail.js?v=75.0" defer></script>
-<script src="../assets/js/canvas.js?v=75.0" defer></script>
-<script src="../assets/js/scenes.js?v=75.0" defer></script>
-<script src="../assets/js/guide.js?v=75.0"></script>
+<script src="../assets/js/site.js?v=76.0"></script>
+<script src="../assets/js/balance.js?v=76.0" defer></script>
+<script src="../assets/js/panels.js?v=76.0" defer></script>
+<script src="../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../assets/js/rail.js?v=76.0" defer></script>
+<script src="../assets/js/canvas.js?v=76.0" defer></script>
+<script src="../assets/js/scenes.js?v=76.0" defer></script>
+<script src="../assets/js/guide.js?v=76.0"></script>
 </body>
 </html>

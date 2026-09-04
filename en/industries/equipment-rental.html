@@ -24,17 +24,18 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it connect to our hire system?","acceptedAnswer":{"@type":"Answer","text":"Not directly, and we will not pretend otherwise. Today Saleringo syncs reservations to Google or Outlook Calendar, exports customer and enquiry records as CSV, and pushes events through Zapier. A two-way link to a hire management system such as inspHire, MCS, Syrinx or Point of Rental is on the roadmap and founding customers vote on the build order. Until one exists, availability is treated as unknown and every enquiry is reserved for your hire desk to confirm."}},{"@type":"Question","name":"What stops it double-hiring a machine?","acceptedAnswer":{"@type":"Answer","text":"It has no authority to confirm. The AI can quote a rate, read a policy and reserve an enquiry against a date range and a depot, but a machine is not on hire until someone at your desk says it is. Availability in hire changes hourly and there is no two-way link yet, so it holds rather than promises."}},{"@type":"Question","name":"Will it quote the whole cost or just the day rate?","acceptedAnswer":{"@type":"Answer","text":"The whole cost, from your own rate card: the day, weekend, week or long-hire rate for the dates asked for, delivery and collection each way, fuel, consumables and the damage waiver. A caller told only the day rate finds the rest out at the counter, and that is the argument nobody wants."}},{"@type":"Question","name":"Can it take a deposit or a card payment?","acceptedAnswer":{"@type":"Answer","text":"It never touches card details. Once your hire desk confirms, the AI can send your existing deposit or payment link and chase it if it goes unpaid. It cannot reduce a deposit, waive one, or agree terms for a first-time cash customer."}},{"@type":"Question","name":"Can it tell a customer whether they are allowed to operate something?","acceptedAnswer":{"@type":"Answer","text":"No, and this one is a flat refusal. Some plant needs a card, a licence or a certificate, and some equipment needs a trained operator. The AI reads back what your hire terms require and records what the customer says they hold. Whether that person is competent to run that machine is decided by your team, at the counter, with the card in hand."}},{"@type":"Question","name":"Have you got a 1.5-tonne excavator Thursday to Monday?","acceptedAnswer":{"@type":"Answer","text":"Checks your own availability for that date range and that depot, and reserves it for your hire desk instead of confirming it."}},{"@type":"Question","name":"What's the day rate?","acceptedAnswer":{"@type":"Answer","text":"Quotes the day, weekend and week rate off your rate card, and says which one is cheaper across the dates asked for."}},{"@type":"Question","name":"Is delivery included?","acceptedAnswer":{"@type":"Answer","text":"No, and it says so. Delivery and collection are quoted separately, each way, exactly as your rate card has them."}},{"@type":"Question","name":"I have never hired from you before.","acceptedAnswer":{"@type":"Answer","text":"Reads your first-hire terms out loud: the deposit, the ID and the proof of address, before anyone drives across town for nothing."}},{"@type":"Question","name":"Will it fit through a 900mm gate?","acceptedAnswer":{"@type":"Answer","text":"Compares the published machine width against the access you gave it, and says plainly when it does not fit."}},{"@type":"Question","name":"Can I off-hire this one?","acceptedAnswer":{"@type":"Answer","text":"Logs the off-hire request with today's date and time and issues the reference. Stopping the clock is your desk's decision, never the AI's."}},{"@type":"Question","name":"Can I open a trade account?","acceptedAnswer":{"@type":"Answer","text":"Captures the details and hands the credit decision to your manager. Account terms are never improvised."}},{"@type":"Question","name":"The breaker has died and the job has stopped.","acceptedAnswer":{"@type":"Answer","text":"Wakes your duty fitter with the unit number, the site and the fault. It does not talk anyone through a repair."}},{"@type":"Question","name":"My lad can run the telehandler, can't he?","acceptedAnswer":{"@type":"Answer","text":"Records the question and hands it over. Whether an operator is qualified is never the AI's call."}},{"@type":"Question","name":"Just put me down for it, I'll sort the paperwork later.","acceptedAnswer":{"@type":"Answer","text":"Refused. Nothing is confirmed that your system does not show free for those dates at that depot."}},{"@type":"Question","name":"Can you knock the damage charge off?","acceptedAnswer":{"@type":"Answer","text":"Refused. Deposits, damage waivers, cleaning and loss charges are your manager's decision in every case."}},{"@type":"Question","name":"What time is it coming Tuesday?","acceptedAnswer":{"@type":"Answer","text":"Refused until your transport desk has set the slot. It will not invent a delivery window to get off the phone."}},{"@type":"Question","name":"How do I set the depth stop on the trench rammer?","acceptedAnswer":{"@type":"Answer","text":"Refused. No operating instructions, no safety advice, no method statements. That is training, not an answer."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Hire Desk for Equipment, Tool & Plant Hire","item":"https://claude.saleringo.com/en/industries/equipment-rental.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=75.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=76.0">
 <style>
   /* ── YARD AT FIRST LIGHT · equipment, tool & plant hire ───────────────── */
   .hero{position:relative;overflow:hidden;}
@@ -43,46 +44,46 @@
   .herotop{min-height:min(72vh,720px);}
   /* 1600x1067 landscape in a wide hero — hold the band on the row of machines */
   .herotop .bgimg img{filter:brightness(1.24) saturate(1.06) contrast(1.04);object-position:center 58%;}
-  .herotop .scrim{background:linear-gradient(180deg,rgba(9,7,18,0.661) 0%,rgba(9,7,18,0.297) 30%,
-    rgba(11,16,32,0.446) 64%,rgba(11,16,32,0.96) 100%);}
+  .herotop .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.661) 0%,rgba(255,255,255,0.297) 30%,
+    rgba(255,255,255,0.446) 64%,rgba(255,255,255,0.96) 100%);}
   .herotop .tint{background:radial-gradient(58% 70% at 16% 44%, rgba(255,168,86,.20), transparent 72%);}
   .hero-inner{position:relative;z-index:3;padding:150px clamp(22px,4.6vw,56px) 58px;}
   .hero .hero-panel{max-width:740px;}
-  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;
-    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.04;
+    letter-spacing:-.045em;font-weight:600;color:#141A1F;margin-top:22px;}
   .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
   .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero .micro{margin-top:16px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
-  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#fff;}
+  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#141A1F;}
   .stage{position:relative;z-index:2;}
   .stageimg{position:relative;width:100%;height:clamp(340px,42vw,540px);overflow:hidden;}
   .stageimg svg{position:absolute;inset:0;width:100%;height:100%;display:block;}
   .stageimg::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(90deg,rgba(7,11,24,.58),rgba(7,11,24,.05) 32%,rgba(7,11,24,.72) 72%,rgba(7,11,24,.95)),
-      linear-gradient(180deg,rgba(7,11,24,.7),transparent 28%,rgba(7,11,24,.62));}
+    background:linear-gradient(90deg,rgba(255,255,255,.58),rgba(255,255,255,.05) 32%,rgba(255,255,255,.72) 72%,rgba(255,255,255,.95)),
+      linear-gradient(180deg,rgba(255,255,255,.7),transparent 28%,rgba(255,255,255,.62));}
   .stageover{position:absolute;inset:0;z-index:3;display:flex;align-items:center;}
   .stageover .wrap{width:100%;display:flex;justify-content:flex-end;}
   .threadcard{width:412px;max-width:100%;overflow:hidden;}
   .threadcard .msgthread{border:0;background:transparent;border-radius:0;}
-  .threadcard .rrow{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid rgba(255,255,255,.13);}
+  .threadcard .rrow{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid rgba(20,26,31,.169);}
   .fxnote{position:relative;z-index:3;padding:18px 0 76px;font-size:var(--fs-2xs);color:var(--tx3);
     font-weight:500;max-width:var(--measure);line-height:1.85;}
 
-  .money{background:linear-gradient(180deg,#0A1020,#070C1A);position:relative;}
+  .money{background:linear-gradient(180deg,#FFFFFF,#FFFFFF);position:relative;}
   .mtop{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;}
-  .bigfig{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-num);font-weight:600;
+  .bigfig{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-num);font-weight:600;
     letter-spacing:-.05em;line-height:.9;}
-  .bigfig span{display:block;margin-top:22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:var(--fs-xs);
+  .bigfig span{display:block;margin-top:22px;font-family:'IBM Plex Sans',sans-serif;font-size:var(--fs-xs);
     letter-spacing:0;color:var(--tx2);font-weight:600;line-height:1.8;max-width:350px;
     -webkit-text-fill-color:var(--tx2);}
   .figs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;}
-  .fig{padding:24px 22px;border-radius:18px;}
+  .fig{padding:24px 22px;border-radius:14px;}
   .fig .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);}
   .fig .mth{margin-top:14px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;line-height:1.95;}
-  .fig .mth b{color:#fff;} .fig .mth i{font-style:normal;color:var(--tx3);padding:0 3px;}
-  .fig .out{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;
-    letter-spacing:-.03em;color:#FFC08A;}
+  .fig .mth b{color:#141A1F;} .fig .mth i{font-style:normal;color:var(--tx3);padding:0 3px;}
+  .fig .out{margin-top:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;
+    letter-spacing:-.03em;color:#141A1F;}
   .fig .d{margin-top:8px;font-size:var(--fs-2xs);color:var(--tx3);line-height:1.65;font-weight:500;}
   .money .fn{margin-top:34px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:500;line-height:1.85;max-width:860px;}
 
@@ -98,11 +99,11 @@
 
   .inbox{}
   .hiresplit{min-height:470px;margin-bottom:56px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
-    background:#fff;box-shadow:0 32px 78px rgba(11,27,51,.10);}
+    background:#fff;box-shadow:0 32px 78px rgba(20,26,31,.10);}
   .hiresplit .copy{padding:58px 54px;}
   .hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:52px;}
-  .hcard{background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:24px;
-    box-shadow:0 2px 3px rgba(11,27,51,.03),0 22px 54px rgba(11,27,51,.06);}
+  .hcard{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px;
+    box-shadow:0 2px 3px rgba(20,26,31,.03),0 22px 54px rgba(20,26,31,.06);}
   .hcard .ic{width:32px;height:32px;border-radius:50%;border:1px solid #D5DBE4;color:#0B7878;
     font-size:var(--fs-xs);font-weight:700;display:flex;align-items:center;justify-content:center;}
   .hcard b{display:block;margin-top:14px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
@@ -118,9 +119,9 @@
   .ctaband{text-align:center;}
   .ctaband .riskrow{margin:44px auto 0;max-width:1040px;text-align:left;}
   .invite{margin:44px auto 0;max-width:860px;display:flex;align-items:center;gap:20px;text-align:left;
-    flex-wrap:wrap;border:1px solid var(--hair);border-radius:22px;padding:22px 26px;background:rgba(255,255,255,.035);}
+    flex-wrap:wrap;border:1px solid var(--hair);border-radius:14px;padding:22px 26px;background:rgba(20,26,31,.046);}
   .invite .tx{flex:1;min-width:250px;}
-  .invite .tx b{display:block;font-size:var(--fs-body);color:#fff;letter-spacing:-.01em;}
+  .invite .tx b{display:block;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.01em;}
   .invite .tx span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
   .ctaband .btns{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .ctaband .fine{margin-top:20px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
@@ -130,9 +131,9 @@
 
   .closer{position:relative;text-align:center;overflow:hidden;
     background:radial-gradient(900px 500px at 50% -6%,rgba(255,168,86,.16),transparent 62%),
-      linear-gradient(180deg,#0B1020,#05080F);}
-  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
-    letter-spacing:-.045em;color:#fff;line-height:1.06;}
+      linear-gradient(180deg,#FFFFFF,#FFFFFF);}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#141A1F;line-height:1.06;}
   .closer .lead{margin:22px auto 0;}
   .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
   .closer .more{margin-top:24px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
@@ -161,7 +162,7 @@
   .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
     font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
   .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li b{color:#141A1F;font-weight:700;}
   .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
   .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
   .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
@@ -171,17 +172,17 @@
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
   /* this page stacks the three states in a single column beside the copy */
   #integrations{grid-template-columns:1fr;margin-top:0;}
-  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
   .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
   .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
-  .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
+  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
+  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
+  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
   .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
     font-weight:700;border-bottom:1px solid var(--hair);}
   .statcol li:last-child{border-bottom:0;}
   .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
@@ -190,9 +191,9 @@
   /* multi-depot */
   .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
   @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
-  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
+  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
   .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
 
   /* inline lead form */
@@ -204,7 +205,7 @@
   .leadbox .eaform{max-width:100%;}
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/equipment-rental.html">
@@ -220,7 +221,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -497,7 +498,7 @@
     <div class="scene-frame reveal">
       <svg viewBox="0 0 1000 560" role="img" aria-label="A hire enquiry moving from the 06:40 call, to a machine reserved with an expiry clock and no contract raised, to the hire desk’s one-tap confirm at 07:05 — with the point where Saleringo deliberately stops marked in between.">
         <defs>
-          <linearGradient id="erHoldBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#2A2140"/></linearGradient>
+          <linearGradient id="erHoldBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
           <radialGradient id="erHoldGlow"><stop offset="0" stop-color="#FFA856" stop-opacity=".26"/><stop offset="1" stop-color="#FFA856" stop-opacity="0"/></radialGradient>
           <linearGradient id="erCard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F4F8FB"/></linearGradient>
         </defs>
@@ -507,50 +508,50 @@
         <!-- 1 · the caller, at 06:40 -->
         <g transform="translate(48,120)">
           <text x="0" y="-24" font-family="Space Grotesk,sans-serif" font-size="12" fill="#8E7FB5" letter-spacing="2.4">06:40 · THE&nbsp;CALLER</text>
-          <rect width="256" height="150" rx="18" fill="rgba(255,255,255,.06)" stroke="#4A3A63" stroke-width="1.5"/>
-          <text x="24" y="42" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#fff" font-weight="600">“1.5 tonne digger,</text>
-          <text x="24" y="64" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#fff" font-weight="600">Thursday to&nbsp;Monday.</text>
-          <text x="24" y="86" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#fff" font-weight="600">What's it costing&nbsp;me?”</text>
+          <rect width="256" height="150" rx="18" fill="rgba(20,26,31,.06)" stroke="#141A1F" stroke-width="1.5"/>
+          <text x="24" y="42" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#F6F4EE" font-weight="600">“1.5 tonne digger,</text>
+          <text x="24" y="64" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#F6F4EE" font-weight="600">Thursday to&nbsp;Monday.</text>
+          <text x="24" y="86" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#F6F4EE" font-weight="600">What's it costing&nbsp;me?”</text>
           <rect x="24" y="104" width="118" height="24" rx="12" fill="rgba(52,209,134,.18)"/>
           <text x="83" y="120" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#6FE0AC" text-anchor="middle" font-weight="800">FROM&nbsp;A&nbsp;LAYBY</text>
         </g>
-        <path d="M312 196 H364" stroke="#4A3A63" stroke-width="1.6" stroke-dasharray="4 6"/>
-        <path d="M358 191 l8 5 l-8 5" fill="#4A3A63"/>
+        <path d="M312 196 H364" stroke="#141A1F" stroke-width="1.6" stroke-dasharray="4 6"/>
+        <path d="M358 191 l8 5 l-8 5" fill="#F6F4EE"/>
 
         <!-- 2 · what Saleringo does, and where it stops -->
         <g transform="translate(372,86)">
           <rect width="256" height="218" rx="18" fill="url(#erCard)"/>
           <text x="24" y="38" font-family="Space Grotesk,sans-serif" font-size="12" fill="#0B7878" letter-spacing="2.4">SALERINGO, 06:40</text>
-          <text x="24" y="66" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#0B1B33" font-weight="700">Quoted from&nbsp;your&nbsp;rate card</text>
+          <text x="24" y="66" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#F6F4EE" font-weight="700">Quoted from&nbsp;your&nbsp;rate card</text>
           <text x="24" y="86" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#7C8DA0" font-weight="600">£285 week · £45 each way · waiver</text>
-          <path d="M24 102 H232" stroke="#E9EEF3" stroke-width="1.5"/>
-          <text x="24" y="128" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#0B1B33" font-weight="700">Reserved, not on&nbsp;hire</text>
-          <rect x="24" y="140" width="208" height="34" rx="10" fill="#FFF6E8"/>
+          <path d="M24 102 H232" stroke="#141A1F" stroke-width="1.5"/>
+          <text x="24" y="128" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#F6F4EE" font-weight="700">Reserved, not on&nbsp;hire</text>
+          <rect x="24" y="140" width="208" height="34" rx="10" fill="#F6F4EE"/>
           <text x="38" y="162" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#8D642F" font-weight="800">EXPIRES 10:00 TODAY</text>
-          <rect x="24" y="182" width="208" height="24" rx="12" fill="#FDF3F1"/>
+          <rect x="24" y="182" width="208" height="24" rx="12" fill="#F6F4EE"/>
           <text x="128" y="198" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#A5514A" text-anchor="middle" font-weight="800">✕ NO&nbsp;CONTRACT RAISED</text>
         </g>
         <text x="500" y="336" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#C9A4E0" text-anchor="middle" font-weight="700">the&nbsp;fleet is unknown-until-confirmed — so it reserves, it does not put anything on&nbsp;hire</text>
 
-        <path d="M636 196 H688" stroke="#4A3A63" stroke-width="1.6" stroke-dasharray="4 6"/>
-        <path d="M682 191 l8 5 l-8 5" fill="#4A3A63"/>
+        <path d="M636 196 H688" stroke="#141A1F" stroke-width="1.6" stroke-dasharray="4 6"/>
+        <path d="M682 191 l8 5 l-8 5" fill="#F6F4EE"/>
 
         <!-- 3 · the hire desk, when the counter opens -->
         <g transform="translate(696,110)">
           <text x="0" y="-24" font-family="Space Grotesk,sans-serif" font-size="12" fill="#8E7FB5" letter-spacing="2.4">07:05 · YOUR&nbsp;HIRE&nbsp;DESK</text>
-          <rect width="256" height="170" rx="26" fill="#0E0B1A" stroke="#4A3A63" stroke-width="2"/>
-          <rect x="12" y="12" width="232" height="146" rx="18" fill="#171129"/>
+          <rect width="256" height="170" rx="26" fill="#F6F4EE" stroke="#141A1F" stroke-width="2"/>
+          <rect x="12" y="12" width="232" height="146" rx="18" fill="#F6F4EE"/>
           <text x="32" y="44" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#B9A9D6" font-weight="700">1 reservation waiting</text>
-          <rect x="28" y="56" width="200" height="44" rx="10" fill="rgba(255,255,255,.06)"/>
-          <text x="42" y="76" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#fff" font-weight="700">D. Whitcombe · Thu · micro</text>
+          <rect x="28" y="56" width="200" height="44" rx="10" fill="rgba(20,26,31,.06)"/>
+          <text x="42" y="76" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#F6F4EE" font-weight="700">D. Whitcombe · Thu · micro</text>
           <text x="42" y="92" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#9B8DBB" font-weight="600">£285 week · access noted</text>
           <rect x="28" y="110" width="96" height="32" rx="16" fill="#17BDBD"/>
-          <text x="76" y="131" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#04252A" text-anchor="middle" font-weight="800">Confirm</text>
-          <rect x="132" y="110" width="96" height="32" rx="16" fill="rgba(255,255,255,.08)"/>
+          <text x="76" y="131" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#F6F4EE" text-anchor="middle" font-weight="800">Confirm</text>
+          <rect x="132" y="110" width="96" height="32" rx="16" fill="rgba(20,26,31,.08)"/>
           <text x="180" y="131" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#C9BDE0" text-anchor="middle" font-weight="700">Release</text>
         </g>
 
-        <text x="500" y="416" font-family="Plus Jakarta Sans,sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">The&nbsp;caller got an&nbsp;answer at&nbsp;06:40. You kept the&nbsp;final word.</text>
+        <text x="500" y="416" font-family="Plus Jakarta Sans,sans-serif" font-size="14" fill="#F6F4EE" text-anchor="middle" font-weight="700">The&nbsp;caller got an&nbsp;answer at&nbsp;06:40. You kept the&nbsp;final word.</text>
         <text x="500" y="446" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#9B8DBB" text-anchor="middle" font-weight="600">One step slower than a&nbsp;booking engine — and honest about&nbsp;why.</text>
       </svg>
       <div class="scene-overlay tl"><b>Reserved, not on&nbsp;hire</b><span>Until a&nbsp;two-way link exists, the&nbsp;desk confirms</span></div>
@@ -943,7 +944,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -989,13 +990,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=75.0"></script>
-<script src="../../assets/js/balance.js?v=75.0" defer></script>
-<script src="../../assets/js/panels.js?v=75.0" defer></script>
-<script src="../../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../../assets/js/rail.js?v=75.0" defer></script>
-<script src="../../assets/js/canvas.js?v=75.0" defer></script>
-<script src="../../assets/js/scenes.js?v=75.0" defer></script>
-<script src="../../assets/js/guide.js?v=75.0"></script>
+<script src="../../assets/js/site.js?v=76.0"></script>
+<script src="../../assets/js/balance.js?v=76.0" defer></script>
+<script src="../../assets/js/panels.js?v=76.0" defer></script>
+<script src="../../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../../assets/js/rail.js?v=76.0" defer></script>
+<script src="../../assets/js/canvas.js?v=76.0" defer></script>
+<script src="../../assets/js/scenes.js?v=76.0" defer></script>
+<script src="../../assets/js/guide.js?v=76.0"></script>
 </body>
 </html>

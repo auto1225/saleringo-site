@@ -24,21 +24,22 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "See a Full Conversation, and What It Filed | Saleringo", "description": "See a full conversation on phone, chat and messenger \u2014 and what it produced: the booking held, the quote built, the customer record written.", "url": "https://claude.saleringo.com/en/demo.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=75.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=76.0">
 <style>
   /* hero — a photograph carries it; .photohero's flex centring is not wanted here
      because the header also holds the nav and the night-timeline strip */
-  .dhero{position:relative;overflow:hidden;display:block;min-height:0;background:#0C1526;}
+  .dhero{position:relative;overflow:hidden;display:block;min-height:0;background:#FFFFFF;}
   /* stated explicitly rather than inherited from the sheet, so this hero
      cannot silently change if the sheet default moves */
   .dhero.photohero .bgimg img{filter:brightness(1.67) saturate(1.12) contrast(1.04);}
-  .dhero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.42) 0%,rgba(4,8,15,0.304) 38%,rgba(4,8,15,0.456) 74%,#0C1526 100%);}
+  .dhero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.42) 0%,rgba(255,255,255,0.304) 38%,rgba(255,255,255,0.456) 74%,#FFFFFF 100%);}
   .dhero .wrap,.stage .wrap,.startsec .wrap,.closer .wrap{position:relative;z-index:1;}
   .nightstrip{position:relative;z-index:2;max-width:1080px;margin:52px auto 0;padding:0 32px;}
   .startscene{margin-top:56px;}
@@ -50,8 +51,8 @@
      densest exactly where the text is and gone by the time it reaches the
      buildings. Contrast is a property of this panel, not of the picture. */
   .dhero-inner::before{content:"";position:absolute;inset:104px -4% auto -4%;height:430px;z-index:-1;pointer-events:none;
-    background:radial-gradient(56% 100% at 50% 46%,rgba(4,8,15,.86) 0%,rgba(4,8,15,.66) 58%,rgba(4,8,15,0) 100%);}
-  .dhero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.045em;font-weight:600;color:#fff;max-width:16ch;margin-inline:auto;}
+    background:radial-gradient(56% 100% at 50% 46%,rgba(255,255,255,.86) 0%,rgba(255,255,255,.66) 58%,rgba(255,255,255,0) 100%);}
+  .dhero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.045em;font-weight:600;color:#141A1F;max-width:16ch;margin-inline:auto;}
   .dhero .sub{margin:22px auto 0;font-size:var(--fs-body);line-height:1.7;color:var(--tx2);font-weight:500;}
 
   /* the night strip's figures, repeated as text — at phone width the SVG's
@@ -63,7 +64,7 @@
   .stage{position:relative;}
   .stage{position:relative;overflow:hidden;}
   .stage .glow{position:absolute;left:50%;top:160px;transform:translateX(-50%);width:min(920px,140vw);height:440px;
-    background:radial-gradient(closest-side, rgba(23,189,189,.15), transparent 70%);filter:blur(12px);pointer-events:none;}
+    background:radial-gradient(closest-side, rgba(11,120,120,.15), transparent 70%);filter:blur(12px);pointer-events:none;}
   .stage .chiprow{position:relative;margin-bottom:26px;}
   .bigdemo{position:relative;max-width:720px;margin:0 auto;}
   .bigdemo .demo-body{min-height:330px;}
@@ -72,13 +73,13 @@
   /* the other two channels — the chip above switches the stage, the pages
      that go deeper live elsewhere */
   .chanlinks{position:relative;max-width:900px;margin:34px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;}
-  .chanlink{display:flex;flex-direction:column;gap:9px;padding:20px 22px;border:1px solid var(--hair);border-radius:18px;
-    background:rgba(255,255,255,.03);color:inherit;text-decoration:none;transition:border-color .3s var(--ease);}
+  .chanlink{display:flex;flex-direction:column;gap:9px;padding:20px 22px;border:1px solid var(--hair);border-radius:14px;
+    background:rgba(20,26,31,.039);color:inherit;text-decoration:none;transition:border-color .3s var(--ease);}
   .chanlink:hover{border-color:var(--hair2);}
   .chanlink .chanbadge{align-self:flex-start;}
-  .chanlink b{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.2;}
+  .chanlink b{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#141A1F;line-height:1.2;}
   .chanlink .d{font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
-  .chanlink em{font-style:normal;font-size:var(--fs-xs);font-weight:700;color:#fff;margin-top:auto;padding-top:4px;}
+  .chanlink em{font-style:normal;font-size:var(--fs-xs);font-weight:700;color:#141A1F;margin-top:auto;padding-top:4px;}
 
   /* trades band — the chips above have faces */
   .tradesec{position:relative;}
@@ -92,16 +93,16 @@
   .aside-grid{position:relative;max-width:900px;margin:44px auto 0;display:grid;grid-template-columns:1.3fr 1fr;gap:14px;align-items:stretch;}
   .aside-grid .core{padding:24px;height:100%;}
   .acard .k{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:var(--teal);}
-  .acard .t{margin-top:10px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#fff;}
+  .acard .t{margin-top:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#141A1F;}
   .wh .item{display:flex;flex-direction:column;gap:8px;margin-top:18px;}
   .wh .item p{font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
-  .wh .linkcta{color:#fff;border-bottom-color:var(--hair2);font-size:var(--fs-xs);margin-top:20px;}
+  .wh .linkcta{color:#141A1F;border-bottom-color:var(--hair2);font-size:var(--fs-xs);margin-top:20px;}
   .crm2 .k{color:var(--tx2);}
-  .crm2 .nm{margin-top:12px;display:flex;align-items:center;font-size:var(--fs-sm);font-weight:700;color:#fff;}
-  .crm2 .time{margin-left:auto;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);font-weight:600;color:#0A1526;background:#fff;border-radius:999px;padding:3px 10px;}
+  .crm2 .nm{margin-top:12px;display:flex;align-items:center;font-size:var(--fs-sm);font-weight:700;color:#141A1F;}
+  .crm2 .time{margin-left:auto;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:600;color:#141A1F;background:#fff;border-radius:999px;padding:3px 10px;}
   .crm2 .row{display:flex;justify-content:space-between;font-size:var(--fs-xs);padding:9px 0;border-bottom:1px solid var(--hair);font-weight:500;}
-  .crm2 .rk{color:var(--tx2);} .crm2 .rv{color:#fff;font-weight:600;}
-  .crm2 .slot{margin-top:14px;display:inline-block;font-size:var(--fs-2xs);font-weight:700;color:#04211F;background:linear-gradient(180deg,#1CC8C8,#0FA3A3);border-radius:9px;padding:7px 13px;box-shadow:0 8px 22px rgba(15,163,163,.35);}
+  .crm2 .rk{color:var(--tx2);} .crm2 .rv{color:#141A1F;font-weight:600;}
+  .crm2 .slot{margin-top:14px;display:inline-block;font-size:var(--fs-2xs);font-weight:700;color:#141A1F;background:linear-gradient(180deg,#0B7878,#0A5F5F);border-radius:9px;padding:7px 13px;box-shadow:0 8px 22px rgba(10,95,95,.35);}
   .crm2 .mut{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:500;line-height:1.6;}
 
   /* ── THE OUTCOME BLOCK ────────────────────────────────────────────
@@ -112,16 +113,16 @@
   .obox{min-width:0;}
   .obl{display:flex;align-items:center;gap:9px;margin-bottom:11px;font-size:var(--fs-label);font-weight:800;
     letter-spacing:.18em;text-transform:uppercase;color:var(--tx3);}
-  .obl em{font-style:normal;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);color:var(--teal);letter-spacing:.06em;}
+  .obl em{font-style:normal;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);color:var(--teal);letter-spacing:.06em;}
   .obl i{flex:1;height:1px;background:var(--hair);font-style:normal;}
   @media (max-width:900px){.ogrid{grid-template-columns:1fr;}}
 
   /* honesty note */
-  .scripted{position:relative;max-width:720px;margin:28px auto 0;border:1px dashed var(--hair2);border-radius:18px;
-    padding:20px 24px;display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.02);text-align:left;}
-  .scripted .ic{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(232,164,76,.5);color:var(--amber);
+  .scripted{position:relative;max-width:720px;margin:28px auto 0;border:1px dashed var(--hair2);border-radius:14px;
+    padding:20px 24px;display:flex;gap:16px;align-items:flex-start;background:rgba(20,26,31,.026);text-align:left;}
+  .scripted .ic{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(183,121,31,.5);color:var(--amber);
     font-size:var(--fs-xs);font-weight:800;display:flex;align-items:center;justify-content:center;}
-  .scripted b{display:block;font-size:var(--fs-xs);color:#fff;letter-spacing:-.01em;}
+  .scripted b{display:block;font-size:var(--fs-xs);color:#141A1F;letter-spacing:-.01em;}
   .scripted p{margin-top:5px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
 
   /* start in three steps */
@@ -132,10 +133,10 @@
 
   /* closer + big footer (from site anchor) */
   .closer{position:relative;background:
-    radial-gradient(900px 500px at 50% -10%, rgba(23,189,189,.14), transparent 60%),
-    linear-gradient(180deg,#0B1424,#0A1120);
+    radial-gradient(900px 500px at 50% -10%, rgba(11,120,120,.14), transparent 60%),
+    linear-gradient(180deg,#F6F4EE,#F6F4EE);
     text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);font-weight:600;letter-spacing:-.045em;color:#fff;line-height:1.05;position:relative;}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.05;position:relative;}
   .closer .lead{margin:24px auto 0;position:relative;}
   .closer .ctas{margin-top:42px;display:flex;justify-content:center;gap:16px;position:relative;flex-wrap:wrap;}
   .bigfooter{margin-top:130px;}
@@ -162,7 +163,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop on" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see" aria-current="true">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html" aria-current="page" class="np-here">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -188,7 +189,7 @@
     <div class="scene-frame">
 <svg viewBox="0 0 1000 240" role="img" aria-label="One evening plotted from 6 PM to 6 AM. Five inquiries arrive after closing time across web chat, WhatsApp and the phone, all inside the hours nobody is at the desk.">
   <defs>
-    <linearGradient id="dtBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0C1526"/><stop offset="1" stop-color="#0A1728"/></linearGradient>
+    <linearGradient id="dtBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
     <linearGradient id="dtClosed" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#17BDBD" stop-opacity=".02"/><stop offset=".5" stop-color="#17BDBD" stop-opacity=".10"/><stop offset="1" stop-color="#17BDBD" stop-opacity=".02"/>
     </linearGradient>
@@ -200,9 +201,9 @@
   <text x="590" y="182" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#5E6C82" text-anchor="middle" font-weight="600">nobody at&nbsp;the&nbsp;desk</text>
 
   <!-- axis -->
-  <path d="M70 135 H930" stroke="#22364F" stroke-width="1.5"/>
+  <path d="M70 135 H930" stroke="#141A1F" stroke-width="1.5"/>
   <g font-family="Space Grotesk,sans-serif" font-size="10.5" fill="#5E6C82" text-anchor="middle">
-    <path d="M70 129 V141 M285 129 V141 M500 129 V141 M715 129 V141 M930 129 V141" stroke="#22364F" stroke-width="1.5"/>
+    <path d="M70 129 V141 M285 129 V141 M500 129 V141 M715 129 V141 M930 129 V141" stroke="#141A1F" stroke-width="1.5"/>
     <text x="70" y="160">18:00</text><text x="285" y="160">21:00</text><text x="500" y="160">00:00</text>
     <text x="715" y="160">03:00</text><text x="930" y="160">06:00</text>
   </g>
@@ -234,7 +235,7 @@
       <circle cx="700" cy="135" r="6" fill="#17BDBD"/>
       <circle cx="700" cy="135" r="13" fill="none" stroke="#17BDBD" stroke-width="1.2" opacity=".45"/>
       <rect x="648" y="88" width="104" height="24" rx="12" fill="rgba(23,189,189,.16)" stroke="rgba(23,189,189,.6)" stroke-width="1.2"/>
-      <text x="700" y="104" fill="#9BE7E7" text-anchor="middle">CALL 02:47</text>
+      <text x="700" y="104" fill="#F6F4EE" text-anchor="middle">CALL 02:47</text>
     </g>
     <g>
       <path d="M873 135 V78" stroke="#5B9DFF" stroke-width="1.2" stroke-dasharray="3 4"/>
@@ -367,8 +368,8 @@
       <span class="ic">i</span>
       <div>
         <b>Straight about&nbsp;what this is: the&nbsp;conversations here are scripted, and the&nbsp;CRM screens are illustrations with&nbsp;sample data.</b>
-        <p>They replay representative cases: a&nbsp;grounded answer, a&nbsp;clean handoff, six objects left behind. We will not fake a&nbsp;live answer and pretend it came from&nbsp;your&nbsp;business. For&nbsp;answers built on&nbsp;<em style="font-style:normal;color:#fff;">your</em>&nbsp;prices, calendar and rules, email us your&nbsp;hardest question — a&nbsp;person reads it and replies. Nothing goes live until your&nbsp;team signs off on&nbsp;every&nbsp;fact.</p>
-        <p style="margin-top:12px;"><a class="linkcta" href="mailto:hello@saleringo.com?subject=My%20hardest%20customer%20question" style="font-size:var(--fs-xs);color:#fff;border-bottom-color:var(--hair2);">Email us your&nbsp;hardest question&nbsp;&nbsp;→</a></p>
+        <p>They replay representative cases: a&nbsp;grounded answer, a&nbsp;clean handoff, six objects left behind. We will not fake a&nbsp;live answer and pretend it came from&nbsp;your&nbsp;business. For&nbsp;answers built on&nbsp;<em style="font-style:normal;color:#141A1F;">your</em>&nbsp;prices, calendar and rules, email us your&nbsp;hardest question — a&nbsp;person reads it and replies. Nothing goes live until your&nbsp;team signs off on&nbsp;every&nbsp;fact.</p>
+        <p style="margin-top:12px;"><a class="linkcta" href="mailto:hello@saleringo.com?subject=My%20hardest%20customer%20question" style="font-size:var(--fs-xs);color:#141A1F;border-bottom-color:var(--hair2);">Email us your&nbsp;hardest question&nbsp;&nbsp;→</a></p>
       </div>
     </div>
   </div>
@@ -500,7 +501,7 @@
     <rect width="272" height="30" rx="12" fill="#EDF3F8"/><rect y="18" width="272" height="12" fill="#EDF3F8"/>
     <circle cx="20" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="33" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="46" cy="15" r="3.5" fill="#C9D6E2"/>
     <rect x="88" y="9" width="140" height="12" rx="6" fill="#DEE7EF"/>
-    <rect x="22" y="52" width="150" height="14" rx="7" fill="#0B1B33" opacity=".75"/>
+    <rect x="22" y="52" width="150" height="14" rx="7" fill="#141A1F" opacity=".75"/>
     <rect x="22" y="78" width="228" height="8" rx="4" fill="#C4D0DC"/>
     <rect x="22" y="94" width="196" height="8" rx="4" fill="#C4D0DC"/>
     <rect x="22" y="124" width="104" height="8" rx="4" fill="#0FA3A3" opacity=".55"/>
@@ -521,23 +522,23 @@
       <rect x="16" y="20" width="208" height="48" rx="9" fill="#F0F7F8" stroke="#CFEAEA"/>
       <circle cx="40" cy="44" r="11" fill="#0FA3A3"/>
       <path d="M35 44 l4 4 l7 -8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="60" y="33" width="120" height="8" rx="4" fill="#0B1B33"/>
+      <rect x="60" y="33" width="120" height="8" rx="4" fill="#141A1F"/>
       <rect x="60" y="49" width="86" height="7" rx="3.5" fill="#93A3B4"/>
     </g>
     <g>
       <rect x="16" y="78" width="208" height="48" rx="9" fill="#F0F7F8" stroke="#CFEAEA"/>
       <circle cx="40" cy="102" r="11" fill="#0FA3A3"/>
       <path d="M35 102 l4 4 l7 -8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="60" y="91" width="104" height="8" rx="4" fill="#0B1B33"/>
+      <rect x="60" y="91" width="104" height="8" rx="4" fill="#141A1F"/>
       <rect x="60" y="107" width="128" height="7" rx="3.5" fill="#93A3B4"/>
     </g>
     <g>
       <rect x="16" y="136" width="208" height="48" rx="9" fill="#FFFDF6" stroke="#EFE0C2"/>
       <circle cx="40" cy="160" r="11" fill="none" stroke="#E8A44C" stroke-width="2" stroke-dasharray="3 3"/>
-      <rect x="60" y="149" width="92" height="8" rx="4" fill="#0B1B33"/>
+      <rect x="60" y="149" width="92" height="8" rx="4" fill="#141A1F"/>
       <rect x="60" y="165" width="112" height="7" rx="3.5" fill="#B89A6A"/>
     </g>
-    <rect x="16" y="196" width="208" height="26" rx="13" fill="#0B1B33"/>
+    <rect x="16" y="196" width="208" height="26" rx="13" fill="#141A1F"/>
     <text x="120" y="213" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="700">Publish 2 approved facts</text>
   </g>
   <path d="M634 177 H670" stroke="#B4C6D2" stroke-width="1.6" stroke-dasharray="4 5"/>
@@ -549,7 +550,7 @@
     <rect width="272" height="30" rx="12" fill="#EDF3F8"/><rect y="18" width="272" height="12" fill="#EDF3F8"/>
     <circle cx="20" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="33" cy="15" r="3.5" fill="#C9D6E2"/><circle cx="46" cy="15" r="3.5" fill="#C9D6E2"/>
     <rect x="88" y="9" width="140" height="12" rx="6" fill="#DEE7EF"/>
-    <rect x="22" y="52" width="150" height="14" rx="7" fill="#0B1B33" opacity=".28"/>
+    <rect x="22" y="52" width="150" height="14" rx="7" fill="#141A1F" opacity=".28"/>
     <rect x="22" y="78" width="228" height="8" rx="4" fill="#DDE6EE"/>
     <rect x="22" y="94" width="196" height="8" rx="4" fill="#DDE6EE"/>
     <rect x="22" y="124" width="104" height="8" rx="4" fill="#DDE6EE"/>
@@ -557,9 +558,9 @@
     <!-- widget -->
     <g transform="translate(56,96)">
       <rect width="200" height="128" rx="14" fill="#fff" stroke="#CFEAEA" stroke-width="1.5"/>
-      <rect width="200" height="30" rx="14" fill="#0B1B33"/><rect y="18" width="200" height="12" fill="#0B1B33"/>
+      <rect width="200" height="30" rx="14" fill="#141A1F"/><rect y="18" width="200" height="12" fill="#141A1F"/>
       <circle cx="20" cy="15" r="5" fill="#17BDBD"/>
-      <rect x="34" y="11" width="76" height="8" rx="4" fill="#3E5D82"/>
+      <rect x="34" y="11" width="76" height="8" rx="4" fill="#141A1F"/>
       <rect x="16" y="44" width="118" height="26" rx="9" fill="#EEF3F8"/>
       <rect x="26" y="53" width="94" height="7" rx="3.5" fill="#93A3B4"/>
       <rect x="52" y="78" width="132" height="34" rx="9" fill="#E3F5F5"/>
@@ -594,7 +595,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -645,14 +646,14 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=75.0"></script>
-<script src="../assets/js/balance.js?v=75.0" defer></script>
-<script src="../assets/js/panels.js?v=75.0" defer></script>
-<script src="../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../assets/js/rail.js?v=75.0" defer></script>
-<script src="../assets/js/guide.js?v=75.0"></script>
-<script src="../assets/js/play.js?v=75.0"></script>
-<script src="../assets/js/pricelab.js?v=75.0"></script>
+<script src="../assets/js/site.js?v=76.0"></script>
+<script src="../assets/js/balance.js?v=76.0" defer></script>
+<script src="../assets/js/panels.js?v=76.0" defer></script>
+<script src="../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../assets/js/rail.js?v=76.0" defer></script>
+<script src="../assets/js/guide.js?v=76.0"></script>
+<script src="../assets/js/play.js?v=76.0"></script>
+<script src="../assets/js/pricelab.js?v=76.0"></script>
 <script>
 (function () {
   'use strict';

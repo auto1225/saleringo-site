@@ -30,7 +30,7 @@ CSS = """
   .osrow{display:flex;justify-content:space-between;gap:20px;padding:13px 0;
     border-bottom:1px solid var(--line);font-size:var(--fs-sm);}
   .osrow > span{color:var(--tx2);}
-  .osrow > b{color:#fff;font-weight:600;text-align:right;}
+  .osrow > b{color:#141A1F;font-weight:600;text-align:right;}
   .osno{font-family:var(--mono,ui-monospace,monospace);letter-spacing:.04em;}
   .ostrack{margin-top:30px;padding:0;}
   .ostrack li{list-style:none;position:relative;padding:0 0 22px 30px;
@@ -43,12 +43,12 @@ CSS = """
   .ostrack li.skipped{opacity:.45;}
   .ostrack li.skipped::before{background:transparent;border-style:dashed;}
   .ostrack li.now::before{background:var(--teal);border-color:var(--teal);
-    box-shadow:0 0 0 5px rgba(23,189,189,.18);}
+    box-shadow:0 0 0 5px rgba(11,120,120,.18);}
   .ostrack b{display:block;font-size:var(--fs-sm);font-weight:600;color:var(--tx3);}
-  .ostrack li.done b,.ostrack li.now b{color:#fff;}
+  .ostrack li.done b,.ostrack li.now b{color:#141A1F;}
   .ostrack span{display:block;margin-top:4px;font-size:var(--fs-xs);color:var(--tx3);line-height:1.7;}
   .osnote{margin-top:26px;font-size:var(--fs-xs);color:var(--tx3);line-height:1.8;}
-  .oshead{margin-bottom:8px;font-size:var(--fs-lead);color:#fff;font-weight:600;}
+  .oshead{margin-bottom:8px;font-size:var(--fs-lead);color:#141A1F;font-weight:600;}
 """
 
 

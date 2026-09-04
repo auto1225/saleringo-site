@@ -1,0 +1,298 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ledger.css — the Ledger design layer. Loads after site.css and the
+   page stylesheets, and states the few things the whole site now shares:
+   one paper ground, one ink, one accent, two type families, three radii.
+   The palette itself was moved into site.css tokens; this file removes
+   the surfaces that no longer belong (glass, gradients, grain, photos
+   behind text) and sets the components that every page repeats.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Ground and type ─────────────────────────────────────────────── */
+html{background:#F6F4EE;}
+body{background:#F6F4EE;color:#141A1F;font-family:'IBM Plex Sans','IBM Plex Sans KR','Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;}
+html[lang^="ko"] body{font-family:'IBM Plex Sans KR','IBM Plex Sans','Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all;}
+h1,h2,h3,.h1,.h2,.h3,.disp,.nav .logo,.bigfooter .brand .logo,.price,.stat .n,.num.big{
+  font-family:'Bricolage Grotesque','IBM Plex Sans',sans-serif;font-optical-sizing:auto;font-weight:600;letter-spacing:-.02em;}
+html[lang^="ko"] h1,html[lang^="ko"] h2,html[lang^="ko"] h3,html[lang^="ko"] .h1,html[lang^="ko"] .h2,html[lang^="ko"] .h3{
+  font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.22;}
+html[lang^="ko"] .nav .logo,html[lang^="ko"] .bigfooter .brand .logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;}
+h1{font-size:clamp(36px,4.4vw,60px);line-height:1.04;}
+html[lang^="ko"] h1{font-size:clamp(30px,3.9vw,54px);line-height:1.22;}
+.h2,h2{font-size:clamp(28px,3vw,40px);line-height:1.1;color:#141A1F;}
+html[lang^="ko"] .h2,html[lang^="ko"] h2{font-size:clamp(24px,2.6vw,36px);line-height:1.28;}
+.lead,.sub,.lede{color:#3B454D;}
+.mono,.num,code,kbd,[data-tel-label],.telcta b{font-family:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;}
+.h1 .huge,h1 .huge{letter-spacing:-.03em;}
+a{color:#0B7878;}
+a:hover{color:#141A1F;}
+
+/* ── Surfaces that the direction removes ──────────────────────────── */
+.bgimg,.scrim,.tint,.grainlayer,.grain,.stars,.aurora,
+section.bg-grid::before,section.bg-grid::after,section.bg-spot::before,section.bg-spot::after,
+section.bg-dusk::before,section.bg-dusk::after,section.bg-aurora::before,section.bg-aurora::after,
+.hero::before,.hero::after{display:none !important;}
+.sec-dark,.sec-dark2,.nightsec,.bg-dusk,.bg-grid,.bg-spot,.bg-aurora,.hero,.photohero,header.nophoto,
+.closer,.bigfooter{background:#F6F4EE !important;background-image:none !important;}
+.sec-light,.sec-light2,.bg-paper,.bg-clinical{background:#FFFFFF !important;background-image:none !important;}
+.gradtext,.gradtext.warm,h1 .gradtext,.h2 .gradtext{background:none !important;-webkit-background-clip:initial !important;
+  background-clip:initial !important;-webkit-text-fill-color:currentColor !important;color:#141A1F !important;}
+[class*="glass"],.hero-panel,.heroband{background:none !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+  border:0 !important;box-shadow:none !important;padding:0 !important;}
+*{text-shadow:none !important;}
+
+/* ── Rhythm ───────────────────────────────────────────────────────── */
+.wrap{max-width:1240px;padding:0 56px;}
+section,.sec{border-top:1px solid #E2DDD3;}
+section.hero,section:first-of-type,.hero + section{border-top:0;}
+.sec-light + .sec-light,.sec-dark + .sec-dark{border-top:1px solid #E2DDD3;}
+
+/* ── Nav: a bar on the paper, not a floating pill ─────────────────── */
+.navwrap{background:rgba(246,244,238,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #E2DDD3;}
+.navwrap .nav,.nav{background:none !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;
+  backdrop-filter:none !important;-webkit-backdrop-filter:none !important;padding:0 !important;min-height:64px;gap:28px;}
+.nav .logo{color:#141A1F;font-size:20px;}
+.nav .ver{display:none !important;}
+.nav .links,.nav .navtop{color:#3B454D;font-weight:500;font-size:15px;letter-spacing:0;}
+.nav .navtop:hover,.nav .navtop[aria-expanded="true"],.nav .navtop.on{color:#141A1F;}
+.nav .telcta b{color:#141A1F;font-weight:500;}
+.nav .telcta{color:#3B454D;}
+.langsw{border-color:#E2DDD3;color:#3B454D;border-radius:6px;}
+.langsw:hover{border-color:#141A1F;color:#141A1F;background:none;}
+.nav .burger span{background:#141A1F;}
+.navpanel{background:#FFFFFF !important;border:1px solid #E2DDD3 !important;border-radius:14px !important;
+  box-shadow:0 1px 2px rgba(20,26,31,.05),0 24px 48px -24px rgba(20,26,31,.25) !important;backdrop-filter:none !important;
+  color:#141A1F;--tx:#141A1F;--tx2:#3B454D;--tx3:#616B75;}
+.navpanel .np-h{color:#616B75;letter-spacing:.06em;font-size:12px;}
+.navpanel a{color:#141A1F;}
+.navpanel a:hover{color:#0B7878;}
+
+/* ── Buttons: one solid accent, one outline, one text link ───────── */
+.btn{border-radius:8px;padding:0 22px;min-height:52px;gap:10px;font-weight:600;font-size:16px;letter-spacing:0;
+  box-shadow:none !important;background-image:none !important;transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);}
+.btn .cir{display:none !important;}
+.btn-teal,.btn-white,.plan .cta.teal,.btn-primary,body[data-chan] .btn-teal{background:#0B7878 !important;color:#FFFFFF !important;border:1px solid #0B7878 !important;}
+.btn-teal:hover,.btn-white:hover,.plan .cta.teal:hover,.btn-primary:hover,body[data-chan] .btn-teal:hover{background:#0A5F5F !important;border-color:#0A5F5F !important;color:#FFFFFF !important;}
+.btn-ghostd,.btn-ghost,.btn-outline,.plan .cta{background:none !important;color:#141A1F !important;border:1px solid #CFC9BC !important;}
+.btn-ghostd:hover,.btn-ghost:hover,.btn-outline:hover,.plan .cta:hover{border-color:#141A1F !important;}
+.btn:active{transform:none;}
+.nav .btn{min-height:40px;padding:0 16px;font-size:14px;}
+.linkcta{border-bottom:0;color:#0B7878;font-weight:600;padding-bottom:0;}
+.linkcta:hover{color:#141A1F;}
+.hero .ctas{gap:24px;align-items:center;}
+.hero .ctas .btn-ghostd{background:none !important;border:0 !important;color:#0B7878 !important;padding:0 !important;font-weight:600;}
+.hero .ctas .btn-ghostd:hover{color:#141A1F !important;}
+
+/* ── Labels, chips, pills ─────────────────────────────────────────── */
+.eyebrow{border:0 !important;background:none !important;padding:0 !important;border-radius:0;gap:0;
+  font-size:12px;letter-spacing:.08em;font-weight:600;color:#616B75;text-transform:uppercase;margin-left:0 !important;}
+html[lang^="ko"] .eyebrow{text-transform:none;letter-spacing:.06em;}
+.eyebrow i{display:none !important;}
+.chip,.exfilter button{background:none;border:1px solid #CFC9BC;color:#3B454D;border-radius:999px;box-shadow:none;}
+.chip:hover,.exfilter button:hover{border-color:#141A1F;color:#141A1F;}
+.chip.on,.exfilter button.on{background:#141A1F;border-color:#141A1F;color:#FFFFFF;}
+.herotrio{display:none !important;}
+.appwin .bar .illus,.illus{border:0;padding:0;letter-spacing:.04em;text-transform:none;color:#616B75;font-weight:500;}
+.appwin .bar .closed{color:#8D642F;letter-spacing:.04em;text-transform:none;font-weight:600;}
+
+/* ── Cards and windows: one white sheet, one shadow ──────────────── */
+.appwin,.plan,.plan.dark,.custcard,.quotedoc,.statcard,.pkcard,.regcard,.tdcard,.kpitile,
+.pipecol,.pipecolx,.proofcard,.audcard,.pack,.thumb,.reccard,.qbcard,.d60card,.faq details,.ownerbox,.card{
+  background:#FFFFFF !important;background-image:none !important;border:1px solid #E2DDD3 !important;border-radius:14px !important;
+  color:#141A1F;--tx:#141A1F;--tx2:#3B454D;--tx3:#616B75;--teal-deep:#0A5F5F;--amber:#B7791F;
+  box-shadow:0 1px 2px rgba(20,26,31,.05),0 24px 48px -32px rgba(20,26,31,.22) !important;}
+.sec-light .appwin,.sec-light2 .appwin,.bg-paper .appwin,.bg-clinical .appwin,.sec-light .altcol.win,.sec-light2 .altcol.win{
+  color:#141A1F;--tx:#141A1F;--tx2:#3B454D;--tx3:#616B75;}
+.appwin .bar{background:#F6F4EE;border-bottom:1px solid #E2DDD3;}
+.appwin .bar i{background:#CFC9BC;}
+.icard:hover,.photocard:hover,.plan:hover,.thumb:hover,.pack:hover,.audcard:hover{transform:none;border-color:#141A1F;
+  box-shadow:0 1px 2px rgba(20,26,31,.05),0 24px 48px -32px rgba(20,26,31,.22) !important;}
+.icard.photocard{border-radius:14px;box-shadow:0 1px 2px rgba(20,26,31,.05),0 24px 48px -32px rgba(20,26,31,.22);}
+.plan .pop{border-color:#0B7878;color:#0B7878;}
+.plan .nm{color:#616B75;}
+.baCol,.baGrid > div{background:#FFFFFF;border:1px solid #E2DDD3;border-radius:14px;}
+.baCol.after{border-color:#0B7878;}
+.faq summary:after{color:#0B7878;}
+.dtable th,.dtable td{border-color:#E2DDD3;}
+.dtable thead th{color:#616B75;font-size:12px;letter-spacing:.06em;text-transform:uppercase;}
+input,select,textarea{background:#FFFFFF;border:1px solid #CFC9BC;border-radius:8px;color:#141A1F;}
+input:focus,select:focus,textarea:focus{border-color:#0B7878;outline:none;box-shadow:0 0 0 3px rgba(11,120,120,.15);}
+:focus-visible{outline:2px solid #0B7878;outline-offset:3px;box-shadow:none !important;}
+
+/* ── The record card in the hero ─────────────────────────────────── */
+.reccard{padding:22px 26px 18px;display:flex;flex-direction:column;gap:16px;max-width:520px;}
+.reccard .rc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.reccard .pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;
+  font-size:12px;font-weight:600;background:rgba(11,120,120,.10);color:#0B7878;letter-spacing:.02em;}
+.reccard .pill svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.reccard .rc-when{font-size:14px;color:#616B75;}
+.reccard .rc-kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#616B75;font-weight:600;margin:0;}
+html[lang^="ko"] .reccard .rc-kicker{text-transform:none;letter-spacing:.06em;}
+.reccard .rc-title{font-size:24px;margin:2px 0 0;line-height:1.25;}
+.reccard .rc-rows{display:flex;flex-direction:column;}
+.reccard .rc-row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #EEEAE2;align-items:baseline;}
+.reccard .rc-row:first-child{border-top:0;}
+.reccard .rc-lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#616B75;font-weight:600;}
+html[lang^="ko"] .reccard .rc-lbl{text-transform:none;font-size:13px;}
+.reccard .rc-val{margin:0;font-weight:500;color:#141A1F;line-height:1.45;}
+.reccard .rc-note{margin:2px 0 0;font-size:13px;color:#616B75;line-height:1.5;}
+.reccard .rc-foot{margin:0;font-size:13px;color:#616B75;border-top:1px solid #EEEAE2;padding-top:12px;line-height:1.5;}
+.hero-inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center;padding-top:96px !important;padding-bottom:88px;}
+.hero .heroband{max-width:640px;}
+.hero .sub{font-size:clamp(17px,1.35vw,20px);line-height:1.5;margin-top:24px;max-width:560px;}
+html[lang^="ko"] .hero .sub{line-height:1.75;font-size:clamp(16px,1.25vw,18px);}
+.heroprice{margin-top:18px;font-size:14px;color:#616B75;}
+.heroprice b{font-weight:500;color:#616B75;}
+.heroprice i{font-style:normal;}
+.hero .ctas{margin-top:28px;}
+.heroshelf{display:flex;justify-content:flex-end;}
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;padding-top:56px !important;padding-bottom:56px;}
+  .heroshelf{justify-content:stretch;}
+  .reccard{max-width:none;padding:18px 18px 14px;}
+  .reccard .rc-row{grid-template-columns:76px minmax(0,1fr);gap:10px;}
+  .hero .ctas{flex-direction:column;align-items:stretch;gap:14px;}
+  .hero .ctas .btn{justify-content:center;}
+}
+
+/* ── Chrome that must not compete with the page ───────────────────── */
+.totop{background:#FFFFFF;border:1px solid #E2DDD3;color:#141A1F;box-shadow:0 1px 2px rgba(20,26,31,.05),0 12px 24px -12px rgba(20,26,31,.25);backdrop-filter:none;}
+.totop:hover{background:#F6F4EE;border-color:#141A1F;}
+.stickycta{background:rgba(255,255,255,.96);border-top:1px solid #E2DDD3;box-shadow:0 -8px 24px -16px rgba(20,26,31,.25);backdrop-filter:none;}
+.stickycta .stepnum{background:rgba(11,120,120,.10);border-color:transparent;color:#0B7878;}
+.guiderail li .gr-dot{border-color:#CFC9BC;background:#FFFFFF;}
+.guiderail li.is-now .gr-dot{background:#0B7878;border-color:#0B7878;color:#FFFFFF;}
+.bigfooter{margin-top:96px;border-top:1px solid #E2DDD3;padding:56px 0 40px;color:#3B454D;}
+.bigfooter .brand .logo{color:#141A1F;}
+.bigfooter .hl3,.bigfooter .hl5,.bigfooter h3{color:#616B75;letter-spacing:.06em;font-size:12px;}
+.bigfooter a{color:#3B454D;}
+.bigfooter a:hover{color:#141A1F;}
+.bigfooter .langsw{border-color:#E2DDD3;color:#3B454D;}
+.bigfooter .ver,.ver-f{display:none !important;}
+.capnote,.scenecap{color:#616B75;opacity:1;}
+.srjs .reveal{transform:translateY(12px);}
+
+/* ── Photos stay photos: beside text, never behind it ─────────────── */
+.photosplit .media img,.scene-frame img,.midscene img{border-radius:14px;}
+.photo-scrim::after{display:none;}
+.scene-frame .caption{position:static;display:block;margin-top:10px;color:#616B75;font-size:14px;background:none;padding:0;}
+.icard.photocard .kicker,.icard.photocard b,.icard.photocard p,.icard.photocard .rank{color:#FFFFFF;}
+
+/* ── Leftovers the remap could not decide by context ─────────────── */
+.nav .links .on,.nav .navtop.on{color:#141A1F;}
+.np-tour:hover,.tradetour a:hover{color:#0B7878;}
+.plan.dark{color:#141A1F;}
+.by .avatar,.av-c{color:#FFFFFF;}
+
+/* ── Fixes found on the first render ──────────────────────────────── */
+.hero-inner{display:grid !important;}
+h1 span[style*="--teal"],h2 span[style*="--teal"],.h2 span[style*="--teal"],h1 span[style*="--accent"],h2 span[style*="--accent"],
+h1 .teal,h2 .teal,.h2 .teal,h1 em,h2 em,.h2 em{color:inherit !important;font-style:normal;}
+.bub{border-radius:14px;box-shadow:none;}
+.bub.ai{background:#FFFFFF;color:#141A1F;border:1px solid #E2DDD3;}
+.bub.user{background:rgba(11,120,120,.10);color:#141A1F;border:0;}
+.nightline .t em,.nightline .t{color:#616B75;}
+.secrule::before,.secrule::after,.secrule > i,.secrule > .rule,.secrule .line{display:none !important;}
+.secrule{border:0 !important;}
+.heroshelf{display:flex !important;justify-content:flex-end;grid-template-columns:none !important;}
+.reccard{width:100%;max-width:520px;}
+/* contrast fixes from the first live pass */
+.baCol.before .hl4,.tag.hot,.hot{color:#A8453A;}
+.chip.risk{color:#3B454D;}
+.who .ini,.ini,.av,.avatar{background:#0B7878;color:#FFFFFF;}
+.fstep span,.fstep{color:#616B75;}
+
+.heroprice i{color:#616B75 !important;}
+
+/* ── Last pass: text the 144-page contrast sweep still found on light ground ── */
+html body .kolist b,
+html body .pipe b,
+html body .packblock h2,
+html body .ifwrong b,
+html body .trio b,
+html body .statcol div.hl4,
+html body .coblock h2,
+html body .body b,
+html body .scene-overlay b,
+html body .scene-overlay span,
+html body .cmp th,
+html body .introw span.st.bridge,
+html body .statcard span.sl,
+html body .livecard b,
+html body .body span.pr,
+html body .agree b,
+html body .br em,
+html body .statcard b.sv,
+html body .lead b,
+html body .escsteps i,
+html body .kover b,
+html body .livecard span.lt,
+html body .gsaside b,
+html body .kcrow label,
+html body .shot span.when,
+html body .ratebox b,
+html body .livenote b,
+html body .sm-row b,
+html body .kcline span,
+html body .chan b,
+html body .route span.want,
+html body .kplan span.pr,
+html body .kbuy b,
+html body .proofnote b,
+html body .livecard a.lnum,
+html body .coform div,
+html body .docbar span.docbar-l,
+html body .sm-plan b,
+html body .sm-total span,
+html body .tel b,
+html body .secintro b,
+html body .lb-o div.hl4,
+html body .hsub b,
+html body .then b,
+html body .routefoot b,
+html body .gsaside h3,
+html body .logline div.hl5,
+html body .mlcard span.n,
+html body .escband span.lbl,
+html body .pipecolx div.pchip.hot,
+html body .nav a.logo,
+html body .navitem button.navtop,
+html body .pricelede span.pricenum,
+html body .herogrid h1,
+html body .herogrid em,
+html body .sumcard a.go,
+html body .foundnote b,
+html body .rh b,
+html body .foundbox b,
+html body .bh b,
+html body .br span,
+html body .esccard div.tt,
+html body .wbody div.wb.bot{color:#141A1F !important;}
+html body .nl span.t,
+html body .t em,
+html body .nightline .t,
+html body .nightline .t em,
+html body .fstep span{color:#616B75 !important;}
+html body .qrow span.qs.never,
+html body .qs.never,
+html body .ft span.tag.hot,
+html body .tag.hot{color:#A8453A !important;}
+html body .pilltag.pt-dark{background:#141A1F !important;color:#FFFFFF !important;border-color:#141A1F !important;}
+html body .tag.hot{background:rgba(192,57,43,.10);}
+/* last dark containers the sweep found under ink text */
+html body .kcbox,html body .thumb .shot,html body .sumcard,html body .gradborder,html body .widget.dk,html body .wpage.dkpage,html body .wbody{background:#FFFFFF !important;background-image:none !important;color:#141A1F;border-color:#E2DDD3;}
+html body .scene-overlay{background:rgba(255,255,255,.94) !important;color:#141A1F !important;border:1px solid #E2DDD3;border-radius:8px;}
+html body .scene-overlay b,html body .scene-overlay span,html body .scene-overlay .k{color:#141A1F !important;}
+html body .cmp td b,html body table td b,html body th b,html body td b{color:#141A1F !important;}
+/* the sweep's last three */
+html body .sumcard .go,html body a.go{background:#0B7878 !important;color:#FFFFFF !important;border-radius:8px;}
+html body .fr-x{background:#FFFFFF !important;color:#141A1F !important;border:1px solid #E2DDD3;}
+html body .kcbox,html body .kcin,html body .kcout,html body .kcrow,html body .kcline{background:#FFFFFF !important;color:#141A1F;}
+html body .kcout{background:#F6F4EE !important;}
+html body .winput{color:#616B75;}
+html body .kcline b,html body .kcout b{color:#141A1F !important;}
+html body .widget .winput,html body .winput{color:#616B75 !important;}
+html body .fld select option,html body select option{background:#FFFFFF !important;color:#141A1F !important;}
+.reccard .pill{white-space:nowrap;}
+.reccard .rc-top{flex-wrap:wrap;}
+html body .avatar,html body .av,html body .av-b,html body .av-c{color:#FFFFFF !important;}

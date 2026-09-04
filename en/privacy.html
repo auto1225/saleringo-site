@@ -24,46 +24,47 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Privacy Policy | Saleringo", "description": "How Saleringo collects, uses, stores and deletes personal data \u2014 including your customers' \u2014 and the rights you and they hold.", "url": "https://claude.saleringo.com/en/privacy.html", "isPartOf": {"@type": "WebSite", "name": "Saleringo", "url": "https://saleringo.com/"}, "publisher": {"@type": "Organization", "name": "Saleringo", "url": "https://saleringo.com/"}, "inLanguage": "en"}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=75.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=76.0">
 <style>
   /* legal pages carry one masthead photograph so they stay part of the site;
      .photohero's flex centring is overridden — the header also holds the nav */
   .hero{position:relative;overflow:hidden;padding-bottom:90px;display:block;min-height:0;}
   .hero .bgimg img{filter:brightness(1.29) saturate(1.05) contrast(1.05);}
-  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.68) 0%,rgba(4,8,15,0.561) 38%,rgba(4,8,15,0.732) 74%,#0E1A31 100%);}
+  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.68) 0%,rgba(255,255,255,0.561) 38%,rgba(255,255,255,0.732) 74%,#F6F4EE 100%);}
   .hero-inner{position:relative;text-align:center;padding:175px clamp(22px,4.6vw,56px) 0;z-index:2;max-width:760px;margin:0 auto;}
   /* The copy has no card behind it, so it carries its own ground: a soft
      edgeless pool of dark, densest under the text and gone before it reaches
      the skyline. The photograph stays a photograph. */
   .hero-inner::before{content:"";position:absolute;inset:110px -18% auto -18%;height:360px;z-index:-1;pointer-events:none;
-    background:radial-gradient(58% 100% at 50% 48%,rgba(4,8,15,.86) 0%,rgba(4,8,15,.66) 58%,rgba(4,8,15,0) 100%);}
-  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.06;letter-spacing:-.04em;font-weight:600;color:#fff;}
+    background:radial-gradient(58% 100% at 50% 48%,rgba(255,255,255,.86) 0%,rgba(255,255,255,.66) 58%,rgba(255,255,255,0) 100%);}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.06;letter-spacing:-.04em;font-weight:600;color:#141A1F;}
   .hero .sub{margin:22px auto 0;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
   .hero .meta{margin-top:20px;font-size:var(--fs-xs);color:var(--tx3);font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
 
   .docsec{padding:90px 0 120px;}
   .docwrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 24px;}
   .boundary{margin-top:44px;}
-  .docnote{display:flex;gap:16px;align-items:flex-start;background:#FAF3E6;border:1px solid #EAD9B8;border-radius:16px;padding:20px 24px;}
+  .docnote{display:flex;gap:16px;align-items:flex-start;background:#FAF3E6;border:1px solid #EAD9B8;border-radius:14px;padding:20px 24px;}
   .docnote .ic{flex:none;width:26px;height:26px;border-radius:50%;background:var(--amber);color:#fff;font-weight:800;font-size:var(--fs-sm);display:flex;align-items:center;justify-content:center;}
-  .docnote p{font-size:var(--fs-xs);line-height:1.75;color:#7A5B1E;font-weight:500;}
-  .docnote b{color:#5E4612;}
+  .docnote p{font-size:var(--fs-xs);line-height:1.75;color:#141A1F;font-weight:500;}
+  .docnote b{color:#141A1F;}
 
   .toc{margin-top:44px;}
-  .toc .steps{background:#fff;border:1px solid var(--l-hair);border-radius:20px;padding:8px 24px;
-    box-shadow:0 2px 3px rgba(11,27,51,.03),0 24px 60px rgba(11,27,51,.07);}
+  .toc .steps{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:8px 24px;
+    box-shadow:0 2px 3px rgba(20,26,31,.03),0 24px 60px rgba(20,26,31,.07);}
   .toc .step:last-child{border-bottom:0;}
   .toc a.step:hover .tx b{color:#0B7878;}
 
   .dsec{padding-top:76px;scroll-margin-top:30px;}
   .dsec .dh{display:flex;align-items:baseline;gap:16px;}
-  .dsec .dh .num{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:700;color:#0B7878;letter-spacing:.1em;}
-  .dsec h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  .dsec .dh .num{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:700;color:#0B7878;letter-spacing:.1em;}
+  .dsec h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
   .dsec > p{margin-top:16px;font-size:var(--fs-sm);line-height:1.85;color:var(--l-mut);font-weight:500;}
   .dsec p b,.dsec li b{color:var(--l-ink);font-weight:700;}
   .dsec ul{margin-top:16px;list-style:none;display:grid;gap:12px;}
@@ -99,7 +100,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -144,7 +145,7 @@
   <g transform="translate(48,52)">
     <rect width="392" height="238" rx="18" fill="url(#pbYours)" stroke="#CFEAEA" stroke-width="2"/>
     <text x="24" y="38" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#0B7878" letter-spacing="2.6">YOUR&nbsp;BUSINESS OWNS THIS</text>
-    <g font-family="Plus Jakarta Sans,sans-serif" font-size="13" font-weight="600" fill="#0B1B33">
+    <g font-family="Plus Jakarta Sans,sans-serif" font-size="13" font-weight="600" fill="#141A1F">
       <rect x="24" y="58" width="344" height="42" rx="10" fill="#F0F7F8"/>
       <circle cx="48" cy="79" r="9" fill="#17BDBD"/><text x="70" y="84">Call recordings and transcripts</text>
       <rect x="24" y="110" width="344" height="42" rx="10" fill="#F0F7F8"/>
@@ -157,7 +158,7 @@
   <!-- processor -->
   <g transform="translate(478,52)">
     <path d="M-30 118 H-6" stroke="#B4C6D2" stroke-width="1.8" stroke-dasharray="4 5"/>
-    <rect width="150" height="238" rx="18" fill="#0B1B33"/>
+    <rect width="150" height="238" rx="18" fill="#141A1F"/>
     <text x="75" y="98" font-family="Space Grotesk,sans-serif" font-size="12" fill="#17BDBD" text-anchor="middle" letter-spacing="2.2">SALERINGO</text>
     <text x="75" y="126" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#fff" text-anchor="middle" font-weight="700">processes it</text>
     <text x="75" y="148" font-family="Plus Jakarta Sans,sans-serif" font-size="13.5" fill="#fff" text-anchor="middle" font-weight="700">on&nbsp;your&nbsp;instruction</text>
@@ -283,7 +284,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -325,11 +326,11 @@
 </nav>
 </main>
 
-<script src="../assets/js/site.js?v=75.0"></script>
-<script src="../assets/js/balance.js?v=75.0" defer></script>
-<script src="../assets/js/panels.js?v=75.0" defer></script>
-<script src="../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../assets/js/rail.js?v=75.0" defer></script>
-<script src="../assets/js/guide.js?v=75.0"></script>
+<script src="../assets/js/site.js?v=76.0"></script>
+<script src="../assets/js/balance.js?v=76.0" defer></script>
+<script src="../assets/js/panels.js?v=76.0" defer></script>
+<script src="../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../assets/js/rail.js?v=76.0" defer></script>
+<script src="../assets/js/guide.js?v=76.0"></script>
 </body>
 </html>

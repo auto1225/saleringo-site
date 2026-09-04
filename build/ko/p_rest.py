@@ -38,34 +38,34 @@ CSS = """
     font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
   .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
     border-radius:50%;border:1.5px solid var(--teal);}
-  .kolist li b{display:block;color:#fff;margin-bottom:4px;}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
   .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
   .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
   .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;}
   @media (max-width:880px){.trio{grid-template-columns:1fr;}}
-  .trio > div{padding:26px 24px;border:1px solid var(--hair-d);border-radius:12px;}
-  .trio b{display:block;font-size:var(--fs-lead);color:#fff;}
+  .trio > div{padding:26px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .trio b{display:block;font-size:var(--fs-lead);color:#141A1F;}
   .trio p{margin-top:10px;font-size:var(--fs-sm);color:var(--tx2);line-height:1.75;}
   .sec-light .trio > div,.bg-paper .trio > div{border-color:#D5DBE4;}
   .sec-light .trio b,.bg-paper .trio b{color:var(--l-ink);}
   .sec-light .trio p,.bg-paper .trio p{color:var(--l-tx2);}
   .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
   .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
-    font-size:var(--fs-sm);font-weight:600;color:#fff;}
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
   .pipe i{font-style:normal;color:var(--teal);}
   .nightline{display:grid;gap:16px;padding:26px 24px;}
   .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
-  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(255,255,255,.5);
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
     text-transform:uppercase;padding-top:9px;}
-  .nl .t em{display:block;font-style:normal;color:rgba(255,255,255,.66);
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
     letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
   @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
   .cmp{width:100%;margin-top:34px;border-collapse:collapse;}
   .cmp th,.cmp td{padding:16px 14px;text-align:left;font-size:var(--fs-sm);
     border-bottom:1px solid var(--hair-d);vertical-align:top;line-height:1.7;}
-  .cmp th{color:#fff;font-weight:600;}
+  .cmp th{color:#141A1F;font-weight:600;}
   .cmp td{color:var(--tx2);}
-  .cmp td b{color:#fff;}
+  .cmp td b{color:#141A1F;}
   .cmpwrap{overflow-x:auto;}
   @media (max-width:700px){.cmp{min-width:640px;}}
   .qlist{margin-top:30px;display:grid;gap:0;}
@@ -74,9 +74,9 @@ CSS = """
   .qlist .q p{margin-top:9px;font-size:var(--fs-sm);color:var(--l-tx2);line-height:1.8;}
   .exwall{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px;}
   @media (max-width:820px){.exwall{grid-template-columns:1fr;}}
-  .excard{display:block;padding:24px 22px;border:1px solid #D5DBE4;border-radius:12px;
+  .excard{display:block;padding:24px 22px;border:1px solid #D5DBE4;border-radius:8px;
     text-decoration:none;transition:all .35s var(--ease);}
-  .excard:hover{border-color:var(--teal);background:rgba(23,189,189,.05);}
+  .excard:hover{border-color:var(--teal);background:rgba(11,120,120,.05);}
   .excard b{display:block;font-size:var(--fs-lead);color:var(--l-ink);}
   .excard span{display:block;margin-top:8px;font-size:var(--fs-sm);line-height:1.75;
     color:var(--l-tx2);}
@@ -85,21 +85,21 @@ CSS = """
   /* ══ 회사 소개 · 파일럿 수치와 걸어 볼 수 있는 회선 ══ */
   .statrow,.livegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;}
   @media (max-width:880px){.statrow,.livegrid{grid-template-columns:1fr;}}
-  .statcard,.livecard{padding:22px 22px 20px;border:1px solid var(--hair-d);border-radius:12px;}
+  .statcard,.livecard{padding:22px 22px 20px;border:1px solid var(--hair-d);border-radius:8px;}
   .statcard.hi{border-color:var(--teal);}
   .livecard.ours{border-style:dashed;}
   .statcard .sl,.livecard .lt{display:block;font-size:var(--fs-2xs);letter-spacing:.12em;
-    text-transform:uppercase;color:rgba(255,255,255,.6);}
-  .statcard .sv{display:block;margin-top:8px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;
-    font-size:var(--fs-h2s);font-weight:600;color:#fff;letter-spacing:-.03em;}
+    text-transform:uppercase;color:rgba(20,26,31,.6);}
+  .statcard .sv{display:block;margin-top:8px;font-family:'Bricolage Grotesque','IBM Plex Sans KR',sans-serif;
+    font-size:var(--fs-h2s);font-weight:600;color:#141A1F;letter-spacing:-.03em;}
   .statcard .sd{display:block;margin-top:4px;font-size:var(--fs-xs);color:var(--teal);font-weight:700;}
   .statcard .sn,.livecard p{margin-top:10px;font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);}
-  .livecard b{display:block;margin-top:8px;font-size:var(--fs-lead);color:#fff;}
-  .livecard .lnum{display:inline-block;margin-top:8px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;
+  .livecard b{display:block;margin-top:8px;font-size:var(--fs-lead);color:#141A1F;}
+  .livecard .lnum{display:inline-block;margin-top:8px;font-family:'Bricolage Grotesque','IBM Plex Sans KR',sans-serif;
     font-size:var(--fs-lead);font-weight:600;color:var(--teal);text-decoration:none;}
   .proofnote,.livenote{margin-top:26px;display:grid;gap:12px;}
   .proofnote p,.livenote p{font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
-  .proofnote b,.livenote b{color:#fff;}
+  .proofnote b,.livenote b{color:#141A1F;}
 """
 
 

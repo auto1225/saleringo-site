@@ -25,19 +25,19 @@
        MIN_PX  13px in CSS pixels is the floor. Nothing shrinks below it; text
                that will not fit at 13 is truncated instead, because a 10px
                label is not a smaller label, it is a missing one.
-       SOFT    env.ink.muted is .46 alpha, which measures 4.38:1 on #081226 —
+       SOFT    env.ink.muted is .46 alpha, which measures 4.38:1 on #F6F4EE —
                under AA. The secondary ink here is .62 alpha (7.0:1) so every
                line of type on these figures clears 4.5:1 with room to spare.
   */
   var MIN_PX = 13;
   var GRO = '"Space Grotesk", system-ui, sans-serif';
   var JAK = '"Plus Jakarta Sans", system-ui, sans-serif';
-  var CHAN = { voice: '#17BDBD', chat: '#5B9DFF', msg: '#34D186' };
-  var AMBER = { dark: '#F0B454', light: '#8A5A10' };
+  var CHAN = { voice: '#0B7878', chat: '#2C63B8', msg: '#2F855A' };
+  var AMBER = { dark: '#B7791F', light: '#8A5A10' };
 
-  function soft(K) { return K.onLight ? 'rgba(11,27,51,.74)' : 'rgba(242,246,251,.62)'; }
-  function panelFill(K) { return K.onLight ? 'rgba(11,27,51,.045)' : 'rgba(255,255,255,.055)'; }
-  function hairLine(K) { return K.onLight ? 'rgba(11,27,51,.18)' : 'rgba(242,246,251,.20)'; }
+  function soft(K) { return K.onLight ? 'rgba(20,26,31,.74)' : 'rgba(20,26,31,.62)'; }
+  function panelFill(K) { return K.onLight ? 'rgba(20,26,31,.045)' : 'rgba(20,26,31,.072)'; }
+  function hairLine(K) { return K.onLight ? 'rgba(20,26,31,.18)' : 'rgba(20,26,31,.20)'; }
   function amber(K) { return K.onLight ? AMBER.light : AMBER.dark; }
 
   function box(c, x, y, w, h, r) {
@@ -140,7 +140,7 @@
         /* closed hours — the whole ring, drawn first and dim */
         c.lineWidth = Math.max(9, r * 0.13);
         c.lineCap = 'butt';
-        c.strokeStyle = K.onLight ? 'rgba(184,122,40,.20)' : 'rgba(232,164,76,.16)';
+        c.strokeStyle = K.onLight ? 'rgba(184,122,40,.20)' : 'rgba(183,121,31,.16)';
         c.beginPath(); c.arc(cx, cy, r, 0, TAU); c.stroke();
 
         /* the part of the closed ring the sweep has already crossed, lit */
@@ -504,7 +504,7 @@
 
         /* ── the record: the one thing all three doors write into ── */
         c.save();
-        c.shadowColor = K.onLight ? 'rgba(11,27,51,.14)' : 'rgba(0,0,0,.5)';
+        c.shadowColor = K.onLight ? 'rgba(20,26,31,.14)' : 'rgba(0,0,0,.5)';
         c.shadowBlur = 22; c.shadowOffsetY = 6;
         c.fillStyle = K.onLight ? '#FFFFFF' : '#0C1A31';
         box(c, recX, recY, recW, recH, 14); c.fill();
@@ -587,7 +587,7 @@
       frame: function (c, W, H, t) {
         var p = Math.min(1, t / 2.2);
         var light = K.onLight;
-        var ink = light ? 'rgba(11,27,51,' : 'rgba(242,246,251,';
+        var ink = light ? 'rgba(20,26,31,' : 'rgba(20,26,31,';
 
         /* One page, drawn as a page: a card with an edge, set off to the side
            and running past the bottom so it reads as a browser window sitting
@@ -606,9 +606,9 @@
 
         /* the page itself */
         /* a real card: it needs an edge and a shadow or it is just a wash */
-        c.shadowColor = light ? 'rgba(11,27,51,.10)' : 'rgba(0,0,0,.5)';
+        c.shadowColor = light ? 'rgba(20,26,31,.10)' : 'rgba(0,0,0,.5)';
         c.shadowBlur = 40; c.shadowOffsetY = 18;
-        c.fillStyle = light ? 'rgba(255,255,255,.92)' : 'rgba(255,255,255,.04)';
+        c.fillStyle = light ? 'rgba(20,26,31,.92)' : 'rgba(20,26,31,.052)';
         c.strokeStyle = ink + (light ? '0.14' : '0.11') + ')';
         c.lineWidth = 1;
         c.beginPath();
@@ -869,7 +869,7 @@
           /* Opaque base first. The six fan lines pass behind these tiles, and a
              translucent tint let the line to the third column read as a scratch
              across the first one. The tile has to be a surface, not a wash. */
-          c.fillStyle = K.onLight ? '#FFFFFF' : '#0A1627';
+          c.fillStyle = K.onLight ? '#FFFFFF' : '#FFFFFF';
           box(c, B.x, B.y, B.w, B.h, 12); c.fill();
           c.fillStyle = made2 ? tint(K.accent, K.onLight ? 0.10 : 0.15)
                       : bl    ? tint(AM, K.onLight ? 0.10 : 0.15)
@@ -1004,7 +1004,7 @@
         for (var i = 0; i < show; i++) {
           var L = D.lines[i], ry = top + i * rowH;
           c.fillStyle = L.used ? tint(K.accent, K.onLight ? 0.14 : 0.18)
-                               : (K.onLight ? 'rgba(11,27,51,.04)' : 'rgba(255,255,255,.04)');
+                               : (K.onLight ? 'rgba(20,26,31,.04)' : 'rgba(20,26,31,.052)');
           box(c, lx + 12, ry, lw - 24, rowH - 5, 7); c.fill();
           if (L.used) {
             c.fillStyle = K.accent;
@@ -1207,7 +1207,7 @@
      a buyer's reviewer actually reads. */
   window.SR_SCENE('modelfeed', function (env) {
     var K = env.ink;
-    var RED = '#D96A5E';
+    var RED = '#C0392B';
     var GIVEN = [
       ['The question just asked',         'The question asked'],
       ['Your prices, hours and policies', 'Your prices and hours'],
@@ -1282,14 +1282,14 @@
 
         /* ── the model ── */
         c.save(); c.globalAlpha = p;
-        c.fillStyle = K.onLight ? '#0B1B33' : 'rgba(23,189,189,.14)';
+        c.fillStyle = K.onLight ? '#141A1F' : 'rgba(11,120,120,.14)';
         box(c, xM, yM, wM, hM, 14); c.fill();
         c.strokeStyle = K.accent; c.lineWidth = 1.8; c.stroke();
         var mc = yM + hM / 2;
         label(c, 'THE MODEL', xM + wM / 2, mc - 12, wM - 24,
               '800', GRO, 16, K.onLight ? '#7FE3E3' : K.accent, 'center');
         label(c, 'composes one answer', xM + wM / 2, mc + 12, wM - 20,
-              '600', JAK, 13, K.onLight ? 'rgba(255,255,255,.80)' : SOFT, 'center');
+              '600', JAK, 13, K.onLight ? 'rgba(20,26,31,.80)' : SOFT, 'center');
         c.restore();
 
         /* ── what comes back ── */
@@ -1323,9 +1323,9 @@
         /* ── and the two routes that do not exist ── */
         var by = H - botH;
         c.save();
-        c.fillStyle = K.onLight ? 'rgba(217,106,94,.07)' : 'rgba(217,106,94,.10)';
+        c.fillStyle = K.onLight ? 'rgba(192,57,43,.07)' : 'rgba(192,57,43,.10)';
         box(c, 0, by, W, botH, 14); c.fill();
-        c.strokeStyle = 'rgba(217,106,94,.45)'; c.lineWidth = 1; c.stroke();
+        c.strokeStyle = 'rgba(192,57,43,.45)'; c.lineWidth = 1; c.stroke();
         c.restore();
 
         var cells = narrow
@@ -1357,7 +1357,7 @@
      page already prints, drawn on a timeline. */
   window.SR_SCENE('firstline', function (env) {
     var K = env.ink;
-    var RED = '#D96A5E';
+    var RED = '#C0392B';
     var MARKS = [
       [0.05, 'It rings',       'Rings'],
       [0.30, 'Picked up',      'Answered'],
@@ -1453,9 +1453,9 @@
                 B.w - 44, '800', GRO, 14, K.strong);
         });
         var L = cellAt(3);
-        c.fillStyle = K.onLight ? 'rgba(217,106,94,.07)' : 'rgba(217,106,94,.10)';
+        c.fillStyle = K.onLight ? 'rgba(192,57,43,.07)' : 'rgba(192,57,43,.10)';
         box(c, L.x, L.y, L.w, L.h, 12); c.fill();
-        c.strokeStyle = 'rgba(217,106,94,.45)'; c.lineWidth = 1;
+        c.strokeStyle = 'rgba(192,57,43,.45)'; c.lineWidth = 1;
         box(c, L.x, L.y, L.w, L.h, 12); c.stroke();
         c.save();
         c.strokeStyle = RED; c.lineWidth = 2.2; c.lineCap = 'round';
@@ -1526,7 +1526,7 @@
         label(c, '“Can you guarantee the date?”', xL + 16, ly + 28,
               wL - 32, '700', JAK, 15, K.strong);
         var chipY = ly + 54, chipH = 30;
-        c.fillStyle = tint(K.onLight ? '#8A5A10' : '#F0B454', K.onLight ? 0.10 : 0.16);
+        c.fillStyle = tint(K.onLight ? '#8A5A10' : '#B7791F', K.onLight ? 0.10 : 0.16);
         box(c, xL + 16, chipY, wL - 32, chipH, 9); c.fill();
         c.strokeStyle = AM; c.lineWidth = 1.4; c.stroke();
         label(c, wL < 320 ? 'CASE 05 · needs a person'
@@ -1552,7 +1552,7 @@
         person(c, px, py, 13, AM);
 
         /* the one card the desk opens */
-        c.fillStyle = K.onLight ? '#FFFFFF' : '#0A1627';
+        c.fillStyle = K.onLight ? '#FFFFFF' : '#FFFFFF';
         box(c, xR, yR, wR, hR, 14); c.fill();
         c.fillStyle = tint(K.accent, K.onLight ? 0.07 : 0.10);
         box(c, xR, yR, wR, hR, 14); c.fill();
@@ -1593,7 +1593,7 @@
      the figure cannot drift out of step with the rows it summarises. */
   window.SR_SCENE('bridgehop', function (env) {
     var K = env.ink;
-    var GREEN = '#34D186', BLUE = '#5B9DFF';
+    var GREEN = '#2F855A', BLUE = '#2C63B8';
     var counted = null;
 
     function count() {
@@ -1688,7 +1688,7 @@
               c.restore();
               for (s2 = 0; s2 < stops; s2++) {
                 var mid0 = L.hop && s2 === 1;
-                c.fillStyle = K.onLight ? '#FFFFFF' : '#0A1627';
+                c.fillStyle = K.onLight ? '#FFFFFF' : '#FFFFFF';
                 c.beginPath(); c.arc(centres[s2], ry, mid0 ? 8 : 6, 0, TAU); c.fill();
                 c.strokeStyle = L.c; c.lineWidth = mid0 ? 2.2 : 1.8;
                 c.save();
@@ -1702,7 +1702,7 @@
                 var sx = centres[s2], bw = widths[s2];
                 var mid = L.hop && s2 === 1;
                 c.fillStyle = mid ? tint(L.c, K.onLight ? 0.12 : 0.18)
-                                  : (K.onLight ? '#FFFFFF' : '#0A1627');
+                                  : (K.onLight ? '#FFFFFF' : '#FFFFFF');
                 box(c, sx - bw / 2, ry - boxH / 2, bw, boxH, 8); c.fill();
                 c.save();
                 c.strokeStyle = mid ? L.c : HAIR; c.lineWidth = mid ? 1.6 : 1;

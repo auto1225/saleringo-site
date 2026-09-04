@@ -24,17 +24,18 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A caller says they smell gas. What exactly happens?","acceptedAnswer":{"@type":"Answer","text":"The AI stops booking immediately. It follows your approved safety script \u2014 advising the caller to leave the area and call emergency services if the smell is strong \u2014 and pages your on-call tech at the same moment, with the address and details already captured. It never decides on&nbsp;its own that a situation is safe."}},{"@type":"Question","name":"Do you integrate with ServiceTitan, Jobber, or Housecall Pro?","acceptedAnswer":{"@type":"Answer","text":"Not yet \u2014 and we won't pretend otherwise. Those integrations are on the roadmap, and founding-cohort members vote on the build order. Today, every call lands in Saleringo's&nbsp;built-in inbox and CRM, and jobs push out through Zapier or CSV export."}},{"@type":"Question","name":"Can it quote repair prices over the phone?","acceptedAnswer":{"@type":"Answer","text":"It quotes exactly what you approve: call-out fee, diagnostic fee and price ranges. It never gives a fixed total before your tech has inspected the unit \u2014 the final number stays with the&nbsp;human holding the flashlight."}},{"@type":"Question","name":"Does it handle Spanish-speaking callers?","acceptedAnswer":{"@type":"Answer","text":"Yes. The US founding cohort launches with English and Spanish \u2014 the AI detects the caller's&nbsp;language from the first sentence and answers in it. Job notes still reach your team in English, so dispatch never slows down."}},{"@type":"Question","name":"Can I start with nights only?","acceptedAnswer":{"@type":"Answer","text":"That's how most shops begin. Forward your line after 6 PM and on weekends, listen to the&nbsp;recordings for a week, then widen the window when the answers sound like your business. Switching back is a forwarding change on your side, not a support ticket."}},{"@type":"Question","name":"What's the after-hours call-out?","acceptedAnswer":{"@type":"Answer","text":"Quotes the fee on your rate card and says whether it comes off the repair."}},{"@type":"Question","name":"Can someone come out tonight?","acceptedAnswer":{"@type":"Answer","text":"Reads the on-call rotation and the calendar, then offers a real arrival window."}},{"@type":"Question","name":"How much just to come and look at it?","acceptedAnswer":{"@type":"Answer","text":"Quotes the standard call-out plus the travel charge for that address's zone."}},{"@type":"Question","name":"Which zone am I in?","acceptedAnswer":{"@type":"Answer","text":"Matches the address to your zone map and says so before quoting anything."}},{"@type":"Question","name":"Do you even cover my ZIP code?","acceptedAnswer":{"@type":"Answer","text":"Answers from your service-area list \u2014 and says no plainly rather than taking a job you can't reach."}},{"@type":"Question","name":"Is my annual service due yet?","acceptedAnswer":{"@type":"Answer","text":"Reads the job history and offers the next free mornings, with the same technician."}},{"@type":"Question","name":"\u00bfHablan espa\u00f1ol?","acceptedAnswer":{"@type":"Answer","text":"Continues in Spanish, from wording approved in Spanish \u2014 not translated at the moment of speaking."}},{"@type":"Question","name":"Can you beat the quote I've been given?","acceptedAnswer":{"@type":"Answer","text":"States the rate card, declines to discount, and routes the request to the owner."}},{"@type":"Question","name":"Is the part you fitted still under warranty?","acceptedAnswer":{"@type":"Answer","text":"Produces part, date and technician from the record; the coverage decision goes to your office."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for HVAC, Plumbing & Electrical","item":"https://claude.saleringo.com/en/industries/home-services.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=75.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=76.0">
 <style>
   /* ── HERO — full-bleed photograph, the night scene laid over it ────── */
   .hero{position:relative;overflow:hidden;padding-bottom:78px;}
@@ -42,45 +43,45 @@
   /* shot in daylight — graded down so it reads as the end of the shift */
   /* 1200x992 landscape in a 1.67:1 hero — bias down so the figure keeps head and boots */
   .hero .bgimg img{filter:brightness(1.27) saturate(1.06) contrast(1.08);object-position:center 70%;}
-  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.48) 0%,rgba(4,8,15,0.253) 28%,
-    rgba(4,8,15,0.354) 62%,rgba(4,8,15,0.96) 100%);}
+  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.48) 0%,rgba(255,255,255,0.253) 28%,
+    rgba(255,255,255,0.354) 62%,rgba(255,255,255,0.96) 100%);}
   .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:1;}
   .heroinner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:136px 32px 0;
     display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center;}
   .hero .hero-panel{max-width:680px;}
-  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#fff;margin-top:20px;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#141A1F;margin-top:20px;}
   .hero h1 .teal{color:var(--teal);}
   .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.72;color:var(--tx2);font-weight:500;}
   .hero .ctas{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .fbadge{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;color:var(--teal);
-    background:var(--teal-glass);border:1px solid rgba(23,189,189,.4);border-radius:999px;padding:8px 18px;}
+    background:var(--teal-glass);border:1px solid rgba(11,120,120,.4);border-radius:999px;padding:8px 18px;}
   .fbadge i{font-style:normal;}
   .micro{margin-top:12px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
-  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#fff;}
+  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#141A1F;}
   .hero .scene-frame{margin:0;}
   .hero .specstrip{grid-column:1/-1;margin-top:40px;justify-content:flex-start;gap:28px;}
 
   /* 2 · 90-second timeline */
-  .tlsec{background:linear-gradient(180deg,#0B1424,#0E1A31);}
+  .tlsec{background:linear-gradient(180deg,#F6F4EE,#F6F4EE);}
   .tlsec .cols{display:grid;grid-template-columns:330px 1fr;gap:70px;align-items:stretch;margin-top:54px;}
   .tlstick{position:sticky;top:34px;display:flex;justify-content:center;}
   .tlstick .phoneframe{transform:rotate(-2deg);}
   .tlrow{display:grid;grid-template-columns:60px 24px 1fr;gap:0 18px;padding-bottom:26px;}
-  .tlrow .tm{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);text-align:right;padding-top:16px;}
+  .tlrow .tm{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);text-align:right;padding-top:16px;}
   .tlrow .td{position:relative;display:flex;justify-content:center;}
-  .tlrow .td i{width:11px;height:11px;border-radius:50%;background:var(--teal);margin-top:20px;box-shadow:0 0 0 5px rgba(23,189,189,.13);font-style:normal;}
+  .tlrow .td i{width:11px;height:11px;border-radius:50%;background:var(--teal);margin-top:20px;box-shadow:0 0 0 5px rgba(11,120,120,.13);font-style:normal;}
   .tlrow:not(:last-child) .td:after{content:"";position:absolute;left:50%;top:35px;bottom:-26px;width:1px;
-    background:linear-gradient(180deg,rgba(23,189,189,.45),rgba(255,255,255,.06));}
-  .tlrow .tb{border:1px solid var(--hair);border-radius:16px;padding:16px 20px;background:rgba(255,255,255,.032);}
+    background:linear-gradient(180deg,rgba(11,120,120,.45),rgba(20,26,31,.078));}
+  .tlrow .tb{border:1px solid var(--hair);border-radius:14px;padding:16px 20px;background:rgba(20,26,31,.042);}
   .tlrow .tb .spk{font-size:var(--fs-label);font-weight:800;letter-spacing:.14em;color:var(--tx3);}
   .tlrow .tb .spk.ai{color:var(--teal);}
-  .tlrow .tb p{margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:#D5DFEC;font-weight:500;}
+  .tlrow .tb p{margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:#141A1F;font-weight:500;}
   .tlrow .tb p em{font-style:normal;color:var(--teal);font-weight:700;}
-  .tlrow.warn .tb{background:rgba(232,164,76,.09);border-color:rgba(232,164,76,.34);}
-  .tlrow.warn .td i{background:var(--amber);box-shadow:0 0 0 5px rgba(232,164,76,.14);}
+  .tlrow.warn .tb{background:rgba(183,121,31,.09);border-color:rgba(183,121,31,.34);}
+  .tlrow.warn .td i{background:var(--amber);box-shadow:0 0 0 5px rgba(183,121,31,.14);}
   .tlrow.warn .tb .spk{color:var(--amber);}
-  .tlrow.done .tb{background:rgba(23,189,189,.09);border-color:rgba(23,189,189,.34);}
+  .tlrow.done .tb{background:rgba(11,120,120,.09);border-color:rgba(11,120,120,.34);}
   .tlfoot{margin-top:8px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
 
   /* 3 · the money */
@@ -88,12 +89,12 @@
      pushes the page 127px wide and creates a horizontal scrollbar */
   .moneysec{overflow:hidden;}
   .moneytop{margin-top:48px;display:grid;grid-template-columns:.82fr 1.18fr;gap:62px;align-items:start;}
-  .bignum{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-num);font-weight:600;letter-spacing:-.055em;line-height:.84;}
+  .bignum{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-num);font-weight:600;letter-spacing:-.055em;line-height:.84;}
   .bigcap{margin-top:20px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:600;max-width:300px;}
   .figrow{display:flex;flex-wrap:wrap;}
   .fig{padding:0 30px;border-left:1px solid var(--hair);}
   .fig:first-child{padding-left:0;border-left:0;}
-  .fig b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#fff;letter-spacing:-.03em;}
+  .fig b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#141A1F;letter-spacing:-.03em;}
   .fig span{display:block;margin-top:7px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;max-width:186px;line-height:1.55;}
   .moneytop .photocard{margin-top:36px;min-height:320px;}
   .moneysec .baGrid{margin-top:62px;}
@@ -103,29 +104,29 @@
   /* 4 · safety escalation (light) */
   .safesec{}
   .safesplit{min-height:470px;margin-bottom:8px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
-    background:#fff;box-shadow:0 32px 78px rgba(11,27,51,.10);}
+    background:#fff;box-shadow:0 32px 78px rgba(20,26,31,.10);}
   .safesplit .copy{padding:58px 54px;}
   .warngrid{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .warncard{background:#fff;border:1px solid #EFDCD7;border-left:4px solid var(--red);border-radius:18px;padding:26px;
-    box-shadow:0 20px 50px rgba(11,27,51,.07);}
+  .warncard{background:#fff;border:1px solid #EFDCD7;border-left:4px solid var(--red);border-radius:14px;padding:26px;
+    box-shadow:0 20px 50px rgba(20,26,31,.07);}
   .warncard.amber{border-color:#F2E3C6;border-left-color:var(--amber);}
   .warncard .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B14A3E;}
   .warncard.amber .tag{color:#8D642F;}
   .warncard b{display:block;margin-top:12px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
   .warncard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
   .ladder{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-  .lstep{background:#fff;border:1px solid var(--l-hair);border-radius:16px;padding:22px;}
-  .lstep .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);font-weight:700;color:#0B7878;letter-spacing:.14em;}
+  .lstep{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px;}
+  .lstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:700;color:#0B7878;letter-spacing:.14em;}
   .lstep b{display:block;margin-top:10px;font-size:var(--fs-sm);color:var(--l-ink);letter-spacing:-.01em;}
   .lstep span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:500;}
   .safenote{margin-top:38px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
   .safenote a{color:#0B7878;font-weight:700;}
 
   /* 5 · dispatch proof (dark) */
-  .dispsec{position:relative;background:linear-gradient(180deg,#0A1120,#071021);}
+  .dispsec{position:relative;background:linear-gradient(180deg,#F6F4EE,#FFFFFF);}
   .dispsec .wrap{position:relative;z-index:1;}
   .dispcols{margin-top:52px;display:grid;grid-template-columns:1.14fr .86fr;gap:38px;align-items:start;}
-  .dispsec .msgthread{background:#0A1626;}
+  .dispsec .msgthread{background:#FFFFFF;}
   .dispside .rrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
   .dispside p.note{margin-top:18px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
   .dispsec .quotecard{margin:58px auto 0;max-width:780px;}
@@ -141,7 +142,7 @@
   .whoband .photocap{margin-top:16px;text-align:center;}
   .intnote{margin-top:34px;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
   .cohortbar{margin:56px auto 0;max-width:820px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
-    border:1px dashed #D9E1E9;border-radius:20px;padding:22px 26px;background:#fff;}
+    border:1px dashed #D9E1E9;border-radius:14px;padding:22px 26px;background:#fff;}
   .cohortbar b{font-size:var(--fs-sm);color:var(--l-ink);}
   .cohortbar span{font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
 
@@ -151,12 +152,12 @@
 
   /* 8 · closer + footer */
   .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.045em;color:#fff;line-height:1.05;}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.05;}
   .closer .lead{margin:24px auto 0;}
   .closer .ctas{margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
   /* price + order links under the hero and closer CTAs */
   .plinks{margin-top:18px;display:flex;gap:26px;flex-wrap:wrap;align-items:center;}
-  .plinks .linkcta{font-size:var(--fs-xs);color:#fff;}
+  .plinks .linkcta{font-size:var(--fs-xs);color:#141A1F;}
   .closer .plinks{justify-content:center;margin-top:22px;}
   .bigfooter{margin-top:126px;}
 
@@ -191,7 +192,7 @@
   .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
     font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
   .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li b{color:#141A1F;font-weight:700;}
   .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
   .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
   .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
@@ -199,17 +200,17 @@
   /* three-state integration status */
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
   .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
   .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
-  .statcol.man{border-color:rgba(232,164,76,.28);background:rgba(232,164,76,.055);}
-  .statcol.man .hl4{color:#E8A44C;} .statcol.man .hl4 i{background:#E8A44C;}
+  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
+  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
+  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
   .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
     font-weight:700;border-bottom:1px solid var(--hair);}
   .statcol li:last-child{border-bottom:0;}
   .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
@@ -218,22 +219,22 @@
   /* multi-location */
   .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
   @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
-  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
+  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
   .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
   .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
   @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
-  .mlsite{border:1px solid var(--app-line,rgba(255,255,255,.09));border-radius:13px;padding:15px 16px;
-    background:var(--app-panel,#0E1B2E);}
-  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#fff;}
+  .mlsite{border:1px solid var(--app-line,rgba(20,26,31,.117));border-radius:8px;padding:15px 16px;
+    background:var(--app-panel,#FFFFFF);}
+  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#141A1F;}
   .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
   .mlsite dl{margin-top:11px;}
-  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(255,255,255,.07);}
+  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(20,26,31,.091);}
   .mlsite .r:first-of-type{border-top:0;}
   .mlsite .r dt{width:76px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
     letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
-  .mlsite .r dd{color:#DCE6F2;font-weight:600;margin:0;}
+  .mlsite .r dd{color:#141A1F;font-weight:600;margin:0;}
 
   /* inline lead form */
   .leadbox{max-width:660px;margin:0 auto;text-align:left;}
@@ -244,17 +245,17 @@
   .leadbox .eaform{max-width:100%;}
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
   /* the honest-status grid sits on this page's white band */
   .intsec .statcol{border-color:var(--l-hair);background:#fff;}
-  .intsec .statcol.now{border-color:rgba(15,163,163,.34);background:rgba(15,163,163,.05);}
+  .intsec .statcol.now{border-color:rgba(20,26,31,.34);background:rgba(255,255,255,.05);}
   .intsec .statcol.now .hl4{color:#0B7878;}
-  .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(232,164,76,.06);}
+  .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(183,121,31,.06);}
   .intsec .statcol.man .hl4{color:#8D642F;}
-  .intsec .statcol.road .hl4{color:#656D78;}
+  .intsec .statcol.road .hl4{color:#616B75;}
   .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
   .intsec .statcol li span{color:var(--l-mut);}
-  .intsec .statnote{color:#656D78;}
+  .intsec .statnote{color:#616B75;}
   @media (max-width:560px){.whoband .audgrid{grid-template-columns:1fr;}}
 </style>
 <!--#alt-->
@@ -279,7 +280,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -299,7 +300,7 @@
     <div class="hero-panel">
       <span class="eyebrow"><i></i>For&nbsp;HVAC · Plumbing · Electrical</span>
       <h1>The&nbsp;AC died at&nbsp;9:04&nbsp;PM. <br><span class="teal">The&nbsp;truck is booked for&nbsp;7&nbsp;AM.</span></h1>
-      <p class="sub">Saleringo answers the&nbsp;calls your&nbsp;crew can't take — quotes the&nbsp;call-out fee <em style="font-style:normal;color:#fff;font-weight:700;">you</em> approved for&nbsp;that&nbsp;zone, books the&nbsp;job, texts your&nbsp;on-call tech, and files the&nbsp;whole thing in&nbsp;a&nbsp;trades CRM you can actually read on&nbsp;Monday. Gas smell or sparks? A&nbsp;human gets it in&nbsp;seconds.</p>
+      <p class="sub">Saleringo answers the&nbsp;calls your&nbsp;crew can't take — quotes the&nbsp;call-out fee <em style="font-style:normal;color:#141A1F;font-weight:700;">you</em> approved for&nbsp;that&nbsp;zone, books the&nbsp;job, texts your&nbsp;on-call tech, and files the&nbsp;whole thing in&nbsp;a&nbsp;trades CRM you can actually read on&nbsp;Monday. Gas smell or sparks? A&nbsp;human gets it in&nbsp;seconds.</p>
       <div class="ctas">
         <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
         <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
@@ -447,20 +448,20 @@
       <div class="baCol before">
         <div class="hl4" role="heading" aria-level="3">Tonight · without&nbsp;an&nbsp;answer</div>
         <ul>
-          <li><i>✕</i><span><b style="color:#fff;">9:04 PM</b> — call rings out. Voicemail greeting plays to&nbsp;a&nbsp;caller sweating in&nbsp;a&nbsp;dark house.</span></li>
-          <li><i>✕</i><span><b style="color:#fff;">9:11 PM</b> — they dial the&nbsp;next listing. Someone answers.</span></li>
-          <li><i>✕</i><span><b style="color:#fff;">11:40 PM</b> — a&nbsp;competitor's&nbsp;van is in&nbsp;the&nbsp;driveway.</span></li>
-          <li><i>✕</i><span><b style="color:#fff;">7:00 AM</b> — you hear the&nbsp;voicemail. The&nbsp;job, and the&nbsp;service plan behind it, are already booked elsewhere.</span></li>
+          <li><i>✕</i><span><b style="color:#141A1F;">9:04 PM</b> — call rings out. Voicemail greeting plays to&nbsp;a&nbsp;caller sweating in&nbsp;a&nbsp;dark house.</span></li>
+          <li><i>✕</i><span><b style="color:#141A1F;">9:11 PM</b> — they dial the&nbsp;next listing. Someone answers.</span></li>
+          <li><i>✕</i><span><b style="color:#141A1F;">11:40 PM</b> — a&nbsp;competitor's&nbsp;van is in&nbsp;the&nbsp;driveway.</span></li>
+          <li><i>✕</i><span><b style="color:#141A1F;">7:00 AM</b> — you hear the&nbsp;voicemail. The&nbsp;job, and the&nbsp;service plan behind it, are already booked elsewhere.</span></li>
         </ul>
       </div>
       <div class="baArrow" aria-hidden="true">→</div>
       <div class="baCol after">
         <div class="hl4">Tonight · with&nbsp;Saleringo answering</div>
         <ul>
-          <li><i>✓</i><span><b style="color:#fff;">9:04 PM</b> — answered on&nbsp;the&nbsp;second ring. Symptoms, address and access notes captured.</span></li>
-          <li><i>✓</i><span><b style="color:#fff;">9:05 PM</b> — your&nbsp;approved after-hours call-out fee quoted out loud, accepted on&nbsp;the&nbsp;call.</span></li>
-          <li><i>✓</i><span><b style="color:#fff;">9:06 PM</b> — job card created, on-call tech texted, caller given an&nbsp;ETA.</span></li>
-          <li><i>✓</i><span><b style="color:#fff;">7:00 AM</b> — recording, transcript and job card are waiting in&nbsp;your&nbsp;inbox.</span></li>
+          <li><i>✓</i><span><b style="color:#141A1F;">9:04 PM</b> — answered on&nbsp;the&nbsp;second ring. Symptoms, address and access notes captured.</span></li>
+          <li><i>✓</i><span><b style="color:#141A1F;">9:05 PM</b> — your&nbsp;approved after-hours call-out fee quoted out loud, accepted on&nbsp;the&nbsp;call.</span></li>
+          <li><i>✓</i><span><b style="color:#141A1F;">9:06 PM</b> — job card created, on-call tech texted, caller given an&nbsp;ETA.</span></li>
+          <li><i>✓</i><span><b style="color:#141A1F;">7:00 AM</b> — recording, transcript and job card are waiting in&nbsp;your&nbsp;inbox.</span></li>
         </ul>
       </div>
     </div>
@@ -527,62 +528,62 @@
       <div class="scene-frame tiltcard reveal">
         <svg viewBox="0 0 1000 640" role="img" aria-label="The on-call technician's phone showing the job card: address with gate code, the fault in the caller's own words, the quoted after-hours fee already accepted, and a navigate button — all filled in before the call ended.">
           <defs>
-            <linearGradient id="hjBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06111D"/><stop offset="1" stop-color="#0B2036"/></linearGradient>
+            <linearGradient id="hjBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
             <radialGradient id="hjGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".32"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
-            <linearGradient id="hjScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0F2438"/><stop offset="1" stop-color="#0A1B2B"/></linearGradient>
+            <linearGradient id="hjScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
           </defs>
           <rect width="1000" height="640" fill="url(#hjBg)"/>
           <ellipse cx="500" cy="330" rx="380" ry="290" fill="url(#hjGlow)"/>
 
           <!-- a truck cab at night, just enough of it to place the phone -->
           <g opacity=".5">
-            <path d="M0 470 H1000 V640 H0 Z" fill="#050D16"/>
-            <path d="M104 470 q120 -150 300 -150 h192 q180 0 300 150" fill="none" stroke="#183048" stroke-width="3"/>
-            <circle cx="188" cy="392" r="46" fill="#0C1B2A"/><circle cx="812" cy="392" r="46" fill="#0C1B2A"/>
-            <path d="M150 392 h76 M774 392 h76" stroke="#1D3A55" stroke-width="3"/>
+            <path d="M0 470 H1000 V640 H0 Z" fill="#F6F4EE"/>
+            <path d="M104 470 q120 -150 300 -150 h192 q180 0 300 150" fill="none" stroke="#141A1F" stroke-width="3"/>
+            <circle cx="188" cy="392" r="46" fill="#F6F4EE"/><circle cx="812" cy="392" r="46" fill="#F6F4EE"/>
+            <path d="M150 392 h76 M774 392 h76" stroke="#141A1F" stroke-width="3"/>
           </g>
 
           <!-- the phone, in the tech's hand -->
           <g transform="translate(330,52)">
-            <rect width="340" height="560" rx="42" fill="#0A1622" stroke="#2A4763" stroke-width="2.5"/>
+            <rect width="340" height="560" rx="42" fill="#F6F4EE" stroke="#141A1F" stroke-width="2.5"/>
             <rect x="14" y="14" width="312" height="532" rx="32" fill="url(#hjScreen)"/>
-            <rect x="130" y="22" width="80" height="14" rx="7" fill="#050D16"/>
+            <rect x="130" y="22" width="80" height="14" rx="7" fill="#F6F4EE"/>
 
             <g font-family="Plus Jakarta Sans,sans-serif">
               <text x="40" y="76" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" letter-spacing="2.4">JOB CARD · 9:06 PM</text>
               <rect x="228" y="60" width="76" height="24" rx="12" fill="rgba(217,106,94,.2)"/>
               <text x="266" y="76" font-size="12" fill="#E58C81" text-anchor="middle" font-weight="800">EMERGENCY</text>
 
-              <text x="40" y="112" font-size="19" fill="#fff" font-weight="700">2620 Maple Dr</text>
+              <text x="40" y="112" font-size="19" fill="#F6F4EE" font-weight="700">2620 Maple Dr</text>
               <text x="40" y="136" font-size="12.5" fill="#94A2B8" font-weight="600">Plano, TX · gate code 4417</text>
 
-              <path d="M40 156 H300" stroke="rgba(255,255,255,.10)" stroke-width="1.5"/>
+              <path d="M40 156 H300" stroke="rgba(20,26,31,.10)" stroke-width="1.5"/>
 
               <text x="40" y="184" font-size="12" fill="#5E6C82" font-weight="800">IN&nbsp;THE&nbsp;CALLER’S WORDS</text>
-              <rect x="34" y="196" width="272" height="76" rx="12" fill="rgba(255,255,255,.05)"/>
-              <text x="48" y="220" font-size="12.5" fill="#C8D3E0" font-weight="600">“No&nbsp;cooling since 8 PM, and</text>
-              <text x="48" y="240" font-size="12.5" fill="#C8D3E0" font-weight="600">there’s&nbsp;a&nbsp;smell near the</text>
-              <text x="48" y="260" font-size="12.5" fill="#C8D3E0" font-weight="600">outdoor unit.”</text>
+              <rect x="34" y="196" width="272" height="76" rx="12" fill="rgba(20,26,31,.05)"/>
+              <text x="48" y="220" font-size="12.5" fill="#F6F4EE" font-weight="600">“No&nbsp;cooling since 8 PM, and</text>
+              <text x="48" y="240" font-size="12.5" fill="#F6F4EE" font-weight="600">there’s&nbsp;a&nbsp;smell near the</text>
+              <text x="48" y="260" font-size="12.5" fill="#F6F4EE" font-weight="600">outdoor unit.”</text>
 
               <rect x="34" y="286" width="272" height="46" rx="12" fill="rgba(232,164,76,.14)"/>
               <text x="48" y="306" font-size="12" fill="#E8A44C" font-weight="800">SAFETY NOTE READ TO&nbsp;CALLER</text>
-              <text x="48" y="324" font-size="12" fill="#E8C89A" font-weight="600">Told to&nbsp;step away from&nbsp;the&nbsp;unit.</text>
+              <text x="48" y="324" font-size="12" fill="#F6F4EE" font-weight="600">Told to&nbsp;step away from&nbsp;the&nbsp;unit.</text>
 
               <text x="40" y="364" font-size="12" fill="#5E6C82" font-weight="800">ALREADY AGREED</text>
               <g>
                 <rect x="34" y="376" width="130" height="56" rx="12" fill="rgba(23,189,189,.14)"/>
                 <text x="48" y="398" font-size="12.5" fill="#5FA9A9" font-weight="700">After-hours fee</text>
-                <text x="48" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#9BE7E7" font-weight="600">$180</text>
-                <rect x="176" y="376" width="130" height="56" rx="12" fill="rgba(255,255,255,.05)"/>
+                <text x="48" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">$180</text>
+                <rect x="176" y="376" width="130" height="56" rx="12" fill="rgba(20,26,31,.05)"/>
                 <text x="190" y="398" font-size="12.5" fill="#8FA0B2" font-weight="700">Window</text>
-                <text x="190" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#fff" font-weight="600">9:40 PM</text>
+                <text x="190" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">9:40 PM</text>
               </g>
 
-              <rect x="34" y="448" width="272" height="30" rx="15" fill="rgba(255,255,255,.05)"/>
+              <rect x="34" y="448" width="272" height="30" rx="15" fill="rgba(20,26,31,.05)"/>
               <text x="170" y="468" font-size="12.5" fill="#8FA0B2" text-anchor="middle" font-weight="700">▶ Play the&nbsp;90-second recording</text>
 
               <rect x="34" y="490" width="272" height="44" rx="22" fill="#17BDBD"/>
-              <text x="170" y="518" font-size="14" fill="#04252A" text-anchor="middle" font-weight="800">Navigate · 12 min</text>
+              <text x="170" y="518" font-size="14" fill="#F6F4EE" text-anchor="middle" font-weight="800">Navigate · 12 min</text>
             </g>
           </g>
 
@@ -1041,7 +1042,7 @@
   </div>
 </section>
 
-<section class="sec-dark t-sm" id="monday" style="background:linear-gradient(180deg,#0A1120,#0B1424);">
+<section class="sec-dark t-sm" id="monday" style="background:linear-gradient(180deg,#F6F4EE,#F6F4EE);">
   <div class="wrap">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:22px;">
       <h2 class="h2 onDark" style="max-width:28ch;">The&nbsp;screen your&nbsp;office manager opens&nbsp;on&nbsp;Monday.</h2>
@@ -1112,7 +1113,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1158,13 +1159,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=75.0"></script>
-<script src="../../assets/js/balance.js?v=75.0" defer></script>
-<script src="../../assets/js/panels.js?v=75.0" defer></script>
-<script src="../../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../../assets/js/rail.js?v=75.0" defer></script>
-<script src="../../assets/js/canvas.js?v=75.0" defer></script>
-<script src="../../assets/js/scenes.js?v=75.0" defer></script>
-<script src="../../assets/js/guide.js?v=75.0"></script>
+<script src="../../assets/js/site.js?v=76.0"></script>
+<script src="../../assets/js/balance.js?v=76.0" defer></script>
+<script src="../../assets/js/panels.js?v=76.0" defer></script>
+<script src="../../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../../assets/js/rail.js?v=76.0" defer></script>
+<script src="../../assets/js/canvas.js?v=76.0" defer></script>
+<script src="../../assets/js/scenes.js?v=76.0" defer></script>
+<script src="../../assets/js/guide.js?v=76.0"></script>
 </body>
 </html>

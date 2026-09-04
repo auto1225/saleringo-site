@@ -65,7 +65,7 @@ CSS = """
   .caution{margin-top:22px;}
   .caution b{display:block;color:var(--l-ink);font-size:var(--fs-body);}
   .caution p{margin-top:10px;}
-  .updated{margin-top:18px;font-size:var(--fs-sm);color:rgba(255,255,255,.6);}
+  .updated{margin-top:18px;font-size:var(--fs-sm);color:rgba(20,26,31,.6);}
 """
 
 

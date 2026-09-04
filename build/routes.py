@@ -127,6 +127,17 @@ def build():
 
 
 cfg, en, ko = build()
+# 보안 헤더 블록(/(.*))은 이 스크립트가 만들지 않는다. 있으면 그대로 실어 나른다 —
+# 한 번 지워져 배포된 적이 있어서(2026-09-04) 여기서 붙든다.
+if os.path.exists('vercel.json'):
+    try:
+        _prev = json.loads(io.open('vercel.json', encoding='utf-8').read())
+        _have = set(h.get('source') for h in cfg.get('headers', []))
+        for h in _prev.get('headers', []):
+            if h.get('source') == '/(.*)' and h['source'] not in _have:
+                cfg.setdefault('headers', []).append(h)
+    except ValueError:
+        pass
 text = json.dumps(cfg, ensure_ascii=False, indent=2) + '\n'
 old = io.open('vercel.json', encoding='utf-8').read() if os.path.exists('vercel.json') else ''
 

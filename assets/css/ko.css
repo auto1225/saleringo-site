@@ -18,14 +18,14 @@ html[lang="ko"] input,
 html[lang="ko"] textarea,
 html[lang="ko"] select,
 html[lang="ko"] button{
-  font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;}
+  font-family:'IBM Plex Sans','IBM Plex Sans KR',sans-serif;}
 
 html[lang="ko"] .sg,
 html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,
 html[lang="ko"] .h2,html[lang="ko"] .h2s,
 html[lang="ko"] .nav .logo,html[lang="ko"] .sitefooter .logo,
 html[lang="ko"] .stat .n,html[lang="ko"] .kpi .n,html[lang="ko"] .plan .pr{
-  font-family:'Space Grotesk','Noto Sans KR',sans-serif;}
+  font-family:'Bricolage Grotesque','IBM Plex Sans KR',sans-serif;}
 
 html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,
 html[lang="ko"] .h2,html[lang="ko"] p,html[lang="ko"] li,

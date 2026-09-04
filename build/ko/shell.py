@@ -15,10 +15,10 @@ import io
 import os
 
 SITE = 'https://claude.saleringo.com'
-VER = '75.0'
-FONTS = ('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700'
-         '&family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
-         '&family=Noto+Sans+KR:wght@400;500;700;800&display=swap')
+VER = '76.0'
+FONTS = ('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700'
+         '&family=IBM+Plex+Sans:wght@400;500;600;700'
+         '&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap')
 ICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'"
         "%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' "
         "font-size='52' font-family='Arial' font-weight='bold' fill='white' "
@@ -97,6 +97,7 @@ def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 
     if lang == 'ko':
         # ko.css 는 전부 html[lang="ko"] 아래라 영어 쪽에서는 빈 요청이었습니다
         head += ['<link rel="stylesheet" href="%s/css/ko.css?v=%s">' % (a, VER)]
+    head += ['<link rel="stylesheet" href="%s/css/ledger.css?v=%s">' % (a, VER)]
     if css:
         head += ['<style>', css.rstrip(), '</style>']
     head += ['<!--#alt--><!--/#alt-->', '</head>']

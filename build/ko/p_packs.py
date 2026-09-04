@@ -30,7 +30,7 @@ CSS = """
   .hero{display:block;padding:150px 0 54px;}
   .packgrid{display:grid;gap:26px;margin-top:36px;}
   .packblock{padding:30px 28px;border:1px solid var(--hair-d);border-radius:14px;}
-  .packblock h2{font-size:var(--fs-lead);color:#fff;}
+  .packblock h2{font-size:var(--fs-lead);color:#141A1F;}
   .packblock .why{margin-top:10px;font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
   .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px;}
   @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
@@ -38,17 +38,17 @@ CSS = """
     font-size:var(--fs-sm);line-height:1.6;color:var(--tx2);}
   .pipe{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;align-items:center;}
   .pipe b{padding:10px 16px;border:1px solid var(--hair-d);border-radius:8px;
-    font-size:var(--fs-sm);font-weight:600;color:#fff;}
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
   .pipe i{font-style:normal;color:var(--teal);}
   .kolist{margin-top:20px;display:grid;gap:14px;}
   .kolist li{list-style:none;padding-left:26px;position:relative;
     font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
   .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:8px;height:8px;
     border-radius:50%;border:1.5px solid var(--teal);}
-  .kolist li b{display:block;color:#fff;margin-bottom:3px;}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:3px;}
   .packback{border-top:1px solid var(--hair-d);}
   .pb-line{font-size:var(--fs-body);line-height:1.85;color:var(--tx2);max-width:none;}
-  .pb-line b{color:#fff;}
+  .pb-line b{color:#141A1F;}
   .pb-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:22px;}
 """
 

@@ -24,21 +24,22 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it sound like a robot and embarrass me in front of my customers?","acceptedAnswer":{"@type":"Answer","text":"It's the first thing you should test, and we won't ask you to take our word for it. Call our own line \u2014 the AI answers it first, at any hour \u2014 and you'll hear exactly what your customers would hear; we run it on&nbsp;ourselves. In the free build we send back, you also get a recording of it handling your ten most-asked questions. If it isn't good enough for your business, that will be obvious in about ninety seconds, and you'll have lost nothing."}},{"@type":"Question","name":"What happens when it doesn't know the answer?","acceptedAnswer":{"@type":"Answer","text":"It stops and gets a person, with the whole conversation attached so your team isn't starting cold. It answers from the facts you approved and nothing else \u2014 it does not improvise a price, a date, or a promise. That restraint is the reason it can be trusted on your main line at all. How that works \u2192"}},{"@type":"Question","name":"How much of my week does setup take?","acceptedAnswer":{"@type":"Answer","text":"About thirty minutes of your attention, spread across the first few days \u2014 reviewing answers and correcting them. Setup is self-serve by default; this round's five founding teams write the first answer set together with us. There is no setup wizard to sit through and no&nbsp;configuration project. Setup itself is free on every plan; if you'd rather we sat with your office manager and built the knowledge base together, that's an optional service we quote before any work starts."}},{"@type":"Question","name":"Will it work with the software I already run?","acceptedAnswer":{"@type":"Answer","text":"Sometimes fully, sometimes partly, sometimes not yet \u2014 and we'll tell you which one you are before you pay, not after. Calendars are the most reliable connection; industry practice-management and booking systems vary a great deal. See the honest status list \u2192"}},{"@type":"Question","name":"Almost nobody uses this yet. Why would I be early?","acceptedAnswer":{"@type":"Answer","text":"You'd be early, and we're not going to dress that up. What we can do is make being early cost you less than it costs us: the founding cohort gets 50% off for three months, the 14-day refund applies to the plan fee, and there is no contract to exit. Four customers already publish their lines on the About page; a written testimonial we can attribute is still missing. Judge us on the free build \u2014 the AI answering your ten most-asked questions, recorded \u2014 which costs you nothing."}},{"@type":"Question","name":"What if I want to stop?","acceptedAnswer":{"@type":"Answer","text":"You cancel, monthly, without a call. Your data exports on the way out \u2014 conversations, customers, bookings, everything. Turning off call forwarding takes one dial code on your&nbsp;carrier and your phones behave exactly as they did before us; we'll show whoever runs your&nbsp;front desk how to do that during setup, so it never depends on reaching us."}},{"@type":"Question","name":"Where are you, and who would I be dealing with?","acceptedAnswer":{"@type":"Answer","text":"Honest Marketing Co., Ltd., registered in South Korea and building for customers worldwide. The number on this page is our real main line. Email reaches a person, not a queue. More about us \u2192"}}]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=75.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=76.0">
 <style>
   /* Type-led hero. 17 of 17 pages opened with the same photo-hero primitive;
      the page that closes the sale should not look like the pages that opened it. */
   .gshero{padding:190px 0 0;position:relative;overflow:hidden;isolation:isolate;}
   .gshero .aur{position:absolute;left:50%;top:-200px;width:1200px;height:700px;transform:translateX(-50%);
-    background:radial-gradient(closest-side,rgba(23,189,189,.16),transparent 72%);z-index:-1;pointer-events:none;}
-  .gshero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);font-weight:600;
-    letter-spacing:-.042em;line-height:1.02;color:#fff;margin-top:22px;max-width:15ch;}
+    background:radial-gradient(closest-side,rgba(11,120,120,.16),transparent 72%);z-index:-1;pointer-events:none;}
+  .gshero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);font-weight:600;
+    letter-spacing:-.042em;line-height:1.02;color:#141A1F;margin-top:22px;max-width:15ch;}
   .gshero h1 em{font-style:normal;color:var(--teal);}
   .gshero .sub{margin-top:22px;font-size:var(--fs-lead);line-height:1.75;color:var(--tx2);font-weight:500;}
   .gshero .nocard{margin-top:26px;display:flex;gap:8px;flex-wrap:wrap;}
@@ -48,18 +49,18 @@
   /* three doors — deliberately unequal so one reads as the recommended path */
   .doors{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px;margin-top:56px;}
   @media(max-width:1000px){.doors{grid-template-columns:1fr;}}
-  .door{position:relative;border:1px solid var(--hair2);border-radius:22px;padding:28px 26px 26px;
-    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  .door{position:relative;border:1px solid var(--hair2);border-radius:14px;padding:28px 26px 26px;
+    background:linear-gradient(180deg,rgba(20,26,31,.046),rgba(20,26,31,.016));
     display:flex;flex-direction:column;transition:transform .55s var(--ease),border-color .35s var(--ease);}
-  .door:hover{transform:translateY(-5px);border-color:rgba(23,189,189,.4);}
-  .door.lead{background:linear-gradient(165deg,rgba(23,189,189,.16),rgba(23,189,189,.04));
-    border-color:rgba(23,189,189,.36);}
+  .door:hover{transform:translateY(-5px);border-color:rgba(11,120,120,.4);}
+  .door.lead{background:linear-gradient(165deg,rgba(11,120,120,.16),rgba(11,120,120,.04));
+    border-color:rgba(11,120,120,.36);}
   .door .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.16em;
     text-transform:uppercase;color:var(--teal);line-height:1.3;}
     /* the lead card inherited a taller line-height and started its heading
        5px lower than the other two */
-  .door h3{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;
-    letter-spacing:-.028em;color:#fff;line-height:1.15;}
+  .door h3{margin-top:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h3);font-weight:600;
+    letter-spacing:-.028em;color:#141A1F;line-height:1.15;}
   .door p{margin-top:11px;font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:500;flex:1;}
   /* The meta line is pinned to the foot of the card, so its rule lands on one
      baseline across all three instead of floating wherever the paragraph above
@@ -84,11 +85,11 @@
   .fld{display:grid;gap:7px;}
   .fld label{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);}
   .fld label .opt{color:var(--tx3);opacity:.7;letter-spacing:.02em;text-transform:none;font-weight:600;font-size:var(--fs-2xs);}
-  .fld input,.fld select,.fld textarea{width:100%;background:rgba(255,255,255,.045);
-    border:1px solid var(--hair2);border-radius:11px;padding:13px 14px;color:#fff;
+  .fld input,.fld select,.fld textarea{width:100%;background:rgba(20,26,31,.058);
+    border:1px solid var(--hair2);border-radius:8px;padding:13px 14px;color:#141A1F;
     font-family:inherit;font-size:var(--fs-sm);font-weight:500;transition:border-color .3s var(--ease);}
   .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--teal);}
-  .fld select option{background:#0B1B33;color:#fff;}
+  .fld select option{background:#141A1F;color:#141A1F;}
   .fld textarea{resize:vertical;min-height:88px;line-height:1.6;}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   @media(max-width:620px){.two{grid-template-columns:1fr;}}
@@ -100,24 +101,24 @@
   .slotchip span{display:inline-block;cursor:pointer;font-size:var(--fs-xs);font-weight:700;
     border:1px solid var(--hair2);border-radius:999px;padding:9px 15px;color:var(--tx2);
     transition:all .3s var(--ease);}
-  .slotchip input:checked + span{background:rgba(23,189,189,.18);border-color:var(--teal);color:#fff;}
+  .slotchip input:checked + span{background:rgba(11,120,120,.18);border-color:var(--teal);color:#141A1F;}
   .slotchip input:focus-visible + span{outline:2px solid var(--teal);outline-offset:3px;}
 
   .tzline{margin-top:10px;font-size:var(--fs-xs);color:var(--tx3);font-weight:600;}
   .tzline b{color:var(--tx2);}
 
-  .aside{border:1px solid var(--hair);border-radius:20px;padding:28px 26px;
-    background:rgba(255,255,255,.022);position:sticky;top:100px;}
+  .aside{border:1px solid var(--hair);border-radius:14px;padding:28px 26px;
+    background:rgba(20,26,31,.029);position:sticky;top:100px;}
   @media(max-width:960px){.aside{position:static;}}
   .aside .hl4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);}
   .aside li{list-style:none;display:flex;gap:11px;padding:13px 0;border-bottom:1px solid var(--hair);
     font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
   .aside li:last-of-type{border-bottom:0;}
   .aside li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;}
-  .aside li b{color:#fff;}
+  .aside li b{color:#141A1F;}
   .callbox{margin-top:20px;padding-top:20px;border-top:1px solid var(--hair2);}
-  .callbox .num{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;
-    font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#fff;}
+  .callbox .num{display:inline-flex;align-items:center;gap:9px;font-family:'Bricolage Grotesque',sans-serif;
+    font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;color:#141A1F;}
   .callbox .num:hover{color:var(--teal);}
   .callbox .hrs{margin-top:8px;font-size:var(--fs-xs);color:var(--tx3);font-weight:600;line-height:1.6;}
 
@@ -135,7 +136,7 @@
 
 <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -462,7 +463,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -497,12 +498,12 @@
   </div></footer>
 <!--/#footer-->
 
-<script src="../assets/js/site.js?v=75.0"></script>
-<script src="../assets/js/balance.js?v=75.0" defer></script>
-<script src="../assets/js/panels.js?v=75.0" defer></script>
-<script src="../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../assets/js/rail.js?v=75.0" defer></script>
-<script src="../assets/js/guide.js?v=75.0"></script>
+<script src="../assets/js/site.js?v=76.0"></script>
+<script src="../assets/js/balance.js?v=76.0" defer></script>
+<script src="../assets/js/panels.js?v=76.0" defer></script>
+<script src="../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../assets/js/rail.js?v=76.0" defer></script>
+<script src="../assets/js/guide.js?v=76.0"></script>
 <script>
 /* Show the visitor their own timezone, so "we'll propose times" is a real
    statement rather than a vague one. Fails silent on old browsers. */

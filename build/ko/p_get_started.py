@@ -22,19 +22,19 @@ CSS = """
   .gswrap{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:start;}
   @media (max-width:980px){.gswrap{grid-template-columns:1fr;gap:34px;}}
   .gsaside{padding:28px 26px;border:1px solid var(--hair-d);border-radius:14px;
-    background:rgba(255,255,255,.03);position:sticky;top:96px;}
+    background:rgba(20,26,31,.039);position:sticky;top:96px;}
   @media (max-width:980px){.gsaside{position:static;}}
-  .gsaside h3{font-size:var(--fs-lead);color:#fff;}
+  .gsaside h3{font-size:var(--fs-lead);color:#141A1F;}
   .gsaside ol{margin-top:18px;display:grid;gap:16px;counter-reset:g;}
   .gsaside li{list-style:none;padding-left:34px;position:relative;font-size:var(--fs-sm);
     line-height:1.75;color:var(--tx2);counter-increment:g;}
   .gsaside li::before{content:counter(g);position:absolute;left:0;top:1px;width:22px;height:22px;
     border-radius:50%;border:1px solid var(--teal);color:var(--teal);font-size:12px;
     display:grid;place-items:center;font-weight:700;}
-  .gsaside li b{color:#fff;display:block;margin-bottom:3px;}
+  .gsaside li b{color:#141A1F;display:block;margin-bottom:3px;}
   .gsaside .tel{margin-top:24px;padding-top:20px;border-top:1px solid var(--hair-d);
     font-size:var(--fs-sm);color:var(--tx2);line-height:1.8;}
-  .gsaside .tel b{display:block;color:#fff;font-size:var(--fs-lead);}
+  .gsaside .tel b{display:block;color:#141A1F;font-size:var(--fs-lead);}
   .gsorder{margin-top:14px;font-size:var(--fs-sm);font-weight:700;}
   /* 개인정보 동의 한 줄. site.css 의 .eaform input 이 모든 input 에 칸 모양
      (테두리·둥근 모서리·width:100%)을 씌우므로 체크박스만 되돌립니다. */

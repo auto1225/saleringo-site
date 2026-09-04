@@ -25,15 +25,15 @@ CSS = """
   .hero{position:relative;overflow:hidden;display:block;padding-bottom:96px;}
   .hero-inner{position:relative;z-index:2;padding-top:150px;}
   .heroband{max-width:780px;}
-  .heroprice{margin-top:22px;font-size:var(--fs-sm);color:rgba(255,255,255,.8);}
-  .heroprice i{font-style:normal;color:rgba(255,255,255,.55);}
+  .heroprice{margin-top:22px;font-size:var(--fs-sm);color:rgba(20,26,31,.8);}
+  .heroprice i{font-style:normal;color:rgba(20,26,31,.55);}
   .heroshelf{position:relative;z-index:2;margin:56px auto 0;max-width:1060px;}
   /* the night conversation: one customer, one evening, in order */
   .nightline{display:grid;gap:16px;padding:26px 24px;}
   .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
-  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(255,255,255,.5);
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
     text-transform:uppercase;padding-top:9px;}
-  .nl .t em{display:block;font-style:normal;color:rgba(255,255,255,.66);
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
     letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
   .nl .t i{font-style:normal;margin-left:3px;}
   @media (max-width:640px){
@@ -41,14 +41,14 @@ CSS = """
     .nl .t{padding-top:0;}
   }
   .ksum{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
-  .ksum .stat{padding:24px 22px;border:1px solid var(--hair-d);border-radius:12px;
-    background:rgba(255,255,255,.03);}
+  .ksum .stat{padding:24px 22px;border:1px solid var(--hair-d);border-radius:8px;
+    background:rgba(20,26,31,.039);}
   .ksum .stat p{margin-top:10px;font-size:var(--fs-sm);color:var(--tx2);line-height:1.75;}
   @media (max-width:840px){.ksum{grid-template-columns:1fr;}}
   .chanrow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;}
   @media (max-width:880px){.chanrow{grid-template-columns:1fr;}}
-  .chan{padding:26px 24px;border:1px solid var(--hair-d);border-radius:12px;}
-  .chan b{display:block;font-size:var(--fs-lead);color:#fff;}
+  .chan{padding:26px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .chan b{display:block;font-size:var(--fs-lead);color:#141A1F;}
   .chan p{margin-top:10px;font-size:var(--fs-sm);color:var(--tx2);line-height:1.75;}
   .chan .pr{display:block;margin-top:16px;font-size:var(--fs-sm);color:var(--teal);font-weight:700;}
   .kolist{margin-top:26px;display:grid;gap:14px;}
@@ -57,21 +57,21 @@ CSS = """
   .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
     border-radius:50%;border:1.5px solid var(--teal);}
   .kolist li b{color:var(--l-ink);}
-  .sec-dark .kolist li b,.bg-dusk .kolist li b,.bg-aurora .kolist li b{color:#fff;}
+  .sec-dark .kolist li b,.bg-dusk .kolist li b,.bg-aurora .kolist li b{color:#141A1F;}
   .tradechips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
   .tradechips a{display:inline-flex;align-items:center;padding:11px 18px;
     border:1px solid #D5DBE4;border-radius:8px;text-decoration:none;
     color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;transition:all .3s var(--ease);}
-  .tradechips a:hover{border-color:var(--teal);background:rgba(23,189,189,.08);}
+  .tradechips a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
 
   /* ── 놓친 문의의 값을 재는 계산기 ─────────────────────────────────
      영문 홈에는 있었고 한국어 홈에는 없었습니다. 그래서 한국어 쪽은
      "놓친 전화에는 값이 있습니다" 를 말로만 설명하고 끝났습니다.
      자기 숫자를 넣어 본 사람과 설명만 읽은 사람은 다른 것을 압니다. */
-  .kcalc{background:#0C1526;}
+  .kcalc{background:#FFFFFF;}
   .kcbox{margin-top:42px;display:grid;grid-template-columns:1fr 1fr;gap:1px;
-    background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
-  .kcin,.kcout{background:#0E1727;padding:30px 28px;}
+    background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .kcin,.kcout{background:#FFFFFF;padding:30px 28px;}
   .kcrow{margin-bottom:26px;}
   .kcrow:last-child{margin-bottom:0;}
   .kcrow label{display:block;font-size:var(--fs-sm);color:var(--tx2);margin-bottom:12px;
@@ -85,9 +85,9 @@ CSS = """
     padding:13px 0;border-bottom:1px solid var(--line);font-size:var(--fs-sm);}
   .kcline span{color:var(--tx2);}
   .kcline i{font-style:normal;color:var(--teal);font-variant-numeric:tabular-nums;}
-  .kcline b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .kcline b{color:#141A1F;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;}
   .kctotal{border-bottom:0;padding-top:18px;margin-top:6px;border-top:2px solid var(--line);}
-  .kctotal span{color:#fff;font-weight:600;}
+  .kctotal span{color:#141A1F;font-weight:600;}
   .kctotal b{font-size:var(--fs-lead);color:var(--teal);}
   .kcsay{margin-top:18px;font-size:var(--fs-xs);line-height:1.8;color:var(--tx3);}
   .kccta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;}
@@ -100,69 +100,39 @@ CSS = """
 
 BODY = """
 <header class="hero photohero">
-  <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="{HERO}?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
-         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
-         srcset="{HERO}?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, {HERO}?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, {HERO}?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-         sizes="(max-width:900px) 100vw, 60vw">
-  </div>
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="tint" aria-hidden="true"></div>
-  <div class="grainlayer grain" aria-hidden="true"></div>
 
   {NAV}
 
   <div class="wrap hero-inner">
     <div class="heroband hero-panel">
-      <span class="eyebrow"><i></i>AI 응대 + 업종별{NB}CRM</span>
-      <h1>대부분의 AI는 전화를 받습니다.<br><span style="color:var(--teal);">저희는 예약까지 잡습니다.</span></h1>
-      <p class="sub">전화·홈페이지 채팅·카카오톡의 모든 상담이 <b>확인된 고객 카드 한 장</b>과
-        <b>담당자가 있는 다음 할 일 하나</b>가 됩니다 &mdash; 예약, 견적, 기한까지.
-        문 닫은 시간에도 그렇습니다.</p>
-      <div class="herotrio">
-        <a href="./voice.html"><b>✆ AI 전화</b><span>이름·연락처·용건·시간을 받아 적음</span></a>
-        <a href="./webchat.html"><b>💬 홈페이지 채팅</b><span>어느 페이지에서 물었는지까지</span></a>
-        <a href="./whatsapp.html"><b>✓ 카카오톡</b><span>계정이 붙어 대화가 이어짐</span></a>
-      </div>
+      <h1>대부분의 AI는 전화를 받습니다.<br>저희는 예약까지 잡습니다.</h1>
+      <p class="sub">전화·홈페이지 채팅·카카오톡의 모든 상담이 고객 카드 한 장과, 담당자가 정해진 다음 할 일 하나로 남습니다. 예약, 견적, 기한까지. 문 닫은 시간에도.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#demo60">60초 데모 실행<span class="cir">&#9654;</span></a>
-        <a class="btn btn-ghostd" href="#trades">내 업종 사례 선택</a>
+        <a class="btn btn-teal" href="#demo60">60초 데모 보기</a>
+        <a class="btn btn-ghostd" href="./pricing.html">요금 보기&nbsp;&rarr;</a>
       </div>
-      <p class="heroprice"><b>월 110,000원부터.</b> 전화 응대는 월 820,000원부터.
-        <i>부가세 별도 &middot; 약정 없음 &middot; 언제든 해지</i></p>
+      <p class="heroprice"><b>월 110,000원부터 &middot; 14일 환불 &middot; 최초 구축비 0원.</b> <i>치과, 설비, 미용실, 예식장, 법률사무소.</i></p>
     </div>
 
     <div class="heroshelf">
-      <div class="appwin">
-        <div class="bar"><i></i><i></i><i></i>
-          <span class="tt">김OO 고객 &mdash; <b>화요일 밤</b></span>
-          <span class="illus">예시 &middot; 가상의 상담</span>
-          <span class="closed">영업 종료 시간</span></div>
-        <div class="body nightline">
-          <div class="nl us">
-            <span class="t"><em>고객</em>11:42<i>PM</i></span>
-            <div class="bub user">크라운 다시 씌우는 것도 하시나요? 비용을 나눠서 낼 수 있는지도 궁금합니다.</div>
-          </div>
-          <div class="nl sr">
-            <span class="t"><em>Saleringo</em>+38<i>초</i></span>
-            <div class="bub ai">네, 하고 있습니다. 지르코니아 크라운은 <b>1개 55만원</b>이고,
-              분납 가능 여부는 데스크에서 확인해 안내드리겠습니다.
-              <b>목요일 오전 10시 30분</b>이 비어 있는데 잡아 드릴까요?</div>
-          </div>
-          <div class="nl us">
-            <span class="t"><em>고객</em>11:44<i>PM</i></span>
-            <div class="bub user">네, 그때로 부탁드립니다.</div>
-          </div>
-          <div class="nl sr">
-            <span class="t"><em>Saleringo</em>+12<i>초</i></span>
-            <div class="bub ai">예약 잡아 두었습니다. 성함과 연락처만 남겨 주시면
-              확인 문자 보내 드리겠습니다.</div>
-          </div>
+      <div class="reccard" aria-label="60초 데모의 예시 기록">
+        <div class="rc-top">
+          <span class="pill"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10l4 4 8-8"></path></svg>응답 &middot; 오후 11:48</span>
+          <span class="rc-when">화요일 &middot; 영업 종료 후</span>
         </div>
+        <div>
+          <p class="rc-kicker">새 예약</p>
+          <h2 class="rc-title">김지은 &middot; 앞니 크라운</h2>
+        </div>
+        <div class="rc-rows">
+          <div class="rc-row"><span class="rc-lbl">고객</span><div><p class="rc-val">김지은 &middot; <span class="mono">010-4482-&hellip;</span></p><p class="rc-note">통화에서 본인이 말한 이름 &middot; 발신번호와 일치</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">예약</span><div><p class="rc-val">목요일 10:30</p><p class="rc-note">캘린더의 빈 시간 &middot; 확인 문자 발송됨</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">견적</span><div><p class="rc-val">지르코니아 크라운 <span class="mono">550,000</span>원</p><p class="rc-note">사장님 요금표 기준 &middot; 없는 항목은 없다고 말합니다</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">담당·기한</span><div><p class="rc-val">데스크 &middot; 목 09:00까지 차트 준비</p><p class="rc-note">자동 배정 &middot; 팀 전체에 보임</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">후속</span><div><p class="rc-val">D+2 안내 문자 초안</p><p class="rc-note">사장님이 확인하기 전에는 발송되지 않습니다</p></div></div>
+        </div>
+        <p class="rc-foot">60초 데모의 예시 기록입니다. 이름과 금액은 예시입니다.</p>
       </div>
-      <p class="seccap" style="margin-top:16px;">위 대화는 실제 고객 사례가 아니라, 치과 요금표와
-        안전 지침을 넣었을 때 제품이 어떻게 답하는지 보여 주는 예시입니다. 금액은 이 사이트의
-        다른 페이지에 적힌 것과 같은 시장 가격대를 사용했습니다.</p>
     </div>
   </div>
 </header>

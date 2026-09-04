@@ -24,17 +24,18 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can the AI decide whether somebody is eligible for something?","acceptedAnswer":{"@type":"Answer","text":"No, and the refusal is categorical rather than a confidence threshold. It does not decide eligibility, it does not confirm an entitlement, it does not interpret a policy or a regulation, and it does not say what a planning or enforcement outcome will be. Not even as a hedge, and not even where the general rule is published. It says on the call that no decision has been made, records the question in the caller's own words, gives a reference number, and routes the contact to the named service that does decide."}},{"@type":"Question","name":"How does it know what counts as an emergency at two in the morning?","acceptedAnswer":{"@type":"Answer","text":"From your own out-of-hours list, not from ours. Your authority names the categories that reach a duty officer tonight — a burst main, a dangerous structure, a tree blocking a carriageway, an out-of-hours homelessness presentation — and the wording that goes with each. The AI matches the call against that list and nothing else. If it cannot match a call to a named category, it does not invent one: it escalates to the on-call contact you nominated and says so to the caller."}},{"@type":"Question","name":"Can it answer callers who do not speak the majority language?","acceptedAnswer":{"@type":"Answer","text":"It holds the call in the language it arrives in, and the language is recorded on the contact so the callback is not made in the wrong one. The published-source rule does not relax in translation: it may only say what your authority published, and a page that exists in one language only is answered by saying so and routing to a person. This is a practical expectation in many places and&nbsp;a written one in some. Welsh language standards made under the Welsh Language (Wales) Measure 2011 require councils to greet callers in Welsh on the main line and to deal with the call in Welsh if that is the caller's wish. Your authority's own duties are yours to confirm."}},{"@type":"Question","name":"What does the audit trail actually hold?","acceptedAnswer":{"@type":"Answer","text":"Who contacted you, on which channel, at what time, what they asked in their own words, what was said back, which published page or document that answer came from and when your authority last approved it. The reference number issued, and where the contact was routed. Refusals are recorded as fully as answers, because a question the AI would not touch is the one most likely to be asked about later. Data is encrypted in transit and at rest, kept separate from every other customer, with retention and deletion controls your authority operates."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI for Council &amp; Public Sector Switchboards","item":"https://claude.saleringo.com/en/industries/public-sector.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=75.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=75.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=76.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=76.0">
 <style>
   /* ── PUBLIC SECTOR · archetype: THE QUEUE AND THE LINE ───── */
   /* nothing here is sold and nothing here is booked. the whole
@@ -42,30 +43,30 @@
      person tonight, a published fact that can be read out, and
      a determination that software must never make.            */
 
-  .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:104px;display:block;background:#0A0C10;}
+  .hero{position:relative;overflow:hidden;color:#141A1F;padding-bottom:104px;display:block;background:#FFFFFF;}
   /* town hall lit at night: bias to the building, keep the water dark. */
   .hero.photohero .bgimg img{filter:brightness(1.29) saturate(.86) contrast(1.05);object-position:center 40%;}
   .hero.photohero .scrim{background:
-    linear-gradient(94deg, rgba(5,8,14,0.282) 0%, rgba(5,8,14,0.234) 46%, rgba(5,8,14,0.126) 82%),
-    linear-gradient(180deg, rgba(5,8,14,0.221) 0%, rgba(5,8,14,0.078) 34%, rgba(5,9,16,0.96) 100%);}
-  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(23,189,189,.15), transparent 74%);}
-  .navwrap .nav{background:rgba(9,13,22,.9);border-color:rgba(255,255,255,.12);}
+    linear-gradient(94deg, rgba(255,255,255,0.282) 0%, rgba(255,255,255,0.234) 46%, rgba(255,255,255,0.126) 82%),
+    linear-gradient(180deg, rgba(255,255,255,0.221) 0%, rgba(255,255,255,0.078) 34%, rgba(255,255,255,0.96) 100%);}
+  .hero.photohero .tint{background:radial-gradient(58% 66% at 16% 44%, rgba(11,120,120,.15), transparent 74%);}
+  .navwrap .nav{background:rgba(255,255,255,.9);border-color:rgba(20,26,31,.156);}
   .hero-inner{position:relative;z-index:2;padding:170px clamp(22px,4.6vw,56px) 0;display:grid;
     grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
-  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.05;
-    letter-spacing:-.045em;font-weight:600;color:#fff;margin-top:22px;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.05;
+    letter-spacing:-.045em;font-weight:600;color:#141A1F;margin-top:22px;}
   .hero h1 em{font-style:normal;color:var(--teal);}
   .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
   .tradewords{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
   .tradewords span{font-size:var(--fs-xs);font-weight:700;border-radius:999px;padding:8px 15px;
-    border:1px solid var(--hair2);background:rgba(255,255,255,.06);color:var(--tx2);}
-  .tradewords span.hi{color:var(--teal);border-color:rgba(23,189,189,.45);background:rgba(23,189,189,.12);}
+    border:1px solid var(--hair2);background:rgba(20,26,31,.078);color:var(--tx2);}
+  .tradewords span.hi{color:var(--teal);border-color:rgba(11,120,120,.45);background:rgba(11,120,120,.12);}
   .hero .ctas{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero .micro{margin-top:18px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
   .whofor{margin-top:24px;padding-top:22px;border-top:1px solid var(--hair);
     display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
   .whotxt{font-size:var(--fs-xs);line-height:1.6;color:var(--tx2);font-weight:600;max-width:340px;}
-  .whotxt b{color:#fff;}
+  .whotxt b{color:#141A1F;}
 
   .roomband{background:#FDFDFE;}
   .roomband .photosplit{min-height:500px;}
@@ -76,15 +77,15 @@
   @media (max-width:560px){.audgrid.three{grid-template-columns:1fr;}}
 
   /* ── the line (dark) — triage one way, refusal the other ── */
-  .gate{position:relative;background:#04070D;}
+  .gate{position:relative;background:#FFFFFF;}
   .gate .head{text-align:center;max-width:720px;margin:0 auto 48px;}
   .gate .head .lead{margin-top:18px;}
   .gatesteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
   @media (max-width:980px){.gatesteps{grid-template-columns:1fr 1fr;}}
   @media (max-width:560px){.gatesteps{grid-template-columns:1fr;}}
-  .gstep{border:1px solid var(--hair);border-radius:18px;padding:22px 22px 24px;background:rgba(255,255,255,.028);}
-  .gstep .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .gstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;line-height:1.3;}
+  .gstep{border:1px solid var(--hair);border-radius:14px;padding:22px 22px 24px;background:rgba(20,26,31,.036);}
+  .gstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .gstep b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;line-height:1.3;}
   .gstep p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
   .gstep.stop{border-color:rgba(240,145,134,.34);background:rgba(240,145,134,.055);}
   .gstep.stop .n{color:#F09186;}
@@ -92,7 +93,7 @@
   .gate .note{margin-top:28px;text-align:center;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:500;margin-left:auto;margin-right:auto;}
 
   /* ── paired threads (dark grid) ── */
-  .pairs{position:relative;background:#0C1526;}
+  .pairs{position:relative;background:#FFFFFF;}
   .pairs .head{text-align:center;max-width:680px;margin:0 auto 56px;}
   .pairs .head .lead{margin-top:18px;}
   .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
@@ -121,7 +122,7 @@
   .world .head .lead{margin-top:18px;}
   .world .tzcards{max-width:1080px;margin:22px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .world .glass{padding:22px 24px;}
-  .world .glass b{display:block;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-body);color:#fff;}
+  .world .glass b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-body);color:#141A1F;}
   .world .glass span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--tx2);font-weight:500;}
   .world .out{margin-top:34px;text-align:center;}
   .world .out a{font-size:var(--fs-xs);font-weight:700;color:var(--teal);}
@@ -130,8 +131,8 @@
   .start{background:#FDFDFE;}
   .start .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
   .start .lead{margin-top:22px;}
-  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:18px;padding:22px 24px;max-width:400px;
-    box-shadow:0 20px 48px rgba(11,27,51,.07);}
+  .langnote{margin-top:32px;background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px 24px;max-width:400px;
+    box-shadow:0 20px 48px rgba(20,26,31,.07);}
   .langnote .ty{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:#0B7878;}
   .langnote p{margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
   .langnote .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
@@ -144,8 +145,8 @@
 
   .closer{position:relative;text-align:center;overflow:hidden;}
   .closer .riskrow{margin-bottom:72px;text-align:left;}
-  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
-    letter-spacing:-.045em;color:#fff;line-height:1.07;}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;
+    letter-spacing:-.045em;color:#141A1F;line-height:1.07;}
   .closer .lead{margin:22px auto 0;}
   .closer .ctas{margin-top:38px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
   .closer .trust{margin-top:22px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
@@ -165,22 +166,22 @@
   .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
     font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
   .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#fff;font-weight:700;}
+  .ptlist li b{color:#141A1F;font-weight:700;}
   .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
   .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
   .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
 
   .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
   @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:18px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(255,255,255,.026);}
+  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
   .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.16em;text-transform:uppercase;}
   .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
   .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#6FE3B0;} .statcol.now .hl4 i{background:#3AC98A;}
+  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
   .statcol.build .hl4{color:#8A9BB4;} .statcol.build .hl4 i{background:#5B6B84;}
   .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#DCE6F2;
+  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
     font-weight:700;border-bottom:1px solid var(--hair);}
   .statcol li:last-child{border-bottom:0;}
   .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
@@ -188,9 +189,9 @@
 
   .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
   @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:18px;padding:24px 24px 26px;background:rgba(255,255,255,.028);}
-  .mlcard .n{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#fff;letter-spacing:-.014em;}
+  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
+  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
+  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
   .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
 
   .leadbox{max-width:660px;margin:0 auto;text-align:left;}
@@ -201,7 +202,7 @@
   .leadbox .eaform{max-width:100%;}
   .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.03);}
+    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/public-sector.html">
@@ -224,7 +225,7 @@
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -762,9 +763,9 @@
   <img class="ph" src="https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/16339549/pexels-photo-16339549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
          alt="A utility crew in high-visibility jackets working from a bucket truck on a suburban street lined with traffic cones" loading="lazy" decoding="async" width="1600" height="1395">
   <div class="wrap" style="padding-bottom:30px;">
-    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
-       letter-spacing:-.03em;color:#fff;max-width:22ch;line-height:1.1;">Paged at&nbsp;01:42.<br>Decided at&nbsp;no&nbsp;point.</p>
-    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:var(--measure);">Eligibility, entitlements, rulings and interpretations are a&nbsp;permanent handoff, not a&nbsp;confidence threshold that&nbsp;a&nbsp;persistent caller can move.</p>
+    <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#141A1F;max-width:22ch;line-height:1.1;">Paged at&nbsp;01:42.<br>Decided at&nbsp;no&nbsp;point.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(20,26,31,.76);font-weight:600;max-width:var(--measure);">Eligibility, entitlements, rulings and interpretations are a&nbsp;permanent handoff, not a&nbsp;confidence threshold that&nbsp;a&nbsp;persistent caller can move.</p>
   </div>
 </section>
 
@@ -913,13 +914,13 @@
   <img class="ph" src="https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8468119/pexels-photo-8468119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="100vw"
          alt="A young office worker leaning against a wall carrying a tall stack of ring binders and paper files" loading="lazy" decoding="async" width="1600" height="1067">
   <div class="wrap" style="padding-bottom:30px;">
-    <p style="font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2);font-weight:600;
-       letter-spacing:-.03em;color:#fff;max-width:20ch;line-height:1.1;">One contact.<br>One source behind&nbsp;it.</p>
-    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(255,255,255,.76);font-weight:600;max-width:var(--measure);">Every&nbsp;answer carries the&nbsp;page it came from and the&nbsp;date you approved it — and so does every&nbsp;refusal.</p>
+    <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;
+       letter-spacing:-.03em;color:#141A1F;max-width:20ch;line-height:1.1;">One contact.<br>One source behind&nbsp;it.</p>
+    <p style="margin-top:10px;font-size:var(--fs-xs);color:rgba(20,26,31,.76);font-weight:600;max-width:var(--measure);">Every&nbsp;answer carries the&nbsp;page it came from and the&nbsp;date you approved it — and so does every&nbsp;refusal.</p>
   </div>
 </section>
 
-<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#0C1526,#081426);">
+<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#FFFFFF,#FFFFFF);">
   <div class="wrap">
     <div class="head reveal" >
       <span class="eyebrow"><i></i>Your&nbsp;existing systems, honestly</span>
@@ -952,7 +953,7 @@
   </div>
 </section>
 
-<section class="t-sm sec-dark"><div class="wrap" style="text-align:center;"><p style="font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:600;max-width:var(--measure);margin:0 auto;"><b style="color:#fff;">A&nbsp;note on&nbsp;what this&nbsp;page is not. </b>Nothing here is legal advice, and nothing here certifies your&nbsp;authority as&nbsp;compliant with&nbsp;its&nbsp;statutory, equality, accessibility, or records duties. Those are yours and your&nbsp;regulator's. What we supply is a&nbsp;line that&nbsp;is answered, a&nbsp;refusal that&nbsp;holds, and an&nbsp;answer set your&nbsp;authority signed. <a href="../security.html#regulated" style="color:var(--teal);font-weight:700;">Where we stand →</a></p></div></section>
+<section class="t-sm sec-dark"><div class="wrap" style="text-align:center;"><p style="font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:600;max-width:var(--measure);margin:0 auto;"><b style="color:#141A1F;">A&nbsp;note on&nbsp;what this&nbsp;page is not. </b>Nothing here is legal advice, and nothing here certifies your&nbsp;authority as&nbsp;compliant with&nbsp;its&nbsp;statutory, equality, accessibility, or records duties. Those are yours and your&nbsp;regulator's. What we supply is a&nbsp;line that&nbsp;is answered, a&nbsp;refusal that&nbsp;holds, and an&nbsp;answer set your&nbsp;authority signed. <a href="../security.html#regulated" style="color:var(--teal);font-weight:700;">Where we stand →</a></p></div></section>
 
 <section class="concsec t-sm sec-dark">
   <div class="wrap">
@@ -1014,7 +1015,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1059,13 +1060,13 @@
   </div>
 </div>
 
-<script src="../../assets/js/site.js?v=75.0"></script>
-<script src="../../assets/js/balance.js?v=75.0" defer></script>
-<script src="../../assets/js/panels.js?v=75.0" defer></script>
-<script src="../../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../../assets/js/rail.js?v=75.0" defer></script>
-<script src="../../assets/js/canvas.js?v=75.0" defer></script>
-<script src="../../assets/js/scenes.js?v=75.0" defer></script>
-<script src="../../assets/js/guide.js?v=75.0"></script>
+<script src="../../assets/js/site.js?v=76.0"></script>
+<script src="../../assets/js/balance.js?v=76.0" defer></script>
+<script src="../../assets/js/panels.js?v=76.0" defer></script>
+<script src="../../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../../assets/js/rail.js?v=76.0" defer></script>
+<script src="../../assets/js/canvas.js?v=76.0" defer></script>
+<script src="../../assets/js/scenes.js?v=76.0" defer></script>
+<script src="../../assets/js/guide.js?v=76.0"></script>
 </body>
 </html>

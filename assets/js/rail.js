@@ -150,9 +150,9 @@
 
   function draw() {
     if (!H) return;
-    var teal = ink('--teal', '#17BDBD');
-    var hair = 'rgba(255,255,255,.16)';
-    var soft = 'rgba(255,255,255,.42)';
+    var teal = ink('--teal', '#0B7878');
+    var hair = 'rgba(20,26,31,.208)';
+    var soft = 'rgba(20,26,31,.42)';
     ctx.clearRect(0, 0, W, H);
 
     var x = W / 2;

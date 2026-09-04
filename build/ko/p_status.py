@@ -29,7 +29,7 @@ def build(lang):
 
     CSS = """
   .stwrap{max-width:760px;margin:0 auto;}
-  .stcard{background:rgba(255,255,255,.035);border:1px solid var(--hair-d);border-radius:16px;
+  .stcard{background:rgba(20,26,31,.046);border:1px solid var(--hair-d);border-radius:14px;
     padding:24px 26px;margin-top:22px;}
   .stcard .lbl{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);}
   .stbadge{display:inline-block;margin-top:14px;font-size:var(--fs-h3);font-weight:700;}

@@ -8,26 +8,26 @@
 /* ── ATMOSPHERIC BACKGROUNDS ────────────────────────────── */
 
 /* aurora mesh — cinematic hero ground */
-.bg-aurora{position:relative;isolation:isolate;background:#0A1120;}
+.bg-aurora{position:relative;isolation:isolate;background:#F6F4EE;}
 .bg-aurora::before{content:"";position:absolute;inset:-10% -5%;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(38% 46% at 18% 22%, rgba(23,189,189,.34), transparent 62%),
+    radial-gradient(38% 46% at 18% 22%, rgba(11,120,120,.34), transparent 62%),
     radial-gradient(34% 44% at 82% 12%, rgba(74,124,255,.28), transparent 60%),
-    radial-gradient(46% 52% at 62% 88%, rgba(23,189,189,.20), transparent 64%),
+    radial-gradient(46% 52% at 62% 88%, rgba(11,120,120,.20), transparent 64%),
     radial-gradient(30% 38% at 8% 82%, rgba(122,92,199,.22), transparent 60%);
   filter:blur(46px);opacity:.9;}
 .bg-aurora::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg, rgba(4,8,15,.28) 0%, rgba(4,8,15,.05) 40%, rgba(4,8,15,.86) 100%);}
+  background:linear-gradient(180deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,.05) 40%, rgba(255,255,255,.86) 100%);}
 
 /* warm dusk — the after-hours beat. One per page, on the section where the
    page names the problem: "The 2:47 AM problem", "Night inquiries were dying
    in the inbox", "The math of one night call". Not a general dark ground. */
-.bg-dusk{position:relative;isolation:isolate;background:#101832;}
+.bg-dusk{position:relative;isolation:isolate;background:#FFFFFF;}
 .bg-dusk::before{content:"";position:absolute;inset:-10%;z-index:-2;pointer-events:none;
   background:
     radial-gradient(42% 50% at 78% 16%, rgba(255,178,104,.38), transparent 62%),
     radial-gradient(38% 46% at 20% 30%, rgba(206,104,132,.30), transparent 62%),
-    radial-gradient(52% 56% at 50% 96%, rgba(23,189,189,.28), transparent 66%);
+    radial-gradient(52% 56% at 50% 96%, rgba(11,120,120,.28), transparent 66%);
   filter:blur(52px);}
 /* This wash used to end at 90% opaque, which is a section that fades to black
    at the foot: the warm dusk glow above it was buried, the photograph inside
@@ -35,22 +35,22 @@
    scene needs a LIT night, not an unlit page - the ground stays deep, and the
    glow it was hiding is allowed through. */
 .bg-dusk:not(.photohero):not(:has(.bgimg))::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg, rgba(11,16,32,.16), rgba(8,13,26,.52));}
+  background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.52));}
 /* over a photograph the same wash only needs to protect the copy at the foot */
 .bg-dusk.photohero::after,.bg-dusk:has(.bgimg)::after{content:"";position:absolute;inset:0;
-  z-index:-1;background:linear-gradient(180deg, rgba(11,16,32,.10) 0%,
-    rgba(11,16,32,0) 40%, rgba(6,10,22,.55) 100%);}
+  z-index:-1;background:linear-gradient(180deg, rgba(255,255,255,.10) 0%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,.55) 100%);}
 
 /* cool clinical — clinics / dental / trust */
 .bg-clinical{position:relative;isolation:isolate;background:#F4F8FB;color:var(--l-ink);}
 .bg-clinical::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(40% 46% at 84% 6%, rgba(23,189,189,.16), transparent 62%),
-    radial-gradient(36% 42% at 10% 18%, rgba(91,157,255,.13), transparent 60%);}
+    radial-gradient(40% 46% at 84% 6%, rgba(11,120,120,.16), transparent 62%),
+    radial-gradient(36% 42% at 10% 18%, rgba(44,99,184,.13), transparent 60%);}
 .bg-clinical::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.85;
   /* was .05 x .5 = 0.025 effective alpha - graph paper nobody could see */
-  background-image:linear-gradient(rgba(11,27,51,.09) 1px, transparent 1px),
-                   linear-gradient(90deg, rgba(11,27,51,.09) 1px, transparent 1px);
+  background-image:linear-gradient(rgba(20,26,31,.09) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(20,26,31,.09) 1px, transparent 1px);
   background-size:56px 56px;
   -webkit-mask-image:radial-gradient(70% 60% at 50% 30%, #000, transparent);
           mask-image:radial-gradient(70% 60% at 50% 30%, #000, transparent);}
@@ -61,22 +61,22 @@
    ::before paints over static in-flow text. */
 .bg-paper{position:relative;isolation:isolate;background:#FBF9F5;color:var(--l-ink);}
 .bg-paper::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.55;
-  background:radial-gradient(60% 50% at 50% 0%, rgba(23,189,189,.10), transparent 70%);}
+  background:radial-gradient(60% 50% at 50% 0%, rgba(11,120,120,.10), transparent 70%);}
 
 /* grid field — technical sections */
 .bg-grid{position:relative;isolation:isolate;}
 .bg-grid::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.9;
   /* was .055 x .55 = 0.030 effective alpha, 1.02:1 - invisible on 24 pages */
-  background-image:linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
-                   linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px);
+  background-image:linear-gradient(rgba(20,26,31,.13) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(20,26,31,.13) 1px, transparent 1px);
   background-size:64px 64px;
   -webkit-mask-image:radial-gradient(76% 66% at 50% 40%, #000, transparent);
           mask-image:radial-gradient(76% 66% at 50% 40%, #000, transparent);}
 
 /* spotlight — focused CTA bands */
-.bg-spot{position:relative;isolation:isolate;background:#0C1526;}
+.bg-spot{position:relative;isolation:isolate;background:#FFFFFF;}
 .bg-spot::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(60% 120% at 50% -20%, rgba(23,189,189,.30), transparent 60%);}
+  background:radial-gradient(60% 120% at 50% -20%, rgba(11,120,120,.30), transparent 60%);}
 
 /* film grain — sits above any background */
 .grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.09;z-index:0;
@@ -84,28 +84,28 @@
 
 /* ── SCENE FRAMES ───────────────────────────────────────── */
 .scene-frame{position:relative;border-radius:26px;overflow:hidden;
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 1px 0 rgba(255,255,255,.10) inset, 0 50px 110px rgba(0,0,0,.5);}
+  border:1px solid rgba(20,26,31,.13);
+  box-shadow:0 1px 0 rgba(20,26,31,.13) inset, 0 50px 110px rgba(0,0,0,.5);}
 .scene-frame svg{display:block;width:100%;height:auto;}
-.scene-frame.light{border-color:var(--l-hair);box-shadow:0 30px 70px rgba(11,27,51,.14);}
+.scene-frame.light{border-color:var(--l-hair);box-shadow:0 30px 70px rgba(20,26,31,.14);}
 .scene-frame .caption{position:absolute;left:20px;bottom:18px;right:20px;z-index:3;
-  font-size:var(--fs-xs);font-weight:600;color:rgba(255,255,255,.86);text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  font-size:var(--fs-xs);font-weight:600;color:rgba(20,26,31,.86);text-shadow:0 2px 12px rgba(0,0,0,.6);}
 /* floating UI chip that sits over a scene */
-.scene-overlay{position:absolute;z-index:4;border-radius:16px;padding:14px 16px;
-  background:rgba(8,16,30,.93);backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.16);box-shadow:0 20px 50px rgba(0,0,0,.5);}
-.scene-overlay b{display:block;font-size:var(--fs-xs);color:#fff;}
+.scene-overlay{position:absolute;z-index:4;border-radius:14px;padding:14px 16px;
+  background:rgba(20,26,31,.93);backdrop-filter:blur(14px);
+  border:1px solid rgba(20,26,31,.208);box-shadow:0 20px 50px rgba(0,0,0,.5);}
+.scene-overlay b{display:block;font-size:var(--fs-xs);color:#141A1F;}
 .scene-overlay span{display:block;font-size:var(--fs-2xs);color:var(--tx2);margin-top:3px;font-weight:600;}
 .scene-overlay.tl{top:18px;left:18px;} .scene-overlay.tr{top:18px;right:18px;}
 .scene-overlay.bl{bottom:18px;left:18px;} .scene-overlay.br{bottom:18px;right:18px;}
 
 /* ── GLASS & GRADIENT CARDS ─────────────────────────────── */
-.glass{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);
-  border-radius:22px;backdrop-filter:blur(16px);
-  box-shadow:0 1px 0 rgba(255,255,255,.10) inset, 0 28px 70px rgba(0,0,0,.42);}
-.gradborder{position:relative;border-radius:24px;padding:1px;
-  background:linear-gradient(140deg, rgba(23,189,189,.7), rgba(91,157,255,.35) 45%, rgba(255,255,255,.06) 75%);}
-.gradborder > *{border-radius:23px;background:#08121F;height:100%;}
+.glass{background:rgba(20,26,31,.072);border:1px solid rgba(20,26,31,.169);
+  border-radius:14px;backdrop-filter:blur(16px);
+  box-shadow:0 1px 0 rgba(20,26,31,.13) inset, 0 28px 70px rgba(0,0,0,.42);}
+.gradborder{position:relative;border-radius:14px;padding:1px;
+  background:linear-gradient(140deg, rgba(11,120,120,.7), rgba(44,99,184,.35) 45%, rgba(20,26,31,.078) 75%);}
+.gradborder > *{border-radius:14px;background:#FFFFFF;height:100%;}
 .gradborder.light > *{background:#fff;}
 .tiltcard{transform:perspective(1200px) rotateY(-7deg) rotateX(3deg);transform-style:preserve-3d;}
 .tiltcard.rev{transform:perspective(1200px) rotateY(7deg) rotateX(3deg);}
@@ -115,27 +115,27 @@
    headline is a machine default — decoration nobody chose, and it degrades
    badly at small sizes, in screenshots, and for low-vision readers. One solid
    accent carries the same emphasis and survives all three. */
-.gradtext{color:#9BE7E7;}
-.gradtext.warm{color:#FFB894;}
+.gradtext{color:#141A1F;}
+.gradtext.warm{color:#141A1F;}
 
 /* ── PROOF & CONVERSION ─────────────────────────────────── */
 
 /* logo wall — honest placeholders until real logos exist */
 .logowall{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;}
-.logoslot{display:inline-flex;align-items:center;gap:10px;border:1px dashed rgba(255,255,255,.16);
-  border-radius:12px;padding:14px 20px;color:var(--tx3);font-size:var(--fs-xs);font-weight:700;letter-spacing:.04em;}
-.logoslot i{width:18px;height:18px;border-radius:5px;background:rgba(255,255,255,.10);font-style:normal;}
+.logoslot{display:inline-flex;align-items:center;gap:10px;border:1px dashed rgba(20,26,31,.208);
+  border-radius:8px;padding:14px 20px;color:var(--tx3);font-size:var(--fs-xs);font-weight:700;letter-spacing:.04em;}
+.logoslot i{width:18px;height:18px;border-radius:5px;background:rgba(20,26,31,.13);font-style:normal;}
 .logoslot.light{border-color:#DDE3EB;color:#6F767F;}
 .logoslot.light i{background:#EEF2F6;}
 
 /* before / after */
 .baGrid{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:stretch;}
-.baCol{border-radius:20px;padding:26px;}
-.baCol.before{background:rgba(217,106,94,.12);border:1px solid rgba(217,106,94,.38);}
+.baCol{border-radius:14px;padding:26px;}
+.baCol.before{background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.38);}
 /* the "after" column is the relief in this argument, so it is the lit one:
    a warmer tint, a brighter edge and a soft glow under it */
-.baCol.after{background:linear-gradient(165deg,rgba(23,189,189,.20),rgba(23,189,189,.09));
-  border:1px solid rgba(23,189,189,.46);box-shadow:0 22px 60px -34px rgba(23,189,189,.55);}.baCol h4,.baCol .hl4{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}.baCol.before h4,.baCol.before .hl4{color:#E58C81;}.baCol.after h4,.baCol.after .hl4{color:var(--teal);}
+.baCol.after{background:linear-gradient(165deg,rgba(11,120,120,.20),rgba(11,120,120,.09));
+  border:1px solid rgba(11,120,120,.46);box-shadow:0 22px 60px -34px rgba(11,120,120,.55);}.baCol h4,.baCol .hl4{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}.baCol.before h4,.baCol.before .hl4{color:#E58C81;}.baCol.after h4,.baCol.after .hl4{color:var(--teal);}
 .baCol ul{list-style:none;display:grid;gap:12px;}
 .baCol li{font-size:var(--fs-xs);line-height:1.65;color:var(--tx);font-weight:500;display:flex;gap:10px;}
 .baCol li i{flex:none;font-style:normal;font-weight:800;}
@@ -145,55 +145,55 @@
 
 /* ROI calculator shell */
 .calcshell{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:26px;overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);}
-.calcin{padding:34px;background:rgba(255,255,255,.035);}
-.calcout{padding:34px;background:linear-gradient(160deg, rgba(23,189,189,.18), rgba(8,18,31,.9));}
+  border:1px solid rgba(20,26,31,.156);}
+.calcin{padding:34px;background:rgba(20,26,31,.046);}
+.calcout{padding:34px;background:linear-gradient(160deg, rgba(11,120,120,.18), rgba(255,255,255,.9));}
 .calcrow{margin-bottom:22px;}
 .calcrow label{display:block;font-size:var(--fs-xs);font-weight:700;color:var(--tx2);margin-bottom:10px;letter-spacing:.02em;}
-.calcrow .val{float:right;color:var(--teal);font-family:'Space Grotesk',sans-serif;}
-.calcrow input[type=range]{width:100%;accent-color:#17BDBD;height:4px;}
-.calcout .big{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);font-weight:600;letter-spacing:-.04em;color:#fff;line-height:1;}
+.calcrow .val{float:right;color:var(--teal);font-family:'Bricolage Grotesque',sans-serif;}
+.calcrow input[type=range]{width:100%;accent-color:#0B7878;height:4px;}
+.calcout .big{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);font-weight:600;letter-spacing:-.04em;color:#141A1F;line-height:1;}
 .calcout .lbl{margin-top:10px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;}
-.calcout .split{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:12px;}
+.calcout .split{margin-top:26px;padding-top:20px;border-top:1px solid rgba(20,26,31,.182);display:grid;gap:12px;}
 .calcout .split div{display:flex;justify-content:space-between;font-size:var(--fs-xs);color:var(--tx2);font-weight:500;}
-.calcout .split div b{color:#fff;}
+.calcout .split div b{color:#141A1F;}
 .calcout .verdict{margin-top:22px;font-size:var(--fs-xs);line-height:1.6;color:var(--teal);font-weight:700;}
 @media (max-width:900px){.calcshell{grid-template-columns:1fr;}}
 
 /* risk reversal row */
 .riskrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.riskitem{border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:20px;background:rgba(255,255,255,.03);}
+.riskitem{border:1px solid rgba(20,26,31,.13);border-radius:14px;padding:20px;background:rgba(20,26,31,.039);}
 .riskitem .ic{font-size:var(--fs-lead);}
-.riskitem b{display:block;margin-top:10px;font-size:var(--fs-xs);color:#fff;}
+.riskitem b{display:block;margin-top:10px;font-size:var(--fs-xs);color:#141A1F;}
 .riskitem span{display:block;margin-top:5px;font-size:var(--fs-2xs);color:var(--tx2);line-height:1.6;font-weight:500;}
 .riskitem.light{background:#fff;border-color:var(--l-hair);}
 .riskitem.light b{color:var(--l-ink);} .riskitem.light span{color:var(--l-mut);}
 @media (max-width:900px){.riskrow{grid-template-columns:1fr 1fr;}}
 
 /* alternatives comparison */
-.altgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:22px;overflow:hidden;border:1px solid var(--l-hair);}
+.altgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--l-hair);}
 .altcol{padding:26px 22px;background:#fff;border-right:1px solid var(--l-hair);}
 .altcol:last-child{border-right:0;}
-.altcol.win{background:linear-gradient(180deg,#0B1B33,#08121F);color:#fff;}.altcol h4,.altcol .hl4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}.altcol.win h4,.altcol.win .hl4{color:var(--teal);}
-.altcol .cost{margin-top:12px;font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h2s);
+.altcol.win{background:linear-gradient(180deg,#141A1F,#FFFFFF);color:#fff;}.altcol h4,.altcol .hl4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}.altcol.win h4,.altcol.win .hl4{color:var(--teal);}
+.altcol .cost{margin-top:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);
   font-weight:600;letter-spacing:-.03em;color:var(--l-ink);
   /* This is sized for a price, and a price never wraps. A trade that puts a
      phrase here instead — golf's "Your pro's mornings" — ran 58px past a
      237px column inside an overflow:hidden grid, so the end of it was cut
      off. Words wrap; numbers are too short to be affected. */
   overflow-wrap:anywhere;text-wrap:balance;line-height:1.12;}
-.altcol.win .cost{color:#fff;}
+.altcol.win .cost{color:#141A1F;}
 .altcol ul{margin-top:16px;list-style:none;display:grid;gap:10px;}
 .altcol li{font-size:var(--fs-xs);line-height:1.55;color:var(--l-mut);display:flex;gap:8px;font-weight:500;}
-.altcol.win li{color:#B9C6D8;}
-.altcol li i{flex:none;font-style:normal;font-weight:800;color:#656D78;}
+.altcol.win li{color:#141A1F;}
+.altcol li i{flex:none;font-style:normal;font-weight:800;color:#616B75;}
 .altcol.win li i{color:var(--teal);}
 /* .altgrid responsive folding is defined once, at the bottom of this file. */
 
 /* sticky bottom conversion bar */
 .stickycta{position:fixed;left:0;right:0;bottom:0;z-index:40;transform:translateY(110%);
-  transition:transform .6s var(--ease);background:rgba(6,13,28,.92);backdrop-filter:blur(18px);
-  border-top:1px solid rgba(255,255,255,.12);padding:14px 0;}
+  transition:transform .6s var(--ease);background:rgba(255,255,255,.92);backdrop-filter:blur(18px);
+  border-top:1px solid rgba(20,26,31,.156);padding:14px 0;}
 .stickycta.show{transform:none;}
 
 /* Reading downward on a phone tucks the docked bar away; the first upward
@@ -209,7 +209,7 @@
 
 /* section eyebrow rule */
 .secrule{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
-.secrule .line{flex:1;height:1px;background:linear-gradient(90deg, rgba(23,189,189,.5), transparent);}
+.secrule .line{flex:1;height:1px;background:linear-gradient(90deg, rgba(11,120,120,.5), transparent);}
 
 /* ═══════════════════════════════════════════════════════════
    PHOTOGRAPHY LAYER  (real images — see assets/PHOTOS.md)
@@ -230,50 +230,50 @@ img.ph{display:block;width:100%;height:100%;object-fit:cover;object-position:cen
   /* light, even darkening only — the copy sits in a glass panel, so the
      photograph never has to be buried to stay readable */
   background:
-    linear-gradient(180deg, rgba(4,8,15,.58) 0%, rgba(4,8,15,.30) 26%, rgba(4,8,15,.34) 60%, rgba(4,8,15,.92) 100%);}
+    linear-gradient(180deg, rgba(255,255,255,.58) 0%, rgba(255,255,255,.30) 26%, rgba(255,255,255,.34) 60%, rgba(255,255,255,.92) 100%);}
 
 /* frosted copy panel that sits on top of a photograph */
-.hero-panel{background:rgba(6,12,22,.62);backdrop-filter:blur(18px) saturate(1.2);
-  border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:44px 46px;
-  box-shadow:0 1px 0 rgba(255,255,255,.10) inset, 0 40px 90px rgba(0,0,0,.55);}
-@media (max-width:900px){.hero-panel{padding:30px 24px;border-radius:22px;}}
+.hero-panel{background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.2);
+  border:1px solid rgba(20,26,31,.182);border-radius:28px;padding:44px 46px;
+  box-shadow:0 1px 0 rgba(20,26,31,.13) inset, 0 40px 90px rgba(0,0,0,.55);}
+@media (max-width:900px){.hero-panel{padding:30px 24px;border-radius:14px;}}
 /* brand wash. NOTE: never use mix-blend-mode here — blending against the
    negative-z-index photo inside this stacking context crushes it to black. */
 .photohero .tint{position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(58% 68% at 18% 42%, rgba(23,189,189,.12), transparent 72%);}
+  background:radial-gradient(58% 68% at 18% 42%, rgba(11,120,120,.12), transparent 72%);}
 .photohero.center{text-align:center;justify-content:center;}
 .photohero.center .scrim{background:
-  linear-gradient(180deg, rgba(4,8,15,.62) 0%, rgba(4,8,15,.38) 45%, rgba(4,8,15,.86) 100%);}
+  linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.38) 45%, rgba(255,255,255,.86) 100%);}
 .photohero.light .scrim{background:
   linear-gradient(100deg, rgba(252,253,254,.96) 0%, rgba(252,253,254,.86) 42%, rgba(252,253,254,.30) 78%);}
 .photohero.light .tint{opacity:.35;
-  background:radial-gradient(60% 70% at 85% 30%, rgba(23,189,189,.28), transparent 70%);}
+  background:radial-gradient(60% 70% at 85% 30%, rgba(11,120,120,.28), transparent 70%);}
 
 /* ── photo scrim helper for any block ── */
 .photo-scrim{position:relative;overflow:hidden;}
 .photo-scrim > img.ph{position:absolute;inset:0;z-index:0;}
 .photo-scrim::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg, rgba(4,8,15,.15) 0%, rgba(4,8,15,.55) 55%, rgba(4,8,15,.92) 100%);}
+  background:linear-gradient(180deg, rgba(255,255,255,.15) 0%, rgba(255,255,255,.55) 55%, rgba(255,255,255,.92) 100%);}
 .photo-scrim > *:not(img){position:relative;z-index:2;}
 /* nested inside a hero that already carries a .scrim, this only tops it off */
 .photohero .photo-scrim::after{
-  background:linear-gradient(180deg, rgba(4,8,15,.04) 0%, rgba(4,8,15,.22) 58%,
-    rgba(4,8,15,.62) 100%);}
+  background:linear-gradient(180deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.22) 58%,
+    rgba(255,255,255,.62) 100%);}
 
 /* ── editorial photo card (industry / story) ── */
-.photocard{position:relative;border-radius:22px;overflow:hidden;min-height:340px;
+.photocard{position:relative;border-radius:14px;overflow:hidden;min-height:340px;
   display:flex;flex-direction:column;justify-content:flex-end;padding:26px;
   box-shadow:0 30px 70px rgba(3,8,16,.45);}
 .photocard > img.ph{position:absolute;inset:0;z-index:0;transition:transform 1.2s var(--ease);}
 .photocard:hover > img.ph{transform:scale(1.05);}
 .photocard::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg, rgba(4,8,15,.10) 0%, rgba(4,8,15,.60) 58%, rgba(4,8,15,.94) 100%);}
+  background:linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.60) 58%, rgba(255,255,255,.94) 100%);}
 .photocard > *:not(img){position:relative;z-index:2;}
 .photocard .kicker{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);}
-.photocard h3{margin-top:10px;font-size:var(--fs-h3);font-weight:800;color:#fff;letter-spacing:-.015em;}
-.photocard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.6;color:rgba(255,255,255,.78);font-weight:500;}
+.photocard h3{margin-top:10px;font-size:var(--fs-h3);font-weight:800;color:#141A1F;letter-spacing:-.015em;}
+.photocard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.6;color:rgba(20,26,31,.78);font-weight:500;}
 .photocard .stat{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.22);
-  font-family:'Space Grotesk',sans-serif;font-size:var(--fs-xs);color:rgba(255,255,255,.9);}
+  font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);color:rgba(20,26,31,.9);}
 .photocard .stat b{font-size:var(--fs-h3);color:var(--teal);margin-right:8px;letter-spacing:-.02em;}
 .photocard.tall{min-height:480px;}
 
@@ -294,15 +294,15 @@ img.ph{display:block;width:100%;height:100%;object-fit:cover;object-position:cen
 
 /* audience strip — who this is for */
 .audgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.audcard{position:relative;border-radius:18px;overflow:hidden;min-height:230px;
+.audcard{position:relative;border-radius:14px;overflow:hidden;min-height:230px;
   display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;
   padding:18px;}  /* row direction put the label and its description side by side */
 .audcard > img.ph{position:absolute;inset:0;z-index:0;
   object-position:50% 32%;}  /* portrait sources in a landscape slot: keep the face */
 .audcard::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(4,8,15,.05),rgba(4,8,15,.86));}
-.audcard b{position:relative;z-index:2;color:#fff;font-size:var(--fs-sm);letter-spacing:-.01em;}
-.audcard span{position:relative;z-index:2;display:block;margin-top:3px;font-size:var(--fs-2xs);color:rgba(255,255,255,.72);font-weight:600;}
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.86));}
+.audcard b{position:relative;z-index:2;color:#141A1F;font-size:var(--fs-sm);letter-spacing:-.01em;}
+.audcard span{position:relative;z-index:2;display:block;margin-top:3px;font-size:var(--fs-2xs);color:rgba(20,26,31,.72);font-weight:600;}
 @media (max-width:900px){.audgrid{grid-template-columns:1fr 1fr;}}
 
 /* photo inside a device frame */
@@ -311,7 +311,7 @@ img.ph{display:block;width:100%;height:100%;object-fit:cover;object-position:cen
 
 /* caption under photos */
 .photocap{margin-top:10px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.04em;}
-.photocap.light{color:#656D78;}
+.photocap.light{color:#616B75;}
 
 /* ── MOBILE OVERFLOW GUARDS ──────────────────────────────
    Fixed-width decorative and demo blocks were pushing the document
@@ -411,11 +411,11 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 @media (max-width:900px){.tline{grid-template-columns:repeat(2,1fr);gap:18px;}}
 @media (max-width:620px){.tline{grid-template-columns:1fr;gap:14px;}}
 .tlstep{display:flex;flex-direction:column;background:#fff;border:1px solid var(--l-hair);
-  border-radius:18px;padding:24px 22px 22px;box-shadow:0 16px 40px rgba(11,27,51,.05);
+  border-radius:14px;padding:24px 22px 22px;box-shadow:0 16px 40px rgba(20,26,31,.05);
   position:relative;overflow:hidden;}
 .tlstep::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,var(--teal-ink),rgba(12,132,132,0));}
-.tlstep .d{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-label);font-weight:800;
+.tlstep .d{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-label);font-weight:800;
   letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink);}.tlstep h4,.tlstep .hl4{margin-top:12px;font-size:var(--fs-lead);font-weight:700;letter-spacing:-.02em;
   line-height:1.25;color:var(--l-ink);text-wrap:balance;}
 .tlstep p{margin-top:10px;font-size:var(--fs-sm);line-height:1.7;color:var(--l-mut);
@@ -438,7 +438,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .scenecap{margin-top:16px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);
   font-weight:500;max-width:var(--measure);}
 .scenecap b{color:var(--tx);font-weight:700;}
-.scenecap .num{font-family:'Space Grotesk',sans-serif;color:var(--teal);font-weight:600;}
+.scenecap .num{font-family:'Bricolage Grotesque',sans-serif;color:var(--teal);font-weight:600;}
 .sec-light .scenecap,.sec-light2 .scenecap,.bg-paper .scenecap,.bg-clinical .scenecap{
   color:var(--l-mut2);}
 .sec-light .scenecap b,.sec-light2 .scenecap b,.bg-paper .scenecap b,
@@ -457,7 +457,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
 .wakefig .scenebox{--sh:190px;}
 @media (max-width:620px){.wakefig .scenebox{--sh:150px;}}
 .wakefig .scenecap{max-width:none;}
-.wakenum{display:block;font-family:'Space Grotesk',sans-serif;
+.wakenum{display:block;font-family:'Bricolage Grotesque',sans-serif;
   font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--teal);
   line-height:1;margin-bottom:8px;}
 
@@ -499,7 +499,7 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
   text-transform:uppercase;color:var(--tx3);}
 .wavelegend i{display:inline-block;width:9px;height:9px;border-radius:2px;
   margin-right:7px;vertical-align:-1px;}
-.wavelegend .c{background:rgba(242,246,251,.55);}
+.wavelegend .c{background:rgba(20,26,31,.55);}
 .wavelegend .a{background:var(--teal);}
 
 /* ── figures that replaced photographs ─────────────────────────────────────
@@ -513,15 +513,15 @@ body[data-grade="trust"]  { --gradeH:170deg; --gradeS:1.10; --gradeSep:.24; }
    block underneath, same place in the grid — so the sections' rhythm is
    unchanged. The canvas reserves its height in CSS, exactly as every other
    scene on the site does, so nothing shifts when the drawing mounts. */
-.figcard{position:relative;margin:0;border-radius:22px;padding:24px 26px 26px;
+.figcard{position:relative;margin:0;border-radius:14px;padding:24px 26px 26px;
   background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);}
 .sec-light .figcard,.sec-light2 .figcard,.bg-clinical .figcard,.bg-paper .figcard{
   background:#fff;border-color:var(--l-hair);
-  box-shadow:0 2px 3px rgba(11,27,51,.03),0 20px 50px rgba(11,27,51,.06);}
+  box-shadow:0 2px 3px rgba(20,26,31,.03),0 20px 50px rgba(20,26,31,.06);}
 .figcard .kicker{display:block;margin-top:22px;font-size:var(--fs-2xs);font-weight:800;
   letter-spacing:.2em;text-transform:uppercase;color:var(--teal);}
 .figcard h3{margin-top:10px;font-size:var(--fs-h3);font-weight:800;
-  letter-spacing:-.015em;color:#fff;}
+  letter-spacing:-.015em;color:#141A1F;}
 .figcard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;
   color:var(--tx2);font-weight:500;max-width:var(--measure);}
 .sec-light .figcard h3,.sec-light2 .figcard h3,.bg-clinical .figcard h3,

@@ -61,7 +61,7 @@
       muted:  light ? 'rgba(11,27,51,.62)' : 'rgba(242,246,251,.46)',
       faint:  light ? 'rgba(11,27,51,.13)' : 'rgba(242,246,251,.16)',
       inert:  light ? 'rgba(11,27,51,.16)' : 'rgba(148,162,184,.22)', /* "off" bars */
-      accent: '#17BDBD',
+      accent: light ? '#0B7878' : '#17BDBD',
       warm:   light ? '#B87A28' : '#E8A44C'
     };
   }

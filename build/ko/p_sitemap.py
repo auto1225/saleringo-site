@@ -29,7 +29,7 @@ CSS = """
   .maplinks a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
     text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
     transition:all .3s var(--ease);}
-  .maplinks a:hover{border-color:var(--teal);background:rgba(23,189,189,.08);}
+  .maplinks a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
 """
 
 GROUPS = [

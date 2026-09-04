@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","@id":"https://saleringo.com/#org","name":"Saleringo",
@@ -53,9 +53,10 @@
     "priceSpecification":{"@type":"UnitPriceSpecification","price":"599","priceCurrency":"USD","unitText":"MONTH"}}]}
 ]}
 </script>
-<link rel="stylesheet" href="../assets/css/site.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/scenes.css?v=75.0">
-<link rel="stylesheet" href="../assets/css/crm.css?v=75.0">
+<link rel="stylesheet" href="../assets/css/site.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=76.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=76.0">
 <style>
   /* CRM section — "after the call". mockcap labels product illustrations. */
   .aftersec .head{margin-bottom:0;}
@@ -64,7 +65,7 @@
   /* hero photograph: lifted so the picture reads as a place, not a fill */
   /* scrim rescaled off the sheet default: the copy corner is 0.42, the
      foot anchor stays dark so the hand-off to the next section has no seam */
-  .hero .scrim{background:linear-gradient(180deg,rgba(4,8,15,0.421) 0%,rgba(4,8,15,0.218) 26%,rgba(4,8,15,0.247) 60%,rgba(4,8,15,0.92) 100%);}
+  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.421) 0%,rgba(255,255,255,0.218) 26%,rgba(255,255,255,0.247) 60%,rgba(255,255,255,0.92) 100%);}
   .hero .bgimg img{filter:brightness(1.67) saturate(1.15) contrast(1.04);}
   .hero{position:relative;overflow:hidden;padding-bottom:70px;}
   .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
@@ -93,8 +94,8 @@
     .heroshelf{grid-template-columns:1fr;gap:14px;}
     .heroshelf .appwin,.heroshelf .qmini,.heroshelf .photocap{
       grid-column:1;grid-row:auto;}}
-  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);line-height:1.04;
-    letter-spacing:-.04em;font-weight:600;color:#fff;margin-top:24px;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.04;
+    letter-spacing:-.04em;font-weight:600;color:#141A1F;margin-top:24px;}
   .hero .sub{margin-top:22px;font-size:var(--fs-body);line-height:1.75;color:var(--tx2);font-weight:500;}
   .hero .ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero .specstrip{margin-top:30px;justify-content:flex-start;gap:22px;}
@@ -102,24 +103,24 @@
      lives below the fold in #try — a hero must be readable in three seconds,
      and a playing demo competes with the headline it exists to prove. */
   .heroshelf{position:relative;}
-  .heroshelf .qmini{background:#FBFCFD;border-radius:14px;padding:18px 20px 20px;color:#0B1B33;
+  .heroshelf .qmini{background:#FBFCFD;border-radius:14px;padding:18px 20px 20px;color:#141A1F;
     box-shadow:0 24px 50px rgba(3,8,16,.45);}
   /* the three rows were 13px, the same size as the caption under them. They
      are the whole payoff — the reader should be able to take them in without
      leaning toward the screen. */
   .heroshelf .qmini .wokerow{display:flex;flex-direction:column;gap:2px;
-    padding:11px 0;border-top:1px solid rgba(11,27,51,.10);}
+    padding:11px 0;border-top:1px solid rgba(20,26,31,.10);}
   .heroshelf .qmini .wokerow:first-of-type{border-top:0;padding-top:13px;}
-  .heroshelf .qmini .wokerow b{font-family:'Space Grotesk',sans-serif;
-    font-size:20px;font-weight:600;letter-spacing:-.02em;color:#0B1B33;line-height:1.15;}
+  .heroshelf .qmini .wokerow b{font-family:'Bricolage Grotesque',sans-serif;
+    font-size:20px;font-weight:600;letter-spacing:-.02em;color:#141A1F;line-height:1.15;}
   .heroshelf .qmini .wokerow span{font-size:var(--fs-2xs);color:#5A6472;
     font-weight:600;line-height:1.5;}
   .heroshelf .qmini .qh2{display:flex;justify-content:space-between;align-items:baseline;
-    font-size:var(--fs-2xs);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#656D78;}
+    font-size:var(--fs-2xs);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#616B75;}
   .heroshelf .qmini .tot{display:flex;justify-content:space-between;align-items:baseline;
-    margin-top:9px;padding-top:9px;border-top:2px solid #0B1B33;}
+    margin-top:9px;padding-top:9px;border-top:2px solid #141A1F;}
   .heroshelf .qmini .tot b{font-size:var(--fs-xs);} .heroshelf .qmini .tot span{
-    font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;}
+    font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;}
   /* the night, in order: a time rail and what was said next to it */
   /* the disclaimer rides in the window chrome, not under it: at 1440x900 the
      window is visible from y=704 and the caption lands at 1008. */
@@ -144,19 +145,19 @@
      and "Customer" 78px, not the 62px a lowercase estimate suggests — 72px
      clipped both. 84px carries them with the right alignment intact. */
   .heroshelf .nl{display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;align-items:start;}
-  .heroshelf .nl .t{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-2xs);
+  .heroshelf .nl .t{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);
     font-weight:600;color:var(--tx3);line-height:1.25;padding-top:11px;text-align:right;}
   .heroshelf .nl .t i{display:block;font-style:normal;font-size:13px;letter-spacing:.06em;
     color:var(--tx3);opacity:.75;}
   .heroshelf .nl .bub{max-width:none;align-self:auto;margin:0;}
-  .heroshelf .nl .bub b{color:#fff;font-weight:700;}
+  .heroshelf .nl .bub b{color:#141A1F;font-weight:700;}
   /* The shared .bub separates speakers by 10% white against 4.3% — enough in a
      scrolled transcript, not enough in a hero that has to be read in three
      seconds. Teal is already the site's mark for "this is Saleringo talking":
      the call waveform on the voice page uses the same two-colour key. */
-  .heroshelf .nl .bub.ai{background:rgba(23,189,189,.13);
-    border-color:rgba(23,189,189,.34);color:#DDF4F4;}
-  .heroshelf .nl .bub.ai b{color:#8FF0F0;}
+  .heroshelf .nl .bub.ai{background:rgba(11,120,120,.13);
+    border-color:rgba(11,120,120,.34);color:#141A1F;}
+  .heroshelf .nl .bub.ai b{color:#141A1F;}
   .heroshelf .nl.us .t{color:var(--tx2);}
   .heroshelf .nl.sr .t{color:var(--teal);}
   .heroshelf .nl .t em{display:block;font-style:normal;font-size:13px;font-weight:800;
@@ -164,16 +165,16 @@
   /* the morning: the only light surface in the hero, because it is the payoff */
   .heroshelf .qmini.woke .qh2{display:block;}
   .heroshelf .wokerow{display:flex;gap:10px;align-items:baseline;justify-content:space-between;
-    margin-top:9px;padding-top:9px;border-top:1px solid rgba(11,27,51,.12);
+    margin-top:9px;padding-top:9px;border-top:1px solid rgba(20,26,31,.12);
     font-size:var(--fs-2xs);line-height:1.5;}
-  .heroshelf .wokerow:first-of-type{border-top:2px solid #0B1B33;}
-  .heroshelf .wokerow b{font-size:var(--fs-xs);font-weight:800;color:#0B1B33;flex:none;}
-  .heroshelf .wokerow span{color:#656D78;font-weight:600;text-align:right;}
+  .heroshelf .wokerow:first-of-type{border-top:2px solid #141A1F;}
+  .heroshelf .wokerow b{font-size:var(--fs-xs);font-weight:800;color:#141A1F;flex:none;}
+  .heroshelf .wokerow span{color:#616B75;font-weight:600;text-align:right;}
   /* 16px put the fine print hard against the buttons — it read as a fourth
      line of the CTA row rather than as terms. It is also the strip the tour's
      pointer was landing on, having nowhere else to go. */
   .heroprice{margin-top:40px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;}
-  .heroprice b{color:#fff;} .heroprice i{font-style:normal;color:var(--tx3);}
+  .heroprice b{color:#141A1F;} .heroprice i{font-style:normal;color:var(--tx3);}
   @media(max-width:1000px){.hero-inner{grid-template-columns:1fr;gap:32px;padding-left:32px;padding-right:32px;}
     .heroshelf .appwin{transform:none;}}
   @media(max-width:620px){
@@ -207,7 +208,7 @@
   /* ── 2:47 AM STORY — photograph leads, the illustration follows ── */
   .nightsec{position:relative;overflow:hidden;}
   .nightsec .photosplit{border:1px solid var(--hair);border-radius:26px;overflow:hidden;
-    background:rgba(255,255,255,.025);min-height:470px;
+    background:rgba(20,26,31,.033);min-height:470px;
     box-shadow:0 40px 90px rgba(3,8,16,.45);}
   .nightsec .photosplit .copy{padding:58px 52px;}
   .nightsec .photosplit h2{font-size:var(--fs-h2);}
@@ -232,8 +233,8 @@
   .nightsec .photosplit .media img.ph{filter:brightness(1.34) saturate(1.02) contrast(0.98);}
   .nightsec .photosplit .media:hover img.ph{filter:brightness(1.46) saturate(1.18) contrast(1.0);}
   .nightsec .photosplit .media::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(6,20,38,.06) 0%, rgba(6,20,38,0) 44%,
-      rgba(4,10,22,.62) 100%),
+    background:linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 44%,
+      rgba(255,255,255,.62) 100%),
       radial-gradient(70% 50% at 68% 30%, rgba(255,196,120,.10), transparent 70%);}
   .nightsec .midscene{max-width:760px;margin:78px auto 0;}
   .nightsec h2{font-size:var(--fs-h2);}
@@ -247,7 +248,7 @@
   .altsec .head{max-width:660px;margin:0 auto 54px;text-align:center;}
 
   /* ── ROI CALCULATOR ── */
-  .calcsec{background:#0C1526;}
+  .calcsec{background:#FFFFFF;}
   .calcsec .head{max-width:620px;margin:0 auto 52px;text-align:center;}
   .calcnote{margin-top:6px;font-size:var(--fs-2xs);line-height:1.7;color:var(--tx3);font-weight:500;}
   .calcout .big{font-size:var(--fs-h1);}
@@ -255,15 +256,15 @@
   .inboxsec .wrap{position:relative;z-index:1;}
   .inboxsec .head{text-align:center;max-width:640px;margin:0 auto 50px;}
   .inboxsec .cols{margin-top:104px;display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:stretch;}
-  .inboxsec .linkcta{color:#fff;border-bottom-color:var(--hair2);}
-  .inboxsec .steps .num{background:rgba(255,255,255,.05);border-color:var(--hair2);color:var(--tx2);}
+  .inboxsec .linkcta{color:#141A1F;border-bottom-color:var(--hair2);}
+  .inboxsec .steps .num{background:rgba(20,26,31,.065);border-color:var(--hair2);color:var(--tx2);}
 
   /* ── INDUSTRIES — light ground, dark bento cards sitting on it ── */
   .indsec{}
   .indsec .top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:50px;gap:30px;flex-wrap:wrap;}
-  .indsec .count{font-family:'Space Grotesk',sans-serif;text-align:right;color:var(--l-mut);font-size:var(--fs-xs);font-weight:600;}
+  .indsec .count{font-family:'Bricolage Grotesque',sans-serif;text-align:right;color:var(--l-mut);font-size:var(--fs-xs);font-weight:600;}
   .indsec .count b{display:block;font-size:var(--fs-h2);letter-spacing:-.04em;color:var(--l-ink);line-height:1;}
-  .indsec .secrule .line{background:linear-gradient(90deg, rgba(15,163,163,.45), transparent);}
+  .indsec .secrule .line{background:linear-gradient(90deg, rgba(255,255,255,.45), transparent);}
   .ga{grid-column:span 5;grid-row:span 2;} .gb2{grid-column:span 4;} .gc3{grid-column:span 3;}
   .gd3{grid-column:span 3;} .ge4{grid-column:span 4;} .gf4{grid-column:span 4;}
   .gg4{grid-column:span 4;} .gh4{grid-column:span 4;}
@@ -274,14 +275,14 @@
   /* .photocard::after is a full-card scrim sized for a 480px tall card; on a
      148px one it left the photograph at roughly a quarter of the pixel. */
   .igrid .icard.photocard::after{background:linear-gradient(180deg,
-    rgba(4,8,15,0) 0%, rgba(4,8,15,.18) 48%, rgba(4,8,15,.80) 100%);}
+    rgba(255,255,255,0) 0%, rgba(255,255,255,.18) 48%, rgba(255,255,255,.80) 100%);}
   /* the status badge and arrow live at the top of the card, where .photocard's own
      bottom-weighted scrim has nothing left to give. gradient .icards keep their own
      dark grounds, so this only lands on the photo variants. */
   .igrid .icard.photocard::before{content:"";position:absolute;inset:0 0 auto;height:118px;z-index:1;
-    background:linear-gradient(180deg,rgba(4,8,15,.66),rgba(4,8,15,.30) 58%,transparent);}
-  .igrid .icard.photocard .rank{color:#fff;z-index:3;text-shadow:0 1px 8px rgba(4,8,15,.55);}
-  .igrid .icard.photocard .arr{z-index:3;background:rgba(4,8,15,.48);border-color:rgba(255,255,255,.38);
+    background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.30) 58%,transparent);}
+  .igrid .icard.photocard .rank{color:#141A1F;z-index:3;text-shadow:0 1px 8px rgba(4,8,15,.55);}
+  .igrid .icard.photocard .arr{z-index:3;background:rgba(255,255,255,.48);border-color:rgba(255,255,255,.38);
     backdrop-filter:blur(6px);}
   .closer .wrap{position:relative;z-index:1;}
   
@@ -294,9 +295,9 @@
   .fbens{margin-top:28px;display:grid;gap:14px;}
   .fbens .b{display:flex;gap:14px;align-items:flex-start;font-size:var(--fs-sm);color:var(--tx2);font-weight:500;line-height:1.6;}
   .fbens .b i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--teal-glass);
-    border:1px solid rgba(23,189,189,.4);color:var(--teal);font-size:var(--fs-xs);font-weight:800;
+    border:1px solid rgba(11,120,120,.4);color:var(--teal);font-size:var(--fs-xs);font-weight:800;
     display:flex;align-items:center;justify-content:center;font-style:normal;margin-top:1px;}
-  .fbens .b b{color:#fff;}
+  .fbens .b b{color:#141A1F;}
   .founding .dayone{margin-top:42px;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.2em;
     text-transform:uppercase;color:var(--teal);}
   .founding .proof{margin-top:16px;}
@@ -304,14 +305,14 @@
   .founding .cohort{margin-top:34px;}
   .founding .cohort .txt{display:block;font-size:var(--fs-xs);line-height:1.7;
     color:var(--tx2);font-weight:600;max-width:440px;}
-  .founding .cohort .txt b{color:#fff;}
+  .founding .cohort .txt b{color:#141A1F;}
   .cityband .wrap{width:100%;display:flex;align-items:flex-end;justify-content:space-between;
     gap:24px;flex-wrap:wrap;}
 
   /* ── CLOSER + FOOTER ── */
   .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Space Grotesk',sans-serif;font-size:var(--fs-h1);font-weight:600;
-    letter-spacing:-.045em;color:#fff;line-height:1.06;}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);font-weight:600;
+    letter-spacing:-.045em;color:#141A1F;line-height:1.06;}
   .closer .lead{margin:22px auto 0;}
   .closer .ctas{margin-top:36px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
 
@@ -326,13 +327,13 @@
   /* ── what the conversation leaves behind ── */
   .keepgrid{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
     align-items:stretch;}
-  .keepcol{display:flex;flex-direction:column;padding:24px 22px 22px;border-radius:18px;
-    background:rgba(255,255,255,.045);border:1px solid var(--hair);}
+  .keepcol{display:flex;flex-direction:column;padding:24px 22px 22px;border-radius:14px;
+    background:rgba(20,26,31,.058);border:1px solid var(--hair);}
   .kh{display:flex;align-items:center;gap:8px;font-size:var(--fs-2xs);font-weight:800;
     letter-spacing:.13em;text-transform:uppercase;}
   .kh i{width:7px;height:7px;border-radius:50%;flex:none;}
   .keepcol b{display:block;margin-top:14px;font-size:var(--fs-lead);font-weight:700;
-    letter-spacing:-.02em;color:#fff;line-height:1.25;}
+    letter-spacing:-.02em;color:#141A1F;line-height:1.25;}
   .keepcol p{margin-top:12px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);
     font-weight:500;}
   .kgot{margin-top:auto;padding-top:18px;font-size:var(--fs-2xs);font-weight:700;
@@ -358,20 +359,12 @@
 </head>
 <body data-grade="voice">
 
-<!-- ═══════════ 1 · HERO — cinematic scene (bg-aurora + grain) ═══════════ -->
+<!-- ═══════════ 1 · HERO — the claim and the record it leaves ═══════════ -->
 <header class="hero photohero">
-  <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-         alt="" width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
-     srcset="https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/18441167/pexels-photo-18441167.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(max-width:900px) 100vw, 50vw">
-  </div>
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="tint" aria-hidden="true"></div>
-  <div class="grainlayer grain" aria-hidden="true"></div>
 
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v75.0">v75.0</span>
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v76.0">v76.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">Platform &amp; CRM</a></li><li><a href="./platform.html#inside">Inside one answer</a></li><li><a href="./platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI phone</a></li><li><a href="./webchat.html">Website chat</a></li><li><a href="./whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">Integrations</a></li><li><a href="./verified-ai.html">How answers are checked</a></li><li><a href="./ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop on" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see" aria-current="true">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">See a conversation</a></li><li><a href="./demo.html#yourprices">Quoted from your own prices</a></li><li><a href="./index.html#try">Try it on this page</a></li><li><a href="./about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">Worked examples</a></li><li><a href="./examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="./index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="./verified-ai.html#life">The life of one answer</a></li><li><a href="./about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">Every page · site map</a></p></div></div></span>
@@ -389,56 +382,37 @@
 
   <div class="wrap hero-inner">
     <div class="heroband hero-panel">
-      <span class="eyebrow"><i></i>AI receptionist + the&nbsp;CRM for&nbsp;your&nbsp;trade</span>
-      <h1>Most AI answers the&nbsp;call. <br><span style="color:var(--teal);">Ours books the&nbsp;job.</span></h1>
-      <p class="sub">AI&nbsp;phone, website chat and messaging turn every customer conversation into <b>one record</b> and <b>one next step</b> — a&nbsp;booking, a&nbsp;quote, or a&nbsp;job for a&nbsp;named person with a&nbsp;deadline. For dentists, plumbers, salons, venues, law firms.</p>
-      <div class="herotrio">
-        <a href="./voice.html"><b>✆ AI phone</b><span>captures name, number, request, time</span></a>
-        <a href="./webchat.html"><b>💬 Website chat</b><span>captures the page they asked from</span></a>
-        <a href="./whatsapp.html"><b>✓ Messaging</b><span>captures the account, thread kept</span></a>
-      </div>
+      <h1>Most AI answers the&nbsp;call. <br>Ours books the&nbsp;job.</h1>
+      <p class="sub">AI&nbsp;phone, website chat and messaging turn every customer conversation into one record with a&nbsp;booking, a&nbsp;quote, a&nbsp;named owner and a&nbsp;deadline.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#demo60">Run the&nbsp;60-second demo<span class="cir">&#9654;</span></a>
-        <a class="btn btn-ghostd" href="#trades">Pick my&nbsp;trade &mdash; see it in&nbsp;my&nbsp;business</a>
+        <a class="btn btn-teal" href="#demo60">Watch the&nbsp;60-second demo</a>
+        <a class="btn btn-ghostd" href="./pricing.html">See pricing&nbsp;&rarr;</a>
       </div>
-    <p class="heroprice"><b>Website chat from&nbsp;$79/mo · messaging from&nbsp;$249/mo · phone answering from&nbsp;$599/mo.</b> <i>14-day refund · cancel anytime · no&nbsp;setup fee</i></p>
-</div>
+      <p class="heroprice"><b>From&nbsp;$79/month &middot; 14-day refund &middot; no&nbsp;setup fee.</b> <i>For dentists, plumbers, salons, venues, and law firms.</i></p>
+    </div>
 
     <div class="heroshelf">
-      <!-- One customer, one night, in order. The headline claims it books the
-           job; this shows the booking happening, which a pipeline screenshot
-           cannot. The figures in the answer and the figures on the estimate are the
-           same for the same person, so the three panels are one story
-           rather than three samples. -->
-      <div class="appwin">
-        <div class="bar"><i></i><i></i><i></i>
-          <span class="tt">J. Kim &mdash; <b>Tuesday night</b></span>
-          <span class="illus">Illustration &middot; sample data</span>
-          <span class="closed">You were closed</span></div>
-        <div class="body nightline">
-          <div class="nl us">
-            <span class="t"><em>Customer</em>11:42<i>PM</i></span>
-            <div class="bub user">I chipped a&nbsp;front tooth. How much is a&nbsp;crown,
-              and can anyone see me this&nbsp;week?</div>
-          </div>
-          <div class="nl sr">
-            <span class="t"><em>Saleringo</em>+38<i>SEC</i></span>
-            <div class="bub ai">A&nbsp;crown runs <b>$1,100 to&nbsp;$1,600</b> depending on&nbsp;the&nbsp;material, confirmed after an&nbsp;exam and X-ray. I have <b>Thursday 10:30</b> or Friday 8:00 &mdash; which suits you?</div>
-          </div>
-          <div class="nl us">
-            <span class="t"><em>Customer</em>11:47<i>PM</i></span>
-            <div class="bub user">Thursday, please.</div>
-          </div>
+      <!-- What one call leaves behind. The headline claims it books the job;
+           this is the record that claim produces, in the shape the owner
+           sees it the next morning. Figures come from the 60-second demo. -->
+      <div class="reccard" aria-label="Sample record from the 60-second demo">
+        <div class="rc-top">
+          <span class="pill"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10l4 4 8-8"></path></svg>Answered &middot; 11:48 PM</span>
+          <span class="rc-when">Tue &middot; after hours</span>
         </div>
+        <div>
+          <p class="rc-kicker">New booking</p>
+          <h2 class="rc-title">J. Kim &middot; front-tooth crown</h2>
+        </div>
+        <div class="rc-rows">
+          <div class="rc-row"><span class="rc-lbl">Caller</span><div><p class="rc-val">J. Kim &middot; <span class="mono">010-4482-&hellip;</span></p><p class="rc-note">Name said on the call &middot; number matches caller ID</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">Booked</span><div><p class="rc-val">Thursday 10:30</p><p class="rc-note">Free slot in your calendar &middot; confirmation text sent</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">Quote</span><div><p class="rc-val">Crown <span class="mono">$1,100&ndash;1,600</span> + exam <span class="mono">$95</span></p><p class="rc-note">From your own fee schedule, not a guess</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">Owner &middot; due</span><div><p class="rc-val">Front desk &middot; chart ready by Thu 9:00</p><p class="rc-note">Assigned automatically, visible to the team</p></div></div>
+          <div class="rc-row"><span class="rc-lbl">Follow-up</span><div><p class="rc-val">Reminder drafted for D+2</p><p class="rc-note">Nothing sends until you approve it</p></div></div>
+        </div>
+        <p class="rc-foot">Sample record from the 60-second demo. Names and prices are illustrative.</p>
       </div>
-
-      <div class="qmini woke">
-        <div class="qh2"><span>7:04 AM &mdash; what you woke up to</span></div>
-        <div class="wokerow"><b>Booked</b><span>Thu 10:30, in&nbsp;your&nbsp;calendar</span></div>
-        <div class="wokerow"><b>Estimate #2461</b><span>Crown $1,100&ndash;1,600 + exam&nbsp;$95, from&nbsp;your&nbsp;own price list</span></div>
-        <div class="wokerow"><b>Customer filed</b><span>Thread, quote and next step attached</span></div>
-      </div>
-      <p class="photocap">Nobody was awake for&nbsp;any of&nbsp;it. The&nbsp;sequence is the&nbsp;claim, not the&nbsp;figures &mdash; your&nbsp;own prices and calendar go in&nbsp;the&nbsp;place of&nbsp;these.</p>
     </div>
   </div>
 </header>
@@ -458,7 +432,7 @@
         <div class="secrule"><span class="eyebrow"><i></i>The&nbsp;2:47 AM problem</span></div>
         <h2 class="h2 onDark">The&nbsp;furnace&nbsp;dies <br>at&nbsp;2:47&nbsp;AM. <br><span class="gradtext warm">Your&nbsp;competitor picks&nbsp;up.</span></h2>
         <p class="lead onDark" style="margin-top:20px;">Nobody schedules an&nbsp;emergency. The&nbsp;AC quits on&nbsp;the&nbsp;hottest night, the&nbsp;pipe bursts on&nbsp;a&nbsp;Sunday, the&nbsp;guest lands at&nbsp;11 PM. Whoever answers first gets the&nbsp;job — and it is almost never the&nbsp;business that was asleep.</p>
-        <p style="margin-top:28px;"><a class="linkcta" style="color:#fff;border-bottom-color:var(--hair2);" href="./industries/home-services.html">How the&nbsp;home-services pack takes a&nbsp;night call&nbsp;&nbsp;→</a></p>
+        <p style="margin-top:28px;"><a class="linkcta" style="color:#141A1F;border-bottom-color:var(--hair2);" href="./industries/home-services.html">How the&nbsp;home-services pack takes a&nbsp;night call&nbsp;&nbsp;→</a></p>
       </div>
     </div>
 
@@ -987,7 +961,7 @@
 
     <div class="reveal">
       <div class="gradborder"><div style="padding:32px;">
-        <h3 class="sg" style="font-size:var(--fs-h3);font-weight:600;color:#fff;letter-spacing:-.02em;">Request a&nbsp;founding&nbsp;invite</h3>
+        <h3 class="sg" style="font-size:var(--fs-h3);font-weight:600;color:#141A1F;letter-spacing:-.02em;">Request a&nbsp;founding&nbsp;invite</h3>
         <p style="margin-top:10px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;">A&nbsp;human reads every&nbsp;one of&nbsp;these. Tell us the&nbsp;channel that&nbsp;hurts most and we'll start there.</p>
         <form class="eaform" data-earlyaccess method="post" style="margin-top:22px;">
           <input type="hidden" name="context" value="Homepage early access">
@@ -1024,69 +998,69 @@
       <div class="proof scene-frame">
 <svg viewBox="0 0 1000 560" role="img" aria-label="The Saleringo inbox shown on a laptop with a phone beside it">
   <defs>
-    <linearGradient id="dsBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08121F"/><stop offset="1" stop-color="#0D2038"/></linearGradient>
+    <linearGradient id="dsBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
     <linearGradient id="dsScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF3F8"/></linearGradient>
     <radialGradient id="dsGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".35"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
   </defs>
   <rect width="1000" height="560" fill="url(#dsBg)"/>
   <ellipse cx="470" cy="300" rx="360" ry="220" fill="url(#dsGlow)"/>
   <g transform="translate(150,90)">
-    <rect width="600" height="368" rx="14" fill="#0B1B2C" stroke="#2A4763" stroke-width="2"/>
+    <rect width="600" height="368" rx="14" fill="#F6F4EE" stroke="#141A1F" stroke-width="2"/>
     <rect x="14" y="14" width="572" height="340" rx="8" fill="url(#dsScreen)"/>
-    <rect x="14" y="14" width="572" height="34" rx="8" fill="#F4F7FA"/>
+    <rect x="14" y="14" width="572" height="34" rx="8" fill="#F6F4EE"/>
     <circle cx="36" cy="31" r="4.5" fill="#D96A5E"/><circle cx="52" cy="31" r="4.5" fill="#E8C34C"/><circle cx="68" cy="31" r="4.5" fill="#5FC48A"/>
-    <rect x="200" y="23" width="200" height="16" rx="8" fill="#E4EBF2"/>
-    <rect x="14" y="48" width="120" height="306" fill="#F7FAFC"/>
-    <rect x="28" y="66" width="70" height="8" rx="4" fill="#C9D6E2"/>
-    <rect x="28" y="92" width="92" height="22" rx="6" fill="#DFF3F3"/><rect x="36" y="99" width="52" height="8" rx="4" fill="#0FA3A3"/>
-    <rect x="28" y="124" width="80" height="8" rx="4" fill="#D5DFE9"/>
-    <rect x="28" y="148" width="86" height="8" rx="4" fill="#D5DFE9"/>
-    <rect x="28" y="172" width="72" height="8" rx="4" fill="#D5DFE9"/>
+    <rect x="200" y="23" width="200" height="16" rx="8" fill="#F6F4EE"/>
+    <rect x="14" y="48" width="120" height="306" fill="#F6F4EE"/>
+    <rect x="28" y="66" width="70" height="8" rx="4" fill="#F6F4EE"/>
+    <rect x="28" y="92" width="92" height="22" rx="6" fill="#F6F4EE"/><rect x="36" y="99" width="52" height="8" rx="4" fill="#0FA3A3"/>
+    <rect x="28" y="124" width="80" height="8" rx="4" fill="#F6F4EE"/>
+    <rect x="28" y="148" width="86" height="8" rx="4" fill="#F6F4EE"/>
+    <rect x="28" y="172" width="72" height="8" rx="4" fill="#F6F4EE"/>
     <g>
-      <rect x="146" y="60" width="240" height="60" rx="8" fill="#F0F7F8"/>
-      <circle cx="172" cy="90" r="14" fill="#24518F"/><text x="172" y="94" font-size="12" fill="#fff" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">MR</text>
-      <rect x="196" y="76" width="110" height="9" rx="4.5" fill="#0B1B33"/>
+      <rect x="146" y="60" width="240" height="60" rx="8" fill="#F6F4EE"/>
+      <circle cx="172" cy="90" r="14" fill="#F6F4EE"/><text x="172" y="94" font-size="12" fill="#F6F4EE" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">MR</text>
+      <rect x="196" y="76" width="110" height="9" rx="4.5" fill="#F6F4EE"/>
       <rect x="196" y="94" width="160" height="7" rx="3.5" fill="#93A3B4"/>
-      <rect x="340" y="76" width="34" height="14" rx="7" fill="#DFF3F3"/>
-      <rect x="146" y="128" width="240" height="60" rx="8" fill="#FFFFFF"/>
-      <circle cx="172" cy="158" r="14" fill="#7A5CC7"/><text x="172" y="162" font-size="12" fill="#fff" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">EJ</text>
-      <rect x="196" y="144" width="120" height="9" rx="4.5" fill="#0B1B33"/>
+      <rect x="340" y="76" width="34" height="14" rx="7" fill="#F6F4EE"/>
+      <rect x="146" y="128" width="240" height="60" rx="8" fill="#F6F4EE"/>
+      <circle cx="172" cy="158" r="14" fill="#7A5CC7"/><text x="172" y="162" font-size="12" fill="#F6F4EE" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">EJ</text>
+      <rect x="196" y="144" width="120" height="9" rx="4.5" fill="#F6F4EE"/>
       <rect x="196" y="162" width="150" height="7" rx="3.5" fill="#93A3B4"/>
-      <rect x="336" y="144" width="42" height="14" rx="7" fill="#FAF0E1"/>
-      <rect x="146" y="196" width="240" height="60" rx="8" fill="#FFFFFF"/>
-      <circle cx="172" cy="226" r="14" fill="#0FA3A3"/><text x="172" y="230" font-size="12" fill="#fff" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">LP</text>
-      <rect x="196" y="212" width="104" height="9" rx="4.5" fill="#0B1B33"/>
+      <rect x="336" y="144" width="42" height="14" rx="7" fill="#F6F4EE"/>
+      <rect x="146" y="196" width="240" height="60" rx="8" fill="#F6F4EE"/>
+      <circle cx="172" cy="226" r="14" fill="#0FA3A3"/><text x="172" y="230" font-size="12" fill="#F6F4EE" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">LP</text>
+      <rect x="196" y="212" width="104" height="9" rx="4.5" fill="#F6F4EE"/>
       <rect x="196" y="230" width="146" height="7" rx="3.5" fill="#93A3B4"/>
-      <rect x="340" y="212" width="34" height="14" rx="7" fill="#DFF3F3"/>
+      <rect x="340" y="212" width="34" height="14" rx="7" fill="#F6F4EE"/>
     </g>
-    <rect x="398" y="60" width="174" height="280" rx="8" fill="#FBFDFE" stroke="#E4EBF2"/>
-    <rect x="414" y="78" width="90" height="10" rx="5" fill="#0B1B33"/>
+    <rect x="398" y="60" width="174" height="280" rx="8" fill="#F6F4EE" stroke="#141A1F"/>
+    <rect x="414" y="78" width="90" height="10" rx="5" fill="#F6F4EE"/>
     <rect x="414" y="102" width="140" height="7" rx="3.5" fill="#B9C6D3"/>
     <rect x="414" y="118" width="120" height="7" rx="3.5" fill="#B9C6D3"/>
-    <rect x="414" y="146" width="142" height="34" rx="8" fill="#EFF7F7"/>
+    <rect x="414" y="146" width="142" height="34" rx="8" fill="#F6F4EE"/>
     <rect x="426" y="158" width="80" height="10" rx="5" fill="#0FA3A3"/>
-    <rect x="414" y="196" width="142" height="34" rx="8" fill="#F5F8FB"/>
+    <rect x="414" y="196" width="142" height="34" rx="8" fill="#F6F4EE"/>
     <rect x="426" y="208" width="96" height="10" rx="5" fill="#8FA0B2"/>
     <rect x="414" y="252" width="142" height="30" rx="15" fill="#0FA3A3"/>
-    <text x="485" y="272" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">Take over</text>
-    <rect x="-40" y="368" width="680" height="16" rx="8" fill="#16324B"/>
+    <text x="485" y="272" font-family="Plus Jakarta Sans,sans-serif" font-size="12" fill="#F6F4EE" text-anchor="middle" font-weight="700">Take over</text>
+    <rect x="-40" y="368" width="680" height="16" rx="8" fill="#F6F4EE"/>
   </g>
   <g transform="translate(766,178)">
-    <rect width="160" height="300" rx="26" fill="#0B1B2C" stroke="#2A4763" stroke-width="2"/>
-    <rect x="10" y="10" width="140" height="280" rx="20" fill="#0F2438"/>
-    <rect x="54" y="14" width="52" height="10" rx="5" fill="#08131F"/>
-    <rect x="24" y="46" width="70" height="8" rx="4" fill="#3E5D82"/>
-    <rect x="24" y="72" width="112" height="40" rx="10" fill="rgba(255,255,255,.08)"/>
+    <rect width="160" height="300" rx="26" fill="#F6F4EE" stroke="#141A1F" stroke-width="2"/>
+    <rect x="10" y="10" width="140" height="280" rx="20" fill="#F6F4EE"/>
+    <rect x="54" y="14" width="52" height="10" rx="5" fill="#F6F4EE"/>
+    <rect x="24" y="46" width="70" height="8" rx="4" fill="#F6F4EE"/>
+    <rect x="24" y="72" width="112" height="40" rx="10" fill="rgba(20,26,31,.08)"/>
     <rect x="34" y="84" width="80" height="7" rx="3.5" fill="#8FA0B2"/>
     <rect x="34" y="98" width="60" height="6" rx="3" fill="#5E6C82"/>
     <rect x="34" y="124" width="112" height="44" rx="10" fill="rgba(23,189,189,.16)"/>
-    <rect x="44" y="138" width="84" height="7" rx="3.5" fill="#9BE7E7"/>
+    <rect x="44" y="138" width="84" height="7" rx="3.5" fill="#F6F4EE"/>
     <rect x="44" y="152" width="64" height="6" rx="3" fill="#5FA9A9"/>
-    <rect x="24" y="180" width="112" height="40" rx="10" fill="rgba(255,255,255,.08)"/>
+    <rect x="24" y="180" width="112" height="40" rx="10" fill="rgba(20,26,31,.08)"/>
     <rect x="34" y="192" width="76" height="7" rx="3.5" fill="#8FA0B2"/>
     <rect x="34" y="206" width="52" height="6" rx="3" fill="#5E6C82"/>
     <rect x="24" y="238" width="112" height="30" rx="15" fill="#17BDBD"/>
-    <text x="80" y="258" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#032222" text-anchor="middle" font-weight="800">Answered</text>
+    <text x="80" y="258" font-family="Plus Jakarta Sans,sans-serif" font-size="12.5" fill="#F6F4EE" text-anchor="middle" font-weight="800">Answered</text>
   </g>
 </svg>
         <span class="caption">What you get on&nbsp;day one — the&nbsp;shared inbox, on&nbsp;desktop and phone.</span>
@@ -1110,7 +1084,7 @@
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v75.0</span>
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v76.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="./sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1156,17 +1130,17 @@
   </div>
 </div>
 
-<script src="../assets/js/site.js?v=75.0"></script>
-<script src="../assets/js/balance.js?v=75.0" defer></script>
-<script src="../assets/js/panels.js?v=75.0" defer></script>
-<script src="../assets/js/wrap.js?v=75.0" defer></script>
-<script src="../assets/js/rail.js?v=75.0" defer></script>
-<script src="../assets/js/canvas.js?v=75.0" defer></script>
-<script src="../assets/js/scenes.js?v=75.0" defer></script>
-<script src="../assets/js/play.js?v=75.0"></script>
-<script src="../assets/js/demo60.js?v=75.0" defer></script>
-<script src="../assets/js/guide.js?v=75.0"></script>
-<script src="../assets/js/pricelab.js?v=75.0"></script>
+<script src="../assets/js/site.js?v=76.0"></script>
+<script src="../assets/js/balance.js?v=76.0" defer></script>
+<script src="../assets/js/panels.js?v=76.0" defer></script>
+<script src="../assets/js/wrap.js?v=76.0" defer></script>
+<script src="../assets/js/rail.js?v=76.0" defer></script>
+<script src="../assets/js/canvas.js?v=76.0" defer></script>
+<script src="../assets/js/scenes.js?v=76.0" defer></script>
+<script src="../assets/js/play.js?v=76.0"></script>
+<script src="../assets/js/demo60.js?v=76.0" defer></script>
+<script src="../assets/js/guide.js?v=76.0"></script>
+<script src="../assets/js/pricelab.js?v=76.0"></script>
 <script>
 /* ── ROI calculator (browser-only, nothing is sent anywhere) ── */
 (function () {

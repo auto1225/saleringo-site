@@ -33,27 +33,27 @@ CSS = """
     font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
   .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
     border-radius:50%;border:1.5px solid var(--teal);}
-  .kolist li b{display:block;color:#fff;margin-bottom:4px;}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
   .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
   .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
   .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;}
   @media (max-width:880px){.trio{grid-template-columns:1fr;}}
-  .trio > div{padding:26px 24px;border:1px solid var(--hair-d);border-radius:12px;}
-  .trio b{display:block;font-size:var(--fs-lead);color:#fff;}
+  .trio > div{padding:26px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .trio b{display:block;font-size:var(--fs-lead);color:#141A1F;}
   .trio p{margin-top:10px;font-size:var(--fs-sm);color:var(--tx2);line-height:1.75;}
   .sec-light .trio > div,.bg-paper .trio > div{border-color:#D5DBE4;}
   .sec-light .trio b,.bg-paper .trio b{color:var(--l-ink);}
   .sec-light .trio p,.bg-paper .trio p{color:var(--l-tx2);}
   .nightline{display:grid;gap:16px;padding:26px 24px;}
   .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
-  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(255,255,255,.5);
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
     text-transform:uppercase;padding-top:9px;}
-  .nl .t em{display:block;font-style:normal;color:rgba(255,255,255,.66);
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
     letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
   @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
   .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
   .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
-    font-size:var(--fs-sm);font-weight:600;color:#fff;}
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
   .pipe i{font-style:normal;color:var(--teal);}
 """
 
