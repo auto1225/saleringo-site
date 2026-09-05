@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI answering for Daycare & preschool &mdash; how a call at night becomes a booking</title>
+<meta name="description" content="The AI answers Daycare & preschool inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
+<link rel="canonical" href="https://claude.saleringo.com/en/industries/childcare.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:url" content="https://claude.saleringo.com/en/industries/childcare.html">
+<meta property="og:title" content="AI answering for Daycare & preschool &mdash; how a call at night becomes a booking">
+<meta property="og:description" content="The AI answers Daycare & preschool inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
+<meta property="og:image" content="https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="AI answering for Daycare & preschool &mdash; how a call at night becomes a booking">
+<meta name="twitter:description" content="The AI answers Daycare & preschool inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"AI answering for Daycare & preschool &mdash; how a call at night becomes a booking","description":"The AI answers Daycare & preschool inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.","url":"https://claude.saleringo.com/en/industries/childcare.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"en"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/index.html"},{"@type":"ListItem","position":2,"name":"Trades","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"Daycare & preschool","item":"https://claude.saleringo.com/en/industries/childcare.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=82.0">
+<style>
+
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
+</style>
+<!--#alt-->
+<link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/childcare.html">
+<link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/childcare.html">
+<link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/childcare.html">
+<!--/#alt-->
+</head>
+<body data-grade="voice">
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="grainlayer grain" aria-hidden="true"></div>
+  <!--#nav-->
+<div class="navwrap"><nav class="nav" aria-label="Main">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v82.0">v82.0</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">Your&nbsp;trade<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">Health &amp; care</p><ul aria-labelledby="nh-trade-0"><li><a href="../industries/dental.html">Dental</a></li><li><a href="../industries/clinics.html">Clinics &amp; med-spa</a></li><li><a href="../industries/veterinary.html">Veterinary</a></li><li><a href="../industries/senior-care.html">Senior living &amp; care</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">Home &amp; property</p><ul aria-labelledby="nh-trade-1"><li><a href="../industries/home-services.html">Home services</a></li><li><a href="../industries/pest-control.html">Pest control</a></li><li><a href="../industries/property-management.html">Property management</a></li><li><a href="../industries/real-estate.html">Estate &amp; lettings</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">Vehicle, plant &amp; storage</p><ul aria-labelledby="nh-trade-2"><li><a href="../industries/auto-repair.html">Auto repair</a></li><li><a href="../industries/equipment-rental.html">Equipment &amp; tool hire</a></li><li><a href="../industries/self-storage.html">Self-storage</a></li><li><a href="../industries/movers.html">Movers &amp; removals</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">Booked by appointment</p><ul aria-labelledby="nh-trade-3"><li><a href="../industries/salons.html">Salons &amp; barbers</a></li><li><a href="../industries/fitness.html">Gyms &amp; studios</a></li><li><a href="../industries/academies.html">Tutoring &amp; academies</a></li><li><a href="../industries/golf.html">Golf &amp; country clubs</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">Places &amp; hospitality</p><ul aria-labelledby="nh-trade-4"><li><a href="../industries/stays.html">Boutique stays</a></li><li><a href="../industries/venues.html">Wedding &amp; venues</a></li><li><a href="../industries/restaurants.html">Restaurants</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">Professional &amp; public</p><ul aria-labelledby="nh-trade-5"><li><a href="../industries/legal.html">Legal</a></li><li><a href="../industries/funeral-homes.html">Funeral homes</a></li><li><a href="../industries/universities.html">Universities &amp; admissions</a></li><li><a href="../industries/public-sector.html">Public sector</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">Online &amp; multi-site</p><ul aria-labelledby="nh-trade-6"><li><a href="../industries/ecommerce.html">Online stores</a></li><li><a href="../industries/franchise.html">Franchise &amp; multi-site</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../sitemap.html#tours">Tour one trade end to end<span aria-hidden="true"> →</span></a><a class="np-all" href="../industries.html">All fifty-five trades · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">Pricing<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">The numbers</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">Plans and prices</a></li><li><a href="../checkout.html">Order form</a></li><li><a href="../pricing.html#crm">What the CRM includes</a></li><li><a href="../pricing.html#channels">Channels and per-minute</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">The honest parts</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">What you are comparing against</a></li><li><a href="../pricing.html#not-paying">What you are not paying for</a></li><li><a href="../pricing.html#calculator">Missed-call calculator</a></li><li><a href="../pricing.html#faq">Pricing questions</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">Where you are</p><ul aria-labelledby="nh-price-2"><li><a href="../pricing.html#countries">Countries and currencies</a></li><li><a href="../cross-border.html">Cross-border businesses</a></li><li><a href="../get-started.html">Get my plan</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">Tour: what it costs<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">Security<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">How it is held</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">Security &amp; trust</a></li><li><a href="../security.html#measures">The measures, listed</a></li><li><a href="../security.html#subprocessors">Subprocessors</a></li><li><a href="../security.html#dpa">Data processing agreement</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">What it refuses to do</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../verified-ai.html#audit">The audit trail</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">Company &amp; legal</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">About us</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../privacy.html#your-rights">Your rights</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../sitemap.html">Site map &amp; tours</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">Tour: what it refuses to do<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820" title="Korean number — international rates apply. AI answers first."><span aria-hidden="true">&#9990;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <a class="langsw" href="../../ko/industries/childcare.html" hreflang="ko" lang="ko">한국어</a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+<!--/#nav-->
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>Daycare &middot; preschool &middot; nursery</span>
+      <h1>Drop-off is when<br>the phone rings.</h1>
+      <p class="sub">At 8:40 every teacher is at the gate. That is when the waitlist call, the tour request and "she has a fever, can she still come" all land at once.</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; Daycare & preschool</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>The drop-off call</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">While every teacher is at the gate,<br>this is how it goes.</h2>
+    <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/childcare.json" data-d60-audio="../../assets/audio/demo/">
+      
+      <div class="d60tabs" role="tablist" aria-label="Chapters">
+        <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · 8:41 AM, the call</b><span data-d60-range="1" data-base="three-year-old room · waitlist · tour next Wednesday">three-year-old room · waitlist · tour next Wednesday</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · Next morning, WhatsApp</b><span data-d60-range="2" data-base="bring the child? · the development question goes to a person">bring the child? · the development question goes to a person</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 9:00 AM, the director’s screen</b><span data-d60-range="3" data-base="tour · waitlist check · owner · one reply waiting">tour · waitlist check · owner · one reply waiting</span></button>
+      </div>
+
+      <div class="d60stage">
+        <div class="d60call">
+          <div class="d60callhead">
+            <span class="d60avatar" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h3l1.5 3.5-2 1.2a9 9 0 0 0 5.3 5.3l1.2-2 3.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A13.5 13.5 0 0 1 2.5 5.1 1.5 1.5 0 0 1 4 3.5z"></path></svg></span>
+            <div class="d60callwho"><b><span data-d60-biz>Little Meadow Daycare</span> · <span data-d60-callstate>Incoming call</span></b><span class="mono" data-d60-meta>Monday 8:41 AM · drop-off · a fictional daycare</span><span class="mono d60caller">From <span data-d60-caller></span></span></div>
+            <span class="d60tag">Simulation · sample data</span>
+          </div>
+          <div class="d60wavewrap"><canvas data-d60-wave width="720" height="52" aria-hidden="true"></canvas><span class="d60speaker" data-d60-speaker aria-live="polite"></span></div>
+          <div class="d60convo" data-d60-convo aria-live="polite"></div>
+          <div class="d60ctl">
+            <button class="btn btn-teal" type="button" data-d60-play aria-pressed="false">&#9654; Play — watch and listen</button>
+            <button class="btn btn-ghostd" type="button" data-d60-caption aria-pressed="false">Captions only</button>
+            <button class="btn btn-ghostd" type="button" data-d60-restart>Restart</button>
+            <button class="btn btn-ghostd d60speed" type="button" data-d60-speed aria-label="Playback speed">1×</button>
+            
+            <div class="d60prog" aria-hidden="true"><span class="mono" data-d60-time>0:00</span><div class="d60bar"><i data-d60-bar></i></div><span class="mono" data-d60-total>&ndash;:&ndash;&ndash;</span></div>
+          </div>
+        </div>
+
+        <div class="d60col">
+          <div class="d60card"><p class="lbl">What it captured — with the source of every field</p><div data-d60-fields></div></div>
+          <div class="d60card d60rec" data-d60-record>
+            <p class="lbl">The customer record — one, not three</p>
+            <div class="who"><b data-d60-custname>Mark Sung</b> <span data-d60-chans><i class="d60ph">Phone</i></span></div>
+            <p class="d60match" data-d60-match hidden>Same customer — matched by phone number, thread continued</p>
+            <div data-d60-work></div>
+          </div>
+          <div class="d60card d60hand" data-d60-handoff hidden>
+            <p class="lbl">Handed to a person — and what the person receives</p>
+            <ul data-d60-handlist><li>The whole conversation, both channels</li><li>Every captured field, with its source</li><li>Why it stopped: a child’s development is a conversation a teacher has after seeing the child, not a fact for the phone</li></ul>
+          </div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">The owner’s morning screen — what is waiting at 9:00</p><div data-d60-morninglist></div></div>
+        </div>
+      </div>
+
+      <p class="scenecap" data-d60-honest>Scripted simulation · sample data · both voices were synthesised for this demo · figures are an example price list. To hear the real AI, call <a data-tel-link href="tel:+827052770820">+82 70-5277-0820</a>.</p>
+      
+      
+      <div class="d60end" data-d60-end hidden>
+        <p class="d60summary" data-d60-summary></p>
+        <div class="d60endrow">
+          <a class="btn btn-teal" href="../../get-started.html">Get my plan for this trade</a>
+          <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">Call the live AI — no form first</a>
+          <span class="telnote">Korean number — international rates apply</span>
+        </div>
+      </div>
+    </div>
+    
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">Daycare & preschool &mdash; <b>Drop-off</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">Cannot leave the children</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>Parent</em>8:41 AM</span><div class="bub user">Is there a place in the three-year-old room next spring? I'd like to see the centre.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+22 s</span><div class="bub ai">The three-year-old room holds <b>15 children</b>, and places are offered in waitlist order, so I cannot confirm one myself. Tours run <b>Wednesdays at 10:30</b> and next Wednesday is open. Full-day tuition is <b>$1,250 a month</b>, with enrichment at <b>$60</b>.</div></div><div class="nl us"><span class="t"><em>Parent</em>8:43 AM</span><div class="bub user">Next Wednesday, please. She isn't potty-trained yet. Is that a problem?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+7 s</span><div class="bub ai">Toilet training and settling in are things the director and her teacher talk through with you on the tour. You are booked for next Wednesday at 10:30; give me her name and date of birth and I will have the waitlist position ready.</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      a Daycare & preschool price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the price list the director enters.</p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="cost">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A call a Daycare & preschool misses<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">A daycare enquiry is not one child; it is three years. A three-year-old stays until preschool ends and the younger sibling follows. But the enquiry comes at drop-off and nap time, when no teacher can leave the room. The tour request nobody answered is touring another centre next week.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="Closed hours" xmlns="http://www.w3.org/2000/svg"><title>Closed hours</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Closed hours</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15 hours</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >of 24 hours</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >closed</text><circle cx="141.84" cy="46.3206" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >open 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >closed</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >11:42 PM — call</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >calls still arrive in these hours</text></svg><figcaption class="illcap">Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in a Daycare & preschool.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the Daycare & preschool answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>Never confirms a place.</b>Places follow the waitlist and the director. The AI gives room sizes and tour dates and stops there.</li><li><b>Never judges a child's development.</b>"She is not talking much yet, is that normal" goes unanswered. Her teacher and the director look at the child, not at a phone call.</li><li><b>Never changes who picks a child up.</b>"Her aunt is collecting her today" is logged and passed to the director, and changed only after the director verifies the parent herself.</li><li><b>A sick or hurt child is a person's call, not a booking.</b>For a fever it reads the centre's policy as written and leaves the decision to the teacher. A call about an injury reaches the director at once.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="The gate before a person" xmlns="http://www.w3.org/2000/svg"><title>The gate before a person</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">The gate before a person</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >The customer asks</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“Is there a place in t</text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >he three-year-old…”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >On the price list?</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Needs a judgement?</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Safety involved?</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >It answers</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >word for word, with the source</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >Handed to a person</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >the whole conversation</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >every captured field</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >why it stopped</text></svg><figcaption class="illcap">On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="t-md sec-light bg-paper" id="crm">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The Daycare & preschool CRM comes with Daycare & preschool fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="Customer record" xmlns="http://www.w3.org/2000/svg"><title>Customer record</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Customer record</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >Jane Kim</text><text x="168" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">555-01··</text><rect x="400" y="54" width="44.1" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="422.05" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >Phone</text><rect x="452.1" y="54" width="64.56" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="484.38" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >WhatsApp</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Child&#x27;s age and reques</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Waitlist position to c</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Tour slot booked</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Fees quoted from the p</text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text></svg><figcaption class="illcap">The card a call leaves behind, with the source of every field.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>Child's age and requested room</span><span>Waitlist position to check</span><span>Tour slot booked</span><span>Fees quoted from the published list</span><span>Sibling already enrolled</span><span>Pickup or health request passed to the director</span></div></div>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="pipeline">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal"><b>Enquiry</b><i>&rarr;</i><b>Tour booked</b><i>&rarr;</i><b>Tour & talk</b><i>&rarr;</i><b>Place offered</b><i>&rarr;</i><b>Enrolment & settling in</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="Pipeline" xmlns="http://www.w3.org/2000/svg"><title>Pipeline</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Pipeline</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Enquiry</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Tour book</text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Tour &amp; ta</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Place off</text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Enrolment</text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">The Daycare & preschool pipeline as it is. How many inquiries sit at each stage, at a glance.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="packcard t-md sec-dark bg-grid" id="the-pack">
+  <div class="wrap">
+    <a class="pc-link" href="./childcare-pack.html">
+      <span class="pc-k">The Daycare & preschool pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
+      <span class="pc-go" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<section class="t-md sec-light2" id="others">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal"><a href="./academies.html"><img src="https://images.pexels.com/photos/6238038/pexels-photo-6238038.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Academies & tutoring</b></a><a href="./universities.html"><img src="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Universities</b></a><a href="./salons.html"><img src="https://images.pexels.com/photos/9146943/pexels-photo-9146943.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Hair & beauty salons</b></a><a href="./fitness.html"><img src="https://images.pexels.com/photos/11036670/pexels-photo-11036670.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Gyms & fitness</b></a><a href="./driving-school.html"><img src="https://images.pexels.com/photos/6817037/pexels-photo-6817037.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Driving schools</b></a><a href="./music-art-academy.html"><img src="https://images.pexels.com/photos/8520472/pexels-photo-8520472.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Music & art schools</b></a><a href="./yoga-pilates.html"><img src="https://images.pexels.com/photos/8769162/pexels-photo-8769162.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Yoga & pilates studios</b></a><a href="./martial-arts.html"><img src="https://images.pexels.com/photos/7045547/pexels-photo-7045547.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Martial arts dojos</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">Dental</a><a href="./clinics.html">Clinics & med-spa</a><a href="./academies.html">Academies & tutoring</a><a href="./salons.html">Hair & beauty salons</a><a href="./veterinary.html">Veterinary</a><a href="./auto-repair.html">Auto repair</a><a href="./real-estate.html">Real estate</a><a href="./venues.html">Wedding & event venues</a><a href="./senior-care.html">Senior care</a><a href="./fitness.html">Gyms & fitness</a><a href="./home-services.html">Home services</a><a href="./pest-control.html">Pest control</a><a href="./property-management.html">Property management</a><a href="./movers.html">Movers</a><a href="./restaurants.html">Restaurants</a><a href="./stays.html">Boutique stays</a><a href="./golf.html">Golf clubs</a><a href="./funeral-homes.html">Funeral homes</a><a href="./legal.html">Law firms</a><a href="./universities.html">Universities</a><a href="./public-sector.html">Public sector</a><a href="./self-storage.html">Self storage</a><a href="./equipment-rental.html">Equipment rental</a><a href="./ecommerce.html">Online stores</a><a href="./franchise.html">Franchises</a><a href="./pharmacy.html">Pharmacy</a><a href="./hospital-outpatient.html">Hospitals & outpatient</a><a href="./physio-rehab.html">Physio & rehab</a><a href="./korean-medicine.html">Acupuncture & traditional medicine</a><a href="./optician.html">Opticians</a><a href="./counseling.html">Counseling & therapy</a><a href="./driving-school.html">Driving schools</a><a href="./music-art-academy.html">Music & art schools</a><a href="./yoga-pilates.html">Yoga & pilates studios</a><a href="./martial-arts.html">Martial arts dojos</a><a href="./nail-spa.html">Nail & spa</a><a href="./barbershop.html">Barbershops</a><a href="./pet-grooming.html">Pet grooming & boarding</a><a href="./cleaning-services.html">Cleaning services</a><a href="./interior-renovation.html">Renovation contractors</a><a href="./landscaping.html">Landscaping & lawn care</a><a href="./locksmith.html">Locksmiths</a><a href="./appliance-repair.html">Appliance repair</a><a href="./laundry.html">Dry cleaning & laundry</a><a href="./car-wash.html">Car wash & detailing</a><a href="./car-dealers.html">Car dealerships</a><a href="./towing.html">Towing & roadside</a><a href="./cafes-bakeries.html">Cafés & bakeries</a><a href="./catering.html">Catering</a><a href="./travel-agency.html">Travel agencies</a><a href="./photo-studio.html">Photo studios</a><a href="./florist.html">Florists</a><a href="./accounting-tax.html">Accountants & tax</a><a href="./insurance-agency.html">Insurance agencies</a></div>
+  </div>
+</section>
+
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your Daycare & preschool price list,<br>and we show it answering from that list.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; Daycare & preschool<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="9:00 AM — the owner’s screen" xmlns="http://www.w3.org/2000/svg"><title>9:00 AM — the owner’s screen</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >9:00 AM — the owner’s screen</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >1 new booking</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Jane Kim · Thu 10:30 · in the calendar</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >1 estimate sent</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >$550 · by text · opened</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Front-desk task</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Chart ready by Thu 09:00</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >1 reply waiting</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >insurance question · thread attached</text></svg><figcaption class="illcap">What the night produced, waiting on the morning screen.</figcaption></figure></div>
+  </div>
+</section>
+
+<!--#footer-->
+<footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v82.0</span>
+        <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><div class="hl3">The product</div><a class="lnk" href="../platform.html">Platform &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI phone</a>
+        <a class="lnk" href="../webchat.html">Website chat</a>
+        <a class="lnk" href="../whatsapp.html">WhatsApp &amp; messengers</a>
+        <a class="lnk" href="../integrations.html">Integrations</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../ai-answering-service.html">Buyer&rsquo;s guide</a></div>
+      <div class="fcol ftrades"><div class="hl3">Your trade</div><div class="ftgrid"><div class="fgrp"><div class="hl5">Health &amp; care</div><a class="lnk" href="../industries/dental.html">Dental</a><a class="lnk" href="../industries/clinics.html">Clinics &amp; med-spa</a><a class="lnk" href="../industries/veterinary.html">Veterinary</a><a class="lnk" href="../industries/senior-care.html">Senior living &amp; care</a></div><div class="fgrp"><div class="hl5">Home &amp; property</div><a class="lnk" href="../industries/home-services.html">Home services</a><a class="lnk" href="../industries/pest-control.html">Pest control</a><a class="lnk" href="../industries/property-management.html">Property management</a><a class="lnk" href="../industries/real-estate.html">Estate &amp; lettings</a></div><div class="fgrp"><div class="hl5">Vehicle, plant &amp; storage</div><a class="lnk" href="../industries/auto-repair.html">Auto repair</a><a class="lnk" href="../industries/equipment-rental.html">Equipment &amp; tool hire</a><a class="lnk" href="../industries/self-storage.html">Self-storage</a><a class="lnk" href="../industries/movers.html">Movers &amp; removals</a></div><div class="fgrp"><div class="hl5">Booked by appointment</div><a class="lnk" href="../industries/salons.html">Salons &amp; barbers</a><a class="lnk" href="../industries/fitness.html">Gyms &amp; studios</a><a class="lnk" href="../industries/academies.html">Tutoring &amp; academies</a><a class="lnk" href="../industries/golf.html">Golf &amp; country clubs</a></div><div class="fgrp"><div class="hl5">Places &amp; hospitality</div><a class="lnk" href="../industries/stays.html">Boutique stays</a><a class="lnk" href="../industries/venues.html">Wedding &amp; venues</a><a class="lnk" href="../industries/restaurants.html">Restaurants</a></div><div class="fgrp"><div class="hl5">Professional &amp; public</div><a class="lnk" href="../industries/legal.html">Legal</a><a class="lnk" href="../industries/funeral-homes.html">Funeral homes</a><a class="lnk" href="../industries/universities.html">Universities &amp; admissions</a><a class="lnk" href="../industries/public-sector.html">Public sector</a></div><div class="fgrp"><div class="hl5">Online &amp; multi-site</div><a class="lnk" href="../industries/ecommerce.html">Online stores</a><a class="lnk" href="../industries/franchise.html">Franchise &amp; multi-site</a></div></div><a class="lnk ftall" href="../industries.html">All fifty-five trades →</a></div>
+      <div class="fcol"><div class="hl3">Prices &amp; proof</div><a class="lnk" href="../pricing.html">Pricing</a>
+        <a class="lnk" href="../pricing.html#plans">Plans</a>
+        <a class="lnk" href="../pricing.html#not-paying">What you are not paying for</a>
+        <a class="lnk" href="../pricing.html#calculator">Missed-call calculator</a>
+        <a class="lnk" href="../pricing.html#countries">Countries &amp; currencies</a>
+        <a class="lnk" href="../demo.html">See a conversation</a>
+        <a class="lnk" href="../get-started.html">Get my plan</a></div>
+      <div class="fcol"><div class="hl3">Company &amp; trust</div><a class="lnk" href="../about.html">About</a>
+        <a class="lnk" href="../security.html">Security &amp; trust</a>
+        <a class="lnk" href="../verified-ai.html">How answers are checked</a>
+        <a class="lnk" href="../privacy.html">Privacy policy</a>
+        <a class="lnk" href="../terms.html">Terms of service</a>
+        <a class="lnk" href="../status.html">Status & incidents</a>
+        <a class="lnk" href="../sitemap.html">Site map</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; Honest Marketing Co., Ltd. &mdash; registered in&nbsp;South Korea, serving customers worldwide</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">Site map</a><a class="lnk" href="../privacy.html">Privacy</a><a class="lnk" href="../terms.html">Terms</a><a class="langsw" href="../../ko/industries/childcare.html" hreflang="ko" lang="ko">한국어</a><span>English &middot; serving customers worldwide</span></span>
+    </div>
+  </div></footer>
+<!--/#footer-->
+</main>
+
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your Daycare & preschool price list
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
+
+
+<script src="../../assets/js/site.js?v=82.0"></script>
+<script src="../../assets/js/balance.js?v=82.0" defer></script>
+<script src="../../assets/js/panels.js?v=82.0" defer></script>
+<script src="../../assets/js/wrap.js?v=82.0" defer></script>
+<script src="../../assets/js/rail.js?v=82.0" defer></script>
+<script src="../../assets/js/guide.js?v=82.0"></script>
+<script src="../../assets/js/demofull.js?v=82.0" defer></script>
+</body>
+</html>

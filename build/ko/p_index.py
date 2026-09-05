@@ -11,6 +11,7 @@ not allowed to say on the phone.
 The file name is index.html because ko/index.html must sit opposite
 en/index.html for the language switch and the hreflang pair to find it.
 """
+import io
 import os
 import sys
 
@@ -148,23 +149,24 @@ BODY = """
      공표한 것과 같고, 시뮬레이션이라고 화면에 적혀 있다. -->
 <section class="d60sec t-xl sec-dark bg-grid" id="demo60">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>데모 &middot; 약 2분 30초</span><span class="line"></span></div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>데모 &middot; 업종마다 2~3분</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">전화 한 통이 예약·견적·고객 카드·기한이<br>되는 과정을 그대로 보고, 들어 보세요.</h2>
     <p class="lead onDark reveal" style="margin-top:14px;">각본이 있는 시연 &middot; 예시 데이터 &middot; 수치는 실제 페이지들이 공표한 그대로입니다.
       진짜가 듣고 싶으시면 <a class="lnk" data-tel-link href="tel:+827052770820">지금 AI에게 전화</a>해 보세요.</p>
 
-    <div class="reveal d60v2" data-d60 data-d60-audio="../assets/audio/demo/">
+    <div class="reveal d60v2" data-d60 data-d60-script="../assets/demo/dental.json" data-d60-audio="../assets/audio/demo/">
+      <label class="d60pick"><span>내 업종으로 듣기</span><select data-d60-pick aria-label="내 업종으로 듣기"><option value="appliance-repair">가전 수리</option><option value="property-management">건물관리</option><option value="towing">견인 · 긴급출동</option><option value="golf">골프장 · 연습장</option><option value="public-sector">공공기관</option><option value="florist">꽃집</option><option value="nail-spa">네일 · 스파</option><option value="universities">대학 입학상담</option><option value="veterinary">동물병원</option><option value="physio-rehab">물리치료 · 재활</option><option value="salons">미용실</option><option value="pet-grooming">반려동물 미용 · 호텔</option><option value="pest-control">방역 · 해충방제</option><option value="legal">법률사무소</option><option value="hospital-outpatient">병원 외래 · 대표번호</option><option value="insurance-agency">보험 대리점</option><option value="real-estate">부동산</option><option value="photo-studio">사진관 · 스튜디오</option><option value="home-services">설비 · 수리</option><option value="accounting-tax">세무 · 회계 사무소</option><option value="car-wash">세차 · 디테일링</option><option value="laundry">세탁 · 드라이클리닝</option><option value="self-storage">셀프 스토리지</option><option value="counseling">심리상담센터</option><option value="optician">안경원</option><option value="pharmacy">약국</option><option value="childcare">어린이집 · 유치원</option><option value="travel-agency">여행사</option><option value="locksmith">열쇠 · 도어락</option><option value="ecommerce">온라인 쇼핑몰</option><option value="yoga-pilates">요가 · 필라테스</option><option value="senior-care">요양</option><option value="driving-school">운전학원</option><option value="venues">웨딩홀 · 행사장</option><option value="restaurants">음식점</option><option value="music-art-academy">음악 · 미술 학원</option><option value="clinics">의원 · 피부과</option><option value="barbershop">이발소 · 바버샵</option><option value="movers">이사 · 용달</option><option value="interior-renovation">인테리어 · 리모델링</option><option value="car-dealers">자동차 딜러</option><option value="auto-repair">자동차 정비</option><option value="funeral-homes">장례식장</option><option value="equipment-rental">장비 대여</option><option value="landscaping">조경 · 정원 관리</option><option value="cleaning-services">청소 서비스</option><option value="dental" selected>치과</option><option value="cafes-bakeries">카페 · 베이커리</option><option value="catering">케이터링 · 출장뷔페</option><option value="martial-arts">태권도 · 무술 도장</option><option value="stays">펜션 · 숙박</option><option value="franchise">프랜차이즈 본부</option><option value="academies">학원</option><option value="korean-medicine">한의원</option><option value="fitness">헬스장</option></select><small>55개 업종 · 같은 플레이어, 다른 통화</small></label>
       <div class="d60tabs" role="tablist" aria-label="장">
         <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · 밤 11:42, 전화</b><span data-d60-range="1" data-base="깨진 앞니 · 견적 · 목요일 예약">깨진 앞니 · 견적 · 목요일 예약</span></button>
         <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · 다음 날 아침, 카카오톡</b><span data-d60-range="2" data-base="주차 질문 · 보험 질문은 사람에게">주차 질문 · 보험 질문은 사람에게</span></button>
-        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 오전 9:00, 사장님 화면</b><span data-d60-range="3" data-base="예약 · 견적서 · 담당 · 답변 대기">예약 · 견적서 · 담당 · 답변 대기</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 오전 9:00, 원장님 화면</b><span data-d60-range="3" data-base="예약 · 견적서 · 담당 · 답변 대기">예약 · 견적서 · 담당 · 답변 대기</span></button>
       </div>
 
       <div class="d60stage">
         <div class="d60call">
           <div class="d60callhead">
             <span class="d60avatar" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h3l1.5 3.5-2 1.2a9 9 0 0 0 5.3 5.3l1.2-2 3.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A13.5 13.5 0 0 1 2.5 5.1 1.5 1.5 0 0 1 4 3.5z"></path></svg></span>
-            <div class="d60callwho"><b>밝은미소치과 · <span data-d60-callstate>수신 전화</span></b><span class="mono">화요일 11:42 PM · 영업 종료 후 · 가상의 치과</span></div>
+            <div class="d60callwho"><b><span data-d60-biz>밝은미소치과</span> · <span data-d60-callstate>수신 전화</span></b><span class="mono" data-d60-meta>화요일 11:42 PM · 영업 종료 후 · 가상의 치과</span><span class="mono d60caller">발신 <span data-d60-caller></span></span></div>
             <span class="d60tag">시연 · 예시 데이터</span>
           </div>
           <div class="d60wavewrap"><canvas data-d60-wave width="720" height="52" aria-hidden="true"></canvas><span class="d60speaker" data-d60-speaker aria-live="polite"></span></div>
@@ -173,7 +175,8 @@ BODY = """
             <button class="btn btn-teal" type="button" data-d60-play aria-pressed="false">&#9654; 재생 — 듣고 보기</button>
             <button class="btn btn-ghostd" type="button" data-d60-caption aria-pressed="false">자막만 보기</button>
             <button class="btn btn-ghostd" type="button" data-d60-restart>처음부터</button>
-            <button class="btn btn-ghostd" type="button" data-d60-video>&#9655; 영상으로 보기</button>
+            <button class="btn btn-ghostd d60speed" type="button" data-d60-speed aria-label="재생 속도">1×</button>
+            <button class="btn btn-ghostd" type="button" data-d60-video hidden>&#9655; 영상으로 보기</button>
             <div class="d60prog" aria-hidden="true"><span class="mono" data-d60-time>0:00</span><div class="d60bar"><i data-d60-bar></i></div><span class="mono" data-d60-total>&ndash;:&ndash;&ndash;</span></div>
           </div>
         </div>
@@ -182,27 +185,27 @@ BODY = """
           <div class="d60card"><p class="lbl">받아 적은 것 — 항목마다 출처가 붙습니다</p><div data-d60-fields></div></div>
           <div class="d60card d60rec" data-d60-record>
             <p class="lbl">고객 카드 — 채널이 셋이어도 카드는 한 장</p>
-            <div class="who"><b>김지은</b> <span data-d60-chans><i class="d60ph">전화</i></span></div>
+            <div class="who"><b data-d60-custname>김지은</b> <span data-d60-chans><i class="d60ph">전화</i></span></div>
             <p class="d60match" data-d60-match hidden>같은 손님 — 전화번호로 이어 붙임, 대화 계속</p>
             <div data-d60-work></div>
           </div>
           <div class="d60card d60hand" data-d60-handoff hidden>
             <p class="lbl">사람에게 넘어감 — 담당자가 받는 것</p>
-            <ul><li>두 채널의 대화 전체</li><li>받아 적은 항목 전부, 출처와 함께</li><li>멈춘 이유: 보험 보장은 서류에 있는 사실이 아니라 판단입니다</li></ul>
+            <ul data-d60-handlist><li>두 채널의 대화 전체</li><li>받아 적은 항목 전부, 출처와 함께</li><li>멈춘 이유: 보험 보장은 서류에 있는 사실이 아니라 판단입니다</li></ul>
           </div>
           <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">사장님 아침 화면 — 9:00에 놓여 있는 것</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
-      <p class="scenecap">각본이 있는 시연 · 예시 데이터 · 두 목소리는 이 데모를 위해 만든 합성 음성입니다 · 금액은 사이트가 공개한 요금표와 같습니다. 진짜 AI 음성은 <a data-tel-link href="tel:+827052770820">070-5277-0820</a>으로 들어 보세요.</p>
-
+      <p class="scenecap" data-d60-honest>각본이 있는 시연 · 예시 데이터 · 두 목소리는 이 데모를 위해 만든 합성 음성입니다 · 금액은 사이트가 공개한 요금표와 같습니다. 진짜 AI 음성은 <a data-tel-link href="tel:+827052770820">070-5277-0820</a>으로 들어 보세요.</p>
+      
       <dialog class="d60dlg" data-d60-dialog aria-label="같은 데모를 영상으로 — 2분 26초">
         <div class="d60dlghead"><b>같은 데모를 영상으로 — 2분 26초</b><span>가로형 · 세로형 두 가지가 있습니다. 소리를 켜 주세요.</span>
           <span class="d60cuts"><button type="button" class="on" data-d60-cut="">가로형</button><button type="button" data-d60-cut="-vertical">세로형</button></span>
           <button type="button" class="d60x" data-d60-close aria-label="닫기">&#215;</button></div>
         <video controls playsinline preload="none" poster="../assets/video/demo-ko.jpg" data-d60-vid data-src="../assets/video/demo-ko"></video>
       </dialog>
-
+      
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
@@ -213,6 +216,10 @@ BODY = """
         </div>
       </div>
     </div>
+    
+    
+    
+    
     
     
     
@@ -432,8 +439,8 @@ BODY = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>업종</span><span class="line"></span></div>
     <h2 class="h2 reveal">우리 업종에서 밤 11시에 걸려 오는 전화는<br>어떤 전화입니까?</h2>
-    <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 업종 페이지 스물다섯 곳마다
-      밤에 걸려 올 법한 통화를 하나씩 적어 두었습니다. 아래는 그중 열두 곳입니다.
+    <p class="sub reveal" style="max-width:none;">업종마다 다릅니다. 그래서 업종 페이지 쉰다섯 곳마다
+      밤에 걸려 올 법한 통화를 하나씩 적어 두었습니다. 아래는 그중 스무 곳입니다.
       읽어 보시고, 우리 가게에 실제로 걸려 오는 전화와 같은지 판단하시면 됩니다.</p>
     <div class="photowall reveal">{TRADE_PHOTOS}</div>
     <div class="tradechips reveal">
@@ -476,8 +483,19 @@ BODY = """
   <b>우리 요금표로 답하는 것을 먼저 읽어 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
-_T = {t['slug']: t for t in TRADES + TRADES2}
-_WALL = ['dental', 'clinics', 'veterinary', 'senior-care', 'academies', 'salons', 'fitness', 'home-services', 'auto-repair', 'real-estate', 'restaurants', 'venues']
+_ALL_T = list(TRADES + TRADES2)
+for _mod, _key in (('trades3', 'TRADES3'), ('trades4', 'TRADES4'), ('trades5', 'TRADES5')):
+    try:
+        _ALL_T += getattr(__import__(_mod), _key)
+    except Exception:
+        pass
+import json as _json
+_PH = _json.load(io.open('build/demo/photos.json', encoding='utf-8')) if os.path.exists('build/demo/photos.json') else {}
+for _t in _ALL_T:
+    if 'PENDING' in str(_t.get('photo', '')) and _PH.get(_t['slug']):
+        _t['photo'] = 'https://images.pexels.com/photos/%s/pexels-photo-%s.jpeg' % (_PH[_t['slug']], _PH[_t['slug']])
+_T = {t['slug']: t for t in _ALL_T}
+_WALL = ['dental', 'clinics', 'pharmacy', 'veterinary', 'senior-care', 'academies', 'childcare', 'salons', 'fitness', 'home-services', 'cleaning-services', 'auto-repair', 'car-dealers', 'real-estate', 'restaurants', 'cafes-bakeries', 'venues', 'accounting-tax', 'insurance-agency', 'florist']
 TRADE_PHOTOS = ''.join('<a href="./industries/%s.html"><img src="%s?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>%s</b></a>'
                        % (s, _T[s]['photo'], _T[s]['name']) for s in _WALL)
 body = BODY.format(NAV=NAV, FOOT=FOOT, NB=NB, HERO=HERO, TRADE_PHOTOS=TRADE_PHOTOS,

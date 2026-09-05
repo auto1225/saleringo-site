@@ -808,7 +808,7 @@ examples = '\n\n'.join([
 
 page('examples.html', '업종별 사례 &mdash; 예시 통화 여섯 건 | Saleringo',
      '치과, 정비소, 학원, 요양, 부동산, 웨딩홀 여섯 업종의 예시 통화를 각본 그대로 실었습니다. '
-     '스물다섯 업종 전체는 업종 페이지에서 하나씩 읽을 수 있습니다.',
+     '쉰다섯 업종 전체는 업종 페이지에서 하나씩 읽을 수 있습니다.',
      examples, css=CSS, grade='trust',
      crumbs=[('홈', 'index.html'), ('업종별 사례', 'examples.html')])
 

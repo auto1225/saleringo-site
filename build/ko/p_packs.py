@@ -13,6 +13,7 @@
 가장 나쁜 거짓말이 된다. 그래서 "표준 방식으로 연결되고, 쓰시는 제품이
 되는지는 확인해서 알려 드린다"고 쓴다.
 """
+import io
 import os
 import sys
 
@@ -25,7 +26,25 @@ from trades2 import TRADES2
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import illus
 
-ALL = TRADES + TRADES2
+try:
+    from trades3 import TRADES3
+except Exception:
+    TRADES3 = []
+try:
+    from trades4 import TRADES4
+except Exception:
+    TRADES4 = []
+try:
+    from trades5 import TRADES5
+except Exception:
+    TRADES5 = []
+NEW_TRADES = TRADES3 + TRADES4 + TRADES5
+ALL = TRADES + TRADES2 + NEW_TRADES
+import json as _json
+_PHOTOS = _json.load(io.open('build/demo/photos.json', encoding='utf-8')) if os.path.exists('build/demo/photos.json') else {}
+for _t in NEW_TRADES:
+    if 'PENDING' in str(_t.get('photo', '')) and _PHOTOS.get(_t['slug']):
+        _t['photo'] = 'https://images.pexels.com/photos/%s/pexels-photo-%s.jpeg' % (_PHOTOS[_t['slug']], _PHOTOS[_t['slug']])
 NB = '&nbsp;'
 
 CSS = """
@@ -158,6 +177,106 @@ def pack_status(t):
             '항목·단계·하지 않는 말의 초안까지 준비되어 있어, 요금표와 영업시간을 주시면 며칠 안에 켤 수 있습니다.')
 
 
+LINKS_EN = [
+    ('Phone line', 'Keep the main number you already publish; forward only the calls you cannot take, or let the AI '
+                   'answer from the first ring. When it needs to, it hands the call to a person.'),
+    ('WhatsApp & messengers', 'Messages to your business number are answered from the same facts. Templates and follow-ups included.'),
+    ('Website chat', 'One line of script on the site you already have. No rebuild.'),
+    ('Calendar', 'Bookings are written into Google Calendar or Outlook as real slots, not notes.'),
+    ('Text messages', 'Confirmations and day-before reminders, with a delivery record.'),
+    ('Export', 'Customers, conversations and recordings can be downloaded in full at any time — CSV and webhooks.'),
+]
+
+TPL_EN = """
+<header class="hero nophoto sec-dark bg-aurora">
+  <div class="scrim" aria-hidden="true"></div>
+  {NAV}
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><i></i>The {name} pack</span>
+    <h1 style="margin-top:24px;">Everything in the pack,<br>and everything it will not do.</h1>
+    <p class="sub">The CRM fields and stages that follow every call, what it connects to, and what it never says.
+      Why any of it matters is on the <a href="./{slug}.html">{name} page</a>.</p>
+  </div>
+</header>
+
+<main>
+
+<section class="t-md sec-dark bg-grid" id="pack">
+  <div class="wrap">
+    <div class="packphoto reveal"><img src="{photo}?auto=compress&amp;cs=tinysrgb&amp;w=1600&amp;h=640&amp;fit=crop" alt="" width="1600" height="640" loading="lazy" decoding="async"><span>{name} &mdash; this pack was built for the calls that reach this kind of business. Illustrative photograph.</span></div>
+    <div class="packgrid">
+
+      <div class="packblock reveal" id="fields">
+        <h2>Fields that are filled when the call ends</h2>
+        <p class="why">{packstatus}</p>
+        <div class="fieldgrid">{fields}</div>
+      </div>
+
+      <div class="packblock reveal" id="stages">
+        <h2>The stages an inquiry moves through</h2>
+        <p class="why">How many inquiries sit at each stage, on one line &mdash; in the order work actually flows in a {name}.</p>
+        <div class="pipe">{stages}</div>
+        <div class="illwide">{ill_pipe}</div>
+      </div>
+
+      <div class="packblock reveal" id="links">
+        <h2>What it connects to</h2>
+        <p class="why">These connect the same way in every trade. Whether your booking system or practice software connects
+          depends on the product, so we check and tell you &mdash; we do not write &ldquo;yes&rdquo; first.</p>
+        <ul class="kolist">{links}</ul>
+      </div>
+
+      <div class="packblock reveal" id="refuse">
+        <h2>What it will not do</h2>
+        <p class="why">Not a setting you switch on and off. These are blocked when the {name} answering is built; anything that touches them
+          goes to a person instead of being answered.</p>
+        <ul class="kolist">{refuse}</ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="packback t-sm sec-dark" id="back">
+  <div class="wrap">
+    <p class="pb-line"><b>This page is the list; the argument is on the other one.</b>
+      What kind of call comes in at night, what a missed one costs, and why a machine must not say certain things
+      are written on the page this pack came from.</p>
+    <p class="pb-links"><a class="linkcta" href="./{slug}.html">Back to the {name} page{NB}{NB}&rarr;</a><a class="linkcta" href="../get-started.html">Get my plan &mdash; {name}{NB}{NB}&rarr;</a></p>
+  </div>
+</section>
+
+{FOOT}
+</main>
+"""
+
+
+def pack_status_en(t, name):
+    if t['slug'] in LIVE:
+        return ('Not an empty CRM bent to a %s over months. These fields are in it from the start and the first call '
+                'writes into them. This pack is running today.' % name)
+    return ('This trade pack is <b>not running yet</b>. Below is the design we build for you on request: the fields, '
+            'stages and never-say list are drafted, so with your price list and hours it can be switched on within days.')
+
+
+def build_pack_en(t):
+    e = t['en']; name = e['name']
+    fields = ''.join('<span>%s</span>' % f for f in e['fields'])
+    stages = '<i>&rarr;</i>'.join('<b>%s</b>' % s for s in e['stages'])
+    links = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in LINKS_EN)
+    refuse = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in e['refuse'])
+    body = TPL_EN.format(NAV=NAV, FOOT=FOOT, NB=NB, fields=fields, stages=stages,
+                         links=links, refuse=refuse, slug=t['slug'], name=name, packstatus=pack_status_en(t, name),
+                         photo=t['photo'], ill_pipe=illus.figure(illus.pipeline('en', stages=e['stages'][:5])))
+    page('industries/%s-pack.html' % t['slug'],
+         'What is in the %s pack &mdash; Saleringo' % name,
+         'Every CRM field and pipeline stage for a %s, what it connects to, and what the AI never does.' % name,
+         body, css=CSS, grade='trust', lang='en',
+         crumbs=[('Home', 'index.html'), ('Trades', 'industries.html'),
+                 (name, 'industries/%s.html' % t['slug']),
+                 ('The %s pack' % name, 'industries/%s-pack.html' % t['slug'])])
+
+
 def build_pack(t):
     fields = ''.join('<span>%s</span>' % f for f in t['fields'])
     stages = '<i>&rarr;</i>'.join('<b>%s</b>' % s for s in t['stages'])
@@ -176,6 +295,9 @@ def build_pack(t):
                  ('%s 팩' % t['name'], 'industries/%s-pack.html' % t['slug'])])
 
 
+n_en = 0
 for t in ALL:
     build_pack(t)
+    if 'en' in t:
+        build_pack_en(t); n_en += 1
 print('팩 페이지 %d장' % len(ALL))

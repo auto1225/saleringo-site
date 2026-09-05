@@ -121,6 +121,46 @@
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/academies.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/academies.html"/>
   </url>
+  <url><loc>https://claude.saleringo.com/en/industries/accounting-tax-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/accounting-tax-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/accounting-tax-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/accounting-tax-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/accounting-tax-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/accounting-tax-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/accounting-tax-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/accounting-tax-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/accounting-tax.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/accounting-tax.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/accounting-tax.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/accounting-tax.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/accounting-tax.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/accounting-tax.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/accounting-tax.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/accounting-tax.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/appliance-repair-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/appliance-repair-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/appliance-repair-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/appliance-repair-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/appliance-repair-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/appliance-repair-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/appliance-repair-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/appliance-repair-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/appliance-repair.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/appliance-repair.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/appliance-repair.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/appliance-repair.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/appliance-repair.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/appliance-repair.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/appliance-repair.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/appliance-repair.html"/>
+  </url>
   <url><loc>https://claude.saleringo.com/en/industries/auto-repair-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/auto-repair-pack.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/auto-repair-pack.html"/>
@@ -140,6 +180,146 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/auto-repair.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/auto-repair.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/auto-repair.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/barbershop-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/barbershop-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/barbershop-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/barbershop-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/barbershop-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/barbershop-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/barbershop-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/barbershop-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/barbershop.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/barbershop.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/barbershop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/barbershop.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/barbershop.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/barbershop.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/barbershop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/barbershop.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/cafes-bakeries-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cafes-bakeries-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cafes-bakeries-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cafes-bakeries-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/cafes-bakeries-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cafes-bakeries-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cafes-bakeries-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cafes-bakeries-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/cafes-bakeries.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cafes-bakeries.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cafes-bakeries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cafes-bakeries.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/cafes-bakeries.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cafes-bakeries.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cafes-bakeries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cafes-bakeries.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/car-dealers-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-dealers-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-dealers-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-dealers-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/car-dealers-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-dealers-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-dealers-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-dealers-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/car-dealers.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-dealers.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-dealers.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-dealers.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/car-dealers.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-dealers.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-dealers.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-dealers.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/car-wash-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-wash-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-wash-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-wash-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/car-wash-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-wash-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-wash-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-wash-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/car-wash.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-wash.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-wash.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-wash.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/car-wash.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/car-wash.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/car-wash.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/car-wash.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/catering-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/catering-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/catering-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/catering-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/catering-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/catering-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/catering-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/catering-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/catering.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/catering.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/catering.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/catering.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/catering.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/catering.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/catering.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/catering.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/childcare-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/childcare-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/childcare-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/childcare-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/childcare-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/childcare-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/childcare-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/childcare-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/childcare.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/childcare.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/childcare.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/childcare.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/childcare.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/childcare.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/childcare.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/childcare.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/cleaning-services-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cleaning-services-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cleaning-services-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cleaning-services-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/cleaning-services-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cleaning-services-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cleaning-services-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cleaning-services-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/cleaning-services.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cleaning-services.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cleaning-services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cleaning-services.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/cleaning-services.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cleaning-services.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cleaning-services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cleaning-services.html"/>
   </url>
   <url><loc>https://claude.saleringo.com/en/industries/clinics-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/clinics-pack.html"/>
@@ -161,6 +341,26 @@
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/clinics.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/clinics.html"/>
   </url>
+  <url><loc>https://claude.saleringo.com/en/industries/counseling-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/counseling-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/counseling-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/counseling-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/counseling-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/counseling-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/counseling-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/counseling-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/counseling.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/counseling.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/counseling.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/counseling.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/counseling.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/counseling.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/counseling.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/counseling.html"/>
+  </url>
   <url><loc>https://claude.saleringo.com/en/industries/dental-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/dental-pack.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/dental-pack.html"/>
@@ -180,6 +380,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/dental.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/dental.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/dental.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/driving-school-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/driving-school-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/driving-school-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/driving-school-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/driving-school-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/driving-school-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/driving-school-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/driving-school-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/driving-school.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/driving-school.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/driving-school.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/driving-school.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/driving-school.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/driving-school.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/driving-school.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/driving-school.html"/>
   </url>
   <url><loc>https://claude.saleringo.com/en/industries/ecommerce-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/ecommerce-pack.html"/>
@@ -240,6 +460,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/fitness.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/fitness.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/fitness.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/florist-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/florist-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/florist-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/florist-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/florist-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/florist-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/florist-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/florist-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/florist.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/florist.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/florist.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/florist.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/florist.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/florist.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/florist.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/florist.html"/>
   </url>
   <url><loc>https://claude.saleringo.com/en/industries/franchise-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/franchise-pack.html"/>
@@ -321,6 +561,126 @@
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/home-services.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/home-services.html"/>
   </url>
+  <url><loc>https://claude.saleringo.com/en/industries/hospital-outpatient-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/hospital-outpatient-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/hospital-outpatient-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/hospital-outpatient-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/hospital-outpatient-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/hospital-outpatient-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/hospital-outpatient-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/hospital-outpatient-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/hospital-outpatient.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/hospital-outpatient.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/hospital-outpatient.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/hospital-outpatient.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/hospital-outpatient.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/hospital-outpatient.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/hospital-outpatient.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/hospital-outpatient.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/insurance-agency-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/insurance-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/insurance-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/insurance-agency-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/insurance-agency-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/insurance-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/insurance-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/insurance-agency-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/insurance-agency.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/insurance-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/insurance-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/insurance-agency.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/insurance-agency.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/insurance-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/insurance-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/insurance-agency.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/interior-renovation-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/interior-renovation-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/interior-renovation-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/interior-renovation-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/interior-renovation-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/interior-renovation-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/interior-renovation-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/interior-renovation-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/interior-renovation.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/interior-renovation.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/interior-renovation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/interior-renovation.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/interior-renovation.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/interior-renovation.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/interior-renovation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/interior-renovation.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/korean-medicine-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/korean-medicine-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/korean-medicine-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/korean-medicine-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/korean-medicine-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/korean-medicine-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/korean-medicine-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/korean-medicine-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/korean-medicine.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/korean-medicine.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/korean-medicine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/korean-medicine.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/korean-medicine.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/korean-medicine.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/korean-medicine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/korean-medicine.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/landscaping-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/landscaping-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/landscaping-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/landscaping-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/landscaping-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/landscaping-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/landscaping-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/landscaping-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/landscaping.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/landscaping.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/landscaping.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/landscaping.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/landscaping.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/landscaping.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/landscaping.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/landscaping.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/laundry-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/laundry-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/laundry-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/laundry-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/laundry-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/laundry-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/laundry-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/laundry-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/laundry.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/laundry.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/laundry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/laundry.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/laundry.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/laundry.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/laundry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/laundry.html"/>
+  </url>
   <url><loc>https://claude.saleringo.com/en/industries/legal-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/legal-pack.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/legal-pack.html"/>
@@ -340,6 +700,46 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/legal.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/legal.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/legal.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/locksmith-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/locksmith-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/locksmith-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/locksmith-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/locksmith-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/locksmith-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/locksmith-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/locksmith-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/locksmith.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/locksmith.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/locksmith.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/locksmith.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/locksmith.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/locksmith.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/locksmith.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/locksmith.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/martial-arts-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/martial-arts-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/martial-arts-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/martial-arts-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/martial-arts-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/martial-arts-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/martial-arts-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/martial-arts-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/martial-arts.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/martial-arts.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/martial-arts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/martial-arts.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/martial-arts.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/martial-arts.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/martial-arts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/martial-arts.html"/>
   </url>
   <url><loc>https://claude.saleringo.com/en/industries/movers-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/movers-pack.html"/>
@@ -361,6 +761,66 @@
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/movers.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/movers.html"/>
   </url>
+  <url><loc>https://claude.saleringo.com/en/industries/music-art-academy-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/music-art-academy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/music-art-academy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/music-art-academy-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/music-art-academy-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/music-art-academy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/music-art-academy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/music-art-academy-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/music-art-academy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/music-art-academy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/music-art-academy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/music-art-academy.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/music-art-academy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/music-art-academy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/music-art-academy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/music-art-academy.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/nail-spa-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/nail-spa-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/nail-spa-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/nail-spa-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/nail-spa-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/nail-spa-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/nail-spa-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/nail-spa-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/nail-spa.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/nail-spa.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/nail-spa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/nail-spa.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/nail-spa.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/nail-spa.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/nail-spa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/nail-spa.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/optician-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/optician-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/optician-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/optician-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/optician-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/optician-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/optician-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/optician-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/optician.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/optician.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/optician.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/optician.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/optician.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/optician.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/optician.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/optician.html"/>
+  </url>
   <url><loc>https://claude.saleringo.com/en/industries/pest-control-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pest-control-pack.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pest-control-pack.html"/>
@@ -380,6 +840,86 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pest-control.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pest-control.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pest-control.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/pet-grooming-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pet-grooming-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pet-grooming-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pet-grooming-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/pet-grooming-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pet-grooming-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pet-grooming-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pet-grooming-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/pet-grooming.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pet-grooming.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pet-grooming.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pet-grooming.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/pet-grooming.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pet-grooming.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pet-grooming.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pet-grooming.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/pharmacy-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pharmacy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pharmacy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pharmacy-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/pharmacy-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pharmacy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pharmacy-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pharmacy-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/pharmacy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pharmacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pharmacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pharmacy.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/pharmacy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/pharmacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/pharmacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/pharmacy.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/photo-studio-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/photo-studio-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/photo-studio-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/photo-studio-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/photo-studio-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/photo-studio-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/photo-studio-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/photo-studio-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/photo-studio.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/photo-studio.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/photo-studio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/photo-studio.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/photo-studio.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/photo-studio.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/photo-studio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/photo-studio.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/physio-rehab-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/physio-rehab-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/physio-rehab-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/physio-rehab-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/physio-rehab-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/physio-rehab-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/physio-rehab-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/physio-rehab-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/physio-rehab.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/physio-rehab.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/physio-rehab.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/physio-rehab.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/physio-rehab.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/physio-rehab.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/physio-rehab.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/physio-rehab.html"/>
   </url>
   <url><loc>https://claude.saleringo.com/en/industries/property-management-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/property-management-pack.html"/>
@@ -541,6 +1081,46 @@
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/stays.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/stays.html"/>
   </url>
+  <url><loc>https://claude.saleringo.com/en/industries/towing-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/towing-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/towing-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/towing-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/towing-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/towing-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/towing-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/towing-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/towing.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/towing.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/towing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/towing.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/towing.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/towing.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/towing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/towing.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/travel-agency-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/travel-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/travel-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/travel-agency-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/travel-agency-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/travel-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/travel-agency-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/travel-agency-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/travel-agency.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/travel-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/travel-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/travel-agency.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/travel-agency.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/travel-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/travel-agency.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/travel-agency.html"/>
+  </url>
   <url><loc>https://claude.saleringo.com/en/industries/universities-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/universities-pack.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/universities-pack.html"/>
@@ -600,6 +1180,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/veterinary.html"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/veterinary.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/veterinary.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/yoga-pilates-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/yoga-pilates-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/yoga-pilates-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/yoga-pilates-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/yoga-pilates-pack.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/yoga-pilates-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/yoga-pilates-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/yoga-pilates-pack.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/en/industries/yoga-pilates.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/yoga-pilates.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/yoga-pilates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/yoga-pilates.html"/>
+  </url>
+  <url><loc>https://claude.saleringo.com/ko/industries/yoga-pilates.html</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/yoga-pilates.html"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/yoga-pilates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/yoga-pilates.html"/>
   </url>
   <url><loc>https://claude.saleringo.com/en/integrations.html</loc><changefreq>weekly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/integrations.html"/>

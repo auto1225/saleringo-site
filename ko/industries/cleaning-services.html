@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>청소 서비스 AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법</title>
+<meta name="description" content="청소 서비스에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. 통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.">
+<link rel="canonical" href="https://claude.saleringo.com/ko/industries/cleaning-services.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/ko/industries/cleaning-services.html">
+<meta property="og:title" content="청소 서비스 AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법">
+<meta property="og:description" content="청소 서비스에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. 통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.">
+<meta property="og:image" content="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="청소 서비스 AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법">
+<meta name="twitter:description" content="청소 서비스에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. 통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"청소 서비스 AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법","description":"청소 서비스에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. 통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.","url":"https://claude.saleringo.com/ko/industries/cleaning-services.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"ko-KR"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://claude.saleringo.com/ko/index.html"},{"@type":"ListItem","position":2,"name":"업종","item":"https://claude.saleringo.com/ko/industries.html"},{"@type":"ListItem","position":3,"name":"청소 서비스","item":"https://claude.saleringo.com/ko/industries/cleaning-services.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/ko.css?v=82.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=82.0">
+<style>
+
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
+</style>
+<!--#alt-->
+<link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/cleaning-services.html">
+<link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/industries/cleaning-services.html">
+<link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/cleaning-services.html">
+<!--/#alt-->
+</head>
+<body data-grade="voice">
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="grainlayer grain" aria-hidden="true"></div>
+  <!--#nav-->
+<div class="navwrap"><nav class="nav" aria-label="주 메뉴">
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v82.0">v82.0</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">작동 방식<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">전체 구성</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">플랫폼 &amp; CRM</a></li><li><a href="../platform.html#inside">응대 한 건이 만들어지는 과정</a></li><li><a href="../platform.html#who-next">누구에게 넘기는가</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">응대하는 채널</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI 전화</a></li><li><a href="../webchat.html">웹사이트 채팅</a></li><li><a href="../whatsapp.html">카카오톡 &amp; 메신저</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">함께 붙는 것</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">연동</a></li><li><a href="../verified-ai.html">답변 검증 방식</a></li><li><a href="../ai-answering-service.html">고르기 전에: AI 응대 세 가지</a></li></ul></div><p class="np-foot"><a class="np-all" href="../sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">직접 보기<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">직접 보기</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">대화 한 건 보기</a></li><li><a href="../about.html#call-them">지금 AI에 전화해 보기</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">통화 기록 읽기</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">업종별 통화 예시</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">직접 써 보고 판단하기</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">업체에 물어봐야 할 것</a></li><li><a href="../verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="../about.html">누가 만드는가</a></li></ul></div><p class="np-foot"><a class="np-all" href="../sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop on" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade" aria-current="true">업종<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">의료 &amp; 요양</p><ul aria-labelledby="nh-trade-0"><li><a href="../industries/dental.html">치과</a></li><li><a href="../industries/clinics.html">의원 &amp; 피부·성형</a></li><li><a href="../industries/veterinary.html">동물병원</a></li><li><a href="../industries/senior-care.html">요양원 &amp; 방문요양</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">주거 &amp; 부동산</p><ul aria-labelledby="nh-trade-1"><li><a href="../industries/home-services.html">홈서비스·설비</a></li><li><a href="../industries/pest-control.html">방역·해충방제</a></li><li><a href="../industries/property-management.html">건물관리</a></li><li><a href="../industries/real-estate.html">부동산 중개</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">차량 &amp; 보관</p><ul aria-labelledby="nh-trade-2"><li><a href="../industries/auto-repair.html">자동차 정비</a></li><li><a href="../industries/equipment-rental.html">장비 대여</a></li><li><a href="../industries/self-storage.html">셀프 스토리지</a></li><li><a href="../industries/movers.html">이사·운송</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">예약제 업종</p><ul aria-labelledby="nh-trade-3"><li><a href="../industries/salons.html">미용실 &amp; 바버샵</a></li><li><a href="../industries/fitness.html">헬스장 &amp; 스튜디오</a></li><li><a href="../industries/academies.html">학원 &amp; 과외</a></li><li><a href="../industries/golf.html">골프장 &amp; 컨트리클럽</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">공간 &amp; 접객</p><ul aria-labelledby="nh-trade-4"><li><a href="../industries/stays.html">펜션·소형 숙박</a></li><li><a href="../industries/venues.html">웨딩홀 &amp; 행사장</a></li><li><a href="../industries/restaurants.html">음식점</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">전문직 &amp; 공공</p><ul aria-labelledby="nh-trade-5"><li><a href="../industries/legal.html">법률사무소</a></li><li><a href="../industries/funeral-homes.html">장례식장</a></li><li><a href="../industries/universities.html">대학 &amp; 입학상담</a></li><li><a href="../industries/public-sector.html">공공기관</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">온라인 &amp; 다점포</p><ul aria-labelledby="nh-trade-6"><li><a href="../industries/ecommerce.html">온라인 쇼핑몰</a></li><li><a href="../industries/franchise.html">프랜차이즈 &amp; 다점포</a></li></ul></div><p class="np-foot"><a class="np-all" href="../industries.html">전체 업종 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">요금<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">숫자</p><ul aria-labelledby="nh-price-0"><li><a href="../pricing.html#plans">요금제와 가격</a></li><li><a href="../checkout.html">주문서 · 바로 시작</a></li><li><a href="../pricing.html#crm">CRM 포함 범위</a></li><li><a href="../pricing.html#channels">채널과 분당 요금</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">불리한 것도 적은 부분</p><ul aria-labelledby="nh-price-1"><li><a href="../pricing.html#alternatives">무엇과 비교하는지</a></li><li><a href="../pricing.html#not-paying">내지 않아도 되는 비용</a></li><li><a href="../pricing.html#faq">요금 관련 질문</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">데이터가 어디에 있는가</p><ul aria-labelledby="nh-price-2"><li><a href="../cross-border.html">해외 대상 사업</a></li><li><a href="../get-started.html">견적 받기</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../pricing.html?tour=costs#alternatives">둘러보기: 비용은 얼마인가<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">보안<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">어떻게 보관하는가</p><ul aria-labelledby="nh-trust-0"><li><a href="../security.html">보안 &amp; 신뢰</a></li><li><a href="../security.html#measures">보안 조치 목록</a></li><li><a href="../security.html#subprocessors">수탁업체</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">하지 않는 일</p><ul aria-labelledby="nh-trust-1"><li><a href="../verified-ai.html">답변 검증 방식</a></li><li><a href="../verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="../verified-ai.html#audit">감사 기록</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">회사 &amp; 법적 고지</p><ul aria-labelledby="nh-trust-2"><li><a href="../about.html">회사 소개</a></li><li><a href="../privacy.html">개인정보처리방침</a></li><li><a href="../terms.html">이용약관</a></li><li><a href="../sitemap.html">사이트맵 &amp; 둘러보기</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../verified-ai.html?tour=refuses#life">둘러보기: 하지 않는 일<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820" title="070 번호 · AI 가 먼저 받습니다"><span aria-hidden="true">&#9990;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <a class="langsw" href="../../en/industries/cleaning-services.html" hreflang="en" lang="en">English</a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="../get-started.html">견적 받기<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+<!--/#nav-->
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>입주청소 &middot; 이사청소 &middot; 정기 가사</span>
+      <h1>견적 전화는<br>팀이 현장에 들어가 있을 때 옵니다.</h1>
+      <p class="sub">오전 아홉 시부터 오후 다섯 시까지 대표님은 장갑을 끼고 있습니다. 입주 날짜가 잡힌 사람이 그 시간에 세 군데에 전화를 돌립니다.</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="#call">그 통화 듣고 보기<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">청소 서비스 견적 받기</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>현장에 나가 있는 동안의 통화</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">팀이 남의 집에 들어가 있는 동안<br>이렇게 흘러갑니다.</h2>
+    <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/cleaning-services.json" data-d60-audio="../../assets/audio/demo/">
+      
+      <div class="d60tabs" role="tablist" aria-label="장">
+        <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · 오전 11:20, 전화</b><span data-d60-range="1" data-base="32평 입주청소 · 범위 · 토요일 오전">32평 입주청소 · 범위 · 토요일 오전</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · 다음 날 아침, 카카오톡</b><span data-d60-range="2" data-base="입금 질문 · 곰팡이 질문은 사람에게">입금 질문 · 곰팡이 질문은 사람에게</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 오전 9:00, 대표님 화면</b><span data-d60-range="3" data-base="일정 · 확정 견적 · 담당 · 답변 대기">일정 · 확정 견적 · 담당 · 답변 대기</span></button>
+      </div>
+
+      <div class="d60stage">
+        <div class="d60call">
+          <div class="d60callhead">
+            <span class="d60avatar" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h3l1.5 3.5-2 1.2a9 9 0 0 0 5.3 5.3l1.2-2 3.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A13.5 13.5 0 0 1 2.5 5.1 1.5 1.5 0 0 1 4 3.5z"></path></svg></span>
+            <div class="d60callwho"><b><span data-d60-biz>깔끔한집 클리닝</span> · <span data-d60-callstate>수신 전화</span></b><span class="mono" data-d60-meta>화요일 11:20 AM · 팀은 현장 · 가상의 청소 업체</span><span class="mono d60caller">발신 <span data-d60-caller></span></span></div>
+            <span class="d60tag">시연 · 예시 데이터</span>
+          </div>
+          <div class="d60wavewrap"><canvas data-d60-wave width="720" height="52" aria-hidden="true"></canvas><span class="d60speaker" data-d60-speaker aria-live="polite"></span></div>
+          <div class="d60convo" data-d60-convo aria-live="polite"></div>
+          <div class="d60ctl">
+            <button class="btn btn-teal" type="button" data-d60-play aria-pressed="false">&#9654; 재생 — 듣고 보기</button>
+            <button class="btn btn-ghostd" type="button" data-d60-caption aria-pressed="false">자막만 보기</button>
+            <button class="btn btn-ghostd" type="button" data-d60-restart>처음부터</button>
+            <button class="btn btn-ghostd d60speed" type="button" data-d60-speed aria-label="재생 속도">1×</button>
+            
+            <div class="d60prog" aria-hidden="true"><span class="mono" data-d60-time>0:00</span><div class="d60bar"><i data-d60-bar></i></div><span class="mono" data-d60-total>&ndash;:&ndash;&ndash;</span></div>
+          </div>
+        </div>
+
+        <div class="d60col">
+          <div class="d60card"><p class="lbl">받아 적은 것 — 항목마다 출처가 붙습니다</p><div data-d60-fields></div></div>
+          <div class="d60card d60rec" data-d60-record>
+            <p class="lbl">고객 카드 — 채널이 셋이어도 카드는 한 장</p>
+            <div class="who"><b data-d60-custname>한지민</b> <span data-d60-chans><i class="d60ph">전화</i></span></div>
+            <p class="d60match" data-d60-match hidden>같은 손님 — 전화번호로 이어 붙임, 대화 계속</p>
+            <div data-d60-work></div>
+          </div>
+          <div class="d60card d60hand" data-d60-handoff hidden>
+            <p class="lbl">사람에게 넘어감 — 담당자가 받는 것</p>
+            <ul data-d60-handlist><li>두 채널의 대화 전체</li><li>받아 적은 항목 전부, 출처와 함께</li><li>멈춘 이유: 곰팡이가 지워질지는 현장을 보고 하는 판단이지 약속할 수 있는 사실이 아닙니다</li></ul>
+          </div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">사장님 아침 화면 — 9:00에 놓여 있는 것</p><div data-d60-morninglist></div></div>
+        </div>
+      </div>
+
+      <p class="scenecap" data-d60-honest>각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 가격은 업체와 집 상태에 따라 다릅니다. 진짜 AI 음성은 <a data-tel-link href="tel:+827052770820">070-5277-0820</a>으로 들어 보세요.</p>
+      
+      
+      <div class="d60end" data-d60-end hidden>
+        <p class="d60summary" data-d60-summary></p>
+        <div class="d60endrow">
+          <a class="btn btn-teal" href="../../get-started.html">이 업종으로 견적 받기</a>
+          <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">지금 AI에게 전화해 보기</a>
+          <span class="telnote">AI가 먼저 받습니다</span>
+        </div>
+      </div>
+    </div>
+    
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">청소 서비스 &mdash; <b>현장 작업 중</b></span>
+        <span class="illus">예시 &middot; 가상의 상담</span>
+        <span class="closed">사무실이 비는 시간</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>손님</em>11:20 AM</span><div class="bub user">다음 주 토요일에 32평 입주청소 되나요? 얼마 정도 나와요?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+25초</span><div class="bub ai">32평 입주청소는 빈집 기준 <b>45만원에서 52만원</b> 사이이고, 정확한 금액은 짐 유무와 오염 상태를 사진이나 방문으로 확인한 뒤 확정됩니다. 다음 주 토요일은 <b>오전 팀</b>이 비어 있고, 32평이면 <b>3명이 5시간</b> 정도 봅니다.</div></div><div class="nl us"><span class="t"><em>손님</em>11:22 AM</span><div class="bub user">토요일 오전으로 잡아 주세요. 새 아파트라 짐은 없어요.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+9초</span><div class="bub ai">토요일 오전, 빈집 32평으로 잡아 두었습니다. 주소와 출입 방법을 문자로 보내 주시면 대표님이 확인하고 확정 금액을 오늘 중에 알려 드립니다. 성함과 연락처를 남겨 주시겠어요?</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">실제 고객 사례가 아니라, 청소 서비스 요금표와 안전 지침을
+      넣었을 때 제품이 어떻게 답하는지 보여 주는 예시입니다. 금액은 국내에서 흔히 제시되는 범위이고,
+      실제로 안내되는 금액은 대표님이 넣으신 요금표에서 나옵니다.</p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="cost">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>놓쳤을 때</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">청소 서비스에서 못 받은 전화는<br>어디에도 기록되지 않습니다.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">입주청소 문의는 잔금일이 정해진 사람이 겁니다. 날짜가 급하니 답이 오는 순서대로 계약하고, 한 집을 놓치면 그 집이 소개할 아파트 단지의 이웃도 함께 놓칩니다. 그런데 &ldquo;32평 얼마예요&rdquo;에 답할 사람은 지금 다른 집 화장실 타일 줄눈을 닦고 있고, 저녁에 콜백하면 이미 다른 업체의 입금이 끝나 있습니다.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="문 닫은 시간" xmlns="http://www.w3.org/2000/svg"><title>문 닫은 시간</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">문 닫은 시간</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15시간</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >24시간 중</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >닫힘</text><circle cx="141.84" cy="46.3206" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >영업 중 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >닫힘</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >11:42 PM 전화</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >전화는 이 시간에도 옵니다</text></svg><figcaption class="illcap">하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>하지 않는 일</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">청소 서비스에서 기계가<br>말하면 안 되는 것들.</h2>
+    <p class="sub reveal" style="max-width:none;">아래 네 가지는 설정으로 끄고 켜는 기능이 아니라,
+      청소 서비스 응대를 만들 때 처음부터 막아 두는 것입니다. 여기에 걸리면 AI는 답하지 않고
+      사람에게 넘깁니다.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>보지 않은 집의 금액을 확정하지 않습니다.</b>평수만 듣고 최종 금액을 말하지 않습니다. 범위까지만 말하고, 확정은 사진이나 방문 후 대표님이 합니다.</li><li><b>곰팡이와 찌든 때가 다 지워진다고 말하지 않습니다.</b>실리콘 곰팡이, 오래된 기름때는 청소로 안 지워지는 경우가 있습니다. 보고 판단할 일이라고 답합니다.</li><li><b>끝나는 시각을 약속하지 않습니다.</b>오염 상태에 따라 한두 시간이 늘어납니다. &ldquo;3시까지 끝납니다&rdquo;는 대표님만 말할 수 있습니다.</li><li><b>가스 냄새나 누수 이야기는 바로 사람에게 넘깁니다.</b>청소 중이든 문의 중이든 가스 냄새, 물이 새는 소리가 나오면 안내 문구를 읽고 즉시 연결합니다.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="답하지 않고 사람에게 넘기는 문" xmlns="http://www.w3.org/2000/svg"><title>답하지 않고 사람에게 넘기는 문</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">답하지 않고 사람에게 넘기는 문</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >손님의 말</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“다음 주 토요일에 32평 입주청소 되나</text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >요? 얼마 정도 나와요?”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >요금표에 있는가</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >판단이 필요한가</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >안전이 걸렸는가</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >답합니다</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >요금표 그대로, 근거와 함께</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >사람에게 넘깁니다</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >대화 전체</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >받아 적은 항목</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >멈춘 이유</text></svg><figcaption class="illcap">요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체와 받아 적은 항목이 함께 갑니다.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>사고가 나면</b>
+      <ul>
+        <li>AI 응답의 오류로 손해가 생기면, 저희 배상 책임은 <b>그 사고가 난 달로부터 직전 3개월간
+          지급하신 요금의 합계</b>가 한도입니다. 저희의 고의 또는 중대한 과실로 인한 손해는 이 한도와
+          관계없이 법이 정하는 바에 따라 배상합니다. <a href="../terms.html#sec-8">약관 제7조 &rarr;</a></li>
+        <li>통화마다 녹음(끄실 수 있습니다)과 요약, 그리고 무엇을 근거로 답했는지가 기록으로 남습니다.
+          그 기록의 권리는 대표님께 있고, 언제든 전부 내려받으실 수 있습니다.
+          <a href="../terms.html#sec-9">약관 제8조 &rarr;</a></li>
+        <li>응대 문장은 미국에 있는 언어모델이 만듭니다. 고객 기록, 예약, 통화 녹취는 서울의 운영 서버에
+          저장됩니다. <a href="../security.html#where">데이터가 어디에 있는가 &rarr;</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="t-md sec-light bg-paper" id="crm">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>남는 것</span><span class="line"></span></div>
+    <h2 class="h2 reveal">통화가 끝나면<br>이 항목들이 채워져 있습니다.</h2>
+    <p class="sub reveal" style="max-width:none;">청소 서비스용 CRM에는 청소 서비스의 항목이 들어 있습니다.
+      범용 CRM의 빈칸을 우리 업종에 맞게 고쳐 가며 쓰는 것이 아니라, 첫날부터 우리 업종의 말로 적힙니다.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="고객 카드" xmlns="http://www.w3.org/2000/svg"><title>고객 카드</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">고객 카드</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >김지은</text><text x="93" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">010-4482-51··</text><rect x="400" y="54" width="32" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="416" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >전화</text><rect x="440" y="54" width="54" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="467" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >카카오톡</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >주소와 평수 · 구조</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >통화에서</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >청소 종류(입주 · 이사 · 정기)</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >통화에서</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >희망 일자와 시간대</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >통화에서</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >요금표 기준 안내 범위</text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >통화에서</text></svg><figcaption class="illcap">통화가 끝나면 이 카드가 채워져 있습니다. 항목마다 어디서 나온 값인지가 붙습니다.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>주소와 평수 · 구조</span><span>청소 종류(입주 · 이사 · 정기)</span><span>희망 일자와 시간대</span><span>요금표 기준 안내 범위</span><span>짐 유무 · 주차 · 출입 방법</span><span>확정 금액 안내 기록</span></div></div>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="pipeline">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>진행 단계</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">문의가 어디까지 왔는지<br>한 줄로 보입니다.</h2>
+    <div class="pipe reveal"><b>문의 접수</b><i>&rarr;</i><b>견적 확정</b><i>&rarr;</i><b>일정 확정</b><i>&rarr;</i><b>작업</b><i>&rarr;</i><b>정기 이용 제안</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="진행 단계" xmlns="http://www.w3.org/2000/svg"><title>진행 단계</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">진행 단계</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >문의 접수</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4건</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >견적 확정</text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3건</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >일정 확정</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2건</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >작업</text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1건</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >정기 이용 제안</text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1건</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">청소 서비스의 단계 그대로입니다. 지금 몇 건이 어느 단계에 있는지 한눈에 보입니다.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="packcard t-md sec-dark bg-grid" id="the-pack">
+  <div class="wrap">
+    <a class="pc-link" href="./cleaning-services-pack.html">
+      <span class="pc-k">청소 서비스 팩</span>
+      <b class="pc-h">팩에 들어 있는 것 전부, 따로 한 장에</b>
+      <span class="pc-d">통화 뒤에 붙는 CRM의 항목과 단계, 어디에 연결되는지,
+        그리고 무엇을 말하지 않는지를 한 장에 적어 두었습니다.
+        주장이 아니라 목록이라서, 이 페이지와 섞지 않고 따로 떼어 두었습니다.</span>
+      <span class="pc-go" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<section class="t-md sec-light2" id="others">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>다른 업종</span><span class="line"></span></div>
+    <h2 class="h2 reveal">우리 업종이 여기 없어도<br>대부분 만들 수 있습니다.</h2>
+    <div class="photowall reveal"><a href="./home-services.html"><img src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>설비 · 수리</b></a><a href="./pest-control.html"><img src="https://images.pexels.com/photos/4176541/pexels-photo-4176541.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>방역 · 해충방제</b></a><a href="./property-management.html"><img src="https://images.pexels.com/photos/35707771/pexels-photo-35707771.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>건물관리</b></a><a href="./real-estate.html"><img src="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>부동산</b></a><a href="./interior-renovation.html"><img src="https://images.pexels.com/photos/6474507/pexels-photo-6474507.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>인테리어·리모델링</b></a><a href="./landscaping.html"><img src="https://images.pexels.com/photos/32632465/pexels-photo-32632465.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>조경·정원 관리</b></a><a href="./locksmith.html"><img src="https://images.pexels.com/photos/34286675/pexels-photo-34286675.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>열쇠·도어락</b></a><a href="./appliance-repair.html"><img src="https://images.pexels.com/photos/32588545/pexels-photo-32588545.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>가전 수리</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">치과</a><a href="./clinics.html">의원 · 피부과</a><a href="./academies.html">학원</a><a href="./salons.html">미용실</a><a href="./veterinary.html">동물병원</a><a href="./auto-repair.html">자동차 정비</a><a href="./real-estate.html">부동산</a><a href="./venues.html">웨딩홀 · 행사장</a><a href="./senior-care.html">요양</a><a href="./fitness.html">헬스장</a><a href="./home-services.html">설비 · 수리</a><a href="./pest-control.html">방역 · 해충방제</a><a href="./property-management.html">건물관리</a><a href="./movers.html">이사 · 용달</a><a href="./restaurants.html">음식점</a><a href="./stays.html">펜션 · 숙박</a><a href="./golf.html">골프장 · 연습장</a><a href="./funeral-homes.html">장례식장</a><a href="./legal.html">법률사무소</a><a href="./universities.html">대학 입학상담</a><a href="./public-sector.html">공공기관</a><a href="./self-storage.html">셀프 스토리지</a><a href="./equipment-rental.html">장비 대여</a><a href="./ecommerce.html">온라인 쇼핑몰</a><a href="./franchise.html">프랜차이즈 본부</a><a href="./pharmacy.html">약국</a><a href="./hospital-outpatient.html">병원 외래 · 대표번호</a><a href="./physio-rehab.html">물리치료 · 재활</a><a href="./korean-medicine.html">한의원</a><a href="./optician.html">안경원</a><a href="./counseling.html">심리상담센터</a><a href="./childcare.html">어린이집 · 유치원</a><a href="./driving-school.html">운전학원</a><a href="./music-art-academy.html">음악 · 미술 학원</a><a href="./yoga-pilates.html">요가 · 필라테스</a><a href="./martial-arts.html">태권도·무술 도장</a><a href="./nail-spa.html">네일·스파</a><a href="./barbershop.html">이발소·바버샵</a><a href="./pet-grooming.html">반려동물 미용·호텔</a><a href="./interior-renovation.html">인테리어·리모델링</a><a href="./landscaping.html">조경·정원 관리</a><a href="./locksmith.html">열쇠·도어락</a><a href="./appliance-repair.html">가전 수리</a><a href="./laundry.html">세탁·드라이클리닝</a><a href="./car-wash.html">세차 · 디테일링</a><a href="./car-dealers.html">자동차 딜러</a><a href="./towing.html">견인 · 긴급출동</a><a href="./cafes-bakeries.html">카페 · 베이커리</a><a href="./catering.html">케이터링 · 출장뷔페</a><a href="./travel-agency.html">여행사</a><a href="./photo-studio.html">사진관 · 스튜디오</a><a href="./florist.html">꽃집</a><a href="./accounting-tax.html">세무 · 회계 사무소</a><a href="./insurance-agency.html">보험 대리점</a></div>
+  </div>
+</section>
+
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">청소 서비스 요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
+    <p class="sub" style="max-width:none;">결제 정보는 받지 않습니다. 손님이 가장 자주 묻는 질문 열 개에
+      그 요금표로 답하는 녹음을 영업일 하루 안에 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">청소 서비스 견적 받기<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">먼저 요금부터 보기</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="오전 9:00 — 사장님 화면" xmlns="http://www.w3.org/2000/svg"><title>오전 9:00 — 사장님 화면</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >오전 9:00 — 사장님 화면</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >새 예약 1건</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >김지은 · 목 10:30 · 캘린더에 있음</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >견적서 1건</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >550,000원 · 문자로 발송 · 열람 확인</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >데스크 할 일</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >목 09:00까지 차트 준비</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >답변 대기 1건</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >보험 문의 · 대화 전체 첨부</text></svg><figcaption class="illcap">밤사이 받은 것이 아침 화면에 이렇게 놓여 있습니다.</figcaption></figure></div>
+  </div>
+</section>
+
+<!--#footer-->
+<footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v82.0</span>
+        <p>전화 · 채팅 · 메신저를 AI가 대신 받고, 업종별 CRM이 모든 대화를 예약과 견적, 그리고 고객으로 남깁니다.</p>
+        <p class="fmail">hello@saleringo.com</p>
+        <a class="lnk fmap" href="../sitemap.html">이 사이트의 모든 페이지 &mdash; 사이트맵과 둘러보기 <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><div class="hl3">제품</div><a class="lnk" href="../platform.html">플랫폼 &amp; CRM</a>
+        <a class="lnk" href="../voice.html">AI 전화</a>
+        <a class="lnk" href="../webchat.html">웹사이트 채팅</a>
+        <a class="lnk" href="../whatsapp.html">카카오톡 &amp; 메신저</a>
+        <a class="lnk" href="../integrations.html">연동</a>
+        <a class="lnk" href="../verified-ai.html">답변 검증 방식</a>
+        <a class="lnk" href="../ai-answering-service.html">고르기 전에 읽을 것</a></div>
+      <div class="fcol ftrades"><div class="hl3">업종</div><div class="ftgrid"><div class="fgrp"><div class="hl5">의료 &amp; 요양</div><a class="lnk" href="../industries/dental.html">치과</a><a class="lnk" href="../industries/clinics.html">의원 &amp; 피부·성형</a><a class="lnk" href="../industries/veterinary.html">동물병원</a><a class="lnk" href="../industries/senior-care.html">요양원 &amp; 방문요양</a></div><div class="fgrp"><div class="hl5">주거 &amp; 부동산</div><a class="lnk" href="../industries/home-services.html">홈서비스·설비</a><a class="lnk" href="../industries/pest-control.html">방역·해충방제</a><a class="lnk" href="../industries/property-management.html">건물관리</a><a class="lnk" href="../industries/real-estate.html">부동산 중개</a></div><div class="fgrp"><div class="hl5">차량 &amp; 보관</div><a class="lnk" href="../industries/auto-repair.html">자동차 정비</a><a class="lnk" href="../industries/equipment-rental.html">장비 대여</a><a class="lnk" href="../industries/self-storage.html">셀프 스토리지</a><a class="lnk" href="../industries/movers.html">이사·운송</a></div><div class="fgrp"><div class="hl5">예약제 업종</div><a class="lnk" href="../industries/salons.html">미용실 &amp; 바버샵</a><a class="lnk" href="../industries/fitness.html">헬스장 &amp; 스튜디오</a><a class="lnk" href="../industries/academies.html">학원 &amp; 과외</a><a class="lnk" href="../industries/golf.html">골프장 &amp; 컨트리클럽</a></div><div class="fgrp"><div class="hl5">공간 &amp; 접객</div><a class="lnk" href="../industries/stays.html">펜션·소형 숙박</a><a class="lnk" href="../industries/venues.html">웨딩홀 &amp; 행사장</a><a class="lnk" href="../industries/restaurants.html">음식점</a></div><div class="fgrp"><div class="hl5">전문직 &amp; 공공</div><a class="lnk" href="../industries/legal.html">법률사무소</a><a class="lnk" href="../industries/funeral-homes.html">장례식장</a><a class="lnk" href="../industries/universities.html">대학 &amp; 입학상담</a><a class="lnk" href="../industries/public-sector.html">공공기관</a></div><div class="fgrp"><div class="hl5">온라인 &amp; 다점포</div><a class="lnk" href="../industries/ecommerce.html">온라인 쇼핑몰</a><a class="lnk" href="../industries/franchise.html">프랜차이즈 &amp; 다점포</a></div></div><a class="lnk ftall" href="../industries.html">전체 업종 →</a></div>
+      <div class="fcol"><div class="hl3">가격과 확인</div><a class="lnk" href="../pricing.html">요금</a>
+        <a class="lnk" href="../pricing.html#plans">요금제</a>
+        <a class="lnk" href="../pricing.html#not-paying">내지 않아도 되는 비용</a>
+        
+        
+        <a class="lnk" href="../demo.html">대화 한 건 보기</a>
+        <a class="lnk" href="../get-started.html">견적 받기</a></div>
+      <div class="fcol"><div class="hl3">회사 &amp; 신뢰</div><a class="lnk" href="../about.html">회사 소개</a>
+        <a class="lnk" href="../security.html">보안 &amp; 신뢰</a>
+        <a class="lnk" href="../verified-ai.html">답변 검증 방식</a>
+        <a class="lnk" href="../privacy.html">개인정보처리방침</a>
+        <a class="lnk" href="../terms.html">이용약관</a>
+        <a class="lnk" href="../status.html">상태 & 장애 이력</a>
+        <a class="lnk" href="../sitemap.html">사이트맵</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; 정직한마케팅 주식회사 &mdash; 대한민국 법인, 전 세계 고객에게 서비스합니다</span>
+      <span class="r"><a class="lnk" href="../sitemap.html">사이트맵</a><a class="lnk" href="../privacy.html">개인정보</a><a class="lnk" href="../terms.html">약관</a><a class="langsw" href="../../en/industries/cleaning-services.html" hreflang="en" lang="en">English</a><span>한국어 &middot; 대한민국 사업자를 위한 페이지</span></span>
+    </div>
+  </div></footer>
+<!--/#footer-->
+</main>
+
+<div class="stickycta"><div class="wrap"><span class="msg">청소 서비스 요금표로 만든 응대를
+  <b>먼저 들어 보고 결정하세요.</b></span><a class="btn btn-teal" href="../get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
+
+
+<script src="../../assets/js/site.js?v=82.0"></script>
+<script src="../../assets/js/balance.js?v=82.0" defer></script>
+<script src="../../assets/js/panels.js?v=82.0" defer></script>
+<script src="../../assets/js/wrap.js?v=82.0" defer></script>
+<script src="../../assets/js/rail.js?v=82.0" defer></script>
+<script src="../../assets/js/guide.js?v=82.0"></script>
+<script src="../../assets/js/demofull.js?v=82.0" defer></script>
+</body>
+</html>

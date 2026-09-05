@@ -21,7 +21,28 @@ from trades2 import TRADES2
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import illus
 
-TRADES = TRADES + TRADES2
+import demo_block
+try:
+    from trades3 import TRADES3
+except Exception:
+    TRADES3 = []
+try:
+    from trades4 import TRADES4
+except Exception:
+    TRADES4 = []
+try:
+    from trades5 import TRADES5
+except Exception:
+    TRADES5 = []
+NEW_TRADES = TRADES3 + TRADES4 + TRADES5
+TRADES = TRADES + TRADES2 + NEW_TRADES
+
+# 새 업종의 대표 사진은 build/demo/photos.json 에서 — 대본을 쓴 사람이 사진까지 고르지 않는다.
+_PHOTOS = json.load(io.open('build/demo/photos.json', encoding='utf-8'))
+for _t in NEW_TRADES:
+    if 'PENDING' in str(_t.get('photo', '')) and _PHOTOS.get(_t['slug']):
+        _t['photo'] = 'https://images.pexels.com/photos/%s/pexels-photo-%s.jpeg' % (_PHOTOS[_t['slug']], _PHOTOS[_t['slug']])
+EN_NAMES = json.load(io.open('build/demo/en_names.json', encoding='utf-8'))
 
 # 요금은 assets/data/pricing.json 하나에서만 읽는다. 페이지에 숫자를 직접
 # 적어 두면 요금표가 바뀔 때 한쪽만 고쳐지고, 그 순간 이 페이지가 거짓말이 된다.
@@ -103,7 +124,7 @@ TPL = """
       <h1>{h1}</h1>
       <p class="sub">{sub}</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="#call">그 통화 읽어 보기<span class="cir">&darr;</span></a>
+        <a class="btn btn-teal" href="#call">그 통화 듣고 보기<span class="cir">&darr;</span></a>
         <a class="btn btn-ghostd" href="../get-started.html">{name} 견적 받기</a>
       </div>
     </div>
@@ -116,13 +137,14 @@ TPL = """
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>{when_eyebrow}</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">{when_h2}</h2>
-    <div class="appwin reveal" style="margin-top:34px;">
+    {demo}
+    <noscript><div class="appwin" style="margin-top:34px;">
       <div class="bar"><i></i><i></i><i></i>
         <span class="tt">{name} &mdash; <b>{when_tt}</b></span>
         <span class="illus">예시 &middot; 가상의 상담</span>
         <span class="closed">{when_badge}</span></div>
       <div class="body nightline">{turns}</div>
-    </div>
+    </div></noscript>
     <p class="seccap reveal" style="margin-top:16px;">실제 고객 사례가 아니라, {name} 요금표와 안전 지침을
       넣었을 때 제품이 어떻게 답하는지 보여 주는 예시입니다. 금액은 국내에서 흔히 제시되는 범위이고,
       실제로 안내되는 금액은 {owner}이 넣으신 요금표에서 나옵니다.</p>
@@ -224,6 +246,144 @@ TPL = """
 """
 
 
+TPL_EN = """
+<header class="hero photohero">
+  <div class="bgimg" aria-hidden="true">
+    <img class="ph" src="{photo}?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="{photo}?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, {photo}?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, {photo}?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="grainlayer grain" aria-hidden="true"></div>
+  {NAV}
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>{kicker}</span>
+      <h1>{h1}</h1>
+      <p class="sub">{sub}</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; {name}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>{when_eyebrow}</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">{when_h2}</h2>
+    {demo}
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">{name} &mdash; <b>{when_tt}</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">{when_badge}</span></div>
+      <div class="body nightline">{turns}</div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      a {name} price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the price list {owner} enters.</p>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-grid" id="cost">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A call a {name} misses<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">{cost}</p>{ill_night}</div>
+  </div>
+</section>
+
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in a {name}.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the {name} answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;">{refuse}</ul>{ill_handoff}</div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="t-md sec-light bg-paper" id="crm">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The {name} CRM comes with {name} fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal">{ill_card}<div class="fieldgrid" style="margin-top:0;">{fields}</div></div>
+  </div>
+</section>
+{playbook}
+<section class="t-md sec-dark bg-grid" id="pipeline">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal">{stages}</div>
+    <div class="illwide reveal">{ill_pipe}</div>
+  </div>
+</section>
+
+<section class="packcard t-md sec-dark bg-grid" id="the-pack">
+  <div class="wrap">
+    <a class="pc-link" href="./{slug}-pack.html">
+      <span class="pc-k">The {name} pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
+      <span class="pc-go" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<section class="t-md sec-light2" id="others">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal">{others_photos}</div>
+    <div class="otherwall reveal">{others}</div>
+  </div>
+</section>
+
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your {name} price list,<br>and we show it answering from that list.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; {name}<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div>{ill_morning}</div>
+  </div>
+</section>
+
+{FOOT}
+</main>
+
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your {name} price list
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
+"""
+
+
 PB = """
 <section class="t-md sec-light bg-paper" id="playbook">
   <div class="wrap">
@@ -292,7 +452,13 @@ def build_playbook(t):
                      before=pb['before'], after=pb['after'], days=days)
 
 
-def other_photos(t):
+def trade_name(o, lang='ko'):
+    if lang == 'en':
+        return (o.get('en') or {}).get('name') or EN_NAMES.get(o['slug']) or o['slug'].replace('-', ' ').title()
+    return o['name']
+
+
+def other_photos(t, lang='ko'):
     """같은 묶음의 업종을 먼저, 그다음 나머지로 여덟 곳. 사진은 각 업종 페이지의 대표 사진."""
     mine = [g for _, g in GROUPS if t['slug'] in g]
     order = [s for s in (mine[0] if mine else []) if s != t['slug']]
@@ -302,43 +468,74 @@ def other_photos(t):
     for s in order[:8]:
         o = by[s]
         out.append('<a href="./%s.html"><img src="%s?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>%s</b></a>'
-                   % (o['slug'], o['photo'], o['name']))
+                   % (o['slug'], o['photo'], trade_name(o, lang)))
     return ''.join(out)
 
 
-def build_trade(t):
+def build_trade(t, lang='ko'):
+    en = lang == 'en'
+    src = t['en'] if en else t          # 영문 페이지는 t['en'] 의 문구로, 나머지(사진·슬러그)는 공통
     turns = []
-    for who, when, what in t['call']:
+    for who, when, what in src['call']:
         side = 'sr' if who == 'Saleringo' else 'us'
         bub = 'ai' if side == 'sr' else 'user'
         turns.append('<div class="nl %s"><span class="t"><em>%s</em>%s</span>'
                      '<div class="bub %s">%s</div></div>' % (side, who, when, bub, what))
-    refuse = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in t['refuse'])
-    fields = ''.join('<span>%s</span>' % f for f in t['fields'])
-    stages = '<i>&rarr;</i>'.join('<b>%s</b>' % s for s in t['stages'])
-    others = ''.join('<a href="./%s.html">%s</a>' % (o['slug'], o['name'])
-                     for o in TRADES if o['slug'] != t['slug'])
+    refuse = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in src['refuse'])
+    fields = ''.join('<span>%s</span>' % f for f in src['fields'])
+    stages = '<i>&rarr;</i>'.join('<b>%s</b>' % s for s in src['stages'])
+    others = ''.join('<a href="./%s.html">%s</a>' % (o['slug'], trade_name(o, lang))
+                     for o in TRADES if o['slug'] != t['slug'] and (not en or 'en' in o or o['slug'] in EN_NAMES))
 
     ctx = dict(t)
-    w = t.get('when') or {}
-    ctx.update(when_eyebrow=w.get('eyebrow', '그날 밤의 통화'),
-               when_h2=w.get('h2', '%s이 자는 동안<br>이렇게 흘러갑니다.' % t['owner']),
-               when_tt=w.get('tt', '영업 종료 후'), when_badge=w.get('badge', '문 닫은 시간'))
+    if en:
+        ctx.update(src)
+    name, owner = src['name'], src['owner']
+    w = src.get('when') or {}
+    if en:
+        ctx.update(when_eyebrow=w.get('eyebrow', 'That night’s call'),
+                   when_h2=w.get('h2', 'How it goes<br>while %s sleeps.' % owner),
+                   when_tt=w.get('tt', 'after hours'), when_badge=w.get('badge', 'closed'))
+    else:
+        ctx.update(when_eyebrow=w.get('eyebrow', '그날 밤의 통화'),
+                   when_h2=w.get('h2', '%s이 자는 동안<br>이렇게 흘러갑니다.' % owner),
+                   when_tt=w.get('tt', '영업 종료 후'), when_badge=w.get('badge', '문 닫은 시간'))
     ctx.update(NAV=NAV, FOOT=FOOT, turns=''.join(turns), refuse=refuse,
                fields=fields, stages=stages, others=others,
-               playbook=build_playbook(t))
-    ctx.update(ill_night=illus.figure(illus.night('ko'), '하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.'),
-               ill_handoff=illus.figure(illus.handoff('ko', question=t['call'][0][2][:40]), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체와 받아 적은 항목이 함께 갑니다.'),
-               ill_card=illus.figure(illus.card('ko', rows=[(f, None, '통화에서') for f in t['fields'][:4]]), '통화가 끝나면 이 카드가 채워져 있습니다. 항목마다 어디서 나온 값인지가 붙습니다.'),
-               ill_pipe=illus.figure(illus.pipeline('ko', stages=t['stages'][:5]), '{name}의 단계 그대로입니다. 지금 몇 건이 어느 단계에 있는지 한눈에 보입니다.'.format(name=t['name'])),
-               ill_morning=illus.figure(illus.morning('ko'), '밤사이 받은 것이 아침 화면에 이렇게 놓여 있습니다.'),
-               others_photos=other_photos(t))
-    body = TPL.format(**ctx)
+               playbook='' if en else build_playbook(t))
+    q = src['call'][0][2] if src['call'] else ''
+    if en:
+        ctx.update(ill_night=illus.figure(illus.night('en'), 'Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.'),
+                   ill_handoff=illus.figure(illus.handoff('en', question=q[:40]), 'On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.'),
+                   ill_card=illus.figure(illus.card('en', rows=[(f, None, 'from the call') for f in src['fields'][:4]]), 'The card a call leaves behind, with the source of every field.'),
+                   ill_pipe=illus.figure(illus.pipeline('en', stages=src['stages'][:5]), 'The %s pipeline as it is. How many inquiries sit at each stage, at a glance.' % name),
+                   ill_morning=illus.figure(illus.morning('en'), 'What the night produced, waiting on the morning screen.'),
+                   others_photos=other_photos(t, 'en'),
+                   demo=demo_block.block('en', t['slug'], rel='../../'))
+    else:
+        ctx.update(ill_night=illus.figure(illus.night('ko'), '하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.'),
+                   ill_handoff=illus.figure(illus.handoff('ko', question=q[:40]), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체와 받아 적은 항목이 함께 갑니다.'),
+                   ill_card=illus.figure(illus.card('ko', rows=[(f, None, '통화에서') for f in src['fields'][:4]]), '통화가 끝나면 이 카드가 채워져 있습니다. 항목마다 어디서 나온 값인지가 붙습니다.'),
+                   ill_pipe=illus.figure(illus.pipeline('ko', stages=src['stages'][:5]), '{name}의 단계 그대로입니다. 지금 몇 건이 어느 단계에 있는지 한눈에 보입니다.'.format(name=name)),
+                   ill_morning=illus.figure(illus.morning('ko'), '밤사이 받은 것이 아침 화면에 이렇게 놓여 있습니다.'),
+                   others_photos=other_photos(t, 'ko'),
+                   demo=demo_block.block('ko', t['slug'], rel='../../'))
+    body = (TPL_EN if en else TPL).format(**ctx)
+    if en:
+        page('industries/%s.html' % t['slug'],
+             'AI answering for %s &mdash; how a call at night becomes a booking' % name,
+             'The AI answers %s inquiries, books, and files a customer record. The example call, what it never says, '
+             'and the CRM fields it leaves behind.' % name,
+             body, css=CSS, grade='voice', scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'demofull'),
+             image=t['photo'] + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
+             crumbs=[('Home', 'index.html'), ('Trades', 'industries.html'),
+                     (name, 'industries/%s.html' % t['slug'])], lang='en')
+        return
     page('industries/%s.html' % t['slug'],
          '%s AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법' % t['name'],
          '%s에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. '
          '통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.' % t['name'],
-         body, css=CSS, grade='voice',
+         body, css=CSS, grade='voice', scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'demofull'),
          image=t['photo'] + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630',
          crumbs=[('홈', 'index.html'), ('업종', 'industries.html'),
                  (t['name'], 'industries/%s.html' % t['slug'])])
@@ -427,7 +624,7 @@ WALL = """
     <h2 class="h2 onDark reveal">목록에 없다고<br>안 되는 것은 아닙니다.</h2>
     <p class="sub reveal" style="max-width:none;">업종별 CRM이란 결국 항목과 단계, 그리고 하면 안 되는 말의
       목록입니다. 요금표와 영업시간, 그리고 &ldquo;이 말은 절대 하면 안 된다&rdquo;는 것 몇 가지만
-      알려 주시면 만들 수 있습니다. 한의원, 세무사무소, 사진 스튜디오, 산후조리원, 카센터 프랜차이즈처럼 위 목록에 없는 곳도 같은 방식입니다.</p>
+      알려 주시면 만들 수 있습니다. 산후조리원, 안과, 스포츠 시설, 공유오피스, 카센터 프랜차이즈처럼 위 목록에 없는 곳도 같은 방식입니다.</p>
     <div class="ctas reveal">
       <a class="btn btn-teal" href="./get-started.html">우리 업종으로 만들어 보기<span class="cir">&#8599;</span></a>
     </div>
@@ -467,6 +664,13 @@ LEAD = {
 }
 
 
+for _t in NEW_TRADES:
+    _g = _t.get('group', 6)
+    if 0 <= _g < len(GROUPS) and _t['slug'] not in GROUPS[_g][1]:
+        GROUPS[_g][1].append(_t['slug'])
+    LEAD.setdefault(_t['slug'], _t.get('lead', ''))
+
+
 def build_wall():
     by = {t['slug']: t for t in TRADES}
     out = []
@@ -484,7 +688,10 @@ def build_wall():
          crumbs=[('홈', 'index.html'), ('업종', 'industries.html')])
 
 
+n_en = 0
 for t in TRADES:
     build_trade(t)
+    if 'en' in t:
+        build_trade(t, 'en'); n_en += 1
 build_wall()
-print('wrote %d trade pages and the wall' % len(TRADES))
+print('wrote %d ko trade pages, %d en trade pages, and the wall' % (len(TRADES), n_en))
