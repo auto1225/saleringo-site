@@ -42,6 +42,26 @@
           none: '세금 없음 (해당 국가에 세무 등록 없음)',
           review: '세금 별도 · 구매 법인 검증 후 확정'
         },
+        prov: {
+          heading: '개통 체크리스트',
+          preview: '결제가 확인되면 아래 순서로 개통이 진행됩니다. 지금은 아직 시작 전입니다.',
+          live: '개통 진행 상황 — 결제 뒤에 무엇이 어디까지 됐는지',
+          number: '배정된 번호',
+          waiting: '사장님이 하실 차례',
+          human: '저희가 확인 중입니다 — 끝나면 알려 드립니다',
+          done: '완료', running: '진행 중', pending: '대기', skipped: '해당 없음', failed: '확인 필요',
+          forwardHelp: '착신전환 방법 보기 →',
+          groups: [
+            ['결제 확인', '결제사 승인이 들어오면 자동으로 시작합니다.'],
+            ['계정과 업종 팩', '고객 장부를 만들고 업종 기본 답변을 채웁니다.'],
+            ['요금표와 답변 승인', '요금표·영업시간·하면 안 되는 말을 넣고, 답변을 승인합니다. 사장님이 하시는 단계입니다.'],
+            ['번호 배정', '서비스 이용 국가의 규제 등급에 따라 즉시 또는 서류 뒤에 배정합니다.'],
+            ['착신 연결', '새 번호를 대표번호로 쓰거나, 쓰던 번호를 착신전환합니다. 저희가 확인 전화를 걸어 검증합니다.'],
+            ['채널 연결', '웹챗은 즉시, 카카오톡·WhatsApp 은 승인이 걸립니다. 캘린더는 바로 연결됩니다.'],
+            ['테스트 통화', '요금표로 답하는 열 문항을 자동으로 걸어 녹음과 채점표를 보내 드립니다.'],
+            ['개통', '필수 항목이 모두 통과하면 개통 버튼이 열립니다.']
+          ]
+        },
         steps: {
           received: ['주문 접수', '주문서를 받았습니다. 청약 단계이며 계약도 결제도 아직입니다.'],
           proposal_sent: ['제안서 발송', '구성과 금액을 담은 제안서를 보냈습니다.'],
@@ -82,6 +102,26 @@
           reverse: 'Reverse charge',
           none: 'No tax added (no registration in your country)',
           review: 'Tax excluded · confirmed after we verify the buying entity'
+        },
+        prov: {
+          heading: 'Go-live checklist',
+          preview: 'Once payment is confirmed, go-live runs in this order. Nothing has started yet.',
+          live: 'Go-live progress — what has happened since payment',
+          number: 'Number assigned',
+          waiting: 'Your turn',
+          human: 'We are checking this — we will tell you when it is done',
+          done: 'Done', running: 'In progress', pending: 'Waiting', skipped: 'Not needed', failed: 'Needs attention',
+          forwardHelp: 'How to forward your number →',
+          groups: [
+            ['Payment confirmed', 'Starts automatically when the payment provider approves.'],
+            ['Account and industry pack', 'We create your customer record book and fill in the industry defaults.'],
+            ['Price list and approved answers', 'Add prices, hours and the things it must never say, then approve the answers. This step is yours.'],
+            ['Number assigned', 'Instant or after documents, depending on the regulatory grade of your service country.'],
+            ['Forwarding connected', 'Publish the new number, or forward your existing one. We place a verification call.'],
+            ['Channels connected', 'Web chat is instant; WhatsApp and KakaoTalk wait for platform approval. Calendars connect at once.'],
+            ['Test call', 'We run ten questions against your price list and send you the recordings and a scorecard.'],
+            ['Live', 'The go-live button opens once every required item has passed.']
+          ]
         },
         steps: {
           received: ['Order received', 'We have your order form. This is an offer — not a contract, not a payment.'],
@@ -149,6 +189,61 @@
     } catch (e) { return iso; }
   }
 
+  /* 개통 체크리스트. 서버의 provisioning_jobs 를 구매자에게 보이는 여덟 묶음으로 접습니다.
+     묶음의 상태는 그 안에서 가장 급한 것 — 사장님 차례 > 확인 필요 > 진행 중 > 대기 > 완료. */
+  var PROV_GROUPS = [
+    ['order_paid'],
+    ['tenant_create', 'knowledge_seed'],
+    ['knowledge_approve'],
+    ['number_reserve', 'number_regulatory', 'voice_attach'],
+    ['forward_verify'],
+    ['channel_webchat', 'channel_kakao', 'channel_whatsapp', 'channel_calendar'],
+    ['test_call'],
+    ['launch_check']
+  ];
+  var FORWARD_PAGE = './forwarding.html';
+
+  function groupState(jobs) {
+    if (!jobs.length) return 'pending';
+    var st = jobs.map(function (j) { return j.status; });
+    if (st.indexOf('needs_customer') >= 0) return 'needs_customer';
+    if (st.indexOf('failed') >= 0 || st.indexOf('needs_human') >= 0) return 'needs_human';
+    if (st.indexOf('running') >= 0) return 'running';
+    if (st.every(function (x) { return x === 'done' || x === 'skipped'; })) return 'done';
+    return 'pending';
+  }
+
+  function renderProvisioning(d) {
+    var jobs = Array.isArray(d.provisioning) ? d.provisioning : [];
+    var live = jobs.length > 0;
+    var byStep = {};
+    jobs.forEach(function (j) { byStep[j.step] = j; });
+    var P = T.prov;
+    var o = [];
+    o.push('<p class="oshead" style="margin-top:34px;">' + esc(P.heading) + '</p>');
+    o.push('<p class="osnote" style="margin-top:0;">' + esc(live ? P.live : P.preview) + '</p>');
+    if (d.tenant && d.tenant.number && d.tenant.number.e164) {
+      o.push(row(P.number, '<span class="osno">' + esc(d.tenant.number.e164) + '</span>'));
+    }
+    o.push('<ul class="ostrack osprov' + (live ? '' : ' preview') + '">');
+    PROV_GROUPS.forEach(function (steps, i) {
+      var mine = steps.map(function (k) { return byStep[k]; }).filter(Boolean);
+      var g = live ? groupState(mine) : 'pending';
+      var cls = g === 'done' ? 'done' : (g === 'running' || g === 'needs_customer' || g === 'needs_human') ? 'now' : '';
+      var label = P.groups[i][0], desc = P.groups[i][1];
+      var tag = live ? '<i class="ostag ' + esc(g) + '">' + esc(
+        g === 'needs_customer' ? P.waiting : g === 'needs_human' ? P.human :
+        g === 'running' ? P.running : g === 'done' ? P.done : P.pending) + '</i>' : '';
+      var notes = mine.map(function (j) { return j.note; }).filter(Boolean)
+        .map(function (n) { return '<span>' + esc(n) + '</span>'; }).join('');
+      var help = (i === 4 && live && g !== 'done')
+        ? '<span><a class="lnk" href="' + FORWARD_PAGE + '">' + esc(P.forwardHelp) + '</a></span>' : '';
+      o.push('<li class="' + cls + '"><b>' + esc(label) + ' ' + tag + '</b><span>' + esc(desc) + '</span>' + notes + help + '</li>');
+    });
+    o.push('</ul>');
+    return o.join('');
+  }
+
   function row(label, value) {
     if (value === '' || value == null) return '';
     return '<div class="osrow"><span>' + esc(label) + '</span><b>' + value + '</b></div>';
@@ -198,6 +293,9 @@
       out.push('</ul>');
       out.push('<p class="osnote">' + esc(T.notCharged) + '</p>');
     }
+
+    /* 취소·반려된 주문에는 개통 순서를 그리지 않습니다 — 진행될 일이 아니기 때문입니다. */
+    if (d.state !== 'cancelled' && d.state !== 'rejected') out.push(renderProvisioning(d));
 
     result.innerHTML = out.join('');
     result.hidden = false;

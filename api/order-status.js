@@ -67,5 +67,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: code || 'invalid' });
   }
 
+  /* 개통 단계. 결제 뒤에 무엇이 어디까지 됐는지 — 번호 배정, 착신 검증, 채널,
+     테스트 통화, 개통 게이트. 같은 번호·이메일 검증을 다시 거치는 함수라서
+     주문 내용이 열린 사람에게만 열립니다. 함수가 아직 없거나 실패하면
+     주문 내용은 그대로 보여 주고 개통 단계만 비웁니다. */
+  try {
+    const p = await rpc('sales_provisioning_status', { p_order_no: orderNo, p_email: email });
+    r.provisioning = p && p.ok === true && Array.isArray(p.jobs) ? p.jobs : [];
+    if (p && p.ok === true && p.tenant) r.tenant = p.tenant;
+  } catch (e) {
+    r.provisioning = [];
+  }
+
   return res.status(200).json(r);
 }

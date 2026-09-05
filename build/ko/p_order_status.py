@@ -49,6 +49,14 @@ CSS = """
   .ostrack span{display:block;margin-top:4px;font-size:var(--fs-xs);color:var(--tx3);line-height:1.7;}
   .osnote{margin-top:26px;font-size:var(--fs-xs);color:var(--tx3);line-height:1.8;}
   .oshead{margin-bottom:8px;font-size:var(--fs-lead);color:#141A1F;font-weight:600;}
+  .ostag{display:inline-block;margin-left:8px;font-style:normal;font-size:11px;font-weight:600;
+    padding:2px 8px;border-radius:999px;vertical-align:middle;background:#EEEAE2;color:#616B75;}
+  .ostag.done{background:rgba(47,133,90,.12);color:#2F855A;}
+  .ostag.running{background:rgba(11,120,120,.12);color:#0B7878;}
+  .ostag.needs_customer{background:rgba(183,121,31,.14);color:#B7791F;}
+  .ostag.needs_human{background:rgba(180,69,58,.10);color:#B4453A;}
+  .osprov.preview li{opacity:.7;}
+  .osprov li span a{font-weight:600;}
 """
 
 

@@ -39,6 +39,11 @@
       "permanent": true
     },
     {
+      "source": "/en/forwarding",
+      "destination": "/en/forwarding.html",
+      "permanent": true
+    },
+    {
       "source": "/en/get-started",
       "destination": "/en/get-started.html",
       "permanent": true
@@ -396,6 +401,11 @@
     {
       "source": "/ko/examples",
       "destination": "/ko/examples.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/forwarding",
+      "destination": "/ko/forwarding.html",
       "permanent": true
     },
     {
@@ -930,6 +940,40 @@
     {
       "source": "/examples.html",
       "destination": "/en/examples.html",
+      "permanent": false
+    },
+    {
+      "source": "/forwarding",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/forwarding.html",
+      "permanent": false
+    },
+    {
+      "source": "/forwarding",
+      "destination": "/en/forwarding.html",
+      "permanent": false
+    },
+    {
+      "source": "/forwarding.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/forwarding.html",
+      "permanent": false
+    },
+    {
+      "source": "/forwarding.html",
+      "destination": "/en/forwarding.html",
       "permanent": false
     },
     {
