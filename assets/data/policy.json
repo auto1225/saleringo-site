@@ -64,7 +64,7 @@
     "usageRefundable": false,
     "summary": {
       "ko": "<b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. 그 뒤에 해지하시면 월 정액 요금 가운데 <b>해지 신청일부터 그 달 남은 날수만큼 날짜로 계산해 환불</b>합니다. 이미 사용하신 통화료·메시지 요금은 게시된 단가로 차감하며 환불 대상이 아닙니다.",
-      "en": "<b>Full refund within 14 days of your first payment.</b> After that, cancelling refunds <b>the unused part of the month, counted by date</b>. Usage you have already run — talk minutes, message volume — is charged at the listed rates and is not refunded."
+      "en": "<b>Full refund within 14 days of your first payment.</b> After that, canceling refunds <b>the unused part of the month, counted by date</b>. Usage you have already run — talk minutes, message volume — is charged at the listed rates and is not refunded."
     },
     "companyFault": {
       "ko": "회사의 귀책으로 서비스를 이용하지 못한 시간이 있으면, 그 기간의 요금을 환불하거나 다음 달 요금에서 차감합니다.",

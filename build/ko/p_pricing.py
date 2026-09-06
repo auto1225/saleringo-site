@@ -22,6 +22,39 @@ import os as _os
 sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import illus
 from shell import page, NAV, FOOT
+import io as _io
+import json as _json
+
+POL = _json.load(_io.open('assets/data/policy.json', encoding='utf-8'))
+PRI = _json.load(_io.open('assets/data/pricing.json', encoding='utf-8'))
+
+
+def polblock(name):
+    """build/policy.py 의 block() 과 같은 모양 — 표시자 안에 미리 채워 두고, policy.py --check 가 원문과 같은지 본다."""
+    if name == 'refund':
+        r = POL['refund']
+        return '<p>%s</p><p>%s</p>' % (r['summary']['ko'], r['companyFault']['ko'])
+    if name == 'renewal':
+        return '<p>%s</p>' % POL['renewal']['summary']['ko']
+    raise KeyError(name)
+
+
+def country_rows():
+    """나라별 안내 표 — pricing.json countries 에서 만든다. 손으로 적으면 요금표와 어긋난다."""
+    V = {'live': '<b>지금 됩니다</b>', 'soon': '개통 작업 중', 'no': '아직 없음 &mdash; 채팅·메신저만'}
+    out = []
+    for c in PRI['countries']:
+        cur = '원화 &middot; 전자세금계산서' if c['currency'] == 'KRW' else '미국 달러 인보이스'
+        rule = PRI['tax'].get(c['code']) or PRI['tax']['default']
+        if rule.get('collected'):
+            tax = '%s 별도' % rule['label']['ko']
+        elif c.get('reverseCharge'):
+            tax = '저희가 걷는 세금 없음 &middot; 리버스 차지(%s 기재)' % c['taxIdLabel']['ko']
+        else:
+            tax = '저희가 걷는 세금 없음'
+        out.append('          <tr><td><b>%s</b></td><td>%s</td><td>%s</td><td>%s</td></tr>'
+                   % (c['name']['ko'], V[c['voice']], cur, tax))
+    return '\n'.join(out)
 
 NB = '&nbsp;'
 
@@ -57,7 +90,8 @@ CSS = """
   @media (max-width:700px){.cmp{min-width:620px;}}
   .qa{margin-top:34px;display:grid;gap:0;}
   .qa .q{padding:22px 0;border-top:1px solid #E3E7EE;}
-  .qa .q b{display:block;font-size:var(--fs-lead);color:var(--l-ink);}
+  .qa .q h3{margin:0;font-family:'IBM Plex Sans','IBM Plex Sans KR',sans-serif;font-size:var(--fs-lead);
+    font-weight:700;letter-spacing:-.01em;color:var(--l-ink);}
   .qa .q p{margin-top:9px;font-size:var(--fs-sm);color:var(--l-tx2);line-height:1.8;}
   .foundbox{margin-top:32px;padding:26px 24px;border:1px solid var(--teal);
     border-radius:8px;background:rgba(11,120,120,.07);}
@@ -82,7 +116,8 @@ CSS = """
   .kbuy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
   .kbuy > div{padding:26px 24px;border:1px solid var(--hair-d);border-radius:14px;
     background:rgba(20,26,31,.039);}
-  .kbuy b{display:block;color:#141A1F;font-size:var(--fs-lead);margin-bottom:10px;}
+  .kbuy > div > h3{margin:0 0 10px;font-family:'IBM Plex Sans','IBM Plex Sans KR',sans-serif;
+    font-size:var(--fs-lead);font-weight:700;letter-spacing:-.01em;color:#141A1F;}
   .kbuy p{font-size:var(--fs-sm);line-height:1.85;color:var(--tx2);}
   @media (max-width:900px){.kbuy{grid-template-columns:1fr;}}
 
@@ -96,13 +131,18 @@ CSS = """
   .krate span{display:block;margin-top:4px;font-size:var(--fs-xs);color:var(--tx3);
     line-height:1.7;}
   .kratewrap{overflow-x:auto;}
+  .kctry td:last-child,.kctry th:last-child{text-align:left;white-space:normal;}
+  .kctry td{color:var(--tx2);}
+  @media (max-width:700px){.kctry{min-width:640px;}}
 
   .kover{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
     background:var(--hair-d);border:1px solid var(--hair-d);border-radius:14px;overflow:hidden;}
   .kover > div{background:rgba(20,26,31,.039);padding:24px 22px;}
   .kover i{display:block;font-style:normal;font-size:var(--fs-2xs);letter-spacing:.16em;
     text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:10px;}
-  .kover b{display:block;color:#141A1F;font-size:var(--fs-body);margin-bottom:8px;}
+  .kover > div > h3{margin:0 0 8px;font-family:'IBM Plex Sans','IBM Plex Sans KR',sans-serif;
+    font-size:var(--fs-body);font-weight:700;letter-spacing:-.01em;color:#141A1F;}
+  .kover p b{color:#141A1F;font-weight:700;}
   .kover p{font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
   @media (max-width:900px){.kover{grid-template-columns:1fr;}}
 
@@ -174,7 +214,7 @@ BODY = """
       <div class="kplan">
         <span class="nm">Scale</span>
         <span class="pr">820,000원<i>/월</i></span>
-        <span class="vat">부가세 별도 &middot; 통화료 별도</span>
+        <span class="vat">부가세 별도 &middot; 약정 없음 &middot; 통화료 별도</span>
         <ul>
           <li>Grow의 모든 기능</li>
           <li>AI 전화 응대</li>
@@ -218,22 +258,22 @@ BODY = """
     <h2 class="h2 reveal">응대는 현관입니다.<br>값을 치르시는 것은 그 뒤의 건물입니다.</h2>
     <p class="sub reveal">전화를 받아 주는 서비스는 이미 있습니다. 통화가 끝나면 녹취와 메모가
       남고, 그것을 누군가 다시 읽고 옮겨 적어야 합니다. 그 옮겨 적는 일이 실제 업무의 대부분입니다.
-      Saleringo 는 그 일을 하지 않아도 되게 만듭니다.</p>
+      Saleringo는 그 일을 하지 않아도 되게 만듭니다.</p>
 
     <div class="kbuy reveal">
       <div>
-        <b>대화가 고객 기록이 됩니다</b>
+        <h3>대화가 고객 기록이 됩니다</h3>
         <p>통화든 채팅이든 카카오톡이든, 끝나면 고객 카드 한 장이 남습니다. 이름, 연락처,
           무엇을 물었는지, 무엇을 약속했는지가 한 곳에 모입니다. 같은 사람이 다음 달에 다시
           연락하면 그 카드에 이어 붙습니다.</p>
       </div>
       <div>
-        <b>예약과 견적이 그 자리에서</b>
+        <h3>예약과 견적이 그 자리에서</h3>
         <p>비어 있는 시간을 확인하고 잡습니다. 등록해 두신 요금표로 견적을 만들어 보냅니다.
           사람이 나중에 확인해 다시 연락하는 것이 아니라, 통화 중에 끝납니다.</p>
       </div>
       <div>
-        <b>다음에 할 일이 누구 것인지</b>
+        <h3>다음에 할 일이 누구 것인지</h3>
         <p>확인이 필요한 건은 담당자에게 넘어갑니다. 누구에게 언제 넘어갔는지, 처리됐는지가
           남습니다. 「그 건 어떻게 됐지」를 다시 묻지 않아도 됩니다.</p>
       </div>
@@ -241,8 +281,8 @@ BODY = """
 
     {ILL_CARD}
     <p class="seccap reveal" style="margin-top:22px;">이것은 상위 요금제의 기능이 아닙니다.
-      <b>Start 110,000원부터</b> 세 요금제 모두에 같은 CRM 이 들어 있습니다. 요금제가
-      나뉘는 기준은 CRM 이 아니라 <b>어느 채널로 받는가</b>와 <b>한 달에 몇 건인가</b>입니다.</p>
+      <b>Start 110,000원부터</b> 세 요금제 모두에 같은 CRM이 들어 있습니다. 요금제가
+      나뉘는 기준은 CRM이 아니라 <b>어느 채널로 받는가</b>와 <b>한 달에 몇 건인가</b>입니다.</p>
   </div>
 </section>
 
@@ -258,12 +298,12 @@ BODY = """
       <div class="qbcard">
         <p class="lbl">우리 가게 구성</p>
         <div class="qbrow">
-          <b>사업장이 있는 나라</b>
-          <select data-qb-country aria-label="나라"></select>
+          <label class="qbl" for="qb-country">사업장이 있는 나라</label>
+          <select id="qb-country" data-qb-country></select>
         </div>
         <div class="qbrow">
-          <b>어느 문을 받게 할까요?</b>
-          <div class="qbchan">
+          <b id="qb-doors">어느 문을 받게 할까요?</b>
+          <div class="qbchan" role="group" aria-labelledby="qb-doors">
             <label><input type="checkbox" checked disabled> 홈페이지 채팅 &mdash; 기본</label>
             <label><input type="checkbox" data-qb-msg> 메신저·알림톡</label>
             <label><input type="checkbox" data-qb-voice> AI 전화</label>
@@ -271,21 +311,21 @@ BODY = """
           <p class="qbplan" data-qb-plan></p>
         </div>
         <div class="qbrow" data-qb-row-calls hidden>
-          <b>한 달 통화 수 &middot; 평균 통화 시간</b>
+          <label class="qbl" for="qb-calls">한 달 통화 수 &middot; 평균 통화 시간</label>
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <input type="number" data-qb-calls value="150" min="0" max="10000" step="10" aria-label="월 통화 수" style="max-width:150px;">
-            <select data-qb-mins aria-label="평균 분" style="max-width:150px;">
+            <input type="number" id="qb-calls" data-qb-calls value="150" min="0" max="10000" step="10" aria-label="월 통화 수" style="max-width:150px;">
+            <select id="qb-mins" data-qb-mins aria-label="평균 통화 시간" style="max-width:150px;">
               <option value="2">약 2분</option><option value="3" selected>약 3분</option><option value="4">약 4분</option>
             </select>
           </div>
         </div>
         <div class="qbrow" data-qb-row-talks hidden>
-          <b>한 달 알림톡 발송 수</b>
-          <input type="number" data-qb-talks value="300" min="0" max="100000" step="50" aria-label="월 알림톡 수" style="max-width:150px;">
+          <label class="qbl" for="qb-talks">한 달 알림톡 발송 수</label>
+          <input type="number" id="qb-talks" data-qb-talks value="300" min="0" max="100000" step="50" style="max-width:150px;">
         </div>
       </div>
 
-      <div class="qbcard" data-qb-live>
+      <div class="qbcard" data-qb-live aria-live="polite">
         <p class="lbl">예상되는 한 달</p>
         <p style="margin-top:12px;" data-qb-sum></p>
         <p class="qbtax" data-qb-tax>세금과 접수 가능 여부는 주문서에서 확인됩니다.</p>
@@ -312,7 +352,7 @@ BODY = """
     <div class="kratewrap reveal">
       <table class="krate">
         <thead>
-          <tr><th>채널</th><th>어느 요금제부터</th><th>월정액 밖에서 더 나가는 것</th></tr>
+          <tr><th scope="col">채널</th><th scope="col">어느 요금제부터</th><th scope="col">월정액 밖에서 더 나가는 것</th></tr>
         </thead>
         <tbody>
           <tr>
@@ -381,19 +421,19 @@ BODY = """
     <div class="kover reveal">
       <div>
         <i>80%</i>
-        <b>미리 알려 드립니다</b>
+        <h3>미리 알려 드립니다</h3>
         <p>포함 건수의 80%에 닿으면 담당자 이메일로 알립니다. 이 달에 넘길 것 같은지
           그때 판단하실 수 있습니다.</p>
       </div>
       <div>
         <i>100%</i>
-        <b>넘긴 만큼만 붙습니다</b>
+        <h3>넘긴 만큼만 붙습니다</h3>
         <p>초과분은 <b>건당 90원</b>입니다. 100건이면 9,000원입니다.
           요금제가 저절로 올라가지 않고, 다음 달에 다시 원래대로 돌아옵니다.</p>
       </div>
       <div>
         <i>상한</i>
-        <b>아예 막아 두실 수 있습니다</b>
+        <h3>아예 막아 두실 수 있습니다</h3>
         <p>월 상한을 걸어 두시면 그 지점에서 AI 응대를 멈춥니다. 청구가 늘어나는 대신
           멈추는 쪽입니다. 그래도 <b>들어온 문의는 직원분들께 그대로 보입니다</b> &mdash;
           응대만 멈추고 기록은 계속 남습니다.</p>
@@ -406,6 +446,30 @@ BODY = """
   </div>
 </section>
 
+<section class="t-md sec-light bg-paper" id="countries">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>나라별 안내</span><span class="line"></span></div>
+    <h2 class="h2 reveal">어느 나라에서 무엇이 되는지,<br>주문 전에 적어 둡니다.</h2>
+    <p class="sub reveal">홈페이지 채팅과 메신저는 어느 나라에서나 오늘 됩니다. AI 전화는 그 나라의 전화번호가
+      있어야 하고, 번호는 나라마다 규제가 달라 아래처럼 나뉩니다. 청구 통화와 세금도 사업장이 있는 나라로
+      정해집니다 &mdash; 주문서의 나라 목록과 같은 표입니다.</p>
+    <div class="kratewrap reveal">
+      <table class="krate kctry">
+        <thead>
+          <tr><th scope="col">나라</th><th scope="col">AI 전화</th><th scope="col">청구 통화</th><th scope="col">세금</th></tr>
+        </thead>
+        <tbody>
+{COUNTRIES}
+        </tbody>
+      </table>
+    </div>
+    <p class="seccap reveal" style="margin-top:18px;">통화료는 어느 나라든 <b>1분당 190원부터</b>이고, 회선과 지역으로 계산한
+      확정 단가는 서면 주문서에 적힙니다. 목록에 없는 나라는 채팅·메신저로 시작하실 수 있고, 전화가 꼭 필요하시면
+      주문 전에 물어보시면 되는지 안 되는지 그대로 말씀드립니다. 한국 밖의 사업자는 미국 달러로 청구되며,
+      한국에 사업자등록이 있으시면 이 페이지의 원화 금액이 적용됩니다.</p>
+  </div>
+</section>
+
 <section class="t-md sec-dark bg-spot" id="alternatives">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>무엇과 비교하는가</span><span class="line"></span></div>
@@ -414,7 +478,7 @@ BODY = """
       각각 얼마가 들고, 각각 무엇을 못 하는지를 같이 놓고 보시는 편이 정확합니다.</p>
     <div class="cmpwrap reveal">
       <table class="cmp">
-        <thead><tr><th>방법</th><th>월 비용</th><th>못 하는 것</th></tr></thead>
+        <thead><tr><th scope="col">방법</th><th scope="col">월 비용</th><th scope="col">못 하는 것</th></tr></thead>
         <tbody>
           <tr><td><b>그냥 놓치기</b></td><td><b>0원</b></td>
             <td>누가 왜 걸었는지 알 수 없습니다. 다시 걸어 주지도, 예약을 잡지도 못합니다.
@@ -432,7 +496,7 @@ BODY = """
       </table>
     </div>
     <p class="seccap reveal" style="margin-top:16px;">위 금액은 특정 업체의 견적이 아니라 국내에서 흔히
-      제시되는 범위입니다. 직원 인건비는 2026년 최저임금 기준 월급에 4대 보험 사업자 부담분을
+      제시되는 범위입니다. 직원 인건비는 2026년 최저임금 기준 월급에 4대 보험 사업자 부담분과 퇴직급여 적립분을
       더한 대략치입니다.</p>
   </div>
 </section>
@@ -473,43 +537,43 @@ BODY = """
       &mdash; 세금계산서, 환불, 결제가 실패하면 어떻게 되는지, 그리고 조용히 응대를 멈추지는
       않는지.</p>
     <div class="qa reveal">
-      <div class="q"><b>세금계산서 발행되나요?</b>
-        <p>됩니다. 매월 결제일 기준으로 전자세금계산서를 발행해 드립니다. 사업자등록번호와
+      <div class="q"><h3>세금계산서 발행되나요?</h3>
+        <p>됩니다. 카드는 결제일에, 계좌이체는 사용량이 확정된 뒤 이체 전에 전자세금계산서를 발행해 드립니다. 사업자등록번호와
           받으실 이메일만 등록해 두시면 자동으로 나갑니다. 주문서에서 세금계산서 받으실 이메일을
           따로 지정하실 수 있습니다 &mdash; 담당자와 경리 담당이 다른 경우가 많기 때문입니다.</p></div>
 
-      <div class="q"><b>부가세는 포함인가요?</b>
+      <div class="q"><h3>부가세는 포함인가요?</h3>
         <p>아닙니다. 이 페이지의 모든 금액은 <b>부가세 별도</b>입니다. 실제 청구액은 여기에
           10%를 더한 금액입니다. Scale 820,000원이면 청구서에는 902,000원으로 찍힙니다.
           주문서에서 부가세를 포함한 실제 청구액을 먼저 보여 드립니다.</p></div>
 
-      <div class="q"><b>결제는 어떻게 하나요?</b>
+      <div class="q"><h3>결제는 어떻게 하나요?</h3>
         <p>카드 정기결제와 계좌이체 중에 고르십니다. 카드는 매월 같은 날 자동으로 결제되고,
           계좌이체는 사용량이 확정된 뒤 <b>전자세금계산서를 먼저 보내 드리고</b> 받으신 뒤에
           이체하시는 방식입니다. 계좌이체를 고르시면 저희에게 결제 정보를 맡기지 않으셔도 됩니다.</p></div>
 
-      <div class="q"><b>첫 달은 한 달치를 다 내나요?</b>
-        <p>아닙니다. 개시일부터 그 달 말일까지 <b>날짜로 나눠</b> 계산합니다. 20일에 시작하시면
-          그 달은 열흘치입니다. 개시일이 정해지면 그 날짜로 계산한 확정 금액을 먼저 알려 드리고,
+      <div class="q"><h3>첫 달은 한 달치를 다 내나요?</h3>
+        <p>아닙니다. 개시일부터 그 달 말일까지 <b>날짜로 나눠</b> 계산합니다. 30일까지 있는 달에 21일 시작하시면
+          그 달은 열흘치(21일부터 30일까지)입니다. 개시일이 정해지면 그 날짜로 계산한 확정 금액을 먼저 알려 드리고,
           그 뒤에 청구합니다.</p></div>
 
-      <div class="q"><b>해지하면 남은 기간은요?</b>
-        <p><b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. 그 뒤에 해지하시면 월 정액 요금 가운데 <b>해지 신청일부터 그 달 남은 날수만큼 날짜로 계산해 환불</b>합니다. 이미 사용하신 통화료·메시지 요금은 게시된 단가로 차감하며 환불 대상이 아닙니다.</p></div>
+      <div class="q"><h3>해지하면 남은 기간은요?</h3>
+        <!--#policy:refund-->{POL_REFUND}<!--/#policy:refund--></div>
 
-      <div class="q"><b>자동으로 갱신되나요?</b>
-        <p>카드 정기결제를 고르시면 <b>해지하시기 전까지</b> 매월 같은 날 자동으로 결제됩니다. <b>해지하신 뒤에는 갱신되지 않으며</b>, 이미 결제하신 기간까지는 그대로 이용하실 수 있습니다. 계좌이체를 고르시면 매월 세금계산서를 먼저 보내 드리고 받으신 뒤에 이체하시므로, 자동으로 빠져나가는 금액이 없습니다.</p></div>
+      <div class="q"><h3>자동으로 갱신되나요?</h3>
+        <!--#policy:renewal-->{POL_RENEWAL}<!--/#policy:renewal--></div>
 
-      <div class="q"><b>결제가 실패하면 바로 멈추나요?</b>
+      <div class="q"><h3>결제가 실패하면 바로 멈추나요?</h3>
         <p>아닙니다. 7일 동안 다시 시도하면서 이메일로 알려 드립니다. 그 뒤에도 해결되지 않으면
           7일의 유예 기간이 있고, 그동안에도 응대는 계속됩니다. <b>말없이 고객 응대를 멈추는 일은
           없습니다</b> &mdash; 멈춰야 하는 상황이면 멈추기 전에 먼저 알려 드립니다.</p></div>
 
-      <div class="q"><b>요금이 오르면요?</b>
+      <div class="q"><h3>요금이 오르면요?</h3>
         <p>시행 30일 전에 알려 드립니다. 인상에 동의하지 않으시면 그 시점에 해지하실 수
           있고, 이미 결제하신 기간에는 인상 전 요금이 적용됩니다. 창립 고객 할인을 받고 계신
           동안에는 그 기간의 금액이 가입 시점에 확정되어 바뀌지 않습니다.</p></div>
 
-      <div class="q"><b>지금 결제하는 건가요?</b>
+      <div class="q"><h3>지금 결제하는 건가요?</h3>
         <p>아닙니다. 주문서를 보내시는 것은 청약이고, <b>계약은 서면 주문서에 양측이 서명한 때
           성립합니다.</b> 그 전까지는 어떤 금액도 청구되지 않습니다. 접수하시면 담당자가 영업일
           하루 안에 확인 연락을 드리고 서면 주문서를 보내 드립니다.</p></div>
@@ -562,7 +626,8 @@ page('pricing.html',
      '요금 &mdash; Saleringo AI 응대 &middot; 월 110,000원부터',
      'Saleringo 요금제와 통화 단가를 전부 공개합니다. 월 110,000원부터, 부가세 별도, 약정 없음, '
      '세금계산서 발행. 직원 채용, 전화대행과 비교한 표도 함께 실었습니다.',
-     BODY.format(ILL_CARD='<div class="illwide reveal">' + illus.figure(illus.card('ko'), '세 요금제 모두에 같은 카드가 남습니다. 예시 데이터.') + '</div>', NAV=NAV, FOOT=FOOT, NB=NB), css=CSS, grade='trust',
+     BODY.format(ILL_CARD='<div class="illwide reveal">' + illus.figure(illus.card('ko'), '세 요금제 모두에 같은 카드가 남습니다. 예시 데이터.') + '</div>', NAV=NAV, FOOT=FOOT, NB=NB,
+                 COUNTRIES=country_rows(), POL_REFUND=polblock('refund'), POL_RENEWAL=polblock('renewal')), css=CSS, grade='trust',
      scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'quotebuild'),
      crumbs=[('홈', 'index.html'), ('요금', 'pricing.html')])
 print('wrote ko/pricing.html')

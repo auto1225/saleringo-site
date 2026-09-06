@@ -648,7 +648,7 @@ def build(lang):
                  '그 뒤에는 해지 신청일부터 그 달 말일까지 남은 날수만큼 날짜로 계산해 환불합니다. '
                  '이미 쓰신 통화료 등 사용량 요금은 게시된 단가로 차감합니다. 위약금은 없습니다.',
                  seller_line('en') + '<br>'
-                 '<b>Cancellation</b> — before service starts, cancelling costs nothing. '
+                 '<b>Cancellation</b> — before service starts, canceling costs nothing. '
                  'After it starts, &sect;4 of the Terms applies: cancel any day. The first payment is '
                  'refunded <b>in full within 14 days</b>; after that we refund the unused days of the '
                  'month. Usage already spent is deducted at the listed rates. Nothing renews; there is '

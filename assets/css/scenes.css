@@ -174,7 +174,7 @@
 .altgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--l-hair);}
 .altcol{padding:26px 22px;background:#fff;border-right:1px solid var(--l-hair);}
 .altcol:last-child{border-right:0;}
-.altcol.win{background:linear-gradient(180deg,#141A1F,#FFFFFF);color:#fff;}.altcol h4,.altcol .hl4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}.altcol.win h4,.altcol.win .hl4{color:var(--teal);}
+.altcol.win{background:linear-gradient(180deg,rgba(11,120,120,.14),rgba(11,120,120,.03));color:#141A1F;}.altcol h4,.altcol .hl4{font-size:var(--fs-xs);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-mut);}.altcol.win h4,.altcol.win .hl4{color:var(--teal);}
 .altcol .cost{margin-top:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);
   font-weight:600;letter-spacing:-.03em;color:var(--l-ink);
   /* This is sized for a price, and a price never wraps. A trade that puts a

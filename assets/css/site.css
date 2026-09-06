@@ -3565,7 +3565,7 @@ body[data-grade="trust"] .polsteps li::before{background:rgba(11,120,120,.14);co
 .qbcard .lbl{font-size:var(--fs-2xs);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);}
 .qbrow{display:grid;gap:8px;padding:14px 0;border-bottom:1px dashed var(--hair-d);}
 .qbrow:last-child{border-bottom:0;}
-.qbrow>b{font-size:var(--fs-xs);color:var(--tx);}
+.qbrow>b,.qbrow>.qbl{font-size:var(--fs-xs);color:var(--tx);font-weight:700;}
 .qbrow select,.qbrow input[type=number]{background:rgba(20,26,31,.065);border:1px solid var(--hair-d);
   border-radius:8px;color:var(--tx);padding:10px 12px;font-size:var(--fs-sm);width:100%;max-width:320px;}
 .qbchan{display:flex;flex-wrap:wrap;gap:10px;}

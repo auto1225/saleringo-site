@@ -231,6 +231,7 @@ BODY = """
     
     
     
+    
     <noscript><p class="lead onDark">이 데모는 자바스크립트로 움직입니다. 줄거리만 적으면: 밤 전화를 두 번째 벨에 받아,
       사장님 요금표로 안내하고, 빈 시간에 예약을 잡고, 담당자와 기한이 있는 고객 카드로 남깁니다.
       다음 날 같은 손님이 카카오톡으로 물으면 같은 카드에 이어집니다.</p></noscript>
@@ -428,7 +429,7 @@ BODY = """
       <ul class="ps-list">
         <li><b>Start</b><span class="ps-p">110,000원<i>/월</i></span><span class="ps-d">홈페이지 채팅, 문의 수신함, 예약. 월 500건 대화.</span></li>
         <li><b>Grow</b><span class="ps-p">340,000원<i>/월</i></span><span class="ps-d">카카오톡, 견적, 자동 안내 추가. 월 2,000건 대화.</span></li>
-        <li><b>Scale</b><span class="ps-p">820,000원<i>/월</i></span><span class="ps-d">AI 전화 추가. 월 6,000건 대화. 통화 1분당 190원부터. 지금 한국·미국·영국·호주·싱가포르·캐나다에서 운영 &mdash; <a href="./pricing.html">나라별 안내</a>.</span></li>
+        <li><b>Scale</b><span class="ps-p">820,000원<i>/월</i></span><span class="ps-d">AI 전화 추가. 월 6,000건 대화. 통화 1분당 190원부터. 지금 한국·미국·영국·호주·싱가포르·캐나다에서 운영 &mdash; <a href="./pricing.html#countries">나라별 안내</a>.</span></li>
       </ul>
       <p class="ps-policy"><b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. <b>해지하신 뒤에는 갱신되지 않으며</b>, 이미 결제하신 기간까지는 그대로 이용하실 수 있습니다. <a href="./pricing.html#faq">환불·해지 조건 전체 보기</a></p>
       <p class="ps-foot"><a class="linkcta" href="./pricing.html">요금제와 한도 전체 보기{NB}{NB}&rarr;</a><a class="linkcta" href="./pricing.html#alternatives">사람을 쓰는 것, 전화대행을 쓰는 것과 비교{NB}{NB}&rarr;</a></p>

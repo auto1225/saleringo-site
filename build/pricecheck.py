@@ -238,6 +238,75 @@ for fp in sorted(glob.glob('assets/js/*.js')):
                          '%s 를 판 번호 없이 부릅니다. 배포 뒤 한 시간 동안 '
                          '새 코드가 옛 요금표를 읽습니다.' % m.group(1)))
 
+# ── 11. 요금제의 대화 건수·지점 수·계정 수가 요금 페이지에 적혀 있어야 한다 ──
+for lang in ('ko', 'en'):
+    fp = '%s/pricing.html' % lang
+    if not os.path.exists(fp):
+        continue
+    t = text_of(fp)
+    for pl in P['plans']:
+        want = '{:,}'.format(pl['conversations'])
+        if not re.search(r'%s\s*(건|AI conversations|conversations)' % re.escape(want), t):
+            problems.append(('대화 건수', fp, '%s 의 월 %s건이 이 페이지에 없습니다' % (pl['name'][lang], want)))
+        if 'locations' in pl:
+            pat = (r'지점 %d곳' % pl['locations']) if lang == 'ko' else \
+                  (r'(?:%d|one) locations?' % pl['locations'] if pl['locations'] > 1 else r'One location')
+            if not re.search(pat, t, re.I):
+                problems.append(('지점 수', fp, '%s 의 지점 %d곳이 이 페이지에 없습니다' % (pl['name'][lang], pl['locations'])))
+
+# ── 12. 사용 단가(알림 발송)는 두 언어 요금 페이지에 같은 값으로 ────────
+alim = next((u for u in P['usage'] if u['id'] == 'alimtalk'), None)
+if alim:
+    for lang, cur in (('ko', 'KRW'), ('en', 'USD')):
+        fp = '%s/pricing.html' % lang
+        if not os.path.exists(fp):
+            continue
+        t = text_of(fp)
+        want = fmt(alim['unitPrice'][cur], cur)
+        if want not in t:
+            problems.append(('알림 단가', fp, '알림 발송 %s 가 이 페이지에 없습니다' % want))
+        # 요금표에 없는 메시지 단가를 적으면 안 된다
+        if cur == 'USD':
+            for m in re.finditer(r'\$(\d+\.\d+)\s*(?:/msg|per message|a message)', t):
+                if abs(float(m.group(1)) - alim['unitPrice'][cur]) > 1e-9:
+                    problems.append(('없는 단가', fp, '%s — 요금표에 없는 메시지 단가입니다' % m.group(0)))
+
+# ── 13. 할인이 켜져 있으면 할인가도 적혀 있어야 한다 (주문서가 계산하는 그 금액) ──
+if d and d.get('active'):
+    for lang, cur in (('ko', 'KRW'), ('en', 'USD')):
+        fp = '%s/pricing.html' % lang
+        if not os.path.exists(fp):
+            continue
+        t = text_of(fp)
+        for pl in P['plans']:
+            net = pl['price'][cur] * (100 - d['percent']) / 100.0
+            net = round(net) if cur == 'KRW' else round(net * 100) / 100.0
+            want = fmt(net, cur)
+            if want not in t:
+                problems.append(('할인가', fp, '%s 할인가 %s 가 이 페이지에 없습니다' % (pl['name'][lang], want)))
+
+# ── 14. 영문 계산기의 상수는 요금표를 베낀 것이다 — 베낀 값이 맞는지 본다 ──
+fp = 'en/pricing.html'
+if os.path.exists(fp):
+    raw = io.open(fp, encoding='utf-8').read()
+    for m in re.finditer(r"plan:'(\w+)',\s*base:(\d+),\s*incl:(\d+),\s*locs:(\d+)", raw):
+        pl = next((x for x in P['plans'] if x['name']['en'] == m.group(1)), None)
+        if not pl:
+            problems.append(('계산기 상수', fp, '%s 는 요금표에 없는 요금제입니다' % m.group(1)))
+            continue
+        if int(m.group(2)) != pl['price']['USD'] or int(m.group(3)) != pl['conversations'] \
+           or ('locations' in pl and int(m.group(4)) != pl['locations']):
+            problems.append(('계산기 상수', fp, '%s: base %s / incl %s / locs %s — 요금표는 %s / %s / %s'
+                             % (m.group(1), m.group(2), m.group(3), m.group(4),
+                                pl['price']['USD'], pl['conversations'], pl.get('locations'))))
+    vr = voice['unitPrice']['USD'] if voice else None
+    for m in re.finditer(r"calls \* mins \* ([\d.]+)", raw):
+        if vr is not None and abs(float(m.group(1)) - vr) > 1e-9:
+            problems.append(('계산기 상수', fp, '통화 단가 %s — 요금표는 %s' % (m.group(1), vr)))
+    for m in re.finditer(r"over(?:Convs)? \* ([\d.]+)", raw):
+        if abs(float(m.group(1)) - P['overage']['perConversation']['USD']) > 1e-9:
+            problems.append(('계산기 상수', fp, '초과 단가 %s — 요금표는 %s' % (m.group(1), P['overage']['perConversation']['USD'])))
+
 # ── 결과 ─────────────────────────────────────────────────────────────────
 if not problems:
     print('요금표와 페이지가 말하는 숫자가 모두 일치합니다.')

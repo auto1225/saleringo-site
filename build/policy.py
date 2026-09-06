@@ -121,6 +121,8 @@ TARGETS = [
     ("ko/privacy.html", "ko"),
     ("en/checkout.html", "en"),
     ("ko/checkout.html", "ko"),
+    ("en/pricing.html", "en"),
+    ("ko/pricing.html", "ko"),
 ]
 
 stale = []

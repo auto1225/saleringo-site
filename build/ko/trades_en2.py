@@ -143,7 +143,7 @@ EN2 = {
           'puts the group on the waiting list &mdash; and leaves the rain question to the club.',
   'room': 'booked-by-appointment',
   'room_d': 'The Thursday 6:12 AM four-ball before the pro shop opens: the last Sunday slot held, the green fee quoted from your sheet, the group waitlisted '
-            '&mdash; and no promise about cancelling if it rains.',
+            '&mdash; and no promise about canceling if it rains.',
   'room_no': ('0', 'rain cancellations promised before the morning arrives'),
   },
   'restaurants': {
@@ -415,7 +415,7 @@ EN2 = {
            ('Saleringo', '+6 s', 'Thank you, Sua &mdash; I&rsquo;ll text the tracking to this number the moment it ships. Place the order in the app or on the site, '
                                  'and I&rsquo;ll attach tonight&rsquo;s sizing notes so the team has them.')],
   'refuse': [('It never invents stock.',
-              'It answers from the live inventory only. Selling what is not there means cancelling the order the next morning.'),
+              'It answers from the live inventory only. Selling what is not there means canceling the order the next morning.'),
              ('It never promises a delivery date.',
               'It commits to the ship date. Arrival is set by the carrier, so &ldquo;can you guarantee it by Saturday morning&rdquo; goes to the team.'),
              ('It never claims an effect or an ingredient.',

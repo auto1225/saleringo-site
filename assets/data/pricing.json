@@ -34,7 +34,8 @@
       },
       "voice": false,
       "messenger": false,
-      "seats": 2
+      "seats": 2,
+      "locations": 1
     },
     {
       "id": "grow",
@@ -53,7 +54,8 @@
       },
       "voice": false,
       "messenger": true,
-      "seats": 5
+      "seats": 5,
+      "locations": 3
     },
     {
       "id": "scale",
@@ -72,7 +74,8 @@
       },
       "voice": true,
       "messenger": true,
-      "seats": 15
+      "seats": 15,
+      "locations": 10
     }
   ],
   "usage": [
