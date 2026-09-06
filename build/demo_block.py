@@ -26,7 +26,7 @@ S = {
         videoN="가로형 · 세로형 두 가지가 있습니다. 소리를 켜 주세요.", close="닫기", vert="세로형", horiz="가로형",
         fieldsT="받아 적은 것 — 항목마다 출처가 붙습니다", recT="고객 카드 — 채널이 셋이어도 카드는 한 장", phone="전화",
         matched="같은 손님 — 전화번호로 이어 붙임, 대화 계속", handT="사람에게 넘어감 — 담당자가 받는 것",
-        mornT="사장님 아침 화면 — 9:00에 놓여 있는 것", pickL="내 업종으로 듣기", pickHint="{n}개 업종 · 같은 플레이어, 다른 통화",
+        mornT="사장님 아침 화면 — 9:00에 놓여 있는 것", trackL="자막", pickL="내 업종으로 듣기", pickHint="{n}개 업종 · 같은 플레이어, 다른 통화",
         cta1="내 업종으로 같은 흐름 보기", cta2="지금 AI에게 전화해 보기", cta2n="AI가 먼저 받습니다", tour="6단계 안내 여정 →",
         caller="발신",
     ),
@@ -36,7 +36,7 @@ S = {
         videoN="Landscape and vertical cuts. Turn your sound on.", close="Close", vert="Vertical", horiz="Landscape",
         fieldsT="What it captured — with the source of every field", recT="The customer record — one, not three", phone="Phone",
         matched="Same customer — matched by phone number, thread continued", handT="Handed to a person — and what the person receives",
-        mornT="The owner’s morning screen — what is waiting at 9:00", pickL="Hear it for my trade", pickHint="{n} trades · same player, a different call",
+        mornT="The owner’s morning screen — what is waiting at 9:00", trackL="Captions", pickL="Hear it for my trade", pickHint="{n} trades · same player, a different call",
         cta1="Pick my trade — the same flow in my business", cta2="Call the live AI — no form first", cta2n="Korean number — international rates apply", tour="Guided 6-step journey →",
         caller="From",
     ),
@@ -85,7 +85,7 @@ def block(lang, slug, home=False, pick=None, rel="../"):
         <div class="d60dlghead"><b>{videoT}</b><span>{videoN}</span>
           <span class="d60cuts"><button type="button" class="on" data-d60-cut="">{horiz}</button><button type="button" data-d60-cut="-vertical">{vert}</button></span>
           <button type="button" class="d60x" data-d60-close aria-label="{close}">&#215;</button></div>
-        <video controls playsinline preload="none" poster="{rel}assets/video/demo-{lang}.jpg" data-d60-vid data-src="{rel}assets/video/demo-{lang}"></video>
+        <video controls playsinline preload="none" poster="{rel}assets/video/demo-{lang}.jpg" data-d60-vid data-src="{rel}assets/video/demo-{lang}"><track kind="captions" srclang="{lang}" label="{trackL}" src="{rel}assets/video/demo-{lang}.vtt" default></video>
       </dialog>""".format(**d)) if home else ""
     d["endrow"] = ("""
       <div class="d60end" data-d60-end hidden>
@@ -109,12 +109,12 @@ def block(lang, slug, home=False, pick=None, rel="../"):
     return """<div class="reveal d60v2" data-d60 data-d60-script="{rel}assets/demo/{slug}.json" data-d60-audio="{rel}assets/audio/demo/">
       {pick}
       <div class="d60tabs" role="tablist" aria-label="{tabsA}">
-        <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · {ch1}</b><span data-d60-range="1" data-base="{s1}">{s1}</span></button>
-        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · {ch2}</b><span data-d60-range="2" data-base="{s2}">{s2}</span></button>
-        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · {ch3}</b><span data-d60-range="3" data-base="{s3}">{s3}</span></button>
+        <button class="d60tab on" type="button" role="tab" aria-selected="true" aria-controls="d60stage" data-d60-tab="1"><b>1 · {ch1}</b><span data-d60-range="1" data-base="{s1}">{s1}</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" aria-controls="d60stage" data-d60-tab="2"><b>2 · {ch2}</b><span data-d60-range="2" data-base="{s2}">{s2}</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" aria-controls="d60stage" data-d60-tab="3"><b>3 · {ch3}</b><span data-d60-range="3" data-base="{s3}">{s3}</span></button>
       </div>
 
-      <div class="d60stage">
+      <div class="d60stage" id="d60stage" role="tabpanel">
         <div class="d60call">
           <div class="d60callhead">
             <span class="d60avatar" aria-hidden="true">{svg}</span>

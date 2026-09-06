@@ -321,7 +321,7 @@ TRADES7 = [
  'lead': '의뢰서를 들고 아침 여덟 시 반에 겁니다. 시간표에서 검사만 잡고, 결과를 읽거나 검사가 필요한지는 한마디도 하지 않습니다.',
  'group': 0,
  'en': {
-  'name': 'Imaging & health-screening centres', 'owner': 'the centre manager',
+  'name': 'Imaging & health-screening centers', 'owner': 'the centre manager',
   'kicker': 'Imaging &middot; MRI and CT &middot; health screening',
   'h1': 'The patient calls at 8:30,<br>holding a referral.',
   'sub': 'Referral calls come first thing, from a patient who left the surgery with a form and a worry. '

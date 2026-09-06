@@ -116,18 +116,18 @@ BODY = """
         <a class="btn btn-teal" href="#demo60">데모 보고 듣기</a>
         <a class="btn btn-ghostd" href="./pricing.html">요금 보기&nbsp;&rarr;</a>
       </div>
-      <p class="heroprice"><b>월 110,000원부터 &middot; 14일 환불 &middot; 최초 구축비 0원.</b> <i>지금 운영 중: 예식장·행사장, 의원. 그 밖의 업종은 요청하시면 만들어 드립니다.</i></p>
+      <p class="heroprice"><b>월 110,000원부터 &middot; 14일 환불 &middot; 최초 구축비 0원.</b> <i>지금 운영 중: 웨딩홀·행사장, 의원. 그 밖의 업종은 요청하시면 만들어 드립니다.</i> <a href="./about.html#call-them" style="color:var(--teal);font-weight:700;">실제 고객 회선에 걸어 보기&nbsp;&rarr;</a></p>
     </div>
 
     <div class="heroshelf">
-      <div class="reccard" aria-label="데모의 예시 기록">
+      <div class="reccard" role="group" aria-label="데모의 예시 기록">
         <div class="rc-top">
           <span class="pill"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10l4 4 8-8"></path></svg>응답 &middot; 오후 11:42</span>
           <span class="rc-when">화요일 &middot; 영업 종료 후</span>
         </div>
         <div>
           <p class="rc-kicker">새 예약</p>
-          <h2 class="rc-title">김지은 &middot; 앞니 크라운</h2>
+          <p class="rc-title">김지은 &middot; 앞니 크라운</p>
         </div>
         <div class="rc-rows">
           <div class="rc-row"><span class="rc-lbl">고객</span><div><p class="rc-val">김지은 &middot; <span class="mono">010-4482-&hellip;</span></p><p class="rc-note">통화에서 본인이 말한 이름 &middot; 발신번호와 일치</p></div></div>
@@ -149,20 +149,20 @@ BODY = """
      공표한 것과 같고, 시뮬레이션이라고 화면에 적혀 있다. -->
 <section class="d60sec t-xl sec-dark bg-grid" id="demo60">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>데모 &middot; 업종마다 2~3분</span><span class="line"></span></div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>데모 &middot; 업종마다 2~3분 &middot; 자막만 보기 가능</span><span class="line"></span></div>
     <h2 class="h2 onDark reveal">전화 한 통이 예약·견적·고객 카드·기한이<br>되는 과정을 그대로 보고, 들어 보세요.</h2>
-    <p class="lead onDark reveal" style="margin-top:14px;">각본이 있는 시연 &middot; 예시 데이터 &middot; 수치는 실제 페이지들이 공표한 그대로입니다.
+    <p class="lead onDark reveal" style="margin-top:14px;">각본이 있는 시연 &middot; 예시 데이터 &middot; 가게 요금표는 가상이고, 저희 요금은 요금 페이지 그대로입니다.
       진짜가 듣고 싶으시면 <a class="lnk" data-tel-link href="tel:+827052770820">지금 AI에게 전화</a>해 보세요.</p>
 
     <div class="reveal d60v2" data-d60 data-d60-script="../assets/demo/dental.json" data-d60-audio="../assets/audio/demo/">
       <label class="d60pick"><span>내 업종으로 듣기</span><select data-d60-pick aria-label="내 업종으로 듣기"><option value="appliance-repair">가전 수리</option><option value="property-management">건물관리</option><option value="towing">견인 · 긴급출동</option><option value="golf">골프장 · 연습장</option><option value="public-sector">공공기관</option><option value="coworking">공유오피스 · 코워킹</option><option value="florist">꽃집</option><option value="nail-spa">네일 · 스파</option><option value="universities">대학 입학상담</option><option value="veterinary">동물병원</option><option value="physio-rehab">물리치료 · 재활</option><option value="salons">미용실</option><option value="pet-grooming">반려동물 미용 · 호텔</option><option value="pest-control">방역 · 해충방제</option><option value="legal">법률사무소</option><option value="hospital-outpatient">병원 외래 · 대표번호</option><option value="insurance-agency">보험 대리점</option><option value="real-estate">부동산</option><option value="schools">사립 · 국제학교 · 교육기관</option><option value="photo-studio">사진관 · 스튜디오</option><option value="home-services">설비 · 수리</option><option value="accounting-tax">세무 · 회계 사무소</option><option value="car-wash">세차 · 디테일링</option><option value="laundry">세탁 · 드라이클리닝</option><option value="self-storage">셀프 스토리지</option><option value="counseling">심리상담센터</option><option value="optician">안경원</option><option value="pharmacy">약국</option><option value="childcare">어린이집 · 유치원</option><option value="travel-agency">여행사</option><option value="locksmith">열쇠 · 도어락</option><option value="imaging">영상의학 · 건강검진센터</option><option value="ecommerce">온라인 쇼핑몰</option><option value="yoga-pilates">요가 · 필라테스</option><option value="senior-care">요양원 · 방문요양</option><option value="driving-school">운전학원</option><option value="venues">웨딩홀 · 행사장</option><option value="restaurants">음식점</option><option value="music-art-academy">음악 · 미술 학원</option><option value="clinics">의원 · 피부과</option><option value="barbershop">이발소 · 바버샵</option><option value="movers">이사 · 용달</option><option value="staffing">인력파견 · 채용대행</option><option value="print-signage">인쇄 · 간판 · 현수막</option><option value="interior-renovation">인테리어 · 리모델링</option><option value="car-dealers">자동차 딜러</option><option value="auto-repair">자동차 정비</option><option value="funeral-homes">장례식장</option><option value="equipment-rental">장비 대여</option><option value="landscaping">조경 · 정원 관리</option><option value="cleaning-services">청소 서비스</option><option value="dental" selected>치과</option><option value="cafes-bakeries">카페 · 베이커리</option><option value="it-repair">컴퓨터 · 휴대폰 수리</option><option value="catering">케이터링 · 출장뷔페</option><option value="martial-arts">태권도 · 무술 도장</option><option value="solar">태양광 · 에너지 설비</option><option value="courier">택배 · 퀵서비스 · 용달</option><option value="tours-activities">투어 · 액티비티 · 체험</option><option value="stays">펜션 · 숙박</option><option value="franchise">프랜차이즈 본부</option><option value="academies">학원</option><option value="korean-medicine">한의원</option><option value="fitness">헬스장</option><option value="home-security">홈시큐리티 · CCTV 설치</option></select><small>65개 업종 · 같은 플레이어, 다른 통화</small></label>
       <div class="d60tabs" role="tablist" aria-label="장">
-        <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · 밤 11:42, 전화</b><span data-d60-range="1" data-base="깨진 앞니 · 견적 · 목요일 예약">깨진 앞니 · 견적 · 목요일 예약</span></button>
-        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · 다음 날 아침, 카카오톡</b><span data-d60-range="2" data-base="주차 질문 · 보험 질문은 사람에게">주차 질문 · 보험 질문은 사람에게</span></button>
-        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 오전 9:00, 원장님 화면</b><span data-d60-range="3" data-base="예약 · 견적서 · 담당 · 답변 대기">예약 · 견적서 · 담당 · 답변 대기</span></button>
+        <button class="d60tab on" type="button" role="tab" aria-selected="true" aria-controls="d60stage" data-d60-tab="1"><b>1 · 밤 11:42, 전화</b><span data-d60-range="1" data-base="깨진 앞니 · 견적 · 목요일 예약">깨진 앞니 · 견적 · 목요일 예약</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" aria-controls="d60stage" data-d60-tab="2"><b>2 · 다음 날 아침, 카카오톡</b><span data-d60-range="2" data-base="주차 질문 · 보험 질문은 사람에게">주차 질문 · 보험 질문은 사람에게</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" aria-controls="d60stage" data-d60-tab="3"><b>3 · 오전 9:00, 원장님 화면</b><span data-d60-range="3" data-base="예약 · 견적서 · 담당 · 답변 대기">예약 · 견적서 · 담당 · 답변 대기</span></button>
       </div>
 
-      <div class="d60stage">
+      <div class="d60stage" id="d60stage" role="tabpanel">
         <div class="d60call">
           <div class="d60callhead">
             <span class="d60avatar" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h3l1.5 3.5-2 1.2a9 9 0 0 0 5.3 5.3l1.2-2 3.5 1.5v3a1.5 1.5 0 0 1-1.6 1.5A13.5 13.5 0 0 1 2.5 5.1 1.5 1.5 0 0 1 4 3.5z"></path></svg></span>
@@ -203,7 +203,7 @@ BODY = """
         <div class="d60dlghead"><b>같은 데모를 영상으로 — 2분 26초</b><span>가로형 · 세로형 두 가지가 있습니다. 소리를 켜 주세요.</span>
           <span class="d60cuts"><button type="button" class="on" data-d60-cut="">가로형</button><button type="button" data-d60-cut="-vertical">세로형</button></span>
           <button type="button" class="d60x" data-d60-close aria-label="닫기">&#215;</button></div>
-        <video controls playsinline preload="none" poster="../assets/video/demo-ko.jpg" data-d60-vid data-src="../assets/video/demo-ko"></video>
+        <video controls playsinline preload="none" poster="../assets/video/demo-ko.jpg" data-d60-vid data-src="../assets/video/demo-ko"><track kind="captions" srclang="ko" label="자막" src="../assets/video/demo-ko.vtt" default></video>
       </dialog>
       
       <div class="d60end" data-d60-end hidden>
@@ -216,6 +216,9 @@ BODY = """
         </div>
       </div>
     </div>
+    
+    
+    
     
     
     
@@ -245,15 +248,14 @@ BODY = """
     <div class="ksum reveal">
       <div class="stat"><span class="n">밤 · 점심</span>
         <p>소상공인 문의 전화가 가장 많이 끊기는 두 구간입니다. 사람이 자리에 없는 시간이기 때문입니다.</p></div>
-      <div class="stat"><span class="n">30초</span>
-        <p>연결이 안 될 때 걸어 온 사람이 기다리는 시간. 그 뒤에는 검색 결과의 다음 가게에 겁니다.</p></div>
+      <div class="stat"><span class="n">15시간</span>
+        <p>하루 24시간 중 문을 닫아 둔 시간. 이 시간에도 전화는 오고, 못 받은 사람은 검색 결과의 다음 가게에 겁니다.</p></div>
       <div class="stat"><span class="n">0원</span>
         <p>놓친 전화가 장부에 남기는 금액. 그래서 이 비용만 유일하게 관리되지 않습니다.</p></div>
     </div>
-    <p class="seccap reveal" style="margin-top:18px;">위 숫자는 특정 조사 결과를 인용한 것이
-      아닙니다. 실제 값은 업종에 따라 크게 다릅니다.
-      <a href="./get-started.html" style="color:var(--teal);font-weight:700;">견적 요청</a> 시
-      영업시간과 객단가를 알려 주시면, 우리 가게의 값은 저희가 계산해 드립니다.</p>
+    <p class="seccap reveal" style="margin-top:18px;">위 구간과 금액은 일반적인 경향이고, 실제 값은 업종에 따라 크게 다릅니다.
+      <a href="./get-started.html" style="color:var(--teal);font-weight:700;">견적 요청</a> 메모란에
+      영업시간과 객단가를 적어 주시면, 우리 가게의 값은 저희가 계산해 드립니다.</p>
 
     <div class="trio reveal" style="margin-top:34px;">
       <div><b>밤 11시 42분</b><p>문을 닫은 뒤에 걸려 온 전화입니다. 벨이 다섯 번 울리고
@@ -403,7 +405,7 @@ BODY = """
         그 금액을 기억하고 오십니다.</li>
       <li><b>판단하지 않습니다.</b>
         진단, 법률 판단, 사건 전망, 합격 가능성. 자격이 있는 사람이 해야 하는 말입니다.
-        「이 증상이면 아마…」로 시작하는 문장은 만들어지지 않습니다.</li>
+        &ldquo;이 증상이면 아마&hellip;&rdquo;로 시작하는 문장은 만들어지지 않습니다.</li>
       <li><b>안전이 걸리면 붙잡지 않습니다.</b>
         흉통, 가스 냄새, 누수, 아이가 다쳤다는 말이 나오면 예약을 잡지 않고 즉시
         사람에게 돌립니다. 그 상황에서 예약 시간을 안내하는 것은 도움이 아닙니다.</li>
@@ -426,12 +428,13 @@ BODY = """
       <ul class="ps-list">
         <li><b>Start</b><span class="ps-p">110,000원<i>/월</i></span><span class="ps-d">홈페이지 채팅, 문의 수신함, 예약. 월 500건 대화.</span></li>
         <li><b>Grow</b><span class="ps-p">340,000원<i>/월</i></span><span class="ps-d">카카오톡, 견적, 자동 안내 추가. 월 2,000건 대화.</span></li>
-        <li><b>Scale</b><span class="ps-p">820,000원<i>/월</i></span><span class="ps-d">AI 전화 추가. 통화 1분당 190원부터.</span></li>
+        <li><b>Scale</b><span class="ps-p">820,000원<i>/월</i></span><span class="ps-d">AI 전화 추가. 월 6,000건 대화. 통화 1분당 190원부터. 지금 한국·미국·영국·호주·싱가포르·캐나다에서 운영 &mdash; <a href="./pricing.html">나라별 안내</a>.</span></li>
       </ul>
+      <p class="ps-policy"><b>첫 결제일부터 14일 안에는 전액 환불</b>합니다. <b>해지하신 뒤에는 갱신되지 않으며</b>, 이미 결제하신 기간까지는 그대로 이용하실 수 있습니다. <a href="./pricing.html#faq">환불·해지 조건 전체 보기</a></p>
       <p class="ps-foot"><a class="linkcta" href="./pricing.html">요금제와 한도 전체 보기{NB}{NB}&rarr;</a><a class="linkcta" href="./pricing.html#alternatives">사람을 쓰는 것, 전화대행을 쓰는 것과 비교{NB}{NB}&rarr;</a></p>
     </div>
 
-    <p class="seccap reveal" style="margin-top:20px;">셋 다 같은 CRM 이 들어 있습니다.
+    <p class="seccap reveal" style="margin-top:20px;">셋 다 같은 CRM이 들어 있습니다.
       차이는 <b>어느 채널로 받는가</b>, <b>한 달에 몇 건인가</b>, 그리고 지점 수와 계정 수입니다.
       약정 없이 매달 요금제를 바꾸실 수 있습니다.
       첫 결제일부터 14일 안에는 전액 환불, 그 뒤 해지는 남은 날수만큼
@@ -449,18 +452,18 @@ BODY = """
       읽어 보시고, 우리 가게에 실제로 걸려 오는 전화와 같은지 판단하시면 됩니다.</p>
     <div class="photowall reveal">{TRADE_PHOTOS}</div>
     <div class="tradechips reveal">
-      <a href="./industries/dental.html">치과</a>
-      <a href="./industries/clinics.html">의원 &middot; 피부과</a>
-      <a href="./industries/veterinary.html">동물병원</a>
-      <a href="./industries/senior-care.html">요양</a>
-      <a href="./industries/academies.html">학원</a>
-      <a href="./industries/salons.html">미용실</a>
-      <a href="./industries/fitness.html">헬스장</a>
-      <a href="./industries/home-services.html">설비 &middot; 수리</a>
-      <a href="./industries/auto-repair.html">자동차 정비</a>
-      <a href="./industries/real-estate.html">부동산</a>
-      <a href="./industries/restaurants.html">음식점</a>
-      <a href="./industries/venues.html">웨딩홀 &middot; 행사장</a>
+      <a href="./industries/korean-medicine.html">한의원</a>
+      <a href="./industries/legal.html">법률사무소</a>
+      <a href="./industries/golf.html">골프장 &middot; 연습장</a>
+      <a href="./industries/stays.html">펜션 &middot; 숙박</a>
+      <a href="./industries/movers.html">이사 &middot; 용달</a>
+      <a href="./industries/pest-control.html">방역 &middot; 해충방제</a>
+      <a href="./industries/self-storage.html">셀프 스토리지</a>
+      <a href="./industries/property-management.html">건물관리</a>
+      <a href="./industries/franchise.html">프랜차이즈 본부</a>
+      <a href="./industries/ecommerce.html">온라인 쇼핑몰</a>
+      <a href="./industries/funeral-homes.html">장례식장</a>
+      <a href="./industries/universities.html">대학 입학상담</a>
     </div>
     <p class="ps-foot" style="margin-top:26px;"><a class="linkcta" href="./industries.html">업종 전체 보기{NB}{NB}&rarr;</a></p>
   </div>
@@ -485,7 +488,7 @@ BODY = """
 </main>
 
 <div class="stickycta"><div class="wrap"><span class="msg">먼저 결제하지 않습니다.
-  <b>우리 요금표로 답하는 것을 먼저 읽어 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
+  <b>우리 요금표로 답하는 녹음을 먼저 들어 보세요.</b></span><a class="btn btn-teal" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
 _ALL_T = list(TRADES + TRADES2)
@@ -518,5 +521,5 @@ p = page('index.html',
          '월 110,000원부터, 약정 없음, 부가세 별도.',
          body, css=CSS, grade='voice',
          scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'canvas', 'scenes', 'demofull'),
-         image=HERO + '?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630')
+         image='https://claude.saleringo.com/assets/video/demo-ko.jpg')
 print('wrote', p)

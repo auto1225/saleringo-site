@@ -90,7 +90,7 @@ SCRIPTS = {
     {"who": "user", "when": "7:41 AM", "text": "Will my insurance cover the crown?"},
     {"who": "ai", "when": "+2 sec", "text": "Coverage is a call for the desk, not for me. I’ve passed our conversation along — someone will reply this morning.", "handoff": True}
    ],
-   "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: insurance coverage is a judgement, not a fact on file"],
+   "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: insurance coverage is a judgment, not a fact on file"],
    "morning": [
     {"icon": "✓", "k": "New booking", "v": "Jane Kim · Thu 10:30 · in the calendar"},
     {"icon": "#", "k": "Estimate #2472", "v": "$1,100–1,600 · sent by text · opened"},
@@ -99,7 +99,7 @@ SCRIPTS = {
    ],
    "person": {"when": "9:12 AM", "text": "This is Sujin from the front desk. Hi Jane — coverage depends on your plan, so bring your insurance card on Thursday and we’ll confirm at check-in."},
    "summary": "One {call} call · four messages · what a person did: one reply. The rest happened while the owner slept.",
-   "honest": "Scripted simulation · sample data · both voices were synthesised for this demo · figures are an example fee schedule, not a real practice’s prices.",
+   "honest": "Scripted simulation · sample data · both voices were synthesized for this demo · figures are an example fee schedule, not a real practice’s prices.",
    "video": True
   }
  }

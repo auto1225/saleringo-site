@@ -349,7 +349,7 @@
     cancelAnimationFrame(raf); stopAudio();
     reset();
     elapsed = sec;
-    while (idx < STEPS.length && STEPS[idx].at < sec) apply(STEPS[idx++], true);
+    while (idx < STEPS.length && STEPS[idx].at <= sec + 0.001) apply(STEPS[idx++], true);   /* 경계의 첫 단계까지 적용 — 탭으로 옮기면 그 장이 보인다 */
     if (barEl) barEl.style.width = Math.min(100, sec / TOTAL * 100) + '%';
     if (timeEl) timeEl.textContent = mmss(sec);
     if (!wasPaused || doneAll) { doneAll = false; play(); } else { doneAll = false; }
@@ -373,6 +373,20 @@
   });
   if (speedBtn) speedBtn.addEventListener('click', function () { setSpeed(SPEED === 1 ? 1.25 : SPEED === 1.25 ? 1.5 : 1); });
   tabs.forEach(function (tb) { tb.addEventListener('click', function () { var n = +tb.getAttribute('data-d60-tab') || 1; seek(CHAPTER_AT[n - 1]); }); });
+  tabs.forEach(function (tb, i) { tb.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault(); var j = (i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length; tabs[j].focus(); tabs[j].click();
+  }); });
+  /* 진행 막대를 누르면 그 자리로 — 손가락으로도 되게 트랙 전체가 받는다 */
+  var track = barEl && barEl.parentElement;
+  if (track) {
+    track.style.cursor = 'pointer';
+    track.addEventListener('click', function (e) {
+      if (!STEPS.length || !TOTAL) return;
+      var r = track.getBoundingClientRect(); var x = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      seek(x * TOTAL);
+    });
+  }
 
   /* ── loading a script (and switching industries) ───────────────── */
   function loadScript(url, slug, then) {

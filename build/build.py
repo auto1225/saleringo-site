@@ -36,6 +36,24 @@ import os
 import re
 import sys
 
+
+def footer_outside_main(s):
+    """<footer> 가 <main> 안에 있으면 footer 블록(표식 포함)을 </main> 뒤로 옮긴다 — contentinfo 랜드마크가 최상위가 되게.
+    표식 <!--#footer--> … <!--/#footer--> 은 한 덩어리로 유지해야 다음 빌드의 swap 이 </main> 을 삼키지 않는다."""
+    s = re.sub(r"<!--#footer-->(\s*)</main>(\s*)(?=<footer)", r"</main>\1<!--#footer-->\2", s, count=1)
+    m = re.search(r"(?:<!--#footer-->\s*)?<footer[^>]*>[\s\S]*?</footer>(?:\s*<!--/#footer-->)?", s)
+    if not m: return s
+    block = m.group(0)
+    end = s.find("</main>", m.end())
+    if end < 0:
+        # 예전 빌드가 </main> 을 삼킨 페이지: footer 앞에 되살린다
+        if "<main" in s and "</main>" not in s:
+            return s[:m.start()] + "</main>\n" + s[m.start():]
+        return s
+    between = s[m.end():end]
+    rest = s[end + len("</main>"):]
+    return s[:m.start()] + between.lstrip() + ("\n" if between.strip() else "") + "</main>\n" + block + rest
+
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -301,6 +319,7 @@ def build(check=False):
         foot = prune(foot, prm['lang'], prm['root'], prm['here'])
         out, okn = swap(out, 'nav', nav)
         out, okf = swap(out, 'footer', foot)
+        out = footer_outside_main(out)
 
         # every page tells search engines about its twin, and the block is
         # created on first build rather than pasted into 69 files by hand

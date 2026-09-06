@@ -15,7 +15,7 @@ import io
 import os
 
 SITE = 'https://claude.saleringo.com'
-VER = '84.0'
+VER = '85.0'
 FONTS = ('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700'
          '&family=IBM+Plex+Sans:wght@400;500;600;700'
          '&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap')
@@ -52,13 +52,15 @@ def page(slug, title, desc, body, css='', grade='', scripts=('site', 'balance', 
     root = '../' if deep else './'
     a = '../../assets' if deep else '../assets'
     url = '%s/%s/%s' % (SITE, lang, slug)
+    import html as _html, json as _json
+    _unld = lambda x: _json.dumps(_html.unescape(str(x)), ensure_ascii=False)[1:-1]   # JSON-LD 안에서는 HTML 엔티티가 안 풀린다
     ld = [('{"@context":"https://schema.org","@type":"WebPage","name":"%s",'
            '"description":"%s","url":"%s","isPartOf":{"@type":"WebSite","name":"Saleringo",'
            '"url":"https://saleringo.com/"},"inLanguage":"%s"}')
-          % (title, desc, url, 'ko-KR' if lang == 'ko' else 'en')]
+          % (_unld(title), _unld(desc), url, 'ko-KR' if lang == 'ko' else 'en')]
     if crumbs:
         items = ','.join('{"@type":"ListItem","position":%d,"name":"%s","item":"%s/%s/%s"}'
-                         % (i + 1, n, SITE, lang, h) for i, (n, h) in enumerate(crumbs))
+                         % (i + 1, _unld(n), SITE, lang, h) for i, (n, h) in enumerate(crumbs))
         ld.append('{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[%s]}' % items)
 
     head = ['<!DOCTYPE html>', '<html lang="%s">' % lang, '<head>',

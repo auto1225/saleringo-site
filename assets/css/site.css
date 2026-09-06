@@ -2812,6 +2812,8 @@ html .weekday li > i{margin-right:6px;}
 .planstrip .ps-p i{font-style:normal;font-size:var(--fs-xs);font-weight:600;color:var(--tx3);}
 .planstrip .ps-d{display:block;margin-top:8px;font-size:var(--fs-xs);line-height:1.65;
   color:var(--tx2);font-weight:500;}
+.planstrip .ps-policy{margin-top:18px;font-size:var(--fs-sm);color:var(--tx2);line-height:1.7;max-width:720px;}
+.planstrip .ps-policy b{color:#141A1F;font-weight:600;}
 .planstrip .ps-foot{margin-top:20px;display:flex;gap:28px;flex-wrap:wrap;}
 .planstrip .ps-foot .linkcta{color:var(--teal);}
 @media (max-width:700px){

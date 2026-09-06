@@ -20,7 +20,7 @@ def ph(i):
 
 TRADES4 = [
 {
- 'slug': 'martial-arts', 'owner': '관장님', 'name': '태권도·무술 도장', 'photo': ph('PENDING'),
+ 'slug': 'martial-arts', 'owner': '관장님', 'name': '태권도 · 무술 도장', 'photo': ph('PENDING'),
  'when': {'eyebrow': '저녁 수업 중의 통화', 'h2': '매트 위에 서 있는 동안<br>이렇게 흘러갑니다.', 'tt': '저녁 수업 중', 'badge': '매트에서 내려올 수 없는 시간'},
  'kicker': '태권도 &middot; 합기도 &middot; 주짓수 도장',
  'h1': '학부모 전화는<br>수업 중에 옵니다.',
@@ -87,7 +87,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'nail-spa', 'owner': '원장님', 'name': '네일·스파', 'photo': ph('PENDING'),
+ 'slug': 'nail-spa', 'owner': '원장님', 'name': '네일 · 스파', 'photo': ph('PENDING'),
  'when': {'eyebrow': '젤 굳히는 동안의 통화', 'h2': '두 손이 손님 손 위에 있는 동안<br>이렇게 흘러갑니다.', 'tt': '금요일 오후', 'badge': '손을 놓을 수 없는 시간'},
  'kicker': '네일 &middot; 페디 &middot; 스파',
  'h1': '두 손이 손님 손 위에 있을 때<br>전화가 웁니다.',
@@ -149,7 +149,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'barbershop', 'owner': '사장님', 'name': '이발소·바버샵', 'photo': ph('PENDING'),
+ 'slug': 'barbershop', 'owner': '사장님', 'name': '이발소 · 바버샵', 'photo': ph('PENDING'),
  'when': {'eyebrow': '퇴근 시간 피크의 통화', 'h2': '가위를 든 동안<br>이렇게 흘러갑니다.', 'tt': '저녁 피크', 'badge': '의자가 비지 않는 시간'},
  'kicker': '바버샵 &middot; 이발소 &middot; 남성 전문',
  'h1': '가위를 든 손으로는<br>전화를 받지 못합니다.',
@@ -212,7 +212,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'pet-grooming', 'owner': '사장님', 'name': '반려동물 미용·호텔', 'photo': ph('PENDING'),
+ 'slug': 'pet-grooming', 'owner': '사장님', 'name': '반려동물 미용 · 호텔', 'photo': ph('PENDING'),
  'when': {'eyebrow': '드라이 중의 통화', 'h2': '젖은 아이를 안고 있는 동안<br>이렇게 흘러갑니다.', 'tt': '미용 중', 'badge': '드라이기를 끌 수 없는 시간'},
  'kicker': '반려동물 미용 &middot; 호텔 &middot; 유치원',
  'h1': '젖은 강아지를 안고 있으면<br>전화를 받을 수 없습니다.',
@@ -344,7 +344,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'interior-renovation', 'owner': '대표님', 'name': '인테리어·리모델링', 'photo': ph('PENDING'),
+ 'slug': 'interior-renovation', 'owner': '대표님', 'name': '인테리어 · 리모델링', 'photo': ph('PENDING'),
  'when': {'eyebrow': '현장 소음 속의 통화', 'h2': '타일 자르는 소리 옆에서<br>이렇게 흘러갑니다.', 'tt': '시공 현장', 'badge': '전화 소리가 들리지 않는 시간'},
  'kicker': '인테리어 &middot; 리모델링 &middot; 욕실 · 주방 시공',
  'h1': '그라인더 소리 옆에서는<br>전화가 울려도 모릅니다.',
@@ -408,7 +408,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'landscaping', 'owner': '사장님', 'name': '조경·정원 관리', 'photo': ph('PENDING'),
+ 'slug': 'landscaping', 'owner': '사장님', 'name': '조경 · 정원 관리', 'photo': ph('PENDING'),
  'when': {'eyebrow': '예초기 소리 속의 통화', 'h2': '잔디 깎는 동안<br>이렇게 흘러갑니다.', 'tt': '작업 중', 'badge': '엔진을 끌 수 없는 시간'},
  'kicker': '조경 &middot; 정원 관리 &middot; 잔디 · 수목',
  'h1': '예초기를 멘 채로는<br>전화를 받을 수 없습니다.',
@@ -472,7 +472,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'locksmith', 'owner': '사장님', 'name': '열쇠·도어락', 'photo': ph('PENDING'),
+ 'slug': 'locksmith', 'owner': '사장님', 'name': '열쇠 · 도어락', 'photo': ph('PENDING'),
  'when': {'eyebrow': '밤 열한 시의 통화', 'h2': '현관 앞에 서 있는 사람에게<br>이렇게 흘러갑니다.', 'tt': '밤 11시', 'badge': '다른 현장으로 출동 중'},
  'kicker': '열쇠 &middot; 도어락 &middot; 출장 개방',
  'h1': '문 앞에 서 있는 사람은<br>두 번째 번호로 넘어갑니다.',
@@ -600,7 +600,7 @@ TRADES4 = [
  },
 },
 {
- 'slug': 'laundry', 'owner': '사장님', 'name': '세탁·드라이클리닝', 'photo': ph('PENDING'),
+ 'slug': 'laundry', 'owner': '사장님', 'name': '세탁 · 드라이클리닝', 'photo': ph('PENDING'),
  'when': {'eyebrow': '개점 전의 통화', 'h2': '다림질대 앞에 서 있는 동안<br>이렇게 흘러갑니다.', 'tt': '개점 전', 'badge': '스팀을 끌 수 없는 시간'},
  'kicker': '세탁소 &middot; 드라이클리닝 &middot; 수거 · 배달',
  'h1': '금요일에 입을 정장은<br>화요일 아침에 맡겨집니다.',

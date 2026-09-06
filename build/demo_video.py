@@ -114,6 +114,28 @@ END_AT = tt; TOTAL = tt + 7.0
 CH_AT = [0, CALL_END + 1.2, MORNING_AT]
 
 
+def _ts(x):
+    h = int(x // 3600); m = int(x % 3600 // 60); sec = x % 60
+    return "%02d:%02d:%06.3f" % (h, m, sec)
+
+
+def write_vtt(path):
+    """영상과 같은 타임라인의 자막 — 통화 줄마다 한 큐, 채팅·아침 화면은 한 줄 요약."""
+    out = ["WEBVTT", ""]
+    who_ai, who_user = ("AI", "손님") if LANG == "ko" else ("AI", "Customer")
+    for (st, en, kind, idx) in events:
+        if kind == "line":
+            ln = MAN[idx]
+            out += [_ts(st) + " --> " + _ts(en), "<v %s>%s" % (who_ai if ln["who"] == "ai" else who_user, ln["text"]), ""]
+        elif kind == "chat":
+            who, when, text = CHAT[idx]
+            out += [_ts(st) + " --> " + _ts(en), "%s: %s" % (t("손님", "Customer") if who == "user" else "AI", text), ""]
+        elif kind == "person":
+            out += [_ts(st) + " --> " + _ts(en), t("사람이 답합니다", "A person replies"), ""]
+    out += [_ts(MORNING_AT) + " --> " + _ts(END_AT), t("다음 날 아침 화면", "The next morning’s screen"), ""]
+    io.open(path, "w", encoding="utf-8").write("\n".join(out))
+
+
 def wrap(draw, text, fnt, maxw):
     out = []; cur = ""
     units = list(text) if LANG == "ko" else text.split(" ")
@@ -323,6 +345,7 @@ def main():
         frame(k / FPS).save(os.path.join(tmp, "%05d.png" % k), compress_level=1)
         if k % 240 == 0: print("  frame %d/%d" % (k, n))
     frame(9.0).convert("RGB").save(os.path.join(out_dir, name + ".jpg"), quality=82)
+    write_vtt(os.path.join(out_dir, "demo-%s.vtt" % LANG))
     import imageio_ffmpeg
     ff = imageio_ffmpeg.get_ffmpeg_exe()
     # audio: ring + each line delayed to its slot
