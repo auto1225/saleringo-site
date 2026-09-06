@@ -69,7 +69,7 @@ TRADES3 = [
            ('Saleringo', '+7 s', 'Whether two medicines can be taken together is for the pharmacist to check against what you already take, '
                                  'so I have passed that question to her exactly as you said it. Bring the names of your current medicines when you come.')],
   'refuse': [('Never changes a dose or a schedule.',
-              '"Take half" or "drop to twice a day" is counselling, and by law only the pharmacist gives it.'),
+              '"Take half" or "drop to twice a day" is counseling, and by law only the pharmacist gives it.'),
              ('Never says two medicines are safe together.',
               'That is checked against what the patient already takes. The question is left on the pharmacist\'s screen, word for word.'),
              ('Never picks a medicine for a symptom.',
@@ -78,7 +78,7 @@ TRADES3 = [
               'Took the wrong pills, cannot breathe, a rash that is spreading: the AI reads the emergency instruction and puts the pharmacist on the line.')],
   'fields': ['Prescription received, and when', 'Item asked for and stock status', 'Pickup time promised',
              'Price quoted from the over-the-counter list', 'Dose or interaction question flagged to the pharmacist', 'Confirmation text sent'],
-  'stages': ['Enquiry', 'Prescription logged', 'Filled by the pharmacist', 'Pickup', 'Refill reminder'],
+  'stages': ['Inquiry', 'Prescription logged', 'Filled by the pharmacist', 'Pickup', 'Refill reminder'],
   'when': {'eyebrow': 'A call mid-fill', 'h2': 'While both hands are on<br>a prescription, this is how it goes.',
            'tt': 'Mid-fill', 'badge': 'Cannot leave the bench'},
   'lead': 'The pickup call lands mid-fill. The AI logs the prescription and the time; doses and interactions stay with the pharmacist.',
@@ -142,7 +142,7 @@ TRADES3 = [
               'The AI reads the emergency instruction, tells the caller to call the emergency number or come to the ER, and connects the duty nurse.')],
   'fields': ['Department and named doctor', 'New or returning patient', 'Referral letter and outside images on hand',
              'Booked slot and check-in time', 'Result or records request passed to the ward', 'Self-pay price quoted from the published list'],
-  'stages': ['Enquiry', 'Outpatient booked', 'Check-in', 'Consultation', 'Follow-up or tests'],
+  'stages': ['Inquiry', 'Outpatient booked', 'Check-in', 'Consultation', 'Follow-up or tests'],
   'when': {'eyebrow': 'The nine o\'clock call', 'h2': 'While the main number is busy,<br>this is how it goes.',
            'tt': 'Morning peak', 'badge': 'Every line taken'},
   'lead': 'Nine in the morning and the main number is busy. The AI books only from the outpatient timetable and never reads a result.',
@@ -155,7 +155,7 @@ TRADES3 = [
  'slug': 'physio-rehab', 'owner': '원장님', 'name': '물리치료 · 재활', 'photo': ph('PENDING'),
  'kicker': '물리치료 &middot; 도수치료 &middot; 재활의학과',
  'h1': '치료사의 손은<br>다른 환자의 허리에 있습니다.',
- 'sub': '40분짜리 도수치료는 전화 때문에 멈출 수 없습니다. 그래서 &ldquo;도수 얼마예요, 실비 되나요&rdquo;라는 '
+ 'sub': '30분짜리 도수치료는 전화 때문에 멈출 수 없습니다. 그래서 &ldquo;도수 얼마예요, 실비 되나요&rdquo;라는 '
         '첫 문의가 음성사서함으로 갑니다.',
  'cost': '도수치료 환자는 한 번 오고 끝나지 않습니다. 평가 뒤에 10회, 20회 계획이 잡히고, 그 환자가 가족을 데려옵니다. '
          '그런데 첫 문의는 치료 시간표가 꽉 찬 오후에 오고, 치료사는 손을 뗄 수 없습니다. '
@@ -186,10 +186,10 @@ TRADES3 = [
   'name': 'Physio & rehab', 'owner': 'the owner',
   'kicker': 'Physiotherapy &middot; manual therapy &middot; rehab',
   'h1': 'The physio\'s hands are<br>on someone else\'s back.',
-  'sub': 'A forty-minute session cannot stop for the phone. So the first enquiry, "how much is manual therapy and will insurance pay", '
+  'sub': 'A thirty-minute session cannot stop for the phone. So the first inquiry, "how much is manual therapy and will insurance pay", '
          'rings through to voicemail.',
   'cost': 'A physio patient is not one visit. After the assessment comes a plan of ten or twenty sessions, and that patient brings the family. '
-          'But the first enquiry arrives in the afternoon when the timetable is full and no hand is free. '
+          'But the first inquiry arrives in the afternoon when the timetable is full and no hand is free. '
           'One missed first call is a plan, not a session.',
   'call': [('Patient', '3:22 PM', 'I have a herniated disc and want to try manual therapy. What does a first visit cost, and will my insurance cover it?'),
            ('Saleringo', '+21 s', 'A first visit is an assessment at <b>$120</b>, and manual therapy after that is <b>$95 per thirty minutes</b>. '
@@ -207,12 +207,12 @@ TRADES3 = [
               'Those are spinal red flags. The AI directs the caller to emergency care and connects the physio at once.')],
   'fields': ['Complaint in the patient\'s own words', 'Referral, MRI or doctor\'s note on hand', 'Assessment slot booked',
              'Fee quoted from the clinic schedule', 'Insurance question flagged to the desk', 'Red-flag check result'],
-  'stages': ['Enquiry', 'Assessment booked', 'Assessment', 'Treatment plan', 'Sessions & review'],
+  'stages': ['Inquiry', 'Assessment booked', 'Assessment', 'Treatment plan', 'Sessions & review'],
   'when': {'eyebrow': 'A call mid-session', 'h2': 'While the physio\'s hands are on a patient,<br>this is how it goes.',
            'tt': 'Mid-session', 'badge': 'Cannot leave the table'},
-  'lead': 'The first enquiry arrives mid-session. The AI books the assessment and refuses to say how many sessions it will take.',
+  'lead': 'The first inquiry arrives mid-session. The AI books the assessment and refuses to say how many sessions it will take.',
   'room': 'health-care',
-  'room_d': 'First enquiries about manual therapy answered while the physio is with a patient: fee read from the schedule, assessment booked, and no promise about recovery.',
+  'room_d': 'First inquiries about manual therapy answered while the physio is with a patient: fee read from the schedule, assessment booked, and no promise about recovery.',
   'room_no': ('0', 'recovery promises the AI makes'),
  },
 },
@@ -271,7 +271,7 @@ TRADES3 = [
               'The insurer decides whether a claim is open. The AI says only that a claim number is what the clinic needs.')],
   'fields': ['Complaint and when it started', 'Auto claim, insurance or self-pay, and claim number', 'First-visit slot booked',
              'Fee quoted from the practitioner\'s schedule', 'Herbal-formula question passed to the practitioner', 'Confirmation text with claim checklist sent'],
-  'stages': ['Enquiry', 'Visit booked', 'Consultation & acupuncture', 'Course planned', 'Course of visits'],
+  'stages': ['Inquiry', 'Visit booked', 'Consultation & acupuncture', 'Course planned', 'Course of visits'],
   'when': {'eyebrow': 'The lunch-hour call', 'h2': 'While the door is locked for an hour,<br>this is how it goes.',
            'tt': 'Lunch hour', 'badge': 'Desk empty'},
   'lead': 'The injury-claim call at lunch. The AI books today\'s slot and leaves the herbal question to the practitioner.',
@@ -335,7 +335,7 @@ TRADES3 = [
               'The AI directs the caller to an eye emergency service now and connects the owner.')],
   'fields': ['Request: lenses, frames or contacts', 'Current prescription on hand', 'Eye-test slot booked',
              'Price quoted from the lens list', 'Stock check needed', 'Vision-change question flagged as not assessed'],
-  'stages': ['Enquiry', 'Eye test booked', 'Test & fitting', 'Same-day or ordered', 'Collection & recall'],
+  'stages': ['Inquiry', 'Eye test booked', 'Test & fitting', 'Same-day or ordered', 'Collection & recall'],
   'when': {'eyebrow': 'A call mid-test', 'h2': 'While another customer is in the chair,<br>this is how it goes.',
            'tt': 'Mid-test', 'badge': 'Cannot leave the exam room'},
   'lead': 'The lens call lands mid-test. The AI quotes the lens list and tonight\'s slot, and leaves the blur to the optician.',
@@ -376,14 +376,14 @@ TRADES3 = [
  'group': 0,
  'en': {
   'name': 'Counseling & therapy', 'owner': 'the director',
-  'kicker': 'Counselling &middot; couples &amp; family &middot; adolescents',
+  'kicker': 'Counseling &middot; couples &amp; family &middot; adolescents',
   'h1': 'The first call takes courage.<br>It must not reach voicemail.',
-  'sub': 'People ring a counselling centre at nine at night, after a week of rehearsing. '
+  'sub': 'People ring a counseling centre at nine at night, after a week of rehearsing. '
          'If nobody answers, most never ring again.',
-  'cost': 'A centre\'s first enquiries come in the evening, after the last session, because daytime takes a courage many callers do not have yet. '
+  'cost': 'A centre\'s first inquiries come in the evening, after the last session, because daytime takes a courage many callers do not have yet. '
           'A missed first call does not go to another centre; it simply disappears. Had it connected, it was ten or twenty sessions, '
           'and above all the first day somebody got help.',
-  'call': [('Caller', '9:14 PM', 'I\'ve never done this before. I\'d like to try individual counselling. What does it cost, and do you have weekday evenings?'),
+  'call': [('Caller', '9:14 PM', 'I\'ve never done this before. I\'d like to try individual counseling. What does it cost, and do you have weekday evenings?'),
            ('Saleringo', '+23 s', 'An individual session is <b>$130 for fifty minutes</b>, and the first one is an intake. Weekday evenings are <b>Tuesday and Thursday at 7</b>; '
                                   '<b>this Thursday at 7</b> is open. Which counsellor you see is decided after the intake.'),
            ('Caller', '9:16 PM', 'Thursday, please. Do you think I have depression?'),
@@ -399,7 +399,7 @@ TRADES3 = [
               'The AI reads the crisis line, stays on the call and connects the on-call counsellor immediately.')],
   'fields': ['Individual, couple, family or adolescent', 'First contact or returning', 'Intake slot booked',
              'Session fee quoted from the schedule', 'Preferred counsellor, or none', 'Crisis protocol triggered or not'],
-  'stages': ['Enquiry', 'Intake booked', 'Intake', 'Counsellor matched', 'Ongoing sessions'],
+  'stages': ['Inquiry', 'Intake booked', 'Intake', 'Counsellor matched', 'Ongoing sessions'],
   'when': {'eyebrow': 'The call at nine at night', 'h2': 'After the last session ends,<br>this is how it goes.',
            'tt': 'After hours', 'badge': 'The call that took courage'},
   'lead': 'The first call, made with courage. The AI books the intake without a diagnosis and hands any crisis to a person at once.',
@@ -444,13 +444,13 @@ TRADES3 = [
   'h1': 'Drop-off is when<br>the phone rings.',
   'sub': 'At 8:40 every teacher is at the gate. That is when the waitlist call, the tour request '
          'and "she has a fever, can she still come" all land at once.',
-  'cost': 'A daycare enquiry is not one child; it is three years. A three-year-old stays until preschool ends and the younger sibling follows. '
-          'But the enquiry comes at drop-off and nap time, when no teacher can leave the room. '
+  'cost': 'A daycare inquiry is not one child; it is three years. A three-year-old stays until preschool ends and the younger sibling follows. '
+          'But the inquiry comes at drop-off and nap time, when no teacher can leave the room. '
           'The tour request nobody answered is touring another centre next week.',
   'call': [('Parent', '8:41 AM', 'Is there a place in the three-year-old room next spring? I\'d like to see the centre.'),
            ('Saleringo', '+22 s', 'The three-year-old room holds <b>15 children</b>, and places are offered in waitlist order, so I cannot confirm one myself. '
                                   'Tours run <b>Wednesdays at 10:30</b> and next Wednesday is open. Full-day tuition is <b>$1,250 a month</b>, with enrichment at <b>$60</b>.'),
-           ('Parent', '8:43 AM', 'Next Wednesday, please. She isn\'t potty-trained yet. Is that a problem?'),
+           ('Parent', '8:43 AM', 'Next Wednesday, please. He isn\'t potty-trained yet. Is that a problem?'),
            ('Saleringo', '+7 s', 'Toilet training and settling in are things the director and her teacher talk through with you on the tour. '
                                  'You are booked for next Wednesday at 10:30; give me her name and date of birth and I will have the waitlist position ready.')],
   'refuse': [('Never confirms a place.',
@@ -463,7 +463,7 @@ TRADES3 = [
               'For a fever it reads the centre\'s policy as written and leaves the decision to the teacher. A call about an injury reaches the director at once.')],
   'fields': ['Child\'s age and requested room', 'Waitlist position to check', 'Tour slot booked',
              'Fees quoted from the published list', 'Sibling already enrolled', 'Pickup or health request passed to the director'],
-  'stages': ['Enquiry', 'Tour booked', 'Tour & talk', 'Place offered', 'Enrolment & settling in'],
+  'stages': ['Inquiry', 'Tour booked', 'Tour & talk', 'Place offered', 'Enrolment & settling in'],
   'when': {'eyebrow': 'The drop-off call', 'h2': 'While every teacher is at the gate,<br>this is how it goes.',
            'tt': 'Drop-off', 'badge': 'Cannot leave the children'},
   'lead': 'The waitlist call at drop-off. The AI books the tour, confirms no place, and never changes a pickup by phone.',
@@ -483,7 +483,7 @@ TRADES3 = [
          '통화 중 신호로 놓친 전화는 옆 학원의 등록입니다.',
  'call': [('문의', '10:07 AM', '2종 자동 처음 따려는데 총 얼마예요? 주말에도 교육 되나요?'),
           ('Saleringo', '+24초', '2종 자동 정규 과정은 <b>학과 · 장내 · 도로주행 포함 72만원</b>이고, 검정료는 별도입니다. 주말 교육은 <b>토 · 일 오전</b>에 있고, '
-                                 '학과교육 첫 시간은 <b>이번 주 토요일 9시</b>가 비어 있습니다. 신분증과 6개월 이내 사진 3장이 필요합니다.'),
+                                 '학과교육 첫 시간은 <b>다음 주 토요일 9시</b>가 비어 있습니다. 신분증과 6개월 이내 사진 3장이 필요합니다.'),
           ('문의', '10:09 AM', '토요일 9시로 할게요. 한 달 안에 딸 수 있죠?'),
           ('Saleringo', '+7초', '합격 시기는 교육 진도와 시험 일정에 따라 달라서 제가 약속드릴 수 없습니다. 토요일 9시 학과교육으로 접수해 두었고, '
                                 '성함과 연락처를 남겨 주시면 준비물 안내를 문자로 보내 드리겠습니다.')],
@@ -508,13 +508,13 @@ TRADES3 = [
   'h1': 'Saturday morning, a queue<br>at the counter and the phone.',
   'sub': '"How much in total, how long, can I do weekends." The first-licence call comes when the office is busiest. '
          'Whichever school answers it enrols the student.',
-  'cost': 'A driving-school enquiry is a comparison call: three schools dialled, the first to answer wins. They bunch up in school holidays and in January, '
+  'cost': 'A driving-school inquiry is a comparison call: three schools dialled, the first to answer wins. They bunch up in school holidays and in January, '
           'exactly when the counter has a queue. One student is around seven hundred dollars and brings a friend. '
           'A call lost to the busy tone is the school next door\'s enrolment.',
-  'call': [('Enquirer', '10:07 AM', 'I want to get my first licence, automatic. What\'s the total, and can I do lessons on weekends?'),
+  'call': [('Inquirer', '10:07 AM', 'I want to get my first licence, automatic. What\'s the total, and can I do lessons on weekends?'),
            ('Saleringo', '+24 s', 'The beginner package, classroom, range and road lessons, is <b>$720</b>; test fees are separate. Weekend lessons run <b>Saturday and Sunday mornings</b>, '
-                                  'and the first classroom session has a seat <b>this Saturday at 9</b>. Bring photo ID and three passport photos.'),
-           ('Enquirer', '10:09 AM', 'Saturday at 9, then. I can pass within a month, right?'),
+                                  'and the first classroom session has a seat <b>next Saturday at 9</b>. Bring photo ID and three passport photos.'),
+           ('Inquirer', '10:09 AM', 'Saturday at 9, then. I can pass within a month, right?'),
            ('Saleringo', '+7 s', 'When you pass depends on how the lessons go and on test dates, so I cannot promise that. You are enrolled for Saturday at 9; '
                                  'leave a name and number and I will text you what to bring.')],
   'refuse': [('Never promises a pass.',
@@ -524,10 +524,10 @@ TRADES3 = [
              ('Never discounts the published fee.',
               'It quotes the registered course price and only the discounts the owner entered. It does not haggle.'),
              ('A crash during a lesson goes to a person at once.',
-              'A scrape on a road lesson or an injured student is not an enquiry; it connects the owner immediately.')],
+              'A scrape on a road lesson or an injured student is not an inquiry; it connects the owner immediately.')],
   'fields': ['Licence class and transmission', 'Weekday or weekend preference', 'First session booked',
              'Package price quoted from the published list', 'Documents still needed', 'Previous licence or driving experience'],
-  'stages': ['Enquiry', 'Enrolled', 'Classroom', 'Range & road lessons', 'Test booked'],
+  'stages': ['Inquiry', 'Enrolled', 'Classroom', 'Range & road lessons', 'Test booked'],
   'when': {'eyebrow': 'The Saturday-morning call', 'h2': 'While the counter has a queue,<br>this is how it goes.',
            'tt': 'Weekend peak', 'badge': 'Counter backed up'},
   'lead': 'The Saturday call while the counter is queued. The AI enrols the first session at the published fee and promises no pass.',
@@ -573,7 +573,7 @@ TRADES3 = [
   'sub': 'A piano teacher cannot leave a seven-year-old mid-scale to take a trial-lesson call. '
          'That call comes at four in the afternoon, every day.',
   'cost': 'A music or art student stays for years: from first scales to sonatinas, from sketching to watercolour. '
-          'But the first enquiry comes after school lets out, when the director is in the lesson room. '
+          'But the first inquiry comes after school lets out, when the director is in the lesson room. '
           'The trial request nobody answered enrols at the school two floors down.',
   'call': [('Parent', '4:36 PM', 'My seven-year-old wants to start piano. How much is twice a week, and is there a trial lesson?'),
            ('Saleringo', '+19 s', 'Piano twice a week for beginners under eight is <b>$160 a month</b>, books separate. The trial is a free thirty minutes, '
@@ -591,7 +591,7 @@ TRADES3 = [
               '"Just today, drop her at grandma\'s" is logged and passed to the director, who confirms it with the parent herself before the van leaves.')],
   'fields': ['Child\'s age and instrument or medium', 'Trial slot booked', 'Fee quoted from the registered tuition',
              'Days and times that suit the family', 'Instrument at home', 'Van or pickup request passed to the director'],
-  'stages': ['Enquiry', 'Trial booked', 'Trial lesson', 'Class placed', 'Enrolled & recital'],
+  'stages': ['Inquiry', 'Trial booked', 'Trial lesson', 'Class placed', 'Enrolled & recital'],
   'when': {'eyebrow': 'A call mid-lesson', 'h2': 'While the teacher is at the piano,<br>this is how it goes.',
            'tt': 'Mid-lesson', 'badge': 'Cannot leave the lesson room'},
   'lead': 'The trial-lesson call lands mid-lesson. The AI books the free trial and leaves the child\'s talent to the director.',
@@ -636,28 +636,28 @@ TRADES3 = [
   'h1': 'The evening class is full.<br>So is the voicemail.',
   'sub': 'From six to nine the instructor is on the mat and the desk is empty. '
          'That is exactly when tomorrow\'s members call to ask about a first session.',
-  'cost': 'Studio enquiries come on the way home from work. Most of the day\'s calls land during the three evening classes, '
+  'cost': 'Studio inquiries come on the way home from work. Most of the day\'s calls land during the three evening classes, '
           'and an instructor cannot answer in front of a room of members. The caller who was not answered books the studio next door in an app. '
           'A member is not three months; it is years of renewals.',
-  'call': [('Enquirer', '7:08 PM', 'I\'m new to pilates. What do reformer group and private sessions cost? And I\'m pregnant. Is it okay?'),
+  'call': [('Inquirer', '7:08 PM', 'I\'m new to pilates. What do reformer group and private sessions cost? And I\'m pregnant. Is it okay?'),
            ('Saleringo', '+21 s', 'Reformer group twice a week is <b>$220 a month</b>, and a private ten-pack is <b>$750</b>. Exercise in pregnancy needs your doctor\'s okay first, '
                                   'and the instructor will talk it through with you; I cannot judge that. A consultation with a trial is open <b>tomorrow at 11 AM</b>.'),
-           ('Enquirer', '7:10 PM', 'Tomorrow at 11, then.'),
+           ('Inquirer', '7:10 PM', 'Tomorrow at 11, then.'),
            ('Saleringo', '+6 s', 'Booked for tomorrow at 11. Come in comfortable clothes; grip socks are here. Just leave a name and a number.')],
   'refuse': [('Never decides whether someone may exercise.',
               'Pregnancy, a disc, recent surgery: that is a doctor\'s clearance and an instructor\'s conversation. The AI writes down what was said and adds no verdict.'),
              ('Never promises a body.',
               'No "three months and your posture is fixed", no "you will lose the weight".'),
              ('Never rewrites the membership terms.',
-              'Transfers, freezes and extensions follow the owner\'s rules as written. Anything not in them waits for her.'),
+              'Transfers, freezes and extensions follow the owner\'s rules as written. Anything not in them waits for the owner.'),
              ('Pain or dizziness in a class goes to the instructor at once.',
-              'A member calling about an injury or feeling faint mid-class is not an enquiry; it connects a person immediately.')],
+              'A member calling about an injury or feeling faint mid-class is not an inquiry; it connects a person immediately.')],
   'fields': ['Group or private, and experience', 'Health note in the caller\'s own words, not assessed', 'Consultation or trial slot booked',
              'Membership price quoted from the list', 'Preferred class times', 'Membership question flagged to the owner'],
-  'stages': ['Enquiry', 'Trial booked', 'Trial & consultation', 'Membership', 'Renewal'],
+  'stages': ['Inquiry', 'Trial booked', 'Trial & consultation', 'Membership', 'Renewal'],
   'when': {'eyebrow': 'A call mid-class', 'h2': 'While the instructor is on the mat,<br>this is how it goes.',
            'tt': 'Evening class', 'badge': 'Cannot leave the room'},
-  'lead': 'The first enquiry during the evening class. The AI books the consultation and refuses to say whether the caller may exercise.',
+  'lead': 'The first inquiry during the evening class. The AI books the consultation and refuses to say whether the caller may exercise.',
   'room': 'booked-by-appointment',
   'room_d': 'First-session calls answered while the instructor is on the mat: prices read from the list, consultation booked, and every health question left to a doctor and the instructor.',
   'room_no': ('0', 'health clearances the AI gives'),

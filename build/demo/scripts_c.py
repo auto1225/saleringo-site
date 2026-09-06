@@ -12,7 +12,7 @@ SCRIPTS = {
  # ───────────────────────── 웨딩홀 · 행사장 ─────────────────────────
  "venues": {
   "ko": {
-   "biz": "라온웨딩홀", "owner": "담당자님",
+   "biz": "별빛채웨딩홀", "owner": "담당자님",
    "meta": "토요일 9:41 PM · 저녁 예식 진행 중 · 가상의 웨딩홀", "callTime": "9:41 PM", "chan": "카카오톡",
    "chapters": ["밤 9:41, 전화", "다음 날 아침, 카카오톡", "오전 9:00, 담당자 화면"],
    "chapterSubs": ["내년 5월 17일 · 하객 200명 · 일요일 상담 예약", "주차 질문 · 날짜 선점은 사람에게", "상담 예약 · 안내 기록 · 담당 · 답변 대기"],
@@ -21,7 +21,7 @@ SCRIPTS = {
            "morning": "오전 9:00 — 담당자 화면."},
    "customer": {"name": "박서연", "phone": "010-7731-28··"},
    "lines": [
-    {"who": "ai", "text": "안녕하세요, 라온웨딩홀입니다. 지금은 사무실 근무가 끝난 시간이지만, 날짜 확인과 상담 예약은 제가 도와드릴 수 있어요. 무엇을 도와드릴까요?"},
+    {"who": "ai", "text": "안녕하세요, 별빛채웨딩홀입니다. 지금은 사무실 근무가 끝난 시간이지만, 날짜 확인과 상담 예약은 제가 도와드릴 수 있어요. 무엇을 도와드릴까요?"},
     {"who": "user", "text": "내년 5월 17일 토요일 오후에 예식 가능한가요? 하객은 200명 정도예요.",
      "side": [{"field": {"k": "희망 날짜", "v": "내년 5월 17일 토 · 오후", "src": "통화에서"}},
               {"field": {"k": "행사 · 하객", "v": "예식 · 약 200명", "src": "통화에서"}}]},
@@ -62,7 +62,7 @@ SCRIPTS = {
    "honest": HONEST_KO
   },
   "en": {
-   "biz": "Laon Hall", "owner": "the venue manager",
+   "biz": "Moonrise Hall", "owner": "the venue manager",
    "meta": "Saturday 9:41 PM · an evening reception in progress · a fictional venue", "callTime": "9:41 PM", "chan": "WhatsApp",
    "chapters": ["9:41 PM, the call", "Next morning, WhatsApp", "9:00 AM, the venue manager's screen"],
    "chapterSubs": ["May 17 next year · 200 guests · Sunday consultation booked", "parking · the date hold goes to a person", "consultation · quote record · owner · one reply waiting"],
@@ -71,7 +71,7 @@ SCRIPTS = {
            "morning": "9:00 AM — the venue manager's screen."},
    "customer": {"name": "Emma Park", "phone": "555-02··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Laon Hall. The office is closed for the evening, but I can check dates and book a consultation. How can I help?"},
+    {"who": "ai", "text": "Thanks for calling Moonrise Hall. The office is closed for the evening, but I can check dates and book a consultation. How can I help?"},
     {"who": "user", "text": "Hi — is Saturday, May seventeenth next year open for a wedding in the afternoon? About two hundred guests.",
      "side": [{"field": {"k": "Date wanted", "v": "Sat May 17 next year · afternoon", "src": "from the call"}},
               {"field": {"k": "Event · guests", "v": "wedding · about 200", "src": "from the call"}}]},
@@ -382,7 +382,7 @@ SCRIPTS = {
    "lines": [
     {"who": "ai", "text": "Thanks for calling Onjung Law Office. Consultations are finished for the day, but I can book one and answer general questions. How can I help?"},
     {"who": "user", "text": "I've received a formal demand letter. Can I get a consultation, and what does it cost?",
-     "side": [{"field": {"k": "Enquiry", "v": "demand letter received · consultation", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "demand letter received · consultation", "src": "from the call"}}]},
     {"who": "ai", "text": "You can. An initial consultation is one hundred and fifty dollars for thirty minutes, and if you retain the firm that amount comes off the fee. Demand letters often carry a response deadline, so please note the date you received it. Tomorrow at four in the afternoon is open.",
      "side": [{"field": {"k": "Consultation fee", "v": "$150 for 30 min · credited if retained", "src": "your fee schedule"}},
               {"field": {"k": "Deadline document", "v": "demand letter · date received to confirm", "src": "from the call"}}]},
@@ -476,7 +476,7 @@ SCRIPTS = {
    "biz": "Riverside District Office", "owner": "the office manager",
    "meta": "Tuesday 12:24 PM · lunch hour, counter unattended · a fictional district office", "callTime": "12:24 PM", "chan": "WhatsApp",
    "chapters": ["12:24 PM, the call", "Next morning, WhatsApp", "9:00 AM, the office manager's screen"],
-   "chapterSubs": ["address change · by proxy · callback logged for after 1", "the form · the eligibility ruling goes to a person", "enquiry · reference · residents' team · one reply waiting"],
+   "chapterSubs": ["address change · by proxy · callback logged for after 1", "the form · the eligibility ruling goes to a person", "inquiry · reference · residents' team · one reply waiting"],
    "sys": {"ring": "12:24 PM — the phone rings. It's the lunch hour and the counter is unattended.",
            "chat": "Next morning, 8:50 AM — the same resident, on WhatsApp, before the office opens.",
            "morning": "9:00 AM — the office manager's screen."},
@@ -484,7 +484,7 @@ SCRIPTS = {
    "lines": [
     {"who": "ai", "text": "Thanks for calling Riverside District Office. It's the lunch hour and the counter is unattended, but I can tell you what documents you need and route you to the right team. How can I help?"},
     {"who": "user", "text": "I need to register a change of address. What do I bring? And can I do it for my mother, on her behalf?",
-     "side": [{"field": {"k": "Enquiry type", "v": "address registration · by proxy", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry type", "v": "address registration · by proxy", "src": "from the call"}}]},
     {"who": "ai", "text": "If she comes in herself, just her photo ID. If you come on her behalf, you'll need a signed authorisation letter, a copy of her ID, and your own ID. It can also be filed online through the government portal.",
      "side": [{"field": {"k": "Documents", "v": "authorisation letter · copy of her ID · your ID", "src": "your approved guidance"}}]},
     {"who": "user", "text": "If I file online, when does it get processed?"},
@@ -512,7 +512,7 @@ SCRIPTS = {
    ],
    "handoff": HANDOFF_EN + ["Why it stopped: eligibility is a ruling by the responsible team, not information on file"],
    "morning": [
-    {"icon": "✓", "k": "Enquiry logged", "v": "Mina Han · address change by proxy · callback completed 1:40 PM yesterday"},
+    {"icon": "✓", "k": "Inquiry logged", "v": "Mina Han · address change by proxy · callback completed 1:40 PM yesterday"},
     {"icon": "#", "k": "Reference #5521", "v": "document checklist · sent by text · opened"},
     {"icon": "@", "k": "Team task", "v": "check relocation allowance requirements · owner: Officer Kim"},
     {"icon": "!", "k": "Waiting for a person", "v": "eligibility question · full thread attached · owner: Officer Kim"}
@@ -681,7 +681,7 @@ SCRIPTS = {
     {"who": "ai", "text": "Thanks for calling Mode and Day. Customer service is closed for the night, but I can help with products and shipping. What can I do for you?"},
     {"who": "user", "text": "The linen shirt dress in beige — does a size small run roomy? I need it by the day after tomorrow. Is that possible?",
      "side": [{"field": {"k": "Product", "v": "linen shirt dress · beige · S", "src": "from the call"}},
-              {"field": {"k": "Enquiry type", "v": "sizing · shipping", "src": "from the call"}}]},
+              {"field": {"k": "Inquiry type", "v": "sizing · shipping", "src": "from the call"}}]},
     {"who": "ai", "text": "It's true to size, so if you usually wear a small, a small will fit. The shoulders run a little narrow, so if you have broader shoulders I'd suggest a medium. Beige in small is in stock, and if you order tonight it ships tomorrow. The delivery date is set by the carrier, so I can't confirm it, but it usually arrives the day after shipping.",
      "side": [{"field": {"k": "Stock · ships", "v": "beige S in stock · ships tomorrow", "src": "live inventory"}}]},
     {"who": "user", "text": "My shoulders are average. Can I exchange it if it doesn't fit?"},
@@ -693,7 +693,7 @@ SCRIPTS = {
      "side": [{"field": {"k": "Name", "v": "Sua Oh", "src": "caller said it"}}, {"field": {"k": "Phone", "v": "555-08··", "src": "matches caller ID"}}]},
     {"who": "ai", "text": "Thank you, Sua. I'll text tracking to this number. Place the order in the app or on the site, and I'll attach tonight's sizing notes to it so the team has them.",
      "side": [{"crm": True},
-              {"work": {"icon": "✓", "k": "Enquiry note", "v": "sizing · shipping · exchange advice — attached to the order · tracking text scheduled"}}]},
+              {"work": {"icon": "✓", "k": "Inquiry note", "v": "sizing · shipping · exchange advice — attached to the order · tracking text scheduled"}}]},
     {"who": "user", "text": "I'll pay right now."},
     {"who": "ai", "text": "Thank you. Once payment clears you're in tomorrow's shipping queue. Have a good night.",
      "side": [{"work": {"icon": "#", "k": "Policy note #48213", "v": "exchange within 7 days · $8 return shipping · ships tomorrow — from your terms and inventory"}},
@@ -774,15 +774,15 @@ SCRIPTS = {
    "biz": "Moonlight Chicken head office", "owner": "head office",
    "meta": "Wednesday 9:07 PM · head office closed · a fictional franchisor", "callTime": "9:07 PM", "chan": "WhatsApp",
    "chapters": ["9:07 PM, the call", "Next morning, WhatsApp", "9:00 AM, the head office screen"],
-   "chapterSubs": ["franchise enquiry · opening cost · manager assigned", "where the consultation is · expected revenue goes to a person", "lead · disclosure document · manager · one reply waiting"],
+   "chapterSubs": ["franchise inquiry · opening cost · manager assigned", "where the consultation is · expected revenue goes to a person", "lead · disclosure document · manager · one reply waiting"],
    "sys": {"ring": "9:07 PM — the main line rings. Head office closed at six.",
            "chat": "Next morning, 7:40 AM — the same candidate, on WhatsApp.",
            "morning": "9:00 AM — the head office screen."},
    "customer": {"name": "David Kang", "phone": "555-09··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Moonlight Chicken head office. The office is closed for the day, but I can take franchise enquiries and store matters. How can I help?"},
+    {"who": "ai", "text": "Thanks for calling Moonlight Chicken head office. The office is closed for the day, but I can take franchise inquiries and store matters. How can I help?"},
     {"who": "user", "text": "I'm interested in a franchise. What does it cost in total to open one?",
-     "side": [{"field": {"k": "Enquiry type", "v": "franchise candidate", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry type", "v": "franchise candidate", "src": "from the call"}}]},
     {"who": "ai", "text": "Thank you for your interest. For a standard three hundred and fifty square foot store, the base figures are a thirty thousand dollar franchise fee, nine thousand for training, and fit-out at about seventy-five dollars a square foot, with kitchen equipment and opening stock on top. The exact total depends on the site, so I'll send you the disclosure document and set up a consultation.",
      "side": [{"field": {"k": "Base costs", "v": "franchise fee $30,000 · training $9,000 · fit-out ~$75 per sq ft", "src": "your published schedule"}}]},
     {"who": "user", "text": "Yes, please send it. I'm looking at Daejeon, with a budget of around three hundred thousand.",

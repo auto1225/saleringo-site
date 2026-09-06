@@ -46,6 +46,18 @@ try:
     from trades7 import TRADES7
 except Exception:
     TRADES7 = []
+try:
+    from trades_en1 import EN1
+except Exception:
+    EN1 = {}
+try:
+    from trades_en2 import EN2
+except Exception:
+    EN2 = {}
+for _t in TRADES + TRADES2:          # 원조 25개 업종의 영문 데이터 — 있으면 영문 페이지도 생성기로 만든다
+    _e = EN1.get(_t['slug']) or EN2.get(_t['slug'])
+    if _e and 'en' not in _t:
+        _t['en'] = _e
 NEW_TRADES = TRADES3 + TRADES4 + TRADES5 + TRADES6 + TRADES7
 ALL = TRADES + TRADES2 + NEW_TRADES
 import json as _json
@@ -181,8 +193,14 @@ def pack_status(t):
     if t['slug'] in LIVE:
         return ('빈 CRM을 받아 %s에 맞게 고쳐 쓰는 것이 아닙니다. 이 항목들이 처음부터 들어 있고, '
                 '첫 통화부터 여기에 적힙니다. 이 팩은 지금 운영 중입니다.' % t['name'])
-    return ('이 업종 팩은 <b>아직 운영 중이 아닙니다</b>. 아래는 요청하시면 그대로 만들어 드리는 설계안입니다. '
+    return ('이 업종 팩은 <b>주문 즉시 켜는 설계안</b>입니다. 아래 항목·단계·금지 목록은 이미 잡혀 있고, '
             '항목·단계·하지 않는 말의 초안까지 준비되어 있어, 요금표와 영업시간을 주시면 며칠 안에 켤 수 있습니다.')
+
+
+
+def _un(x):
+    import html
+    return html.unescape(str(x))
 
 
 LINKS_EN = [
@@ -263,7 +281,7 @@ def pack_status_en(t, name):
     if t['slug'] in LIVE:
         return ('Not an empty CRM bent to a %s over months. These fields are in it from the start and the first call '
                 'writes into them. This pack is running today.' % name)
-    return ('This trade pack is <b>not running yet</b>. Below is the design we build for you on request: the fields, '
+    return ('This trade pack is <b>built to order</b>. Below is the design we switch on for you: the fields, '
             'stages and never-say list are drafted, so with your price list and hours it can be switched on within days.')
 
 
@@ -275,7 +293,7 @@ def build_pack_en(t):
     refuse = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in e['refuse'])
     body = TPL_EN.format(NAV=NAV, FOOT=FOOT, NB=NB, fields=fields, stages=stages,
                          links=links, refuse=refuse, slug=t['slug'], name=name, packstatus=pack_status_en(t, name),
-                         photo=t['photo'], ill_pipe=illus.figure(illus.pipeline('en', stages=e['stages'][:5])))
+                         photo=t['photo'], ill_pipe=illus.figure(illus.pipeline('en', stages=[_un(x) for x in e['stages'][:5]])))
     page('industries/%s-pack.html' % t['slug'],
          'What is in the %s pack &mdash; Saleringo' % name,
          'Every CRM field and pipeline stage for a %s, what it connects to, and what the AI never does.' % name,
@@ -292,7 +310,7 @@ def build_pack(t):
     refuse = ''.join('<li><b>%s</b>%s</li>' % (a, b) for a, b in t['refuse'])
     body = TPL.format(NAV=NAV, FOOT=FOOT, NB=NB, fields=fields, stages=stages,
                       links=links, refuse=refuse, slug=t['slug'], name=t['name'], packstatus=pack_status(t),
-                      photo=t['photo'], ill_pipe=illus.figure(illus.pipeline('ko', stages=t['stages'][:5])))
+                      photo=t['photo'], ill_pipe=illus.figure(illus.pipeline('ko', stages=[_un(x) for x in t['stages'][:5]])))
     page('industries/%s-pack.html' % t['slug'],
          '%s 팩에 들어 있는 것 &mdash; Saleringo' % t['name'],
          '%s용 CRM의 항목과 진행 단계, 연동되는 곳, 그리고 AI가 하지 않는 일을 '

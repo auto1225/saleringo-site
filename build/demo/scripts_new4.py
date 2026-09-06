@@ -49,7 +49,7 @@ SCRIPTS = {
     {"icon": "@", "k": "기사 할 일", "v": "14:00 실사 · 마당과 뒷문 사각 확인 · 담당 박기사"},
     {"icon": "!", "k": "답변 대기 1건", "v": "옆집 대문 촬영 문의 · 대화 전체 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "9:10 AM", "text": "사장님입니다. 정하늘 님, 남의 집 대문이 화면에 들어오면 안 돼서 각도는 우리 마당과 현관 쪽으로만 잡습니다. 오늘 두 시에 어디까지 되는지 직접 보여 드릴게요."},
+   "person": {"when": "9:10 AM", "text": "사장입니다. 정하늘 님, 남의 집 대문이 화면에 들어오면 안 돼서 각도는 우리 마당과 현관 쪽으로만 잡습니다. 오늘 두 시에 어디까지 되는지 직접 보여 드릴게요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 기사님이 퇴근한 사이에 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 설치업체의 가격이 아닙니다."
   },
@@ -149,12 +149,12 @@ SCRIPTS = {
     {"icon": "@", "k": "실사 준비", "v": "화 10:00 · 건축물대장 · 보조금 공고 확인 · 담당 대표님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "노후 기와 지붕 하중 문의 · 대화 전체 첨부 · 담당 대표님"}
    ],
-   "person": {"when": "9:08 AM", "text": "대표님입니다. 오세훈 님, 기와 지붕은 서까래 상태를 봐야 답이 나와서 화요일에 올라가서 직접 확인하고 말씀드릴게요. 그 전에는 된다 안 된다 말씀 못 드려요."},
+   "person": {"when": "9:08 AM", "text": "대표입니다. 오세훈 님, 기와 지붕은 서까래 상태를 봐야 답이 나와서 화요일에 올라가서 직접 확인하고 말씀드릴게요. 그 전에는 된다 안 된다 말씀 못 드려요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 시공팀이 지붕 위에 있는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 시공업체의 가격이 아닙니다."
   },
   "en": {
-   "biz": "Sunfield Solar", "owner": "the installer",
+   "biz": "Halo Ridge Solar", "owner": "the installer",
    "meta": "Saturday 9:23 AM · crew on a roof · a fictional solar installer", "callTime": "9:23 AM", "chan": "WhatsApp",
    "chapters": ["Saturday 9:23 AM, the call", "Next morning, WhatsApp", "Monday 9:00 AM, the installer’s screen"],
    "chapterSubs": ["a $340 bill · system price · Tuesday survey", "how long the survey takes · the old roof goes to a person", "survey · estimate · owner · one reply waiting"],
@@ -163,7 +163,7 @@ SCRIPTS = {
            "morning": "Monday 9:00 AM — the installer’s screen."},
    "customer": {"name": "Daniel Oh", "phone": "555-04··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Sunfield Solar. The crew is out on a roof today, but I can book a site survey and answer questions."},
+    {"who": "ai", "text": "Thanks for calling Halo Ridge Solar. The crew is out on a roof today, but I can book a site survey and answer questions."},
     {"who": "user", "text": "Our electricity bill just came in at three hundred forty dollars. How much would solar cut it, and what does a system cost?",
      "side": [{"field": {"k": "Request", "v": "Solar install — savings and system cost", "src": "from the call"}}, {"field": {"k": "Latest bill", "v": "$340 a month", "src": "caller said it"}}]},
     {"who": "ai", "text": "How much it cuts depends on your roof direction, the shade and your tariff, so I don't give a savings figure over the phone. From the price sheet, a six-kilowatt residential system starts at sixteen thousand eight hundred dollars, and the first step is a site survey at one hundred fifty, credited back if you sign. I can survey Tuesday at ten or Wednesday at two.",
@@ -249,7 +249,7 @@ SCRIPTS = {
     {"icon": "@", "k": "진단 할 일", "v": "09:00 입고 즉시 저장장치 상태 먼저 확인 · 담당 사장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "자료 손실 여부 문의 · 대화 전체 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "8:52 AM", "text": "사장님입니다. 한지민 님, 켜졌다 바로 꺼지는 건 전원 쪽일 때가 많고, 저장장치는 따로 꺼내서 먼저 확인할게요. 9시에 오시면 그것부터 봐 드려요."},
+   "person": {"when": "8:52 AM", "text": "사장입니다. 한지민 님, 켜졌다 바로 꺼지는 건 전원 쪽일 때가 많고, 저장장치는 따로 꺼내서 먼저 확인할게요. 9시에 오시면 그것부터 봐 드려요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 매장이 닫혀 있는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 수리점의 가격이 아닙니다."
   },
@@ -351,7 +351,7 @@ SCRIPTS = {
     {"icon": "@", "k": "배차 할 일", "v": "오늘 15:00 마감 판교 박스 2개 · 배차 확인 후 연락 · 담당 사장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "드라이아이스 아이스박스 접수 가능 문의 · 대화 전체 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "8:20 AM", "text": "사장님입니다. 김민서 님, 드라이아이스는 양이 적고 환기되는 포장이면 저희가 실을 수 있는데, 몇 킬로 넣으시는지 먼저 알려 주세요. 확인되면 바로 배차할게요."},
+   "person": {"when": "8:20 AM", "text": "사장입니다. 김민서 님, 드라이아이스는 양이 적고 환기되는 포장이면 저희가 실을 수 있는데, 몇 킬로 넣으시는지 먼저 알려 주세요. 확인되면 바로 배차할게요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 사장님이 운전하는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 퀵서비스의 가격이 아닙니다."
   },
@@ -454,7 +454,7 @@ SCRIPTS = {
     {"icon": "@", "k": "제작 할 일", "v": "09:30까지 현수막 출력 · 명함 재단 · 담당 실장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "인도 입간판 허가 문의 · 대화 전체 첨부 · 담당 실장님"}
    ],
-   "person": {"when": "8:45 AM", "text": "실장님입니다. 윤서준 님, 인도 입간판은 그 동네 구청이 통행 폭으로 따져서 저희가 대신 답할 수 없고, 구청 담당과 번호를 문자로 드릴게요. 현수막은 10시에 준비돼 있어요."},
+   "person": {"when": "8:45 AM", "text": "실장입니다. 윤서준 님, 인도 입간판은 그 동네 구청이 통행 폭으로 따져서 저희가 대신 답할 수 없고, 구청 담당과 번호를 문자로 드릴게요. 현수막은 10시에 준비돼 있어요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 실장님이 재단하는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 인쇄소의 가격이 아닙니다."
   },

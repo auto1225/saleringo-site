@@ -10,6 +10,7 @@ the same way.
 import io
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -42,6 +43,18 @@ try:
     from trades7 import TRADES7
 except Exception:
     TRADES7 = []
+try:
+    from trades_en1 import EN1
+except Exception:
+    EN1 = {}
+try:
+    from trades_en2 import EN2
+except Exception:
+    EN2 = {}
+for _t in TRADES + TRADES2:          # 원조 25개 업종의 영문 데이터 — 있으면 영문 페이지도 생성기로 만든다
+    _e = EN1.get(_t['slug']) or EN2.get(_t['slug'])
+    if _e and 'en' not in _t:
+        _t['en'] = _e
 NEW_TRADES = TRADES3 + TRADES4 + TRADES5 + TRADES6 + TRADES7
 TRADES = TRADES + TRADES2 + NEW_TRADES
 
@@ -153,9 +166,9 @@ TPL = """
         <span class="closed">{when_badge}</span></div>
       <div class="body nightline">{turns}</div>
     </div></noscript>
-    <p class="seccap reveal" style="margin-top:16px;">실제 고객 사례가 아니라, {name} 요금표와 안전 지침을
+    <p class="seccap reveal" style="margin-top:16px;">실제 고객 사례가 아니라, {name} {sheet_wa} 안전 지침을
       넣었을 때 제품이 어떻게 답하는지 보여 주는 예시입니다. 금액은 국내에서 흔히 제시되는 범위이고,
-      실제로 안내되는 금액은 {owner}이 넣으신 요금표에서 나옵니다.</p>
+      실제로 안내되는 내용은 {owner}이 넣으신 {sheet}에서 나옵니다.</p>
   </div>
 </section>
 
@@ -236,9 +249,9 @@ TPL = """
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
     <div class="illrow reveal"><div>
-    <h2 class="h2 onDark">{name} 요금표를 보내 주시면,<br>그 요금표로 답하는 것을 보여 드립니다.</h2>
+    <h2 class="h2 onDark">{name} {sheet_eul} 보내 주시면,<br>그 {sheet_ro} 답하는 것을 보여 드립니다.</h2>
     <p class="sub" style="max-width:none;">결제 정보는 받지 않습니다. 손님이 가장 자주 묻는 질문 열 개에
-      그 요금표로 답하는 녹음을 영업일 하루 안에 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
+      그 {sheet_ro} 답하는 녹음을 영업일 하루 안에 만들어 보내 드리고, 아니다 싶으면 거기서 끝내시면 됩니다.</p>
     <div class="ctas">
       <a class="btn btn-teal" href="../get-started.html">{name} 견적 받기<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="../pricing.html">먼저 요금부터 보기</a>
@@ -249,7 +262,7 @@ TPL = """
 {FOOT}
 </main>
 
-<div class="stickycta"><div class="wrap"><span class="msg">{name} 요금표로 만든 응대를
+<div class="stickycta"><div class="wrap"><span class="msg">{name} {sheet_ro} 만든 응대를
   <b>먼저 들어 보고 결정하세요.</b></span><a class="btn btn-teal" href="../get-started.html">견적 받기<span class="cir">&#8599;</span></a></div></div>
 """
 
@@ -294,15 +307,15 @@ TPL_EN = """
       <div class="body nightline">{turns}</div>
     </div></noscript>
     <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
-      a {name} price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
-      from the price list {owner} enters.</p>
+      this trade’s {sheet_en} and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the {sheet_en} {owner} enters.</p>
   </div>
 </section>
 
 <section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal">A call a {name} misses<br>is written down nowhere.</h2>
+    <h2 class="h2 onDark reveal">A missed call<br>is written down nowhere.</h2>
     <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">{cost}</p>{ill_night}</div>
   </div>
 </section>
@@ -310,7 +323,7 @@ TPL_EN = """
 <section class="t-md sec-dark bg-spot" id="refuses">
   <div class="wrap">
     <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal">The things a machine<br>must not say in a {name}.</h2>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in this trade.</h2>
     <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
       from the start when the {name} answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
     <div class="illrow reveal"><ul class="kolist" style="margin-top:0;">{refuse}</ul>{ill_handoff}</div>
@@ -374,9 +387,9 @@ TPL_EN = """
   <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
     <div class="illrow reveal"><div>
-    <h2 class="h2 onDark">Send us your {name} price list,<br>and we show it answering from that list.</h2>
+    <h2 class="h2 onDark">Send us your {name} {sheet_en},<br>and we show it answering from that.</h2>
     <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
-      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+      your customers' ten most common questions from your own {sheet_en} &mdash; and if it is not right, you stop there.</p>
     <div class="ctas">
       <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; {name}<span class="cir">&#8599;</span></a>
       <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
@@ -387,7 +400,7 @@ TPL_EN = """
 {FOOT}
 </main>
 
-<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your {name} price list
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your {name} {sheet_en}
   <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
 """
 
@@ -480,6 +493,91 @@ def other_photos(t, lang='ko'):
     return ''.join(out)
 
 
+def _un(x):
+    import html
+    return html.unescape(str(x))
+
+
+def _script(slug, lang):
+    p = os.path.join('assets', 'demo', slug + '.json')
+    if not os.path.exists(p): return {}
+    try:
+        return (json.load(io.open(p, encoding='utf-8')) or {}).get(lang) or {}
+    except Exception:
+        return {}
+
+
+def _hour(when):
+    m = re.match(r'(\d{1,2}):(\d{2})\s*(AM|PM)', when or '')
+    if not m: return None
+    h = int(m.group(1)) % 12 + (12 if m.group(3) == 'PM' else 0)
+    return h
+
+
+def when_from_script(slug, lang, owner):
+    """'when' 이 없는 업종: 대본 meta("요일 시각 · 상황 · 가상의 …")의 시각과 상황으로 머리말을 만든다.
+    밤(21시~새벽 6시)이면 예전 기본 문구, 낮이면 상황 문구."""
+    sc = _script(slug, lang)
+    meta = [x.strip() for x in (sc.get('meta') or '').split('·')]
+    if len(meta) < 2: return {}
+    when, situ = meta[0], meta[1]
+    h = _hour(when.split()[-2] + ' ' + when.split()[-1]) if len(when.split()) >= 2 else None
+    night = h is None or h >= 21 or h < 6
+    if lang == 'en':
+        if night: return {}
+        return {'eyebrow': when + ', the call', 'h2': 'How it goes<br>while %s.' % situ,
+                'tt': situ, 'badge': when.split()[-2] + ' ' + when.split()[-1]}
+    if night: return {}
+    return {'eyebrow': when + '의 통화', 'h2': '%s일 때<br>이렇게 흘러갑니다.' % situ,
+            'tt': situ, 'badge': when.split()[-2] + ' ' + when.split()[-1]}
+
+
+def cust_of(slug, lang):
+    """고객 카드 그림에 넣을 손님 이름·전화 — 대본의 customer."""
+    c = _script(slug, lang).get('customer') or {}
+    return c.get('name') or None, c.get('phone') or None
+
+
+def morning_items(slug, lang):
+    """아침 화면 그림의 네 줄 — 대본의 morning 을 (제목, 설명) 으로 나눠 쓴다 (치과 예시가 모든 업종에 나가지 않게)."""
+    sc = _script(slug, lang)
+    raw = (sc.get('morning') or [])[:4]
+    if len(raw) != 4: return None
+    ta, tb = (16, 26) if lang == 'ko' else (30, 46)
+    out = []
+    for x in raw:
+        if isinstance(x, dict):
+            a, b = str(x.get('k', '')).strip(), str(x.get('v', '')).strip()
+        else:
+            x = re.sub(r'\s+', ' ', str(x)).strip()
+            m = re.split(r'\s+(?:·|=|—|-|:)\s+', x, 1)
+            a, b = (m[0], m[1]) if len(m) == 2 else (x, '')
+        out.append((a if len(a) <= ta else a[:ta - 1] + '…', b if len(b) <= tb else b[:tb - 1] + '…'))
+    return out
+
+
+def morning_title(slug, lang):
+    ch = (_script(slug, lang).get('chapters') or [])
+    if len(ch) < 3: return None
+    return ch[2].replace(', ', ' — ', 1)
+
+SHEET = {   # '요금표'가 어울리지 않는 업종의 안내문 이름 (ko, en)
+    'universities': ('모집요강', 'admissions guide'), 'public-sector': ('민원 안내', 'service guide'),
+    'schools': ('입학 안내', 'admissions guide'), 'hospital-outpatient': ('진료 안내', 'clinic schedule'),
+    'funeral-homes': ('안내문', 'service list'), 'staffing': ('단가표', 'rate card'), 'coworking': ('요금표', 'rate card'),
+}
+
+
+def _bat(w):
+    c = w[-1]
+    return (ord(c) - 0xAC00) % 28 if ('가' <= c <= '힣') else 0
+
+
+def _eul(w): return w + ('을' if _bat(w) else '를')
+def _wa(w): return w + ('과' if _bat(w) else '와')
+def _ro(w): return w + ('으로' if _bat(w) not in (0, 8) else '로')
+
+
 def build_trade(t, lang='ko'):
     en = lang == 'en'
     src = t['en'] if en else t          # 영문 페이지는 t['en'] 의 문구로, 나머지(사진·슬러그)는 공통
@@ -499,7 +597,7 @@ def build_trade(t, lang='ko'):
     if en:
         ctx.update(src)
     name, owner = src['name'], src['owner']
-    w = src.get('when') or {}
+    w = src.get('when') or when_from_script(t['slug'], lang, owner)
     if en:
         ctx.update(when_eyebrow=w.get('eyebrow', 'That night’s call'),
                    when_h2=w.get('h2', 'How it goes<br>while %s sleeps.' % owner),
@@ -508,30 +606,32 @@ def build_trade(t, lang='ko'):
         ctx.update(when_eyebrow=w.get('eyebrow', '그날 밤의 통화'),
                    when_h2=w.get('h2', '%s이 자는 동안<br>이렇게 흘러갑니다.' % owner),
                    when_tt=w.get('tt', '영업 종료 후'), when_badge=w.get('badge', '문 닫은 시간'))
+    sh_ko, sh_en = SHEET.get(t['slug'], ('요금표', 'price list'))
+    ctx.update(sheet=sh_ko, sheet_eul=_eul(sh_ko), sheet_wa=_wa(sh_ko), sheet_ro=_ro(sh_ko), sheet_en=sh_en)
     ctx.update(NAV=NAV, FOOT=FOOT, turns=''.join(turns), refuse=refuse,
                fields=fields, stages=stages, others=others,
                playbook='' if en else build_playbook(t))
     q = src['call'][0][2] if src['call'] else ''
     if en:
-        ctx.update(ill_night=illus.figure(illus.night('en'), 'Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.'),
-                   ill_handoff=illus.figure(illus.handoff('en', question=q[:40]), 'On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.'),
-                   ill_card=illus.figure(illus.card('en', rows=[(f, None, 'from the call') for f in src['fields'][:4]]), 'The card a call leaves behind, with the source of every field.'),
-                   ill_pipe=illus.figure(illus.pipeline('en', stages=src['stages'][:5]), 'The %s pipeline as it is. How many inquiries sit at each stage, at a glance.' % name),
-                   ill_morning=illus.figure(illus.morning('en'), 'What the night produced, waiting on the morning screen.'),
+        ctx.update(ill_night=illus.figure(illus.night('en', call=(src['call'][0][1] if src['call'] else '11:42 PM')), 'Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.'),
+                   ill_handoff=illus.figure(illus.handoff('en', question=_un(re.sub('<[^>]+>', '', q))[:40]), 'On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.'),
+                   ill_card=illus.figure(illus.card('en', rows=[(_un(f), None, 'from the call') for f in src['fields'][:4]], name=cust_of(t['slug'], 'en')[0], phone=cust_of(t['slug'], 'en')[1]), 'The card a call leaves behind, with the source of every field.'),
+                   ill_pipe=illus.figure(illus.pipeline('en', stages=[_un(x) for x in src['stages'][:5]]), 'The %s pipeline as it is. How many inquiries sit at each stage, at a glance.' % name),
+                   ill_morning=illus.figure(illus.morning('en', items=morning_items(t['slug'], 'en'), title=morning_title(t['slug'], 'en')), 'What the call produced, waiting on the morning screen.'),
                    others_photos=other_photos(t, 'en'),
                    demo=demo_block.block('en', t['slug'], rel='../../'))
     else:
-        ctx.update(ill_night=illus.figure(illus.night('ko'), '하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.'),
-                   ill_handoff=illus.figure(illus.handoff('ko', question=q[:40]), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체와 받아 적은 항목이 함께 갑니다.'),
-                   ill_card=illus.figure(illus.card('ko', rows=[(f, None, '통화에서') for f in src['fields'][:4]]), '통화가 끝나면 이 카드가 채워져 있습니다. 항목마다 어디서 나온 값인지가 붙습니다.'),
-                   ill_pipe=illus.figure(illus.pipeline('ko', stages=src['stages'][:5]), '{name}의 단계 그대로입니다. 지금 몇 건이 어느 단계에 있는지 한눈에 보입니다.'.format(name=name)),
-                   ill_morning=illus.figure(illus.morning('ko'), '밤사이 받은 것이 아침 화면에 이렇게 놓여 있습니다.'),
+        ctx.update(ill_night=illus.figure(illus.night('ko', call=(src['call'][0][1] if src['call'] else '11:42 PM')), '하루 24시간 중 문을 연 시간은 9시간 안팎입니다. 나머지 15시간에도 전화는 옵니다.'),
+                   ill_handoff=illus.figure(illus.handoff('ko', question=_un(re.sub('<[^>]+>', '', q))[:40]), '요금표에 있으면 답하고, 판단이나 안전이 걸리면 사람에게 넘깁니다. 넘길 때는 대화 전체와 받아 적은 항목이 함께 갑니다.'),
+                   ill_card=illus.figure(illus.card('ko', rows=[(_un(f), None, '통화에서') for f in src['fields'][:4]], name=cust_of(t['slug'], 'ko')[0], phone=cust_of(t['slug'], 'ko')[1]), '통화가 끝나면 이 카드가 채워져 있습니다. 항목마다 어디서 나온 값인지가 붙습니다.'),
+                   ill_pipe=illus.figure(illus.pipeline('ko', stages=[_un(x) for x in src['stages'][:5]]), '{name}의 단계 그대로입니다. 지금 몇 건이 어느 단계에 있는지 한눈에 보입니다.'.format(name=name)),
+                   ill_morning=illus.figure(illus.morning('ko', items=morning_items(t['slug'], 'ko'), title=morning_title(t['slug'], 'ko')), '통화가 남긴 것이 아침 화면에 이렇게 놓여 있습니다.'),
                    others_photos=other_photos(t, 'ko'),
                    demo=demo_block.block('ko', t['slug'], rel='../../'))
     body = (TPL_EN if en else TPL).format(**ctx)
     if en:
         page('industries/%s.html' % t['slug'],
-             'AI answering for %s &mdash; how a call at night becomes a booking' % name,
+             'AI answering for %s &mdash; how a missed call becomes a booking' % name,
              'The AI answers %s inquiries, books, and files a customer record. The example call, what it never says, '
              'and the CRM fields it leaves behind.' % name,
              body, css=CSS, grade='voice', scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'demofull'),
@@ -540,7 +640,7 @@ def build_trade(t, lang='ko'):
                      (name, 'industries/%s.html' % t['slug'])], lang='en')
         return
     page('industries/%s.html' % t['slug'],
-         '%s AI 응대 &mdash; 밤에 걸려 온 전화가 예약이 되는 방법' % t['name'],
+         '%s AI 응대 &mdash; 못 받은 전화가 접수·예약이 되는 방법' % t['name'],
          '%s에 걸려 오는 문의를 AI가 대신 받아 예약을 잡고 고객 카드로 남깁니다. '
          '통화 예시, 하지 않는 일, CRM에 남는 항목을 그대로 실었습니다.' % t['name'],
          body, css=CSS, grade='voice', scripts=('site', 'balance', 'panels', 'wrap', 'rail', 'guide', 'demofull'),

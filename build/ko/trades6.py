@@ -55,7 +55,7 @@ TRADES6 = [
   'name': 'Home security & CCTV installers', 'owner': 'the installer',
   'kicker': 'Home security &middot; CCTV &middot; access control',
   'h1': 'The call comes the evening<br>after the house next door was hit.',
-  'sub': 'Nobody prices cameras on a calm afternoon. The enquiry arrives the night after a break-in on the street, '
+  'sub': 'Nobody prices cameras on a calm afternoon. The inquiry arrives the night after a break-in on the street, '
          'the installer is off the ladder, and a frightened caller who reaches voicemail phones the next result.',
   'cost': 'An install is a $1,300 to $2,200 ticket, and the house that gets one adds cameras later and sends the neighbours. '
           'The call lands after the van is parked for the night. The household that hits voicemail books a survey with '
@@ -81,7 +81,7 @@ TRADES6 = [
               'A lens on the neighbour&rsquo;s door, a shared hallway or the street can break privacy law. Whether it can be done is decided by the installer on site.')],
   'fields': ['Property type (house, flat, shop) and floors', 'Channels wanted, indoor and outdoor', 'What prompted the call (break-in, parcel theft, pets)',
              'Package and survey fee quoted from the sheet', 'Survey date and installer assigned', 'Confirmation text sent'],
-  'stages': ['Enquiry', 'Survey booked', 'Site survey and quote', 'Installed', 'App set up and follow-up check'],
+  'stages': ['Inquiry', 'Survey booked', 'Site survey and quote', 'Installed', 'App set up and follow-up check'],
   'when': {'eyebrow': 'A call the evening after a break-in next door', 'h2': 'While the street is frightened,<br>this is how it goes.', 'tt': '8:41 PM', 'badge': 'installer off the ladder'},
   'lead': 'The call comes the evening after the house next door was hit. It quotes the survey and the packages on your sheet, and never promises a camera stops a burglar.',
   'room': 'home-property',
@@ -130,7 +130,7 @@ TRADES6 = [
   'h1': 'A $340 electricity bill<br>makes a Saturday-morning phone call.',
   'sub': 'The household that opens a big bill on Friday night searches for solar on Saturday morning. '
          'The crew is on somebody else&rsquo;s roof, and the office line rings until Monday.',
-  'cost': 'A residential system is a fifteen-to-twenty-thousand-dollar job, and a commercial roof is ten times that. Enquiries cluster on the '
+  'cost': 'A residential system is a fifteen-to-twenty-thousand-dollar job, and a commercial roof is ten times that. Inquiries cluster on the '
           'weekend the bills land, which is exactly when the crew is up a ladder. The caller who gets a Monday callback booked a survey with '
           'another installer on Saturday. A roof is done once in twenty years; that customer does not come back for twenty years.',
   'call': [('Customer', '9:23 AM', 'Our electricity bill just came in at three hundred and forty dollars. How much would solar cut it, and what does a system cost?'),
@@ -153,7 +153,7 @@ TRADES6 = [
               'Net-metering applications and tariff changes are set by the utility&rsquo;s rules and the meter on the wall. The AI records the question and leaves it for the survey.')],
   'fields': ['Building type (house, flat, shop, factory) and roof', 'Latest monthly bill and tariff', 'System size wanted and purpose (self-use or export)',
              'System price and survey fee quoted from the sheet', 'Survey date', 'Rebate, metering and roof questions raised'],
-  'stages': ['Enquiry', 'Survey scheduled', 'Roof survey and quote', 'Contract and permits', 'Installed and connected'],
+  'stages': ['Inquiry', 'Survey scheduled', 'Roof survey and quote', 'Contract and permits', 'Installed and connected'],
   'when': {'eyebrow': 'A Saturday-morning call with the bill in hand', 'h2': 'While the crew is on another roof,<br>this is how it goes.', 'tt': 'Saturday 9:23 AM', 'badge': 'crew up the ladder'},
   'lead': 'The bill arrives Friday, the call comes Saturday. It quotes the system price and the survey fee, books the survey, and never gives a payback period or a rebate answer.',
   'room': 'home-property',
@@ -225,7 +225,7 @@ TRADES6 = [
               'A phone with an unknown passcode or a device tied to someone else&rsquo;s account is not booked without proof of ownership. The owner checks ID and the receipt at the counter.')],
   'fields': ['Device, model and age', 'Symptom in the caller&rsquo;s words (dead, screen, water, slow)', 'Backed up or not, and any recovery request',
              'Diagnostic fee and repair range from the price list', 'Drop-off slot and the customer&rsquo;s deadline', 'Confirmation text logged'],
-  'stages': ['Enquiry', 'Drop-off booked', 'Diagnosed and quoted', 'Repaired', 'Collected and data checked'],
+  'stages': ['Inquiry', 'Drop-off booked', 'Diagnosed and quoted', 'Repaired', 'Collected and data checked'],
   'when': {'eyebrow': 'A call the night before a deadline', 'h2': 'While the shop is dark and the file is due,<br>this is how it goes.', 'tt': '9:04 PM', 'badge': 'shutters down'},
   'lead': 'The laptop dies at nine the night before the deadline. It quotes the diagnostic fee and the range, books the first slot, and leaves whether the files survived to the owner.',
   'room': 'vehicle-plant-storage',
@@ -273,7 +273,7 @@ TRADES6 = [
   'cost': 'One job is $30 to $90, but a shop that sends every day is worth a thousand a month. Its first call comes on a frantic morning, '
           'and it keeps calling whoever answered. The shop that reaches voicemail moves to a platform app and does not come back, '
           'even once the platform&rsquo;s cut starts to hurt.',
-  'call': [('Customer', '7:30 AM', 'This is the cake shop on Mercer Street. I need three boxes in the business park across the river by late morning. Can you do it, and what is it?'),
+  'call': [('Customer', '7:30 AM', 'This is the cake shop on Mercer Street. I need three boxes in the business park across the river by late morning. Can you do it, and what does it cost?'),
            ('Saleringo', '+13 s', 'Yes &mdash; a few things first. The pickup address and the delivery address, the size and weight of the boxes, and the time they have to be there.'),
            ('Customer', '7:31 AM', 'Pickup at 40 Mercer Street, delivery to Riverside Business Park. Three sixteen-inch boxes, about seven pounds each, and they need to be there by eleven.'),
            ('Saleringo', '+11 s', 'Mercer Street to Riverside is <b>$65 by cargo van</b> on the rate card. Three sixteen-inch boxes will not go on a bike, so it has to be the van. '
@@ -360,7 +360,7 @@ TRADES6 = [
               'Screen colour and ink are different things, and a small file blown up to banner size falls apart. Colour and quality are the owner&rsquo;s answer, after the proof.')],
   'fields': ['Item (banner, cards, flyers, sign) and size', 'Quantity, sides and stock', 'Artwork status (print-ready, needs fixing, design wanted)',
              'List price quoted', 'Date wanted and whether the owner has confirmed it', 'Sign-permit question raised'],
-  'stages': ['Enquiry', 'Artwork received and checked', 'Proof approved and paid', 'Printed and made', 'Delivered or installed'],
+  'stages': ['Inquiry', 'Artwork received and checked', 'Proof approved and paid', 'Printed and made', 'Delivered or installed'],
   'when': {'eyebrow': 'A call at five the day before an opening', 'h2': 'While the printer is running,<br>this is how it goes.', 'tt': '5:02 PM', 'badge': 'owner at the cutter'},
   'lead': 'The banner is ordered at five the day before the opening. It quotes list prices from the size and quantity, and never promises a date until the file has been checked.',
   'room': 'professional-public',

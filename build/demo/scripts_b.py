@@ -569,7 +569,7 @@ SCRIPTS = {
    "honest": HONEST_KO
   },
   "en": {
-   "biz": "Keystone Self Storage", "owner": "the owner",
+   "biz": "Larkbox Self Storage", "owner": "the owner",
    "meta": "Thursday 10:47 PM · unstaffed site · a fictional storage facility", "callTime": "10:47 PM", "chan": "WhatsApp",
    "chapters": ["10:47 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
    "chapterSubs": ["studio move · size and price · unit held", "gate hours · the prohibited-items question goes to a person", "hold · e-sign link · manager · one reply waiting"],
@@ -578,7 +578,7 @@ SCRIPTS = {
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Sophie Adams", "phone": "555-07··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Keystone Self Storage. The site is unstaffed right now, but I can quote prices, check what's available, and start a rental. How can I help?"},
+    {"who": "ai", "text": "Thanks for calling Larkbox Self Storage. The site is unstaffed right now, but I can quote prices, check what's available, and start a rental. How can I help?"},
     {"who": "user", "text": "I'm moving out of a studio and need to store my stuff for a bit. What size would I need?",
      "side": [{"field": {"k": "Request", "v": "temporary storage · studio contents", "src": "from the call"}}]},
     {"who": "ai", "text": "A studio usually fits in a five by five unit, which is seventy-nine dollars a month. If you're storing a fridge and a washer too, I'd suggest a five by ten at one hundred twenty-nine. Right now I have two five by fives and one five by ten open.",

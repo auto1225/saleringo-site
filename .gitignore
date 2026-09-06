@@ -10,3 +10,6 @@ hoversels.json
 .env.local
 .env
 __pycache__/
+
+# 음성 다듬기 표식 (build/demo_trim.py)
+*.mp3.trim

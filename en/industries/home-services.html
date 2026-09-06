@@ -3,260 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Phone Agent for HVAC &amp; Plumbing | Saleringo</title>
-<meta name="description" content="An AI phone agent for HVAC, plumbing and electrical. Triages after-hours emergencies, books the truck and quotes the call-out by zone.">
+<title>AI answering for Home services &mdash; how a missed call becomes a booking</title>
+<meta name="description" content="The AI answers Home services inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="canonical" href="https://claude.saleringo.com/en/industries/home-services.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:url" content="https://claude.saleringo.com/en/industries/home-services.html">
-<meta property="og:title" content="AI Phone Agent for HVAC &amp; Plumbing">
-<meta property="og:description" content="An AI phone agent for HVAC, plumbing and electrical. Triages after-hours emergencies, books the truck and quotes the call-out by zone.">
-<meta property="og:image" content="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta property="og:title" content="AI answering for Home services &mdash; how a missed call becomes a booking">
+<meta property="og:description" content="The AI answers Home services inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
+<meta property="og:image" content="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Phone Agent for HVAC &amp; Plumbing">
-<meta name="twitter:description" content="An AI phone agent for HVAC, plumbing and electrical. Triages after-hours emergencies, books the truck and quotes the call-out by zone.">
-<meta name="twitter:image" content="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:image" content="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="AI answering for Home services &mdash; how a missed call becomes a booking">
+<meta name="twitter:description" content="The AI answers Home services inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A caller says they smell gas. What exactly happens?","acceptedAnswer":{"@type":"Answer","text":"The AI stops booking immediately. It follows your approved safety script \u2014 advising the caller to leave the area and call emergency services if the smell is strong \u2014 and pages your on-call tech at the same moment, with the address and details already captured. It never decides on&nbsp;its own that a situation is safe."}},{"@type":"Question","name":"Do you integrate with ServiceTitan, Jobber, or Housecall Pro?","acceptedAnswer":{"@type":"Answer","text":"Not yet \u2014 and we won't pretend otherwise. Those integrations are on the roadmap, and founding-cohort members vote on the build order. Today, every call lands in Saleringo's&nbsp;built-in inbox and CRM, and jobs push out through Zapier or CSV export."}},{"@type":"Question","name":"Can it quote repair prices over the phone?","acceptedAnswer":{"@type":"Answer","text":"It quotes exactly what you approve: call-out fee, diagnostic fee and price ranges. It never gives a fixed total before your tech has inspected the unit \u2014 the final number stays with the&nbsp;human holding the flashlight."}},{"@type":"Question","name":"Does it handle Spanish-speaking callers?","acceptedAnswer":{"@type":"Answer","text":"Yes. The US founding cohort launches with English and Spanish \u2014 the AI detects the caller's&nbsp;language from the first sentence and answers in it. Job notes still reach your team in English, so dispatch never slows down."}},{"@type":"Question","name":"Can I start with nights only?","acceptedAnswer":{"@type":"Answer","text":"That's how most shops begin. Forward your line after 6 PM and on weekends, listen to the&nbsp;recordings for a week, then widen the window when the answers sound like your business. Switching back is a forwarding change on your side, not a support ticket."}},{"@type":"Question","name":"What's the after-hours call-out?","acceptedAnswer":{"@type":"Answer","text":"Quotes the fee on your rate card and says whether it comes off the repair."}},{"@type":"Question","name":"Can someone come out tonight?","acceptedAnswer":{"@type":"Answer","text":"Reads the on-call rotation and the calendar, then offers a real arrival window."}},{"@type":"Question","name":"How much just to come and look at it?","acceptedAnswer":{"@type":"Answer","text":"Quotes the standard call-out plus the travel charge for that address's zone."}},{"@type":"Question","name":"Which zone am I in?","acceptedAnswer":{"@type":"Answer","text":"Matches the address to your zone map and says so before quoting anything."}},{"@type":"Question","name":"Do you even cover my ZIP code?","acceptedAnswer":{"@type":"Answer","text":"Answers from your service-area list \u2014 and says no plainly rather than taking a job you can't reach."}},{"@type":"Question","name":"Is my annual service due yet?","acceptedAnswer":{"@type":"Answer","text":"Reads the job history and offers the next free mornings, with the same technician."}},{"@type":"Question","name":"\u00bfHablan espa\u00f1ol?","acceptedAnswer":{"@type":"Answer","text":"Continues in Spanish, from wording approved in Spanish \u2014 not translated at the moment of speaking."}},{"@type":"Question","name":"Can you beat the quote I've been given?","acceptedAnswer":{"@type":"Answer","text":"States the rate card, declines to discount, and routes the request to the owner."}},{"@type":"Question","name":"Is the part you fitted still under warranty?","acceptedAnswer":{"@type":"Answer","text":"Produces part, date and technician from the record; the coverage decision goes to your office."}}]}
+{"@context":"https://schema.org","@type":"WebPage","name":"AI answering for Home services &mdash; how a missed call becomes a booking","description":"The AI answers Home services inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.","url":"https://claude.saleringo.com/en/industries/home-services.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"en"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for HVAC, Plumbing & Electrical","item":"https://claude.saleringo.com/en/industries/home-services.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/index.html"},{"@type":"ListItem","position":2,"name":"Trades","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"Home services","item":"https://claude.saleringo.com/en/industries/home-services.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/ledger.css?v=83.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=84.0">
 <style>
-  /* ── HERO — full-bleed photograph, the night scene laid over it ────── */
-  .hero{position:relative;overflow:hidden;padding-bottom:78px;}
-  .hero.photohero{min-height:min(94vh,960px);}
-  /* shot in daylight — graded down so it reads as the end of the shift */
-  /* 1200x992 landscape in a 1.67:1 hero — bias down so the figure keeps head and boots */
-  .hero .bgimg img{filter:brightness(1.27) saturate(1.06) contrast(1.08);object-position:center 70%;}
-  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.48) 0%,rgba(255,255,255,0.253) 28%,
-    rgba(255,255,255,0.354) 62%,rgba(255,255,255,0.96) 100%);}
-  .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:1;}
-  .heroinner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:136px 32px 0;
-    display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center;}
-  .hero .hero-panel{max-width:680px;}
-  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#141A1F;margin-top:20px;}
-  .hero h1 .teal{color:var(--teal);}
-  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .hero .ctas{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .fbadge{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;color:var(--teal);
-    background:var(--teal-glass);border:1px solid rgba(11,120,120,.4);border-radius:999px;padding:8px 18px;}
-  .fbadge i{font-style:normal;}
-  .micro{margin-top:12px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
-  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#141A1F;}
-  .hero .scene-frame{margin:0;}
-  .hero .specstrip{grid-column:1/-1;margin-top:40px;justify-content:flex-start;gap:28px;}
 
-  /* 2 · 90-second timeline */
-  .tlsec{background:linear-gradient(180deg,#F6F4EE,#F6F4EE);}
-  .tlsec .cols{display:grid;grid-template-columns:330px 1fr;gap:70px;align-items:stretch;margin-top:54px;}
-  .tlstick{position:sticky;top:34px;display:flex;justify-content:center;}
-  .tlstick .phoneframe{transform:rotate(-2deg);}
-  .tlrow{display:grid;grid-template-columns:60px 24px 1fr;gap:0 18px;padding-bottom:26px;}
-  .tlrow .tm{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);text-align:right;padding-top:16px;}
-  .tlrow .td{position:relative;display:flex;justify-content:center;}
-  .tlrow .td i{width:11px;height:11px;border-radius:50%;background:var(--teal);margin-top:20px;box-shadow:0 0 0 5px rgba(11,120,120,.13);font-style:normal;}
-  .tlrow:not(:last-child) .td:after{content:"";position:absolute;left:50%;top:35px;bottom:-26px;width:1px;
-    background:linear-gradient(180deg,rgba(11,120,120,.45),rgba(20,26,31,.078));}
-  .tlrow .tb{border:1px solid var(--hair);border-radius:14px;padding:16px 20px;background:rgba(20,26,31,.042);}
-  .tlrow .tb .spk{font-size:var(--fs-label);font-weight:800;letter-spacing:.14em;color:var(--tx3);}
-  .tlrow .tb .spk.ai{color:var(--teal);}
-  .tlrow .tb p{margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:#141A1F;font-weight:500;}
-  .tlrow .tb p em{font-style:normal;color:var(--teal);font-weight:700;}
-  .tlrow.warn .tb{background:rgba(183,121,31,.09);border-color:rgba(183,121,31,.34);}
-  .tlrow.warn .td i{background:var(--amber);box-shadow:0 0 0 5px rgba(183,121,31,.14);}
-  .tlrow.warn .tb .spk{color:var(--amber);}
-  .tlrow.done .tb{background:rgba(11,120,120,.09);border-color:rgba(11,120,120,.34);}
-  .tlfoot{margin-top:8px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-
-  /* 3 · the money */
-  /* overflow:hidden clips the bg-dusk aura (inset:-10%), which otherwise
-     pushes the page 127px wide and creates a horizontal scrollbar */
-  .moneysec{overflow:hidden;}
-  .moneytop{margin-top:48px;display:grid;grid-template-columns:.82fr 1.18fr;gap:62px;align-items:start;}
-  .bignum{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-num);font-weight:600;letter-spacing:-.055em;line-height:.84;}
-  .bigcap{margin-top:20px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:600;max-width:300px;}
-  .figrow{display:flex;flex-wrap:wrap;}
-  .fig{padding:0 30px;border-left:1px solid var(--hair);}
-  .fig:first-child{padding-left:0;border-left:0;}
-  .fig b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#141A1F;letter-spacing:-.03em;}
-  .fig span{display:block;margin-top:7px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;max-width:186px;line-height:1.55;}
-  .moneytop .photocard{margin-top:36px;min-height:320px;}
-  .moneysec .baGrid{margin-top:62px;}
-  .srcnote{margin-top:32px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .srcnote a{color:var(--teal);font-weight:600;}
-
-  /* 4 · safety escalation (light) */
-  .safesec{}
-  .safesplit{min-height:470px;margin-bottom:8px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
-    background:#fff;box-shadow:0 32px 78px rgba(20,26,31,.10);}
-  .safesplit .copy{padding:58px 54px;}
-  .warngrid{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .warncard{background:#fff;border:1px solid #EFDCD7;border-left:4px solid var(--red);border-radius:14px;padding:26px;
-    box-shadow:0 20px 50px rgba(20,26,31,.07);}
-  .warncard.amber{border-color:#F2E3C6;border-left-color:var(--amber);}
-  .warncard .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B14A3E;}
-  .warncard.amber .tag{color:#8D642F;}
-  .warncard b{display:block;margin-top:12px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
-  .warncard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
-  .ladder{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-  .lstep{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px;}
-  .lstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:700;color:#0B7878;letter-spacing:.14em;}
-  .lstep b{display:block;margin-top:10px;font-size:var(--fs-sm);color:var(--l-ink);letter-spacing:-.01em;}
-  .lstep span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:500;}
-  .safenote{margin-top:38px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
-  .safenote a{color:#0B7878;font-weight:700;}
-
-  /* 5 · dispatch proof (dark) */
-  .dispsec{position:relative;background:linear-gradient(180deg,#F6F4EE,#FFFFFF);}
-  .dispsec .wrap{position:relative;z-index:1;}
-  .dispcols{margin-top:52px;display:grid;grid-template-columns:1.14fr .86fr;gap:38px;align-items:start;}
-  .dispsec .msgthread{background:#FFFFFF;}
-  .dispside .rrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
-  .dispside p.note{margin-top:18px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
-  .dispsec .quotecard{margin:58px auto 0;max-width:780px;}
-
-  /* 6 · integrations + risk (white) */
-  .intsec{background:#FDFDFE;}
-  .intsec .head{text-align:center;max-width:660px;margin:0 auto;}
-  .grplabel{text-align:center;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.22em;color:#6F767F;text-transform:uppercase;margin:40px 0 16px;}
-  .intsec .riskrow{margin-top:66px;}
-  .whoband{margin-top:76px;padding-top:56px;border-top:1px solid var(--l-hair);}
-  .whoband .audgrid{grid-template-columns:repeat(3,1fr);margin-top:26px;}
-  .whoband .audcard{min-height:268px;}
-  .whoband .photocap{margin-top:16px;text-align:center;}
-  .intnote{margin-top:34px;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
-  .cohortbar{margin:56px auto 0;max-width:820px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
-    border:1px dashed #D9E1E9;border-radius:14px;padding:22px 26px;background:#fff;}
-  .cohortbar b{font-size:var(--fs-sm);color:var(--l-ink);}
-  .cohortbar span{font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
-
-  /* 7 · faq (paper) */
-  .faqsec{}
-  .faqsec .head{text-align:center;margin-bottom:44px;}
-
-  /* 8 · closer + footer */
-  .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.05;}
-  .closer .lead{margin:24px auto 0;}
-  .closer .ctas{margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-  /* price + order links under the hero and closer CTAs */
-  .plinks{margin-top:18px;display:flex;gap:26px;flex-wrap:wrap;align-items:center;}
-  .plinks .linkcta{font-size:var(--fs-xs);color:#141A1F;}
-  .closer .plinks{justify-content:center;margin-top:22px;}
-  .bigfooter{margin-top:126px;}
-
-  @media (max-width:1100px){
-    .heroinner{grid-template-columns:1fr;gap:34px;padding:128px 24px 0;}
-    .hero.photohero{min-height:0;}
-    .tlsec .cols{grid-template-columns:1fr;gap:46px;}
-    .tlstick{position:static;}
-    .tlstick .phoneframe{transform:none;}
-    .moneytop,.dispcols{grid-template-columns:1fr;gap:40px;}
-    .warngrid{grid-template-columns:1fr 1fr;}
-  }
-  @media (max-width:900px){
-    .heroinner{padding:118px 18px 0;}
-    .hero .specstrip{gap:16px;}
-    .hero .scene-overlay{position:static;max-width:none;margin:10px 14px 0;}
-    .hero .scene-frame{padding-bottom:14px;}
-    .warngrid,.ladder{grid-template-columns:1fr;}
-    .whoband .audgrid{grid-template-columns:1fr 1fr;}
-    .safesplit{min-height:0;}
-    .safesplit .copy{padding:44px 24px;}
-    .figrow{gap:26px;}
-    .fig{padding:0;border-left:0;}
-    .tlrow{grid-template-columns:50px 20px 1fr;gap:0 12px;}
-  }
-
-  /* ══ v4 · CRM surface, honest integrations, multi-location, inline lead form ══ */
-  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
-  .crmduo.rev .m{order:2;}
-  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
-  .ptlist{margin-top:24px;}
-  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
-  .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#141A1F;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
-  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
-
-  /* three-state integration status */
-  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
-  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
-  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;}
-  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
-  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
-  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
-  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
-  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
-  .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
-    font-weight:700;border-bottom:1px solid var(--hair);}
-  .statcol li:last-child{border-bottom:0;}
-  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
-
-  /* multi-location */
-  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
-  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
-  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
-  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
-  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
-  .mlsite{border:1px solid var(--app-line,rgba(20,26,31,.117));border-radius:8px;padding:15px 16px;
-    background:var(--app-panel,#FFFFFF);}
-  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#141A1F;}
-  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
-  .mlsite dl{margin-top:11px;}
-  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(20,26,31,.091);}
-  .mlsite .r:first-of-type{border-top:0;}
-  .mlsite .r dt{width:76px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
-    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
-  .mlsite .r dd{color:#141A1F;font-weight:600;margin:0;}
-
-  /* inline lead form */
-  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
-  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
-    line-height:1.72;color:var(--tx2);font-weight:500;}
-  .leadbox .eaform{max-width:100%;}
-  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
-  /* the honest-status grid sits on this page's white band */
-  .intsec .statcol{border-color:var(--l-hair);background:#fff;}
-  .intsec .statcol.now{border-color:rgba(20,26,31,.34);background:rgba(255,255,255,.05);}
-  .intsec .statcol.now .hl4{color:#0B7878;}
-  .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(183,121,31,.06);}
-  .intsec .statcol.man .hl4{color:#8D642F;}
-  .intsec .statcol.road .hl4{color:#616B75;}
-  .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
-  .intsec .statcol li span{color:var(--l-mut);}
-  .intsec .statnote{color:#616B75;}
-  @media (max-width:560px){.whoband .audgrid{grid-template-columns:1fr;}}
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/home-services.html">
@@ -264,23 +99,20 @@
 <link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/home-services.html">
 <!--/#alt-->
 </head>
-<body data-grade="home">
-
-<!-- ═══════ 1 · HERO — real photograph, the night scene laid on top ═══════ -->
+<body data-grade="voice">
 <header class="hero photohero">
   <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-           srcset="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1900 1900w"
-           sizes="100vw"
-         alt="" width="1900" height="1570" loading="eager" fetchpriority="high" decoding="async">
+    <img class="ph" src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
   </div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="tint" aria-hidden="true"></div>
   <div class="grainlayer grain" aria-hidden="true"></div>
-
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v83.0">v83.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v84.0">v84.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -295,57 +127,25 @@
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav></div>
 <!--/#nav-->
-
-  <div class="heroinner">
-    <div class="hero-panel">
-      <span class="eyebrow"><i></i>For&nbsp;HVAC · Plumbing · Electrical</span>
-      <h1>The&nbsp;AC died at&nbsp;9:04&nbsp;PM. <br><span class="teal">The&nbsp;truck is booked for&nbsp;7&nbsp;AM.</span></h1>
-      <p class="sub">Saleringo answers the&nbsp;calls your&nbsp;crew can't take — quotes the&nbsp;call-out fee <em style="font-style:normal;color:#141A1F;font-weight:700;">you</em> approved for&nbsp;that&nbsp;zone, books the&nbsp;job, texts your&nbsp;on-call tech, and files the&nbsp;whole thing in&nbsp;a&nbsp;trades CRM you can actually read on&nbsp;Monday. Gas smell or sparks? A&nbsp;human gets it in&nbsp;seconds.</p>
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>Plumbing &middot; heating &middot; repairs</span>
+      <h1>A house with water on the floor<br>is already dialling the second company.</h1>
+      <p class="sub">When the boiler dies or a pipe bursts, nobody waits. They search, call from the top of the list down, and whoever answers first goes out that night.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
-        <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; Home services</a>
       </div>
-      <p class="plinks"><a class="linkcta" href="../pricing.html#plans">See the&nbsp;price&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="../checkout.html?plan=scale">Order Scale&nbsp;&nbsp;&rarr;</a></p>
-      <p class="heroscroll"><a href="../index.html#demo60">New here? Start with&nbsp;the two-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
-      <div class="fbadge"><i>★</i>Founding cohort — 50% off for&nbsp;3 months</div>
-      <div class="micro">US onboarding now · Keep your&nbsp;number · English &amp; Spanish</div>
-      <div class="whofor">
-        <span class="whotxt">Built for&nbsp;shops where the&nbsp;owner is the&nbsp;after-hours answering service — <b>US founding cohort now open</b></span>
-      </div>
-    </div>
-
-    <div>
-    <div class="scene-frame">
-      <div class="photo-scrim" style="height:clamp(300px,38vw,520px);">
-        <img class="ph" src="https://images.pexels.com/photos/9890735/pexels-photo-9890735.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-             srcset="https://images.pexels.com/photos/9890735/pexels-photo-9890735.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/9890735/pexels-photo-9890735.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/9890735/pexels-photo-9890735.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-             sizes="100vw" alt="A house entrance at night, warmly lit above the door, with the street dark around it"
-             loading="lazy" decoding="async" width="1600" height="2400">
-      </div>
-      <div class="scene-overlay tl"><b>AC dead · 9:04 PM</b><span>Inbound call · 95°F (35°C) outside · nobody at&nbsp;the&nbsp;shop</span></div>
-      <div class="scene-overlay br"><b>Tech dispatched · 9:06 PM</b><span>Fee quoted &amp; accepted · job card sent to&nbsp;Marcus</span></div>
-    </div>
-    <p class="photocap">9:04 PM — one lit house, one system that&nbsp;just quit, and a&nbsp;number that&nbsp;has to&nbsp;be
-      answered by&nbsp;somebody. Illustrative photography; not a&nbsp;Saleringo customer job.</p>
-    </div>
-
-    <div class="specstrip">
-      <span><i>●</i><b>Nights only</b> or 24/7</span>
-      <span><i>●</i><b>English &amp; Spanish</b></span>
-      <span><i>●</i><b>On-call routing</b> for&nbsp;safety calls</span>
-      <span><i>●</i><b>Every&nbsp;call</b> recorded &amp; logged</span>
     </div>
   </div>
 </header>
 
-<!--demo:v2-->
-<section class="sec-light t-md" id="demo">
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow light"><i></i>Hear it &middot; Home services</span>
-      <h2 class="h2" style="margin-top:20px;">The call, the next morning&rsquo;s message, <br>and what was waiting at nine.</h2>
-      <p class="lead" style="margin-top:16px;">A scripted call for a home services: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Tuesday 8:47 PM, the call</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">How it goes<br>after the crew has gone home for the night.</h2>
     <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/home-services.json" data-d60-audio="../../assets/audio/demo/">
       
       <div class="d60tabs" role="tablist" aria-label="Chapters">
@@ -385,7 +185,7 @@
             <p class="lbl">Handed to a person — and what the person receives</p>
             <ul data-d60-handlist><li>The whole conversation, both channels</li><li>Every captured field, with its source</li><li>Why it stopped: the final amount is set on the job, not a fact on the price list</li></ul>
           </div>
-          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">The owner’s morning screen — what is waiting at 9:00</p><div data-d60-morninglist></div></div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">9:00 AM, the owner’s screen — what is waiting</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
@@ -395,808 +195,116 @@
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
-          <a class="btn btn-teal" href="../../get-started.html">Get my plan for this trade</a>
+          <a class="btn btn-teal" href="../get-started.html">Get my plan for this trade</a>
           <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">Call the live AI — no form first</a>
           <span class="telnote">Korean number — international rates apply</span>
         </div>
       </div>
     </div>
     
-    <noscript><p class="lead">The demo needs JavaScript. The same story is written out in the worked examples below.</p></noscript>
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">Home services &mdash; <b>boiler down, baby at home</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">crew off</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>Customer</em>8:47 PM</span><div class="bub user">My boiler won&rsquo;t turn on. Can someone come tonight? It&rsquo;s showing error code E9.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+5 s</span><div class="bub ai">One thing first &mdash; do you smell gas, or anything burning, or see smoke?</div></div><div class="nl us"><span class="t"><em>Customer</em>8:48 PM</span><div class="bub user">No, nothing like that. It just won&rsquo;t start.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+9 s</span><div class="bub ai">Good. E9 means different things on different boilers, so a tech needs to see it to be sure. Tonight I can do <b>after 10:00 PM</b>, and a night call-out is <b>$85</b> plus any parts. <b>Tomorrow at 8:00 AM</b> is also open. Which do you prefer?</div></div><div class="nl us"><span class="t"><em>Customer</em>8:49 PM</span><div class="bub user">I&rsquo;ve got a baby at home, so tonight, please. Chaewon Lim, 555-0256 &mdash; 24 Bank Road, Harbor View Apartments, unit 702.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+7 s</span><div class="bub ai">Thank you, Chaewon. You&rsquo;re booked for ten tonight, and the tech will call you when he&rsquo;s on his way. Please don&rsquo;t open up the boiler while you wait, and if you smell gas at any point call this number again straight away.</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      this trade’s price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the price list the owner enters.</p>
   </div>
 </section>
-<!--/demo:v2-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main>
-
-<section class="tlsec bg-grid t-md">
+<section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>Minute by&nbsp;minute</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:760px">The&nbsp;90&nbsp;seconds <br>that&nbsp;saved the&nbsp;job.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One real-world shape of&nbsp;an&nbsp;after-hours HVAC call — from&nbsp;the&nbsp;first ring to&nbsp;the&nbsp;tech pulling out of&nbsp;the&nbsp;driveway. Scripted demo, timings from&nbsp;live test calls.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A missed call<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">Repair calls arrive as a mix of urgent and not, and the urgent ones are the high-ticket jobs because someone has to go today. While the owner is on a job, both kinds ring out. Eight missed calls in the evening do not tell you which one should have been today&rsquo;s visit.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="Closed hours" xmlns="http://www.w3.org/2000/svg"><title>Closed hours</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Closed hours</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15 hours</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >of 24 hours</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >closed</text><circle cx="72.41" cy="80.7483" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >open 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >closed</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >8:47 PM — call</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >calls still arrive in these hours</text></svg><figcaption class="illcap">Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.</figcaption></figure></div>
+  </div>
+</section>
 
-    <div class="cols">
-      <div class="tlstick reveal">
-        <div class="phoneframe"><div class="screen">
-          <div class="notch"></div>
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-a">JT</span>
-              <span class="who"><b>Incoming call</b><span>+1 (817) ••• ••52 · 9:04 PM</span></span>
-              <span class="timer sg">01:30</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Our&nbsp;AC just quit and the&nbsp;house is already 85 degrees.</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">I can dispatch tonight — the&nbsp;after-hours call-out is <em>$180</em>, applied to&nbsp;the&nbsp;repair.</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Tonight, please.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ Job booked · tech notified</span></div>
-        </div></div>
-      </div>
-
-      <div class="reveal">
-        <div class="tlrow">
-          <span class="tm sg">0:00</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"Our&nbsp;AC just quit and the&nbsp;house is already 85 degrees. Can anyone come out tonight?"</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:11</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"That&nbsp;sounds urgent — let me check tonight's&nbsp;on-call coverage for&nbsp;your&nbsp;area. Can I take the&nbsp;service address?"</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:29</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"I can dispatch tonight — the&nbsp;after-hours call-out is <em>$180</em>, applied to&nbsp;the&nbsp;repair if we fix it on&nbsp;the&nbsp;spot. Tomorrow 8&nbsp;AM is standard rate. Which do you want?"</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:47</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"Tonight. And there's&nbsp;a&nbsp;gate — code is on&nbsp;the&nbsp;mailbox side."</p></div>
-        </div>
-        <div class="tlrow warn">
-          <span class="tm sg">1:06</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">SAFETY CHECK</span><p>Caller mentions a&nbsp;smell near the&nbsp;outdoor unit. The&nbsp;AI stops selling, reads your&nbsp;approved safety script, and pages the&nbsp;on-call tech in&nbsp;the&nbsp;same second.</p></div>
-        </div>
-        <div class="tlrow done">
-          <span class="tm sg">1:30</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">RESULT</span><p>Job card created · address, symptoms, gate code and quoted fee attached · Marcus texted · caller has an&nbsp;ETA before hanging up.</p></div>
-        </div>
-        <p class="tlfoot">Scripted demo built from&nbsp;the&nbsp;founding-cohort playbook. Your&nbsp;rate card, your&nbsp;service area, your&nbsp;safety script.</p>
-      </div>
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in this trade.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the Home services answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>It never diagnoses the fault on the phone.</b>An error code or a noise is not a verdict on what is broken. It goes as far as &ldquo;could be&rdquo; and leaves the rest to the visit.</li><li><b>It never fixes the final total.</b>It states the call-out and the basic labour. Parts are priced once the unit is open, so the customer asking &ldquo;it won&rsquo;t go above that, right?&rdquo; hears from the tech, not the AI.</li><li><b>It never books a job where someone smells gas.</b>Gas, shocks, sparks or smoke trigger the safety script and an immediate transfer to a person, not a time slot.</li><li><b>It never tells anyone to have a go themselves.</b>No &ldquo;try taking the cover off&rdquo;. An accident after that advice lands on the company.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="The gate before a person" xmlns="http://www.w3.org/2000/svg"><title>The gate before a person</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">The gate before a person</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >The customer asks</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“My boiler won’t turn </text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >on. Can someone c…”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >On the price list?</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Needs a judgement?</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Safety involved?</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >It answers</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >word for word, with the source</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >Handed to a person</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >the whole conversation</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >every captured field</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >why it stopped</text></svg><figcaption class="illcap">On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="dialsec t-md sec-dark bg-grid">
+<section class="t-md sec-light bg-paper" id="crm">
   <div class="wrap">
-    <div class="nightfig scenefig reveal">
-      <div class="scenebox" data-scene="nightclock"></div>
-      <div>
-        <p class="scenecap"><b>A&nbsp;shop that&nbsp;opens at&nbsp;eight and locks up at&nbsp;six</b> &mdash; ten hours a&nbsp;day, and a&nbsp;weekend answered by&nbsp;whoever is nearest a&nbsp;phone. That&nbsp;is <span class="num">50 of 168 hours</span> with&nbsp;somebody at&nbsp;the&nbsp;desk; the&nbsp;9:04 PM call in&nbsp;the&nbsp;headline above landed in&nbsp;the&nbsp;other 118.</p>
-        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
-          collected. It is what an&nbsp;ordinary working week divides into.</p>
-      </div>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The Home services CRM comes with Home services fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="Customer record" xmlns="http://www.w3.org/2000/svg"><title>Customer record</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Customer record</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >Chaewon Lim</text><text x="213" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">555-02··</text><rect x="400" y="54" width="44.1" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="422.05" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >Phone</text><rect x="452.1" y="54" width="64.56" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="484.38" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >WhatsApp</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Fault described and wh</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Building type and floo</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Preferred visit time a</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Service area and full </text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text></svg><figcaption class="illcap">The card a call leaves behind, with the source of every field.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>Fault described and when it began</span><span>Building type and floor</span><span>Preferred visit time and the time booked</span><span>Service area and full address</span><span>Safety script triggered or not</span><span>Parts check needed before the visit</span></div></div>
   </div>
 </section>
 
-<section class="moneysec bg-dusk t-xl">
+<section class="t-md sec-dark bg-grid" id="pipeline">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;math of&nbsp;one night call</span><span class="line"></span></div>
-    <div class="moneytop">
-      <div class="reveal">
-        <div class="bignum gradtext warm">$180</div>
-        <p class="bigcap">The&nbsp;after-hours call-out on&nbsp;the&nbsp;example rate card this&nbsp;page quotes from, start to&nbsp;finish — applied to&nbsp;the&nbsp;repair
-          if the&nbsp;fault is fixed on&nbsp;the&nbsp;spot, and before parts. Not a&nbsp;market average: a&nbsp;number this&nbsp;page prints and then keeps using.</p>
-        <div class="photocard">
-          <img class="ph" src="https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8475194/pexels-photo-8475194.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A shop owner in an apron taking a business call on the pavement outside his store" loading="lazy" decoding="async" width="800" height="534">
-          <span class="kicker">Who answers tonight</span>
-          <h3>It is you, from&nbsp;the&nbsp;truck.</h3>
-          <p>In&nbsp;most shops the&nbsp;after-hours answering service is the&nbsp;owner — from&nbsp;the&nbsp;truck, from&nbsp;the&nbsp;dinner table, from&nbsp;bed.</p>
-          <span class="stat"><b>0</b>faults the&nbsp;AI is allowed to&nbsp;diagnose down the&nbsp;phone</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <h2 class="h2 onDark">Voicemail isn't a&nbsp;queue. <br>It's&nbsp;a competitor's lead.</h2>
-        <p class="lead onDark" style="margin-top:18px;">Emergency callers don't wait for&nbsp;a&nbsp;callback. They scroll one line down and dial the&nbsp;next shop. The&nbsp;job you lose at&nbsp;9&nbsp;PM is usually the&nbsp;maintenance plan you lose for&nbsp;the&nbsp;next three years.</p>
-        <p class="lead onDark" style="margin-top:22px;">There is no&nbsp;unanswered-call statistic on&nbsp;this&nbsp;page, and there is not going to&nbsp;be one.
-          Every&nbsp;"X% of&nbsp;HVAC calls go unanswered" figure we could find on&nbsp;the&nbsp;open web is published by&nbsp;a&nbsp;company selling
-          answering software — as we do, which is exactly why you should not take one from&nbsp;us either.</p>
-        <div class="figrow" style="margin-top:38px;">
-          <div class="fig"><b class="sg">118 of&nbsp;168</b><span>the&nbsp;other side of&nbsp;the&nbsp;clock above — hours an&nbsp;eight-to-six shop is not on&nbsp;the&nbsp;phone</span></div>
-          <div class="fig"><b class="sg">$180</b><span>the&nbsp;after-hours call-out on&nbsp;the&nbsp;rate card this&nbsp;page publishes — every&nbsp;dollar figure here comes from&nbsp;it</span></div>
-          <div class="fig"><b class="sg">Your&nbsp;log</b><span>your&nbsp;phone system already counts what rang out after five. That&nbsp;count beats anyone&#39;s&nbsp;benchmark</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="baGrid reveal">
-      <div class="baCol before">
-        <div class="hl4" role="heading" aria-level="3">Tonight · without&nbsp;an&nbsp;answer</div>
-        <ul>
-          <li><i>✕</i><span><b style="color:#141A1F;">9:04 PM</b> — call rings out. Voicemail greeting plays to&nbsp;a&nbsp;caller sweating in&nbsp;a&nbsp;dark house.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">9:11 PM</b> — they dial the&nbsp;next listing. Someone answers.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">11:40 PM</b> — a&nbsp;competitor's&nbsp;van is in&nbsp;the&nbsp;driveway.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">7:00 AM</b> — you hear the&nbsp;voicemail. The&nbsp;job, and the&nbsp;service plan behind it, are already booked elsewhere.</span></li>
-        </ul>
-      </div>
-      <div class="baArrow" aria-hidden="true">→</div>
-      <div class="baCol after">
-        <div class="hl4">Tonight · with&nbsp;Saleringo answering</div>
-        <ul>
-          <li><i>✓</i><span><b style="color:#141A1F;">9:04 PM</b> — answered on&nbsp;the&nbsp;second ring. Symptoms, address and access notes captured.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">9:05 PM</b> — your&nbsp;approved after-hours call-out fee quoted out loud, accepted on&nbsp;the&nbsp;call.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">9:06 PM</b> — job card created, on-call tech texted, caller given an&nbsp;ETA.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">7:00 AM</b> — recording, transcript and job card are waiting in&nbsp;your&nbsp;inbox.</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="srcnote">Both&nbsp;columns are this&nbsp;page’s&nbsp;own worked evening, priced off the&nbsp;rate card it publishes. No&nbsp;survey, no&nbsp;benchmark, and no&nbsp;claim about&nbsp;how fast your&nbsp;own on-call technician gets there — that&nbsp;is your&nbsp;van, not our&nbsp;software.</p>
-  </div>
-</section>
-
-<section class="safesec bg-paper t-md">
-  <div class="wrap">
-    <div class="photosplit safesplit reveal">
-      <div class="media">
-        <img class="ph" src="https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-           srcset="https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/6471913/pexels-photo-6471913.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="(max-width:900px) 100vw, 50vw"
-             alt="A technician checking manifold gauges on an outdoor air-conditioning unit" loading="lazy" decoding="async" width="1200" height="1800">
-      </div>
-      <div class="copy">
-        <span class="eyebrow light"><i></i>Where the&nbsp;AI stops talking</span>
-        <h2 class="h2" style="margin-top:20px">Some&nbsp;calls <br>are not a&nbsp;booking&nbsp;problem.</h2>
-        <p class="lead" style="margin-top:18px;">Gas, smoke, a&nbsp;sparking panel — these&nbsp;never get "handled" by&nbsp;software. Saleringo is built to&nbsp;recognize them, stop selling, and put a&nbsp;person on&nbsp;it. These&nbsp;limits ship enabled; they are not settings someone can switch off to&nbsp;hit a&nbsp;booking target.</p>
-      </div>
-    </div>
-
-    <div class="warngrid reveal">
-      <div class="warncard">
-        <span class="tag">Immediate handoff</span>
-        <b>Gas smell or suspected leak</b>
-        <p>Booking stops mid-sentence. The&nbsp;caller hears your&nbsp;approved safety script — leave the&nbsp;area, call emergency services if the&nbsp;smell is strong — while the&nbsp;on-call tech is paged with&nbsp;the&nbsp;address already captured.</p>
-      </div>
-      <div class="warncard">
-        <span class="tag">Immediate handoff</span>
-        <b>Smoke, sparks, burning smell</b>
-        <p>Electrical fire risk routes to&nbsp;a&nbsp;human on&nbsp;the&nbsp;spot. The&nbsp;AI never decides that&nbsp;a&nbsp;described symptom is "probably fine" — it escalates and says so plainly to&nbsp;the&nbsp;caller.</p>
-      </div>
-      <div class="warncard">
-        <span class="tag">Urgent dispatch</span>
-        <b>Water through&nbsp;the&nbsp;ceiling / sewage backup</b>
-        <p>The&nbsp;plumber's&nbsp;questions come first — is the&nbsp;water off, where's&nbsp;your&nbsp;shutoff, is anything still running — then your&nbsp;approved script: keep clear of&nbsp;the&nbsp;wet room and anything electrical in&nbsp;it. The&nbsp;on-call plumber is paged and the&nbsp;after-hours call-out quoted in&nbsp;the&nbsp;same call. It never talks anyone through&nbsp;a&nbsp;repair.</p>
-      </div>
-      <div class="warncard amber">
-        <span class="tag">Hard boundary</span>
-        <b>No&nbsp;DIY, no&nbsp;fixed totals</b>
-        <p>It won't walk a&nbsp;caller through&nbsp;opening a&nbsp;breaker panel, and it won't quote a&nbsp;final repair total before your&nbsp;tech has seen the&nbsp;unit. Call-out fee and approved ranges only.</p>
-      </div>
-    </div>
-
-    <div class="ladder reveal">
-      <div class="lstep"><span class="n sg">STEP 01</span><b>Detect</b><span>Risk phrases in&nbsp;your&nbsp;script — in&nbsp;English or Spanish — flip the&nbsp;call out of&nbsp;booking mode.</span></div>
-      <div class="lstep"><span class="n sg">STEP 02</span><b>Stop selling</b><span>No&nbsp;quoting, no&nbsp;scheduling, no&nbsp;upsell. The&nbsp;safety wording you approved is read verbatim.</span></div>
-      <div class="lstep"><span class="n sg">STEP 03</span><b>Page a&nbsp;human</b><span>On-call tech gets the&nbsp;call, the&nbsp;address and the&nbsp;transcript — while the&nbsp;caller is still on&nbsp;the&nbsp;line.</span></div>
-      <div class="lstep"><span class="n sg">STEP 04</span><b>Leave a&nbsp;trail</b><span>Recording, transcript and escalation reason land on&nbsp;the&nbsp;job card for&nbsp;the&nbsp;morning review.</span></div>
-    </div>
-    <p class="safenote">Every&nbsp;one of&nbsp;these is a&nbsp;fact you approve before it goes live. <a href="../verified-ai.html">How answers get approved →</a></p>
-  </div>
-</section>
-
-<section class="dispsec grain t-xl">
-  <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;other side of&nbsp;the&nbsp;call</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:700px">Your&nbsp;tech is&nbsp;briefed <br>before the&nbsp;caller hangs&nbsp;up.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One inbox for&nbsp;phone, web chat and messaging — and a&nbsp;dispatch text that&nbsp;carries everything the&nbsp;AI captured. No&nbsp;"call the&nbsp;office to&nbsp;find out where."</p>
-
-    <div class="dispcols">
-      <div class="scene-frame tiltcard reveal">
-        <svg viewBox="0 0 1000 640" role="img" aria-label="The on-call technician's phone showing the job card: address with gate code, the fault in the caller's own words, the quoted after-hours fee already accepted, and a navigate button — all filled in before the call ended.">
-          <defs>
-            <linearGradient id="hjBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-            <radialGradient id="hjGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".32"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
-            <linearGradient id="hjScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-          </defs>
-          <rect width="1000" height="640" fill="url(#hjBg)"/>
-          <ellipse cx="500" cy="330" rx="380" ry="290" fill="url(#hjGlow)"/>
-
-          <!-- a truck cab at night, just enough of it to place the phone -->
-          <g opacity=".5">
-            <path d="M0 470 H1000 V640 H0 Z" fill="#F6F4EE"/>
-            <path d="M104 470 q120 -150 300 -150 h192 q180 0 300 150" fill="none" stroke="#141A1F" stroke-width="3"/>
-            <circle cx="188" cy="392" r="46" fill="#F6F4EE"/><circle cx="812" cy="392" r="46" fill="#F6F4EE"/>
-            <path d="M150 392 h76 M774 392 h76" stroke="#141A1F" stroke-width="3"/>
-          </g>
-
-          <!-- the phone, in the tech's hand -->
-          <g transform="translate(330,52)">
-            <rect width="340" height="560" rx="42" fill="#F6F4EE" stroke="#141A1F" stroke-width="2.5"/>
-            <rect x="14" y="14" width="312" height="532" rx="32" fill="url(#hjScreen)"/>
-            <rect x="130" y="22" width="80" height="14" rx="7" fill="#F6F4EE"/>
-
-            <g font-family="Plus Jakarta Sans,sans-serif">
-              <text x="40" y="76" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" letter-spacing="2.4">JOB CARD · 9:06 PM</text>
-              <rect x="228" y="60" width="76" height="24" rx="12" fill="rgba(217,106,94,.2)"/>
-              <text x="266" y="76" font-size="12" fill="#E58C81" text-anchor="middle" font-weight="800">EMERGENCY</text>
-
-              <text x="40" y="112" font-size="19" fill="#F6F4EE" font-weight="700">2620 Maple Dr</text>
-              <text x="40" y="136" font-size="12.5" fill="#94A2B8" font-weight="600">Plano, TX · gate code 4417</text>
-
-              <path d="M40 156 H300" stroke="rgba(20,26,31,.10)" stroke-width="1.5"/>
-
-              <text x="40" y="184" font-size="12" fill="#5E6C82" font-weight="800">IN&nbsp;THE&nbsp;CALLER’S WORDS</text>
-              <rect x="34" y="196" width="272" height="76" rx="12" fill="rgba(20,26,31,.05)"/>
-              <text x="48" y="220" font-size="12.5" fill="#F6F4EE" font-weight="600">“No&nbsp;cooling since 8 PM, and</text>
-              <text x="48" y="240" font-size="12.5" fill="#F6F4EE" font-weight="600">there’s&nbsp;a&nbsp;smell near the</text>
-              <text x="48" y="260" font-size="12.5" fill="#F6F4EE" font-weight="600">outdoor unit.”</text>
-
-              <rect x="34" y="286" width="272" height="46" rx="12" fill="rgba(232,164,76,.14)"/>
-              <text x="48" y="306" font-size="12" fill="#E8A44C" font-weight="800">SAFETY NOTE READ TO&nbsp;CALLER</text>
-              <text x="48" y="324" font-size="12" fill="#F6F4EE" font-weight="600">Told to&nbsp;step away from&nbsp;the&nbsp;unit.</text>
-
-              <text x="40" y="364" font-size="12" fill="#5E6C82" font-weight="800">ALREADY AGREED</text>
-              <g>
-                <rect x="34" y="376" width="130" height="56" rx="12" fill="rgba(23,189,189,.14)"/>
-                <text x="48" y="398" font-size="12.5" fill="#5FA9A9" font-weight="700">After-hours fee</text>
-                <text x="48" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">$180</text>
-                <rect x="176" y="376" width="130" height="56" rx="12" fill="rgba(20,26,31,.05)"/>
-                <text x="190" y="398" font-size="12.5" fill="#8FA0B2" font-weight="700">Window</text>
-                <text x="190" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">9:40 PM</text>
-              </g>
-
-              <rect x="34" y="448" width="272" height="30" rx="15" fill="rgba(20,26,31,.05)"/>
-              <text x="170" y="468" font-size="12.5" fill="#8FA0B2" text-anchor="middle" font-weight="700">▶ Play the&nbsp;90-second recording</text>
-
-              <rect x="34" y="490" width="272" height="44" rx="22" fill="#17BDBD"/>
-              <text x="170" y="518" font-size="14" fill="#F6F4EE" text-anchor="middle" font-weight="800">Navigate · 12 min</text>
-            </g>
-          </g>
-
-          <text x="500" y="616" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#5E6C82" text-anchor="middle" font-weight="600">Nobody called the&nbsp;office to&nbsp;find out where. The&nbsp;card was full before the&nbsp;caller hung up.</text>
-        </svg>
-        <div class="scene-overlay tr"><b>Sent to&nbsp;Marcus at&nbsp;9:06 PM</b><span>Address, fault, fee and recording attached</span></div>
-      </div>
-
-      <div class="dispside reveal">
-        <div class="msgthread">
-          <div class="mhead"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">MT</span>
-            <span><b>Marcus · on-call tech</b><br><span>Dispatch · 9:06 PM</span></span></div>
-          <div class="mbody">
-            <div class="m out">New emergency job — AC down at&nbsp;2620 Maple Dr. No&nbsp;cooling since 8 PM, caller reports a&nbsp;smell near the&nbsp;outdoor unit. After-hours fee $180 quoted &amp; accepted. Gate code on&nbsp;the&nbsp;job card.<span class="tick">✓✓</span></div>
-            <div class="m in">On&nbsp;it — ETA 35 min.</div>
-            <div class="m out">Customer notified. Recording and full transcript are on&nbsp;the&nbsp;job card.<span class="tick">✓✓</span></div>
-          </div>
-        </div>
-        <div class="rrow"><span class="rchip">✓ CRM updated</span><span class="rchip">✓ Customer texted the&nbsp;ETA</span></div>
-        <p class="note">The&nbsp;same thread works the&nbsp;other way: your&nbsp;tech replies "running late", and the&nbsp;customer hears it without&nbsp;anyone opening a&nbsp;laptop.</p>
-      </div>
-    </div>
-
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal"><b>Inquiry</b><i>&rarr;</i><b>Visit booked</b><i>&rarr;</i><b>On-site check</b><i>&rarr;</i><b>Estimate approved</b><i>&rarr;</i><b>Work done and paid</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="Pipeline" xmlns="http://www.w3.org/2000/svg"><title>Pipeline</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Pipeline</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Inquiry</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Visit boo</text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >On-site c</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Estimate </text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Work done</text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">The Home services pipeline as it is. How many inquiries sit at each stage, at a glance.</figcaption></figure></div>
   </div>
 </section>
 
 <section class="packcard t-md sec-dark bg-grid" id="the-pack">
   <div class="wrap">
     <a class="pc-link" href="./home-services-pack.html">
-      <span class="pc-k">The&nbsp;Home services pack</span>
-      <b class="pc-h">Everything in&nbsp;the&nbsp;pack, on&nbsp;a&nbsp;page of&nbsp;its&nbsp;own</b>
-      <span class="pc-d">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and pipeline stages this&nbsp;trade works in, the&nbsp;systems it hands to, and every&nbsp;refusal written down. It is a&nbsp;manifest, so it lives where a&nbsp;manifest belongs rather than in&nbsp;the&nbsp;middle of&nbsp;an&nbsp;argument.</span>
+      <span class="pc-k">The Home services pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
       <span class="pc-go" aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>
 
-<section class="sec-dark bg-grid t-md" id="multi-location">
+<section class="t-md sec-light2" id="others">
   <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Two shops. Three branches. One owner.</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">The&nbsp;north branch does&nbsp;not&nbsp;quote <br><em style="font-style:normal;color:var(--teal);">the&nbsp;south branch's</em>&nbsp;rates.</h2>
-      <p class="secintro">If you run more than one location, the&nbsp;fastest way to&nbsp;lose money is the&nbsp;wrong
-        call-out fee on&nbsp;the&nbsp;wrong side of&nbsp;town. Each&nbsp;branch is set up as its&nbsp;own shop inside one account.</p>
-    </div>
-    <div class="mlgrid reveal">
-      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own number, hours and rate card</b>
-        <p>Each&nbsp;branch answers on&nbsp;its&nbsp;own line with&nbsp;its&nbsp;own after-hours policy and its&nbsp;own zone pricing.
-          A&nbsp;caller in&nbsp;one service area never hears another&nbsp;branch's&nbsp;fee.</p></div>
-      <div class="mlcard"><span class="n">02</span><b>Its&nbsp;own crew and its&nbsp;own on-call rotation</b>
-        <p>Dispatch goes to&nbsp;the&nbsp;tech who covers that&nbsp;address, from&nbsp;the&nbsp;calendar that&nbsp;branch actually runs.</p></div>
-      <div class="mlcard"><span class="n">03</span><b>Each&nbsp;manager sees only their&nbsp;own branch</b>
-        <p>A&nbsp;branch manager opens the&nbsp;board and sees their&nbsp;calls, their&nbsp;jobs, their&nbsp;estimates — not the&nbsp;whole company's.</p></div>
-      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
-        <p>One report, every&nbsp;branch in&nbsp;the&nbsp;same row: calls answered, jobs booked, after-hours share,
-          revenue by&nbsp;zone. Where the&nbsp;trucks are earning, and where they are not.</p></div>
-    </div>
-    <p class="statnote">Branches, numbers, zones, rate cards and who-sees-what are configured with&nbsp;you during
-      onboarding — we build the&nbsp;rate card and the&nbsp;safety script with&nbsp;you, line by&nbsp;line.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal"><a href="./pest-control.html"><img src="https://images.pexels.com/photos/4176541/pexels-photo-4176541.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Pest control</b></a><a href="./property-management.html"><img src="https://images.pexels.com/photos/35707771/pexels-photo-35707771.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Property management</b></a><a href="./real-estate.html"><img src="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Real estate</b></a><a href="./cleaning-services.html"><img src="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Cleaning services</b></a><a href="./interior-renovation.html"><img src="https://images.pexels.com/photos/6474507/pexels-photo-6474507.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Renovation contractors</b></a><a href="./landscaping.html"><img src="https://images.pexels.com/photos/32632465/pexels-photo-32632465.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Landscaping & lawn care</b></a><a href="./locksmith.html"><img src="https://images.pexels.com/photos/34286675/pexels-photo-34286675.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Locksmiths</b></a><a href="./appliance-repair.html"><img src="https://images.pexels.com/photos/32588545/pexels-photo-32588545.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Appliance repair</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">Dental</a><a href="./clinics.html">Clinics & med-spa</a><a href="./academies.html">Academies & tutoring</a><a href="./salons.html">Hair & beauty salons</a><a href="./veterinary.html">Veterinary</a><a href="./auto-repair.html">Auto repair</a><a href="./real-estate.html">Real estate</a><a href="./venues.html">Wedding & event venues</a><a href="./senior-care.html">Senior care</a><a href="./fitness.html">Gyms & fitness</a><a href="./pest-control.html">Pest control</a><a href="./property-management.html">Property management</a><a href="./movers.html">Movers</a><a href="./restaurants.html">Restaurants</a><a href="./stays.html">Boutique stays</a><a href="./golf.html">Golf clubs</a><a href="./funeral-homes.html">Funeral homes</a><a href="./legal.html">Law firms</a><a href="./universities.html">Universities</a><a href="./public-sector.html">Public sector</a><a href="./self-storage.html">Self storage</a><a href="./equipment-rental.html">Equipment rental</a><a href="./ecommerce.html">Online stores</a><a href="./franchise.html">Franchises</a><a href="./pharmacy.html">Pharmacy</a><a href="./hospital-outpatient.html">Hospitals & outpatient</a><a href="./physio-rehab.html">Physio & rehab</a><a href="./korean-medicine.html">Acupuncture & traditional medicine</a><a href="./optician.html">Opticians</a><a href="./counseling.html">Counseling & therapy</a><a href="./childcare.html">Daycare & preschool</a><a href="./driving-school.html">Driving schools</a><a href="./music-art-academy.html">Music & art schools</a><a href="./yoga-pilates.html">Yoga & pilates studios</a><a href="./martial-arts.html">Martial arts dojos</a><a href="./nail-spa.html">Nail & spa</a><a href="./barbershop.html">Barbershops</a><a href="./pet-grooming.html">Pet grooming & boarding</a><a href="./cleaning-services.html">Cleaning services</a><a href="./interior-renovation.html">Renovation contractors</a><a href="./landscaping.html">Landscaping & lawn care</a><a href="./locksmith.html">Locksmiths</a><a href="./appliance-repair.html">Appliance repair</a><a href="./laundry.html">Dry cleaning & laundry</a><a href="./car-wash.html">Car wash & detailing</a><a href="./car-dealers.html">Car dealerships</a><a href="./towing.html">Towing & roadside</a><a href="./cafes-bakeries.html">Cafés & bakeries</a><a href="./catering.html">Catering</a><a href="./travel-agency.html">Travel agencies</a><a href="./photo-studio.html">Photo studios</a><a href="./florist.html">Florists</a><a href="./accounting-tax.html">Accountants & tax</a><a href="./insurance-agency.html">Insurance agencies</a><a href="./home-security.html">Home security & CCTV installers</a><a href="./solar.html">Solar & energy installers</a><a href="./it-repair.html">Computer & phone repair</a><a href="./courier.html">Couriers & same-day delivery</a><a href="./print-signage.html">Print shops & signage</a><a href="./coworking.html">Coworking spaces</a><a href="./tours-activities.html">Tours & activities</a><a href="./schools.html">Schools & international schools</a><a href="./staffing.html">Staffing & recruitment agencies</a><a href="./imaging.html">Imaging & health-screening centres</a></div>
   </div>
 </section>
 
-<section class="intsec sec-light2 t-xl">
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>Your&nbsp;existing systems, honestly</span>
-      <h2 class="h2" style="margin-top:22px">No&nbsp;fake logo&nbsp;wall. <br>Here's&nbsp;what's actually&nbsp;live.</h2>
-      <p class="lead" style="margin-top:16px;">Today, jobs flow out through&nbsp;Zapier and CSV export. There is no&nbsp;direct link into&nbsp;a&nbsp;field-service platform — not one, not yet.</p>
-    </div>
-
-    <div class="statgrid reveal" id="integrations">
-      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
-        <ul>
-          <li>Zapier<span>Push jobs and stage changes into&nbsp;whatever runs your&nbsp;shop, through&nbsp;a&nbsp;Zap you own</span></li>
-          <li>CSV export<span>Calls, jobs, estimates and the&nbsp;whole pipeline, whenever you ask</span></li>
-          <li>Google &amp; Outlook Calendar<span>Bookings and dispatch windows land on&nbsp;your&nbsp;real calendar</span></li>
-        </ul>
-      </div>
-      <div class="statcol build"><div class="hl4"><i></i>Bridge for&nbsp;now</div>
-        <ul>
-          <li>ServiceTitan · Jobber · Housecall Pro<span>No&nbsp;direct link. Jobs reach them through&nbsp;Zapier or CSV export</span></li>
-          <li>HubSpot<span>Same path — nothing is ripped out and nothing is migrated</span></li>
-        </ul>
-      </div>
-      <div class="statcol build"><div class="hl4"><i></i>In&nbsp;build</div>
-        <ul>
-          <li>Direct field-service integrations<span>Founding customers vote on&nbsp;the&nbsp;build order. We will not name a&nbsp;month we cannot stand behind</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="statnote">Until then, every&nbsp;job lands in Saleringo's&nbsp;built-in&nbsp;inbox and CRM — and exports
-      cleanly to&nbsp;whatever runs your&nbsp;shop. If the&nbsp;platform you use is not on&nbsp;this&nbsp;list, ask before you buy.</p>
-
-    <div class="riskrow reveal">
-      <div class="riskitem light"><span class="ic">☎</span><b>Keep your&nbsp;number</b><span>Forward nights and weekends first. Nothing to&nbsp;port, nothing to&nbsp;rip out.</span></div>
-      <div class="riskitem light"><span class="ic">◔</span><b>Forwarding takes minutes</b><span>The&nbsp;phone side is a&nbsp;forwarding rule. The&nbsp;rate card and safety script take a&nbsp;session with&nbsp;us — see below.</span></div>
-      <div class="riskitem light"><span class="ic">✍</span><b>Your&nbsp;words only</b><span>It answers from&nbsp;the&nbsp;rate card and safety script you approved &mdash; or&nbsp;hands the&nbsp;call to&nbsp;a&nbsp;person.</span></div>
-      <div class="riskitem light"><span class="ic">1:1</span><b>Human onboarding</b><span>We build the&nbsp;rate card and the&nbsp;safety script with&nbsp;you, line by&nbsp;line.</span></div>
-    </div>
-
-    <div class="whoband reveal">
-      <div class="secrule"><span class="eyebrow light"><i></i>Three people, one 9 PM call</span><span class="line"></span></div>
-      <div class="audgrid">
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A technician repairing an air conditioner with a gauge set" loading="lazy" decoding="async" width="800" height="568">
-          <b>The&nbsp;on-call tech</b><span>Wants the&nbsp;address, the&nbsp;fault and the&nbsp;agreed fee before the&nbsp;truck moves</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/35730210/pexels-photo-35730210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/35730210/pexels-photo-35730210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/35730210/pexels-photo-35730210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/35730210/pexels-photo-35730210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/35730210/pexels-photo-35730210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A man sitting in an armchair at home in the evening, holding up his phone with an exasperated gesture" loading="lazy" decoding="async" width="800" height="533">
-          <b>The&nbsp;customer at&nbsp;9 PM</b><span>Hot house, no&nbsp;cooling, three search results deep — whoever answers wins</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/8475204/pexels-photo-8475204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/8475204/pexels-photo-8475204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/8475204/pexels-photo-8475204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/8475204/pexels-photo-8475204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8475204/pexels-photo-8475204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="Two shopkeepers in aprons in their grocery store" loading="lazy" decoding="async" width="800" height="533">
-          <b>Whoever runs your&nbsp;office</b><span>Opens the&nbsp;laptop at&nbsp;7 AM to&nbsp;job cards, recordings and transcripts, already filed</span>
-        </div>
-      </div>
-      <p class="photocap light">Illustrative photography — these are not Saleringo customers.</p>
-    </div>
-
-    <div class="cohortbar reveal">
-      <span class="pilltag pt-teal">US FOUNDING COHORT</span>
-      <b>50% off for&nbsp;3 months · priority onboarding · a&nbsp;vote on&nbsp;the&nbsp;next integration</b>
-      <span>Onboarding now, in&nbsp;English &amp; Spanish.</span>
-      <a class="linkcta" href="#early-access" style="border-color:#0B7878;color:#0B7878;">Watch it answer my&nbsp;questions&nbsp;&nbsp;→</a>
-    </div>
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your Home services price list,<br>and we show it answering from that.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; Home services<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="9:00 AM — the owner’s screen" xmlns="http://www.w3.org/2000/svg"><title>9:00 AM — the owner’s screen</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >9:00 AM — the owner’s screen</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Visit done</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Chaewon Lim · last night 10:00 PM · ignition …</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Estimate #3181</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >ignition module $160 · call-out $85 · sent by…</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Tech task</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >collect the part this afternoon · replace tom…</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Waiting for a person</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >final-total question · full thread attached ·…</text></svg><figcaption class="illcap">What the call produced, waiting on the morning screen.</figcaption></figure></div>
   </div>
 </section>
 
-<section class="t-md sec-light bg-paper" id="playbook">
-  <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow light"><i></i>The playbook</span><span class="line"></span></div>
-    <h2 class="h2 reveal">What each door captures &mdash;<br>and the work it becomes.</h2>
-    <p class="lead reveal">Three doors into&nbsp;the&nbsp;same shop &mdash; the&nbsp;9&nbsp;PM call, the&nbsp;chat on&nbsp;your&nbsp;website, the&nbsp;messaging thread. Each&nbsp;one writes what the&nbsp;caller actually said onto&nbsp;one job card, and each&nbsp;card becomes the&nbsp;work your&nbsp;office opens at&nbsp;7&nbsp;AM: a&nbsp;dispatched job to&nbsp;review, a&nbsp;warranty claim to&nbsp;decide, a&nbsp;quote request waiting for&nbsp;the&nbsp;owner.</p>
-
-    <div class="trio reveal" style="margin-top:30px;">
-      <div><b>✆ AI phone</b><p>The&nbsp;9:04&nbsp;PM caller: symptoms, service address, access notes like a&nbsp;gate code, and how urgent it is &mdash; with&nbsp;the&nbsp;after-hours call-out for&nbsp;that&nbsp;zone quoted out&nbsp;loud and accepted before dispatch. A&nbsp;risk phrase &mdash; gas, sparks &mdash; flips the&nbsp;call out of&nbsp;booking mode.</p></div>
-      <div><b>💬 Website chat</b><p>The&nbsp;Saturday-morning visitor: the&nbsp;fault in&nbsp;their&nbsp;own words, the&nbsp;address matched to&nbsp;your&nbsp;zone map before anything is quoted &mdash; and the&nbsp;record notes which page they asked from, with&nbsp;no&nbsp;form to&nbsp;fill in.</p></div>
-      <div><b>✓ Messaging</b><p>WhatsApp and the&nbsp;other messengers, with&nbsp;the&nbsp;account attached &mdash; a&nbsp;7&nbsp;PM warranty question stays on&nbsp;one thread, and the&nbsp;part, date and technician come straight off the&nbsp;job history the&nbsp;record already holds.</p></div>
-    </div>
-
-    <h3 class="h3 reveal" style="margin-top:34px;">The record it writes</h3>
-    <div class="dtwrap reveal"><table class="dtable">
-      <thead><tr><th>CRM field</th><th>Comes from</th><th>Verified how</th></tr></thead>
-      <tbody>
-        <tr><td>Service address &amp; zone</td><td>The&nbsp;caller gives the&nbsp;address</td><td>Matched to&nbsp;your&nbsp;zone map before quoting; the&nbsp;zone noted on&nbsp;the&nbsp;record for&nbsp;every&nbsp;future job</td></tr>
-        <tr><td>Fault, in&nbsp;the&nbsp;caller's&nbsp;words</td><td>The&nbsp;call itself</td><td>On&nbsp;the&nbsp;job card verbatim &mdash; "No&nbsp;cooling since 8&nbsp;PM, and there's&nbsp;a&nbsp;smell near the&nbsp;outdoor unit"</td></tr>
-        <tr><td>Access notes</td><td>The&nbsp;caller mentions them &mdash; the&nbsp;gate code, "the&nbsp;side gate sticks"</td><td>Read back on&nbsp;the&nbsp;call and written on&nbsp;the&nbsp;card, so nobody stands in&nbsp;the&nbsp;dark working it out</td></tr>
-        <tr><td>Quoted fee</td><td>Your&nbsp;rate card &mdash; the&nbsp;$180 after-hours call-out, the&nbsp;$95 standard, the&nbsp;$45 Zone&nbsp;3 travel charge</td><td>Quoted out&nbsp;loud and accepted before the&nbsp;truck moves &mdash; no&nbsp;argument on&nbsp;the&nbsp;doorstep</td></tr>
-        <tr><td>On-call tech &amp; window</td><td>The&nbsp;on-call rotation and the&nbsp;calendar</td><td>A&nbsp;real arrival window; the&nbsp;tech texted with&nbsp;the&nbsp;full card, the&nbsp;caller given an&nbsp;ETA</td></tr>
-        <tr><td>Job history</td><td>The&nbsp;record it wrote earlier</td><td>Part, date and technician produced instantly; due dates for&nbsp;the&nbsp;annual service read from&nbsp;it</td></tr>
-        <tr><td>Safety flag</td><td>Risk phrases in&nbsp;your&nbsp;approved script &mdash; in&nbsp;English or Spanish</td><td>Escalation reason logged on&nbsp;the&nbsp;job card; the&nbsp;morning review sees it first</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3 class="h3 reveal" style="margin-top:30px;">The work it readies</h3>
-    <ul class="kolist reveal">
-      <li><b>Review the&nbsp;night's&nbsp;job cards</b> &mdash; whoever runs your&nbsp;office &mdash; recordings, transcripts and cards filed and waiting at&nbsp;7&nbsp;AM.</li>
-      <li><b>Decide the&nbsp;warranty claim</b> &mdash; your&nbsp;office &mdash; flagged first thing with&nbsp;the&nbsp;record attached, and a&nbsp;return slot already held so the&nbsp;customer isn't waiting on&nbsp;the&nbsp;decision.</li>
-      <li><b>Rule on&nbsp;the&nbsp;price-match request</b> &mdash; the&nbsp;owner &mdash; the&nbsp;rate card held on&nbsp;the&nbsp;call, the&nbsp;written quote sent, and a&nbsp;Friday follow-up already scheduled.</li>
-      <li><b>Run the&nbsp;annual services</b> &mdash; the&nbsp;same technician &mdash; due dates read from&nbsp;the&nbsp;job history and offered unprompted, access notes carried across.</li>
-    </ul>
-
-    <h3 class="h3 reveal" style="margin-top:30px;">What stays a human decision</h3>
-    <ul class="kolist reveal">
-      <li><b>Gas, smoke or sparks</b> &mdash; booking stops mid-sentence; your&nbsp;approved safety script is read and a&nbsp;person is paged. It never decides on&nbsp;its&nbsp;own that&nbsp;a&nbsp;situation is safe.</li>
-      <li><b>The&nbsp;diagnosis and the&nbsp;final total</b> &mdash; no&nbsp;fault diagnosed down the&nbsp;phone, and no&nbsp;fixed repair total before your&nbsp;tech has seen the&nbsp;unit. Call-out fee and approved ranges only.</li>
-      <li><b>Anything off the&nbsp;rate card</b> &mdash; it never discounts; price requests route to&nbsp;the&nbsp;owner, and warranty coverage stays your&nbsp;office's&nbsp;decision.</li>
-    </ul>
-
-    <h3 class="h3 reveal" style="margin-top:30px;">Before / after</h3>
-    <div class="trio reveal">
-      <div><b>Before</b><p>The&nbsp;9:04&nbsp;PM call rings out to&nbsp;voicemail. At&nbsp;9:11 they dial the&nbsp;next listing; by&nbsp;11:40 a&nbsp;competitor's&nbsp;van is in&nbsp;the&nbsp;driveway, and at&nbsp;7&nbsp;AM you hear the&nbsp;voicemail &mdash; the&nbsp;job, and the&nbsp;service plan behind it, already booked elsewhere.</p></div>
-      <div><b>After</b><p>Answered on&nbsp;the&nbsp;second ring, the&nbsp;fee quoted and accepted, the&nbsp;job card created and the&nbsp;on-call tech texted by&nbsp;9:06 &mdash; the&nbsp;caller has an&nbsp;ETA before hanging up, and the&nbsp;recording, transcript and card are in&nbsp;your&nbsp;inbox at&nbsp;7&nbsp;AM.</p></div>
-      <div><b>Your first 14 days</b><p>The&nbsp;pilot is the&nbsp;first 14&nbsp;days. Judge it on&nbsp;the&nbsp;real answer records it leaves &mdash; the&nbsp;transcripts, the&nbsp;job cards, the&nbsp;refusals &mdash; or take the&nbsp;full refund. The&nbsp;cost is the&nbsp;published plan price with&nbsp;the&nbsp;founding 50% applied, pro-rated for&nbsp;the&nbsp;first month.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark bg-grid t-xl" id="worked-examples">
-  <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Six worked examples</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Six calls your&nbsp;shop&nbsp;gets <br>every&nbsp;week — and&nbsp;what <br>each&nbsp;one left&nbsp;behind.</h2>
-      <p class="secintro">Not a&nbsp;demo reel. Six ordinary inquiries, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;exchange produced: a&nbsp;job card written, a&nbsp;call-out priced off your&nbsp;own rate card, a&nbsp;warranty claim put
-        in&nbsp;front of&nbsp;a&nbsp;person instead of&nbsp;guessed at. Four of&nbsp;them the&nbsp;AI refuses outright — read those&nbsp;first.</p>
-      <p class="exlabel" style="margin-top:14px;">Every&nbsp;scenario below is an&nbsp;illustration built from&nbsp;the&nbsp;rate card and safety script a&nbsp;shop would load — not customer stories, and no&nbsp;shop named or&nbsp;implied here is a&nbsp;Saleringo customer. Every&nbsp;figure appears on&nbsp;this&nbsp;page, on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>, or in&nbsp;the&nbsp;<a href="../examples.html#home" style="color:var(--teal);font-weight:700;">home-services worked examples</a>. Nothing is invented; your&nbsp;own rate card sets your&nbsp;numbers.</p>
-    </div>
-
-    <!--illus:scene--><div class="scenestrip reveal" aria-label="The three moments in every worked example"><figure><img src="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A customer making a call from the sofa in the evening" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>After hours — the call comes in</b>The customer calls when it suits them, not when your desk is open.</figcaption></figure><figure><img src="https://images.pexels.com/photos/34734504/pexels-photo-34734504.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A technician in uniform repairing a home appliance" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Home services — answered from your own facts</b>Prices, hours and rules you approved. Nothing invented.</figcaption></figure><figure><img src="https://images.pexels.com/photos/13736440/pexels-photo-13736440.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="An owner in an apron reading the morning’s records on a tablet" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Next morning — what is waiting</b>A booking, a quote, a record with an owner and a deadline.</figcaption></figure></div><!--/illus:scene-->
-    <div class="panelset exset reveal" style="margin-top:38px;">
-          <div class="pstabs" role="tablist" aria-label="Six worked examples">
-        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Job created</button>
-        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Quoted by zone</button>
-        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Follow-up</button>
-        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Office decides</button>
-        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Quoted, not discounted</button>
-        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Safety route</button>
-      </div>
-          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Job created">
-            <div class="excard">
-        <div class="exhead"><span class="when">22:35</span><span class="via">Phone</span><span class="tag solved">Job created</span></div>
-        <div class="exbody">
-          <p class="exq">There's&nbsp;water coming through&nbsp;the&nbsp;kitchen ceiling — it's&nbsp;dripping onto the&nbsp;counter and I can't tell where from. Can anyone come out tonight?</p>
-          <div class="exturn"><span class="who">Saleringo</span>Two things before anything else: is the&nbsp;water off, and where's&nbsp;your&nbsp;shutoff?</div>
-          <div class="exturn"><span class="who">Caller</span>Found the&nbsp;valve under the&nbsp;stairs and it's&nbsp;off. Still dripping, but slower.</div>
-          <div class="exturn"><span class="who">Saleringo</span>Leave it off, and keep clear of&nbsp;the&nbsp;lights and outlets in&nbsp;that&nbsp;room. I can get the&nbsp;on-call plumber to&nbsp;you tonight — the&nbsp;after-hours call-out is <b>$180</b>, applied to&nbsp;the&nbsp;repair if we fix it on&nbsp;the&nbsp;spot. The&nbsp;first morning slot
-            at&nbsp;7:00 carries no&nbsp;call-out fee. With&nbsp;water still coming through&nbsp;a&nbsp;ceiling, shall I send someone tonight?</div>
-          <div class="exturn"><span class="who">Caller</span>Tonight, please. The&nbsp;side gate sticks — you have to&nbsp;lift it.</div>
-          <div class="exturn"><span class="who">Saleringo</span>Noted on&nbsp;the&nbsp;job card so he isn't standing in&nbsp;the&nbsp;dark
-            working it out. He'll text when he's&nbsp;fifteen minutes away.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Job card created — address, the&nbsp;leak in&nbsp;the&nbsp;caller's&nbsp;words, "main shutoff: off", urgency and the&nbsp;gate note</span><span class="amt">$180 + parts</span></div>
-            <div class="exrow"><i>✓</i><span>Call-out fee quoted and accepted <b>before</b> dispatch — no&nbsp;argument on&nbsp;the&nbsp;doorstep</span></div>
-            <div class="exrow"><i>✓</i><span>On-call plumber paged with&nbsp;the&nbsp;full card; caller given an&nbsp;arrival window</span></div>
-            <div class="exrow"><i>✓</i><span>Pipeline: <b>New call → Job booked</b></span></div>
-          </div>
-          <p class="exlabel">Worked illustration, not a&nbsp;customer story. The&nbsp;shutoff question is the&nbsp;plumber's&nbsp;first question, scripted by&nbsp;you; the&nbsp;$180 after-hours call-out is the&nbsp;figure published on&nbsp;this&nbsp;page, and yours is whatever your&nbsp;rate card says.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Quoted by zone">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sat 07:55</span><span class="via">Web chat</span><span class="tag solved">Quoted by&nbsp;zone</span></div>
-        <div class="exbody">
-          <p class="exq">How much just to&nbsp;come out and look at&nbsp;a&nbsp;kitchen socket that&nbsp;keeps tripping? I'm the&nbsp;far side of&nbsp;the&nbsp;ring road.</p>
-          <div class="exturn"><span class="who">Saleringo</span>Before anything else — if that&nbsp;socket is warm, scorched
-            or smells of&nbsp;burning, stop using it and tell me now, because that&nbsp;stops being a&nbsp;booking and becomes a&nbsp;call
-            with&nbsp;a&nbsp;person on&nbsp;it. If it's&nbsp;just tripping: the&nbsp;standard call-out is <b>$95</b>, applied to&nbsp;the&nbsp;repair, and
-            your&nbsp;ZIP code is <b>Zone 3</b>, which adds the&nbsp;<b>$45</b> travel charge on&nbsp;the&nbsp;rate card.</div>
-          <div class="exturn"><span class="who">Visitor</span>No&nbsp;smell, no&nbsp;marks. Just trips when the&nbsp;kettle goes on.</div>
-          <div class="exturn"><span class="who">Saleringo</span>Then <b>$140</b> gets a&nbsp;licensed electrician to&nbsp;the&nbsp;door
-            and a&nbsp;diagnosis. I won't put a&nbsp;repair price on&nbsp;it before he has seen it. Tuesday 8:00 or Wednesday 13:00?</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="4">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Call-out priced from&nbsp;the&nbsp;rate card, travel priced from&nbsp;the&nbsp;address's&nbsp;own zone</span><span class="amt">$140</span></div>
-            <div class="exrow"><i>✓</i><span>Answered at&nbsp;7:55 on&nbsp;a&nbsp;Saturday, in&nbsp;chat, with&nbsp;no&nbsp;form to&nbsp;fill in</span></div>
-            <div class="exrow"><i>✓</i><span>Customer record notes <b>Zone 3</b> for&nbsp;every&nbsp;future job</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;safety check came <b>inside</b> the&nbsp;quote, not after it</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;repair total before a&nbsp;technician has seen the&nbsp;socket</span></div>
-          </div>
-          <p class="exlabel">$95 standard call-out from&nbsp;the&nbsp;published pricing page; the&nbsp;$45 Zone 3 travel charge from&nbsp;the&nbsp;published home-services examples. Both are numbers a&nbsp;shop sets for&nbsp;itself.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Follow-up">
-            <div class="excard">
-        <div class="exhead"><span class="when">Day 365</span><span class="via">Automatic</span><span class="tag solved">Follow-up</span></div>
-        <div class="exbody">
-          <p class="exq">— no&nbsp;message from&nbsp;the&nbsp;customer. The&nbsp;job history says the&nbsp;annual service is due —</p>
-          <div class="exturn"><span class="who">Saleringo, unprompted</span>Morning — we serviced your&nbsp;system on&nbsp;14 November last year, so it's&nbsp;due again. The&nbsp;annual service is <b>$140</b> and I have three mornings free
-            the&nbsp;week of&nbsp;the&nbsp;11th. Same technician if you'd like; he already has the&nbsp;gate code and the&nbsp;note about&nbsp;the&nbsp;dog.</div>
-          <div class="exturn"><span class="who">Customer</span>The&nbsp;12th works. Same guy, yes.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Recurring revenue booked before the&nbsp;customer thought about&nbsp;it</span><span class="amt">$140</span></div>
-            <div class="exrow"><i>✓</i><span>Due date read from&nbsp;the&nbsp;job history, not from&nbsp;anyone's&nbsp;memory</span></div>
-            <div class="exrow"><i>✓</i><span>Same technician assigned; access notes carried across</span></div>
-            <div class="exrow"><i>✓</i><span>Pipeline: <b>Done &amp; invoiced → Job booked</b></span></div>
-          </div>
-          <p class="exlabel">Nobody at&nbsp;the&nbsp;shop started this&nbsp;one — the&nbsp;AI did, off the&nbsp;record it wrote a&nbsp;year earlier. The&nbsp;$140 annual service is the&nbsp;published home-services example rate.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Office decides">
-            <div class="excard">
-        <div class="exhead"><span class="when">Thu 19:12</span><span class="via">WhatsApp</span><span class="tag human">Office decides</span></div>
-        <div class="exbody">
-          <p class="exq">You fitted a&nbsp;new capacitor back in&nbsp;March and the&nbsp;unit is doing exactly the&nbsp;same thing. Is that&nbsp;under&nbsp;warranty?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I can see the&nbsp;part and the&nbsp;date on&nbsp;your&nbsp;job
-            history — fitted 14 March by&nbsp;Marcus. Whether it's&nbsp;covered is your&nbsp;office's&nbsp;decision, not mine, and I'm not
-            going to&nbsp;promise you either way. I've flagged it as a&nbsp;warranty claim so it is the&nbsp;first thing on&nbsp;the&nbsp;desk
-            in&nbsp;the&nbsp;morning.</div>
-          <div class="exturn"><span class="who">Saleringo</span>So you're not waiting on&nbsp;that&nbsp;answer: I've held
-            Tuesday 8:00 as a&nbsp;return visit. If the&nbsp;office confirms it's&nbsp;covered, nothing is charged; if it isn't,
-            they'll call you with&nbsp;the&nbsp;figure before anyone drives out.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Job history produced instantly — part, date and technician</span></div>
-            <div class="exrow"><i>✓</i><span>Warranty decision routed to&nbsp;a&nbsp;person with&nbsp;the&nbsp;record attached</span></div>
-            <div class="exrow"><i>✓</i><span>A&nbsp;slot held so the&nbsp;customer isn't waiting on&nbsp;an&nbsp;office decision</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;coverage promised. No&nbsp;fee quoted on&nbsp;a&nbsp;claim it cannot decide.</span></div>
-          </div>
-          <p class="exlabel">Warranty is a&nbsp;commercial judgment. The&nbsp;AI produces the&nbsp;evidence and hands over&nbsp;the&nbsp;decision — which is also what stops it improvising a&nbsp;free visit to&nbsp;keep someone happy.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Quoted, not discounted">
-            <div class="excard">
-        <div class="exhead"><span class="when">Wed 12:40</span><span class="via">Phone</span><span class="tag solved">Quoted, not discounted</span></div>
-        <div class="exbody">
-          <p class="exq">I've had a&nbsp;cheaper quote from&nbsp;another&nbsp;shop down the&nbsp;road. Can you beat it?</p>
-          <div class="exturn"><span class="who">Saleringo</span>I can't discount — the&nbsp;rate card I quote from is the&nbsp;same
-            one your&nbsp;neighbor gets, and I have no&nbsp;authority to&nbsp;move it. What I can do is tell you exactly what is inside
-            our&nbsp;number: the&nbsp;<b>$95</b> call-out is applied to&nbsp;the&nbsp;repair, parts are priced before we fit them, and a&nbsp;return visit is booked the&nbsp;same week if it isn't right.</div>
-          <div class="exturn"><span class="who">Caller</span>And if I want to&nbsp;think about&nbsp;it?</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Then I'll send the&nbsp;written quote and check back on&nbsp;Friday. If you want someone to&nbsp;look at&nbsp;the&nbsp;price itself, that's&nbsp;the&nbsp;owner's&nbsp;call and I'll put you through —
-            I'm not going to&nbsp;invent a&nbsp;discount to&nbsp;keep you on&nbsp;the&nbsp;phone.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Rate card held under&nbsp;pressure; nothing improvised to&nbsp;win the&nbsp;call</span><span class="amt">$95 call-out</span></div>
-            <div class="exrow"><i>✓</i><span>Written quote sent inside the&nbsp;conversation</span></div>
-            <div class="exrow"><i>✓</i><span>Friday follow-up scheduled, so the&nbsp;lead isn't simply lost</span></div>
-            <div class="exrow"><i>✓</i><span>Pipeline: <b>New call → Estimate out</b></span></div>
-            <div class="exrow"><i>✕</i><span>It never negotiates. Anything off the&nbsp;rate card goes to&nbsp;a&nbsp;person.</span></div>
-          </div>
-          <p class="exlabel">The&nbsp;fastest way to&nbsp;lose money on&nbsp;an&nbsp;answering system is to&nbsp;let it discount. Price negotiation is a&nbsp;permanent handoff, not a&nbsp;confidence threshold.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Safety route">
-            <div class="excard">
-        <div class="exhead"><span class="when">21:47</span><span class="via">Phone</span><span class="tag human">Safety route</span></div>
-        <div class="exbody">
-          <p class="exq">The&nbsp;breaker panel is buzzing and it's&nbsp;warm to&nbsp;the&nbsp;touch. Should I just switch it off?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>Don't touch the&nbsp;panel. Step away from&nbsp;it and keep
-            everyone clear. If you can smell burning or see any scorching, call your&nbsp;local emergency number now. I'm
-            paging the&nbsp;on-call electrician at&nbsp;the&nbsp;same time — your&nbsp;address is already on&nbsp;the&nbsp;card.</div>
-          <div class="exturn"><span class="who">Caller</span>Okay. Someone's&nbsp;coming?</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>He has been paged and he will call you directly.
-            I'm not going to&nbsp;tell you it's&nbsp;probably fine, and I'm not going to&nbsp;talk you through&nbsp;opening anything.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Safety instruction first, dispatch second — always in&nbsp;that&nbsp;order</span></div>
-            <div class="exrow"><i>✓</i><span>On-call electrician paged <b>in&nbsp;parallel</b>, not instead</span></div>
-            <div class="exrow"><i>✓</i><span>Call flagged as a&nbsp;safety escalation; the&nbsp;morning review sees it first</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;diagnosis. No&nbsp;"probably fine". No&nbsp;DIY instructions. Ever.</span></div>
-          </div>
-          <p class="exlabel">This&nbsp;guardrail ships enabled and is not a&nbsp;setting anyone can switch off to&nbsp;hit a&nbsp;booking target. Put it first on&nbsp;any vendor&rsquo;s demo call: ask to&nbsp;hear what their&nbsp;system says when the&nbsp;caller pushes twice.</p>
-        </div>
-      </div>
-          </div>
-        </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What it will and won't answer</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;line, written&nbsp;down <br>before you go&nbsp;live.</h3>
-      <p class="secintro">You approve every&nbsp;row of&nbsp;this&nbsp;during onboarding, before a&nbsp;caller hears anything.
-        The&nbsp;third column is the&nbsp;one to&nbsp;read twice — five of&nbsp;these are refusals, and they stay refusals.</p>
-    </div>
-    <div class="qbank reveal">
-      <div class="qrow hd"><span>Caller asks</span><span>What happens</span><span>Handled by</span></div>
-      <div class="qrow"><span class="qq">What's&nbsp;the&nbsp;after-hours call-out?</span>
-        <span class="qa">Quotes the&nbsp;fee on&nbsp;your&nbsp;rate card and says whether it comes off the&nbsp;repair.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can someone come out tonight?</span>
-        <span class="qa">Reads the&nbsp;on-call rotation and the&nbsp;calendar, then offers a&nbsp;real arrival window.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">How much just to&nbsp;come and look at&nbsp;it?</span>
-        <span class="qa">Quotes the&nbsp;standard call-out plus the&nbsp;travel charge for&nbsp;that&nbsp;address's&nbsp;zone.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Which zone am I in?</span>
-        <span class="qa">Matches the&nbsp;address to&nbsp;your&nbsp;zone map and says so before quoting anything.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Do you even cover my&nbsp;ZIP code?</span>
-        <span class="qa">Answers from&nbsp;your&nbsp;service-area list — and says no&nbsp;plainly rather than taking a&nbsp;job you can't reach.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Is my&nbsp;annual service due yet?</span>
-        <span class="qa">Reads the&nbsp;job history and offers the&nbsp;next free mornings, with&nbsp;the&nbsp;same technician.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">¿Hablan español?</span>
-        <span class="qa">Continues in&nbsp;Spanish, from&nbsp;wording approved in&nbsp;Spanish — not translated at&nbsp;the&nbsp;moment of&nbsp;speaking.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you beat the&nbsp;quote I've been given?</span>
-        <span class="qa">States the&nbsp;rate card, declines to&nbsp;discount, and routes the&nbsp;request to&nbsp;the&nbsp;owner.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">Is the&nbsp;part you fitted still under&nbsp;warranty?</span>
-        <span class="qa">Produces part, date and technician from&nbsp;the&nbsp;record; the&nbsp;coverage decision goes to&nbsp;your&nbsp;office.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">So what's&nbsp;actually wrong with&nbsp;my&nbsp;furnace?</span>
-        <span class="qa">Refused. It does not diagnose a&nbsp;fault down the&nbsp;phone, in&nbsp;any wording.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Will this&nbsp;fix it for&nbsp;good?</span>
-        <span class="qa">Refused. No&nbsp;guarantee of&nbsp;a&nbsp;repair is offered, ever.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">What will the&nbsp;whole repair come to?</span>
-        <span class="qa">Refused as a&nbsp;fixed total. Only the&nbsp;approved call-out and rate-card ranges, confirmed by&nbsp;the&nbsp;technician on&nbsp;sight.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">I can smell gas / the&nbsp;panel is sparking.</span>
-        <span class="qa">Booking stops mid-sentence. Approved safety script read, emergency services advised, on-call technician paged.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Can you walk me through&nbsp;resetting the&nbsp;breaker?</span>
-        <span class="qa">Refused. It never talks a&nbsp;caller through&nbsp;opening a&nbsp;panel or touching gas.</span><span class="qs never">Never</span></div>
-    </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">An&nbsp;ordinary&nbsp;week <br>at a&nbsp;three-truck&nbsp;shop.</h3>
-      <p class="secintro">Not a&nbsp;record week. A&nbsp;dull one — with&nbsp;the&nbsp;after-hours share marked, because that is
-        the&nbsp;part currently going to&nbsp;voicemail.</p>
-    </div>
-    <div class="weekstrip reveal">
-      <div class="weekday"><span class="d">Mon</span><div class="n">24<small> inq</small></div>
-        <ul><li><i>·</i>5 booked</li><li><i>·</i>7 after hours</li><li><i>·</i>1 emergency routed</li></ul></div>
-      <div class="weekday"><span class="d">Tue</span><div class="n">19<small> inq</small></div>
-        <ul><li><i>·</i>4 booked</li><li><i>·</i>6 after hours</li></ul></div>
-      <div class="weekday"><span class="d">Wed</span><div class="n">21<small> inq</small></div>
-        <ul><li><i>·</i>4 booked</li><li><i>·</i>8 after hours</li><li><i>·</i>1 emergency routed</li></ul></div>
-      <div class="weekday"><span class="d">Thu</span><div class="n">20<small> inq</small></div>
-        <ul><li><i>·</i>4 booked</li><li><i>·</i>7 after hours</li><li><i>·</i>1 emergency routed</li></ul></div>
-      <div class="weekday peak"><span class="d">Fri</span><div class="n">26<small> inq</small></div>
-        <ul><li><i>·</i>6 booked</li><li><i>·</i>11 after hours</li><li><i>·</i>2 emergencies routed</li></ul></div>
-      <div class="weekday peak"><span class="d">Sat</span><div class="n">18<small> inq</small></div>
-        <ul><li><i>·</i>5 booked</li><li><i>·</i><b>closed all day</b></li><li><i>·</i>2 emergencies routed</li></ul></div>
-      <div class="weekday"><span class="d">Sun</span><div class="n">14<small> inq</small></div>
-        <ul><li><i>·</i>3 booked</li><li><i>·</i><b>closed all day</b></li><li><i>·</i>2 emergencies routed</li></ul></div>
-    </div>
-    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;three-truck shop — the&nbsp;same
-      week the&nbsp;Monday board further down this&nbsp;page reports: <b>142 inquiries, 31 jobs booked, 14&nbsp;of&nbsp;them outside office
-      hours, 9 emergencies routed</b>. <b>71 of&nbsp;the&nbsp;142 — exactly half — arrive when the&nbsp;shop is shut</b>: 39 on&nbsp;weekday evenings, 32 across the&nbsp;closed weekend.</p>
-    <p class="exlabel" style="margin-top:12px;">Add the&nbsp;columns yourself. This is not a&nbsp;forecast: your&nbsp;own call log is the&nbsp;only number that&nbsp;means anything, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a>
-      takes it.</p>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What one recovered call is worth</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;arithmetic <br>on&nbsp;one call-out you didn't&nbsp;lose.</h3>
-      <p class="secintro">Every line below is arithmetic you can redo yourself, from&nbsp;figures this&nbsp;page and the&nbsp;pricing page have already printed. Nothing is rounded in&nbsp;our&nbsp;favor.</p>
-    </div>
-    <div class="mathbox reveal" style="max-width:660px;margin-top:26px;">
-      <div class="mathrow"><span class="lbl"><b>One recovered after-hours call-out</b><span class="sub">the&nbsp;$180 on&nbsp;the&nbsp;rate card this&nbsp;page quotes from, before parts</span></span><span class="val">$180</span></div>
-      <div class="mathrow"><span class="lbl"><b>Saleringo Scale</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone — chat-only starts lower</span></span><span class="val">−$599</span></div>
-      <div class="mathrow"><span class="lbl"><b>Voice minutes</b><span class="sub">the&nbsp;published home-services example: 300 calls × 4 min × $0.14</span></span><span class="val">−$168</span></div>
-      <div class="mathrow"><span class="lbl"><b>A&nbsp;full month, everything in</b><span class="sub">the&nbsp;published sample invoice total</span></span><span class="val">$767</span></div>
-      <div class="mathrow total"><span class="lbl"><b>What one recovered call-out covers</b><span class="sub">180 ÷ 767 — check it</span></span><span class="val">≈23% of&nbsp;the&nbsp;bill</span></div>
-      <p class="mathnote">So one is nowhere near enough, and we would rather print that&nbsp;than a&nbsp;flattering multiple.
-        <b>Five recovered after-hours call-outs clear the&nbsp;month</b> — 900 against 767; four get you to&nbsp;720, which does not.</p>
-      <p class="mathnote">The&nbsp;plan base, the&nbsp;$0.14 minute and the&nbsp;<b>300 calls × 4 min</b> example are printed on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>; the&nbsp;$180 is the&nbsp;rate card
-        on&nbsp;this&nbsp;one. None of&nbsp;this says how many calls you would actually recover — only what one is worth, and how many it takes.</p>
-    </div>
-  </div>
-</section>
-
-<section class="faqsec bg-paper t-md">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>FAQ</span>
-      <h2 class="h2" style="margin-top:22px">Shops like yours ask&nbsp;us</h2>
-    </div>
-    <div class="faq reveal">
-      <details>
-        <summary>A&nbsp;caller says they smell gas. What exactly happens?</summary>
-        <p>The&nbsp;AI stops booking immediately. It follows your&nbsp;approved safety script — advising the&nbsp;caller to&nbsp;leave the&nbsp;area and call emergency services if the&nbsp;smell is strong — and pages your&nbsp;on-call tech at&nbsp;the&nbsp;same moment, with&nbsp;the&nbsp;address and details already captured. It never decides on&nbsp;its&nbsp;own that&nbsp;a&nbsp;situation is safe.</p>
-      </details>
-      <details>
-        <summary>Do you integrate with&nbsp;ServiceTitan, Jobber, or Housecall Pro?</summary>
-        <p>Not yet — and we won't pretend otherwise. Those&nbsp;integrations are on&nbsp;the&nbsp;roadmap, and founding-cohort members vote on&nbsp;the&nbsp;build order. Today, every&nbsp;call lands in Saleringo's&nbsp;built-in&nbsp;inbox and CRM, and jobs push out through&nbsp;Zapier or CSV export.</p>
-      </details>
-      <details>
-        <summary>Can it quote repair prices over&nbsp;the&nbsp;phone?</summary>
-        <p>It quotes exactly what you approve: call-out fee, diagnostic fee and price ranges. It never gives a&nbsp;fixed total before your&nbsp;tech has inspected the&nbsp;unit — the&nbsp;final number stays with&nbsp;the&nbsp;human holding the&nbsp;flashlight.</p>
-      </details>
-      <details>
-        <summary>Does it handle Spanish-speaking callers?</summary>
-        <p>Yes. The&nbsp;US founding cohort launches with&nbsp;English and Spanish — the&nbsp;AI detects the&nbsp;caller's&nbsp;language from&nbsp;the&nbsp;first sentence and answers in&nbsp;it. Job notes still reach your&nbsp;team in&nbsp;English, so dispatch never slows down.</p>
-      </details>
-      <details>
-        <summary>Can I start with&nbsp;nights only?</summary>
-        <p>That's&nbsp;how most shops begin. Forward your&nbsp;line after 6 PM and on&nbsp;weekends, listen to&nbsp;the&nbsp;recordings for&nbsp;a&nbsp;week, then widen the&nbsp;window when the&nbsp;answers sound like your&nbsp;business. Switching back is a&nbsp;forwarding change on&nbsp;your&nbsp;side, not a&nbsp;support ticket.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark t-sm" id="monday" style="background:linear-gradient(180deg,#F6F4EE,#F6F4EE);">
-  <div class="wrap">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:22px;">
-      <h2 class="h2 onDark" style="max-width:28ch;">The&nbsp;screen your&nbsp;office manager opens&nbsp;on&nbsp;Monday.</h2>
-      <a class="linkcta" href="../platform.html">Every&nbsp;report, in&nbsp;detail&nbsp;&nbsp;→</a>
-    </div>
-    <div class="kpitiles reveal">
-      <div class="kpitile"><div class="lb">Calls answered</div><div class="vl">142</div><div class="dl flat">phone · chat · messenger</div></div>
-      <div class="kpitile hi"><div class="lb">Handled by&nbsp;AI alone</div><div class="vl">73%</div><div class="dl">27% passed to&nbsp;a&nbsp;person</div></div>
-      <div class="kpitile"><div class="lb">Jobs booked</div><div class="vl">31</div><div class="dl flat">14 outside office hours</div></div>
-      <div class="kpitile"><div class="lb">Emergencies routed</div><div class="vl">9</div><div class="dl flat">paged, never handled alone</div></div>
-      <div class="kpitile"><div class="lb">Estimates out</div><div class="vl">12</div><div class="dl flat">priced from&nbsp;your&nbsp;rate card</div></div>
-      <div class="kpitile"><div class="lb">Pipeline value</div><div class="vl">$47.2k</div><div class="dl flat">open estimates + booked</div></div>
-    </div>
-    <p class="mockcap" style="text-align:left;">Product illustration with&nbsp;sample data. Your&nbsp;figures are your&nbsp;own — exportable to&nbsp;PDF or Excel.</p>
-  </div>
-</section>
-
-<section class="concsec t-sm sec-dark">
-  <div class="wrap">
-    <div class="concwrap reveal">
-      <div class="concl">
-        <span class="cnl">You have seen the&nbsp;9:04 PM half</span>
-        <p class="cnp">The&nbsp;call answered, the&nbsp;address and fault read back, the&nbsp;on-call tech briefed before the&nbsp;caller hangs up. What happens to&nbsp;that&nbsp;job afterwards &mdash; the&nbsp;pipeline, the&nbsp;quote, the&nbsp;Monday report &mdash; is the&nbsp;other half of&nbsp;the&nbsp;product.</p>
-      </div>
-      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="closer bg-spot">
-  <div class="stars" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="reveal">Tonight an&nbsp;AC will&nbsp;quit. <br>Be the&nbsp;company that&nbsp;<em>picks up.</em></h2>
-    <p class="lead onDark reveal">Join the&nbsp;US founding cohort — 50% off for&nbsp;3 months, priority onboarding, and a&nbsp;vote on&nbsp;the&nbsp;next integration we build.</p>
-    <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
-    </div>
-    <p class="plinks reveal"><a class="linkcta" href="../pricing.html#plans">See the&nbsp;price&nbsp;&nbsp;&rarr;</a><a class="linkcta" href="../checkout.html?plan=scale">Order Scale&nbsp;&nbsp;&rarr;</a></p>
-
-    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
-      <div class="lh">Get your&nbsp;shop's&nbsp;setup plan</div>
-      <p class="lsub">Tell us your&nbsp;trade, your&nbsp;zones and where calls land tonight. We reply with&nbsp;the&nbsp;pipeline
-        stages, the&nbsp;rate-card fields and the&nbsp;safety script we would set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
-      <form class="eaform" data-earlyaccess method="post">
-        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
-        <input type="text" name="business" placeholder="Company name" aria-label="Company name">
-        <input type="text" name="country" placeholder="Country" aria-label="Country">
-        <input type="hidden" name="industry" required value="Home services">
-        <input type="hidden" name="context" value="Home services industry page">
-        <select name="trade" aria-label="Your trade">
-          <option value="">Your&nbsp;trade…</option>
-          <option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>More than one</option>
-        </select>
-        <select name="locations" aria-label="How many branches">
-          <option value="">How many branches?</option>
-          <option>One</option><option>Two or three</option><option>Four or more</option>
-        </select>
-        <button class="btn btn-teal" type="submit">Get the&nbsp;Home Services setup plan →</button>
-        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
-        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
-        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
-      </form>
-    </div>
-  </div>
-
-  <!--#footer-->
+<!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v83.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v84.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1230,26 +338,18 @@
     </div>
   </div></footer>
 <!--/#footer-->
-</section>
-
 </main>
 
-<!-- sticky conversion bar — IntersectionObserver in site.js, gated on #cta-gate -->
-<div class="stickycta">
-  <div class="wrap">
-    <span class="msg">The&nbsp;next 9 PM call is coming. <b>Booked job, dispatched tech, one Monday number.</b></span>
-    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
-  </div>
-</div>
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your Home services price list
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
 
-<script src="../../assets/js/site.js?v=83.0"></script>
-<script src="../../assets/js/demofull.js?v=83.0" defer></script>
-<script src="../../assets/js/balance.js?v=83.0" defer></script>
-<script src="../../assets/js/panels.js?v=83.0" defer></script>
-<script src="../../assets/js/wrap.js?v=83.0" defer></script>
-<script src="../../assets/js/rail.js?v=83.0" defer></script>
-<script src="../../assets/js/canvas.js?v=83.0" defer></script>
-<script src="../../assets/js/scenes.js?v=83.0" defer></script>
-<script src="../../assets/js/guide.js?v=83.0"></script>
+
+<script src="../../assets/js/site.js?v=84.0"></script>
+<script src="../../assets/js/balance.js?v=84.0" defer></script>
+<script src="../../assets/js/panels.js?v=84.0" defer></script>
+<script src="../../assets/js/wrap.js?v=84.0" defer></script>
+<script src="../../assets/js/rail.js?v=84.0" defer></script>
+<script src="../../assets/js/guide.js?v=84.0"></script>
+<script src="../../assets/js/demofull.js?v=84.0" defer></script>
 </body>
 </html>

@@ -3,254 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Reservations &amp; Function Line for Restaurants | Saleringo</title>
-<meta name="description" content="An AI line for restaurants that quotes the minimum spend from your function sheet, holds the date, and records an allergy verbatim instead of answering it.">
+<title>AI answering for Restaurants &mdash; how a missed call becomes a booking</title>
+<meta name="description" content="The AI answers Restaurants inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="canonical" href="https://claude.saleringo.com/en/industries/restaurants.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:url" content="https://claude.saleringo.com/en/industries/restaurants.html">
-<meta property="og:title" content="AI Reservations &amp; Function Line for Restaurants">
-<meta property="og:description" content="An AI line for restaurants that quotes the minimum spend from your function sheet, holds the date, and records an allergy verbatim instead of answering it.">
+<meta property="og:title" content="AI answering for Restaurants &mdash; how a missed call becomes a booking">
+<meta property="og:description" content="The AI answers Restaurants inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <meta property="og:image" content="https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Reservations &amp; Function Line for Restaurants">
-<meta name="twitter:description" content="An AI line for restaurants that quotes the minimum spend from your function sheet, holds the date, and records an allergy verbatim instead of answering it.">
 <meta name="twitter:image" content="https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="AI answering for Restaurants &mdash; how a missed call becomes a booking">
+<meta name="twitter:description" content="The AI answers Restaurants inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A guest says one of the party has a severe nut allergy. What exactly happens?","acceptedAnswer":{"@type":"Answer","text":"It records the allergy in the guest's own words, attaches it to the booking, marks the booking unconfirmed pending the kitchen, and sends the question to whoever you nominate that night. It does not say the set menu is fine, it does not say the kitchen is careful, and it does not say a dish is nut free. Capturing an allergy is allowed; answering one is not."}},{"@type":"Question","name":"Will it take a deposit or a card over the phone?","acceptedAnswer":{"@type":"Answer","text":"No. It states your deposit rule and your cancellation terms as written and sends your own payment link. It never reads back, repeats or records a card number, and it will not hold a date on a promise that a card will be given later."}},{"@type":"Question","name":"Can it overbook if the caller pushes?","acceptedAnswer":{"@type":"Answer","text":"No. It books against the real floor plan and the real turn time. If 8 PM on a Saturday does not exist, it says so, offers the sittings that do, and adds the guest to the waitlist. A table it invents is a table your host has to apologise for."}},{"@type":"Question","name":"Reservations mostly come in while you are open. Is this really an after-hours product?","acceptedAnswer":{"@type":"Answer","text":"Reservations do skew toward opening hours, and we are not going to claim otherwise. This page is built around the function and catering inquiry, which is the one that arrives at 10:40 PM from somebody who has just finished their own shift. And around the phone that rings while the floor is full and nobody can reach it."}},{"@type":"Question","name":"How does it quote a private room?","acceptedAnswer":{"@type":"Answer","text":"From your function sheet, line by line: the room hire fee, the minimum spend for that date and service, and the per-head set menu you approved. Peak dates carry their own minimum. It does not improvise a package and it does not discount."}},{"@type":"Question","name":"Do you integrate with OpenTable, Resy or SevenRooms?","acceptedAnswer":{"@type":"Answer","text":"Not directly, and we will not pretend otherwise. Bookings and function inquiries reach them today through Zapier, a direct feed or CSV export, and founding-cohort members vote on the build order. We would rather hand you nothing than a date that slips."}},{"@type":"Question","name":"Does it answer in the guest's language?","acceptedAnswer":{"@type":"Answer","text":"Yes, in the languages you have approved. It detects the language from the first sentence and answers from wording reviewed in that language, not machine-translated at the moment of speaking. The function sheet still reaches your office in English."}}]}
+{"@context":"https://schema.org","@type":"WebPage","name":"AI answering for Restaurants &mdash; how a missed call becomes a booking","description":"The AI answers Restaurants inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.","url":"https://claude.saleringo.com/en/industries/restaurants.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"en"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Reservations & Function Line for Restaurants","item":"https://claude.saleringo.com/en/industries/restaurants.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/index.html"},{"@type":"ListItem","position":2,"name":"Trades","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"Restaurants","item":"https://claude.saleringo.com/en/industries/restaurants.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/ledger.css?v=83.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=84.0">
 <style>
-  /* ── RESTAURANTS · archetype: THE FUNCTION INQUIRY ────────────────────
-     The page deliberately does not open on a dinner reservation. Reservations
-     skew toward service hours; the function and catering inquiry does not, and
-     it is the one with a quotable minimum spend behind it. */
-  .hero{position:relative;overflow:hidden;padding-bottom:78px;}
-  .hero.photohero{min-height:min(94vh,960px);}
-  /* 1900x1844 — a dining room seen through the window after close. graded down
-     so the copy panel holds, biased slightly high so the tables stay in frame. */
-  .hero .bgimg img{filter:brightness(1.27) saturate(1.08) contrast(1.07);object-position:center 46%;}
-  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.541) 0%,rgba(255,255,255,0.297) 28%,
-    rgba(255,255,255,0.392) 62%,rgba(255,255,255,0.96) 100%);}
-  .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:1;}
-  .heroinner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:136px 32px 0;
-    display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center;}
-  .hero .hero-panel{max-width:680px;}
-  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#141A1F;margin-top:20px;}
-  .hero h1 .teal{color:var(--teal);}
-  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .hero .ctas{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .fbadge{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;color:var(--teal);
-    background:var(--teal-glass);border:1px solid rgba(11,120,120,.4);border-radius:999px;padding:8px 18px;}
-  .fbadge i{font-style:normal;}
-  .micro{margin-top:12px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
-  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#141A1F;}
-  .hero .scene-frame{margin:0;}
-  .hero .specstrip{grid-column:1/-1;margin-top:40px;justify-content:flex-start;gap:28px;}
 
-  /* 2 · the 90 seconds */
-  .tlsec{background:linear-gradient(180deg,#F6F4EE,#F6F4EE);}
-  .tlsec .cols{display:grid;grid-template-columns:330px 1fr;gap:70px;align-items:stretch;margin-top:54px;}
-  .tlstick{position:sticky;top:34px;display:flex;justify-content:center;}
-  .tlstick .phoneframe{transform:rotate(-2deg);}
-  .tlrow{display:grid;grid-template-columns:60px 24px 1fr;gap:0 18px;padding-bottom:26px;}
-  .tlrow .tm{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);text-align:right;padding-top:16px;}
-  .tlrow .td{position:relative;display:flex;justify-content:center;}
-  .tlrow .td i{width:11px;height:11px;border-radius:50%;background:var(--teal);margin-top:20px;box-shadow:0 0 0 5px rgba(11,120,120,.13);font-style:normal;}
-  .tlrow:not(:last-child) .td:after{content:"";position:absolute;left:50%;top:35px;bottom:-26px;width:1px;
-    background:linear-gradient(180deg,rgba(11,120,120,.45),rgba(20,26,31,.078));}
-  .tlrow .tb{border:1px solid var(--hair);border-radius:14px;padding:16px 20px;background:rgba(20,26,31,.042);}
-  .tlrow .tb .spk{font-size:var(--fs-label);font-weight:800;letter-spacing:.14em;color:var(--tx3);}
-  .tlrow .tb .spk.ai{color:var(--teal);}
-  .tlrow .tb p{margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:#141A1F;font-weight:500;}
-  .tlrow .tb p em{font-style:normal;color:var(--teal);font-weight:700;}
-  .tlrow.warn .tb{background:rgba(183,121,31,.09);border-color:rgba(183,121,31,.34);}
-  .tlrow.warn .td i{background:var(--amber);box-shadow:0 0 0 5px rgba(183,121,31,.14);}
-  .tlrow.warn .tb .spk{color:var(--amber);}
-  .tlrow.done .tb{background:rgba(11,120,120,.09);border-color:rgba(11,120,120,.34);}
-  .tlfoot{margin-top:8px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-
-  /* 3 · the money */
-  /* overflow:hidden clips the bg-dusk aura (inset:-10%), which otherwise
-     pushes the page wide and creates a horizontal scrollbar */
-  .moneysec{overflow:hidden;}
-  .moneytop{margin-top:48px;display:grid;grid-template-columns:.82fr 1.18fr;gap:62px;align-items:start;}
-  .bignum{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-num);font-weight:600;letter-spacing:-.055em;line-height:.84;}
-  .bigcap{margin-top:20px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:600;max-width:300px;}
-  .figrow{display:flex;flex-wrap:wrap;}
-  .fig{padding:0 30px;border-left:1px solid var(--hair);}
-  .fig:first-child{padding-left:0;border-left:0;}
-  .fig b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#141A1F;letter-spacing:-.03em;}
-  .fig span{display:block;margin-top:7px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;max-width:200px;line-height:1.55;}
-  .moneytop .photocard{margin-top:36px;min-height:320px;}
-  .moneysec .baGrid{margin-top:62px;}
-  .srcnote{margin-top:32px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .srcnote a{color:var(--teal);font-weight:600;}
-
-  /* 4 · the allergen boundary (light) */
-  .safesplit{min-height:470px;margin-bottom:8px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
-    background:#fff;box-shadow:0 32px 78px rgba(20,26,31,.10);}
-  .safesplit .copy{padding:58px 54px;}
-  .warngrid{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .warncard{background:#fff;border:1px solid #EFDCD7;border-left:4px solid var(--red);border-radius:14px;padding:26px;
-    box-shadow:0 20px 50px rgba(20,26,31,.07);}
-  .warncard.amber{border-color:#F2E3C6;border-left-color:var(--amber);}
-  .warncard .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B14A3E;}
-  .warncard.amber .tag{color:#8D642F;}
-  .warncard b{display:block;margin-top:12px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
-  .warncard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
-  .ladder{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-  .lstep{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px;}
-  .lstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:700;color:#0B7878;letter-spacing:.14em;}
-  .lstep b{display:block;margin-top:10px;font-size:var(--fs-sm);color:var(--l-ink);letter-spacing:-.01em;}
-  .lstep span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:500;}
-  .safenote{margin-top:38px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
-  .safenote a{color:#0B7878;font-weight:700;}
-
-  /* 5 · the function sheet (dark) */
-  .dispsec{position:relative;background:linear-gradient(180deg,#F6F4EE,#FFFFFF);}
-  .dispsec .wrap{position:relative;z-index:1;}
-  .dispcols{margin-top:52px;display:grid;grid-template-columns:1.14fr .86fr;gap:38px;align-items:start;}
-  .dispsec .msgthread{background:#FFFFFF;}
-  .dispside .rrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
-  .dispside p.note{margin-top:18px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
-  .dispsec .quotecard{margin:58px auto 0;max-width:780px;}
-
-  /* 6 · integrations + risk (white) */
-  .intsec{background:#FDFDFE;}
-  .intsec .head{text-align:center;max-width:660px;margin:0 auto;}
-  .intsec .riskrow{margin-top:66px;}
-  .whoband{margin-top:76px;padding-top:56px;border-top:1px solid var(--l-hair);}
-  .whoband .audgrid{grid-template-columns:repeat(3,1fr);margin-top:26px;}
-  .whoband .audcard{min-height:268px;}
-  .whoband .photocap{margin-top:16px;text-align:center;}
-  .cohortbar{margin:56px auto 0;max-width:820px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
-    border:1px dashed #D9E1E9;border-radius:14px;padding:22px 26px;background:#fff;}
-  .cohortbar b{font-size:var(--fs-sm);color:var(--l-ink);}
-  .cohortbar span{font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
-
-  /* 7 · faq */
-  .faqsec .head{text-align:center;margin-bottom:44px;}
-
-  /* 8 · closer + footer */
-  .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.05;}
-  .closer .lead{margin:24px auto 0;}
-  .closer .ctas{margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-  .bigfooter{margin-top:126px;}
-
-  @media (max-width:1100px){
-    /* minmax(0,…) — without it the specstrip's min-content width stretches the
-       single column past the viewport and the hero clips its own copy */
-    .heroinner{grid-template-columns:minmax(0,1fr);gap:34px;padding:128px 24px 0;}
-    .hero.photohero{min-height:0;}
-    .tlsec .cols{grid-template-columns:1fr;gap:46px;}
-    .tlstick{position:static;}
-    .tlstick .phoneframe{transform:none;}
-    .moneytop,.dispcols{grid-template-columns:1fr;gap:40px;}
-  }
-  @media (max-width:900px){
-    .heroinner{padding:118px 18px 0;}
-    .hero .specstrip{gap:10px 16px;flex-wrap:wrap;}
-    .hero .specstrip span{max-width:100%;}
-    .hero .scene-overlay{position:static;max-width:none;margin:10px 14px 0;}
-    .hero .scene-frame{padding-bottom:14px;}
-    .warngrid,.ladder{grid-template-columns:1fr;}
-    .whoband .audgrid{grid-template-columns:1fr 1fr;}
-    .safesplit{min-height:0;}
-    .safesplit .copy{padding:44px 24px;}
-    .figrow{gap:26px;}
-    .fig{padding:0;border-left:0;}
-    .tlrow{grid-template-columns:50px 20px 1fr;gap:0 12px;}
-  }
-
-  /* ══ CRM surface, honest integrations, more than one site, lead form ══ */
-  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
-  .crmduo.rev .m{order:2;}
-  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
-  .ptlist{margin-top:24px;}
-  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
-  .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#141A1F;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
-  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
-
-  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
-  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
-  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;}
-  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
-  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
-  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
-  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
-  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
-  .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
-    font-weight:700;border-bottom:1px solid var(--hair);}
-  .statcol li:last-child{border-bottom:0;}
-  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
-
-  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
-  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
-  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
-  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
-  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
-  .mlsite{border:1px solid var(--app-line,rgba(20,26,31,.117));border-radius:8px;padding:15px 16px;
-    background:var(--app-panel,#FFFFFF);}
-  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#141A1F;}
-  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
-  .mlsite dl{margin-top:11px;}
-  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(20,26,31,.091);}
-  .mlsite .r:first-of-type{border-top:0;}
-  .mlsite .r dt{width:88px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
-    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
-  .mlsite .r dd{color:#141A1F;font-weight:600;margin:0;}
-
-  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
-  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
-    line-height:1.72;color:var(--tx2);font-weight:500;}
-  .leadbox .eaform{max-width:100%;}
-  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
-  /* the honest-status grid sits on this page's white band */
-  .intsec .statcol{border-color:var(--l-hair);background:#fff;}
-  .intsec .statcol.now{border-color:rgba(20,26,31,.34);background:rgba(255,255,255,.05);}
-  .intsec .statcol.now .hl4{color:#0B7878;}
-  .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(183,121,31,.06);}
-  .intsec .statcol.man .hl4{color:#8D642F;}
-  .intsec .statcol.road .hl4{color:#616B75;}
-  .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
-  .intsec .statcol li span{color:var(--l-mut);}
-  .intsec .statnote{color:#616B75;}
-  @media (max-width:560px){.whoband .audgrid{grid-template-columns:1fr;}}
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/restaurants.html">
@@ -258,23 +99,20 @@
 <link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/restaurants.html">
 <!--/#alt-->
 </head>
-<body data-grade="home">
-
-<!-- ═══════ 1 · HERO — a dining room after service, seen from the street ═══════ -->
+<body data-grade="voice">
 <header class="hero photohero">
   <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-           srcset="https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1900 1900w"
-           sizes="100vw"
-         alt="" width="1900" height="1844" loading="eager" fetchpriority="high" decoding="async">
+    <img class="ph" src="https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/6161505/pexels-photo-6161505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
   </div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="tint" aria-hidden="true"></div>
   <div class="grainlayer grain" aria-hidden="true"></div>
-
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v83.0">v83.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v84.0">v84.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -289,56 +127,25 @@
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav></div>
 <!--/#nav-->
-
-  <div class="heroinner">
-    <div class="hero-panel">
-      <span class="eyebrow"><i></i>For&nbsp;restaurants · private dining · catering</span>
-      <h1>10:40&nbsp;PM, after her&nbsp;own service ended. <br><span class="teal">The&nbsp;December Friday is&nbsp;held.</span></h1>
-      <p class="sub">Saleringo answers the&nbsp;function inquiry nobody on&nbsp;the&nbsp;floor can reach — quotes the&nbsp;room hire and the&nbsp;minimum spend from&nbsp;<em style="font-style:normal;color:#141A1F;font-weight:700;">your</em> function sheet, names the&nbsp;per-head set menu, holds the&nbsp;date against your&nbsp;deposit rule, and files the&nbsp;organiser. An&nbsp;allergy it writes down word for&nbsp;word — and hands to&nbsp;the&nbsp;kitchen, because that&nbsp;is the&nbsp;only place it can be answered.</p>
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>Restaurants &middot; group bookings &middot; catering</span>
+      <h1>Nobody answers a party of twenty<br>during the lunch rush.</h1>
+      <p class="sub">The delivery apps run themselves. The problem is the floor phone: a twenty-person company dinner rings at 12:38 PM.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
-        <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; Restaurants</a>
       </div>
-      <p class="heroscroll"><a href="../index.html#demo60">New here? Start with&nbsp;the two-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
-      <div class="fbadge"><i>★</i>Founding cohort — 50% off for&nbsp;3 months</div>
-      <div class="micro">Keep your&nbsp;number · Answers in&nbsp;the&nbsp;guest's&nbsp;own language · Never touches a&nbsp;card</div>
-      <div class="whofor">
-        <span class="whotxt">Built for&nbsp;rooms where the&nbsp;phone rings hardest while the&nbsp;floor is fullest — <b>founding cohort now open</b></span>
-      </div>
-    </div>
-
-    <div>
-    <div class="scene-frame">
-      <div class="photo-scrim" style="height:clamp(300px,38vw,520px);">
-        <img class="ph" src="https://images.pexels.com/photos/17466552/pexels-photo-17466552.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-             srcset="https://images.pexels.com/photos/17466552/pexels-photo-17466552.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/17466552/pexels-photo-17466552.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/17466552/pexels-photo-17466552.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-             sizes="100vw" alt="A long restaurant table laid for service in low light, chairs pushed in, one cook still visible through the kitchen window"
-             loading="lazy" decoding="async" width="1600" height="2402">
-      </div>
-      <div class="scene-overlay tl"><b>Function inquiry · 10:40 PM</b><span>24 covers · Fri 12 Dec · phone unattended, the&nbsp;floor was still turning</span></div>
-      <div class="scene-overlay br"><b>Date held · 10:43 PM</b><span>Room hire and minimum spend quoted · deposit link sent · allergy flagged for&nbsp;the&nbsp;kitchen</span></div>
-    </div>
-    <p class="photocap">10:40 PM — the&nbsp;last table is paying, the&nbsp;phone is ringing, and nobody on&nbsp;the&nbsp;pass can
-      get to&nbsp;it. Illustrative photography; not a&nbsp;Saleringo customer restaurant.</p>
-    </div>
-
-    <div class="specstrip">
-      <span><i>●</i><b>Function sheet</b> quoted line by&nbsp;line</span>
-      <span><i>●</i><b>Allergies captured</b>, never answered</span>
-      <span><i>●</i><b>Real floor plan</b> — it will not overbook</span>
-      <span><i>●</i><b>Every&nbsp;call</b> recorded &amp; logged</span>
     </div>
   </div>
 </header>
 
-<!--demo:v2-->
-<section class="sec-light t-md" id="demo">
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow light"><i></i>Hear it &middot; Restaurants</span>
-      <h2 class="h2" style="margin-top:20px;">The call, the next morning&rsquo;s message, <br>and what was waiting at nine.</h2>
-      <p class="lead" style="margin-top:16px;">A scripted call for a restaurants: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Wednesday 12:38 PM, the call</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">How it goes<br>while the floor and the kitchen are slammed.</h2>
     <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/restaurants.json" data-d60-audio="../../assets/audio/demo/">
       
       <div class="d60tabs" role="tablist" aria-label="Chapters">
@@ -378,7 +185,7 @@
             <p class="lbl">Handed to a person — and what the person receives</p>
             <ul data-d60-handlist><li>The whole conversation, both channels</li><li>Every captured field, with its source</li><li>Why it stopped: what is in a dish is for the kitchen to confirm, not a fact I can give</li></ul>
           </div>
-          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">The owner’s morning screen — what is waiting at 9:00</p><div data-d60-morninglist></div></div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">Next day 10:00 AM, the owner’s screen — what is waiting</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
@@ -388,780 +195,116 @@
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
-          <a class="btn btn-teal" href="../../get-started.html">Get my plan for this trade</a>
+          <a class="btn btn-teal" href="../get-started.html">Get my plan for this trade</a>
           <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">Call the live AI — no form first</a>
           <span class="telnote">Korean number — international rates apply</span>
         </div>
       </div>
     </div>
     
-    <noscript><p class="lead">The demo needs JavaScript. The same story is written out in the worked examples below.</p></noscript>
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">Restaurants &mdash; <b>lunch rush</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">no free hands</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>Customer</em>12:38 PM</span><div class="bub user">Can you take twenty people on Friday evening? Do you have a private room?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+18 s</span><div class="bub ai">Friday evening I have <b>6:00</b> or <b>8:00 PM</b> left, and for twenty the upstairs private room is the right fit. Groups are on the set menu at <b>$45 a head</b>, drinks separate. Which time would you like?</div></div><div class="nl us"><span class="t"><em>Customer</em>12:40 PM</span><div class="bub user">Six, please. One of our guests is vegetarian.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+8 s</span><div class="bub ai">Friday at six, twenty guests, upstairs room &mdash; booking that now. I&rsquo;ll pass the vegetarian guest on to the owner exactly as you said it. Could you give me your name and a mobile number?</div></div><div class="nl us"><span class="t"><em>Customer</em>12:41 PM</span><div class="bub user">Rachel Moore, 555-0925. It&rsquo;s a company dinner &mdash; Brightwater Consulting.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+7 s</span><div class="bub ai">Brightwater Consulting, Rachel Moore &mdash; noted. You&rsquo;re booked for Friday at six, the confirmation is going out by text, and I&rsquo;ll send one more on Thursday afternoon.</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      this trade’s price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the price list the owner enters.</p>
   </div>
 </section>
-<!--/demo:v2-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main>
-
-<section class="tlsec bg-grid t-md">
+<section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>Minute by&nbsp;minute</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:760px">The&nbsp;90 seconds <br>that held the&nbsp;date.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One ordinary shape of&nbsp;a&nbsp;function inquiry — from&nbsp;the&nbsp;first ring to&nbsp;a&nbsp;held date and a&nbsp;question sitting with&nbsp;the&nbsp;head chef. Scripted demo, timings from&nbsp;live test calls.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A missed call<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">Most calls to a restaurant are group bookings. One call is twenty covers, and twenty covers at $45 a head is half of that Friday&rsquo;s takings. It rings at the lunch peak, when neither the kitchen nor the floor has a free hand. The dinner goes next door, and next time the company calls next door first. Because groups come back, the cost of one missed call is never one call.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="Closed hours" xmlns="http://www.w3.org/2000/svg"><title>Closed hours</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Closed hours</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15 hours</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >of 24 hours</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >closed</text><circle cx="132.835" cy="252.574" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >open 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >closed</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >12:38 PM — call</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >calls still arrive in these hours</text></svg><figcaption class="illcap">Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.</figcaption></figure></div>
+  </div>
+</section>
 
-    <div class="cols">
-      <div class="tlstick reveal">
-        <div class="phoneframe"><div class="screen">
-          <div class="notch"></div>
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-a">NB</span>
-              <span class="who"><b>Incoming call</b><span>+44 7•• ••• 408 · 10:40 PM</span></span>
-              <span class="timer sg">01:36</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">24 of&nbsp;us, a&nbsp;Friday in&nbsp;December, in&nbsp;the&nbsp;private room.</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">Room hire is <em>$300</em> and the&nbsp;December Friday minimum spend is <em>$1,800</em>.</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">One of&nbsp;them has a&nbsp;severe nut allergy.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ Date held · kitchen asked</span></div>
-        </div></div>
-      </div>
-
-      <div class="reveal">
-        <div class="tlrow">
-          <span class="tm sg">0:00</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"I need somewhere for&nbsp;24 people, a&nbsp;Friday in&nbsp;December, and I have to&nbsp;take a&nbsp;number back to&nbsp;my&nbsp;boss tomorrow."</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:14</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"24 covers is a&nbsp;private-room booking rather than a&nbsp;table. Friday the&nbsp;12th is open — is that&nbsp;lunch or dinner?"</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:33</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"Dinner, Friday 12 December: room hire <em>$300</em>, minimum spend <em>$1,800</em> because December Fridays carry the&nbsp;peak minimum, and the&nbsp;24-cover set menu is <em>$68</em> per&nbsp;head. At&nbsp;24 covers that&nbsp;is <em>$1,632</em> on&nbsp;food, so the&nbsp;minimum is met once drinks are on&nbsp;the&nbsp;bill."</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:58</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"One of&nbsp;them has a&nbsp;severe nut allergy. Is the&nbsp;set menu safe for&nbsp;her?"</p></div>
-        </div>
-        <div class="tlrow warn">
-          <span class="tm sg">1:02</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">HARD BOUNDARY</span><p>It does not answer, and it does not soften it. The&nbsp;allergy goes onto&nbsp;the&nbsp;function sheet in&nbsp;the&nbsp;caller's&nbsp;own words, the&nbsp;booking is marked <em>unconfirmed pending the&nbsp;kitchen</em>, and the&nbsp;question is sent to&nbsp;the&nbsp;head chef tonight. No&nbsp;"should be fine". No&nbsp;"the kitchen is very careful".</p></div>
-        </div>
-        <div class="tlrow done">
-          <span class="tm sg">1:36</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">RESULT</span><p>Function card created · date held for&nbsp;72 hours against the&nbsp;deposit rule · quote sent with&nbsp;hire, minimum and per-head on&nbsp;separate lines · organiser filed with&nbsp;a&nbsp;follow-up.</p></div>
-        </div>
-        <p class="tlfoot">Scripted demo built from&nbsp;the&nbsp;founding-cohort playbook. Your&nbsp;function sheet, your&nbsp;minimums, your&nbsp;deposit rule.</p>
-      </div>
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in this trade.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the Restaurants answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>It never answers for the kitchen on allergens or origin.</b>Whether the set menu has shrimp in it, or nuts, is for the kitchen to confirm. The question is written down word for word and the owner answers it.</li><li><b>It never creates a table that is not there.</b>It books from the registered tables and rooms only. A double-booked room means turning twenty people away at the door.</li><li><b>It never promises a menu change.</b>Swapping a course or an ingredient is the owner&rsquo;s decision. The request is logged, not granted.</li><li><b>It never makes up a discount.</b>The only group rates it mentions are the ones on the function sheet.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="The gate before a person" xmlns="http://www.w3.org/2000/svg"><title>The gate before a person</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">The gate before a person</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >The customer asks</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“Can you take twenty p</text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >eople on Friday e…”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >On the price list?</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Needs a judgement?</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Safety involved?</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >It answers</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >word for word, with the source</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >Handed to a person</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >the whole conversation</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >every captured field</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >why it stopped</text></svg><figcaption class="illcap">On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="dialsec t-md sec-dark bg-grid">
+<section class="t-md sec-light bg-paper" id="crm">
   <div class="wrap">
-    <div class="nightfig scenefig reveal">
-      <div class="scenebox" data-scene="nightclock"></div>
-      <div>
-        <p class="scenecap"><b>A&nbsp;restaurant is not a&nbsp;nine-to-six desk, and we are not going to&nbsp;pretend it is.</b> A&nbsp;room answering the&nbsp;phone through both services &mdash; 11:30 to&nbsp;2:30 and 5:30 to&nbsp;10:30, six days &mdash; is reachable for&nbsp;<span class="num">48 of&nbsp;168 hours</span>. Dinner bookings genuinely do arrive inside those forty-eight.</p>
-        <p class="scenecap" style="margin-top:12px;">The&nbsp;<b>function and catering inquiry</b> does not. It comes from&nbsp;somebody whose own shift has just ended, lands in&nbsp;the&nbsp;other&nbsp;120, and is worth twenty times the&nbsp;table.</p>
-      </div>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The Restaurants CRM comes with Restaurants fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="Customer record" xmlns="http://www.w3.org/2000/svg"><title>Customer record</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Customer record</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >Rachel Moore</text><text x="228" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">555-09··</text><rect x="400" y="54" width="44.1" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="422.05" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >Phone</text><rect x="452.1" y="54" width="64.56" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="484.38" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >WhatsApp</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Party size, date and t</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Room or main floor</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Set menu and price per</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Dietary requests, word</text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text></svg><figcaption class="illcap">The card a call leaves behind, with the source of every field.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>Party size, date and time</span><span>Room or main floor</span><span>Set menu and price per head</span><span>Dietary requests, word for word</span><span>Name, company and mobile</span><span>Confirmation and Thursday reminder</span></div></div>
   </div>
 </section>
 
-<section class="moneysec bg-dusk t-xl">
+<section class="t-md sec-dark bg-grid" id="pipeline">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;math of&nbsp;one function call</span><span class="line"></span></div>
-    <div class="moneytop">
-      <div class="reveal">
-        <div class="bignum gradtext warm">$1,800</div>
-        <p class="bigcap">The&nbsp;minimum spend on&nbsp;one December Friday in&nbsp;the&nbsp;private room — the&nbsp;figure this&nbsp;page's&nbsp;own
-          function sheet publishes, and the&nbsp;floor under&nbsp;a&nbsp;single unanswered call.</p>
-        <div class="photocard">
-          <img class="ph" src="https://images.pexels.com/photos/11794317/pexels-photo-11794317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/11794317/pexels-photo-11794317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/11794317/pexels-photo-11794317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/11794317/pexels-photo-11794317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/11794317/pexels-photo-11794317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="Laid tables in a warmly lit restaurant at night, glasses and napkins set, nobody seated" loading="lazy" decoding="async" width="800" height="534">
-          <span class="kicker">Who answers the&nbsp;function call</span>
-          <h3>Usually, nobody.</h3>
-          <p>At&nbsp;the&nbsp;hour a&nbsp;function inquiry is made, the&nbsp;host stand is clearing down and the&nbsp;phone is
-            three metres from&nbsp;somebody carrying four plates.</p>
-          <span class="stat"><b>1</b>call decides a&nbsp;whole December Friday in&nbsp;that&nbsp;room</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <h2 class="h2 onDark">A&nbsp;function organiser <br>does not leave a&nbsp;voicemail.</h2>
-        <p class="lead onDark" style="margin-top:18px;">They are collecting three numbers to&nbsp;take to&nbsp;somebody else in&nbsp;the&nbsp;morning, and they will collect them from&nbsp;whoever answers. The&nbsp;room you lose at&nbsp;10:40&nbsp;PM is not one dinner — it is a&nbsp;date blocked out of&nbsp;your&nbsp;best week of&nbsp;the&nbsp;year, and the&nbsp;same organiser next December.</p>
-        <div class="figrow" style="margin-top:38px;">
-          <div class="fig"><b class="sg">$300</b><span>room hire on&nbsp;this&nbsp;page's&nbsp;function sheet</span></div>
-          <div class="fig"><b class="sg">$68</b><span>per&nbsp;head on&nbsp;the&nbsp;set menu it quotes</span></div>
-          <div class="fig"><b class="sg">24</b><span>covers — the&nbsp;point at&nbsp;which a&nbsp;table becomes a&nbsp;private hire</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="baGrid reveal">
-      <div class="baCol before">
-        <div class="hl4" role="heading" aria-level="3">Tonight · without&nbsp;an&nbsp;answer</div>
-        <ul>
-          <li><i>✕</i><span><b style="color:#141A1F;">10:40 PM</b> — the&nbsp;phone rings out over&nbsp;a&nbsp;full room. Nobody hears it.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">10:48 PM</b> — she emails two other places, because she needs three numbers by&nbsp;morning.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">9:05 AM</b> — one of&nbsp;them replies first, with&nbsp;a&nbsp;figure and a&nbsp;held date.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">2:00 PM</b> — you call back to&nbsp;a&nbsp;polite no. The&nbsp;date stays empty on&nbsp;the&nbsp;busiest Friday you had.</span></li>
-        </ul>
-      </div>
-      <div class="baArrow" aria-hidden="true">→</div>
-      <div class="baCol after">
-        <div class="hl4">Tonight · with&nbsp;Saleringo answering</div>
-        <ul>
-          <li><i>✓</i><span><b style="color:#141A1F;">10:40 PM</b> — answered on&nbsp;the&nbsp;second ring. Date, service, covers and occasion captured.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">10:41 PM</b> — room hire, peak minimum spend and per-head set menu quoted from&nbsp;your&nbsp;own function sheet.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">10:43 PM</b> — date held against your&nbsp;deposit rule, your&nbsp;payment link sent, allergy flagged to&nbsp;the&nbsp;kitchen.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">9:00 AM</b> — the&nbsp;chef answers the&nbsp;allergy question, and the&nbsp;booking is confirmed by&nbsp;a&nbsp;person.</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="srcnote">Every&nbsp;figure above is a&nbsp;figure this&nbsp;page publishes on&nbsp;its&nbsp;own function sheet — not an&nbsp;industry
-      average, and not a&nbsp;forecast for&nbsp;your&nbsp;room. You will not find a&nbsp;share-of-calls-missed figure here. The&nbsp;ones that&nbsp;circulate for&nbsp;restaurants are
-      reservation-platform marketing, and a&nbsp;figure of&nbsp;ours would be the&nbsp;same thing wearing a&nbsp;different logo</p>
-  </div>
-</section>
-
-<section class="safesec bg-paper t-md">
-  <div class="wrap">
-    <div class="photosplit safesplit reveal">
-      <div class="media">
-        <img class="ph" src="https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-           srcset="https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="(max-width:900px) 100vw, 50vw"
-             alt="A chef in an apron finishing a plate at the pass while a second chef watches" loading="lazy" decoding="async" width="1200" height="1800">
-      </div>
-      <div class="copy">
-        <span class="eyebrow light"><i></i>Where the&nbsp;AI stops talking</span>
-        <h2 class="h2" style="margin-top:20px">Capturing an&nbsp;allergy <br>is allowed. Answering&nbsp;one <br>is&nbsp;not.</h2>
-        <p class="lead" style="margin-top:18px;">That&nbsp;sentence is the&nbsp;whole boundary, not a&nbsp;style choice.
-          In&nbsp;the&nbsp;European Union and the&nbsp;United Kingdom, Regulation 1169/2011 and Natasha's&nbsp;Law make allergen
-          information a&nbsp;legal duty with&nbsp;criminal liability attached; comparable obligations exist in&nbsp;the&nbsp;United States
-          and elsewhere. An&nbsp;answering system that&nbsp;says "should be fine" is a&nbsp;prosecution waiting for&nbsp;a&nbsp;date.</p>
-      </div>
-    </div>
-
-    <div class="warngrid reveal">
-      <div class="warncard">
-        <span class="tag">Never answered</span>
-        <b>"Is this&nbsp;dish safe for&nbsp;her?"</b>
-        <p>Recorded in&nbsp;the&nbsp;caller's&nbsp;own words, attached to&nbsp;the&nbsp;booking, booking marked unconfirmed until the&nbsp;kitchen replies, question sent to&nbsp;whoever you nominate that&nbsp;night. No&nbsp;reassurance in&nbsp;any wording, including the&nbsp;gentle ones.</p>
-      </div>
-      <div class="warncard">
-        <span class="tag">Never touched</span>
-        <b>A&nbsp;card number, over the&nbsp;phone</b>
-        <p>It states the&nbsp;deposit amount and the&nbsp;cancellation terms as written and sends your&nbsp;own payment link. It does not read back, repeat or store a&nbsp;card, and it will not hold a&nbsp;peak date on&nbsp;a&nbsp;promise of&nbsp;one later.</p>
-      </div>
-      <div class="warncard amber">
-        <span class="tag">Hard boundary</span>
-        <b>It will not overbook</b>
-        <p>It books against the&nbsp;real floor plan and the&nbsp;real turn time. If 8&nbsp;PM on&nbsp;a&nbsp;Saturday does not exist it says so, offers the&nbsp;sittings that&nbsp;do, and adds the&nbsp;guest to&nbsp;the&nbsp;waitlist. A&nbsp;table it invents is a&nbsp;table your&nbsp;host apologises for.</p>
-      </div>
-    </div>
-
-    <div class="ladder reveal">
-      <div class="lstep"><span class="n sg">STEP 01</span><b>Capture verbatim</b><span>The&nbsp;allergy or dietary requirement goes onto&nbsp;the&nbsp;record in&nbsp;the&nbsp;guest's&nbsp;own words — not summarised, not categorised.</span></div>
-      <div class="lstep"><span class="n sg">STEP 02</span><b>Stop selling</b><span>No&nbsp;reassurance, no&nbsp;menu recommendation, no&nbsp;"we can work around it". The&nbsp;booking is marked unconfirmed on&nbsp;that&nbsp;point alone.</span></div>
-      <div class="lstep"><span class="n sg">STEP 03</span><b>Ask the&nbsp;kitchen</b><span>The&nbsp;question reaches the&nbsp;head chef or whoever you nominate, that&nbsp;night, with&nbsp;the&nbsp;covers and the&nbsp;date attached.</span></div>
-      <div class="lstep"><span class="n sg">STEP 04</span><b>A&nbsp;person confirms</b><span>The&nbsp;booking becomes confirmed when a&nbsp;human answers, and the&nbsp;answer is recorded next to&nbsp;the&nbsp;question.</span></div>
-    </div>
-    <p class="safenote">Every&nbsp;one of&nbsp;these is a&nbsp;rule you approve before it goes live, and none of&nbsp;them is a&nbsp;switch someone can flip to&nbsp;close a&nbsp;booking faster. <a href="../verified-ai.html">How answers get approved →</a></p>
-  </div>
-</section>
-
-<section class="dispsec grain t-xl">
-  <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;other side of&nbsp;the&nbsp;call</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:700px">The&nbsp;function sheet&nbsp;is&nbsp;written <br>before the&nbsp;caller hangs&nbsp;up.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One inbox for&nbsp;phone, web chat and messaging — and a&nbsp;function sheet that&nbsp;carries the&nbsp;date, the&nbsp;covers, the&nbsp;minimum spend, the&nbsp;deposit state and the&nbsp;allergy nobody is allowed to&nbsp;answer. No&nbsp;"I'll check with&nbsp;whoever took the&nbsp;call."</p>
-
-    <div class="dispcols">
-      <div class="scene-frame tiltcard reveal">
-        <svg viewBox="0 0 1000 640" role="img" aria-label="The manager's phone showing the function sheet: date and covers, the room hire and minimum spend quoted, the allergy recorded in the caller's own words, the booking marked unconfirmed pending the kitchen, and a send-to-chef button — all filled in before the call ended.">
-          <defs>
-            <linearGradient id="rsBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-            <radialGradient id="rsGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".30"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
-            <linearGradient id="rsScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-          </defs>
-          <rect width="1000" height="640" fill="url(#rsBg)"/>
-          <ellipse cx="500" cy="330" rx="380" ry="290" fill="url(#rsGlow)"/>
-
-          <!-- a pass and a heat lamp, just enough to place the phone -->
-          <g opacity=".45">
-            <path d="M0 470 H1000 V640 H0 Z" fill="#F6F4EE"/>
-            <path d="M60 470 V430 H360 V470 M640 470 V430 H940 V470" fill="none" stroke="#141A1F" stroke-width="3"/>
-            <path d="M150 300 V210 M270 300 V210 M730 300 V210 M850 300 V210" stroke="#141A1F" stroke-width="3"/>
-            <ellipse cx="150" cy="308" rx="34" ry="11" fill="#F6F4EE"/><ellipse cx="270" cy="308" rx="34" ry="11" fill="#F6F4EE"/>
-            <ellipse cx="730" cy="308" rx="34" ry="11" fill="#F6F4EE"/><ellipse cx="850" cy="308" rx="34" ry="11" fill="#F6F4EE"/>
-          </g>
-
-          <!-- the phone, on the host stand -->
-          <g transform="translate(330,52)">
-            <rect width="340" height="560" rx="42" fill="#F6F4EE" stroke="#141A1F" stroke-width="2.5"/>
-            <rect x="14" y="14" width="312" height="532" rx="32" fill="url(#rsScreen)"/>
-            <rect x="130" y="22" width="80" height="14" rx="7" fill="#F6F4EE"/>
-
-            <g font-family="Plus Jakarta Sans,sans-serif">
-              <text x="40" y="76" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" letter-spacing="2.4">FUNCTION SHEET · 10:43 PM</text>
-              <rect x="214" y="60" width="92" height="24" rx="12" fill="rgba(232,164,76,.22)"/>
-              <text x="260" y="76" font-size="12" fill="#E8A44C" text-anchor="middle" font-weight="800">UNCONFIRMED</text>
-
-              <text x="40" y="112" font-size="19" fill="#F6F4EE" font-weight="700">Fri 12 Dec · dinner</text>
-              <text x="40" y="136" font-size="12.5" fill="#94A2B8" font-weight="600">24 covers · private room · one sitting</text>
-
-              <path d="M40 156 H300" stroke="rgba(20,26,31,.10)" stroke-width="1.5"/>
-
-              <text x="40" y="184" font-size="12" fill="#5E6C82" font-weight="800">RECORDED WORD FOR&nbsp;WORD</text>
-              <rect x="34" y="196" width="272" height="76" rx="12" fill="rgba(217,106,94,.16)"/>
-              <text x="48" y="220" font-size="12.5" fill="#F6F4EE" font-weight="600">“One guest has a&nbsp;severe</text>
-              <text x="48" y="240" font-size="12.5" fill="#F6F4EE" font-weight="600">nut allergy — anaphylaxis,</text>
-              <text x="48" y="260" font-size="12.5" fill="#F6F4EE" font-weight="600">she carries a&nbsp;pen.”</text>
-
-              <rect x="34" y="286" width="272" height="46" rx="12" fill="rgba(232,164,76,.14)"/>
-              <text x="48" y="306" font-size="12" fill="#E8A44C" font-weight="800">NOT ANSWERED BY&nbsp;THE&nbsp;AI</text>
-              <text x="48" y="324" font-size="12" fill="#F6F4EE" font-weight="600">Kitchen confirms before it is final</text>
-
-              <text x="40" y="364" font-size="12" fill="#5E6C82" font-weight="800">QUOTED FROM&nbsp;THE&nbsp;FUNCTION SHEET</text>
-              <g>
-                <rect x="34" y="376" width="130" height="56" rx="12" fill="rgba(23,189,189,.14)"/>
-                <text x="48" y="398" font-size="12.5" fill="#5FA9A9" font-weight="700">Minimum spend</text>
-                <text x="48" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">$1,800</text>
-                <rect x="176" y="376" width="130" height="56" rx="12" fill="rgba(20,26,31,.05)"/>
-                <text x="190" y="398" font-size="12.5" fill="#8FA0B2" font-weight="700">Room hire</text>
-                <text x="190" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">$300</text>
-              </g>
-
-              <rect x="34" y="448" width="272" height="30" rx="15" fill="rgba(20,26,31,.05)"/>
-              <text x="170" y="468" font-size="12.5" fill="#8FA0B2" text-anchor="middle" font-weight="700">▶ Play the&nbsp;96-second recording</text>
-
-              <rect x="34" y="490" width="272" height="44" rx="22" fill="#17BDBD"/>
-              <text x="170" y="518" font-size="14" fill="#F6F4EE" text-anchor="middle" font-weight="800">Send to&nbsp;the&nbsp;head chef</text>
-            </g>
-          </g>
-
-          <text x="500" y="616" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#5E6C82" text-anchor="middle" font-weight="600">Nobody had to&nbsp;remember the&nbsp;allergy. It was on&nbsp;the&nbsp;sheet before the&nbsp;caller hung up.</text>
-        </svg>
-        <div class="scene-overlay tr"><b>Sent to&nbsp;the&nbsp;pass at&nbsp;10:43 PM</b><span>Date, covers, minimum spend, allergy and recording attached</span></div>
-      </div>
-
-      <div class="dispside reveal">
-        <div class="msgthread">
-          <div class="mhead"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">HC</span>
-            <span><b>Head chef</b><br><span>Function sheet · 10:43 PM</span></span></div>
-          <div class="mbody">
-            <div class="m out">Function inquiry — Fri&nbsp;12 Dec, dinner, 24 covers, private room. Quoted $300 hire, $1,800 minimum, $68 set menu. <b>Allergy question for&nbsp;you:</b> "one guest has a&nbsp;severe nut allergy — anaphylaxis, she carries a&nbsp;pen." Booking is unconfirmed until you answer.<span class="tick">✓✓</span></div>
-            <div class="m in">Course three has to&nbsp;change. Tell her I'll write the&nbsp;menu myself and call her Monday.</div>
-            <div class="m out">Sent. Booking still held, still unconfirmed — it flips to&nbsp;confirmed when you mark it, not before.<span class="tick">✓✓</span></div>
-          </div>
-        </div>
-        <div class="rrow"><span class="rchip">✓ CRM updated</span><span class="rchip">✓ Date held 72 h</span><span class="rchip">✓ Deposit link sent</span></div>
-        <p class="note">The&nbsp;same thread works the&nbsp;other way: the&nbsp;chef replies "can't do 24 that&nbsp;night", and the&nbsp;organiser hears it from&nbsp;you rather than finding out on&nbsp;the&nbsp;day.</p>
-      </div>
-    </div>
-
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal"><b>Inquiry</b><i>&rarr;</i><b>Booked</b><i>&rarr;</i><b>Day-before check</b><i>&rarr;</i><b>Seated</b><i>&rarr;</i><b>Next booking</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="Pipeline" xmlns="http://www.w3.org/2000/svg"><title>Pipeline</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Pipeline</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Inquiry</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Booked</text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Day-befor</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Seated</text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Next book</text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">The Restaurants pipeline as it is. How many inquiries sit at each stage, at a glance.</figcaption></figure></div>
   </div>
 </section>
 
 <section class="packcard t-md sec-dark bg-grid" id="the-pack">
   <div class="wrap">
     <a class="pc-link" href="./restaurants-pack.html">
-      <span class="pc-k">The&nbsp;Restaurants pack</span>
-      <b class="pc-h">Everything in&nbsp;the&nbsp;pack, on&nbsp;a&nbsp;page of&nbsp;its&nbsp;own</b>
-      <span class="pc-d">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and pipeline stages this&nbsp;trade works in, the&nbsp;systems it hands to, and every&nbsp;refusal written down. It is a&nbsp;manifest, so it lives where a&nbsp;manifest belongs rather than in&nbsp;the&nbsp;middle of&nbsp;an&nbsp;argument.</span>
+      <span class="pc-k">The Restaurants pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
       <span class="pc-go" aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>
 
-<section class="sec-dark bg-grid t-md" id="multi-location">
+<section class="t-md sec-light2" id="others">
   <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Two sites. Three. A&nbsp;group.</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">The&nbsp;riverside room does&nbsp;not&nbsp;quote <br><em style="font-style:normal;color:var(--teal);">the&nbsp;high-street site's</em>&nbsp;minimum.</h2>
-      <p class="secintro">Two rooms in&nbsp;the&nbsp;same group almost never share a&nbsp;function sheet, and the&nbsp;fastest way to&nbsp;lose
-        a&nbsp;December booking is to&nbsp;quote the&nbsp;other one's&nbsp;minimum. The&nbsp;two rooms keep separate function sheets and separate minimums, and neither is ever read out
-        on&nbsp;the&nbsp;other&rsquo;s&nbsp;call.</p>
-    </div>
-    <div class="mlgrid reveal">
-      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own function sheet and its&nbsp;own minimums</b>
-        <p>Room hire, peak and off-peak minimum spend, per-head menus and corkage are held per&nbsp;site.
-          A&nbsp;caller about&nbsp;one room never hears another&nbsp;room's&nbsp;figure.</p></div>
-      <div class="mlcard"><span class="n">02</span><b>Its&nbsp;own floor plan and sittings</b>
-        <p>Turn time, sitting structure and the&nbsp;largest party the&nbsp;room can physically hold are that&nbsp;site's&nbsp;own.
-          One site running two sittings does not make the&nbsp;other one do the&nbsp;same.</p></div>
-      <div class="mlcard"><span class="n">03</span><b>A&nbsp;GM opens their&nbsp;own room&rsquo;s&nbsp;book, never the&nbsp;group&rsquo;s</b>
-        <p>A&nbsp;general manager opens the&nbsp;board and sees their&nbsp;inquiries, their&nbsp;held dates, their&nbsp;kitchen questions —
-          not the&nbsp;whole group's.</p></div>
-      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
-        <p>One report, every&nbsp;site in&nbsp;the&nbsp;same row: inquiries taken, dates held, functions confirmed, average
-          spend per&nbsp;function, and how many were captured outside service.</p></div>
-    </div>
-
-    <div class="mlsites reveal">
-      <div class="mlsite"><div class="h"><i></i>High Street · main room</div>
-        <dl>
-          <div class="r"><dt>Peak min.</dt><dd>$1,800 (Dec Fri &amp; Sat)</dd></div>
-          <div class="r"><dt>Room hire</dt><dd>$300</dd></div>
-          <div class="r"><dt>Sittings</dt><dd>Two, turn 2h15</dd></div>
-        </dl></div>
-      <div class="mlsite"><div class="h"><i></i>Riverside · terrace room</div>
-        <dl>
-          <div class="r"><dt>Peak min.</dt><dd>$2,600 (Jun–Sep)</dd></div>
-          <div class="r"><dt>Room hire</dt><dd>$450</dd></div>
-          <div class="r"><dt>Sittings</dt><dd>One, no&nbsp;turn</dd></div>
-        </dl></div>
-      <div class="mlsite"><div class="h"><i></i>Off-site catering</div>
-        <dl>
-          <div class="r"><dt>Peak min.</dt><dd>Per&nbsp;head only, 30&nbsp;minimum</dd></div>
-          <div class="r"><dt>Room hire</dt><dd>n/a</dd></div>
-          <div class="r"><dt>Sittings</dt><dd>Kitchen capacity rule</dd></div>
-        </dl></div>
-    </div>
-    <p class="statnote">Off-site catering is the&nbsp;case most booking systems cannot hold at&nbsp;all: no&nbsp;room, no&nbsp;table,
-      no&nbsp;turn time — a&nbsp;per-head figure and a&nbsp;kitchen capacity rule instead. Sites, sheets, minimums, sittings
-      and who-sees-what are configured with&nbsp;you during onboarding.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal"><a href="./venues.html"><img src="https://images.pexels.com/photos/30562607/pexels-photo-30562607.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Wedding & event venues</b></a><a href="./stays.html"><img src="https://images.pexels.com/photos/31080810/pexels-photo-31080810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Boutique stays</b></a><a href="./golf.html"><img src="https://images.pexels.com/photos/4117878/pexels-photo-4117878.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Golf clubs</b></a><a href="./cafes-bakeries.html"><img src="https://images.pexels.com/photos/8441251/pexels-photo-8441251.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Cafés & bakeries</b></a><a href="./catering.html"><img src="https://images.pexels.com/photos/12253092/pexels-photo-12253092.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Catering</b></a><a href="./travel-agency.html"><img src="https://images.pexels.com/photos/7968298/pexels-photo-7968298.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Travel agencies</b></a><a href="./florist.html"><img src="https://images.pexels.com/photos/6764299/pexels-photo-6764299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Florists</b></a><a href="./coworking.html"><img src="https://images.pexels.com/photos/39190481/pexels-photo-39190481.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Coworking spaces</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">Dental</a><a href="./clinics.html">Clinics & med-spa</a><a href="./academies.html">Academies & tutoring</a><a href="./salons.html">Hair & beauty salons</a><a href="./veterinary.html">Veterinary</a><a href="./auto-repair.html">Auto repair</a><a href="./real-estate.html">Real estate</a><a href="./venues.html">Wedding & event venues</a><a href="./senior-care.html">Senior care</a><a href="./fitness.html">Gyms & fitness</a><a href="./home-services.html">Home services</a><a href="./pest-control.html">Pest control</a><a href="./property-management.html">Property management</a><a href="./movers.html">Movers</a><a href="./stays.html">Boutique stays</a><a href="./golf.html">Golf clubs</a><a href="./funeral-homes.html">Funeral homes</a><a href="./legal.html">Law firms</a><a href="./universities.html">Universities</a><a href="./public-sector.html">Public sector</a><a href="./self-storage.html">Self storage</a><a href="./equipment-rental.html">Equipment rental</a><a href="./ecommerce.html">Online stores</a><a href="./franchise.html">Franchises</a><a href="./pharmacy.html">Pharmacy</a><a href="./hospital-outpatient.html">Hospitals & outpatient</a><a href="./physio-rehab.html">Physio & rehab</a><a href="./korean-medicine.html">Acupuncture & traditional medicine</a><a href="./optician.html">Opticians</a><a href="./counseling.html">Counseling & therapy</a><a href="./childcare.html">Daycare & preschool</a><a href="./driving-school.html">Driving schools</a><a href="./music-art-academy.html">Music & art schools</a><a href="./yoga-pilates.html">Yoga & pilates studios</a><a href="./martial-arts.html">Martial arts dojos</a><a href="./nail-spa.html">Nail & spa</a><a href="./barbershop.html">Barbershops</a><a href="./pet-grooming.html">Pet grooming & boarding</a><a href="./cleaning-services.html">Cleaning services</a><a href="./interior-renovation.html">Renovation contractors</a><a href="./landscaping.html">Landscaping & lawn care</a><a href="./locksmith.html">Locksmiths</a><a href="./appliance-repair.html">Appliance repair</a><a href="./laundry.html">Dry cleaning & laundry</a><a href="./car-wash.html">Car wash & detailing</a><a href="./car-dealers.html">Car dealerships</a><a href="./towing.html">Towing & roadside</a><a href="./cafes-bakeries.html">Cafés & bakeries</a><a href="./catering.html">Catering</a><a href="./travel-agency.html">Travel agencies</a><a href="./photo-studio.html">Photo studios</a><a href="./florist.html">Florists</a><a href="./accounting-tax.html">Accountants & tax</a><a href="./insurance-agency.html">Insurance agencies</a><a href="./home-security.html">Home security & CCTV installers</a><a href="./solar.html">Solar & energy installers</a><a href="./it-repair.html">Computer & phone repair</a><a href="./courier.html">Couriers & same-day delivery</a><a href="./print-signage.html">Print shops & signage</a><a href="./coworking.html">Coworking spaces</a><a href="./tours-activities.html">Tours & activities</a><a href="./schools.html">Schools & international schools</a><a href="./staffing.html">Staffing & recruitment agencies</a><a href="./imaging.html">Imaging & health-screening centres</a></div>
   </div>
 </section>
 
-<section class="intsec sec-light2 t-xl">
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>Your&nbsp;existing systems, honestly</span>
-      <h2 class="h2" style="margin-top:22px">No&nbsp;fake logo&nbsp;wall. <br>Here's&nbsp;what's actually&nbsp;live.</h2>
-      <p class="lead" style="margin-top:16px;">Today, bookings and function sheets flow out through&nbsp;Zapier, CSV export, and a&nbsp;direct feed if your&nbsp;team wants one. Reservation platforms are on&nbsp;the&nbsp;roadmap — and the&nbsp;founding cohort votes on&nbsp;the&nbsp;build order.</p>
-    </div>
-
-    <div class="statgrid reveal" id="integrations">
-      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
-        <ul>
-          <li>Zapier &amp; direct feeds<span>Push functions and stage changes into&nbsp;whatever runs your&nbsp;book</span></li>
-          <li>CSV export<span>Inquiries, held dates, functions and the&nbsp;whole pipeline, whenever you ask</span></li>
-          <li>Google &amp; Outlook Calendar<span>Held dates and confirmed functions land on&nbsp;your&nbsp;real calendar</span></li>
-        </ul>
-      </div>
-      <div class="statcol man"><div class="hl4"><i></i>Bridge for&nbsp;now</div>
-        <ul>
-          <li>OpenTable · Resy · SevenRooms<span>No&nbsp;direct link. Bookings reach them through&nbsp;Zapier or CSV export</span></li>
-          <li>TheFork · Toast · Square<span>Same path — nothing is ripped out and nothing is migrated</span></li>
-        </ul>
-      </div>
-      <div class="statcol road"><div class="hl4"><i></i>In&nbsp;build</div>
-        <ul>
-          <li>Direct reservation-platform integrations<span>Founding customers vote on&nbsp;the&nbsp;build order. We would rather hand you nothing than a&nbsp;date that&nbsp;slips</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="statnote">Until then, every&nbsp;inquiry lands in Saleringo's&nbsp;built-in&nbsp;inbox and CRM — and exports
-      cleanly to&nbsp;whatever runs your&nbsp;book. Not seeing your&nbsp;reservation platform above? Raise it on&nbsp;the&nbsp;call, while there is still no&nbsp;invoice.</p>
-
-    <div class="riskrow reveal">
-      <div class="riskitem light"><span class="ic">☎</span><b>Keep your&nbsp;number</b><span>Forward the&nbsp;line during service and after close first. Nothing to&nbsp;port.</span></div>
-      <div class="riskitem light"><span class="ic">◔</span><b>Answering by&nbsp;tonight&rsquo;s&nbsp;service</b><span>Forward the&nbsp;line, hand over&nbsp;the&nbsp;function sheet. Nothing to&nbsp;install and nothing to&nbsp;replace on&nbsp;the&nbsp;pass.</span></div>
-      <div class="riskitem light"><span class="ic">✍</span><b>Your&nbsp;function sheet, verbatim</b><span>Nothing is spoken that&nbsp;is not on&nbsp;it. Everything else goes to&nbsp;the&nbsp;manager or the&nbsp;chef.</span></div>
-      <div class="riskitem light"><span class="ic">1:1</span><b>Human onboarding</b><span>We build the&nbsp;function sheet and the&nbsp;allergen rule with&nbsp;you, line by&nbsp;line.</span></div>
-    </div>
-
-    <div class="whoband reveal">
-      <div class="secrule"><span class="eyebrow light"><i></i>Three people, one 10:40&nbsp;PM call</span><span class="line"></span></div>
-      <div class="audgrid">
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/6415612/pexels-photo-6415612.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/6415612/pexels-photo-6415612.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/6415612/pexels-photo-6415612.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/6415612/pexels-photo-6415612.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/6415612/pexels-photo-6415612.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A man making a call on a lit city street late at night, after his own shift" loading="lazy" decoding="async" width="800" height="1200">
-          <b>The&nbsp;organiser at&nbsp;10:40&nbsp;PM</b><span>Collecting three numbers for&nbsp;the&nbsp;morning — whoever answers gets on&nbsp;the&nbsp;list</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/2977515/pexels-photo-2977515.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/2977515/pexels-photo-2977515.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/2977515/pexels-photo-2977515.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/2977515/pexels-photo-2977515.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/2977515/pexels-photo-2977515.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="Cooks plating a run of identical dishes on a stainless steel pass" loading="lazy" decoding="async" width="800" height="534">
-          <b>The&nbsp;kitchen</b><span>Wants the&nbsp;allergy in&nbsp;the&nbsp;guest's&nbsp;own words, on&nbsp;the&nbsp;night — not on&nbsp;the&nbsp;day</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/15671274/pexels-photo-15671274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/15671274/pexels-photo-15671274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/15671274/pexels-photo-15671274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/15671274/pexels-photo-15671274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/15671274/pexels-photo-15671274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A brigade plating a large function service, stacks of plates along the counter" loading="lazy" decoding="async" width="800" height="534">
-          <b>Whoever runs the&nbsp;floor</b><span>Opens the&nbsp;board before the&nbsp;lunch briefing to&nbsp;held dates, quotes sent and one question waiting on&nbsp;a&nbsp;chef</span>
-        </div>
-      </div>
-      <p class="photocap light">Illustrative photography — these are not Saleringo customers.</p>
-    </div>
-
-    <div class="cohortbar reveal">
-      <span class="pilltag pt-teal">FOUNDING COHORT</span>
-      <b>50% off for&nbsp;3 months · priority onboarding · a&nbsp;vote on&nbsp;the&nbsp;next integration</b>
-      <span>Onboarding now.</span>
-      <a class="linkcta" href="../index.html#early-access" style="border-color:#0B7878;color:#0B7878;">Watch it answer my&nbsp;questions&nbsp;&nbsp;→</a>
-    </div>
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your Restaurants price list,<br>and we show it answering from that.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; Restaurants<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="9:00 AM — the owner’s screen" xmlns="http://www.w3.org/2000/svg"><title>9:00 AM — the owner’s screen</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >Next day 10:00 AM — the owner’s screen</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >New booking</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Brightwater Consulting · Fri 6:00 PM · 20 gue…</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Confirmation #5127</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >$45 set menu · sent by text · opened</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Kitchen task</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >vegetarian course for one · by Thursday · own…</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Waiting for a person</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >shellfish allergy question · full thread atta…</text></svg><figcaption class="illcap">What the call produced, waiting on the morning screen.</figcaption></figure></div>
   </div>
 </section>
 
-<section class="sec-dark bg-grid t-xl" id="worked-examples">
-  <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Six worked examples</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Six calls your&nbsp;room gets <br>every week — and what <br>each&nbsp;one left behind.</h2>
-      <p class="secintro">Not a&nbsp;demo reel. Six ordinary inquiries, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;exchange
-        produced: a&nbsp;date held against a&nbsp;real deposit rule, a&nbsp;minimum spend quoted off your&nbsp;own sheet, an&nbsp;allergy put
-        in&nbsp;front of&nbsp;a&nbsp;chef instead of&nbsp;answered. In&nbsp;four of&nbsp;the&nbsp;six the&nbsp;answer is no. Read those&nbsp;four before the&nbsp;other two.</p>
-      <p class="exlabel" style="margin-top:14px;">Every&nbsp;scenario below is a&nbsp;worked illustration built
-        from&nbsp;the&nbsp;function sheet, floor plan and allergen rule a&nbsp;restaurant would load — not a&nbsp;customer story,
-        and no&nbsp;business named or implied here is a&nbsp;Saleringo customer. Every&nbsp;figure shown is already published
-        on&nbsp;this&nbsp;page or the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>;
-        your&nbsp;own function sheet sets your&nbsp;numbers.</p>
-    </div>
-
-    <!--illus:scene--><div class="scenestrip reveal" aria-label="The three moments in every worked example"><figure><img src="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A customer making a call from the sofa in the evening" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>After hours — the call comes in</b>The customer calls when it suits them, not when your desk is open.</figcaption></figure><figure><img src="https://images.pexels.com/photos/28700799/pexels-photo-28700799.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A reserved sign on a set restaurant table" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Restaurant — answered from your own facts</b>Prices, hours and rules you approved. Nothing invented.</figcaption></figure><figure><img src="https://images.pexels.com/photos/13736440/pexels-photo-13736440.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="An owner in an apron reading the morning’s records on a tablet" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Next morning — what is waiting</b>A booking, a quote, a record with an owner and a deadline.</figcaption></figure></div><!--/illus:scene-->
-    <div class="panelset exset reveal" style="margin-top:38px;">
-          <div class="pstabs" role="tablist" aria-label="Six worked examples">
-        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Date held</button>
-        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Kitchen decides</button>
-        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Refused, then solved</button>
-        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Catering quoted</button>
-        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Owner decides</button>
-        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Never handled alone</button>
-      </div>
-          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Date held">
-            <div class="excard">
-        <div class="exhead"><span class="when">22:40</span><span class="via">Phone</span><span class="tag solved">Date held</span></div>
-        <div class="exbody">
-          <p class="exq">24 of&nbsp;us, a&nbsp;Friday in&nbsp;December, in&nbsp;the&nbsp;private room. What's&nbsp;the&nbsp;minimum spend?</p>
-          <div class="exturn"><span class="who">Saleringo</span>Friday the&nbsp;12th, dinner: room hire is <b>$300</b> and the&nbsp;minimum spend is <b>$1,800</b>, because December Fridays carry the&nbsp;peak minimum rather than the&nbsp;standard one. The&nbsp;set menu for&nbsp;a&nbsp;party of&nbsp;that&nbsp;size is <b>$68</b> a&nbsp;head — at&nbsp;24 covers that&nbsp;is $1,632 on&nbsp;food alone, so you clear the&nbsp;$1,800 with&nbsp;roughly a&nbsp;drink each — I would rather you knew that&nbsp;now than found out on&nbsp;the&nbsp;night.</div>
-          <div class="exturn"><span class="who">Caller</span>That's&nbsp;the&nbsp;number I need. Can you hold it?</div>
-          <div class="exturn"><span class="who">Saleringo</span>Held for&nbsp;72 hours. The&nbsp;deposit is <b>$300</b> and the&nbsp;cancellation terms are 14 days — I've sent the&nbsp;payment link rather than taking a&nbsp;card, and the&nbsp;date releases automatically if the&nbsp;deposit isn't paid.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Function card created — date, service, covers, occasion and room</span><span class="amt">$1,800 min</span></div>
-            <div class="exrow"><i>✓</i><span>Quote built from&nbsp;the&nbsp;function sheet on&nbsp;three separate lines, peak minimum applied automatically</span></div>
-            <div class="exrow"><i>✓</i><span>Date held on&nbsp;a&nbsp;clock, not on&nbsp;a&nbsp;maybe — released by&nbsp;itself if nothing is paid</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;card taken, read back or recorded. The&nbsp;venue's&nbsp;own payment link, every&nbsp;time.</span></div>
-          </div>
-          <p class="exlabel">Worked illustration, not a&nbsp;customer story. The&nbsp;$300 hire, $1,800 peak minimum and $68 set menu are the&nbsp;figures published on&nbsp;this&nbsp;page; yours are whatever your&nbsp;function sheet says.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Kitchen decides">
-            <div class="excard">
-        <div class="exhead"><span class="when">22:44</span><span class="via">Phone</span><span class="tag human">Kitchen decides</span></div>
-        <div class="exbody">
-          <p class="exq">One guest has a&nbsp;severe nut allergy — anaphylaxis. Is the&nbsp;set menu safe for&nbsp;her?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I'm not going to&nbsp;answer that, and I'd rather say so plainly than give you a&nbsp;comfortable half-answer. Whether a&nbsp;dish is safe for&nbsp;a&nbsp;severe allergy is the&nbsp;kitchen's&nbsp;call — nobody else in&nbsp;this&nbsp;building is allowed to&nbsp;make it, including me.</div>
-          <div class="exturn"><span class="who">Saleringo</span>I've written it on&nbsp;the&nbsp;function sheet exactly as you said it, the&nbsp;booking is marked <b>unconfirmed until the&nbsp;kitchen answers</b>, and the&nbsp;question has gone to&nbsp;the&nbsp;head chef tonight rather than in&nbsp;the&nbsp;morning. He replies to&nbsp;you directly.</div>
-          <div class="exout">
-            <div class="hl5" aria-level="4">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Allergy recorded verbatim — not summarised, not turned into&nbsp;a&nbsp;tick box</span></div>
-            <div class="exrow"><i>✓</i><span>Booking blocked from&nbsp;confirming on&nbsp;that&nbsp;point alone</span></div>
-            <div class="exrow"><i>✓</i><span>Head chef asked the&nbsp;same night, with&nbsp;the&nbsp;date and covers attached</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;"should be fine". No&nbsp;"the kitchen is very careful". No&nbsp;dish described as free of&nbsp;anything.</span></div>
-          </div>
-          <p class="exlabel">In&nbsp;the&nbsp;EU and UK this&nbsp;is not a&nbsp;matter of&nbsp;taste — Regulation 1169/2011 and Natasha's&nbsp;Law attach criminal liability to&nbsp;getting an&nbsp;allergen answer wrong. Capturing is allowed; answering is not.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Refused, then solved">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sat 19:55</span><span class="via">Phone</span><span class="tag human">Refused, then solved</span></div>
-        <div class="exbody">
-          <p class="exq">Can you just squeeze us in&nbsp;at&nbsp;8 tonight? There's&nbsp;four of&nbsp;us.</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I can't, and I'm not going to&nbsp;pretend I can and let you turn up to&nbsp;it. Eight o'clock on&nbsp;a&nbsp;Saturday is fully committed on&nbsp;the&nbsp;floor plan — I don't stretch it, because the&nbsp;table that&nbsp;gets stretched is somebody else's.</div>
-          <div class="exturn"><span class="who">Saleringo</span>What genuinely exists tonight is <b>6:15</b> on&nbsp;the&nbsp;first sitting or <b>9:30</b> on&nbsp;the&nbsp;second. If neither works I'll put you on&nbsp;the&nbsp;waitlist for&nbsp;8 and message you the&nbsp;moment a&nbsp;cancellation lands — the&nbsp;waitlist is real, and it moves on&nbsp;a&nbsp;Saturday.</div>
-          <div class="exturn"><span class="who">Caller</span>9:30's&nbsp;fine.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Booked into&nbsp;the&nbsp;second sitting with&nbsp;the&nbsp;real turn time respected</span></div>
-            <div class="exrow"><i>✓</i><span>Guest added to&nbsp;the&nbsp;waitlist for&nbsp;the&nbsp;sitting they wanted</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;refusal converted — because it came with&nbsp;two real alternatives, not an&nbsp;apology</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;overbooking. No&nbsp;"we'll fit you in&nbsp;somehow". No&nbsp;table your&nbsp;host has to&nbsp;apologise for.</span></div>
-          </div>
-          <p class="exlabel">Overbooking is the&nbsp;one failure a&nbsp;guest tells other people about. This&nbsp;guardrail costs a&nbsp;few covers and protects the&nbsp;room.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Catering quoted">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sun 16:20</span><span class="via">WhatsApp</span><span class="tag solved">Catering quoted</span></div>
-        <div class="exbody">
-          <p class="exq">Do you cater off-site? It's&nbsp;40 people at&nbsp;an&nbsp;office, a&nbsp;Thursday lunch next month.</p>
-          <div class="exturn"><span class="who">Saleringo</span>We do, from&nbsp;30 covers up. Off-site is priced per&nbsp;head only — there's&nbsp;no&nbsp;room hire and no&nbsp;minimum spend, because there's&nbsp;no&nbsp;room. The&nbsp;working lunch menu is <b>$38</b> a&nbsp;head, and delivery inside the&nbsp;city is included.</div>
-          <div class="exturn"><span class="who">Visitor</span>Any chance for&nbsp;the&nbsp;Thursday of&nbsp;that&nbsp;week?</div>
-          <div class="exturn"><span class="who">Saleringo</span>That&nbsp;Thursday has kitchen capacity for&nbsp;an&nbsp;off-site of&nbsp;this&nbsp;size — it's&nbsp;a&nbsp;capacity rule rather than a&nbsp;table, so I'm checking the&nbsp;pass, not the&nbsp;floor. Held for&nbsp;72 hours, and I'll need dietary requirements at&nbsp;least a&nbsp;week out so the&nbsp;kitchen can plan rather than improvise.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Off-site inquiry priced per&nbsp;head, with&nbsp;no&nbsp;room hire invented to&nbsp;fit the&nbsp;template</span><span class="amt">$38/head</span></div>
-            <div class="exrow"><i>✓</i><span>Checked against kitchen capacity rather than the&nbsp;floor plan — a&nbsp;different rule, correctly applied</span></div>
-            <div class="exrow"><i>✓</i><span>Dietary deadline stated up front, so the&nbsp;kitchen is not told on&nbsp;the&nbsp;morning</span></div>
-            <div class="exrow"><i>✓</i><span>Pipeline: <b>Inquiry → Date held</b></span></div>
-          </div>
-          <p class="exlabel">Catering is where the&nbsp;after-hours volume actually is, and it is the&nbsp;case a&nbsp;table-booking system cannot represent at&nbsp;all. The&nbsp;$38 per&nbsp;head is this&nbsp;page's&nbsp;own published sample rate.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Owner decides">
-            <div class="excard">
-        <div class="exhead"><span class="when">Tue 11:05</span><span class="via">Web chat</span><span class="tag human">Owner decides</span></div>
-        <div class="exbody">
-          <p class="exq">The&nbsp;place down the&nbsp;road quoted us $1,400 for&nbsp;the&nbsp;same night. Can you match it?</p>
-          <div class="exturn"><span class="who">Saleringo</span>I can't move the&nbsp;minimum — it's&nbsp;the&nbsp;same figure for&nbsp;that&nbsp;date whoever asks, and I have no&nbsp;authority to&nbsp;discount it. What I can do is tell you exactly what is inside our&nbsp;number: the&nbsp;room to&nbsp;yourselves with&nbsp;no&nbsp;turn, the&nbsp;<b>$300</b> hire included in&nbsp;the&nbsp;minimum rather than on&nbsp;top of&nbsp;it, and the&nbsp;set menu written around your&nbsp;dietaries.</div>
-          <div class="exturn"><span class="who">Visitor</span>And if I want to&nbsp;push on&nbsp;the&nbsp;price?</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Then that&nbsp;is a&nbsp;conversation with&nbsp;the&nbsp;owner and I'll put it in&nbsp;front of&nbsp;her today, with&nbsp;the&nbsp;date and covers attached. I'm not going to&nbsp;invent a&nbsp;discount to&nbsp;keep you in&nbsp;the&nbsp;chat.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Minimum spend held under&nbsp;pressure; nothing improvised to&nbsp;win the&nbsp;inquiry</span><span class="amt">$1,800 min</span></div>
-            <div class="exrow"><i>✓</i><span>Written quote sent inside the&nbsp;conversation, itemised</span></div>
-            <div class="exrow"><i>✓</i><span>Routed to&nbsp;the&nbsp;owner with&nbsp;the&nbsp;date attached, so the&nbsp;inquiry is not simply lost</span></div>
-            <div class="exrow"><i>✕</i><span>It never negotiates. Anything off the&nbsp;function sheet goes to&nbsp;a&nbsp;person.</span></div>
-          </div>
-          <p class="exlabel">An&nbsp;answering system that&nbsp;negotiates costs a&nbsp;room more than one that&nbsp;never picks&nbsp;up. Minimum spend is a&nbsp;permanent handoff, not a&nbsp;confidence threshold.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Never handled alone">
-            <div class="excard">
-        <div class="exhead"><span class="when">Fri 18:30</span><span class="via">Phone</span><span class="tag human">Never handled alone</span></div>
-        <div class="exbody">
-          <p class="exq">Can I give you my&nbsp;card now to&nbsp;secure the&nbsp;date? I'm about&nbsp;to&nbsp;get on&nbsp;a&nbsp;plane.</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I don't take card details, on&nbsp;this&nbsp;line or any other — please don't read the&nbsp;number out. The&nbsp;deposit is <b>$300</b> and the&nbsp;link is already on&nbsp;its&nbsp;way to&nbsp;you; it takes about&nbsp;a&nbsp;minute and it goes straight to&nbsp;the&nbsp;venue's&nbsp;own payment provider.</div>
-          <div class="exturn"><span class="who">Caller</span>What if I can't do it before I board?</div>
-          <div class="exturn"><span class="who">Saleringo</span>The&nbsp;date is held for&nbsp;72 hours from&nbsp;now, so a&nbsp;flight doesn't cost you it. If the&nbsp;deposit hasn't landed by&nbsp;then, the&nbsp;date releases and I'll tell you before it does rather than after.</div>
-          <div class="exout">
-            <div class="hl5">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Deposit rule and cancellation terms stated exactly as written</span><span class="amt">$300 deposit</span></div>
-            <div class="exrow"><i>✓</i><span>Payment link sent to&nbsp;the&nbsp;venue's&nbsp;own provider, inside the&nbsp;conversation</span></div>
-            <div class="exrow"><i>✓</i><span>Hold window explained, with&nbsp;a&nbsp;warning before the&nbsp;release, not after it</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;card number heard, repeated, confirmed or stored. Not once, under&nbsp;any pressure.</span></div>
-          </div>
-          <p class="exlabel">The&nbsp;same boundary the&nbsp;Boutique Stays pack draws. A&nbsp;system that&nbsp;will read a&nbsp;card number back to&nbsp;a&nbsp;caller is a&nbsp;system you have to&nbsp;audit forever.</p>
-        </div>
-      </div>
-          </div>
-        </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What it will and won't answer</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">What the&nbsp;phone may say, <br>and what only the&nbsp;kitchen&nbsp;may.</h3>
-      <p class="secintro">Your&nbsp;manager and your&nbsp;head chef sign off every&nbsp;row before a&nbsp;guest hears any&nbsp;of&nbsp;it.
-        Five rows are flat refusals, and the&nbsp;allergen row is the&nbsp;one to&nbsp;read twice: nothing on&nbsp;this&nbsp;line ever says a&nbsp;dish is&nbsp;safe.</p>
-    </div>
-    <div class="qbank reveal">
-      <div class="qrow hd"><span>Caller asks</span><span>What happens</span><span>Handled by</span></div>
-      <div class="qrow"><span class="qq">What's&nbsp;the&nbsp;minimum spend for&nbsp;the&nbsp;private room?</span>
-        <span class="qa">Quotes the&nbsp;figure for&nbsp;that&nbsp;date and service off your&nbsp;function sheet — peak dates carry their&nbsp;own.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">What's&nbsp;the&nbsp;set menu per&nbsp;head?</span>
-        <span class="qa">Names the&nbsp;approved per-head menu for&nbsp;that&nbsp;party size, and says what it does and doesn't include.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Do you have a&nbsp;table for&nbsp;six on&nbsp;Thursday?</span>
-        <span class="qa">Reads the&nbsp;real floor plan and turn time, then offers the&nbsp;sittings that&nbsp;actually exist.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you hold the&nbsp;date while I check with&nbsp;my&nbsp;boss?</span>
-        <span class="qa">Holds it on&nbsp;your&nbsp;clock against your&nbsp;deposit rule, and releases it automatically if nothing is paid.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Do you cater off-site?</span>
-        <span class="qa">Answers from&nbsp;your&nbsp;catering rules — per-head only, minimum numbers, and the&nbsp;kitchen capacity check.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">What's&nbsp;the&nbsp;corkage?</span>
-        <span class="qa">States the&nbsp;published corkage and the&nbsp;bottle limit, exactly as your&nbsp;sheet has it written.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">¿Podemos reservar el&nbsp;salón privado?</span>
-        <span class="qa">Continues in&nbsp;Spanish, from&nbsp;wording approved in&nbsp;Spanish — the&nbsp;function sheet still reaches you in&nbsp;English.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you do the&nbsp;minimum for&nbsp;$1,400?</span>
-        <span class="qa">States the&nbsp;sheet, declines to&nbsp;discount, and routes the&nbsp;request to&nbsp;the&nbsp;owner.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">We had a&nbsp;bad meal here last week.</span>
-        <span class="qa">Records the&nbsp;complaint verbatim against the&nbsp;record and routes it; it does not offer redress on&nbsp;its&nbsp;own.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">Is the&nbsp;set menu safe for&nbsp;a&nbsp;severe nut allergy?</span>
-        <span class="qa">Refused. Recorded word for&nbsp;word, booking held unconfirmed, kitchen asked the&nbsp;same night.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Is there dairy in&nbsp;the&nbsp;second course?</span>
-        <span class="qa">Refused. It does not describe what is in&nbsp;a&nbsp;dish, even from&nbsp;a&nbsp;menu — that&nbsp;answer comes from&nbsp;the&nbsp;kitchen.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Let me give you my&nbsp;card number.</span>
-        <span class="qa">Refused. No&nbsp;card is heard, repeated or stored. Your&nbsp;own payment link, every&nbsp;time.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Just squeeze us in&nbsp;at&nbsp;8 — you'll find room.</span>
-        <span class="qa">Refused. It does not stretch the&nbsp;floor plan. Real sittings, or the&nbsp;waitlist.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Who else has booked the&nbsp;room that&nbsp;night?</span>
-        <span class="qa">Refused. It does not confirm, deny or describe another&nbsp;guest's&nbsp;booking to&nbsp;anyone.</span><span class="qs never">Never</span></div>
-    </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">An&nbsp;ordinary&nbsp;week <br>in a&nbsp;70-cover room.</h3>
-      <p class="secintro">Not a&nbsp;record week. A&nbsp;dull one — with&nbsp;the&nbsp;share that&nbsp;arrived while nobody could reach the&nbsp;phone
-        marked, because that&nbsp;is the&nbsp;part currently going nowhere.</p>
-    </div>
-    <div class="weekstrip reveal">
-      <div class="weekday"><span class="d">Mon</span><div class="n">12<small> inq</small></div>
-        <ul><li><i>·</i>1 function</li><li><i>·</i><b>closed all day</b></li></ul></div>
-      <div class="weekday"><span class="d">Tue</span><div class="n">19<small> inq</small></div>
-        <ul><li><i>·</i>2 functions</li><li><i>·</i>9 during service</li></ul></div>
-      <div class="weekday"><span class="d">Wed</span><div class="n">21<small> inq</small></div>
-        <ul><li><i>·</i>2 functions</li><li><i>·</i>11 during service</li><li><i>·</i>1 allergy to&nbsp;the&nbsp;kitchen</li></ul></div>
-      <div class="weekday"><span class="d">Thu</span><div class="n">24<small> inq</small></div>
-        <ul><li><i>·</i>3 functions</li><li><i>·</i>13 during service</li><li><i>·</i>1 allergy to&nbsp;the&nbsp;kitchen</li></ul></div>
-      <div class="weekday peak"><span class="d">Fri</span><div class="n">31<small> inq</small></div>
-        <ul><li><i>·</i>4 functions</li><li><i>·</i>18 during service</li><li><i>·</i>2 after close</li></ul></div>
-      <div class="weekday peak"><span class="d">Sat</span><div class="n">34<small> inq</small></div>
-        <ul><li><i>·</i>3 functions</li><li><i>·</i>21 during service</li><li><i>·</i>2 after close</li></ul></div>
-      <div class="weekday"><span class="d">Sun</span><div class="n">17<small> inq</small></div>
-        <ul><li><i>·</i>2 functions</li><li><i>·</i>8 during service</li><li><i>·</i>1 catering inquiry</li></ul></div>
-    </div>
-    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;70-cover room — the&nbsp;same
-      week the&nbsp;Monday board below reports: <b>158 inquiries, 17 new function inquiries, 8 dates
-      held, 2 allergies sent to&nbsp;the&nbsp;kitchen</b>.</p>
-    <p class="exlabel"><b>80 of&nbsp;the&nbsp;158 arrive during service</b> — 51%, and that&nbsp;is
-      the&nbsp;honest claim for&nbsp;this&nbsp;trade: your&nbsp;guests do not call at&nbsp;3&nbsp;AM, they call at&nbsp;8&nbsp;PM,
-      when every&nbsp;hand in&nbsp;the&nbsp;building is holding something. Illustrative figures, not a&nbsp;forecast: your&nbsp;own
-      call log is the&nbsp;number that&nbsp;matters, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a>
-      takes it.</p>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What one recovered function is worth</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;arithmetic <br>on&nbsp;one function you didn't&nbsp;lose.</h3>
-      <p class="secintro">Nothing below is a&nbsp;new number. The&nbsp;minimum spend and the&nbsp;per-head come from&nbsp;the&nbsp;function example above; the&nbsp;monthly cost comes from&nbsp;the&nbsp;pricing page. Add them up yourself if you&nbsp;like.</p>
-    </div>
-    <div class="mathbox reveal" style="max-width:660px;margin-top:26px;">
-      <div class="mathrow"><span class="lbl"><b>One recovered function, at&nbsp;the&nbsp;minimum</b><span class="sub">the&nbsp;$1,800 December Friday minimum spend published at&nbsp;the&nbsp;top of&nbsp;this&nbsp;page — the&nbsp;floor, not the&nbsp;expected total</span></span><span class="val">$1,800</span></div>
-      <div class="mathrow"><span class="lbl"><b>Food cost, at&nbsp;a&nbsp;conservative 30%</b><span class="sub">taken out before anything is claimed, because a&nbsp;minimum spend is revenue and not margin</span></span><span class="val">−$540</span></div>
-      <div class="mathrow"><span class="lbl"><b>Saleringo Scale</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone — chat-only starts lower</span></span><span class="val">−$599</span></div>
-      <div class="mathrow"><span class="lbl"><b>Voice minutes</b><span class="sub">the&nbsp;published example: 300 calls × 4 min × $0.14</span></span><span class="val">−$168</span></div>
-      <div class="mathrow total"><span class="lbl"><b>One function, against a&nbsp;full month of&nbsp;everything</b></span><span class="val">+$493</span></div>
-      <p class="mathnote">One recovered function covers the&nbsp;month and leaves change — and we took the&nbsp;food cost
-        out first rather than quoting the&nbsp;$1,800 as if it were profit. What this&nbsp;does <b>not</b> say is how many
-        functions you would recover; only your&nbsp;own call log knows that.</p>
-      <p class="mathnote">It also says nothing about&nbsp;covers,
-        deliberately: a&nbsp;dinner reservation is worth a&nbsp;fraction of&nbsp;this, so we build the&nbsp;case on&nbsp;the&nbsp;booking
-        that&nbsp;justifies it. Plan and per-minute rates
-        are the&nbsp;published ones on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>;
-        the&nbsp;$1,800 is this&nbsp;page's&nbsp;own published minimum, and yours is whatever your&nbsp;function sheet says.</p>
-    </div>
-  </div>
-</section>
-
-<section class="faqsec bg-paper t-md">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>FAQ</span>
-      <h2 class="h2" style="margin-top:22px">Rooms like yours ask&nbsp;us</h2>
-    </div>
-    <div class="faq reveal">
-      <details>
-        <summary>A&nbsp;guest says one of&nbsp;the&nbsp;party has a&nbsp;severe nut allergy. What exactly happens?</summary>
-        <p>It records the&nbsp;allergy in&nbsp;the&nbsp;guest's&nbsp;own words, attaches it to&nbsp;the&nbsp;booking, marks the&nbsp;booking unconfirmed pending the&nbsp;kitchen, and sends the&nbsp;question to&nbsp;whoever you nominate that&nbsp;night. It does not say the&nbsp;set menu is fine, the&nbsp;kitchen is careful, or a&nbsp;dish is nut free. Capturing an&nbsp;allergy is allowed; answering one is not.</p>
-      </details>
-      <details>
-        <summary>Will it take a&nbsp;deposit or a&nbsp;card over&nbsp;the&nbsp;phone?</summary>
-        <p>No. It states your&nbsp;deposit rule and your&nbsp;cancellation terms as written and sends your&nbsp;own payment link. It never reads back, repeats or records a&nbsp;card number, and it will not hold a&nbsp;date on&nbsp;a&nbsp;promise that&nbsp;a&nbsp;card will be given later.</p>
-      </details>
-      <details>
-        <summary>Can it overbook if the&nbsp;caller pushes?</summary>
-        <p>No. It books against the&nbsp;real floor plan and the&nbsp;real turn time. If 8&nbsp;PM on&nbsp;a&nbsp;Saturday does not exist, it says so, offers the&nbsp;sittings that&nbsp;do, and adds the&nbsp;guest to&nbsp;the&nbsp;waitlist. A&nbsp;table it invents is a&nbsp;table your&nbsp;host has to&nbsp;apologise for.</p>
-      </details>
-      <details>
-        <summary>Reservations mostly come in&nbsp;while you are open. Is this&nbsp;really an&nbsp;after-hours product?</summary>
-        <p>Reservations do skew toward opening hours, and we are not going to&nbsp;claim otherwise. This&nbsp;page is built around the&nbsp;function and catering inquiry, which is the&nbsp;one that&nbsp;arrives at&nbsp;10:40&nbsp;PM from&nbsp;somebody who has just finished their own shift. And around the phone that rings while the&nbsp;floor is full and nobody can reach it.</p>
-      </details>
-      <details>
-        <summary>How does it quote a&nbsp;private room?</summary>
-        <p>From&nbsp;your&nbsp;function sheet, line by&nbsp;line: the&nbsp;room hire fee, the&nbsp;minimum spend for&nbsp;that&nbsp;date and service, and the&nbsp;per-head set menu you approved. Peak dates carry their&nbsp;own minimum. It does not improvise a&nbsp;package and it does not discount.</p>
-      </details>
-      <details>
-        <summary>Do you integrate with&nbsp;OpenTable, Resy or SevenRooms?</summary>
-        <p>Not directly, and we will not pretend otherwise. Bookings and function inquiries reach them today through&nbsp;Zapier, a&nbsp;direct feed or CSV export, and founding-cohort members vote on&nbsp;the&nbsp;build order. We would rather hand you nothing than a&nbsp;date that&nbsp;slips.</p>
-      </details>
-      <details>
-        <summary>Does it answer in&nbsp;the&nbsp;guest's&nbsp;language?</summary>
-        <p>Yes, in&nbsp;the&nbsp;languages you have approved. It detects the&nbsp;language from&nbsp;the&nbsp;first sentence and answers from&nbsp;wording reviewed in&nbsp;that&nbsp;language, not machine-translated at&nbsp;the&nbsp;moment of&nbsp;speaking. The&nbsp;function sheet still reaches your&nbsp;office in&nbsp;English.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark t-sm" id="monday" style="background:linear-gradient(180deg,#F6F4EE,#F6F4EE);">
-  <div class="wrap">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:22px;">
-      <h2 class="h2 onDark" style="max-width:28ch;">The&nbsp;screen your&nbsp;manager opens before the&nbsp;lunch briefing.</h2>
-      <a class="linkcta" href="../platform.html">Every&nbsp;report, in&nbsp;detail&nbsp;&nbsp;→</a>
-    </div>
-    <div class="kpitiles reveal">
-      <div class="kpitile"><div class="lb">Inquiries answered</div><div class="vl">158</div><div class="dl flat">phone · chat · messenger</div></div>
-      <div class="kpitile hi"><div class="lb">Handled by&nbsp;AI alone</div><div class="vl">74%</div><div class="dl">26% passed to&nbsp;a&nbsp;person</div></div>
-      <div class="kpitile"><div class="lb">New function inquiries</div><div class="vl">17</div><div class="dl flat">8 of&nbsp;them now held on&nbsp;a&nbsp;deposit clock</div></div>
-      <div class="kpitile"><div class="lb">Allergies to&nbsp;the&nbsp;kitchen</div><div class="vl">2</div><div class="dl flat">recorded, never answered</div></div>
-      <div class="kpitile"><div class="lb">Answered during service</div><div class="vl">80</div><div class="dl flat">when no&nbsp;hand was free</div></div>
-      <div class="kpitile"><div class="lb">Function pipeline value</div><div class="vl">$31.6k</div><div class="dl flat">held + confirmed, at&nbsp;minimum spend</div></div>
-    </div>
-    <p class="mockcap" style="text-align:left;">The&nbsp;pipeline stages are real; the&nbsp;dates and the&nbsp;party names are invented. Anything you put in, you can take&nbsp;out.</p>
-  </div>
-</section>
-
-<section class="concsec t-sm sec-dark">
-  <div class="wrap">
-    <div class="concwrap reveal">
-      <div class="concl">
-        <span class="cnl">You have seen the&nbsp;10:40&nbsp;PM half</span>
-        <p class="cnp">The&nbsp;inquiry answered, the&nbsp;minimum quoted, the&nbsp;date held and the&nbsp;allergy sent to&nbsp;the&nbsp;pass before the&nbsp;caller hangs up. What happens to&nbsp;that&nbsp;function afterwards &mdash; the&nbsp;pipeline, the&nbsp;deposit, the&nbsp;Monday report &mdash; is the&nbsp;other half of&nbsp;the&nbsp;product.</p>
-      </div>
-      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="closer bg-spot" id="closer">
-  <div class="stars" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="reveal">Tonight a&nbsp;December Friday will&nbsp;be&nbsp;decided. <br>Be the&nbsp;room that&nbsp;<em>picks up.</em></h2>
-    <p class="lead onDark reveal">Join the&nbsp;founding cohort — 50% off for&nbsp;3 months, priority onboarding, and a&nbsp;vote on&nbsp;the&nbsp;next integration we build.</p>
-    <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
-    </div>
-
-    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
-      <div class="lh">Get your&nbsp;room's&nbsp;setup plan</div>
-      <p class="lsub">Tell us your&nbsp;covers, whether you have a&nbsp;private room, and where the&nbsp;phone rings during
-        service. We reply with&nbsp;the&nbsp;pipeline stages, the&nbsp;function-sheet fields and the&nbsp;allergen rule we would
-        set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
-      <form class="eaform" data-earlyaccess method="post">
-        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
-        <input type="text" name="business" placeholder="Restaurant name" aria-label="Restaurant name">
-        <input type="text" name="country" placeholder="Country" aria-label="Country">
-        <input type="hidden" name="industry" required value="Restaurants">
-        <input type="hidden" name="context" value="Restaurants industry page">
-        <select name="trade" aria-label="What you run">
-          <option value="">What you run…</option>
-          <option>Restaurant with&nbsp;a&nbsp;private room</option><option>Restaurant, no&nbsp;private room</option><option>Off-site catering</option><option>More than one</option>
-        </select>
-        <select name="locations" aria-label="How many sites">
-          <option value="">How many sites?</option>
-          <option>One</option><option>Two or three</option><option>Four or more</option>
-        </select>
-        <button class="btn btn-teal" type="submit">Get the&nbsp;Restaurants setup plan →</button>
-        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
-        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
-        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
-      </form>
-    </div>
-  </div>
-
-  <!--#footer-->
+<!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v83.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v84.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1195,26 +338,18 @@
     </div>
   </div></footer>
 <!--/#footer-->
-</section>
-
 </main>
 
-<!-- sticky conversion bar — IntersectionObserver in site.js, gated on #cta-gate -->
-<div class="stickycta">
-  <div class="wrap">
-    <span class="msg">The&nbsp;next function call comes during service. <b>Quoted, held, and on&nbsp;the&nbsp;chef's&nbsp;phone.</b></span>
-    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
-  </div>
-</div>
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your Restaurants price list
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
 
-<script src="../../assets/js/site.js?v=83.0"></script>
-<script src="../../assets/js/demofull.js?v=83.0" defer></script>
-<script src="../../assets/js/balance.js?v=83.0" defer></script>
-<script src="../../assets/js/panels.js?v=83.0" defer></script>
-<script src="../../assets/js/wrap.js?v=83.0" defer></script>
-<script src="../../assets/js/rail.js?v=83.0" defer></script>
-<script src="../../assets/js/canvas.js?v=83.0" defer></script>
-<script src="../../assets/js/scenes.js?v=83.0" defer></script>
-<script src="../../assets/js/guide.js?v=83.0"></script>
+
+<script src="../../assets/js/site.js?v=84.0"></script>
+<script src="../../assets/js/balance.js?v=84.0" defer></script>
+<script src="../../assets/js/panels.js?v=84.0" defer></script>
+<script src="../../assets/js/wrap.js?v=84.0" defer></script>
+<script src="../../assets/js/rail.js?v=84.0" defer></script>
+<script src="../../assets/js/guide.js?v=84.0"></script>
+<script src="../../assets/js/demofull.js?v=84.0" defer></script>
 </body>
 </html>

@@ -50,8 +50,12 @@ async def make(sem, slug, lang, i, who, text, voice, force):
     os.makedirs(d, exist_ok=True)
     fn = "%02d-%s.mp3" % (i + 1, who)
     p = os.path.join(d, fn)
+    side = p + ".txt"          # 이 mp3 가 읽은 문장 — 대본이 바뀌면 그 줄만 다시 만든다
     if os.path.exists(p) and os.path.getsize(p) > 1000 and not force:
-        return fn, False
+        if not os.path.exists(side):
+            io.open(side, "w", encoding="utf-8").write(text); return fn, False
+        if io.open(side, encoding="utf-8").read() == text:
+            return fn, False
     vname, rate, pitch = voice
     async with sem:
         for attempt in range(5):
@@ -71,6 +75,7 @@ async def make(sem, slug, lang, i, who, text, voice, force):
             os.replace(tmp, p)
     else:
         os.replace(tmp, p)
+    io.open(side, "w", encoding="utf-8").write(text)
     return fn, True
 
 

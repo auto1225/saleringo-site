@@ -118,7 +118,7 @@ SCRIPTS = {
  # ───────────────────────── 동물병원 ─────────────────────────
  "veterinary": {
   "ko": {
-   "biz": "하늘동물병원", "owner": "원장님",
+   "biz": "구름결동물병원", "owner": "원장님",
    "meta": "금요일 10:51 PM · 진료 종료 후 · 가상의 동물병원", "callTime": "10:51 PM", "chan": "카카오톡",
    "chapters": ["밤 10:51, 전화", "다음 날 아침, 카카오톡", "오전 9:00, 원장님 화면"],
    "chapterSubs": ["초콜릿 먹은 강아지 · 응급 분류 · 즉시 연결", "재진 예약 · 약 질문은 사람에게", "연결 기록 · 재진 · 담당 · 답변 대기"],
@@ -127,7 +127,7 @@ SCRIPTS = {
            "morning": "오전 9:00 — 원장님 화면."},
    "customer": {"name": "정하늘", "phone": "010-5528-76··"},
    "lines": [
-    {"who": "ai", "text": "안녕하세요, 하늘동물병원입니다. 지금은 진료가 끝난 시간인데, 급한 일이면 바로 도와드릴게요. 무슨 일이세요?"},
+    {"who": "ai", "text": "안녕하세요, 구름결동물병원입니다. 지금은 진료가 끝난 시간인데, 급한 일이면 바로 도와드릴게요. 무슨 일이세요?"},
     {"who": "user", "text": "강아지가 초콜릿을 먹은 것 같아요. 어떻게 해야 하나요?",
      "side": [{"field": {"k": "증상", "v": "초콜릿 섭취 의심 · 10:51 PM", "src": "통화에서 · 진단 아님"}}]},
     {"who": "ai", "text": "초콜릿 섭취는 응급 상황일 수 있어요. 예약을 잡는 대신 지금 바로 야간 진료 담당 선생님께 연결해 드릴게요. 먹은 양과 시간, 체중을 기억해 두시고, 억지로 토하게 하지는 마세요.",
@@ -165,7 +165,7 @@ SCRIPTS = {
    "honest": HONEST_KO
   },
   "en": {
-   "biz": "Skyline Veterinary", "owner": "the owner",
+   "biz": "Cedarmist Veterinary", "owner": "the owner",
    "meta": "Friday 10:51 PM · after hours · a fictional practice", "callTime": "10:51 PM", "chan": "WhatsApp",
    "chapters": ["10:51 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
    "chapterSubs": ["dog ate chocolate · triaged · routed at once", "recheck booked · the medication question goes to a person", "routing record · recheck · owner · one reply waiting"],
@@ -174,7 +174,7 @@ SCRIPTS = {
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Haneul Jung", "phone": "555-07··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Skyline Veterinary. We're closed for the night, but if this is urgent I can help right away. What's going on?"},
+    {"who": "ai", "text": "Thanks for calling Cedarmist Veterinary. We're closed for the night, but if this is urgent I can help right away. What's going on?"},
     {"who": "user", "text": "I think my dog ate some chocolate. What should I do?",
      "side": [{"field": {"k": "Symptom", "v": "suspected chocolate ingestion · 10:51 PM", "src": "from the call · not a diagnosis"}}]},
     {"who": "ai", "text": "Chocolate can be an emergency, so I won't book an appointment — I'm connecting you to our on-call vet right now. Try to remember how much he ate, when, and his weight, and please don't make him vomit.",
@@ -268,7 +268,7 @@ SCRIPTS = {
    "honest": HONEST_KO
   },
   "en": {
-   "biz": "Willowbrook Day Center", "owner": "the owner",
+   "biz": "Fennel Lane Day Center", "owner": "the owner",
    "meta": "Monday 8:12 PM · after hours · a fictional day center", "callTime": "8:12 PM", "chan": "WhatsApp",
    "chapters": ["8:12 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
    "chapterSubs": ["father at level three · day care · advisor call tomorrow", "wheelchair van · the place question goes to a person", "advisor call · resident card · owner · one reply waiting"],
@@ -277,9 +277,9 @@ SCRIPTS = {
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Eunjung Choi", "phone": "555-02··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Willowbrook Day Center. Our office is closed for the evening, but I can take your questions and pass them straight to our care advisor for the morning. How can I help?"},
+    {"who": "ai", "text": "Thanks for calling Fennel Lane Day Center. Our office is closed for the evening, but I can take your questions and pass them straight to our care advisor for the morning. How can I help?"},
     {"who": "user", "text": "My father's just been assessed at care level three. What does day care cost per day?",
-     "side": [{"field": {"k": "Enquiry", "v": "day care — father · level 3", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "day care — father · level 3", "src": "from the call"}}]},
     {"who": "ai", "text": "At level three he's eligible for our day program. How much his benefits cover depends on his level and income band — the funding office sets that, so I can't work out his share. What I can tell you: the day runs nine to five, lunch and snacks are five dollars a day, and we run a pickup van.",
      "side": [{"field": {"k": "Care level", "v": "level 3", "src": "caller said it"}},
               {"field": {"k": "Co-payment", "v": "set by the funding office — not calculated", "src": "your rule"}},
@@ -310,10 +310,10 @@ SCRIPTS = {
    ],
    "handoff": HANDOFF_EN + ["Why it stopped: places and the waiting list change in real time — only a person who has checked can answer"],
    "morning": [
-    {"icon": "✓", "k": "New enquiry", "v": "Eunjung Choi · call today 10:00 · in the calendar"},
+    {"icon": "✓", "k": "New inquiry", "v": "Eunjung Choi · call today 10:00 · in the calendar"},
     {"icon": "#", "k": "Resident card", "v": "Youngho Choi · 82 · level 3 · Riverside van route · assessed last week"},
     {"icon": "@", "k": "Advisor task", "v": "10:00 call · hours and van details · owner: Mira"},
-    {"icon": "!", "k": "Waiting for a person", "v": "place next week · capacity to confirm · owner: the owner"}
+    {"icon": "!", "k": "Waiting for a person", "v": "place next week · capacity to confirm · owner: Jiwoo"}
    ],
    "person": {"when": "9:20 AM", "text": "This is Mira, the care advisor. Hi Eunjung — the owner has checked and there is one place open next week. I'll go through everything with you on our ten o'clock call."},
    "summary": "One {call} call · four messages · what a person did: one reply. The consultation stays with a person; everything before it was ready while the owner slept.",
@@ -485,7 +485,7 @@ SCRIPTS = {
    "biz": "Northgate University Admissions", "owner": "the officer",
    "meta": "Tuesday 8:56 PM · after hours · a fictional admissions office", "callTime": "8:56 PM", "chan": "WhatsApp",
    "chapters": ["8:56 PM, the call", "Next morning, WhatsApp", "9:00 AM, the officer’s screen"],
-   "chapterSubs": ["transfer documents · deadline · officer call tomorrow", "statement length · the chances question goes to a person", "enquiry card · documents sent · owner · one reply waiting"],
+   "chapterSubs": ["transfer documents · deadline · officer call tomorrow", "statement length · the chances question goes to a person", "inquiry card · documents sent · owner · one reply waiting"],
    "sys": {"ring": "8:56 PM — the phone rings. Admissions went home hours ago.",
            "chat": "Next morning, 8:05 AM — the same applicant, on WhatsApp.",
            "morning": "9:00 AM — the officer’s screen."},
@@ -493,7 +493,7 @@ SCRIPTS = {
    "lines": [
     {"who": "ai", "text": "Thanks for calling Northgate University Admissions. The office is closed for the day, but I can answer anything that's in the published prospectus. How can I help?"},
     {"who": "user", "text": "I want to apply as a transfer student. What documents do I need, and when's the deadline?",
-     "side": [{"field": {"k": "Enquiry", "v": "general transfer — documents · deadline", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "general transfer — documents · deadline", "src": "from the call"}}]},
     {"who": "ai", "text": "For a general transfer, the basics are your transcript, proof of graduation or expected graduation, and a personal statement, with extra documents for some departments. The deadline is November fourteenth at five PM, online only, and the application fee is sixty dollars. Which department are you applying to?",
      "side": [{"field": {"k": "Deadline quoted", "v": "Nov 14 · 5:00 PM · online only", "src": "your prospectus"}},
               {"field": {"k": "Application fee", "v": "$60", "src": "your prospectus"}}]},
@@ -522,7 +522,7 @@ SCRIPTS = {
    ],
    "handoff": HANDOFF_EN + ["Why it stopped: eligibility and admission chances are an officer's judgement from the documents, not a fact in the prospectus"],
    "morning": [
-    {"icon": "✓", "k": "New enquiry", "v": "Jihoon Oh · transfer · Computer Science · callback after 10:00 today"},
+    {"icon": "✓", "k": "New inquiry", "v": "Jihoon Oh · transfer · Computer Science · callback after 10:00 today"},
     {"icon": "#", "k": "Documents sent", "v": "three documents · Nov 14 deadline · sent by text · opened"},
     {"icon": "@", "k": "Officer task", "v": "call back after 10:00 · credit-recognition check from transcript · owner: Jeongmin"},
     {"icon": "!", "k": "Waiting for a person", "v": "eligibility and chances question · full thread attached · owner: Jeongmin"}
@@ -626,8 +626,8 @@ SCRIPTS = {
    "morning": [
     {"icon": "✓", "k": "New booking", "v": "Yejin Kang · Sat 1:00 PM · 2 hours · first visit · in the calendar"},
     {"icon": "#", "k": "Quote", "v": "root touch-up $75 · treatment from $85 · sent by text · opened"},
-    {"icon": "@", "k": "Salon task", "v": "assign a stylist · Friday reminder · owner: the owner"},
-    {"icon": "!", "k": "Waiting for a person", "v": "bleached-hair question · full thread attached · owner: the owner"}
+    {"icon": "@", "k": "Salon task", "v": "assign a stylist · Friday reminder · owner: Jiwoo"},
+    {"icon": "!", "k": "Waiting for a person", "v": "bleached-hair question · full thread attached · owner: Jiwoo"}
    ],
    "person": {"when": "9:12 AM", "text": "This is Jiwoo, the owner. Hi Yejin — with bleach in the history I'll look at your hair first on Saturday and decide the order from there. Come at one as planned."},
    "summary": "One {call} call · four messages · what a person did: one reply. The rest happened while the owner's hands were busy.",
@@ -684,7 +684,7 @@ SCRIPTS = {
     {"icon": "!", "k": "답변 대기 1건", "v": "허리 디스크 운동 가능 여부 · 대화 전체 첨부 · 담당 김태오"}
    ],
    "person": {"when": "9:12 AM", "text": "트레이너 김태오입니다. 한도윤 님, 문진표에 허리 내용을 적어 주시면 오늘 체험 때 상태를 보고 맞는 운동부터 같이 해 볼게요."},
-   "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 관장님이 수업하는 동안 끝났습니다.",
+   "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 관장님이 퇴근한 뒤에 끝났습니다.",
    "honest": HONEST_KO
   },
   "en": {
@@ -699,7 +699,7 @@ SCRIPTS = {
    "lines": [
     {"who": "ai", "text": "Thanks for calling Ridgeline Fitness. The desk is closed for the night, but I can answer membership questions and book a trial. How can I help?"},
     {"who": "user", "text": "What's the minimum for personal training? And how much is gym-only?",
-     "side": [{"field": {"k": "Enquiry", "v": "personal training · gym-only", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "personal training · gym-only", "src": "from the call"}}]},
     {"who": "ai", "text": "Personal training starts at ten sessions for six hundred fifty dollars, and the price per session drops at twenty and thirty. Gym-only is two hundred ten for three months. If you're new, you get one free trial — there's space tomorrow evening.",
      "side": [{"field": {"k": "Prices quoted", "v": "PT 10 sessions $650 · gym 3 months $210", "src": "your price list"}}]},
     {"who": "user", "text": "I'm new. Could I come around eight tomorrow?",

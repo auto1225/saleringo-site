@@ -24,15 +24,15 @@ TRADES5 = [
  'cost': '디테일링 한 건은 30만원 안팎이고, 한 번 맡긴 손님은 계절마다 세차를 하러 옵니다. '
          '그 전화는 베이가 가장 시끄럽고 장갑이 가장 더러운 시간에 옵니다. 부재중으로 남은 손님은 '
          '길 건너 세차장에 예약하고, 그 뒤로도 거기로 갑니다. 들어오지 않은 30만원은 매출표 어디에도 없습니다.',
- 'call': [('고객', '10:12 AM', '중형 SUV인데 실내 클리닝이랑 광택 같이 하면 얼마예요? 오늘 오후에 가능한가요?'),
+ 'call': [('고객', '10:12 AM', '중형 SUV인데 실내 클리닝이랑 광택 같이 하면 얼마예요? 내일 오후에 가능한가요?'),
           ('Saleringo', '+19초', 'SUV 기준 실내 클리닝은 <b>12만원</b>, 외부 광택은 <b>18만원</b>이고 둘을 같이 하시면 '
-                                 '<b>27만원</b>입니다. 오늘은 <b>오후 3시</b>에 베이가 하나 비어 있고, 두 가지 모두 하면 '
+                                 '<b>27만원</b>입니다. 내일은 <b>오후 3시</b>에 베이가 하나 비어 있고, 두 가지 모두 하면 '
                                  '<b>4시간</b> 걸립니다.'),
           ('고객', '10:13 AM', '시트에 커피 자국이 있는데 완전히 지워지나요?'),
           ('Saleringo', '+8초', '얼룩은 소재와 묵은 정도에 따라 달라서 보고 말씀드려야 정확합니다. 입고하시면 사장님이 '
                                 '시트를 먼저 확인하고 어느 정도 될지 안내드립니다. 오후 3시로 잡아 드릴까요?'),
           ('고객', '10:14 AM', '네, 그렇게 해 주세요. 차는 흰색 쏘렌토예요.'),
-          ('Saleringo', '+7초', '오늘 오후 3시, 흰색 쏘렌토, 실내 클리닝과 광택으로 접수했습니다. '
+          ('Saleringo', '+7초', '내일 오후 3시, 흰색 쏘렌토, 실내 클리닝과 광택으로 접수했습니다. '
                                 '성함과 연락처 남겨 주시면 확인 문자 드리겠습니다.')],
  'refuse': [('얼룩과 흠집의 결과를 약속하지 않습니다.',
              '커피 자국이 다 지워지는지, 기스가 광택으로 없어지는지는 소재와 깊이를 봐야 압니다. '
@@ -58,14 +58,14 @@ TRADES5 = [
   'cost': 'A detail is a four-hundred-dollar ticket, and the customer who books one comes back every season '
           'for a wash. The call lands when the bay is loudest and the gloves are dirtiest, and the customer '
           'who gets voicemail books the shop across the road. Nothing in the till shows the ticket that never arrived.',
-  'call': [('Customer', '10:12 AM', 'Mid-size SUV &mdash; how much for an interior detail plus an exterior polish, and can you do it this afternoon?'),
+  'call': [('Customer', '10:12 AM', 'Mid-size SUV &mdash; how much for an interior detail plus an exterior polish, and can you do it tomorrow afternoon?'),
            ('Saleringo', '+19 s', 'For an SUV the interior detail is <b>$180</b>, the exterior polish is <b>$260</b>, and together '
-                                  'they are <b>$400</b>. This afternoon I have a bay free at <b>3:00 PM</b>, and both together take about <b>four hours</b>.'),
+                                  'they are <b>$400</b>. Tomorrow I have a bay free at <b>3:00 PM</b>, and both together take about <b>four hours</b>.'),
            ('Customer', '10:13 AM', 'There&rsquo;s a coffee stain on the passenger seat. Will it come out completely?'),
            ('Saleringo', '+8 s', 'That depends on the fabric and how long it has set, so it needs to be seen. When the car comes in, '
                                  'the owner checks the seat first and tells you what to expect. Shall I hold 3:00 PM?'),
            ('Customer', '10:14 AM', 'Yes, please. It&rsquo;s a white Sorento.'),
-           ('Saleringo', '+7 s', 'Booked: today at 3:00 PM, white Sorento, interior detail and polish. '
+           ('Saleringo', '+7 s', 'Booked: tomorrow at 3:00 PM, white Sorento, interior detail and polish. '
                                  'If you give me your name and mobile number I will text the confirmation.')],
   'refuse': [('It never promises a stain or a scratch will disappear.',
               'Whether coffee comes out of a seat or a swirl polishes away depends on the material and the depth. '
@@ -81,7 +81,7 @@ TRADES5 = [
   'fields': ['Vehicle, colour and last digits of the plate', 'Service asked for and the price-list combination',
              'Stains, scratches and anything to inspect', 'Drop-off time and estimated duration',
              'Wait, pick-up or collection', 'Confirmation text sent'],
-  'stages': ['Enquiry', 'Drop-off booked', 'Check-in and inspection', 'In the bay', 'Collected and rebooked'],
+  'stages': ['Inquiry', 'Drop-off booked', 'Check-in and inspection', 'In the bay', 'Collected and rebooked'],
   'when': {'eyebrow': 'A call from inside the bay', 'h2': 'While the polisher is running,<br>this is how it goes.', 'tt': 'mid-detail', 'badge': 'gloves on'},
   'lead': 'Nobody hears the phone over the polisher. It quotes the combinations on your price list and leaves whether the stain comes out to your inspection.',
   'room': 'vehicle-plant-storage',
@@ -128,7 +128,7 @@ TRADES5 = [
   'h1': 'Buyers browse the lot online<br>after the showroom locks up.',
   'sub': 'The listing is read at ten at night and the call is made straight away. '
          'A dealership that only answers between nine and six meets half its buyers on voicemail.',
-  'cost': 'A used-car enquiry is worth the gross on the car plus the finance and the part-exchange behind it, and it '
+  'cost': 'A used-car inquiry is worth the gross on the car plus the finance and the part-exchange behind it, and it '
           'arrives after hours because that is when people have time to look. The buyer who reaches voicemail clicks '
           'the next listing. No dealership counts the appointments it never took.',
   'call': [('Customer', '9:47 PM', 'Is the 2022 Camry on your site still available? And roughly what would it be a month on finance?'),
@@ -137,7 +137,7 @@ TRADES5 = [
                                   'the sales consultant works it out with you at the appointment.'),
            ('Customer', '9:49 PM', 'What would you give me for my 2018 Elantra as a trade-in?'),
            ('Saleringo', '+9 s', 'A trade-in value is set by looking at the car, so I do not give one over the phone. Bring the Elantra '
-                                 'with you and it is appraised on the spot. I have <b>tomorrow at 2:00 PM</b> or <b>Thursday at 11:00 AM</b>.'),
+                                 'with you and it is appraised on the spot. I have <b>tomorrow at 2:00 PM</b> or <b>Friday at 11:00 AM</b>.'),
            ('Customer', '9:50 PM', 'Tomorrow at two.'),
            ('Saleringo', '+7 s', 'Tomorrow at 2:00 PM, test drive of the Camry and appraisal of the Elantra &mdash; held. Give me your name '
                                  'and mobile number and I will text the confirmation; the consultant calls you in the morning.')],
@@ -150,13 +150,13 @@ TRADES5 = [
               'It states the listed price and the promotions the principal has loaded. Discounting is the consultant&rsquo;s authority, not the AI&rsquo;s.'),
              ('It never sells a car that has already gone.',
               'It offers only vehicles still marked available in the inventory feed. Anything else is logged as &ldquo;check and call back&rdquo;.')],
-  'fields': ['Vehicle enquired about (year, model, stock number)', 'New, used or trade-in', 'Current car (year and model)',
+  'fields': ['Vehicle inquired about (year, model, stock number)', 'New, used or trade-in', 'Current car (year and model)',
              'Finance or lease interest', 'Test-drive appointment', 'Consultant assigned'],
-  'stages': ['Enquiry', 'Appointment booked', 'Test drive and appraisal', 'Quote and consultation', 'Contract and delivery'],
+  'stages': ['Inquiry', 'Appointment booked', 'Test drive and appraisal', 'Quote and consultation', 'Contract and delivery'],
   'when': {'eyebrow': 'A call after the showroom closes', 'h2': 'While the lot is browsed from a sofa,<br>this is how it goes.', 'tt': 'after closing', 'badge': 'sales floor dark'},
   'lead': 'Listings are read at night. It offers only cars still in stock and books the visit without a finance figure or a trade-in value.',
   'room': 'vehicle-plant-storage',
-  'room_d': 'The 9:47 PM listing enquiry checked against live stock and a test drive booked for two &mdash; with no monthly payment and no trade-in figure given.',
+  'room_d': 'The 9:47 PM listing inquiry checked against live stock and a test drive booked for two &mdash; with no monthly payment and no trade-in figure given.',
   'room_no': ('0', 'finance terms or trade-in values quoted on the phone'),
  },
 },
@@ -292,7 +292,7 @@ TRADES5 = [
               'Corporate and volume discounts are the owner&rsquo;s decision. The AI records the quantity and the date.')],
   'fields': ['Item, size and options', 'Lettering and colour', 'Pick-up date and time',
              'Allergen or ingredient question raised', 'Customer name and mobile', 'Prepaid or pay on collection'],
-  'stages': ['Enquiry', 'Order confirmed', 'Prepped the day before', 'Collected', 'Reorder prompt'],
+  'stages': ['Inquiry', 'Order confirmed', 'Prepped the day before', 'Collected', 'Reorder prompt'],
   'when': {'eyebrow': 'A call during the morning rush', 'h2': 'While the line is out the door,<br>this is how it goes.', 'tt': '8:04 AM', 'badge': 'espresso machine running'},
   'lead': 'Cake orders come at the height of the coffee rush. It books within the daily cap and passes the allergy question to the kitchen, unanswered.',
   'room': 'places-hospitality',
@@ -337,10 +337,10 @@ TRADES5 = [
   'name': 'Catering', 'owner': 'the owner',
   'kicker': 'Catering &middot; event food &middot; corporate lunches',
   'h1': 'The next booking calls<br>while you are serving this one.',
-  'sub': 'Catering enquiries come from office managers during their working day and from families on Saturday evening. '
+  'sub': 'Catering inquiries come from office managers during their working day and from families on Saturday evening. '
          'Both are the hours your whole team is on a buffet line somewhere else.',
   'cost': 'An eighty-head corporate lunch is a three-thousand-dollar job, and the company that books once books the holiday '
-          'party too. The enquiry lands when every hand is carrying a chafing dish, and the organiser who gets voicemail sends '
+          'party too. The inquiry lands when every hand is carrying a chafing dish, and the organiser who gets voicemail sends '
           'the same brief to three other caterers. Whoever replies first with a date and a price gets the tasting.',
   'call': [('Client', '6:32 PM', 'We have a company anniversary on the 15th of next month &mdash; can you cater a buffet for eighty?'),
            ('Saleringo', '+21 s', 'The 15th is still showing as open. For eighty, the <b>standard buffet is $32 a head</b> and the '
@@ -363,9 +363,9 @@ TRADES5 = [
               'Parking, lifts, power and water are checked on the visit. It does not say &ldquo;that should be fine&rdquo; down the phone.')],
   'fields': ['Event date, venue and service time', 'Headcount and menu tier (per-head rate)', 'Dietary and allergen requests',
              'Site-visit appointment', 'Organiser name, company and mobile', 'Provisional or confirmed'],
-  'stages': ['Enquiry', 'Provisional hold and site visit', 'Visit and written quote', 'Contract and confirmation', 'Event and invoice'],
+  'stages': ['Inquiry', 'Provisional hold and site visit', 'Visit and written quote', 'Contract and confirmation', 'Event and invoice'],
   'when': {'eyebrow': 'A call from behind the buffet line', 'h2': 'While the chafing dishes are out,<br>this is how it goes.', 'tt': 'mid-service', 'badge': 'whole team on site'},
-  'lead': 'Event enquiries arrive while the team is serving another event. It holds only open dates and leaves the price movement to the owner&rsquo;s quote after the site visit.',
+  'lead': 'Event inquiries arrive while the team is serving another event. It holds only open dates and leaves the price movement to the owner&rsquo;s quote after the site visit.',
   'room': 'places-hospitality',
   'room_d': 'The eighty-head anniversary lunch priced per head off your own course sheet, the date put on a provisional hold, the site visit booked &mdash; and the discount question left for the owner.',
   'room_no': ('0', 'dates confirmed before the site visit and the contract'),
@@ -408,9 +408,9 @@ TRADES5 = [
   'kicker': 'Travel agencies &middot; tour operators &middot; package holidays',
   'h1': 'Holidays are planned after dinner,<br>in a different time zone from your desk.',
   'sub': 'The family decides on the trip on Tuesday night and the honeymooners message from twelve hours away. '
-         'A travel agent who answers only at the desk answers half the enquiries.',
-  'cost': 'A four-person package is a four-thousand-dollar booking, and the family that travels with you once comes back '
-          'for the next trip. The enquiry lands at nine at night, and the customer who cannot reach a person books the same '
+         'A travel agent who answers only at the desk answers half the inquiries.',
+  'cost': 'A four-person package is a five-thousand-dollar booking, and the family that travels with you once comes back '
+          'for the next trip. The inquiry lands at nine at night, and the customer who cannot reach a person books the same '
           'trip online, where nobody would have caught the passport problem.',
   'call': [('Customer', '9:26 PM', 'We want to take my parents to Canc&uacute;n for five nights at the end of December &mdash; is there space on a package?'),
            ('Saleringo', '+20 s', 'For December there are Canc&uacute;n five-night departures on the <b>26th</b> and the <b>28th</b>, from '
@@ -420,7 +420,7 @@ TRADES5 = [
            ('Saleringo', '+9 s', 'Four adults on the 26th &mdash; noted. Passport validity and entry requirements differ by country, so I do not '
                                  'rule on that; an agent checks it and tells you together with the availability. May they call you tomorrow morning?'),
            ('Customer', '9:29 PM', 'Yes, after ten. It&rsquo;s Hannah Chung.'),
-           ('Saleringo', '+7 s', 'Hannah, an agent will call you tomorrow after 10:00 AM. I am texting you a summary of the enquiry and the items they will check.')],
+           ('Saleringo', '+7 s', 'Hannah, an agent will call you tomorrow after 10:00 AM. I am texting you a summary of the inquiry and the items they will check.')],
   'refuse': [('It never says there is availability it has not checked.',
               'Airline seats and hotel rooms exist only in the booking system an agent can see. It names the product and the departure date, and a person confirms the space.'),
              ('It never gives a visa or entry ruling.',
@@ -431,11 +431,11 @@ TRADES5 = [
               'Cancellation and change terms differ by product and by ticket. They are left as a terms-check item for the agent.')],
   'fields': ['Destination, product and departure date', 'Travellers (adults, children, infants)', 'Per-person price quoted and inclusions',
              'Passport, visa and entry questions raised', 'Preferred callback time and agent', 'Held or confirmed'],
-  'stages': ['Enquiry', 'Agent check', 'Provisional booking and quote', 'Contract and payment', 'Pre-departure briefing'],
+  'stages': ['Inquiry', 'Agent check', 'Provisional booking and quote', 'Contract and payment', 'Pre-departure briefing'],
   'when': {'eyebrow': 'A call after the dinner plates', 'h2': 'While the booking system is logged off,<br>this is how it goes.', 'tt': '9:26 PM', 'badge': 'agents off duty'},
   'lead': 'Trips are planned at the dinner table. It names the product and the departure date, and leaves the seat check and the visa question to an agent.',
   'room': 'places-hospitality',
-  'room_d': 'The 9:26 PM family package enquiry priced off your own product sheet and handed to an agent for the morning &mdash; with no seat promised unchecked and no passport ruling given.',
+  'room_d': 'The 9:26 PM family package inquiry priced off your own product sheet and handed to an agent for the morning &mdash; with no seat promised unchecked and no passport ruling given.',
   'room_no': ('0', 'seats confirmed unchecked, and no entry rulings given'),
  },
 },
@@ -476,7 +476,7 @@ TRADES5 = [
   'sub': 'Studio bookings are made on weekday afternoons, and weekday afternoons are when the lights are on and the '
          'photographer is behind the camera. Nobody breaks a session to answer.',
   'cost': 'A family session is a three-hundred-dollar booking that turns into prints, the next milestone and the referral to '
-          'the sister-in-law. The enquiry arrives mid-shoot, and the caller who reaches voicemail books the studio with the '
+          'the sister-in-law. The inquiry arrives mid-shoot, and the caller who reaches voicemail books the studio with the '
           'online calendar. The studio never learns which sessions it did not shoot.',
   'call': [('Customer', '3:18 PM', 'How much is a first-birthday session, and do you have a Saturday morning in the second week of next month?'),
            ('Saleringo', '+18 s', 'The first-birthday session is <b>$280 for one hour</b>, with all originals and twenty retouched images included. '
@@ -497,11 +497,11 @@ TRADES5 = [
               'Turnaround for retouched images is stated from the loaded standard. Whether a rush is possible is the owner&rsquo;s decision.')],
   'fields': ['Session type (milestone, family, headshot, passport)', 'Date, time and session length', 'Headcount and wardrobe hire',
              'Price quoted and add-ons', 'Deposit requested and received', 'Delivery date for retouched images'],
-  'stages': ['Enquiry', 'Booked and deposit', 'Session', 'Selection and retouching', 'Delivered and next milestone'],
+  'stages': ['Inquiry', 'Booked and deposit', 'Session', 'Selection and retouching', 'Delivered and next milestone'],
   'when': {'eyebrow': 'A call mid-session', 'h2': 'While the lights are on,<br>this is how it goes.', 'tt': 'mid-shoot', 'badge': 'camera in hand'},
   'lead': 'Nobody answers between the shutter and the next pose. It books open studio time off the price sheet and never promises how the pictures will look.',
   'room': 'booked-by-appointment',
-  'room_d': 'The mid-session milestone enquiry priced off your own sheet, the open Saturday held with a deposit request sent &mdash; and no promise of how the retouching will look.',
+  'room_d': 'The mid-session milestone inquiry priced off your own sheet, the open Saturday held with a deposit request sent &mdash; and no promise of how the retouching will look.',
   'room_no': ('0', 'results the AI promises before the owner has shown a sample'),
  },
 },
@@ -564,7 +564,7 @@ TRADES5 = [
               'Ward and chapel rules belong to that building. The owner checks before dispatch and calls first if flowers cannot go in.')],
   'fields': ['Occasion (celebration, get-well, sympathy, wedding)', 'Price band and composition requests', 'Delivery address, recipient and time window',
              'Card message', 'Sender name and mobile', 'Payment link sent and paid'],
-  'stages': ['Enquiry', 'Order confirmed and paid', 'Made up', 'Delivered with photo', 'Next-occasion reminder'],
+  'stages': ['Inquiry', 'Order confirmed and paid', 'Made up', 'Delivered with photo', 'Next-occasion reminder'],
   'when': {'eyebrow': 'A call after the market run', 'h2': 'While the stems are being conditioned,<br>this is how it goes.', 'tt': '7:41 AM', 'badge': 'van half loaded'},
   'lead': 'Orders arrive in the hour after the market. It takes today&rsquo;s delivery off the price bands and refuses the wedding on a day that is already full.',
   'room': 'booked-by-appointment',
@@ -631,9 +631,9 @@ TRADES5 = [
               'It quotes the base fee schedule the accountant loaded. Adjustments for industry and volume are set after the records have been seen.'),
              ('It never discloses another client.',
               'Who files with the firm, what they earned and what they paid are never answered, to anyone.')],
-  'fields': ['Client type (individual, sole trader, company)', 'Enquiry type (sales tax, income tax, bookkeeping, corporate)', 'Industry and trading start date',
+  'fields': ['Client type (individual, sole trader, company)', 'Inquiry type (sales tax, income tax, bookkeeping, corporate)', 'Industry and trading start date',
              'Base fee quoted', 'Consultation time and document list', 'Deadline question flagged for the accountant'],
-  'stages': ['Enquiry', 'Consultation booked', 'Records received', 'Engaged and filed', 'Bookkeeping and renewal'],
+  'stages': ['Inquiry', 'Consultation booked', 'Records received', 'Engaged and filed', 'Bookkeeping and renewal'],
   'when': {'eyebrow': 'A call the night before the deadline', 'h2': 'While every desk is buried in filings,<br>this is how it goes.', 'tt': 'deadline eve', 'badge': 'whole office working late'},
   'lead': 'The first-time filer calls the night before the deadline. It takes no tax position and no view on the deadline; it lists the documents and books the consultation.',
   'room': 'professional-public',
@@ -696,12 +696,12 @@ TRADES5 = [
              ('It never calculates a deductible or a premium change.',
               'Deductibles and surcharge rules differ by policy. The agent answers with the policy open.'),
              ('It never recommends or compares products.',
-              'Telling someone one policy is better or that they should switch is regulated advice. The enquiry is logged and the licensed agent advises.'),
+              'Telling someone one policy is better or that they should switch is regulated advice. The inquiry is logged and the licensed agent advises.'),
              ('An injury goes to a person before it goes to a form.',
               'If anyone is hurt, the caller is told to call 911 and the duty agent is connected at once.')],
-  'fields': ['Enquiry type (claim, coverage question, renewal, new policy)', 'Incident date, place and injuries', 'Product held and policy number (to verify)',
+  'fields': ['Inquiry type (claim, coverage question, renewal, new policy)', 'Incident date, place and injuries', 'Product held and policy number (to verify)',
              'Photos and documents received', 'Agent assigned and callback time', 'Carrier claim number'],
-  'stages': ['Enquiry', 'Agent assigned', 'Policy and wording checked', 'Claim filed with the carrier', 'Renewal and follow-up'],
+  'stages': ['Inquiry', 'Agent assigned', 'Policy and wording checked', 'Claim filed with the carrier', 'Renewal and follow-up'],
   'when': {'eyebrow': 'A call after a Saturday-night scrape', 'h2': 'While the agency is dark,<br>this is how it goes.', 'tt': 'Saturday evening', 'badge': 'closed for the weekend'},
   'lead': 'The scrape happens on Saturday night with the agency shut. It never says the claim is covered; it collects the photos and the facts and routes them to the agent.',
   'room': 'professional-public',

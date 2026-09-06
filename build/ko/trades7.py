@@ -49,11 +49,11 @@ TRADES7 = [
  'en': {
   'name': 'Coworking spaces', 'owner': 'the community manager',
   'kicker': 'Coworking &middot; flexible offices &middot; hot desks',
-  'h1': 'The enquiry lands at lunch,<br>from someone touring three buildings.',
+  'h1': 'The inquiry lands at lunch,<br>from someone touring three buildings.',
   'sub': 'Office hunters spend the lunch hour walking between buildings and call from the pavement. '
          'The community manager is mid-tour with somebody else, and the call that rings out signs across the street.',
   'cost': 'A four-person office is a two-thousand-dollar-a-month contract, and the company that moves in stays for years. '
-          'The enquiry arrives while the manager is walking a tour and cannot pick up, and the caller who gets voicemail '
+          'The inquiry arrives while the manager is walking a tour and cannot pick up, and the caller who gets voicemail '
           'signs in the next building. The month an office sits empty appears on nobody&rsquo;s numbers.',
   'call': [('Customer', '12:38 PM', 'I&rsquo;m looking at a few spaces nearby. What&rsquo;s a four-person office a month, and can I see it this afternoon?'),
            ('Saleringo', '+14 s', 'A four-person private office is <b>$2,200 a month</b>, with utilities and internet included. A dedicated desk '
@@ -75,7 +75,7 @@ TRADES7 = [
   'fields': ['Seat type wanted (hot desk, dedicated desk, office) and headcount', 'Move-in date and term wanted',
              'Monthly rate quoted from the rate card', 'Tour booked',
              'Meeting rooms, parking and 24-hour access asked about', 'Confirmation text sent'],
-  'stages': ['Enquiry', 'Tour booked', 'Tour and availability check', 'Agreement', 'Move-in'],
+  'stages': ['Inquiry', 'Tour booked', 'Tour and availability check', 'Agreement', 'Move-in'],
   'when': {'eyebrow': 'A call in the middle of a tour', 'h2': 'While another tour is walking the floor,<br>this is how it goes.', 'tt': 'lunch hour', 'badge': 'mid-tour'},
   'lead': 'Office hunters call at lunch from the pavement. It quotes the rate card, books the tour, and leaves whether a specific office is free to the manager.',
   'room': 'places-hospitality',
@@ -143,7 +143,7 @@ TRADES7 = [
               'It books only from the seats left on each departure. When a departure is full it takes a waitlist entry and calls back in order if a seat opens.')],
   'fields': ['Tour and departure time', 'Headcount (adults, children) and ages', 'Price from the rate card',
              'Provisional or confirmed', 'Health, swimming ability and anything to check', 'Meeting-point and go/no-go texts sent'],
-  'stages': ['Enquiry', 'Provisional hold', 'Confirmed and paid', 'On the water', 'Review and rebooking'],
+  'stages': ['Inquiry', 'Provisional hold', 'Confirmed and paid', 'On the water', 'Review and rebooking'],
   'when': {'eyebrow': 'A call the night before the launch', 'h2': 'While tomorrow is planned from a hotel bed,<br>this is how it goes.', 'tt': '10 PM', 'badge': 'guide asleep'},
   'lead': 'Tomorrow is planned at ten at night. It quotes list prices and holds a seat, and leaves whether the boat goes out in the rain to a person in the morning.',
   'room': 'places-hospitality',
@@ -187,7 +187,7 @@ TRADES7 = [
   'name': 'Schools & international schools', 'owner': 'the admissions office',
   'kicker': 'Private schools &middot; international schools &middot; admissions',
   'h1': 'Parents call at eight,<br>from the drop-off queue.',
-  'sub': 'Admissions enquiries come at eight in the morning, from a parent in the car line with the child in the back seat. '
+  'sub': 'Admissions inquiries come at eight in the morning, from a parent in the car line with the child in the back seat. '
          'It is the moment the office is out at the gate and least able to pick up.',
   'cost': 'One enrolment is a five-figure fee every year for as long as the child stays, and a younger sibling often follows. '
           'Parents visit three schools and choose the one that answered. The eight-o&rsquo;clock call that rings out sits in '
@@ -212,7 +212,7 @@ TRADES7 = [
   'fields': ['Child&rsquo;s current grade, grade applied for and intake', 'Tuition and fees quoted from the fee sheet',
              'Application deadline and assessment dates', 'School tour booked',
              'Bus, lunch and after-school questions', 'Confirmation and document checklist sent'],
-  'stages': ['Enquiry', 'Tour booked', 'Tour and application', 'Assessment and interview', 'Enrolled'],
+  'stages': ['Inquiry', 'Tour booked', 'Tour and application', 'Assessment and interview', 'Enrolled'],
   'when': {'eyebrow': 'A call from the drop-off queue', 'h2': 'While the car line is moving,<br>this is how it goes.', 'tt': '8 AM', 'badge': 'office at the gate'},
   'lead': 'Parents call at eight from the car line. It gives the fees and the admissions calendar, books the tour, and never says whether a child will be admitted.',
   'room': 'not-a-trade',
@@ -348,7 +348,7 @@ TRADES7 = [
               'Whether insurance pays depends on the referral and the plan. It quotes the self-pay price and leaves authorisation to the desk at check-in.')],
   'fields': ['Scan and body part on the referral', 'Referring practice and clinician', 'Self-pay price quoted and insurance status',
              'Appointment time and scan duration', 'Fasting, contrast, implants and anything flagged', 'Confirmation and preparation notes sent'],
-  'stages': ['Enquiry', 'Scan booked', 'Check-in and scan', 'Reported', 'Results to the referrer'],
+  'stages': ['Inquiry', 'Scan booked', 'Check-in and scan', 'Reported', 'Results to the referrer'],
   'when': {'eyebrow': 'A call while the first scan is running', 'h2': 'While the front desk has a queue,<br>this is how it goes.', 'tt': '8:30 AM', 'badge': 'scanner running'},
   'lead': 'Patients call at 8:30 with a referral in hand. It books from the timetable and quotes the self-pay price, and says nothing about what a scan shows or whether one is needed.',
   'room': 'health-care',

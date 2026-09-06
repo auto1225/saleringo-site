@@ -5,6 +5,7 @@
 그림은 장식이 아니라 본문이 말하는 구조를 그대로 그린 것이다: 세 단계, 세 채널→한 수신함,
 고객 카드, 사람에게 넘기는 문, 진행 단계, 문 닫은 시간, 아침 화면.
 색은 assets/css/ledger.css 의 토큰과 같다."""
+import re
 import html
 
 INK = '#141A1F'; INK2 = '#3B454D'; MUTE = '#616B75'; LINE = '#E2DDD3'; PAPER = '#F6F4EE'
@@ -248,22 +249,24 @@ def night(lang='ko', open_from=9, open_to=18, call='11:42 PM'):
     o.append(text(cx, cy - 6, t['ni_h'] if closed == 15 else ('%d시간' % closed if lang == 'ko' else '%d hours' % closed), 24, INK, 800, 'middle'))
     o.append(text(cx, cy + 16, t['ni_c'], 11.5, MUTE, 700, 'middle'))
     o.append(text(cx, cy + 34, t['ni_closed'], 11.5, INK2, 700, 'middle'))
-    # the call marker at 23:42
-    x, y = pt(23.7); o.append('<circle cx="%g" cy="%g" r="7" fill="%s" stroke="%s" stroke-width="2"/>' % (x, y, AMBER, CARD))
+    # the call marker at the trade's own call time
+    m = re.match(r'(\d{1,2}):(\d{2})\s*(AM|PM)', call or '')
+    hh = ((int(m.group(1)) % 12) + (12 if m.group(3) == 'PM' else 0) + int(m.group(2)) / 60.0) if m else 23.7
+    x, y = pt(hh); o.append('<circle cx="%g" cy="%g" r="7" fill="%s" stroke="%s" stroke-width="2"/>' % (x, y, AMBER, CARD))
     # legend
     o.append('<rect x="300" y="82" width="14" height="14" rx="4" fill="%s"/>' % TEAL); o.append(text(322, 94, t['ni_open'] + ' %d–%d' % (open_from, open_to), 13, INK, 700))
     o.append('<rect x="300" y="116" width="14" height="14" rx="4" fill="%s"/>' % INK); o.append(text(322, 128, t['ni_closed'], 13, INK, 700))
-    o.append('<circle cx="307" cy="157" r="6" fill="%s"/>' % AMBER); o.append(text(322, 162, call + ' — ' + t['ni_call'].split(' ', 2)[-1] if lang == 'en' else t['ni_call'], 13, INK, 700))
+    o.append('<circle cx="307" cy="157" r="6" fill="%s"/>' % AMBER); o.append(text(322, 162, (call + ' — ' + t['ni_call'].split(' ', 2)[-1]) if lang == 'en' else (call + ' 전화'), 13, INK, 700))
     o.append(text(300, 204, t['ni_note'], 12, MUTE, 600))
     return _svg(640, 300, ''.join(o), t['ni_t'])
 
 
-def morning(lang='ko', items=None):
+def morning(lang='ko', items=None, title=None):
     t = L[lang]; o = []
     items = items or (t['m1'], t['m2'], t['m3'], t['m4'])
     o.append(rect(150, 10, 340, 260, 22, INK, 'none'))
     o.append(rect(160, 20, 320, 240, 16, PAPER, 'none'))
-    o.append(text(178, 46, t['mo_t'], 12, MUTE, 700))
+    o.append(text(178, 46, title or t['mo_t'], 12, MUTE, 700))
     marks = ['✓', '#', '@', '!']
     for i, (a, b) in enumerate(items):
         yy = 60 + i * 48

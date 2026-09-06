@@ -103,7 +103,7 @@ SCRIPTS = {
  },
  "nail-spa": {
   "ko": {
-   "biz": "루미네일", "owner": "원장님",
+   "biz": "블룸네일", "owner": "원장님",
    "meta": "금요일 1:05 PM · 시술 중 · 가상의 네일샵", "callTime": "1:05 PM", "chan": "카카오톡",
    "chapters": ["오후 1:05, 전화", "다음 날 아침, 카카오톡", "오전 9:00, 원장님 화면"],
    "chapterSubs": ["타샵 제거 · 젤 · 토요일 6시 30분", "주차 질문 · 손톱 변색은 사람에게", "예약 · 안내 내역 · 담당 · 답변 대기"],
@@ -112,7 +112,7 @@ SCRIPTS = {
            "morning": "오전 9:00 — 원장님 화면."},
    "customer": {"name": "이하은", "phone": "010-2290-47··"},
    "lines": [
-    {"who": "ai", "text": "안녕하세요, 루미네일입니다. 지금 원장님이 시술 중이라 제가 예약을 도와드리고 있어요. 무엇을 도와드릴까요?"},
+    {"who": "ai", "text": "안녕하세요, 블룸네일입니다. 지금 원장님이 시술 중이라 제가 예약을 도와드리고 있어요. 무엇을 도와드릴까요?"},
     {"who": "user", "text": "내일 저녁에 젤 제거하고 새로 하고 싶은데요. 다른 샵에서 한 거예요. 얼마예요?",
      "side": [{"field": {"k": "요청", "v": "젤 제거 후 새 젤 — 내일 저녁", "src": "통화에서"}},
               {"field": {"k": "타샵 제거", "v": "있음 · 15,000원 추가", "src": "원장님 요금표"}}]},
@@ -147,12 +147,12 @@ SCRIPTS = {
     {"icon": "@", "k": "원장님 할 일", "v": "18:20까지 제거 도구 준비 · 두 자리 확보"},
     {"icon": "!", "k": "답변 대기 1건", "v": "손톱 변색 질문 · 대화 전체 첨부 · 담당 원장님"}
    ],
-   "person": {"when": "9:12 AM", "text": "원장 서지우입니다. 하은 님, 변색은 제가 직접 봐야 해서 오시면 먼저 확인하고, 젤을 올려도 될지 그때 말씀드릴게요."},
+   "person": {"when": "9:12 AM", "text": "원장 한소영입니다. 하은 님, 변색은 제가 직접 봐야 해서 오시면 먼저 확인하고, 젤을 올려도 될지 그때 말씀드릴게요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 원장님이 시술하는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 가격은 샵마다 다릅니다."
   },
   "en": {
-   "biz": "Lumi Nail Studio", "owner": "the owner",
+   "biz": "Bloom Nail Studio", "owner": "the owner",
    "meta": "Friday 1:05 PM · mid-service · a fictional nail studio", "callTime": "1:05 PM", "chan": "WhatsApp",
    "chapters": ["1:05 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
    "chapterSubs": ["soak-off · gel set · Saturday 6:30", "parking · the discoloured nail goes to a person", "booking · quote · owner · one reply waiting"],
@@ -161,7 +161,7 @@ SCRIPTS = {
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Hannah Lee", "phone": "555-03··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Lumi Nail Studio. The owner is with a client right now, but I can book appointments and answer questions. How can I help?"},
+    {"who": "ai", "text": "Thanks for calling Bloom Nail Studio. The owner is with a client right now, but I can book appointments and answer questions. How can I help?"},
     {"who": "user", "text": "Can I get a gel removal and a new set tomorrow evening? Another place did it. What would that run?",
      "side": [{"field": {"k": "Request", "v": "Soak-off and new gel set — tomorrow evening", "src": "from the call"}},
               {"field": {"k": "Outside removal", "v": "yes · $12 added", "src": "your service menu"}}]},
@@ -194,9 +194,9 @@ SCRIPTS = {
     {"icon": "✓", "k": "New booking", "v": "Hannah Lee · Sat 6:30 PM · gel + pedicure · in the calendar"},
     {"icon": "#", "k": "Quote sent", "v": "Gel $55 + removal $12 + pedicure $65 · sent by text"},
     {"icon": "@", "k": "Owner task", "v": "soak-off kit ready by 6:20 · two stations held"},
-    {"icon": "!", "k": "Waiting for a person", "v": "discoloured nail question · full thread attached · owner: Jiwoo"}
+    {"icon": "!", "k": "Waiting for a person", "v": "discoloured nail question · full thread attached · owner: Sohee"}
    ],
-   "person": {"when": "9:12 AM", "text": "This is Jiwoo, the owner. Hi Hannah — I’ll need to see the thumb first, so we’ll check it as soon as you sit down and decide about the gel then."},
+   "person": {"when": "9:12 AM", "text": "This is Sohee, the owner. Hi Hannah — I’ll need to see the thumb first, so we’ll check it as soon as you sit down and decide about the gel then."},
    "summary": "One {call} call · four messages · what a person did: one reply. The rest happened while the owner’s hands were on a client.",
    "honest": "Scripted simulation · sample data · both voices were synthesised for this demo · figures come from an example service menu, not any real studio."
   }

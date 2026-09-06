@@ -15,19 +15,19 @@ SCRIPTS = {
    "customer": {"name": "박정우", "phone": "010-3355-82··"},
    "lines": [
     {"who": "ai", "text": "안녕하세요, 스파클세차입니다. 지금 사장님이 작업 중이라 제가 받고 있어요. 예약과 문의 도와드릴게요."},
-    {"who": "user", "text": "중형 SUV인데 실내 클리닝이랑 광택 같이 하면 얼마예요? 오늘 오후에 되나요?",
-     "side": [{"field": {"k": "요청", "v": "SUV 실내 클리닝 + 광택 — 오늘 오후", "src": "통화에서"}}]},
-    {"who": "ai", "text": "SUV 기준 실내 클리닝 12만원, 외부 광택 18만원이고 같이 하시면 27만원이에요. 오늘은 오후 3시에 베이가 하나 비어 있고, 두 가지 다 하면 네 시간쯤 걸립니다.",
+    {"who": "user", "text": "중형 SUV인데 실내 클리닝이랑 광택 같이 하면 얼마예요? 내일 오후에 되나요?",
+     "side": [{"field": {"k": "요청", "v": "SUV 실내 클리닝 + 광택 — 내일 오후", "src": "통화에서"}}]},
+    {"who": "ai", "text": "SUV 기준 실내 클리닝 12만원, 외부 광택 18만원이고 같이 하시면 27만원이에요. 내일은 오후 3시에 베이가 하나 비어 있고, 두 가지 다 하면 네 시간쯤 걸립니다.",
      "side": [{"field": {"k": "견적", "v": "실내 120,000 + 광택 180,000 = 270,000원", "src": "사장님 요금표"}},
-              {"field": {"k": "빈 베이", "v": "오늘 15:00 · 4시간", "src": "캘린더의 빈 시간"}}]},
+              {"field": {"k": "빈 베이", "v": "내일 15:00 · 4시간", "src": "캘린더의 빈 시간"}}]},
     {"who": "user", "text": "시트에 커피 자국이 있는데 완전히 지워질까요?"},
     {"who": "ai", "text": "그건 소재랑 얼마나 묵었는지에 따라 달라서 보고 말씀드려야 정확해요. 입고하시면 사장님이 시트를 먼저 보고 어느 정도 될지 알려 드릴게요. 오후 3시로 잡아 드릴까요?",
-     "side": [{"field": {"k": "확인 요청", "v": "시트 커피 얼룩 — 입고 후 판단", "src": "본인 발화 · 진단 아님"}}]},
+     "side": [{"field": {"k": "확인 요청", "v": "시트 커피 얼룩 — 입고 후 판단", "src": "본인 발화"}}]},
     {"who": "user", "text": "네, 그렇게요. 흰색 쏘렌토고, 박정우, 010-3355-8214예요.",
      "side": [{"field": {"k": "차량", "v": "흰색 쏘렌토", "src": "본인 발화"}}, {"field": {"k": "이름", "v": "박정우", "src": "본인 발화"}},
               {"field": {"k": "전화", "v": "010-3355-82··", "src": "발신번호와 일치"}}]},
-    {"who": "ai", "text": "박정우 님, 오늘 오후 3시 흰색 쏘렌토 실내 클리닝과 광택으로 접수했어요. 확인 문자 지금 보내 드릴게요. 기다리실 건가요, 맡기고 가실 건가요?",
-     "side": [{"crm": True}, {"work": {"icon": "✓", "k": "입고 예약", "v": "오늘 15:00 · 캘린더에 들어감 · 확인 문자 발송"}}]},
+    {"who": "ai", "text": "박정우 님, 내일 오후 3시 흰색 쏘렌토 실내 클리닝과 광택으로 접수했어요. 확인 문자 지금 보내 드릴게요. 기다리실 건가요, 맡기고 가실 건가요?",
+     "side": [{"crm": True}, {"work": {"icon": "✓", "k": "입고 예약", "v": "내일 15:00 · 캘린더에 들어감 · 확인 문자 발송"}}]},
     {"who": "user", "text": "맡기고 갈게요. 끝나면 연락 주세요."},
     {"who": "ai", "text": "네, 픽업으로 적어 두고 끝나면 문자 드릴게요. 오후 3시에 뵙겠습니다.",
      "side": [{"work": {"icon": "#", "k": "접수서 #1183", "v": "270,000원 — 사장님 요금표에서 · 시트 얼룩은 입고 후 확인"}},
@@ -49,7 +49,7 @@ SCRIPTS = {
     {"icon": "@", "k": "베이 할 일", "v": "15:00 입고 때 시트 얼룩 먼저 확인 · 담당 사장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "보닛 기스 문의 · 대화 전체 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "9:05 AM", "text": "사장님입니다. 박정우 님, 손톱에 걸리지 않는 잔기스는 광택으로 많이 줄어드는데, 확답은 입고 때 보닛을 보고 드릴게요."},
+   "person": {"when": "9:05 AM", "text": "사장입니다. 박정우 님, 손톱에 걸리지 않는 잔기스는 광택으로 많이 줄어드는데, 확답은 입고 때 보닛을 보고 드릴게요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 사장님이 베이에 있는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 합성 음성입니다 · 금액은 예시 요금표이며 실제 업체의 가격이 아닙니다."
   },
@@ -64,26 +64,26 @@ SCRIPTS = {
    "customer": {"name": "Jason Park", "phone": "555-02··"},
    "lines": [
     {"who": "ai", "text": "Thanks for calling Sparkle Auto Spa. The owner is in the bay right now, so I'm answering. I can book you in and answer questions."},
-    {"who": "user", "text": "I've got a mid-size SUV. How much for an interior detail plus an exterior polish, and can you do it this afternoon?",
-     "side": [{"field": {"k": "Request", "v": "SUV interior detail + polish — this afternoon", "src": "from the call"}}]},
-    {"who": "ai", "text": "For an SUV the interior detail is one hundred eighty dollars, the exterior polish is two hundred sixty, and together they're four hundred. This afternoon I have a bay free at three, and both together take about four hours.",
+    {"who": "user", "text": "I've got a mid-size SUV. How much for an interior detail plus an exterior polish, and can you do it tomorrow afternoon?",
+     "side": [{"field": {"k": "Request", "v": "SUV interior detail + polish — tomorrow afternoon", "src": "from the call"}}]},
+    {"who": "ai", "text": "For an SUV the interior detail is one hundred eighty dollars, the exterior polish is two hundred sixty, and together they're four hundred. Tomorrow I have a bay free at three, and both together take about four hours.",
      "side": [{"field": {"k": "Quote", "v": "Interior $180 + polish $260 = $400", "src": "your price list"}},
-              {"field": {"k": "Free bay", "v": "Today 3:00 PM · 4 hours", "src": "free in your calendar"}}]},
+              {"field": {"k": "Free bay", "v": "Tomorrow 3:00 PM · 4 hours", "src": "free in your calendar"}}]},
     {"who": "user", "text": "There's a coffee stain on the passenger seat. Will it come out completely?"},
     {"who": "ai", "text": "That depends on the fabric and how long it has set, so it really needs to be seen. When the car comes in, the owner checks the seat first and tells you what to expect. Shall I hold three o'clock?",
      "side": [{"field": {"k": "To inspect", "v": "Coffee stain on seat — verdict at check-in", "src": "caller said it · not a diagnosis"}}]},
     {"who": "user", "text": "Yes, let's do that. It's a white Sorento. Jason Park, five five five, zero two one four.",
      "side": [{"field": {"k": "Vehicle", "v": "White Sorento", "src": "caller said it"}}, {"field": {"k": "Name", "v": "Jason Park", "src": "caller said it"}},
               {"field": {"k": "Phone", "v": "555-02··", "src": "matches caller ID"}}]},
-    {"who": "ai", "text": "Thanks, Jason. You're booked for today at three, white Sorento, interior detail and polish. I'm texting the confirmation now. Will you wait, or drop it and collect later?",
-     "side": [{"crm": True}, {"work": {"icon": "✓", "k": "Booked", "v": "Today 3:00 PM · in your calendar · confirmation text sent"}}]},
+    {"who": "ai", "text": "Thanks, Jason. You're booked for tomorrow at three, white Sorento, interior detail and polish. I'm texting the confirmation now. Will you wait, or drop it and collect later?",
+     "side": [{"crm": True}, {"work": {"icon": "✓", "k": "Booked", "v": "Tomorrow 3:00 PM · in your calendar · confirmation text sent"}}]},
     {"who": "user", "text": "I'll drop it off. Let me know when it's done."},
     {"who": "ai", "text": "Noted as a drop-off, and I'll text you when it's ready. See you at three.",
      "side": [{"work": {"icon": "#", "k": "Ticket #1183", "v": "$400 — from your own price list · seat stain to be assessed at check-in"}},
               {"work": {"icon": "@", "k": "Owner & due", "v": "owner · inspect the seat at the 3:00 PM check-in"}},
               {"work": {"icon": "↻", "k": "Ready text", "v": "collection text drafted for when the job is done — you approve before it sends"}}]},
     {"who": "user", "text": "Thanks a lot."},
-    {"who": "ai", "text": "Thank you. See you this afternoon."}
+    {"who": "ai", "text": "Thank you. See you tomorrow."}
    ],
    "chat": [
     {"who": "user", "when": "7:50 AM", "text": "Hi, Jason Park from yesterday. What would a ceramic coating add?"},
@@ -144,12 +144,12 @@ SCRIPTS = {
    ],
    "handoff": ["두 채널의 대화 전체", "받아 적은 항목 전부, 출처와 함께", "멈춘 이유: 금리는 재고표에 있는 사실이 아니라 심사 뒤에 나오는 숫자입니다"],
    "morning": [
-    {"icon": "✓", "k": "새 방문 예약 1건", "v": "이도현 · 내일 14:00 · 그랜저 시승 + 아반떼 평가"},
+    {"icon": "✓", "k": "새 방문 예약 1건", "v": "이도현 · 오늘 14:00 · 그랜저 시승 + 아반떼 평가"},
     {"icon": "#", "k": "매물 카드 #0722", "v": "그랜저 2022 · 2,890만원 · 판매 중 표시 유지"},
     {"icon": "@", "k": "딜러 할 일", "v": "09:00 아침 콜 · 담당 김태현"},
     {"icon": "!", "k": "답변 대기 1건", "v": "할부 금리 문의 · 대화 전체 첨부 · 담당 김태현"}
    ],
-   "person": {"when": "9:08 AM", "text": "딜러 김태현입니다. 이도현 님, 금리는 내일 오시면 심사 넣어서 바로 보여 드릴게요. 아반떼 등록증만 챙겨 주세요."},
+   "person": {"when": "9:08 AM", "text": "딜러 김태현입니다. 이도현 님, 금리는 오늘 오시면 심사 넣어서 바로 보여 드릴게요. 아반떼 등록증만 챙겨 주세요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 전시장이 닫혀 있는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 매물과 금액은 예시 요금표이며 실제 딜러의 재고가 아닙니다."
   },
@@ -170,9 +170,9 @@ SCRIPTS = {
      "side": [{"field": {"k": "Stock", "v": "Camry 2022 · white · 24,000 mi · $26,900 · available", "src": "inventory feed"}},
               {"field": {"k": "Finance", "v": "monthly figure — consultant at the desk", "src": "your rule"}}]},
     {"who": "user", "text": "What would you give me for my 2018 Elantra as a trade-in?"},
-    {"who": "ai", "text": "A trade-in value is set by looking at the car, so I don't give one over the phone. Bring the Elantra with you and it's appraised on the spot. I have tomorrow at two, or Thursday at eleven.",
+    {"who": "ai", "text": "A trade-in value is set by looking at the car, so I don't give one over the phone. Bring the Elantra with you and it's appraised on the spot. I have tomorrow at two, or Friday at eleven.",
      "side": [{"field": {"k": "Trade-in", "v": "2018 Elantra — appraised at the visit", "src": "from the call"}},
-              {"field": {"k": "Open slots", "v": "Tomorrow 2:00 PM · Thu 11:00 AM", "src": "free in your calendar"}}]},
+              {"field": {"k": "Open slots", "v": "Tomorrow 2:00 PM · Fri 11:00 AM", "src": "free in your calendar"}}]},
     {"who": "user", "text": "Tomorrow at two. David Lee, five five five, zero three seven one.",
      "side": [{"field": {"k": "Name", "v": "David Lee", "src": "caller said it"}}, {"field": {"k": "Phone", "v": "555-03··", "src": "matches caller ID"}}]},
     {"who": "ai", "text": "David, you're booked for tomorrow at two: a test drive of the Camry and an appraisal of the Elantra. I'm texting the confirmation, and the consultant will call you in the morning.",
@@ -187,18 +187,18 @@ SCRIPTS = {
    ],
    "chat": [
     {"who": "user", "when": "7:35 AM", "text": "Hi, David Lee from last night. Is there any promotion on the Camry?"},
-    {"who": "ai", "when": "+2 sec", "text": "This month's loaded promotion is five hundred dollars towards registration fees, and it applies at your appointment. Tomorrow at 2:00 PM is unchanged.", "merge": True},
+    {"who": "ai", "when": "+2 sec", "text": "This month's loaded promotion is five hundred dollars towards registration fees, and it applies at your appointment. Today at 2:00 PM is unchanged.", "merge": True},
     {"who": "user", "when": "7:36 AM", "text": "With my credit, what rate would I get?"},
     {"who": "ai", "when": "+2 sec", "text": "A rate only exists after the application is run, so that isn't mine to answer. I've passed our conversation to the consultant, who will reply this morning.", "handoff": True}
    ],
    "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: an interest rate is the output of an application, not a fact in the inventory feed"],
    "morning": [
-    {"icon": "✓", "k": "New appointment", "v": "David Lee · tomorrow 2:00 PM · Camry test drive + Elantra appraisal"},
+    {"icon": "✓", "k": "New appointment", "v": "David Lee · today 2:00 PM · Camry test drive + Elantra appraisal"},
     {"icon": "#", "k": "Stock card #0722", "v": "Camry 2022 · $26,900 · still marked available"},
     {"icon": "@", "k": "Consultant task", "v": "morning call by 9:00 AM · owner: Tom Kim"},
     {"icon": "!", "k": "Waiting for a person", "v": "finance rate question · full thread attached · owner: Tom Kim"}
    ],
-   "person": {"when": "9:08 AM", "text": "This is Tom from sales. Hi David — I'll run the application when you're here tomorrow and show you the rate on the spot. Just bring the Elantra's registration."},
+   "person": {"when": "9:08 AM", "text": "This is Tom from sales. Hi David — I'll run the application when you're here today and show you the rate on the spot. Just bring the Elantra's registration."},
    "summary": "One {call} call · four messages · what a person did: one reply. The rest happened while the showroom was dark.",
    "honest": "Scripted simulation · sample data · synthesised voices · the car and the figures are an example price list, not a real dealer's stock."
   }
@@ -226,7 +226,7 @@ SCRIPTS = {
               {"work": {"icon": "✓", "k": "배차", "v": "당직 기사 오성민 · 02:14 출발 · 도착 예정 02:48"}}]},
     {"who": "user", "text": "스페어로 갈아 주면 안 되나요? 얼마예요?"},
     {"who": "ai", "text": "스페어로 되는지는 기사가 타이어랑 휠을 보고 판단해요. 전화로 수리 여부나 금액은 정하지 않아요. 성함이랑 연락처 주시면 기사 번호와 도착 예정 문자 바로 보내 드릴게요.",
-     "side": [{"field": {"k": "확인 요청", "v": "스페어 교체 가능 여부 — 현장에서 기사 판단", "src": "본인 발화 · 진단 아님"}}]},
+     "side": [{"field": {"k": "확인 요청", "v": "스페어 교체 가능 여부 — 현장에서 기사 판단", "src": "본인 발화"}}]},
     {"who": "user", "text": "강민석이고 010-2471-9530이에요.",
      "side": [{"field": {"k": "이름", "v": "강민석", "src": "본인 발화"}}, {"field": {"k": "전화", "v": "010-2471-95··", "src": "발신번호와 일치"}}, {"crm": True}]},
     {"who": "ai", "text": "강민석 님, 문자 보냈어요. 기사 도착 전까지 가드레일 뒤에 계시고, 상황이 바뀌면 이 번호로 바로 다시 걸어 주세요.",
@@ -249,12 +249,12 @@ SCRIPTS = {
     {"icon": "@", "k": "정비소 인도", "v": "안성 협력 정비소 · 담당 기사 오성민"},
     {"icon": "!", "k": "답변 대기 1건", "v": "보험 긴급출동 처리 문의 · 접수 번호 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "9:02 AM", "text": "사장님입니다. 강민석 님, 보험사에 접수 번호로 확인해 보니 긴급출동 특약 대상이라고 합니다. 정산은 보험사와 진행하겠습니다."},
+   "person": {"when": "9:02 AM", "text": "사장입니다. 강민석 님, 보험사에 접수 번호로 확인해 보니 긴급출동 특약 대상이라고 합니다. 정산은 보험사와 진행하겠습니다."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 기사들이 현장에 있는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 요금은 예시 요금표이며 실제 견인 업체의 요율이 아닙니다."
   },
   "en": {
-   "biz": "Night Owl Towing", "owner": "the owner",
+   "biz": "Moonvale Towing", "owner": "the owner",
    "meta": "Sunday 2:13 AM · every truck out · a fictional recovery operator", "callTime": "2:13 AM", "chan": "WhatsApp",
    "chapters": ["2:13 AM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
    "chapterSubs": ["interstate shoulder · safety first · dispatched in 35 min", "which shop · the insurance question goes to a person", "job · invoice · driver · one reply waiting"],
@@ -263,7 +263,7 @@ SCRIPTS = {
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Mark Kang", "phone": "555-04··"},
    "lines": [
-    {"who": "ai", "text": "Night Owl Towing. All our drivers are out on jobs right now, so I'm taking this first. Where are you?"},
+    {"who": "ai", "text": "Moonvale Towing. All our drivers are out on jobs right now, so I'm taking this first. Where are you?"},
     {"who": "user", "text": "I blew a tyre on the interstate. The car is on the shoulder. Can you tow it?",
      "side": [{"field": {"k": "Request", "v": "Blown tyre on the interstate — tow", "src": "from the call"}}]},
     {"who": "ai", "text": "Safety first. Is anyone hurt? Is the car fully off the travel lane, and are you out of the vehicle and behind the barrier?"},
@@ -323,7 +323,7 @@ SCRIPTS = {
     {"who": "user", "text": "문구는 서준아 첫 생일 축하해로 하고, 파스텔 블루로요. 손님 중에 견과류 알레르기가 있는데 괜찮나요?",
      "side": [{"field": {"k": "레터링", "v": "서준아 첫 생일 축하해 · 파스텔 블루", "src": "본인 발화"}}]},
     {"who": "ai", "text": "문구랑 색상은 그대로 적어 뒀어요. 견과류가 들어가는지는 주방에서 확인해서 답해 드려야 해서, 그 부분만 사장님이 오늘 중에 연락드릴게요. 픽업은 토요일 몇 시로 할까요?",
-     "side": [{"field": {"k": "알레르기 문의", "v": "견과류 — 주방 확인 후 답변", "src": "본인 발화 · 진단 아님"}}]},
+     "side": [{"field": {"k": "알레르기 문의", "v": "견과류 — 주방 확인 후 답변", "src": "본인 발화"}}]},
     {"who": "user", "text": "11시요. 김민지고, 010-7231-4409예요.",
      "side": [{"field": {"k": "이름", "v": "김민지", "src": "본인 발화"}}, {"field": {"k": "전화", "v": "010-7231-44··", "src": "발신번호와 일치"}}]},
     {"who": "ai", "text": "김민지 님, 토요일 오전 11시 픽업, 2호 파스텔 블루 레터링 케이크로 접수했어요. 확인 문자 보내 드리고, 알레르기 답변은 따로 연락드릴게요.",
@@ -349,7 +349,7 @@ SCRIPTS = {
     {"icon": "@", "k": "주방 할 일", "v": "금요일 오후 제작 · 담당 사장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "견과류 알레르기 문의 · 대화 전체 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "9:10 AM", "text": "사장님입니다. 김민지 님, 생크림 케이크에는 견과류를 쓰지 않지만 같은 주방에서 견과류 빵을 만들어요. 그 점 감안해서 결정해 주세요."},
+   "person": {"when": "9:10 AM", "text": "사장입니다. 김민지 님, 생크림 케이크에는 견과류를 쓰지 않지만 같은 주방에서 견과류 빵을 만들어요. 그 점 감안해서 결정해 주세요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 사장님이 커피를 내리는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 금액은 예시 요금표이며 실제 매장의 가격이 아닙니다."
   },
@@ -449,7 +449,7 @@ SCRIPTS = {
     {"icon": "@", "k": "답사 할 일", "v": "목 15:00 판교 · 엘리베이터 · 주차 · 채식 6명 · 담당 대표님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "단가 할인 요청 · 대화 전체 첨부 · 담당 대표님"}
    ],
-   "person": {"when": "9:15 AM", "text": "대표님입니다. 박서연 님, 할인은 목요일에 현장 보고 견적서에 반영해서 드릴게요. 엘리베이터는 사진 한 장만 미리 보내 주시면 준비가 빨라집니다."},
+   "person": {"when": "9:15 AM", "text": "대표입니다. 박서연 님, 할인은 목요일에 현장 보고 견적서에 반영해서 드릴게요. 엘리베이터는 사진 한 장만 미리 보내 주시면 준비가 빨라집니다."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 팀이 다른 행사장에 있는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 단가는 예시 요금표이며 실제 업체의 견적이 아닙니다."
   },
@@ -523,7 +523,7 @@ SCRIPTS = {
     {"who": "user", "text": "어른 넷이고 26일이요. 아버지 여권이 내년 3월에 만료되는데 괜찮나요?",
      "side": [{"field": {"k": "인원 · 날짜", "v": "성인 4명 · 12/26 출발", "src": "본인 발화"}}]},
     {"who": "ai", "text": "성인 네 분, 26일 출발로 적어 뒀어요. 여권 잔여 기간이랑 입국 요건은 나라마다 기준이 달라서 제가 판단하지 않고, 담당자가 확인해서 좌석과 함께 안내드려요. 내일 오전에 연락드려도 될까요?",
-     "side": [{"field": {"k": "확인 요청", "v": "여권 잔여 기간 — 담당자 확인", "src": "본인 발화 · 진단 아님"}}]},
+     "side": [{"field": {"k": "확인 요청", "v": "여권 잔여 기간 — 담당자 확인", "src": "본인 발화"}}]},
     {"who": "user", "text": "네, 10시 이후로요. 정하윤이고 010-6614-2890이에요.",
      "side": [{"field": {"k": "이름", "v": "정하윤", "src": "본인 발화"}}, {"field": {"k": "전화", "v": "010-6614-28··", "src": "발신번호와 일치"}}]},
     {"who": "ai", "text": "정하윤 님, 내일 오전 10시 이후 담당자 연락으로 잡았어요. 문의 내용과 확인할 항목을 정리해서 문자로 보내 드릴게요.",
@@ -554,18 +554,18 @@ SCRIPTS = {
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 상품 가격은 예시 요금표이며 실제 여행사의 요금이 아닙니다."
   },
   "en": {
-   "biz": "Skyway Travel", "owner": "the owner",
+   "biz": "Compass Lane Travel", "owner": "the owner",
    "meta": "Tuesday 9:26 PM · agents off duty · a fictional travel agency", "callTime": "9:26 PM", "chan": "WhatsApp",
    "chapters": ["9:26 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
-   "chapterSubs": ["Cancún five nights · four adults · agent to check", "what's included · the passport question goes to a person", "enquiry · draft quote · agent · one reply waiting"],
+   "chapterSubs": ["Cancún five nights · four adults · agent to check", "what's included · the passport question goes to a person", "inquiry · draft quote · agent · one reply waiting"],
    "sys": {"ring": "9:26 PM — the phone rings. The agents logged off two hours ago.",
            "chat": "Next morning, 8:05 AM — the same customer, on WhatsApp.",
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Hannah Chung", "phone": "555-07··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Skyway Travel. The agents have gone home, but I can tell you about our packages and log your enquiry."},
+    {"who": "ai", "text": "Thanks for calling Compass Lane Travel. The agents have gone home, but I can tell you about our packages and log your inquiry."},
     {"who": "user", "text": "We want to take my parents to Cancún for five nights at the end of December. Is there space on a package?",
-     "side": [{"field": {"k": "Enquiry", "v": "Cancún five-night package — late December", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "Cancún five-night package — late December", "src": "from the call"}}]},
     {"who": "ai", "text": "For December there are Cancún five-night departures on the twenty-sixth and the twenty-eighth, from twelve hundred ninety dollars per adult. Seats have to be checked in the airline system by an agent, so I won't tell you there's space until they have. How many travellers, and which date?",
      "side": [{"field": {"k": "Product", "v": "Cancún 5 nights · dep 12/26 · 12/28 · from $1,290 per adult", "src": "your product sheet"}},
               {"field": {"k": "Seats", "v": "Unchecked — agent to query the system", "src": "your rule"}}]},
@@ -575,7 +575,7 @@ SCRIPTS = {
      "side": [{"field": {"k": "To check", "v": "Passport validity — agent to confirm", "src": "caller said it · not a diagnosis"}}]},
     {"who": "user", "text": "Yes, after ten. Hannah Chung, five five five, zero seven four five.",
      "side": [{"field": {"k": "Name", "v": "Hannah Chung", "src": "caller said it"}}, {"field": {"k": "Phone", "v": "555-07··", "src": "matches caller ID"}}]},
-    {"who": "ai", "text": "Hannah, an agent will call you tomorrow after ten. I'm texting you a summary of the enquiry and the items they'll check.",
+    {"who": "ai", "text": "Hannah, an agent will call you tomorrow after ten. I'm texting you a summary of the inquiry and the items they'll check.",
      "side": [{"crm": True}, {"work": {"icon": "✓", "k": "Callback booked", "v": "tomorrow after 10:00 AM · agent assigned · summary text sent"}}]},
     {"who": "user", "text": "Which hotel is it?"},
     {"who": "ai", "text": "That package is a four-star hotel with breakfast included. The exact hotel varies by departure, so the agent will confirm the name when they check the seats. You'll hear from us tomorrow.",
@@ -593,12 +593,12 @@ SCRIPTS = {
    ],
    "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: whether a passport is valid for entry is a ruling on another country's rules, not a fact on the product sheet"],
    "morning": [
-    {"icon": "✓", "k": "New enquiry", "v": "Hannah Chung · Cancún 12/26 · 4 adults · callback after 10:00 AM"},
+    {"icon": "✓", "k": "New inquiry", "v": "Hannah Chung · Cancún 12/26 · 4 adults · callback after 10:00 AM"},
     {"icon": "#", "k": "Draft quote #2208", "v": "from $5,160 + taxes and surcharges · confirmed after the seat check"},
     {"icon": "@", "k": "Agent task", "v": "10:00 AM seat query · hotel name · owner: Sora Yoon"},
     {"icon": "!", "k": "Waiting for a person", "v": "passport validity and entry question · full thread attached · owner: Sora Yoon"}
    ],
-   "person": {"when": "10:04 AM", "text": "This is Sora from Skyway. Hi Hannah — four seats are available on the twenty-sixth. Mexico currently asks for a passport valid for the length of stay, but I'd still recommend renewing your father's before you travel. I'll send the details."},
+   "person": {"when": "10:04 AM", "text": "This is Sora from Compass Lane. Hi Hannah — four seats are available on the twenty-sixth. Mexico currently asks for a passport valid for the length of stay, but I'd still recommend renewing your father's before you travel. I'll send the details."},
    "summary": "One {call} call · four messages · what a person did: one reply. The rest happened while the agents were off duty.",
    "honest": "Scripted simulation · sample data · synthesised voices · package prices are an example price list, not a real agency's fares."
   }
@@ -623,7 +623,7 @@ SCRIPTS = {
     {"who": "user", "text": "가족사진도 같이 찍으면 추가로 얼마예요? 아이 얼굴 보정도 자연스럽게 되나요?"},
     {"who": "ai", "text": "가족 컷 추가는 5만원이에요. 보정 정도는 실장님이 촬영 뒤 샘플을 보여 드리고 상의하는 거라, 결과를 전화로 약속드리진 않을게요. 토요일 10시로 잡아 드릴까요?",
      "side": [{"field": {"k": "추가 옵션", "v": "가족 컷 +50,000원", "src": "실장님 요금표"}},
-              {"field": {"k": "확인 요청", "v": "보정 정도 — 촬영 후 샘플로 상의", "src": "본인 발화 · 진단 아님"}}]},
+              {"field": {"k": "확인 요청", "v": "보정 정도 — 촬영 후 샘플로 상의", "src": "본인 발화"}}]},
     {"who": "user", "text": "네, 잡아 주세요. 이서윤이고 010-8823-0617이에요.",
      "side": [{"field": {"k": "이름", "v": "이서윤", "src": "본인 발화"}}, {"field": {"k": "전화", "v": "010-8823-06··", "src": "발신번호와 일치"}}]},
     {"who": "ai", "text": "이서윤 님, 다음 달 둘째 주 토요일 오전 10시, 돌 스냅과 가족 컷으로 예약했어요. 예약금 안내랑 준비물을 문자로 보내 드릴게요.",
@@ -649,7 +649,7 @@ SCRIPTS = {
     {"icon": "@", "k": "촬영 준비", "v": "의상 2벌 · 가족 컷 세팅 · 담당 실장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "납품일 단축 문의 · 대화 전체 첨부 · 담당 실장님"}
    ],
-   "person": {"when": "9:20 AM", "text": "실장님입니다. 이서윤 님, 돌잔치 사흘 전까지 보정본 드릴 수 있게 일정 잡아 둘게요. 셀렉만 촬영 다음 날까지 해 주시면 됩니다."},
+   "person": {"when": "9:20 AM", "text": "실장입니다. 이서윤 님, 돌잔치 사흘 전까지 보정본 드릴 수 있게 일정 잡아 둘게요. 셀렉만 촬영 다음 날까지 해 주시면 됩니다."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 실장님이 촬영하는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 금액은 예시 요금표이며 실제 스튜디오의 가격이 아닙니다."
   },
@@ -751,7 +751,7 @@ SCRIPTS = {
     {"icon": "@", "k": "사장님 할 일", "v": "다음 주 토 예식 2건 준비 · 담당 사장님"},
     {"icon": "!", "k": "답변 대기 1건", "v": "토요일 부케 추가 요청 · 작약 · 대화 전체 첨부 · 담당 사장님"}
    ],
-   "person": {"when": "9:10 AM", "text": "사장님입니다. 최유진 님, 토요일 예식 두 건 사이에 부케 하나는 만들 수 있겠어요. 작약은 그 주 시장에 들어와야 해서 대체 꽃도 하나 같이 골라 두시면 좋겠습니다."},
+   "person": {"when": "9:10 AM", "text": "사장입니다. 최유진 님, 토요일 예식 두 건 사이에 부케 하나는 만들 수 있겠어요. 작약은 그 주 시장에 들어와야 해서 대체 꽃도 하나 같이 골라 두시면 좋겠습니다."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 사장님이 꽃을 다듬는 동안 끝났습니다.",
    "honest": "각본이 있는 시연 · 예시 데이터 · 합성 음성 · 금액은 예시 요금표이며 실제 꽃집의 가격이 아닙니다."
   },
@@ -870,7 +870,7 @@ SCRIPTS = {
    "lines": [
     {"who": "ai", "text": "Thanks for calling Clearbook Tax and Accounting. It's the night before the deadline, so the team can't take calls and I'm answering. How can I help?"},
     {"who": "user", "text": "I started my business last year and I've never filed sales tax. I don't even know if I'm supposed to file this quarter. Do I have to?",
-     "side": [{"field": {"k": "Enquiry", "v": "First sales-tax return — status and obligation", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "First sales-tax return — status and obligation", "src": "from the call"}}]},
     {"who": "ai", "text": "That's a fair thing to be unsure about. Whether you must file this quarter depends on your registration and your receipts, and that's the accountant's judgement, not mine. What I can do is book a consultation and tell you exactly what to bring.",
      "side": [{"field": {"k": "Not answered", "v": "Filing obligation — accountant's judgement", "src": "your rule"}}]},
     {"who": "user", "text": "Okay. What do I bring, and what does it cost?"},
@@ -932,7 +932,7 @@ SCRIPTS = {
      "side": [{"work": {"icon": "✓", "k": "사고 접수", "v": "토 20:17 · 부상 없음 · 사진 요청 · 보험사 접수 번호 안내"}}]},
     {"who": "user", "text": "네. 자기부담금은 얼마 나와요?"},
     {"who": "ai", "text": "자기부담금은 가입하신 특약에 따라 달라서 설계사가 증권을 보고 안내드려요. 성함이랑 연락처 주시면 월요일 오전 9시에 설계사가 먼저 연락드리도록 잡아 둘게요.",
-     "side": [{"field": {"k": "확인 요청", "v": "자기부담금 — 증권 확인 후 설계사 답변", "src": "본인 발화 · 진단 아님"}}]},
+     "side": [{"field": {"k": "확인 요청", "v": "자기부담금 — 증권 확인 후 설계사 답변", "src": "본인 발화"}}]},
     {"who": "user", "text": "한지우고 010-2290-5341이에요.",
      "side": [{"field": {"k": "이름", "v": "한지우", "src": "본인 발화"}}, {"field": {"k": "전화", "v": "010-2290-53··", "src": "발신번호와 일치"}}, {"crm": True}]},
     {"who": "ai", "text": "한지우 님, 안내 문자 보냈어요. 사진 보내 주시면 바로 설계사 카드에 붙고, 월요일 9시에 연락드릴게요.",
@@ -971,7 +971,7 @@ SCRIPTS = {
    "lines": [
     {"who": "ai", "text": "Thanks for calling Anchor Insurance Agency. We're closed for the weekend, but I can take claim details and questions right now."},
     {"who": "user", "text": "Someone just scraped my car in a parking lot. Is that covered on my policy? I think I have collision.",
-     "side": [{"field": {"k": "Enquiry", "v": "Parking-lot scrape — collision coverage?", "src": "from the call"}}]},
+     "side": [{"field": {"k": "Inquiry", "v": "Parking-lot scrape — collision coverage?", "src": "from the call"}}]},
     {"who": "ai", "text": "First, is anyone hurt? If not, whether this is covered depends on your policy wording and the details, and that's for your agent to confirm, so I won't tell you it is. What I can do is get everything ready for them now.",
      "side": [{"field": {"k": "Coverage", "v": "Not confirmed — agent reads the policy", "src": "your rule"}}]},
     {"who": "user", "text": "Nobody is hurt. The other driver tried to leave, so I only got a photo of the plate.",

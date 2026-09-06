@@ -20,7 +20,7 @@ SECTION = """<!--demo:v2-->
     <div class="reveal" style="max-width:720px;">
       <span class="eyebrow light"><i></i>Hear it &middot; {name}</span>
       <h2 class="h2" style="margin-top:20px;">The call, the next morning&rsquo;s message, <br>and what was waiting at nine.</h2>
-      <p class="lead" style="margin-top:16px;">A scripted call for a {lname}: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
+      <p class="lead" style="margin-top:16px;">A scripted call: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
     </div>
     {block}
     <noscript><p class="lead">The demo needs JavaScript. The same story is written out in the worked examples below.</p></noscript>
@@ -33,6 +33,8 @@ MARK = re.compile(r"<!--demo:v2-->.*?<!--/demo:v2-->\n?", re.S)
 
 def inject(path, slug, name):
     s = io.open(path, encoding="utf-8").read()
+    if "data-d60-script" in s and "<!--demo:v2-->" not in s:
+        print("  skip (generated page has its own demo):", slug); return
     if not os.path.exists(os.path.join(ROOT, "assets", "demo", slug + ".json")):
         print("  skip (no script):", slug); return
     block = demo_block.block("en", slug, rel="../../")

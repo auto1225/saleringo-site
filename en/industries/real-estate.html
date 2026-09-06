@@ -3,256 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Phone Line for Estate &amp; Lettings Agents | Saleringo</title>
-<meta name="description" content="An AI line for estate and lettings agents. Asks every applicant the same approved questions, books the viewing — never a valuation, never an offer opinion.">
+<title>AI answering for Real estate &mdash; how a missed call becomes a booking</title>
+<meta name="description" content="The AI answers Real estate inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="canonical" href="https://claude.saleringo.com/en/industries/real-estate.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:url" content="https://claude.saleringo.com/en/industries/real-estate.html">
-<meta property="og:title" content="AI Phone Line for Estate &amp; Lettings Agents">
-<meta property="og:description" content="An AI line for estate and lettings agents. Asks every applicant the same approved questions, books the viewing — never a valuation, never an offer opinion.">
+<meta property="og:title" content="AI answering for Real estate &mdash; how a missed call becomes a booking">
+<meta property="og:description" content="The AI answers Real estate inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <meta property="og:image" content="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Phone Line for Estate &amp; Lettings Agents">
-<meta name="twitter:description" content="An AI line for estate and lettings agents. Answers the 8:52 PM portal enquiry, asks every applicant the same approved questions in the same order, and books the viewing. Never a valuation, never an offer opinion.">
 <meta name="twitter:image" content="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="AI answering for Real estate &mdash; how a missed call becomes a booking">
+<meta name="twitter:description" content="The AI answers Real estate inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A portal enquiry comes in at nine at night. What actually happens?","acceptedAnswer":{"@type":"Answer","text":"It answers, confirms the listing against your own availability and advertised price, then asks the applicant the questions your agency approved, in the order your agency approved them. If a slot exists that both the negotiator's diary and the occupier's notice period allow, the viewing is booked on that call and confirmed in writing. If no slot fits, it says so rather than inventing one."}},{"@type":"Question","name":"Will it tell a caller what a property is worth?","acceptedAnswer":{"@type":"Answer","text":"No, in any wording. It gives no valuation, no estimate, no range and no opinion on whether an asking price is high or low. A price question turns into a market appraisal booked into a named valuer's diary, which is the outcome the agency actually wants from that call."}},{"@type":"Question","name":"Will it tell an applicant what offer the vendor would accept?","acceptedAnswer":{"@type":"Answer","text":"Never. It does not say what will be accepted, does not hint at a figure, and does not disclose another party's offer or another party's circumstances. The question is recorded word for word against the applicant and put in front of the negotiator who is allowed to answer it."}},{"@type":"Question","name":"How do you stop it steering people toward or away from a property?","acceptedAnswer":{"@type":"Answer","text":"By making the script identical. Every caller on a given listing gets the same questions in the same order, from a set you approve before it goes live, and the transcript shows that it did. It answers nothing about who lives in an area or what kind of person a street suits, and it never varies what it offers based on anything about the caller."}},{"@type":"Question","name":"Do you plug into Rightmove, Zoopla or our agency software?","acceptedAnswer":{"@type":"Answer","text":"Not with a direct API, and we will not claim one. Portal enquiries reach the AI the way they already reach you — the forwarded call or the forwarded email — and applicant records leave through Zapier, a direct feed or CSV export. Direct agency-software integrations are in build and the founding cohort votes on the order."}},{"@type":"Question","name":"Can it book a market appraisal, not just a viewing?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is the call worth the most to the office. It takes the address, the reason for moving if the caller offers it, and the times that suit, then books into the diary of a valuer you nominate. It does not give a figure on the phone to warm the lead up, because that is the one thing that would cost you the instruction."}},{"@type":"Question","name":"Can I start with evenings and weekends only?","acceptedAnswer":{"@type":"Answer","text":"That is how most agencies start. Forward the line after 6 PM, all Saturday afternoon and all Sunday, read a week of transcripts, then widen the window once the answers sound like your office. Turning it off again is a change in your own phone settings, not a support ticket."}}]}
+{"@context":"https://schema.org","@type":"WebPage","name":"AI answering for Real estate &mdash; how a missed call becomes a booking","description":"The AI answers Real estate inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.","url":"https://claude.saleringo.com/en/industries/real-estate.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"en"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Line for Estate & Lettings Agents","item":"https://claude.saleringo.com/en/industries/real-estate.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/index.html"},{"@type":"ListItem","position":2,"name":"Trades","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"Real estate","item":"https://claude.saleringo.com/en/industries/real-estate.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/ledger.css?v=83.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=84.0">
 <style>
-  /* ── ESTATE & LETTINGS AGENCY · archetype: THE BOOKED VIEWING ──────────
-     The nearest neighbour on this site is property management, and the hero
-     furniture is deliberately the same shape. The object underneath is the
-     opposite end of the business: nothing here is managed, repaired or
-     tenanted. This page is front-of-house — the enquiry, the viewing, the
-     appraisal — and its hard rule is that the AI never prices anything. */
-  .hero{position:relative;overflow:hidden;padding-bottom:78px;}
-  .hero.photohero{min-height:min(94vh,960px);}
-  /* 1600x2000 portrait — a lit agency window after closing. bias low so the
-     illuminated listing cards and the figure stay in frame, not the fascia. */
-  .hero .bgimg img{filter:brightness(1.49) saturate(1.05) contrast(1.05);object-position:center 74%;}
-  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.42) 0%,rgba(255,255,255,0.231) 28%,
-    rgba(255,255,255,0.315) 62%,rgba(255,255,255,0.96) 100%);}
-  .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:1;}
-  .heroinner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:136px 32px 0;
-    display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center;}
-  .hero .hero-panel{max-width:680px;}
-  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#141A1F;margin-top:20px;}
-  .hero h1 .teal{color:var(--teal);}
-  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .hero .ctas{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .fbadge{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;color:var(--teal);
-    background:var(--teal-glass);border:1px solid rgba(11,120,120,.4);border-radius:999px;padding:8px 18px;}
-  .fbadge i{font-style:normal;}
-  .micro{margin-top:12px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
-  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#141A1F;}
-  .hero .scene-frame{margin:0;}
-  .hero .specstrip{grid-column:1/-1;margin-top:40px;justify-content:flex-start;gap:28px;}
 
-  /* 2 · the ninety seconds */
-  .tlsec{background:linear-gradient(180deg,#F6F4EE,#F6F4EE);}
-  .tlsec .cols{display:grid;grid-template-columns:330px 1fr;gap:70px;align-items:stretch;margin-top:54px;}
-  .tlstick{position:sticky;top:34px;display:flex;justify-content:center;}
-  .tlstick .phoneframe{transform:rotate(-2deg);}
-  .tlrow{display:grid;grid-template-columns:60px 24px 1fr;gap:0 18px;padding-bottom:26px;}
-  .tlrow .tm{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);text-align:right;padding-top:16px;}
-  .tlrow .td{position:relative;display:flex;justify-content:center;}
-  .tlrow .td i{width:11px;height:11px;border-radius:50%;background:var(--teal);margin-top:20px;box-shadow:0 0 0 5px rgba(11,120,120,.13);font-style:normal;}
-  .tlrow:not(:last-child) .td:after{content:"";position:absolute;left:50%;top:35px;bottom:-26px;width:1px;
-    background:linear-gradient(180deg,rgba(11,120,120,.45),rgba(20,26,31,.078));}
-  .tlrow .tb{border:1px solid var(--hair);border-radius:14px;padding:16px 20px;background:rgba(20,26,31,.042);}
-  .tlrow .tb .spk{font-size:var(--fs-label);font-weight:800;letter-spacing:.14em;color:var(--tx3);}
-  .tlrow .tb .spk.ai{color:var(--teal);}
-  .tlrow .tb p{margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:#141A1F;font-weight:500;}
-  .tlrow .tb p em{font-style:normal;color:var(--teal);font-weight:700;}
-  .tlrow.warn .tb{background:rgba(183,121,31,.09);border-color:rgba(183,121,31,.34);}
-  .tlrow.warn .td i{background:var(--amber);box-shadow:0 0 0 5px rgba(183,121,31,.14);}
-  .tlrow.warn .tb .spk{color:var(--amber);}
-  .tlrow.done .tb{background:rgba(11,120,120,.09);border-color:rgba(11,120,120,.34);}
-  .tlfoot{margin-top:8px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-
-  /* 3 · the money */
-  /* overflow:hidden clips the bg-dusk aura (inset:-10%), which otherwise
-     pushes the page wide and creates a horizontal scrollbar */
-  .moneysec{overflow:hidden;}
-  .moneytop{margin-top:48px;display:grid;grid-template-columns:.82fr 1.18fr;gap:62px;align-items:start;}
-  .bignum{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-num);font-weight:600;letter-spacing:-.055em;line-height:.84;}
-  .bigcap{margin-top:20px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:600;max-width:300px;}
-  .figrow{display:flex;flex-wrap:wrap;}
-  .fig{padding:0 30px;border-left:1px solid var(--hair);}
-  .fig:first-child{padding-left:0;border-left:0;}
-  .fig b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#141A1F;letter-spacing:-.03em;}
-  .fig span{display:block;margin-top:7px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;max-width:200px;line-height:1.55;}
-  .moneytop .photocard{margin-top:36px;min-height:320px;}
-  .moneysec .baGrid{margin-top:62px;}
-  .srcnote{margin-top:32px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .srcnote a{color:var(--teal);font-weight:600;}
-
-  /* 4 · where it stops (light) */
-  .safesplit{min-height:470px;margin-bottom:8px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
-    background:#fff;box-shadow:0 32px 78px rgba(20,26,31,.10);}
-  .safesplit .copy{padding:58px 54px;}
-  .warngrid{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .warncard{background:#fff;border:1px solid #EFDCD7;border-left:4px solid var(--red);border-radius:14px;padding:26px;
-    box-shadow:0 20px 50px rgba(20,26,31,.07);}
-  .warncard.amber{border-color:#F2E3C6;border-left-color:var(--amber);}
-  .warncard .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B14A3E;}
-  .warncard.amber .tag{color:#8D642F;}
-  .warncard b{display:block;margin-top:12px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
-  .warncard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
-  .ladder{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-  .lstep{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px;}
-  .lstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:700;color:#0B7878;letter-spacing:.14em;}
-  .lstep b{display:block;margin-top:10px;font-size:var(--fs-sm);color:var(--l-ink);letter-spacing:-.01em;}
-  .lstep span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:500;}
-  .safenote{margin-top:38px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
-  .safenote a{color:#0B7878;font-weight:700;}
-
-  /* 5 · the booked viewing (dark) */
-  .dispsec{position:relative;background:linear-gradient(180deg,#F6F4EE,#FFFFFF);}
-  .dispsec .wrap{position:relative;z-index:1;}
-  .dispcols{margin-top:52px;display:grid;grid-template-columns:1.14fr .86fr;gap:38px;align-items:start;}
-  .dispsec .msgthread{background:#FFFFFF;}
-  .dispside .rrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
-  .dispside p.note{margin-top:18px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
-  .dispsec .quotecard{margin:58px auto 0;max-width:780px;}
-
-  /* 6 · integrations + risk (white) */
-  .intsec{background:#FDFDFE;}
-  .intsec .head{text-align:center;max-width:660px;margin:0 auto;}
-  .intsec .riskrow{margin-top:66px;}
-  .whoband{margin-top:76px;padding-top:56px;border-top:1px solid var(--l-hair);}
-  .whoband .audgrid{grid-template-columns:repeat(3,1fr);margin-top:26px;}
-  .whoband .audcard{min-height:268px;}
-  .whoband .photocap{margin-top:16px;text-align:center;}
-  .cohortbar{margin:56px auto 0;max-width:820px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
-    border:1px dashed #D9E1E9;border-radius:14px;padding:22px 26px;background:#fff;}
-  .cohortbar b{font-size:var(--fs-sm);color:var(--l-ink);}
-  .cohortbar span{font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
-
-  /* 7 · faq */
-  .faqsec .head{text-align:center;margin-bottom:44px;}
-
-  /* 8 · closer + footer */
-  .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.05;}
-  .closer .lead{margin:24px auto 0;}
-  .closer .ctas{margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-  .bigfooter{margin-top:126px;}
-
-  @media (max-width:1100px){
-    /* minmax(0,…) — without it the specstrip's min-content width stretches the
-       single column past the viewport and the hero clips its own copy */
-    .heroinner{grid-template-columns:minmax(0,1fr);gap:34px;padding:128px 24px 0;}
-    .hero.photohero{min-height:0;}
-    .tlsec .cols{grid-template-columns:1fr;gap:46px;}
-    .tlstick{position:static;}
-    .tlstick .phoneframe{transform:none;}
-    .moneytop,.dispcols{grid-template-columns:1fr;gap:40px;}
-  }
-  @media (max-width:900px){
-    .heroinner{padding:118px 18px 0;}
-    .hero .specstrip{gap:10px 16px;flex-wrap:wrap;}
-    .hero .specstrip span{max-width:100%;}
-    .hero .scene-overlay{position:static;max-width:none;margin:10px 14px 0;}
-    .hero .scene-frame{padding-bottom:14px;}
-    .warngrid,.ladder{grid-template-columns:1fr;}
-    .whoband .audgrid{grid-template-columns:1fr 1fr;}
-    .safesplit{min-height:0;}
-    .safesplit .copy{padding:44px 24px;}
-    .figrow{gap:26px;}
-    .fig{padding:0;border-left:0;}
-    .tlrow{grid-template-columns:50px 20px 1fr;gap:0 12px;}
-  }
-
-  /* ══ CRM surface, honest integrations, branch view, inline lead form ══ */
-  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
-  .crmduo.rev .m{order:2;}
-  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
-  .ptlist{margin-top:24px;}
-  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
-  .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#141A1F;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
-  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
-
-  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
-  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
-  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;}
-  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
-  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
-  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
-  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
-  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
-  .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
-    font-weight:700;border-bottom:1px solid var(--hair);}
-  .statcol li:last-child{border-bottom:0;}
-  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
-
-  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
-  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
-  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
-  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
-  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
-  .mlsite{border:1px solid var(--app-line,rgba(20,26,31,.117));border-radius:8px;padding:15px 16px;
-    background:var(--app-panel,#FFFFFF);}
-  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#141A1F;}
-  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
-  .mlsite dl{margin-top:11px;}
-  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(20,26,31,.091);}
-  .mlsite .r:first-of-type{border-top:0;}
-  .mlsite .r dt{width:88px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
-    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
-  .mlsite .r dd{color:#141A1F;font-weight:600;margin:0;}
-
-  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
-  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
-    line-height:1.72;color:var(--tx2);font-weight:500;}
-  .leadbox .eaform{max-width:100%;}
-  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
-  /* the honest-status grid sits on this page's white band */
-  .intsec .statcol{border-color:var(--l-hair);background:#fff;}
-  .intsec .statcol.now{border-color:rgba(20,26,31,.34);background:rgba(255,255,255,.05);}
-  .intsec .statcol.now .hl4{color:#0B7878;}
-  .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(183,121,31,.06);}
-  .intsec .statcol.man .hl4{color:#8D642F;}
-  .intsec .statcol.road .hl4{color:#616B75;}
-  .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
-  .intsec .statcol li span{color:var(--l-mut);}
-  .intsec .statnote{color:#616B75;}
-  @media (max-width:560px){.whoband .audgrid{grid-template-columns:1fr;}}
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/real-estate.html">
@@ -260,22 +99,20 @@
 <link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/real-estate.html">
 <!--/#alt-->
 </head>
-<body data-grade="home">
-
-<!-- ═══════ 1 · HERO — a lit agency window at 8:52 PM, office shut ═══════ -->
+<body data-grade="voice">
 <header class="hero photohero">
   <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-           srcset="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="100vw"
-         alt="" width="1600" height="2400" loading="eager" fetchpriority="high" decoding="async">
+    <img class="ph" src="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/8482517/pexels-photo-8482517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
   </div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="tint" aria-hidden="true"></div>
   <div class="grainlayer grain" aria-hidden="true"></div>
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v83.0">v83.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v84.0">v84.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -290,56 +127,25 @@
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav></div>
 <!--/#nav-->
-
-  <div class="heroinner">
-    <div class="hero-panel">
-      <span class="eyebrow"><i></i>For&nbsp;estate agents · lettings agents · sales &amp; lettings</span>
-      <h1>The&nbsp;enquiry lands at&nbsp;8:52&nbsp;PM. <br><span class="teal">The&nbsp;viewing is booked by&nbsp;8:54.</span></h1>
-      <p class="sub">Saleringo answers your&nbsp;sales and lettings line when the&nbsp;office is dark, confirms the&nbsp;listing from&nbsp;your&nbsp;own availability, and asks every&nbsp;applicant the&nbsp;questions <em style="font-style:normal;color:#141A1F;font-weight:700;">you</em> approved — the&nbsp;same ones, in&nbsp;the&nbsp;same order, for&nbsp;everyone who rings. Then it books the&nbsp;viewing into&nbsp;a&nbsp;negotiator's&nbsp;real diary. What a&nbsp;property is worth, and what an&nbsp;offer would be accepted at, are never its&nbsp;answers.</p>
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>Real estate &middot; rentals &middot; brokerages</span>
+      <h1>The listing inquiry arrives<br>while the broker is out showing homes.</h1>
+      <p class="sub">The hours spent at viewings are exactly the hours people call. That one call is either your next contract or the brokerage down the street&rsquo;s.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
-        <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; Real estate</a>
       </div>
-      <p class="heroscroll"><a href="../index.html#demo60">New here? Start with&nbsp;the two-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
-      <div class="fbadge"><i>★</i>Founding cohort — 50% off for&nbsp;3 months</div>
-      <div class="micro">Keep your&nbsp;number · Evenings and weekends only, or 24/7 · Answers in&nbsp;the&nbsp;applicant's&nbsp;own language</div>
-      <div class="whofor">
-        <span class="whotxt">Built for&nbsp;offices where the&nbsp;Saturday-night portal enquiry rings out and surfaces in&nbsp;an&nbsp;inbox on&nbsp;Monday — <b>founding cohort now open</b></span>
-      </div>
-    </div>
-
-    <div>
-    <div class="scene-frame">
-      <div class="photo-scrim" style="height:clamp(300px,38vw,520px);">
-        <img class="ph" src="https://images.pexels.com/photos/6606586/pexels-photo-6606586.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-             srcset="https://images.pexels.com/photos/6606586/pexels-photo-6606586.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/6606586/pexels-photo-6606586.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/6606586/pexels-photo-6606586.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-             sizes="100vw" alt="A woman standing at a window in a warmly lit room in the evening, a phone held to her ear"
-             loading="lazy" decoding="async" width="1600" height="1067">
-      </div>
-      <div class="scene-overlay tl"><b>14 Cargill Street · 8:52 PM</b><span>Two-bed seen on&nbsp;the&nbsp;portal · office shut since&nbsp;six · the&nbsp;other three agencies are shut too</span></div>
-      <div class="scene-overlay br"><b>Viewing booked · 8:54 PM</b><span>Saturday 10:30 · applicant record created · fee facts stated on&nbsp;the&nbsp;call</span></div>
-    </div>
-    <p class="photocap">8:52 PM — the&nbsp;hour applicants actually look, and the&nbsp;hour nobody is at&nbsp;the&nbsp;desk.
-      Illustrative photography; not a&nbsp;Saleringo customer.</p>
-    </div>
-
-    <div class="specstrip">
-      <span><i>●</i><b>Evenings &amp; weekends</b> only, or 24/7</span>
-      <span><i>●</i><b>The&nbsp;same questions</b> in&nbsp;the&nbsp;same order, for&nbsp;everyone</span>
-      <span><i>●</i><b>Availability &amp; rent</b> read from&nbsp;your&nbsp;own listings</span>
-      <span><i>●</i><b>No&nbsp;valuation</b>, no&nbsp;offer opinion, ever</span>
     </div>
   </div>
 </header>
 
-<!--demo:v2-->
-<section class="sec-light t-md" id="demo">
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow light"><i></i>Hear it &middot; Real estate</span>
-      <h2 class="h2" style="margin-top:20px;">The call, the next morning&rsquo;s message, <br>and what was waiting at nine.</h2>
-      <p class="lead" style="margin-top:16px;">A scripted call for a real estate: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Wednesday 7:24 PM, the call</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">How it goes<br>while the broker is out on showings.</h2>
     <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/real-estate.json" data-d60-audio="../../assets/audio/demo/">
       
       <div class="d60tabs" role="tablist" aria-label="Chapters">
@@ -379,7 +185,7 @@
             <p class="lbl">Handed to a person — and what the person receives</p>
             <ul data-d60-handlist><li>The whole conversation, both channels</li><li>Every captured field, with its source</li><li>Why it stopped: a rent offer is a negotiation, not a fact in the listing</li></ul>
           </div>
-          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">The owner’s morning screen — what is waiting at 9:00</p><div data-d60-morninglist></div></div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">9:00 AM, the broker’s screen — what is waiting</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
@@ -389,854 +195,116 @@
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
-          <a class="btn btn-teal" href="../../get-started.html">Get my plan for this trade</a>
+          <a class="btn btn-teal" href="../get-started.html">Get my plan for this trade</a>
           <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">Call the live AI — no form first</a>
           <span class="telnote">Korean number — international rates apply</span>
         </div>
       </div>
     </div>
     
-    <noscript><p class="lead">The demo needs JavaScript. The same story is written out in the worked examples below.</p></noscript>
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">Real estate &mdash; <b>listing call, mid-showing</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">broker out</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>Customer</em>7:24 PM</span><div class="bub user">Is that two-bedroom on Alder Street still available? And how many parking spaces does it have?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+11 s</span><div class="bub ai">Yes, it&rsquo;s still available. Parking is one assigned space, and visitors park on the street. From the listing, rent is <b>$2,400 a month</b> with a one-month deposit. I can show it <b>tomorrow at 11:00 AM</b> or at <b>3:00 PM</b>.</div></div><div class="nl us"><span class="t"><em>Customer</em>7:25 PM</span><div class="bub user">Three works. Sorry &mdash; are you the agent?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+6 s</span><div class="bub ai">No, I&rsquo;m an AI assistant. I can share what&rsquo;s in the listing and book the viewing; anything about terms or the lease is for the broker. May I take your name and a mobile number?</div></div><div class="nl us"><span class="t"><em>Customer</em>7:26 PM</span><div class="bub user">Olivia Park, 555-0419. I&rsquo;m hoping to move in at the end of next month.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+7 s</span><div class="bub ai">Thank you, Olivia. You&rsquo;re booked for tomorrow at 3:00 PM, and the broker will call you beforehand and meet you at the property. ID is checked there, and I&rsquo;m texting you the address now.</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      this trade’s price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the price list the broker enters.</p>
   </div>
 </section>
-<!--/demo:v2-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main>
-
-<section class="tlsec bg-grid t-md">
+<section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>Minute by&nbsp;minute</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:760px">The&nbsp;ninety seconds <br>that won the&nbsp;viewing.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One ordinary shape of&nbsp;a&nbsp;Friday-evening portal enquiry — from&nbsp;the&nbsp;first ring to&nbsp;a&nbsp;confirmed slot in&nbsp;a&nbsp;negotiator's&nbsp;Saturday. Scripted demo, timings from&nbsp;live test calls.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A missed call<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">Several offices carry the same listing, so whoever answers first books the showing, and whoever books the showing writes the contract. The broker cannot pick up precisely when out at a showing &mdash; which means the busier the office gets, the more calls it drops.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="Closed hours" xmlns="http://www.w3.org/2000/svg"><title>Closed hours</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Closed hours</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15 hours</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >of 24 hours</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >closed</text><circle cx="52.9076" cy="112.73" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >open 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >closed</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >7:24 PM — call</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >calls still arrive in these hours</text></svg><figcaption class="illcap">Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.</figcaption></figure></div>
+  </div>
+</section>
 
-    <div class="cols">
-      <div class="tlstick reveal">
-        <div class="phoneframe"><div class="screen">
-          <div class="notch"></div>
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-a">CS</span>
-              <span class="who"><b>Sales &amp; lettings line</b><span>+44 7•• ••• 604 · 8:52 PM</span></span>
-              <span class="timer sg">01:38</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">The&nbsp;two-bed on&nbsp;Cargill Street — is it still available?</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">It is. The&nbsp;same three questions I ask everyone, then I'll book you a&nbsp;<em>viewing</em>.</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">Saturday morning would be&nbsp;ideal.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ Booked · Saturday 10:30</span></div>
-        </div></div>
-      </div>
-
-      <div class="reveal">
-        <div class="tlrow">
-          <span class="tm sg">0:00</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"I've&nbsp;just seen the&nbsp;two-bed on&nbsp;Cargill Street on&nbsp;the&nbsp;portal. Is it still available, or&nbsp;am&nbsp;I too&nbsp;late?"</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:11</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"14 Cargill Street, the&nbsp;second-floor two-bed — still available. <em>$1,875</em> a&nbsp;month, free from&nbsp;the&nbsp;6th, unfurnished, one&nbsp;allocated space. None of&nbsp;that&nbsp;is my&nbsp;estimate; it is what the&nbsp;listing says tonight."</p></div>
-        </div>
-        <div class="tlrow warn">
-          <span class="tm sg">0:29</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">THE SAME SCRIPT, EVERY CALLER</span><p>Now the&nbsp;approved question set, in&nbsp;the&nbsp;approved order — <em>when you would want to&nbsp;move, who else would be on&nbsp;the&nbsp;tenancy, and whether you have seen the&nbsp;referencing criteria.</em> Nothing about&nbsp;who is calling changes which questions get asked, or in&nbsp;what order.</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:52</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"Two things this&nbsp;agency states before a&nbsp;viewing rather than after&nbsp;one: the&nbsp;landlord's&nbsp;published referencing criteria, and the&nbsp;holding deposit, which on&nbsp;this&nbsp;listing is one&nbsp;week's&nbsp;rent. I'll send both in&nbsp;writing either&nbsp;way."</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">1:09</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"What would they take? Would they do 1,750 if&nbsp;I signed tomorrow?"</p></div>
-        </div>
-        <div class="tlrow warn">
-          <span class="tm sg">1:13</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">HARD BOUNDARY</span><p>It does not answer, and it does not soften it into&nbsp;a&nbsp;hint. What a&nbsp;landlord or a&nbsp;vendor would accept is a&nbsp;negotiator's&nbsp;sentence, not a&nbsp;machine's. The&nbsp;question goes onto&nbsp;the&nbsp;applicant record word for&nbsp;word and is the&nbsp;first thing on&nbsp;the&nbsp;desk at&nbsp;nine.</p></div>
-        </div>
-        <div class="tlrow done">
-          <span class="tm sg">1:38</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">RESULT</span><p>Viewing booked Saturday 10:30 · the&nbsp;sitting tenant's&nbsp;24&nbsp;hours' notice respected · applicant record created with&nbsp;move date, party size and position · fee facts logged as&nbsp;stated · offer question queued for&nbsp;a&nbsp;person · confirmation sent by&nbsp;text at&nbsp;8:54.</p></div>
-        </div>
-        <p class="tlfoot">Scripted demo built from&nbsp;the&nbsp;founding-cohort playbook. Your&nbsp;listings, your&nbsp;question set, your&nbsp;diary.</p>
-      </div>
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in this trade.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the Real estate answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>It never passes itself off as the agent.</b>Asked, it says it is an AI. Nothing that needs a licence is said by something without one.</li><li><b>It never negotiates.</b>It does not knock anything off the rent or the deposit. It reads the terms as listed, books the showing, and a &ldquo;would they take $2,200?&rdquo; goes to the broker.</li><li><b>It never explains title or liens.</b>Mortgages, prior claims and who holds what are read off the record and explained by the broker.</li><li><b>It never gives an investment opinion.</b>Whether the area will go up, or whether to buy at all, is not a question it answers.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="The gate before a person" xmlns="http://www.w3.org/2000/svg"><title>The gate before a person</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">The gate before a person</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >The customer asks</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“Is that two-bedroom o</text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >n Alder Street st…”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >On the price list?</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Needs a judgement?</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Safety involved?</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >It answers</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >word for word, with the source</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >Handed to a person</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >the whole conversation</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >every captured field</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >why it stopped</text></svg><figcaption class="illcap">On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="dialsec t-md sec-dark bg-grid">
+<section class="t-md sec-light bg-paper" id="crm">
   <div class="wrap">
-    <div class="nightfig scenefig reveal">
-      <div class="scenebox" data-scene="nightclock"></div>
-      <div>
-        <p class="scenecap"><b>Nine to&nbsp;six on&nbsp;weekdays, nine to&nbsp;one on&nbsp;Saturday</b> &mdash; a&nbsp;longer week than many offices actually work.
-          That&nbsp;is <span class="num">49 of&nbsp;168 hours</span> with&nbsp;somebody at&nbsp;the&nbsp;desk.
-          The&nbsp;enquiry in&nbsp;the&nbsp;headline above arrived in&nbsp;the&nbsp;other 119.</p>
-        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
-          collected. It is what an&nbsp;agency&rsquo;s&nbsp;own opening hours divide into &mdash; and Sunday afternoon is
-          when people sit down and look at&nbsp;property.</p>
-      </div>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The Real estate CRM comes with Real estate fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="Customer record" xmlns="http://www.w3.org/2000/svg"><title>Customer record</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Customer record</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >Olivia Park</text><text x="213" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">555-04··</text><rect x="400" y="54" width="44.1" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="422.05" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >Phone</text><rect x="452.1" y="54" width="64.56" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="484.38" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >WhatsApp</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Listing number and pro</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >What they want (budget</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Showing time booked</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Buying or renting</text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text></svg><figcaption class="illcap">The card a call leaves behind, with the source of every field.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>Listing number and property type</span><span>What they want (budget, move-in date, floor, parking)</span><span>Showing time booked</span><span>Buying or renting</span><span>How they found the listing (portal, sign, referral)</span><span>Contact consent</span></div></div>
   </div>
 </section>
 
-<section class="moneysec bg-dusk t-xl">
+<section class="t-md sec-dark bg-grid" id="pipeline">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;cost of&nbsp;one unanswered enquiry</span><span class="line"></span></div>
-    <div class="moneytop">
-      <div class="reveal">
-        <div class="bignum gradtext warm">119 h</div>
-        <p class="bigcap">The&nbsp;hours each&nbsp;week your&nbsp;office is shut. Not a&nbsp;survey figure — the&nbsp;remainder when
-          49 open hours are taken out of&nbsp;168.</p>
-        <div class="photocard">
-          <img class="ph" src="https://images.pexels.com/photos/20345064/pexels-photo-20345064.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/20345064/pexels-photo-20345064.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/20345064/pexels-photo-20345064.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/20345064/pexels-photo-20345064.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/20345064/pexels-photo-20345064.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A landlord handing keys to a new tenant" loading="lazy" decoding="async" width="1600" height="1067">
-          <span class="kicker">Who answers the&nbsp;evening enquiry now</span>
-          <h3>Usually, nobody &mdash; or&nbsp;a&nbsp;negotiator at&nbsp;dinner.</h3>
-          <p>In&nbsp;most independent offices the&nbsp;after-hours enquiry either rings out or reaches a&nbsp;personal mobile, and the&nbsp;applicant rings the&nbsp;next agency on&nbsp;the&nbsp;page while it is still ringing.</p>
-          <span class="stat"><b>1</b>thing an&nbsp;evening enquiry needs before it cools: a&nbsp;date and a&nbsp;time</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <h2 class="h2 onDark">A&nbsp;callback on&nbsp;Monday is&nbsp;not <br>a&nbsp;reply to&nbsp;a&nbsp;Friday enquiry.</h2>
-        <p class="lead onDark" style="margin-top:18px;">A&nbsp;portal enquiry is not exclusive. The&nbsp;same applicant has usually sent three or four that&nbsp;evening, to&nbsp;whoever else has a&nbsp;two-bed at&nbsp;that&nbsp;price, and the&nbsp;one who books the&nbsp;viewing first meets them first. By&nbsp;Monday the&nbsp;flat has been seen twice and the&nbsp;call you return is a&nbsp;courtesy call.</p>
-        <div class="figrow" style="margin-top:38px;">
-          <div class="fig"><b class="sg">20:52</b><span>the&nbsp;time the&nbsp;enquiry arrived — and the&nbsp;time on&nbsp;the&nbsp;record</span></div>
-          <div class="fig"><b class="sg">20:54</b><span>the&nbsp;time the&nbsp;viewing was in&nbsp;a&nbsp;diary, on&nbsp;the&nbsp;same record</span></div>
-          <div class="fig"><b class="sg">2 min</b><span>the&nbsp;gap between an&nbsp;applicant looking and an&nbsp;applicant booked</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="baGrid reveal">
-      <div class="baCol before">
-        <div class="hl4" role="heading" aria-level="3">Friday night · without&nbsp;an&nbsp;answer</div>
-        <ul>
-          <li><i>✕</i><span><b style="color:#141A1F;">8:52 PM</b> — the&nbsp;line rings out. The&nbsp;applicant is on&nbsp;the&nbsp;portal with&nbsp;four other listings open in&nbsp;other tabs.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">8:58 PM</b> — the&nbsp;agency two doors down answers. Their&nbsp;viewing is Saturday at&nbsp;ten.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">Sat 10:00</b> — your&nbsp;flat is seen by&nbsp;nobody, because nobody has been booked to&nbsp;see it.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">Mon 9:20</b> — you return the&nbsp;call. They took the&nbsp;other flat on&nbsp;Sunday, and they are polite about&nbsp;it.</span></li>
-        </ul>
-      </div>
-      <div class="baArrow" aria-hidden="true">→</div>
-      <div class="baCol after">
-        <div class="hl4" role="heading" aria-level="3">Friday night · with&nbsp;Saleringo answering</div>
-        <ul>
-          <li><i>✓</i><span><b style="color:#141A1F;">8:52 PM</b> — answered on&nbsp;the&nbsp;second ring. Availability and rent read straight from&nbsp;the&nbsp;listing.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">8:53 PM</b> — your&nbsp;three approved questions, in&nbsp;your&nbsp;approved order. Fee facts stated out&nbsp;loud.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">8:54 PM</b> — Saturday 10:30 booked into&nbsp;a&nbsp;negotiator's&nbsp;real diary, confirmation texted.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">Mon 9:00</b> — the&nbsp;negotiator opens an&nbsp;applicant who has already seen it, with&nbsp;one&nbsp;question waiting for&nbsp;a&nbsp;human answer.</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="srcnote">The&nbsp;times above are the&nbsp;ones this&nbsp;page's&nbsp;own worked call produces — not a&nbsp;survey, and not a&nbsp;promise about&nbsp;your&nbsp;office. We publish no&nbsp;speed-to-lead percentage for&nbsp;this&nbsp;trade, because every&nbsp;figure we could find was published by&nbsp;somebody selling the&nbsp;same product</p>
-  </div>
-</section>
-
-<section class="safesec bg-paper t-md">
-  <div class="wrap">
-    <div class="photosplit safesplit reveal">
-      <div class="media">
-        <img class="ph" src="https://images.pexels.com/photos/8815820/pexels-photo-8815820.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-           srcset="https://images.pexels.com/photos/8815820/pexels-photo-8815820.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/8815820/pexels-photo-8815820.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/8815820/pexels-photo-8815820.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/8815820/pexels-photo-8815820.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="(max-width:900px) 100vw, 50vw"
-             alt="An agent in a suit holding a folder, showing two people up the stairs of a house on a viewing" loading="lazy" decoding="async" width="1600" height="1068">
-      </div>
-      <div class="copy">
-        <span class="eyebrow light"><i></i>Where the&nbsp;AI stops talking</span>
-        <h2 class="h2" style="margin-top:20px">Three&nbsp;questions <br>it will not&nbsp;answer.</h2>
-        <p class="lead" style="margin-top:18px;">What it is worth. What they would take. What sort of&nbsp;people live there. The&nbsp;first two belong to&nbsp;a&nbsp;valuer and a&nbsp;negotiator; the&nbsp;third belongs to&nbsp;nobody in&nbsp;the&nbsp;office, because answering it at&nbsp;all is how an&nbsp;agency ends up in&nbsp;front of&nbsp;a&nbsp;regulator. These&nbsp;limits ship enabled; they are not settings someone can switch off to&nbsp;warm a&nbsp;lead up.</p>
-      </div>
-    </div>
-
-    <div class="warngrid reveal">
-      <div class="warncard">
-        <span class="tag">Never priced</span>
-        <b>No&nbsp;valuation, no&nbsp;range, no&nbsp;"about"</b>
-        <p>"What's&nbsp;my&nbsp;house worth?" produces a&nbsp;booked market appraisal in&nbsp;a&nbsp;named valuer's&nbsp;diary, never a&nbsp;figure. It will not give a&nbsp;bracket, will not say whether an&nbsp;asking price looks high, and will not read a&nbsp;portal estimate back as if&nbsp;it were the&nbsp;agency's&nbsp;view.</p>
-      </div>
-      <div class="warncard">
-        <span class="tag">Never negotiated</span>
-        <b>What an&nbsp;offer would be accepted&nbsp;at</b>
-        <p>It does not say what a&nbsp;vendor or landlord would take, does not hint, and does not disclose another&nbsp;party's&nbsp;offer, position or reason for&nbsp;moving. The&nbsp;question is recorded verbatim against the&nbsp;applicant and handed to&nbsp;the&nbsp;negotiator who is allowed to&nbsp;answer&nbsp;it.</p>
-      </div>
-      <div class="warncard amber">
-        <span class="tag">Never steered</span>
-        <b>The&nbsp;same script, in&nbsp;the&nbsp;same&nbsp;order</b>
-        <p>Every&nbsp;caller on&nbsp;a&nbsp;listing gets the&nbsp;identical question set, and the&nbsp;transcript proves it. It answers nothing about&nbsp;who lives on&nbsp;a&nbsp;road or which street would "suit" someone, and nothing about&nbsp;the&nbsp;caller changes what it offers, in&nbsp;any wording.</p>
-      </div>
-    </div>
-
-    <div class="ladder reveal">
-      <div class="lstep"><span class="n sg">STEP 01</span><b>Confirm the&nbsp;listing</b><span>Available or not, the&nbsp;advertised price or rent, the&nbsp;date it is free — read from&nbsp;your&nbsp;own stock, never reconstructed.</span></div>
-      <div class="lstep"><span class="n sg">STEP 02</span><b>Ask the&nbsp;approved set</b><span>Your&nbsp;questions, your&nbsp;order, every&nbsp;caller. Move date, who is on&nbsp;the&nbsp;tenancy or the&nbsp;purchase, position to&nbsp;proceed.</span></div>
-      <div class="lstep"><span class="n sg">STEP 03</span><b>Book a&nbsp;real slot</b><span>Only where the&nbsp;negotiator's&nbsp;diary and the&nbsp;occupier's&nbsp;notice period both allow it. If nothing fits, it says&nbsp;so.</span></div>
-      <div class="lstep"><span class="n sg">STEP 04</span><b>Leave the&nbsp;record</b><span>Time of&nbsp;enquiry, the&nbsp;questions as asked, the&nbsp;fee facts as stated, and anything it refused — on&nbsp;one applicant record.</span></div>
-    </div>
-    <p class="safenote">Every&nbsp;one of&nbsp;these is a&nbsp;rule you approve before it goes live. <a href="../verified-ai.html">How answers get approved →</a></p>
-  </div>
-</section>
-
-<section class="dispsec grain t-xl">
-  <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;other side of&nbsp;the&nbsp;call</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:700px">The&nbsp;negotiator is&nbsp;briefed <br>before the&nbsp;applicant hangs&nbsp;up.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One inbox for&nbsp;phone, web chat and messaging — and a&nbsp;booked viewing that&nbsp;carries the&nbsp;move date, the&nbsp;party, the&nbsp;position to&nbsp;proceed and the&nbsp;one&nbsp;question the&nbsp;AI refused. No&nbsp;"ring the&nbsp;office on&nbsp;Monday and we'll&nbsp;see who they are."</p>
-
-    <div class="dispcols">
-      <div class="scene-frame tiltcard reveal">
-        <svg viewBox="0 0 1000 640" role="img" aria-label="The negotiator's phone showing a booked viewing: the listing and branch, the applicant's own words, the answers to the three approved questions, the question the AI refused to answer, the slot, and a confirm button — all filled in before the call ended.">
-          <defs>
-            <linearGradient id="reBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-            <radialGradient id="reGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".32"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
-            <linearGradient id="reScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-          </defs>
-          <rect width="1000" height="640" fill="url(#reBg)"/>
-          <ellipse cx="500" cy="330" rx="380" ry="290" fill="url(#reGlow)"/>
-
-          <!-- a shut high-street office at night, just enough to place the phone -->
-          <g opacity=".45">
-            <path d="M0 470 H1000 V640 H0 Z" fill="#F6F4EE"/>
-            <path d="M70 470 V286 H330 V470 M670 470 V286 H930 V470" fill="none" stroke="#141A1F" stroke-width="3"/>
-            <rect x="104" y="322" width="46" height="34" fill="#F6F4EE"/><rect x="168" y="322" width="46" height="34" fill="#F6F4EE"/><rect x="232" y="322" width="46" height="34" fill="#F6F4EE"/>
-            <rect x="704" y="322" width="46" height="34" fill="#F6F4EE"/><rect x="768" y="322" width="46" height="34" fill="#F6F4EE"/><rect x="832" y="322" width="46" height="34" fill="#F6F4EE"/>
-            <path d="M70 380 H330 M670 380 H930" stroke="#141A1F" stroke-width="2"/>
-          </g>
-
-          <!-- the phone, in the negotiator's hand -->
-          <g transform="translate(330,52)">
-            <rect width="340" height="560" rx="42" fill="#F6F4EE" stroke="#141A1F" stroke-width="2.5"/>
-            <rect x="14" y="14" width="312" height="532" rx="32" fill="url(#reScreen)"/>
-            <rect x="130" y="22" width="80" height="14" rx="7" fill="#F6F4EE"/>
-
-            <g font-family="Plus Jakarta Sans,sans-serif">
-              <text x="40" y="76" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" letter-spacing="2.4">VIEWING BOOKED · 8:54 PM</text>
-              <rect x="228" y="60" width="76" height="24" rx="12" fill="rgba(23,189,189,.2)"/>
-              <text x="266" y="76" font-size="12" fill="#7FD6D6" text-anchor="middle" font-weight="800">LETTINGS</text>
-
-              <text x="40" y="112" font-size="19" fill="#F6F4EE" font-weight="700">14 Cargill St · Flat 6</text>
-              <text x="40" y="136" font-size="12.5" fill="#94A2B8" font-weight="600">2 bed · $1,875 pcm · free from&nbsp;the&nbsp;6th</text>
-
-              <path d="M40 156 H300" stroke="rgba(20,26,31,.10)" stroke-width="1.5"/>
-
-              <text x="40" y="184" font-size="12" fill="#5E6C82" font-weight="800">ASKED AND ANSWERED</text>
-              <rect x="34" y="196" width="272" height="86" rx="12" fill="rgba(20,26,31,.05)"/>
-              <text x="48" y="220" font-size="12.5" fill="#F6F4EE" font-weight="600">1 · Move date — the&nbsp;9th, tenancy</text>
-              <text x="48" y="238" font-size="12.5" fill="#F6F4EE" font-weight="600">     ends on&nbsp;the&nbsp;5th</text>
-              <text x="48" y="258" font-size="12.5" fill="#F6F4EE" font-weight="600">2 · Two adults, no&nbsp;guarantor yet</text>
-              <text x="48" y="276" font-size="12.5" fill="#F6F4EE" font-weight="600">3 · Referencing criteria — sent</text>
-
-              <rect x="34" y="296" width="272" height="46" rx="12" fill="rgba(232,164,76,.14)"/>
-              <text x="48" y="316" font-size="12" fill="#E8A44C" font-weight="800">NOT ANSWERED — FOR YOU</text>
-              <text x="48" y="334" font-size="12" fill="#F6F4EE" font-weight="600">“Would they take 1,750?”</text>
-
-              <text x="40" y="374" font-size="12" fill="#5E6C82" font-weight="800">THE SLOT</text>
-              <g>
-                <rect x="34" y="386" width="130" height="56" rx="12" fill="rgba(23,189,189,.14)"/>
-                <text x="48" y="408" font-size="12.5" fill="#5FA9A9" font-weight="700">Saturday</text>
-                <text x="48" y="430" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">10:30</text>
-                <rect x="176" y="386" width="130" height="56" rx="12" fill="rgba(20,26,31,.05)"/>
-                <text x="190" y="408" font-size="12.5" fill="#8FA0B2" font-weight="700">Tenant notice</text>
-                <text x="190" y="430" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">24 h ✓</text>
-              </g>
-
-              <rect x="34" y="454" width="272" height="30" rx="15" fill="rgba(20,26,31,.05)"/>
-              <text x="170" y="474" font-size="12.5" fill="#8FA0B2" text-anchor="middle" font-weight="700">▶ Play the&nbsp;98-second recording</text>
-
-              <rect x="34" y="496" width="272" height="44" rx="22" fill="#17BDBD"/>
-              <text x="170" y="524" font-size="14" fill="#F6F4EE" text-anchor="middle" font-weight="800">Confirm the&nbsp;viewing</text>
-            </g>
-          </g>
-
-          <text x="500" y="616" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#5E6C82" text-anchor="middle" font-weight="600">Nobody had to&nbsp;ring back to&nbsp;find out who they were. The&nbsp;slot was in&nbsp;the&nbsp;diary before the&nbsp;applicant hung up.</text>
-        </svg>
-        <div class="scene-overlay tr"><b>Sent to&nbsp;the&nbsp;Cargill Street desk at&nbsp;8:54 PM</b><span>Move date, party, position, fee facts and the&nbsp;refused question attached</span></div>
-      </div>
-
-      <div class="dispside reveal">
-        <div class="msgthread">
-          <div class="mhead"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">DN</span>
-            <span><b>Lettings negotiator · Cargill Street desk</b><br><span>Viewing · 8:54 PM</span></span></div>
-          <div class="mbody">
-            <div class="m out">Viewing booked — 14 Cargill St, Flat&nbsp;6, Saturday 10:30. Two adults, moving the&nbsp;9th, current tenancy ends the&nbsp;5th, no&nbsp;guarantor named yet. Referencing criteria and the&nbsp;one-week holding deposit both stated on&nbsp;the&nbsp;call and sent in&nbsp;writing.<span class="tick">✓✓</span></div>
-            <div class="m in">Got it. I'll take that&nbsp;one myself.</div>
-            <div class="m out">One thing left for&nbsp;you: they asked whether the&nbsp;landlord would take 1,750. Not answered, logged word for&nbsp;word. Sitting tenant given 24&nbsp;hours' notice at&nbsp;8:55.<span class="tick">✓✓</span></div>
-          </div>
-        </div>
-        <div class="rrow"><span class="rchip">✓ CRM updated</span><span class="rchip">✓ Occupier noticed</span><span class="rchip">✓ Applicant given a&nbsp;time</span></div>
-        <p class="note">The&nbsp;same thread works the&nbsp;other way: the&nbsp;negotiator replies "the&nbsp;landlord has accepted an&nbsp;offer, take it off&nbsp;the&nbsp;board", and every&nbsp;later caller on&nbsp;that&nbsp;listing hears the&nbsp;right thing that&nbsp;evening rather than on&nbsp;Monday.</p>
-      </div>
-    </div>
-
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal"><b>Inquiry</b><i>&rarr;</i><b>Showing booked</b><i>&rarr;</i><b>Showing</b><i>&rarr;</i><b>Terms negotiated</b><i>&rarr;</i><b>Contract</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="Pipeline" xmlns="http://www.w3.org/2000/svg"><title>Pipeline</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Pipeline</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Inquiry</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Showing b</text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Showing</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Terms neg</text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Contract</text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">The Real estate pipeline as it is. How many inquiries sit at each stage, at a glance.</figcaption></figure></div>
   </div>
 </section>
 
 <section class="packcard t-md sec-dark bg-grid" id="the-pack">
   <div class="wrap">
     <a class="pc-link" href="./real-estate-pack.html">
-      <span class="pc-k">The&nbsp;Estate & lettings pack</span>
-      <b class="pc-h">Everything in&nbsp;the&nbsp;pack, on&nbsp;a&nbsp;page of&nbsp;its&nbsp;own</b>
-      <span class="pc-d">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and pipeline stages this&nbsp;trade works in, the&nbsp;systems it hands to, and every&nbsp;refusal written down. It is a&nbsp;manifest, so it lives where a&nbsp;manifest belongs rather than in&nbsp;the&nbsp;middle of&nbsp;an&nbsp;argument.</span>
+      <span class="pc-k">The Real estate pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
       <span class="pc-go" aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>
 
-<section class="sec-dark bg-grid t-md" id="multi-branch">
+<section class="t-md sec-light2" id="others">
   <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Two branches. Nine. Sales on&nbsp;one line, lettings on&nbsp;the&nbsp;other.</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">One branch's&nbsp;diary never <br><em style="font-style:normal;color:var(--teal);">fills another&nbsp;branch's</em> Saturday.</h2>
-      <p class="secintro">An&nbsp;agency's&nbsp;risk is not volume, it is crossed wires: the&nbsp;wrong diary, the&nbsp;wrong question set,
-        a&nbsp;sales script read to&nbsp;a&nbsp;lettings applicant, a&nbsp;viewing offered on&nbsp;a&nbsp;flat that&nbsp;went under&nbsp;offer at&nbsp;four
-        o'clock. Each&nbsp;branch and each&nbsp;listing is its&nbsp;own object inside one account.</p>
-    </div>
-    <div class="mlgrid reveal">
-      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own stock and its&nbsp;own diary</b>
-        <p>Availability, price and the&nbsp;date a&nbsp;property is free come from&nbsp;that&nbsp;branch's&nbsp;own listings, and a&nbsp;slot
-          is only offered in&nbsp;that&nbsp;branch's&nbsp;own diary. Nothing is offered on&nbsp;a&nbsp;listing marked under&nbsp;offer.</p></div>
-      <div class="mlcard"><span class="n">02</span><b>Its&nbsp;own approved question set</b>
-        <p>Sales and lettings ask different things, and so do new homes. The&nbsp;set is held per&nbsp;listing type, and
-          within&nbsp;a&nbsp;type it is one&nbsp;fixed sequence — not a&nbsp;per-caller judgement call.</p></div>
-      <div class="mlcard"><span class="n">03</span><b>Each&nbsp;negotiator sees only their&nbsp;own</b>
-        <p>A&nbsp;negotiator opens the&nbsp;board and sees their&nbsp;applicants, their&nbsp;viewings, their&nbsp;refused questions —
-          not the&nbsp;whole agency's, and not another&nbsp;branch's&nbsp;vendors.</p></div>
-      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
-        <p>One report, every&nbsp;branch in&nbsp;the&nbsp;same row: enquiries taken, viewings booked, appraisals booked,
-          questions the&nbsp;AI refused, and the&nbsp;median time from&nbsp;enquiry to&nbsp;a&nbsp;slot in&nbsp;a&nbsp;diary.</p></div>
-    </div>
-
-    <div class="mlsites reveal">
-      <div class="mlsite"><div class="h"><i></i>Cargill Street · lettings</div>
-        <dl>
-          <div class="r"><dt>Question set</dt><dd>Move date, party, referencing seen</dd></div>
-          <div class="r"><dt>Viewings</dt><dd>7 days, 8&nbsp;AM to&nbsp;8&nbsp;PM, accompanied</dd></div>
-          <div class="r"><dt>Occupier</dt><dd>24&nbsp;hours' notice before any&nbsp;slot</dd></div>
-        </dl></div>
-      <div class="mlsite"><div class="h"><i></i>Fern Bank · sales</div>
-        <dl>
-          <div class="r"><dt>Question set</dt><dd>Position, chain, funding in&nbsp;place</dd></div>
-          <div class="r"><dt>Viewings</dt><dd>Accompanied only · Sun by&nbsp;request</dd></div>
-          <div class="r"><dt>Appraisals</dt><dd>Booked to&nbsp;a&nbsp;named valuer</dd></div>
-        </dl></div>
-      <div class="mlsite"><div class="h"><i></i>Thornhill · new homes</div>
-        <dl>
-          <div class="r"><dt>Question set</dt><dd>Plot interest, timescale, funding</dd></div>
-          <div class="r"><dt>Viewings</dt><dd>Show apartment hours only</dd></div>
-          <div class="r"><dt>Reservations</dt><dd>Developer decides — AI never&nbsp;does</dd></div>
-        </dl></div>
-    </div>
-    <p class="statnote">"Developer decides" and "booked to&nbsp;a&nbsp;named valuer" are real settings — the&nbsp;normal ones.
-      At&nbsp;every&nbsp;branch the&nbsp;AI's&nbsp;job is the&nbsp;same: get the&nbsp;facts down, put a&nbsp;time in&nbsp;a&nbsp;diary, leave price
-      to&nbsp;the&nbsp;person named on&nbsp;the&nbsp;instruction. Branches, diaries, question sets and who-sees-what are
-      configured with&nbsp;you during onboarding.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal"><a href="./home-services.html"><img src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Home services</b></a><a href="./pest-control.html"><img src="https://images.pexels.com/photos/4176541/pexels-photo-4176541.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Pest control</b></a><a href="./property-management.html"><img src="https://images.pexels.com/photos/35707771/pexels-photo-35707771.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Property management</b></a><a href="./cleaning-services.html"><img src="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Cleaning services</b></a><a href="./interior-renovation.html"><img src="https://images.pexels.com/photos/6474507/pexels-photo-6474507.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Renovation contractors</b></a><a href="./landscaping.html"><img src="https://images.pexels.com/photos/32632465/pexels-photo-32632465.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Landscaping & lawn care</b></a><a href="./locksmith.html"><img src="https://images.pexels.com/photos/34286675/pexels-photo-34286675.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Locksmiths</b></a><a href="./appliance-repair.html"><img src="https://images.pexels.com/photos/32588545/pexels-photo-32588545.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Appliance repair</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">Dental</a><a href="./clinics.html">Clinics & med-spa</a><a href="./academies.html">Academies & tutoring</a><a href="./salons.html">Hair & beauty salons</a><a href="./veterinary.html">Veterinary</a><a href="./auto-repair.html">Auto repair</a><a href="./venues.html">Wedding & event venues</a><a href="./senior-care.html">Senior care</a><a href="./fitness.html">Gyms & fitness</a><a href="./home-services.html">Home services</a><a href="./pest-control.html">Pest control</a><a href="./property-management.html">Property management</a><a href="./movers.html">Movers</a><a href="./restaurants.html">Restaurants</a><a href="./stays.html">Boutique stays</a><a href="./golf.html">Golf clubs</a><a href="./funeral-homes.html">Funeral homes</a><a href="./legal.html">Law firms</a><a href="./universities.html">Universities</a><a href="./public-sector.html">Public sector</a><a href="./self-storage.html">Self storage</a><a href="./equipment-rental.html">Equipment rental</a><a href="./ecommerce.html">Online stores</a><a href="./franchise.html">Franchises</a><a href="./pharmacy.html">Pharmacy</a><a href="./hospital-outpatient.html">Hospitals & outpatient</a><a href="./physio-rehab.html">Physio & rehab</a><a href="./korean-medicine.html">Acupuncture & traditional medicine</a><a href="./optician.html">Opticians</a><a href="./counseling.html">Counseling & therapy</a><a href="./childcare.html">Daycare & preschool</a><a href="./driving-school.html">Driving schools</a><a href="./music-art-academy.html">Music & art schools</a><a href="./yoga-pilates.html">Yoga & pilates studios</a><a href="./martial-arts.html">Martial arts dojos</a><a href="./nail-spa.html">Nail & spa</a><a href="./barbershop.html">Barbershops</a><a href="./pet-grooming.html">Pet grooming & boarding</a><a href="./cleaning-services.html">Cleaning services</a><a href="./interior-renovation.html">Renovation contractors</a><a href="./landscaping.html">Landscaping & lawn care</a><a href="./locksmith.html">Locksmiths</a><a href="./appliance-repair.html">Appliance repair</a><a href="./laundry.html">Dry cleaning & laundry</a><a href="./car-wash.html">Car wash & detailing</a><a href="./car-dealers.html">Car dealerships</a><a href="./towing.html">Towing & roadside</a><a href="./cafes-bakeries.html">Cafés & bakeries</a><a href="./catering.html">Catering</a><a href="./travel-agency.html">Travel agencies</a><a href="./photo-studio.html">Photo studios</a><a href="./florist.html">Florists</a><a href="./accounting-tax.html">Accountants & tax</a><a href="./insurance-agency.html">Insurance agencies</a><a href="./home-security.html">Home security & CCTV installers</a><a href="./solar.html">Solar & energy installers</a><a href="./it-repair.html">Computer & phone repair</a><a href="./courier.html">Couriers & same-day delivery</a><a href="./print-signage.html">Print shops & signage</a><a href="./coworking.html">Coworking spaces</a><a href="./tours-activities.html">Tours & activities</a><a href="./schools.html">Schools & international schools</a><a href="./staffing.html">Staffing & recruitment agencies</a><a href="./imaging.html">Imaging & health-screening centres</a></div>
   </div>
 </section>
 
-<section class="intsec sec-light2 t-xl">
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>Your&nbsp;existing systems, honestly</span>
-      <h2 class="h2" style="margin-top:22px">No&nbsp;fake logo&nbsp;wall. <br>Here's&nbsp;what's actually&nbsp;live.</h2>
-      <p class="lead" style="margin-top:16px;">Today, applicants and viewings flow out through&nbsp;Zapier, CSV export, and a&nbsp;direct feed if&nbsp;your&nbsp;team wants one. Agency software is on&nbsp;the&nbsp;roadmap — and the&nbsp;founding cohort votes on&nbsp;the&nbsp;build order.</p>
-    </div>
-
-    <div class="statgrid reveal" id="integrations">
-      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
-        <ul>
-          <li>Zapier &amp; direct feeds<span>Push applicants, viewings and stage changes into&nbsp;whatever runs your&nbsp;agency</span></li>
-          <li>CSV export<span>Applicants, viewings, appraisals and the&nbsp;whole board, whenever you ask</span></li>
-          <li>Google &amp; Outlook Calendar<span>Viewings and appraisals land in&nbsp;the&nbsp;negotiator's&nbsp;real calendar</span></li>
-        </ul>
-      </div>
-      <div class="statcol man"><div class="hl4" role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</div>
-        <ul>
-          <li>Rightmove · Zoopla · other portals<span>No&nbsp;portal API. Enquiries reach the&nbsp;AI the&nbsp;way they already reach you — the&nbsp;forwarded call or the&nbsp;forwarded email</span></li>
-          <li>Street.co.uk · Dezrez · Jupix · Follow Up Boss<span>No&nbsp;direct link. Applicant records reach them through&nbsp;Zapier or CSV export</span></li>
-        </ul>
-      </div>
-      <div class="statcol road"><div class="hl4" role="heading" aria-level="3"><i></i>In&nbsp;build</div>
-        <ul>
-          <li>Direct agency-software integrations<span>Founding customers vote on&nbsp;the&nbsp;build order. We will not name a&nbsp;month we cannot stand behind</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="statnote">Until then, every enquiry sits in&nbsp;Saleringo's&nbsp;own inbox and CRM &mdash; and exports cleanly to&nbsp;whatever your&nbsp;office runs on. If the&nbsp;software you use is not on&nbsp;this&nbsp;list, ask before you buy.</p>
-
-    <div class="riskrow reveal">
-      <div class="riskitem light"><span class="ic">☎</span><b>Keep your&nbsp;number</b><span>Forward evenings and weekends first. Nothing to&nbsp;port, nothing to&nbsp;rip out.</span></div>
-      <div class="riskitem light"><span class="ic">◔</span><b>Live in&nbsp;about&nbsp;15 minutes</b><span>Call forwarding plus one branch's&nbsp;question set. No&nbsp;IT project, no&nbsp;new hardware.</span></div>
-      <div class="riskitem light"><span class="ic">✍</span><b>Your&nbsp;words only</b><span>Every answer comes from&nbsp;your&nbsp;approved question set, or&nbsp;the&nbsp;call goes to&nbsp;a&nbsp;negotiator.</span></div>
-      <div class="riskitem light"><span class="ic">1:1</span><b>Human onboarding</b><span>We write the&nbsp;question set, the&nbsp;viewing hours and the&nbsp;refusal list with&nbsp;you, branch by&nbsp;branch.</span></div>
-    </div>
-
-    <div class="whoband reveal">
-      <div class="secrule"><span class="eyebrow light"><i></i>Three people, one&nbsp;evening enquiry</span><span class="line"></span></div>
-      <div class="audgrid">
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/8962342/pexels-photo-8962342.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/8962342/pexels-photo-8962342.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/8962342/pexels-photo-8962342.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/8962342/pexels-photo-8962342.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8962342/pexels-photo-8962342.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="Three people in coats standing on a lawn beside a House For Rent board, looking at a property" loading="lazy" decoding="async" width="1600" height="1067">
-          <b>The&nbsp;applicant on&nbsp;Friday night</b><span>Wants to&nbsp;know it is still there and when they can see it — in&nbsp;that&nbsp;order, and in&nbsp;their&nbsp;own language</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/8837444/pexels-photo-8837444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/8837444/pexels-photo-8837444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/8837444/pexels-photo-8837444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/8837444/pexels-photo-8837444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8837444/pexels-photo-8837444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A woman sitting in a bright plant-filled room with a phone to her ear, mid-conversation" loading="lazy" decoding="async" width="1600" height="1067">
-          <b>The&nbsp;vendor or landlord</b><span>Wants Thursday's&nbsp;feedback and the&nbsp;truth about&nbsp;whether anything has been logged yet</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/7937212/pexels-photo-7937212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/7937212/pexels-photo-7937212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7937212/pexels-photo-7937212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7937212/pexels-photo-7937212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7937212/pexels-photo-7937212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A woman in a winter coat standing on a suburban path with an open folder, looking up at a house" loading="lazy" decoding="async" width="1600" height="2397">
-          <b>The&nbsp;valuer on&nbsp;Tuesday</b><span>Opens a&nbsp;market appraisal already in&nbsp;the&nbsp;diary, with&nbsp;the&nbsp;address and the&nbsp;reason for&nbsp;moving on&nbsp;it</span>
-        </div>
-      </div>
-      <p class="photocap light">Illustrative photography — these are not Saleringo customers.</p>
-    </div>
-
-    <div class="cohortbar reveal">
-      <span class="pilltag pt-teal">FOUNDING COHORT</span>
-      <b>50% off for&nbsp;3 months · priority onboarding · a&nbsp;vote on&nbsp;the&nbsp;next integration</b>
-      <span>Onboarding now.</span>
-      <a class="linkcta" href="../index.html#early-access" style="border-color:#0B7878;color:#0B7878;">Watch it answer my&nbsp;questions&nbsp;&nbsp;→</a>
-    </div>
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your Real estate price list,<br>and we show it answering from that.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; Real estate<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="9:00 AM — the owner’s screen" xmlns="http://www.w3.org/2000/svg"><title>9:00 AM — the owner’s screen</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >9:00 AM — the broker’s screen</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >New showing</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Olivia Park · today 3:00 PM · in the diary</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Listing card #2417</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >terms as listed · sent by text · opened</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Broker task</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >pre-showing call by 2:30 · ID check on site ·…</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Waiting for a person</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >rent offer · full thread attached · owner: Da…</text></svg><figcaption class="illcap">What the call produced, waiting on the morning screen.</figcaption></figure></div>
   </div>
 </section>
 
-<section class="t-md sec-light bg-paper" id="playbook">
-  <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow light"><i></i>The playbook</span><span class="line"></span></div>
-    <h2 class="h2 reveal">What each door captures &mdash;<br>and the work it becomes.</h2>
-    <p class="lead reveal">Three doors into&nbsp;the&nbsp;same agency &mdash; the&nbsp;phone, the&nbsp;chat on&nbsp;a&nbsp;listing page, the&nbsp;messaging thread. Each&nbsp;one writes what the&nbsp;applicant actually said onto&nbsp;one applicant record, and each&nbsp;record becomes the&nbsp;work a&nbsp;negotiator picks up at&nbsp;nine: a&nbsp;viewing to&nbsp;confirm, an&nbsp;appraisal to&nbsp;prepare, an&nbsp;offer question waiting for&nbsp;the&nbsp;person allowed to&nbsp;answer&nbsp;it.</p>
-
-    <div class="trio reveal" style="margin-top:30px;">
-      <div><b>✆ AI phone</b><p>The&nbsp;8:52&nbsp;PM caller: which listing, move date, who else is on&nbsp;the&nbsp;tenancy or the&nbsp;purchase, position to&nbsp;proceed &mdash; the&nbsp;approved questions in&nbsp;the&nbsp;approved order &mdash; plus the&nbsp;fee facts stated out&nbsp;loud and the&nbsp;times that&nbsp;suit.</p></div>
-      <div><b>💬 Website chat</b><p>The&nbsp;same approved question set, typed &mdash; and the&nbsp;record notes which listing page the&nbsp;question was asked from, so the&nbsp;Sunday-morning "is it still available?" lands against the&nbsp;right property without&nbsp;anyone asking twice.</p></div>
-      <div><b>✓ Messaging</b><p>WhatsApp and the&nbsp;other messengers, with&nbsp;the&nbsp;account attached &mdash; so a&nbsp;landlord's&nbsp;evening "what did the&nbsp;viewers think?" stays on&nbsp;one thread, and which viewings happened, and what is logged, is read from&nbsp;the&nbsp;record.</p></div>
-    </div>
-
-    <h3 class="h3 reveal" style="margin-top:34px;">The record it writes</h3>
-    <div class="dtwrap reveal"><table class="dtable">
-      <thead><tr><th>CRM field</th><th>Comes from</th><th>Verified how</th></tr></thead>
-      <tbody>
-        <tr><td>Listing &amp; branch</td><td>The&nbsp;caller names it &mdash; "the&nbsp;two-bed on&nbsp;Cargill Street"</td><td>Matched to&nbsp;that&nbsp;branch's&nbsp;own stock: available or not, the&nbsp;advertised rent, the&nbsp;date it is free</td></tr>
-        <tr><td>Move date</td><td>The&nbsp;first approved question</td><td>Recorded as the&nbsp;caller said it &mdash; "the&nbsp;9th, tenancy ends on&nbsp;the&nbsp;5th"</td></tr>
-        <tr><td>Party on&nbsp;the&nbsp;tenancy or purchase</td><td>The&nbsp;second approved question</td><td>Verbatim &mdash; "two adults, no&nbsp;guarantor yet" &mdash; nothing inferred</td></tr>
-        <tr><td>Position to&nbsp;proceed</td><td>The&nbsp;approved set for&nbsp;that&nbsp;listing type &mdash; chain, funding, timescale on&nbsp;sales</td><td>Held per&nbsp;listing type; one fixed sequence, every&nbsp;caller</td></tr>
-        <tr><td>Fee facts stated</td><td>The&nbsp;landlord's&nbsp;published referencing criteria and the&nbsp;holding deposit</td><td>Logged as stated on&nbsp;the&nbsp;call, and sent in&nbsp;writing either&nbsp;way</td></tr>
-        <tr><td>Viewing slot</td><td>The&nbsp;negotiator's&nbsp;real diary</td><td>Offered only where the&nbsp;diary and the&nbsp;occupier's&nbsp;24&nbsp;hours' notice both allow it</td></tr>
-        <tr><td>Refused question</td><td>"Would they take 1,750?"</td><td>Recorded word for&nbsp;word against the&nbsp;applicant &mdash; never answered, never hinted at</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3 class="h3 reveal" style="margin-top:30px;">The work it readies</h3>
-    <ul class="kolist reveal">
-      <li><b>Confirm the&nbsp;viewing</b> &mdash; the&nbsp;negotiator on&nbsp;that&nbsp;desk &mdash; the&nbsp;slot is already in&nbsp;the&nbsp;diary and the&nbsp;sitting tenant's&nbsp;24&nbsp;hours' notice went out at&nbsp;booking; a&nbsp;confirmation on&nbsp;Monday, not a&nbsp;ring-back.</li>
-      <li><b>Answer the&nbsp;offer question</b> &mdash; the&nbsp;negotiator allowed to&nbsp;answer it &mdash; captured verbatim on&nbsp;the&nbsp;applicant record, first thing on&nbsp;the&nbsp;desk at&nbsp;nine.</li>
-      <li><b>Prepare the&nbsp;market appraisal</b> &mdash; the&nbsp;named valuer &mdash; address, bedrooms and onward plans already on&nbsp;the&nbsp;record, booked into&nbsp;Tuesday's&nbsp;diary.</li>
-      <li><b>Return the&nbsp;vendor's&nbsp;feedback call</b> &mdash; the&nbsp;negotiator who did the&nbsp;viewing &mdash; marked as the&nbsp;first call of&nbsp;the&nbsp;day, with&nbsp;the&nbsp;complaint recorded as a&nbsp;complaint.</li>
-    </ul>
-
-    <h3 class="h3 reveal" style="margin-top:30px;">What stays a human decision</h3>
-    <ul class="kolist reveal">
-      <li><b>What a&nbsp;property is worth</b> &mdash; no&nbsp;valuation, no&nbsp;range, no&nbsp;portal estimate read back. The&nbsp;AI books the&nbsp;market appraisal instead.</li>
-      <li><b>What an&nbsp;offer would be accepted at</b> &mdash; never stated, never hinted, and no&nbsp;other&nbsp;party's&nbsp;offer disclosed. The&nbsp;question goes verbatim to&nbsp;the&nbsp;negotiator.</li>
-      <li><b>Who lives in&nbsp;an&nbsp;area</b> &mdash; never described, and nothing about&nbsp;the&nbsp;caller changes what is offered. The&nbsp;same script, in&nbsp;the&nbsp;same order, for&nbsp;everyone.</li>
-    </ul>
-
-    <h3 class="h3 reveal" style="margin-top:30px;">Before / after</h3>
-    <div class="trio reveal">
-      <div><b>Before</b><p>The&nbsp;8:52&nbsp;PM enquiry rings out and surfaces in&nbsp;an&nbsp;inbox on&nbsp;Monday. The&nbsp;applicant rang the&nbsp;next agency while yours was still ringing; by&nbsp;Monday the&nbsp;flat has been seen twice, and the&nbsp;call you return is a&nbsp;courtesy call.</p></div>
-      <div><b>After</b><p>Answered on&nbsp;the&nbsp;second ring, the&nbsp;approved questions in&nbsp;the&nbsp;approved order, the&nbsp;viewing booked at&nbsp;8:54 into&nbsp;a&nbsp;negotiator's&nbsp;real diary &mdash; and Monday opens on&nbsp;an&nbsp;applicant record with&nbsp;one question waiting for&nbsp;a&nbsp;person.</p></div>
-      <div><b>Your first 14 days</b><p>The&nbsp;pilot is the&nbsp;first 14&nbsp;days. Judge it on&nbsp;the&nbsp;real answer records it leaves &mdash; the&nbsp;transcripts, the&nbsp;bookings, the&nbsp;refusals &mdash; or take the&nbsp;full refund. The&nbsp;cost is the&nbsp;published plan price, unchanged; only the&nbsp;first month is pro-rated.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark bg-grid t-xl" id="worked-examples">
-  <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Six worked examples</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Six evenings on&nbsp;your&nbsp;line, <br>and the&nbsp;thing each&nbsp;one <br>put in&nbsp;a&nbsp;diary — or&nbsp;refused.</h2>
-      <p class="secintro">Not a&nbsp;demo reel. Six ordinary out-of-hours enquiries, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;exchange produced: a&nbsp;viewing in&nbsp;a&nbsp;real diary, an&nbsp;appraisal in&nbsp;a&nbsp;valuer's&nbsp;Tuesday, a&nbsp;price question put in&nbsp;front of&nbsp;a&nbsp;person instead of&nbsp;guessed at. Four of&nbsp;the&nbsp;six are refusals — read those&nbsp;first.</p>
-      <p class="exlabel" style="margin-top:14px;">Every&nbsp;scenario below is a&nbsp;worked illustration built
-        from&nbsp;the&nbsp;question set, viewing hours and refusal list an&nbsp;agency would load — not a&nbsp;customer story,
-        and no&nbsp;business, address or person here is a&nbsp;Saleringo customer. Every&nbsp;figure shown is already published
-        on&nbsp;this&nbsp;page or the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>;
-        your&nbsp;own listings set your&nbsp;numbers.</p>
-    </div>
-
-    <!--illus:scene--><div class="scenestrip reveal" aria-label="The three moments in every worked example"><figure><img src="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A customer making a call from the sofa in the evening" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>After hours — the call comes in</b>The customer calls when it suits them, not when your desk is open.</figcaption></figure><figure><img src="https://images.pexels.com/photos/7937328/pexels-photo-7937328.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="An agent showing an empty apartment to a couple" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Real estate — answered from your own facts</b>Prices, hours and rules you approved. Nothing invented.</figcaption></figure><figure><img src="https://images.pexels.com/photos/13736440/pexels-photo-13736440.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="An owner in an apron reading the morning’s records on a tablet" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Next morning — what is waiting</b>A booking, a quote, a record with an owner and a deadline.</figcaption></figure></div><!--/illus:scene-->
-    <div class="panelset exset reveal" style="margin-top:38px;">
-          <div class="pstabs" role="tablist" aria-label="Six worked examples">
-        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Viewing booked</button>
-        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Negotiator decides</button>
-        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Appraisal booked</button>
-        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Never answered</button>
-        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Negotiator decides · WhatsApp</button>
-        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Never answered · Phone</button>
-      </div>
-          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Viewing booked">
-            <div class="excard">
-        <div class="exhead"><span class="when">Fri 20:52</span><span class="via">Phone</span><span class="tag solved">Viewing booked</span></div>
-        <div class="exbody">
-          <p class="exq">I've&nbsp;just seen the&nbsp;two-bed on&nbsp;Cargill Street on&nbsp;the&nbsp;portal. Is it gone?</p>
-          <div class="exturn"><span class="who">Saleringo</span>Not gone — 14 Cargill Street, second-floor two-bed, <b>$1,875</b> a&nbsp;month, free from&nbsp;the&nbsp;6th, unfurnished, one&nbsp;allocated space. Three questions I ask everyone before a&nbsp;viewing, then I'll find you a&nbsp;time.</div>
-          <div class="exturn"><span class="who">Applicant</span>Go on&nbsp;then.</div>
-          <div class="exturn"><span class="who">Saleringo</span>When would you want to&nbsp;move, who else would be on&nbsp;the&nbsp;tenancy, and have you seen the&nbsp;referencing criteria and the&nbsp;holding deposit? The&nbsp;deposit on&nbsp;this&nbsp;one is a&nbsp;week's&nbsp;rent, and I'll send both in&nbsp;writing whatever you decide.</div>
-          <div class="exturn"><span class="who">Saleringo</span>Saturday <b>10:30</b> or Sunday 14:00 — both are real gaps in&nbsp;the&nbsp;negotiator's&nbsp;diary, and both give the&nbsp;sitting tenant the&nbsp;24&nbsp;hours' notice the&nbsp;agency has promised them.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Viewing in&nbsp;a&nbsp;real diary <b>two minutes</b> after the&nbsp;enquiry</span><span class="amt">$1,875 pcm</span></div>
-            <div class="exrow"><i>✓</i><span>Referencing criteria and holding deposit stated <b>before</b> the&nbsp;viewing, not after&nbsp;it</span></div>
-            <div class="exrow"><i>✓</i><span>Applicant record: move date, party, position — as the&nbsp;caller said it</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;promise the&nbsp;application would pass. Referencing is a&nbsp;decision, not a&nbsp;formality.</span></div>
-          </div>
-          <p class="exlabel">Friday night is when applicants look and when offices are shut. The&nbsp;$1,875 is this&nbsp;page's&nbsp;own sample advertised rent.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Negotiator decides">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sat 09:15</span><span class="via">Phone</span><span class="tag human">Negotiator decides</span></div>
-        <div class="exbody">
-          <p class="exq">What would they actually take for&nbsp;the&nbsp;Fern Bank house? I'm&nbsp;not going in&nbsp;at&nbsp;the&nbsp;asking price.</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I'm&nbsp;not going to&nbsp;answer that, and I'm&nbsp;not going to&nbsp;hint at&nbsp;it either. What a&nbsp;vendor would accept is theirs to&nbsp;decide and a&nbsp;negotiator's&nbsp;to&nbsp;discuss — if&nbsp;I guessed and you acted on&nbsp;it, I would have cost somebody money.</div>
-          <div class="exturn"><span class="who">Saleringo</span>What I can do is put your&nbsp;offer in&nbsp;front of&nbsp;the&nbsp;right person properly. Give me the&nbsp;figure and your&nbsp;position — chain, funding, timescale — and it is on&nbsp;the&nbsp;desk with&nbsp;the&nbsp;recording attached before nine on&nbsp;Monday. Nobody will ask you to&nbsp;repeat it.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Offer and position captured verbatim, routed to&nbsp;a&nbsp;named negotiator</span></div>
-            <div class="exrow"><i>✓</i><span>Caller told plainly why, rather than fobbed off with&nbsp;"I'll&nbsp;have someone call you"</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;figure. No&nbsp;range. No&nbsp;"they've&nbsp;had it on&nbsp;a&nbsp;while, so…"</span></div>
-            <div class="exrow"><i>✕</i><span>Nothing disclosed about&nbsp;any other&nbsp;offer, or about&nbsp;why the&nbsp;vendor is moving.</span></div>
-          </div>
-          <p class="exlabel">In&nbsp;this trade that&nbsp;is the&nbsp;costliest sentence an&nbsp;answering system can invent. It is a&nbsp;permanent handoff, not a&nbsp;confidence threshold.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Appraisal booked">
-            <div class="excard">
-        <div class="exhead"><span class="when">Tue 19:20</span><span class="via">Phone</span><span class="tag solved">Appraisal booked</span></div>
-        <div class="exbody">
-          <p class="exq">I'm&nbsp;thinking about&nbsp;selling Marchgate Row. Roughly what would it go for?</p>
-          <div class="exturn"><span class="who">Saleringo</span>I don't give figures — not a&nbsp;number, not a&nbsp;range, and not what a&nbsp;portal estimate says. Anyone who does it over the&nbsp;phone without&nbsp;standing in&nbsp;the&nbsp;house is guessing, and you would be entitled to&nbsp;hold them to&nbsp;it.</div>
-          <div class="exturn"><span class="who">Owner</span>Fair enough. So what happens?</div>
-          <div class="exturn"><span class="who">Saleringo</span>A&nbsp;market appraisal, free, at&nbsp;the&nbsp;house. There's&nbsp;a&nbsp;gap next Tuesday at&nbsp;<b>18:00</b> in&nbsp;the&nbsp;valuer's&nbsp;diary. I'll take the&nbsp;address, roughly how many bedrooms, and whether you're&nbsp;buying on&nbsp;as&nbsp;well — that&nbsp;last one only if&nbsp;you want to&nbsp;say.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Market appraisal in&nbsp;a&nbsp;named valuer's&nbsp;diary — the&nbsp;highest-value call the&nbsp;office takes</span></div>
-            <div class="exrow"><i>✓</i><span>Address, bedrooms and onward plans captured for&nbsp;the&nbsp;valuer to&nbsp;prepare from</span></div>
-            <div class="exrow"><i>✓</i><span>Board: <b>New enquiry → Market appraisal</b></span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;valuation, no&nbsp;bracket, no&nbsp;"houses on&nbsp;that&nbsp;road tend to&nbsp;go for…"</span></div>
-          </div>
-          <p class="exlabel">The&nbsp;refusal is the&nbsp;reason this&nbsp;one converts. A&nbsp;number on&nbsp;the&nbsp;phone ends the&nbsp;call; no&nbsp;number ends with&nbsp;a&nbsp;valuer standing in&nbsp;the&nbsp;hallway.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Never answered">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sun 11:40</span><span class="via">Web chat</span><span class="tag human">Never answered</span></div>
-        <div class="exbody">
-          <p class="exq">Before I book — what sort of&nbsp;people live round there? Is it a&nbsp;family area? Are the&nbsp;neighbours alright?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I don't answer questions about&nbsp;who lives in&nbsp;an&nbsp;area, and neither will anyone here. It isn't&nbsp;coyness: describing a&nbsp;neighbourhood by&nbsp;the&nbsp;people in&nbsp;it is exactly what an&nbsp;agent is not allowed to&nbsp;do, and it would be the&nbsp;same answer whoever was asking.</div>
-          <div class="exturn"><span class="who">Saleringo</span>What I can send is the&nbsp;public information this&nbsp;agency publishes for&nbsp;every&nbsp;caller on&nbsp;every&nbsp;listing — the&nbsp;links to&nbsp;the&nbsp;official school and local-authority sources, unedited. And I can book you the&nbsp;viewing so you can walk the&nbsp;street yourself.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;agency's&nbsp;own published sources sent — the&nbsp;identical links every&nbsp;caller gets</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;refusal itself on&nbsp;the&nbsp;record, which is the&nbsp;evidence that&nbsp;matters later</span></div>
-            <div class="exrow"><i>✓</i><span>Viewing still offered, on&nbsp;the&nbsp;same terms and the&nbsp;same slots as everyone else</span></div>
-            <div class="exrow"><i>✕</i><span>Nothing about&nbsp;who lives there. No&nbsp;"you'd&nbsp;fit in&nbsp;fine". No&nbsp;steer toward another&nbsp;listing.</span></div>
-          </div>
-          <p class="exlabel">A&nbsp;consistent script is worth more here than anywhere else on&nbsp;this&nbsp;site: the&nbsp;transcript shows that&nbsp;this&nbsp;caller was asked and offered exactly what the&nbsp;last one was.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Negotiator decides · WhatsApp">
-            <div class="excard">
-        <div class="exhead"><span class="when">Thu 21:05</span><span class="via">WhatsApp</span><span class="tag human">Negotiator decides</span></div>
-        <div class="exbody">
-          <p class="exq">Two people saw my&nbsp;flat today. What did they think? Nobody's&nbsp;rung me.</p>
-          <div class="exturn"><span class="who">Saleringo</span>Both viewings happened — 11:00 and 15:30, both attended. I can see one&nbsp;set of&nbsp;feedback logged and one&nbsp;still outstanding, and I'm&nbsp;not going to&nbsp;paraphrase either of&nbsp;them to&nbsp;you at&nbsp;nine at&nbsp;night.</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Feedback goes to&nbsp;you from&nbsp;the&nbsp;negotiator who was standing there, not from&nbsp;me reading a&nbsp;note. I've&nbsp;marked it as your&nbsp;first call tomorrow and written down that&nbsp;you'd&nbsp;heard nothing — that&nbsp;part is worth them knowing.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Facts only: which viewings happened, at&nbsp;what time, and what is logged</span></div>
-            <div class="exrow"><i>✓</i><span>Callback booked with&nbsp;the&nbsp;negotiator who did the&nbsp;viewing, not a&nbsp;general queue</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;complaint recorded as a&nbsp;complaint, not smoothed over</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;summarising an&nbsp;applicant's&nbsp;comments. No&nbsp;"they seemed keen". Nothing invented where nothing was logged.</span></div>
-          </div>
-          <p class="exlabel">Saying "there's&nbsp;no&nbsp;feedback logged yet" out loud is unpopular for&nbsp;ten seconds and correct forever.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Never answered · Phone">
-            <div class="excard">
-        <div class="exhead"><span class="when">Wed 18:40</span><span class="via">Phone</span><span class="tag human">Never answered</span></div>
-        <div class="exbody">
-          <p class="exq">If&nbsp;I offered on&nbsp;that&nbsp;house, could I even get a&nbsp;mortgage on&nbsp;it? What are rates like now?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I can't&nbsp;help with&nbsp;that&nbsp;one. Mortgages, tax and anything legal are off&nbsp;my&nbsp;list entirely — not "off unless you push", off. Advising on&nbsp;a&nbsp;mortgage is regulated work, and I'm&nbsp;not the&nbsp;person to&nbsp;do it.</div>
-          <div class="exturn"><span class="who">Saleringo</span>Two things I can do. The&nbsp;agency works with&nbsp;an&nbsp;independent broker and I can pass your&nbsp;number on&nbsp;— and I'll&nbsp;say plainly that&nbsp;it is a&nbsp;referral, because you should know that&nbsp;before you take the&nbsp;call. Or I can book you the&nbsp;viewing and leave the&nbsp;money side entirely to&nbsp;you.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Referral offered and named as a&nbsp;referral, in&nbsp;the&nbsp;same sentence</span></div>
-            <div class="exrow"><i>✓</i><span>Viewing offered on&nbsp;its&nbsp;own, so nothing is conditional on&nbsp;taking the&nbsp;referral</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;rates. No&nbsp;affordability opinion. No&nbsp;"you'd&nbsp;probably be fine".</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;legal or tax comment — stamp duty, surveys, conveyancing all route to&nbsp;a&nbsp;person.</span></div>
-          </div>
-          <p class="exlabel">This&nbsp;guardrail ships enabled and is not a&nbsp;setting anyone can switch off to&nbsp;warm a&nbsp;lead. Make a&nbsp;vendor demonstrate this refusal live on&nbsp;the&nbsp;call, before you look at&nbsp;a&nbsp;single feature.</p>
-        </div>
-      </div>
-          </div>
-        </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>Asked, answered, or&nbsp;refused</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;line, agreed with&nbsp;the&nbsp;office <br>before an&nbsp;applicant hears anything.</h3>
-      <p class="secintro">Your&nbsp;branch signs off every row of&nbsp;this at&nbsp;onboarding. The&nbsp;third column is the&nbsp;one that&nbsp;decides whether this belongs on&nbsp;your&nbsp;main number: five rows are refusals, and they stay refusals however hard the&nbsp;caller pushes.</p>
-    </div>
-    <div class="qbank reveal">
-      <div class="qrow hd"><span>Caller asks</span><span>What happens</span><span>Handled by</span></div>
-      <div class="qrow"><span class="qq">Is the&nbsp;two-bed on&nbsp;Cargill Street still available?</span>
-        <span class="qa">Answers from&nbsp;your&nbsp;live listing — available or not, the&nbsp;advertised rent, the&nbsp;date it is free.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can I see it on&nbsp;Saturday?</span>
-        <span class="qa">Offers only real gaps in&nbsp;that&nbsp;branch's&nbsp;diary that&nbsp;also clear the&nbsp;occupier's&nbsp;notice period.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">What do you need from&nbsp;me for&nbsp;referencing?</span>
-        <span class="qa">States the&nbsp;landlord's&nbsp;published criteria as written, and sends them in&nbsp;writing.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">What can I actually be charged as a&nbsp;tenant?</span>
-        <span class="qa">Reads your&nbsp;agency's&nbsp;published fee list back word for&nbsp;word — and says it is the&nbsp;agency's&nbsp;list, not the&nbsp;law.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can somebody come and look at&nbsp;my&nbsp;house?</span>
-        <span class="qa">Books a&nbsp;market appraisal into&nbsp;a&nbsp;named valuer's&nbsp;diary and takes what the&nbsp;valuer needs to&nbsp;prepare.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Has my&nbsp;viewing been confirmed?</span>
-        <span class="qa">Reads the&nbsp;record — property, negotiator, time, and whether the&nbsp;occupier has been given notice.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">¿Pueden enseñarme el&nbsp;piso el&nbsp;sábado?</span>
-        <span class="qa">Continues in&nbsp;Spanish, from&nbsp;wording approved in&nbsp;Spanish — the&nbsp;applicant record still reaches your&nbsp;office in&nbsp;English.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">I'd&nbsp;like to&nbsp;put an&nbsp;offer in.</span>
-        <span class="qa">Takes the&nbsp;figure and the&nbsp;position verbatim and routes it. It does not comment on&nbsp;the&nbsp;offer.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">What did the&nbsp;people who saw it think?</span>
-        <span class="qa">Says which viewings happened and whether feedback is logged. The&nbsp;feedback itself comes from&nbsp;the&nbsp;negotiator.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">What's&nbsp;my&nbsp;house worth?</span>
-        <span class="qa">Refused. No&nbsp;valuation, no&nbsp;range, no&nbsp;portal estimate read back. It books the&nbsp;appraisal instead.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">What would they accept if&nbsp;I offered today?</span>
-        <span class="qa">Refused. It never states or implies what an&nbsp;offer would be accepted at, in&nbsp;any wording.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">How much did the&nbsp;other applicant offer?</span>
-        <span class="qa">Refused. It discloses no&nbsp;other&nbsp;party's&nbsp;offer, position, circumstances or contact details.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">What sort of&nbsp;people live on&nbsp;that&nbsp;road?</span>
-        <span class="qa">Refused. It describes no&nbsp;neighbourhood by&nbsp;the&nbsp;people in&nbsp;it, and never varies what it offers by&nbsp;who is asking.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Which mortgage should I go for?</span>
-        <span class="qa">Refused. No&nbsp;mortgage, tax or legal comment. It offers the&nbsp;agency's&nbsp;broker referral and names it as one.</span><span class="qs never">Never</span></div>
-    </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">An&nbsp;ordinary&nbsp;week <br>on 180 properties, two&nbsp;branches.</h3>
-      <p class="secintro">Not a&nbsp;record week. A&nbsp;dull one — with&nbsp;the&nbsp;office-closed share marked, because that&nbsp;is
-        the&nbsp;part currently ringing out.</p>
-    </div>
-    <div class="weekstrip reveal">
-      <div class="weekday"><span class="d">Mon</span><div class="n">34<small> enq</small></div>
-        <ul><li><i>·</i>12 viewings</li><li><i>·</i>18 after hours</li><li><i>·</i>2 appraisals</li></ul></div>
-      <div class="weekday"><span class="d">Tue</span><div class="n">29<small> enq</small></div>
-        <ul><li><i>·</i>11 viewings</li><li><i>·</i>15 after hours</li></ul></div>
-      <div class="weekday"><span class="d">Wed</span><div class="n">31<small> enq</small></div>
-        <ul><li><i>·</i>12 viewings</li><li><i>·</i>16 after hours</li><li><i>·</i>1 appraisal</li></ul></div>
-      <div class="weekday"><span class="d">Thu</span><div class="n">33<small> enq</small></div>
-        <ul><li><i>·</i>13 viewings</li><li><i>·</i>17 after hours</li><li><i>·</i>2 appraisals</li></ul></div>
-      <div class="weekday peak"><span class="d">Fri</span><div class="n">41<small> enq</small></div>
-        <ul><li><i>·</i>16 viewings</li><li><i>·</i>24 after hours</li><li><i>·</i>2 appraisals</li></ul></div>
-      <div class="weekday peak"><span class="d">Sat</span><div class="n">46<small> enq</small></div>
-        <ul><li><i>·</i>19 viewings</li><li><i>·</i>20 after&nbsp;1&nbsp;PM</li><li><i>·</i>2 appraisals</li></ul></div>
-      <div class="weekday"><span class="d">Sun</span><div class="n">38<small> enq</small></div>
-        <ul><li><i>·</i>13 viewings</li><li><i>·</i><b>office closed all day</b></li><li><i>·</i>2 appraisals</li></ul></div>
-    </div>
-    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;two-branch agency with&nbsp;180 properties on&nbsp;the&nbsp;books — the&nbsp;same
-      week the&nbsp;Monday board below reports: <b>252 enquiries, 96 viewings booked, 11 market appraisals booked,
-      19 questions refused and routed</b>.</p>
-    <p class="exlabel"><b>148 of&nbsp;the&nbsp;252 arrive when the&nbsp;office is shut</b> — 59%, arithmetic
-      from&nbsp;this&nbsp;illustration, not a&nbsp;claim about&nbsp;your&nbsp;agency. The&nbsp;week that&nbsp;matters is in&nbsp;your&nbsp;own call log, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a>
-      takes it.</p>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What one recovered enquiry is worth</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;arithmetic <br>on&nbsp;one viewing you didn't&nbsp;lose.</h3>
-      <p class="secintro">You can check every step: the&nbsp;inputs come from&nbsp;this&nbsp;page and from&nbsp;the&nbsp;published rates, and from&nbsp;nowhere else. Nothing is rounded in&nbsp;our&nbsp;favor.</p>
-    </div>
-    <div class="mathbox reveal" style="max-width:660px;margin-top:26px;">
-      <div class="mathrow"><span class="lbl"><b>One let, tenant-find fee</b><span class="sub">this&nbsp;page's&nbsp;sample: 8% of&nbsp;a&nbsp;12-month term on&nbsp;the&nbsp;$1,875 rent published above</span></span><span class="val">$1,800</span></div>
-      <div class="mathrow"><span class="lbl"><b>Saleringo Scale</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone — chat-only starts lower</span></span><span class="val">−$599</span></div>
-      <div class="mathrow"><span class="lbl"><b>Voice minutes</b><span class="sub">the&nbsp;published example: 300 calls × 4 min × $0.14</span></span><span class="val">−$168</span></div>
-      <div class="mathrow"><span class="lbl"><b>A&nbsp;full month, everything in</b><span class="sub">the&nbsp;published sample invoice total</span></span><span class="val">$767</span></div>
-      <div class="mathrow total"><span class="lbl"><b>What one recovered let covers</b></span><span class="val">≈2.3 months</span></div>
-      <p class="mathnote">Read that&nbsp;as one&nbsp;let covering roughly two&nbsp;months, not as a&nbsp;return. A&nbsp;let is not a&nbsp;weekly event,
-        the&nbsp;8% is this&nbsp;page's&nbsp;own sample rate, and a&nbsp;sale would sit on&nbsp;a&nbsp;different line.</p>
-      <p class="mathnote">The&nbsp;honest case is not the&nbsp;fee:
-        it is the&nbsp;viewing booked at&nbsp;<b>20:54</b> instead of&nbsp;returned on&nbsp;Monday, the&nbsp;appraisal in&nbsp;a&nbsp;valuer's&nbsp;Tuesday, and
-        the&nbsp;price question a&nbsp;machine did not answer — and we will not invent a&nbsp;price for&nbsp;those.</p>
-      <p class="mathnote">Plan and per-minute rates
-        are the&nbsp;published ones on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>; the&nbsp;$1,875 rent and the&nbsp;8% fee
-        are sample figures, and yours are whatever your&nbsp;agency charges. This&nbsp;says nothing about&nbsp;how many enquiries you
-        would recover — only what one is worth against the&nbsp;cost.</p>
-    </div>
-  </div>
-</section>
-
-<section class="faqsec bg-paper t-md">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>FAQ</span>
-      <h2 class="h2" style="margin-top:22px">Agencies like yours ask&nbsp;us</h2>
-    </div>
-    <div class="faq reveal">
-      <details>
-        <summary>A&nbsp;portal enquiry comes in&nbsp;at&nbsp;nine at&nbsp;night. What actually happens?</summary>
-        <p>It answers, confirms the&nbsp;listing against your&nbsp;own availability and advertised price, then asks the&nbsp;questions your&nbsp;agency approved, in&nbsp;the&nbsp;approved order. If&nbsp;a&nbsp;slot fits both the&nbsp;negotiator's&nbsp;diary and the&nbsp;occupier's&nbsp;notice period, the&nbsp;viewing is booked on&nbsp;that&nbsp;call and confirmed in&nbsp;writing. If&nbsp;no&nbsp;slot fits, it says so rather than inventing one.</p>
-      </details>
-      <details>
-        <summary>Will it tell a&nbsp;caller what a&nbsp;property is worth?</summary>
-        <p>No, in&nbsp;any wording. It gives no&nbsp;valuation, no&nbsp;estimate, no&nbsp;range and no&nbsp;opinion on&nbsp;whether an&nbsp;asking price is high or low. A&nbsp;price question turns into&nbsp;a&nbsp;market appraisal booked into&nbsp;a&nbsp;named valuer's&nbsp;diary, which is the&nbsp;outcome the&nbsp;agency actually wants from&nbsp;that&nbsp;call.</p>
-      </details>
-      <details>
-        <summary>Will it tell an&nbsp;applicant what offer the&nbsp;vendor would accept?</summary>
-        <p>Never. It does not say what will be accepted, does not hint at&nbsp;a&nbsp;figure, and does not disclose another&nbsp;party's&nbsp;offer or another&nbsp;party's&nbsp;circumstances. The&nbsp;question is recorded word for&nbsp;word against the&nbsp;applicant and put in&nbsp;front of&nbsp;the&nbsp;negotiator who is allowed to&nbsp;answer it.</p>
-      </details>
-      <details>
-        <summary>How do you stop it steering people toward or away from&nbsp;a&nbsp;property?</summary>
-        <p>By&nbsp;making the&nbsp;script identical. Every&nbsp;caller on&nbsp;a&nbsp;given listing gets the&nbsp;same questions in&nbsp;the&nbsp;same order, from&nbsp;a&nbsp;set you approve, and the&nbsp;transcript shows it. It answers nothing about&nbsp;who lives in&nbsp;an&nbsp;area or what kind of&nbsp;person a&nbsp;street suits, and never varies what it offers based on&nbsp;anything about&nbsp;the&nbsp;caller.</p>
-      </details>
-      <details>
-        <summary>Do you plug into&nbsp;Rightmove, Zoopla or our&nbsp;agency software?</summary>
-        <p>Not with&nbsp;a&nbsp;direct API, and we will not claim one. Portal enquiries reach the&nbsp;AI the&nbsp;way they already reach you — the&nbsp;forwarded call or the&nbsp;forwarded email — and applicant records leave through&nbsp;Zapier, a&nbsp;direct feed or CSV export. Direct agency-software integrations are in&nbsp;build and the&nbsp;founding cohort votes on&nbsp;the&nbsp;order.</p>
-      </details>
-      <details>
-        <summary>Can it book a&nbsp;market appraisal, not just a&nbsp;viewing?</summary>
-        <p>Yes, and that&nbsp;is the&nbsp;call worth the&nbsp;most to&nbsp;the&nbsp;office. It takes the&nbsp;address, the&nbsp;reason for&nbsp;moving if&nbsp;the&nbsp;caller offers it, and the&nbsp;times that&nbsp;suit, then books into&nbsp;the&nbsp;diary of&nbsp;a&nbsp;valuer you nominate. It does not give a&nbsp;figure on&nbsp;the&nbsp;phone to&nbsp;warm the&nbsp;lead up, because that&nbsp;is the&nbsp;one&nbsp;thing that&nbsp;would cost you the&nbsp;instruction.</p>
-      </details>
-      <details>
-        <summary>Can I start with&nbsp;evenings and weekends only?</summary>
-        <p>That&nbsp;is how most agencies start. Forward the&nbsp;line after 6&nbsp;PM, all Saturday afternoon and all Sunday, read a&nbsp;week of&nbsp;transcripts, then widen the&nbsp;window once the&nbsp;answers sound like your&nbsp;office. Turning it off again is a change in your own phone settings, not a support ticket.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark t-sm bg-grid">
-  <div class="wrap">
-    <div class="reveal" style="max-width:760px;">
-      <span class="eyebrow"><i></i>Why a&nbsp;fixed script is the&nbsp;feature</span>
-      <h2 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">A&nbsp;person has a&nbsp;good&nbsp;day <br>and a&nbsp;bad&nbsp;day. A&nbsp;script <br>has neither.</h2>
-      <p class="secintro" >Housing and equality law binds an&nbsp;agent's&nbsp;front line, and the&nbsp;wording differs by&nbsp;country.
-        In&nbsp;the&nbsp;United States the&nbsp;<b style="color:#141A1F;">Fair Housing Act</b> (42 U.S.C. §3604, enforced by&nbsp;HUD) makes it
-        unlawful to&nbsp;refuse to&nbsp;show or rent a&nbsp;dwelling, or to&nbsp;state a&nbsp;preference, because of&nbsp;race, color, religion,
-        sex, familial status, national origin or disability.</p>
-      <p class="secintro">In&nbsp;Great Britain the&nbsp;<b style="color:#141A1F;">Equality Act 2010</b>
-        applies its&nbsp;own protected characteristics to&nbsp;the&nbsp;disposal and management of&nbsp;premises. Other countries have
-        their&nbsp;own regimes; we do not claim one worldwide standard.</p>
-      <p class="secintro" >Every&nbsp;version shares the&nbsp;question asked afterwards:
-        <b style="color:#141A1F;">was this&nbsp;caller treated the&nbsp;same as the&nbsp;last one?</b> That&nbsp;is hard to&nbsp;answer
-        about&nbsp;four negotiators, three busy and one on&nbsp;a&nbsp;mobile in&nbsp;a&nbsp;car park. It is easy to&nbsp;answer
-        about&nbsp;a&nbsp;fixed question set, asked in&nbsp;a&nbsp;fixed order, with&nbsp;a&nbsp;transcript for&nbsp;each&nbsp;call.</p>
-      <p class="secintro" >The&nbsp;same logic sets the&nbsp;money boundaries. In&nbsp;the&nbsp;United Kingdom, advising on&nbsp;a&nbsp;regulated
-        mortgage contract is regulated by&nbsp;the&nbsp;<b style="color:#141A1F;">Financial Conduct Authority</b>. What a&nbsp;letting
-        agent in&nbsp;England may charge a&nbsp;tenant is set by&nbsp;the&nbsp;<b style="color:#141A1F;">Tenant Fees Act 2019</b>. That&nbsp;is why the&nbsp;AI
-        reads your&nbsp;published fee list back rather than explaining what the&nbsp;law permits.</p>
-      <p class="secintro" >Two things this&nbsp;does <b style="color:#141A1F;">not</b> mean. It is not legal advice, and Saleringo does not
-        assess your&nbsp;compliance — your&nbsp;agency and its&nbsp;advisers do that. And a&nbsp;consistent script is not a&nbsp;defence on&nbsp;its&nbsp;own:
-        a&nbsp;question set that&nbsp;should never have been approved is still a&nbsp;problem, asked consistently. You write the&nbsp;questions.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark t-sm" id="monday" style="background:linear-gradient(180deg,#F6F4EE,#F6F4EE);">
-  <div class="wrap">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:22px;">
-      <h2 class="h2 onDark" style="max-width:28ch;">The&nbsp;screen your&nbsp;negotiator opens&nbsp;on&nbsp;Monday.</h2>
-      <a class="linkcta" href="../platform.html">Every&nbsp;enquiry, in&nbsp;detail&nbsp;&nbsp;→</a>
-    </div>
-    <div class="kpitiles reveal">
-      <div class="kpitile"><div class="lb">Enquiries taken</div><div class="vl">252</div><div class="dl flat">phone · chat · messenger</div></div>
-      <div class="kpitile hi"><div class="lb">Handled by&nbsp;AI alone</div><div class="vl">68%</div><div class="dl">32% passed to&nbsp;a&nbsp;person</div></div>
-      <div class="kpitile"><div class="lb">Viewings booked</div><div class="vl">96</div><div class="dl flat">148 enquiries arrived out of&nbsp;hours</div></div>
-      <div class="kpitile"><div class="lb">Market appraisals booked</div><div class="vl">11</div><div class="dl flat">no&nbsp;figure quoted on&nbsp;any of&nbsp;them</div></div>
-      <div class="kpitile"><div class="lb">Refused and routed</div><div class="vl">19</div><div class="dl flat">price, offer, steering, mortgage</div></div>
-      <div class="kpitile"><div class="lb">Enquiry → slot offered</div><div class="vl">1m 48s</div><div class="dl flat">median, out-of-hours enquiries</div></div>
-    </div>
-    <p class="mockcap" style="text-align:left;">Product illustration with&nbsp;sample data. Your&nbsp;figures are your&nbsp;own — exportable to&nbsp;PDF or Excel.</p>
-  </div>
-</section>
-
-<section class="concsec t-sm sec-dark">
-  <div class="wrap">
-    <div class="concwrap reveal">
-      <div class="concl">
-        <span class="cnl">You have seen the&nbsp;8:52&nbsp;PM half</span>
-        <p class="cnp">The&nbsp;enquiry answered, the&nbsp;same questions asked, the&nbsp;viewing in&nbsp;a&nbsp;diary before the&nbsp;applicant hangs up. What happens to&nbsp;that&nbsp;applicant afterwards &mdash; the&nbsp;board, the&nbsp;offer, the&nbsp;Monday report &mdash; is the&nbsp;other half of&nbsp;the&nbsp;product.</p>
-      </div>
-      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="closer bg-spot" id="closer">
-  <div class="stars" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="reveal">Tonight somebody will&nbsp;enquire <br>about&nbsp;your&nbsp;listing. <br>Be the&nbsp;agency that&nbsp;<em>answers.</em></h2>
-    <p class="lead onDark reveal">The&nbsp;founding cohort gets 50% off for&nbsp;three months, onboarding at&nbsp;the&nbsp;front of&nbsp;the&nbsp;queue, and a&nbsp;vote on&nbsp;the&nbsp;next integration.</p>
-    <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
-    </div>
-
-    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
-      <div class="lh">Get your&nbsp;agency's&nbsp;setup plan</div>
-      <p class="lsub">Tell us how many properties you have on&nbsp;the&nbsp;books, where the&nbsp;line rings at&nbsp;nine at&nbsp;night, and
-        who signs off what the&nbsp;office is allowed to&nbsp;say. We reply with&nbsp;the&nbsp;board stages, the&nbsp;approved question set
-        and the&nbsp;refusal list we would set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
-      <form class="eaform" data-earlyaccess method="post">
-        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
-        <input type="text" name="business" placeholder="Agency name" aria-label="Agency name">
-        <input type="text" name="country" placeholder="Country" aria-label="Country">
-        <input type="hidden" name="industry" required value="Estate &amp; lettings agency">
-        <input type="hidden" name="context" value="Estate and lettings agency industry page">
-        <select name="trade" aria-label="What you handle">
-          <option value="">What you handle…</option>
-          <option>Residential sales</option><option>Lettings &amp; tenant find</option><option>New homes</option><option>Sales and lettings both</option>
-        </select>
-        <select name="locations" aria-label="How many properties on the books">
-          <option value="">Properties on&nbsp;the&nbsp;books?</option>
-          <option>Under 50</option><option>50 to&nbsp;250</option><option>Over 250</option>
-        </select>
-        <button class="btn btn-teal" type="submit">Get the&nbsp;Estate &amp; Lettings setup plan →</button>
-        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
-        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
-        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
-      </form>
-    </div>
-  </div>
-
-  <!--#footer-->
+<!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v83.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v84.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1270,26 +338,18 @@
     </div>
   </div></footer>
 <!--/#footer-->
-</section>
-
 </main>
 
-<!-- sticky conversion bar — IntersectionObserver in site.js, gated on #cta-gate -->
-<div class="stickycta">
-  <div class="wrap">
-    <span class="msg">The&nbsp;next evening enquiry is coming. <b>Answered, asked the&nbsp;same questions, booked in.</b></span>
-    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
-  </div>
-</div>
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your Real estate price list
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
 
-<script src="../../assets/js/site.js?v=83.0"></script>
-<script src="../../assets/js/demofull.js?v=83.0" defer></script>
-<script src="../../assets/js/balance.js?v=83.0" defer></script>
-<script src="../../assets/js/panels.js?v=83.0" defer></script>
-<script src="../../assets/js/wrap.js?v=83.0" defer></script>
-<script src="../../assets/js/rail.js?v=83.0" defer></script>
-<script src="../../assets/js/canvas.js?v=83.0" defer></script>
-<script src="../../assets/js/scenes.js?v=83.0" defer></script>
-<script src="../../assets/js/guide.js?v=83.0"></script>
+
+<script src="../../assets/js/site.js?v=84.0"></script>
+<script src="../../assets/js/balance.js?v=84.0" defer></script>
+<script src="../../assets/js/panels.js?v=84.0" defer></script>
+<script src="../../assets/js/wrap.js?v=84.0" defer></script>
+<script src="../../assets/js/rail.js?v=84.0" defer></script>
+<script src="../../assets/js/guide.js?v=84.0"></script>
+<script src="../../assets/js/demofull.js?v=84.0" defer></script>
 </body>
 </html>

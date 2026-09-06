@@ -92,7 +92,7 @@ SCRIPTS = {
     {"who": "user", "when": "7:51 AM", "text": "And the cold medicine is fine with my blood-pressure pills, right?"},
     {"who": "ai", "when": "+2 sec", "text": "Which medicines go together is a check the pharmacist makes herself, not me. I’ve passed our conversation along — she will reply this morning.", "handoff": True}
    ],
-   "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: a drug interaction is medication counselling, and only the pharmacist gives it"],
+   "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: a drug interaction is medication counseling, and only the pharmacist gives it"],
    "morning": [
     {"icon": "✓", "k": "New pickup", "v": "Sarah Park · today 7:00 PM · prescription photo received"},
     {"icon": "#", "k": "Sale pending", "v": "probiotic $28 · in stock"},
@@ -565,8 +565,8 @@ SCRIPTS = {
    "customer": {"name": "Sophie Yoon", "phone": "555-07··"},
    "lines": [
     {"who": "ai", "text": "Thank you for calling Mindgrove Counseling. Our sessions have finished for the day, but I can help with booking and questions. Take your time."},
-    {"who": "user", "text": "I've never done this before. I'd like to try individual counselling. What does it cost?",
-     "side": [{"field": {"k": "Request", "v": "Individual counselling — first contact", "src": "from the call"}}]},
+    {"who": "user", "text": "I've never done this before. I'd like to try individual counseling. What does it cost?",
+     "side": [{"field": {"k": "Request", "v": "Individual counseling — first contact", "src": "from the call"}}]},
     {"who": "ai", "text": "An individual session is a hundred and thirty dollars for fifty minutes on our fee schedule. The first one is an intake, where you and a counsellor work out what kind of support fits.",
      "side": [{"field": {"k": "Quote", "v": "Individual session, 50 min, $130", "src": "your fee schedule"}}]},
     {"who": "user", "text": "Do you have weekday evenings?"},
@@ -589,7 +589,7 @@ SCRIPTS = {
    "chat": [
     {"who": "user", "when": "7:20 AM", "text": "Hi, Sophie Yoon from last night — is what I say in sessions confidential?"},
     {"who": "ai", "when": "+2 sec", "text": "Yes — nothing from a session is shared with anyone without your consent. Your Thursday 7 PM intake is unchanged.", "merge": True},
-    {"who": "user", "when": "7:21 AM", "text": "Can you check whether my husband has been coming to you for counselling?"},
+    {"who": "user", "when": "7:21 AM", "text": "Can you check whether my husband has been coming to you for counseling?"},
     {"who": "ai", "when": "+2 sec", "text": "Whether anyone is a client is something I can’t tell anyone but that person. I’ve passed your request to the director — she will reply this morning.", "handoff": True}
    ],
    "handoff": ["The whole conversation, both channels", "Every captured field, with its source", "Why it stopped: whether someone attends is protected by confidentiality, not a fact to be given out"],
@@ -719,11 +719,11 @@ SCRIPTS = {
     {"who": "ai", "text": "2종 자동 정규 과정은 신고된 요금표 기준으로 학과, 장내, 도로주행 포함 72만원이에요. 시험 검정료는 별도예요.",
      "side": [{"field": {"k": "견적", "v": "2종 자동 정규 720,000원 · 검정료 별도", "src": "원장님 요금표"}}]},
     {"who": "user", "text": "주말에도 교육 되나요?"},
-    {"who": "ai", "text": "주말 교육은 토요일과 일요일 오전에 있어요. 학과교육 첫 시간은 이번 주 토요일 9시가 비어 있습니다. 성함과 연락처를 말씀해 주시겠어요?",
+    {"who": "ai", "text": "주말 교육은 토요일과 일요일 오전에 있어요. 학과교육 첫 시간은 다음 주 토요일 9시가 비어 있습니다. 성함과 연락처를 말씀해 주시겠어요?",
      "side": [{"field": {"k": "첫 교육", "v": "토 9:00 학과", "src": "캘린더의 빈 시간"}}]},
     {"who": "user", "text": "토요일 9시로 할게요. 오하은이고, 010-6183-2745예요.",
      "side": [{"field": {"k": "이름", "v": "오하은", "src": "본인 발화"}}, {"field": {"k": "전화", "v": "010-6183-27··", "src": "발신번호와 일치"}}]},
-    {"who": "ai", "text": "오하은 님, 이번 주 토요일 9시 학과교육으로 접수됐어요. 신분증과 6개월 이내 사진 3장을 가져오시면 되고, 준비물 안내를 문자로 보내 드릴게요.",
+    {"who": "ai", "text": "오하은 님, 다음 주 토요일 9시 학과교육으로 접수됐어요. 신분증과 6개월 이내 사진 3장을 가져오시면 되고, 준비물 안내를 문자로 보내 드릴게요.",
      "side": [{"field": {"k": "준비물", "v": "신분증 · 사진 3장", "src": "원장님 규칙"}}, {"crm": True},
               {"work": {"icon": "✓", "k": "접수 확정", "v": "토 9:00 학과교육 · 캘린더에 들어감 · 준비물 문자 발송"}}]},
     {"who": "user", "text": "한 달 안에 딸 수 있죠? 회사에서 급하게 필요해서요.",
@@ -768,11 +768,11 @@ SCRIPTS = {
     {"who": "ai", "text": "The beginner package, with classroom, range and road lessons, is seven hundred and twenty dollars on our published price list. Test fees are separate.",
      "side": [{"field": {"k": "Quote", "v": "Beginner package $720 · test fees separate", "src": "your published price list"}}]},
     {"who": "user", "text": "Can I do the lessons on weekends?"},
-    {"who": "ai", "text": "Weekend lessons run Saturday and Sunday mornings. The first classroom session has a seat this Saturday at nine. Can I get your name and a mobile number?",
+    {"who": "ai", "text": "Weekend lessons run Saturday and Sunday mornings. The first classroom session has a seat next Saturday at nine. Can I get your name and a mobile number?",
      "side": [{"field": {"k": "First session", "v": "Sat 9:00 classroom", "src": "free in your calendar"}}]},
     {"who": "user", "text": "Saturday at nine, then. Olivia Song, five five five, zero nine two eight.",
      "side": [{"field": {"k": "Name", "v": "Olivia Song", "src": "caller said it"}}, {"field": {"k": "Phone", "v": "555-09··", "src": "matches caller ID"}}]},
-    {"who": "ai", "text": "Thank you, Olivia. You're enrolled for the classroom session this Saturday at nine. Bring photo ID and three passport photos. I'm texting you the list now.",
+    {"who": "ai", "text": "Thank you, Olivia. You're enrolled for the classroom session next Saturday at nine. Bring photo ID and three passport photos. I'm texting you the list now.",
      "side": [{"field": {"k": "Bring", "v": "photo ID · 3 passport photos", "src": "owner’s rules"}}, {"crm": True},
               {"work": {"icon": "✓", "k": "Enrolled", "v": "Sat 9:00 classroom · in your calendar · what-to-bring text sent"}}]},
     {"who": "user", "text": "I can pass within a month, right? I need it for work.",
@@ -951,7 +951,7 @@ SCRIPTS = {
    "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 이 데모를 위해 만든 합성 음성입니다 · 금액은 예시 요금표입니다."
   },
   "en": {
-   "biz": "Breathe Pilates Studio", "owner": "the owner",
+   "biz": "Stillroom Pilates Studio", "owner": "the owner",
    "meta": "Tuesday 7:08 PM · evening class · a fictional studio", "callTime": "7:08 PM", "chan": "WhatsApp",
    "chapters": ["7:08 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"],
    "chapterSubs": ["reformer group · private · consultation tomorrow at 11", "parking · the membership extension goes to a person", "consultation · estimate · owner · one reply waiting"],
@@ -960,7 +960,7 @@ SCRIPTS = {
            "morning": "9:00 AM — the owner’s screen."},
    "customer": {"name": "Yuna Jang", "phone": "555-11··"},
    "lines": [
-    {"who": "ai", "text": "Thanks for calling Breathe Pilates Studio. The instructor is teaching right now, so I picked up. I can explain the classes and book a consultation. How can I help?"},
+    {"who": "ai", "text": "Thanks for calling Stillroom Pilates Studio. The instructor is teaching right now, so I picked up. I can explain the classes and book a consultation. How can I help?"},
     {"who": "user", "text": "I'm new to pilates. What do reformer group classes and private sessions cost?",
      "side": [{"field": {"k": "Request", "v": "Reformer pilates — beginner", "src": "from the call"}}]},
     {"who": "ai", "text": "On our price list, reformer group twice a week is two hundred and twenty dollars a month, and a private ten-pack is seven hundred and fifty. For a first-timer we suggest a consultation with a trial first.",

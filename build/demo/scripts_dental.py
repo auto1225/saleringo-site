@@ -29,7 +29,7 @@ SCRIPTS = {
     {"who": "user", "text": "조금 시린 정도예요.",
      "side": [{"field": {"k": "증상", "v": "시림 — 응급 아님", "src": "본인 발화 · 진단 아님"}}]},
     {"who": "ai", "text": "그러시면 목요일까지 찬 음식은 피해 주시고, 통증이 갑자기 심해지면 이 번호로 다시 전화 주세요. 밤에도 제가 받습니다. 목요일에 뵙겠습니다.",
-     "side": [{"work": {"icon": "#", "k": "Estimate #2472", "v": "지르코니아 크라운 550,000원 — 원장님 요금표에서"}},
+     "side": [{"work": {"icon": "#", "k": "견적서 #2472", "v": "지르코니아 크라운 550,000원 — 원장님 요금표에서"}},
               {"work": {"icon": "@", "k": "담당·기한", "v": "데스크 담당 배정 · 목 09:00까지 차트 준비"}},
               {"work": {"icon": "↻", "k": "후속 문자", "v": "무응답 시 D+2 안내 문자 초안 — 발송 전 원장님 확인"}}]},
     {"who": "user", "text": "네, 감사합니다."},
@@ -50,7 +50,7 @@ SCRIPTS = {
    ],
    "person": {"when": "9:12 AM", "text": "담당자 이수진입니다. 김지은 님, 보장 범위는 보험사 약관마다 달라서 목요일에 보험증권을 가져오시면 접수 때 바로 확인해 드릴게요."},
    "summary": "통화 {call} · 카카오톡 4건 · 사람이 한 일: 답장 한 줄. 나머지는 원장님이 자는 동안 끝났습니다.",
-   "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 이 데모를 위해 만든 합성 음성입니다 · 금액은 사이트가 공개한 요금표와 같습니다.",
+   "honest": "각본이 있는 시연 · 예시 데이터 · 두 목소리는 이 데모를 위해 만든 합성 음성입니다 · 금액은 예시 요금표이며 실제 가격은 치과마다 다릅니다.",
    "video": True
   },
   "en": {
@@ -99,7 +99,7 @@ SCRIPTS = {
    ],
    "person": {"when": "9:12 AM", "text": "This is Sujin from the front desk. Hi Jane — coverage depends on your plan, so bring your insurance card on Thursday and we’ll confirm at check-in."},
    "summary": "One {call} call · four messages · what a person did: one reply. The rest happened while the owner slept.",
-   "honest": "Scripted simulation · sample data · both voices were synthesised for this demo · figures match our published pricing.",
+   "honest": "Scripted simulation · sample data · both voices were synthesised for this demo · figures are an example fee schedule, not a real practice’s prices.",
    "video": True
   }
  }

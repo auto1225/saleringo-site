@@ -3,206 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Front Desk for Universities &amp; Admissions Offices | Saleringo</title>
-<meta name="description" content="An AI front desk for admissions: answers fee, deadline and entry questions from your prospectus, in every timezone — and never decides an application.">
+<title>AI answering for Universities &mdash; how a missed call becomes a booking</title>
+<meta name="description" content="The AI answers Universities inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="canonical" href="https://claude.saleringo.com/en/industries/universities.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:url" content="https://claude.saleringo.com/en/industries/universities.html">
-<meta property="og:title" content="AI Front Desk for Universities &amp; Admissions Offices">
-<meta property="og:description" content="An AI front desk for admissions: answers fee, deadline and entry questions from your prospectus, in every timezone — and never decides an application.">
+<meta property="og:title" content="AI answering for Universities &mdash; how a missed call becomes a booking">
+<meta property="og:description" content="The AI answers Universities inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <meta property="og:image" content="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Front Desk for Universities &amp; Admissions Offices">
-<meta name="twitter:description" content="An AI front desk for university admissions: answers fee, deadline and entry-requirement questions from your published prospectus, in every timezone — and never decides an application or advises on a visa.">
 <meta name="twitter:image" content="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="AI answering for Universities &mdash; how a missed call becomes a booking">
+<meta name="twitter:description" content="The AI answers Universities inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Front Desk for Universities & Admissions Offices","item":"https://claude.saleringo.com/en/industries/universities.html"}]}
+{"@context":"https://schema.org","@type":"WebPage","name":"AI answering for Universities &mdash; how a missed call becomes a booking","description":"The AI answers Universities inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.","url":"https://claude.saleringo.com/en/industries/universities.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"en"}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/ledger.css?v=83.0">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/index.html"},{"@type":"ListItem","position":2,"name":"Trades","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"Universities","item":"https://claude.saleringo.com/en/industries/universities.html"}]}
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=84.0">
 <style>
-  /* page-specific: universities & international admissions landing */
-  /* full-bleed photo hero — block layout overrides .photohero's flex */
-  .hero{position:relative;overflow:hidden;padding-bottom:120px;display:block;}
-  /* the sheet default, stated explicitly so this hero cannot silently
-     change if the sheet default moves */
-  .hero.photohero .bgimg img{filter:brightness(1.5) saturate(1.15) contrast(1.04);}
-  /* Rescaled off the sheet's centred default (.62 at the top) so the
-     photograph keeps a clear margin over the point where it stops reading as
-     a place. The dark anchor at the FOOT is untouched — that is where the
-     hero hands off to the next section, and lifting it would show a seam. */
-  .hero.photohero.center .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.46) 0%,rgba(255,255,255,0.28) 45%,rgba(255,255,255,0.86) 100%);}
-  .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:0;}
-  .hero .wrap,.statsec .wrap,.handles .wrap,.notdo .wrap,.demosec .wrap,.closer .wrap{position:relative;z-index:1;}
-  .herostage{position:relative;z-index:2;max-width:1180px;margin:64px auto 0;padding:0 32px;}
-  .herostage .scene-overlay{max-width:250px;}
-  .startscene{margin-top:60px;}
-  @media (max-width:900px){
-    .herostage{padding:0 18px;}
-    .herostage .scene-overlay{position:static;max-width:none;margin-top:10px;display:block;}
-  }
-  .ghost{position:absolute;top:110px;right:-30px;font-size:var(--fs-num);font-weight:700;letter-spacing:-.05em;
-    color:rgba(20,26,31,.13);line-height:1;user-select:none;pointer-events:none;}
-  .ghost small{font-size:var(--fs-num);letter-spacing:0;}
-  .hero-inner{position:relative;text-align:center;padding:190px clamp(22px,4.6vw,56px) 0;z-index:2;}
-  .hero .hero-panel{max-width:960px;margin:0 auto;padding:48px 52px;}
-  /* a media query adds no specificity, so the shared mobile rule in
-     site.css cannot beat the selector above; repeated here at the same
-     weight, or the panel keeps 52px of side padding on a phone */
-  @media (max-width:620px){.hero .hero-panel{padding:24px 18px;}}
-  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.045em;font-weight:600;color:#141A1F;max-width:900px;margin:0 auto;}
-  .hero h1 .teal{color:var(--teal);}
-  .hero .sub{margin:28px auto 0;font-size:var(--fs-lead);line-height:1.7;color:var(--tx2);font-weight:500;}
-  .hero .ctas{margin-top:38px;display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;}
-  .hero .micro{margin-top:20px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
 
-  /* people layer */
-  .peopleband{margin-top:76px;border-top:1px solid var(--l-hair);padding-top:52px;max-width:1060px;margin-left:auto;margin-right:auto;}
-  .peopleband .ph-head{text-align:center;max-width:560px;margin:0 auto 28px;}
-  .peopleband h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;
-    letter-spacing:-.03em;color:var(--l-ink);margin-top:18px;}
-  .peopleband .lead{margin-top:14px;}
-  .peoplegrid{grid-template-columns:repeat(3,1fr);}
-  .capL{margin-top:16px;text-align:center;font-size:var(--fs-2xs);letter-spacing:.04em;font-weight:600;color:var(--l-mut);}
-  .capD{margin-top:18px;font-size:var(--fs-2xs);letter-spacing:.04em;font-weight:600;color:var(--tx3);}
-  .dirband{background:linear-gradient(180deg,#F6F4EE,#F6F4EE);}
-  .dirband .photosplit .copy{max-width:620px;}
-
-  .statsec{text-align:center;position:relative;}
-  .statsec .grid{margin-top:64px;}
-  .statsec .foot{margin-top:60px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .statsec .stat .n.small{font-size:var(--fs-h2);line-height:1.2;letter-spacing:-.02em;}
-
-  .handles{background:linear-gradient(180deg,#FDFDFE,var(--l-bg));}
-  .handles .head{max-width:560px;margin:0 auto 60px;text-align:center;}
-  .handles .head .lead{margin-top:20px;}
-  /* 5 cards in a 3-track grid left a 2-column hole in row two; a 6-track grid
-     lets row one hold three (span 2) and row two hold two (span 3). */
-  .hgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1060px;margin:0 auto;}
-  .hgrid > *{grid-column:span 2;}
-  .hgrid > *:nth-child(4),.hgrid > *:nth-child(5){grid-column:span 3;}
-  .hcard{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:28px 26px;
-    box-shadow:0 2px 3px rgba(20,26,31,.03),0 24px 60px rgba(20,26,31,.06);}
-  .hcard .ic{width:36px;height:36px;border-radius:50%;border:1px solid #D5DBE4;background:#fff;color:#0B7878;
-    font-size:var(--fs-sm);font-weight:700;display:flex;align-items:center;justify-content:center;}
-  .hcard b{display:block;margin-top:16px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
-  .hcard span{display:block;margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
-  .hcard.wide{grid-column:span 3;display:flex;gap:22px;align-items:center;}
-  .hcard.wide .ic{flex:none;}
-  .hcard.wide b{margin-top:0;}
-  @media (max-width:900px){.hgrid{grid-template-columns:1fr;}
-    /* the span-3 rule above is (0,2,0) and this reset was (0,1,0), so the
-       grid never collapsed: three tracks totalling 465px inside a 334.6px
-       box, with the third card rendered entirely off the viewport */
-    .hgrid > *,.hgrid > *:nth-child(4),.hgrid > *:nth-child(5){grid-column:span 1;}.hcard.wide{grid-column:span 1;flex-direction:column;align-items:flex-start;}}
-
-  .notdo{background:var(--l-bg);}
-  .notdo .cols{display:grid;grid-template-columns:1fr 1.2fr;gap:90px;align-items:stretch;}
-  .notdo .lead{margin-top:24px;}
-  .ndrow{display:flex;gap:18px;padding:24px 26px;align-items:flex-start;}
-  .ndrow + .ndrow{border-top:1px solid var(--l-hair);}
-  .ndrow .x{flex:none;width:30px;height:30px;border-radius:50%;background:#FDF6F4;border:1px solid #F4DCD7;
-    color:var(--red);font-size:var(--fs-xs);font-weight:800;display:flex;align-items:center;justify-content:center;}
-  .ndrow b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
-  .ndrow span{display:block;margin-top:5px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
-  @media (max-width:900px){.notdo .cols{grid-template-columns:1fr;gap:44px;}}
-
-  .demosec{position:relative;overflow:hidden;}
-  .demosec .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:start;position:relative;z-index:2;}
-  .demosec .lead{margin-top:22px;}
-  .leadcard .core{padding:22px;}
-  .leadcard .k{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;color:var(--teal);}
-  .leadcard .nm{margin-top:10px;display:flex;align-items:center;font-size:var(--fs-sm);font-weight:700;color:#141A1F;}
-  .leadcard .time{margin-left:auto;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:600;color:#141A1F;background:#fff;border-radius:999px;padding:3px 10px;}
-  .leadcard .row{display:flex;justify-content:space-between;font-size:var(--fs-xs);padding:9px 0;border-bottom:1px solid var(--hair);font-weight:500;}
-  .leadcard .row:last-child{border:0;padding-bottom:0;}
-  .leadcard .rk{color:var(--tx2);} .leadcard .rv{color:#141A1F;font-weight:600;}
-  .demosec .stack{display:grid;gap:18px;}
-  @media (max-width:900px){.demosec .cols{grid-template-columns:1fr;}}
-
-  .startsec{background:linear-gradient(180deg,var(--l-bg),#FDFDFE);}
-  .startsec .cols{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;align-items:stretch;}
-  .startsec .lead{margin-top:24px;}
-  .channote{margin-top:34px;background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:20px 22px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
-  .channote b{color:var(--l-ink);}
-  @media (max-width:900px){.startsec .cols{grid-template-columns:1fr;gap:44px;}}
-
-  .faqsec{background:#FDFDFE;}
-  .faqsec .head{text-align:center;margin-bottom:50px;}
-
-  .closer{position:relative;background:
-    radial-gradient(900px 500px at 50% -10%, rgba(11,120,120,.14), transparent 60%),
-    linear-gradient(180deg,#F6F4EE,#F6F4EE);
-    text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.06;position:relative;}
-  .closer .lead{margin:24px auto 0;position:relative;}
-  .closer .ctas{margin-top:42px;display:flex;justify-content:center;gap:16px;position:relative;flex-wrap:wrap;}
-  .bigfooter{margin-top:130px;}
-  @media (max-width:900px){.hero h1{font-size:var(--fs-h1);}.closer h2{font-size:var(--fs-h2);}
-    .peoplegrid{grid-template-columns:1fr 1fr;}}
-
-  /* ══ CRM surface, honest integrations, source-cited answers, inline lead form ══ */
-  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
-  .crmduo.rev .m{order:2;}
-  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
-  .ptlist{margin-top:24px;}
-  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
-  .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#141A1F;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
-  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
-
-  /* three-state integration status */
-  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
-  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
-  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;}
-  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
-  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
-  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
-  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
-  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
-  .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
-    font-weight:700;border-bottom:1px solid var(--hair);}
-  .statcol li:last-child{border-bottom:0;}
-  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
-
-  /* the source line under a cited answer */
-  .srcrow{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
-  @media(max-width:820px){.srcrow{grid-template-columns:1fr;}}
-  .srccard{border:1px solid var(--hair);border-radius:14px;padding:18px 20px;background:rgba(20,26,31,.039);}
-  .srccard .q{font-size:var(--fs-xs);font-weight:700;color:#141A1F;line-height:1.55;}
-  .srccard .s{margin-top:10px;font-size:var(--fs-2xs);font-weight:600;color:var(--teal);letter-spacing:.03em;}
-  .srccard .n{margin-top:7px;font-size:var(--fs-2xs);line-height:1.65;color:var(--tx2);font-weight:500;}
-
-  /* inline lead form */
-  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
-  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
-    line-height:1.72;color:var(--tx2);font-weight:500;}
-  .leadbox .eaform{max-width:100%;}
-  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/universities.html">
@@ -210,24 +99,20 @@
 <link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/universities.html">
 <!--/#alt-->
 </head>
-<body data-grade="trust">
-
-<!-- ═══════ HERO ═══════ -->
-<header class="hero photohero center">
+<body data-grade="voice">
+<header class="hero photohero">
   <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="https://images.pexels.com/photos/19253500/pexels-photo-19253500.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-           srcset="https://images.pexels.com/photos/19253500/pexels-photo-19253500.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/19253500/pexels-photo-19253500.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/19253500/pexels-photo-19253500.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/19253500/pexels-photo-19253500.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1900 1900w"
-           sizes="100vw"
-         alt="" width="1600" height="1067" loading="eager" fetchpriority="high" decoding="async">
+    <img class="ph" src="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
   </div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="tint" aria-hidden="true"></div>
   <div class="grainlayer grain" aria-hidden="true"></div>
-  <div class="ghost sg" aria-hidden="true">02:40<small>AM</small></div>
-
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v83.0">v83.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v84.0">v84.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -242,50 +127,31 @@
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav></div>
 <!--/#nav-->
-
   <div class="wrap hero-inner">
-    <div class="hero-panel">
-      <span class="eyebrow"><i></i>For&nbsp;Universities, Colleges &amp; Admissions&nbsp;Offices</span>
-      <h1 style="margin-top:30px;">Her&nbsp;question arrived at&nbsp;02:40. <br><span class="teal">It was mid-afternoon where she&nbsp;was.</span></h1>
-      <p class="sub">Admissions runs on&nbsp;a&nbsp;calendar with&nbsp;cliffs — the&nbsp;deadline, results day, Clearing, the&nbsp;enrolment window — and an&nbsp;inbox that&nbsp;never closes, because half of&nbsp;the&nbsp;people writing to&nbsp;you are seven timezones away. Saleringo answers on&nbsp;your&nbsp;website and WhatsApp from&nbsp;your&nbsp;published prospectus and policy pages, names the&nbsp;page each&nbsp;answer came from, and files the&nbsp;enquiry against an&nbsp;applicant record. It decides nothing.</p>
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>Universities &middot; admissions &middot; continuing education</span>
+      <h1>In application season<br>the phone rings ten times as much.</h1>
+      <p class="sub">The same question comes in hundreds of times a day. Answering it with people is a waste; failing to answer it is a loss.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
-        <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; Universities</a>
       </div>
-      <p class="heroscroll"><a href="../index.html#demo60">New here? Start with&nbsp;the two-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
-      <div class="micro">Founding cohort open · Website chat first, connect WhatsApp when ready</div>
     </div>
-  </div>
-
-  <div class="herostage">
-    <div class="scene-frame">
-<div class="photo-scrim" style="height:clamp(280px,40vw,520px);">
-  <img class="ph" src="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-       srcset="https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/10519596/pexels-photo-10519596.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-       sizes="100vw" alt="A university green in autumn, a chapel tower and college buildings behind bare trees"
-       loading="lazy" decoding="async" width="1600" height="1067">
-</div>
-      <span class="scene-overlay tl"><b>Answered 02:41</b><span>Fee and deadline quoted, prospectus page named</span></span>
-      <span class="scene-overlay br"><b>Not answered: eligibility</b><span>Routed to&nbsp;an&nbsp;admissions officer with&nbsp;the&nbsp;transcript attached</span></span>
-    </div>
-    <p class="photocap">This is the&nbsp;place she is asking about. The&nbsp;seat exists, the&nbsp;fee is published, and the&nbsp;desk that&nbsp;could say so shut nine hours ago. Illustrative photography; not a&nbsp;Saleringo customer institution.</p>
   </div>
 </header>
 
-<!--demo:v2-->
-<section class="sec-light t-md" id="demo">
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow light"><i></i>Hear it &middot; Universities</span>
-      <h2 class="h2" style="margin-top:20px;">The call, the next morning&rsquo;s message, <br>and what was waiting at nine.</h2>
-      <p class="lead" style="margin-top:16px;">A scripted call for a universities: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Tuesday 8:56 PM, the call</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">How it goes<br>after admissions has gone home.</h2>
     <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/universities.json" data-d60-audio="../../assets/audio/demo/">
       
       <div class="d60tabs" role="tablist" aria-label="Chapters">
         <button class="d60tab on" type="button" role="tab" aria-selected="true" data-d60-tab="1"><b>1 · 8:56 PM, the call</b><span data-d60-range="1" data-base="transfer documents · deadline · officer call tomorrow">transfer documents · deadline · officer call tomorrow</span></button>
         <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="2"><b>2 · Next morning, WhatsApp</b><span data-d60-range="2" data-base="statement length · the chances question goes to a person">statement length · the chances question goes to a person</span></button>
-        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 9:00 AM, the officer’s screen</b><span data-d60-range="3" data-base="enquiry card · documents sent · owner · one reply waiting">enquiry card · documents sent · owner · one reply waiting</span></button>
+        <button class="d60tab" type="button" role="tab" aria-selected="false" data-d60-tab="3"><b>3 · 9:00 AM, the officer’s screen</b><span data-d60-range="3" data-base="inquiry card · documents sent · owner · one reply waiting">inquiry card · documents sent · owner · one reply waiting</span></button>
       </div>
 
       <div class="d60stage">
@@ -319,7 +185,7 @@
             <p class="lbl">Handed to a person — and what the person receives</p>
             <ul data-d60-handlist><li>The whole conversation, both channels</li><li>Every captured field, with its source</li><li>Why it stopped: eligibility and admission chances are an officer's judgement from the documents, not a fact in the prospectus</li></ul>
           </div>
-          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">The owner’s morning screen — what is waiting at 9:00</p><div data-d60-morninglist></div></div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">9:00 AM, the officer’s screen — what is waiting</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
@@ -329,563 +195,116 @@
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
-          <a class="btn btn-teal" href="../../get-started.html">Get my plan for this trade</a>
+          <a class="btn btn-teal" href="../get-started.html">Get my plan for this trade</a>
           <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">Call the live AI — no form first</a>
           <span class="telnote">Korean number — international rates apply</span>
         </div>
       </div>
     </div>
     
-    <noscript><p class="lead">The demo needs JavaScript. The same story is written out in the worked examples below.</p></noscript>
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">Universities &mdash; <b>admissions gone home</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">office dark</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>Applicant</em>8:56 PM</span><div class="bub user">I want to apply as a transfer student. What documents do I need, and when&rsquo;s the deadline?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+20 s</span><div class="bub ai">For a general transfer the basics are your <b>transcript</b>, <b>proof of graduation</b> or expected graduation, and a <b>personal statement</b>, with extra documents for some departments. The deadline is <b>November 14th at 5:00 PM</b>, online only, and the application fee is <b>$60</b>. Which department are you applying to?</div></div><div class="nl us"><span class="t"><em>Applicant</em>8:58 PM</span><div class="bub user">Computer Science. I graduated from a community college &mdash; am I eligible?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+10 s</span><div class="bub ai">Computer Science needs just the three basics. Eligibility, though, depends on credit recognition, and an admissions officer decides that from your transcript &mdash; so I can&rsquo;t tell you yes or no. Shall I have an officer call you tomorrow morning?</div></div><div class="nl us"><span class="t"><em>Applicant</em>8:59 PM</span><div class="bub user">Yes, please. Jihoon Oh, 555-0187. After ten is best.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+8 s</span><div class="bub ai">Thank you, Jihoon. An officer will call you after ten tomorrow. I&rsquo;m texting the document list and the deadline now, and having your transcript ready will speed up the check.</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      this trade’s admissions guide and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the admissions guide the admissions officer enters.</p>
   </div>
 </section>
-<!--/demo:v2-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main>
-
-<section class="t-sm sec-dark" data-packstatus>
+<section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
-    <div style="border:1px solid rgba(183,121,31,.34);background:rgba(183,121,31,.06);
-         border-radius:14px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
-      <span style="font-size:var(--fs-label);font-weight:800;letter-spacing:.13em;text-transform:uppercase;
-            color:#141A1F;border:1px solid rgba(183,121,31,.4);border-radius:6px;padding:5px 9px;
-            ">Roadmap pack</span>
-      <p style="flex:1;min-width:260px;font-size:var(--fs-sm);line-height:1.7;color:var(--tx2);font-weight:500;margin:0;">
-        This&nbsp;admissions pack is on&nbsp;the&nbsp;roadmap — it is not live yet. What follows is what it is being built to&nbsp;do, including the&nbsp;refusals. Founding institutions decide the&nbsp;build order. <a href="../industries.html#waitlist" style="color:var(--teal);font-weight:700;">See which packs are live →</a></p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A missed call<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">In transfer and admission season the office takes ten times the usual calls, and most of them ask for the document list and the deadline that are already in the prospectus. The problem is the real consultations mixed in with them. An applicant whose eligibility is unclear needs an officer, and the line is engaged.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="Closed hours" xmlns="http://www.w3.org/2000/svg"><title>Closed hours</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Closed hours</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15 hours</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >of 24 hours</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >closed</text><circle cx="75.1887" cy="77.7555" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >open 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >closed</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >8:56 PM — call</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >calls still arrive in these hours</text></svg><figcaption class="illcap">Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.</figcaption></figure></div>
   </div>
 </section>
 
-<section class="dialsec t-md sec-dark bg-grid">
+<section class="t-md sec-dark bg-spot" id="refuses">
   <div class="wrap">
-    <div class="nightfig scenefig reveal">
-      <div class="scenebox" data-scene="nightclock"></div>
-      <div>
-        <p class="scenecap"><b>An&nbsp;office keeping 09:00&ndash;17:00 is open for&nbsp;<span class="num">40 of&nbsp;the&nbsp;week's&nbsp;168 hours</span></b> — and that&nbsp;is before you move it. A&nbsp;London office on&nbsp;British Summer Time is reachable between <span class="num">16:00 and midnight</span> for&nbsp;an&nbsp;applicant in&nbsp;Beijing, and between <span class="num">03:00 and 11:00</span> for&nbsp;one in&nbsp;Bogotá. Her&nbsp;entire working day sits inside your&nbsp;night.</p>
-        <p class="scenecap" style="margin-top:12px;">That is not a&nbsp;statistic we collected. It is what a&nbsp;clock and a&nbsp;map divide&nbsp;into.</p>
-      </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in this trade.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the Universities answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>It never rates the chances of admission.</b>A GPA of 3.2 gets no &ldquo;you should be fine&rdquo;. Admission is decided by the review, and the AI says so.</li><li><b>It never rules on eligibility.</b>Credit recognition and entry requirements are judged by an officer from the documents. The AI books the officer&rsquo;s call.</li><li><b>It never adds to the prospectus.</b>It says what is published and makes no exceptions.</li><li><b>It never talks about other applicants.</b>Live application numbers and who has applied are not answered.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="The gate before a person" xmlns="http://www.w3.org/2000/svg"><title>The gate before a person</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">The gate before a person</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >The customer asks</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“I want to apply as a </text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >transfer student.…”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >On the price list?</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Needs a judgement?</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Safety involved?</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >It answers</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >word for word, with the source</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >Handed to a person</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >the whole conversation</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >every captured field</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >why it stopped</text></svg><figcaption class="illcap">On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="statsec sec-dark bg-grid t-sm">
+<section class="t-md sec-light bg-paper" id="crm">
   <div class="wrap">
-    <span class="eyebrow reveal"><i></i>The&nbsp;calendar has cliffs in&nbsp;it</span>
-    <div class="statgrid grid reveal">
-      <div class="stat"><div class="n small sg">2&nbsp;Jul&nbsp;&ndash;<br><em>19&nbsp;Oct</em></div><div class="c">the&nbsp;2026 Clearing window as&nbsp;published by&nbsp;UCAS — three and a&nbsp;half months in&nbsp;which one unanswered call changes where somebody spends three years</div></div>
-      <div class="stat"><div class="n sg">50,000<span class="pc">+</span></div><div class="c">students find their&nbsp;place through&nbsp;Clearing every&nbsp;year, UCAS says — and they find it over&nbsp;a&nbsp;handful of&nbsp;days, on&nbsp;the&nbsp;phone</div></div>
-      <div class="stat"><div class="n small sg">03:00&ndash;<em>11:00</em></div><div class="c">the&nbsp;only hours a&nbsp;Bogotá applicant can reach a&nbsp;London office that&nbsp;keeps 9&nbsp;to&nbsp;5</div></div>
-    </div>
-    <div class="foot">Clearing dates and the&nbsp;50,000 figure are published by&nbsp;UCAS at&nbsp;ucas.com. The&nbsp;timezone line is arithmetic, not a&nbsp;survey. Nothing on&nbsp;this&nbsp;page is a&nbsp;number we made&nbsp;up.</div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The Universities CRM comes with Universities fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="Customer record" xmlns="http://www.w3.org/2000/svg"><title>Customer record</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Customer record</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >Jihoon Oh</text><text x="183" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">555-01··</text><rect x="400" y="54" width="44.1" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="422.05" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >Phone</text><rect x="452.1" y="54" width="64.56" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="484.38" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >WhatsApp</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Programme and departme</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Education and eligibil</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Inquiry text as spoken</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Officer needed or answ</text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text></svg><figcaption class="illcap">The card a call leaves behind, with the source of every field.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>Programme and department</span><span>Education and eligibility notes</span><span>Inquiry text as spoken</span><span>Officer needed or answered from the prospectus</span><span>Best time for the callback</span><span>Deadline quoted</span></div></div>
   </div>
 </section>
 
-<section class="handles sec-light bg-paper t-xl">
+<section class="t-md sec-dark bg-grid" id="pipeline">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>What Saleringo handles</span>
-      <h2 class="h2" style="margin-top:22px">The&nbsp;same nine questions, <br>in&nbsp;forty&nbsp;countries.</h2>
-      <p class="lead">Fees, deadlines, accepted English-language tests, accommodation, what to&nbsp;send and where — answered from&nbsp;your&nbsp;published pages, with&nbsp;the&nbsp;page named, at&nbsp;whatever hour they&nbsp;ask.</p>
-    </div>
-    <div class="hgrid reveal">
-      <div class="hcard"><span class="ic">✓</span><b>Published fees &amp; funding deadlines</b><span>Tuition for&nbsp;that&nbsp;year and that&nbsp;fee status, deposits, and scholarship closing dates — read from&nbsp;the&nbsp;page that&nbsp;publishes them, never rounded or remembered.</span></div>
-      <div class="hcard"><span class="ic">◷</span><b>Entry criteria, quoted not interpreted</b><span>It states the&nbsp;requirement your&nbsp;prospectus prints, including which English tests and scores you accept. Whether one applicant meets it is an&nbsp;officer's&nbsp;decision.</span></div>
-      <div class="hcard"><span class="ic">☰</span><b>Application status &amp; missing documents</b><span>After identity checks: what stage the&nbsp;application is at, and precisely which document is still outstanding.</span></div>
-      <div class="hcard"><span class="ic">◱</span><b>Every&nbsp;timezone, every&nbsp;language, one inbox</b><span>Website chat and WhatsApp share one inbox and one approved source library, so the&nbsp;02:40 message gets the&nbsp;same answer as&nbsp;the&nbsp;14:00 one.</span></div>
-      <div class="hcard wide"><span class="ic">↻</span><div><b>Agents, counsellors and current students</b><span>Agents ringing on&nbsp;behalf of&nbsp;an&nbsp;applicant get the&nbsp;published answer, not a&nbsp;private one. Registry, timetable, fee and accommodation questions from&nbsp;enrolled students come off the&nbsp;same switchboard and are handled the&nbsp;same way.</span></div></div>
-    </div>
-
-    <div class="peopleband reveal">
-      <div class="ph-head">
-        <span class="eyebrow light"><i></i>Who is on&nbsp;the&nbsp;other end at&nbsp;02:40</span>
-        <h3>Not a&nbsp;lead. <br>An&nbsp;applicant, eight hours&nbsp;ahead.</h3>
-        <p class="lead">Three different people reach the&nbsp;same switchboard with&nbsp;the&nbsp;same nine questions, and all three of&nbsp;them are asking something you have already published.</p>
-      </div>
-      <div class="audgrid peoplegrid">
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/30215680/pexels-photo-30215680.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/30215680/pexels-photo-30215680.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/30215680/pexels-photo-30215680.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/30215680/pexels-photo-30215680.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/30215680/pexels-photo-30215680.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A person working alone at a long desk under a single lamp, late at night" loading="lazy" decoding="async" width="600" height="900">
-          <div><b>Writing in&nbsp;her&nbsp;afternoon</b><span>Which is your&nbsp;small hours, and she has four offers open</span></div>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/7681120/pexels-photo-7681120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/7681120/pexels-photo-7681120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7681120/pexels-photo-7681120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7681120/pexels-photo-7681120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7681120/pexels-photo-7681120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A young man in a jacket adjusting a headset microphone before a call" loading="lazy" decoding="async" width="600" height="900">
-          <div><b>Calling on&nbsp;behalf of&nbsp;nine&nbsp;people</b><span>An&nbsp;agent or school counsellor, wanting the&nbsp;published answer</span></div>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/10225663/pexels-photo-10225663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/10225663/pexels-photo-10225663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/10225663/pexels-photo-10225663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/10225663/pexels-photo-10225663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/10225663/pexels-photo-10225663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A man standing outside a modern campus building, reading something on his phone" loading="lazy" decoding="async" width="600" height="388">
-          <div><b>Already enrolled, still ringing</b><span>Registry, timetable, fees, accommodation — the&nbsp;same switchboard</span></div>
-        </div>
-      </div>
-      <p class="capL">Stock photography, illustrating the&nbsp;kind of&nbsp;enquiry this&nbsp;page describes — not Saleringo customers.</p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal"><b>Inquiry</b><i>&rarr;</i><b>Answered from the prospectus</b><i>&rarr;</i><b>Passed to an officer</b><i>&rarr;</i><b>Officer consultation</b><i>&rarr;</i><b>Application filed</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="Pipeline" xmlns="http://www.w3.org/2000/svg"><title>Pipeline</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Pipeline</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Inquiry</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Answered </text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Passed to</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Officer c</text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Applicati</text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">The Universities pipeline as it is. How many inquiries sit at each stage, at a glance.</figcaption></figure></div>
   </div>
-</section>
-
-<section class="notdo sec-light bg-paper t-md">
-  <div class="wrap"><div class="cols">
-    <div class="reveal">
-      <span class="eyebrow light"><i></i>Guardrails</span>
-      <h2 class="h2" style="margin-top:24px">What it will <em style="font-style:normal;color:var(--teal-deep);">not</em>&nbsp;do.</h2>
-      <p class="lead">This is the&nbsp;half of&nbsp;the&nbsp;page that&nbsp;matters. An&nbsp;admissions front desk that&nbsp;improvises is worse than one that&nbsp;is closed, because the&nbsp;applicant believes it.</p>
-      <a class="linkcta" style="margin-top:34px;" href="../security.html">Guardrails &amp; security&nbsp;&nbsp;→</a>
-    </div>
-    <div class="tray reveal"><div class="paper">
-      <div class="ndrow"><span class="x">✕</span><div><b>It will not make or imply an&nbsp;admissions decision</b><span>Not "you'd&nbsp;probably get in", not "that&nbsp;looks strong", not a&nbsp;likelihood. It states the&nbsp;published requirement and hands the&nbsp;application to&nbsp;an&nbsp;officer.</span></div></div>
-      <div class="ndrow"><span class="x">✕</span><div><b>It will not assess whether a&nbsp;qualification meets an&nbsp;entry requirement</b><span>Comparing an&nbsp;overseas diploma to&nbsp;your&nbsp;criteria is credential evaluation. It is done by&nbsp;your&nbsp;team, with&nbsp;whatever comparability service you already use. The&nbsp;AI passes the&nbsp;transcript across and says so.</span></div></div>
-      <div class="ndrow"><span class="x">✕</span><div><b>It will not advise on&nbsp;a&nbsp;visa or an&nbsp;immigration matter</b><span>Immigration advice is regulated in&nbsp;several of&nbsp;the&nbsp;countries you recruit from&nbsp;and into. In&nbsp;the&nbsp;UK it may only be given by&nbsp;advisers authorised under&nbsp;the&nbsp;Immigration and Asylum Act 1999, regulated by&nbsp;the&nbsp;Immigration Advice Authority (until January 2025, the&nbsp;OISC); in&nbsp;Australia, immigration assistance is restricted under&nbsp;the&nbsp;Migration Act 1958 to&nbsp;agents registered with&nbsp;the&nbsp;OMARA and other exempt persons. The&nbsp;AI routes every&nbsp;such question to&nbsp;your&nbsp;own international student advice team and to&nbsp;the&nbsp;official government guidance, and says nothing else.</span></div></div>
-      <div class="ndrow"><span class="x">✕</span><div><b>It will not quote an&nbsp;unpublished fee or scholarship figure</b><span>Only the&nbsp;figure published for&nbsp;that&nbsp;entry year and that&nbsp;fee status. If your&nbsp;page has not been updated for&nbsp;the&nbsp;new cycle, it says the&nbsp;figure is last year's&nbsp;and offers a&nbsp;person. It never estimates and never negotiates.</span></div></div>
-      <div class="ndrow"><span class="x">✕</span><div><b>It will not discuss an&nbsp;application without verifying who is asking</b><span>An&nbsp;applicant file is personal data. Nothing case-specific is said to&nbsp;anyone — parent, agent or caller — until identity is verified through&nbsp;the&nbsp;route your&nbsp;institution sets, and every&nbsp;disclosure is written to&nbsp;the&nbsp;audit log.</span></div></div>
-    </div></div>
-  </div></div>
-</section>
-
-<section class="demosec sec-dark bg-spot t-xl">
-  <div class="stars" aria-hidden="true"></div>
-  <div class="wrap"><div class="cols">
-    <div class="reveal"><div class="shell"><div class="core">
-      <div class="demo-head"><span class="dot"></span><span>Scripted demo — International admissions</span><span class="tag">SCRIPTED</span></div>
-      <div class="demo-body" aria-live="polite">
-        <div class="bub user">What's&nbsp;the&nbsp;tuition for&nbsp;MSc Data Science for&nbsp;an&nbsp;international student starting September, and when does the&nbsp;scholarship close?</div>
-        <div class="bub ai">Tuition for&nbsp;2026 entry, overseas fee status, is <b>$24,000</b> for&nbsp;the&nbsp;year. The&nbsp;merit scholarship closes on&nbsp;<b>31 March</b>. Both figures are from&nbsp;the&nbsp;2026 fees page — I'll&nbsp;send you the&nbsp;link so you're&nbsp;reading it yourself.</div>
-        <span class="vchip">✓ Read from&nbsp;your&nbsp;published 2026 fees page</span>
-        <div class="bub user">I have a&nbsp;three-year BSc from&nbsp;a&nbsp;university in&nbsp;Ghana with&nbsp;a&nbsp;2:1 equivalent. Does that&nbsp;qualify?</div>
-        <span class="hchip">→ Handing to&nbsp;an&nbsp;admissions officer — the&nbsp;AI does not assess qualifications</span>
-        <div class="bub ai">I&nbsp;can't answer that, and I&nbsp;won't guess at&nbsp;it. The&nbsp;published requirement is a&nbsp;good honours degree in&nbsp;a&nbsp;quantitative subject; whether yours meets it is a&nbsp;judgement an&nbsp;officer makes on&nbsp;your&nbsp;transcript. Upload it here and it goes into&nbsp;the&nbsp;queue tonight.</div>
-        <div class="bub user">And will I get the&nbsp;visa if you make me an&nbsp;offer?</div>
-        <span class="rchip">✕ No&nbsp;immigration advice, in&nbsp;any wording</span>
-        <div class="bub ai">That&nbsp;is not something I&nbsp;am allowed to&nbsp;answer — immigration advice is regulated, and I&nbsp;am not a&nbsp;regulated adviser. Our&nbsp;international student advice team can talk you through&nbsp;it, and the&nbsp;official government guidance is the&nbsp;only source I'll&nbsp;point you at. I've&nbsp;put you in&nbsp;their&nbsp;diary for&nbsp;Thursday.</div>
-      </div>
-    </div></div></div>
-    <div class="reveal">
-      <span class="eyebrow"><i></i>One conversation, one applicant record</span>
-      <h2 class="h2 onDark" style="margin-top:22px">Answered, sourced, <br>refused — by&nbsp;02:44.</h2>
-      <p class="lead onDark">Two questions answered from&nbsp;pages you published, two refused on&nbsp;the&nbsp;record, and an&nbsp;applicant file opened with&nbsp;the&nbsp;transcript already attached.</p>
-      <div class="stack" style="margin-top:30px;">
-        <div class="leadcard"><div class="shell"><div class="core">
-          <div class="k">NEW APPLICANT ENQUIRY · AUTO-CAPTURED</div>
-          <div class="nm">A. O. — prospective PGT<span class="time sg">02:44</span></div>
-          <div class="row" style="margin-top:8px;"><span class="rk">Programme</span><span class="rv">MSc Data Science · Sept 2026</span></div>
-          <div class="row"><span class="rk">Fee status</span><span class="rv">Overseas — as&nbsp;stated, not assessed</span></div>
-          <div class="row"><span class="rk">Documents</span><span class="rv">Transcript uploaded · English test outstanding</span></div>
-          <div class="row"><span class="rk">Referred out</span><span class="rv">Visa question → international advice team</span></div>
-        </div></div></div>
-      </div>
-      <a class="linkcta" style="margin-top:34px;border-color:#141A1F;color:#141A1F;" href="../demo.html">Try the&nbsp;full interactive demo&nbsp;&nbsp;→</a>
-    </div>
-  </div></div>
 </section>
 
 <section class="packcard t-md sec-dark bg-grid" id="the-pack">
   <div class="wrap">
     <a class="pc-link" href="./universities-pack.html">
-      <span class="pc-k">The&nbsp;Universities & admissions pack</span>
-      <b class="pc-h">Everything in&nbsp;the&nbsp;pack, on&nbsp;a&nbsp;page of&nbsp;its&nbsp;own</b>
-      <span class="pc-d">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and pipeline stages this&nbsp;trade works in, the&nbsp;systems it hands to, and every&nbsp;refusal written down. It is a&nbsp;manifest, so it lives where a&nbsp;manifest belongs rather than in&nbsp;the&nbsp;middle of&nbsp;an&nbsp;argument.</span>
+      <span class="pc-k">The Universities pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
       <span class="pc-go" aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>
 
-<section class="dirband sec-dark">
-  <div class="photosplit">
-    <div class="media">
-      <img class="ph" src="https://images.pexels.com/photos/12911317/pexels-photo-12911317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-           srcset="https://images.pexels.com/photos/12911317/pexels-photo-12911317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/12911317/pexels-photo-12911317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/12911317/pexels-photo-12911317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/12911317/pexels-photo-12911317.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="(max-width:900px) 100vw, 50vw"
-           alt="A woman sitting on an office floor beside a filing drawer, reading a printed document among loose papers"
-           loading="lazy" decoding="async" width="900" height="1350">
-    </div>
-    <div class="copy">
-      <span class="eyebrow"><i></i>A&nbsp;person is always behind it</span>
-      <h2 class="h2 onDark" style="margin-top:20px">Every&nbsp;sentence traces back <br>to&nbsp;a&nbsp;page you&nbsp;published.</h2>
-      <p class="lead onDark" style="margin-top:18px;">Fees, deadlines, entry criteria, accepted tests, accommodation, what to&nbsp;send and where — each loaded from&nbsp;a&nbsp;named prospectus or policy page, approved before go-live, and re-checked when that&nbsp;page changes. If a&nbsp;page has not been updated for&nbsp;the&nbsp;new cycle, the&nbsp;AI says so rather than reading last year's&nbsp;number in&nbsp;this&nbsp;year's&nbsp;voice.</p>
-      <p class="lead onDark" style="margin-top:14px;">Decisions, eligibility, visas and anything about&nbsp;a&nbsp;named applicant's&nbsp;file never reach it at&nbsp;all. Those&nbsp;land with&nbsp;your&nbsp;officers, with&nbsp;the&nbsp;full conversation and the&nbsp;documents attached. That&nbsp;is the&nbsp;whole trade: the&nbsp;02:40 questions come off the&nbsp;desk, and the&nbsp;judgement stays where it belongs.</p>
-      <a class="linkcta" style="margin-top:30px;border-color:#141A1F;color:#141A1F;" href="../verified-ai.html#audit">See the&nbsp;audit trail&nbsp;&nbsp;→</a>
-      <p class="capD">Stock photography — illustrative, not a&nbsp;Saleringo customer.</p>
-    </div>
-  </div>
-</section>
-
-<section class="startsec sec-light t-md">
-  <div class="wrap"><div class="cols">
-    <div class="reveal">
-      <span class="eyebrow light"><i></i>How to&nbsp;start</span>
-      <h2 class="h2" style="margin-top:24px">Live <br>before the&nbsp;next deadline.</h2>
-      <p class="lead">Start with&nbsp;website chat on&nbsp;day one. Connect WhatsApp when you're ready — same inbox, same approved sources, same refusals.</p>
-      <div class="channote"><b>WhatsApp note:</b> most international applicants and most agents are already on&nbsp;WhatsApp. Connect your&nbsp;number during setup — official WhatsApp Business API, your&nbsp;number kept. Messages there and on&nbsp;your&nbsp;website land in&nbsp;one inbox, and every&nbsp;reply draws on&nbsp;the&nbsp;same approved source library.</div>
-      <div class="channote"><b>Keep your&nbsp;student record system:</b> see exactly what connects today in&nbsp;<a href="#integrations" style="color:var(--teal-deep);font-weight:700;">the&nbsp;honest status table</a> below. If yours is not on&nbsp;it, it is not connected.</div>
-    </div>
-    <div class="steps reveal">
-      <div class="step" style="padding-top:6px;"><span class="num">01</span><span class="tx"><b>Point it at&nbsp;the&nbsp;pages you already publish</b><span>Prospectus, fees, entry criteria, accommodation, deadlines — by&nbsp;URL, so answers stay traceable</span></span><span class="tail pilltag pt-line">~30 min</span></div>
-      <div class="step"><span class="num">02</span><span class="tx"><b>Your&nbsp;office approves the&nbsp;answerable set</b><span>And marks the&nbsp;refusals: decisions, eligibility, immigration, unpublished figures</span></span><span class="tail pilltag pt-teal">✓ Approved</span></div>
-      <div class="step"><span class="num">03</span><span class="tx"><b>Set identity checks and handoff routes</b><span>Who verifies an&nbsp;applicant, and which team each&nbsp;refused question goes&nbsp;to</span></span><span class="tail pilltag pt-line">Your&nbsp;rules</span></div>
-      <div class="step"><span class="num">04</span><span class="tx"><b>Go live · connect WhatsApp when ready</b><span>Website chat first; WhatsApp joins the&nbsp;same inbox</span></span><span class="tail pilltag pt-dark">Tonight</span></div>
-    </div>
-
-    <p class="seccap">Four steps, and the&nbsp;second one is the&nbsp;only one that&nbsp;costs you real time — because deciding what the&nbsp;AI may never say takes longer than deciding what it may.</p>
-  </div></div>
-</section>
-
-<section class="sec-dark t-sm" id="integrations" style="background:linear-gradient(180deg,#FFFFFF,#FFFFFF);">
+<section class="t-md sec-light2" id="others">
   <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Your&nbsp;existing systems, honestly</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">Three columns. <br>No&nbsp;logo&nbsp;wall.</h2>
-      <p class="secintro">Procurement asks this&nbsp;question in&nbsp;week six and gets a&nbsp;footnote. An&nbsp;office signing for&nbsp;a&nbsp;whole cycle deserves it in&nbsp;the&nbsp;open, before the&nbsp;paperwork.</p>
-    </div>
-    <div class="statgrid reveal">
-      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
-        <ul>
-          <li>Zapier<span>Push applicant records and stage changes into&nbsp;whatever you already run</span></li>
-          <li>CSV export<span>Enquiries, documents outstanding, refusals and the&nbsp;whole pipeline, whenever you ask</span></li>
-          <li>Saleringo's&nbsp;own inbox &amp; scheduler<span>WhatsApp and website chat in&nbsp;one place, adviser appointments on&nbsp;their&nbsp;own calendar</span></li>
-        </ul>
-      </div>
-      <div class="statcol man"><div class="hl4" role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</div>
-        <ul>
-          <li>Your&nbsp;student record system<span>No&nbsp;direct link to&nbsp;any SRS or SIS. Records reach it through&nbsp;Zapier or a&nbsp;CSV import</span></li>
-          <li>Your&nbsp;applicant portal<span>Same path. The&nbsp;AI can send the&nbsp;portal link and the&nbsp;upload link; it does not read the&nbsp;portal</span></li>
-          <li>Deposit and fee payment<span>It sends your&nbsp;existing payment link and never touches card details</span></li>
-        </ul>
-      </div>
-      <div class="statcol road"><div class="hl4" role="heading" aria-level="3"><i></i>In&nbsp;build</div>
-        <ul>
-          <li>Student record system integrations<span>On the&nbsp;roadmap; founding institutions vote on&nbsp;what ships next. We will not name a&nbsp;month we cannot stand behind</span></li>
-          <li>Single sign-on for&nbsp;applicant identity<span>So a&nbsp;file question can be answered to&nbsp;a&nbsp;verified applicant without a&nbsp;human step</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="statnote">If the&nbsp;system your&nbsp;registry runs on is not on&nbsp;this&nbsp;page, ask before you buy. "Not yet" now is cheaper for&nbsp;both of&nbsp;us than "not yet" after a&nbsp;procurement cycle.</p>
-
-    <div class="srcrow reveal">
-      <div class="srccard"><span class="q">"What English tests do you accept?"</span><span class="s">Source: entry requirements page</span><span class="n">Answered verbatim, with&nbsp;the&nbsp;link. If the&nbsp;page lists a&nbsp;score you no&nbsp;longer accept, that&nbsp;is a&nbsp;page problem, and the&nbsp;log shows it was the&nbsp;page.</span></div>
-      <div class="srccard"><span class="q">"Is my&nbsp;diploma equivalent?"</span><span class="s">Source: none — refused</span><span class="n">There is no&nbsp;page that&nbsp;answers this, because the&nbsp;answer is a&nbsp;judgement about&nbsp;one document. Routed to&nbsp;an&nbsp;officer with&nbsp;the&nbsp;transcript.</span></div>
-      <div class="srccard"><span class="q">"Has my&nbsp;offer been sent?"</span><span class="s">Source: your&nbsp;record, after identity check</span><span class="n">Nothing case-specific is said until the&nbsp;caller is verified your&nbsp;way. The&nbsp;check and the&nbsp;disclosure both land in&nbsp;the&nbsp;audit log.</span></div>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal"><a href="./academies.html"><img src="https://images.pexels.com/photos/6238038/pexels-photo-6238038.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Academies & tutoring</b></a><a href="./salons.html"><img src="https://images.pexels.com/photos/9146943/pexels-photo-9146943.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Hair & beauty salons</b></a><a href="./fitness.html"><img src="https://images.pexels.com/photos/11036670/pexels-photo-11036670.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Gyms & fitness</b></a><a href="./childcare.html"><img src="https://images.pexels.com/photos/8087868/pexels-photo-8087868.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Daycare & preschool</b></a><a href="./driving-school.html"><img src="https://images.pexels.com/photos/6817037/pexels-photo-6817037.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Driving schools</b></a><a href="./music-art-academy.html"><img src="https://images.pexels.com/photos/8520472/pexels-photo-8520472.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Music & art schools</b></a><a href="./yoga-pilates.html"><img src="https://images.pexels.com/photos/8769162/pexels-photo-8769162.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Yoga & pilates studios</b></a><a href="./martial-arts.html"><img src="https://images.pexels.com/photos/7045547/pexels-photo-7045547.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Martial arts dojos</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">Dental</a><a href="./clinics.html">Clinics & med-spa</a><a href="./academies.html">Academies & tutoring</a><a href="./salons.html">Hair & beauty salons</a><a href="./veterinary.html">Veterinary</a><a href="./auto-repair.html">Auto repair</a><a href="./real-estate.html">Real estate</a><a href="./venues.html">Wedding & event venues</a><a href="./senior-care.html">Senior care</a><a href="./fitness.html">Gyms & fitness</a><a href="./home-services.html">Home services</a><a href="./pest-control.html">Pest control</a><a href="./property-management.html">Property management</a><a href="./movers.html">Movers</a><a href="./restaurants.html">Restaurants</a><a href="./stays.html">Boutique stays</a><a href="./golf.html">Golf clubs</a><a href="./funeral-homes.html">Funeral homes</a><a href="./legal.html">Law firms</a><a href="./public-sector.html">Public sector</a><a href="./self-storage.html">Self storage</a><a href="./equipment-rental.html">Equipment rental</a><a href="./ecommerce.html">Online stores</a><a href="./franchise.html">Franchises</a><a href="./pharmacy.html">Pharmacy</a><a href="./hospital-outpatient.html">Hospitals & outpatient</a><a href="./physio-rehab.html">Physio & rehab</a><a href="./korean-medicine.html">Acupuncture & traditional medicine</a><a href="./optician.html">Opticians</a><a href="./counseling.html">Counseling & therapy</a><a href="./childcare.html">Daycare & preschool</a><a href="./driving-school.html">Driving schools</a><a href="./music-art-academy.html">Music & art schools</a><a href="./yoga-pilates.html">Yoga & pilates studios</a><a href="./martial-arts.html">Martial arts dojos</a><a href="./nail-spa.html">Nail & spa</a><a href="./barbershop.html">Barbershops</a><a href="./pet-grooming.html">Pet grooming & boarding</a><a href="./cleaning-services.html">Cleaning services</a><a href="./interior-renovation.html">Renovation contractors</a><a href="./landscaping.html">Landscaping & lawn care</a><a href="./locksmith.html">Locksmiths</a><a href="./appliance-repair.html">Appliance repair</a><a href="./laundry.html">Dry cleaning & laundry</a><a href="./car-wash.html">Car wash & detailing</a><a href="./car-dealers.html">Car dealerships</a><a href="./towing.html">Towing & roadside</a><a href="./cafes-bakeries.html">Cafés & bakeries</a><a href="./catering.html">Catering</a><a href="./travel-agency.html">Travel agencies</a><a href="./photo-studio.html">Photo studios</a><a href="./florist.html">Florists</a><a href="./accounting-tax.html">Accountants & tax</a><a href="./insurance-agency.html">Insurance agencies</a><a href="./home-security.html">Home security & CCTV installers</a><a href="./solar.html">Solar & energy installers</a><a href="./it-repair.html">Computer & phone repair</a><a href="./courier.html">Couriers & same-day delivery</a><a href="./print-signage.html">Print shops & signage</a><a href="./coworking.html">Coworking spaces</a><a href="./tours-activities.html">Tours & activities</a><a href="./schools.html">Schools & international schools</a><a href="./staffing.html">Staffing & recruitment agencies</a><a href="./imaging.html">Imaging & health-screening centres</a></div>
   </div>
 </section>
 
-<section class="sec-dark bg-spot t-xl" id="worked-examples">
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Six worked examples</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Six hours at&nbsp;an&nbsp;office like&nbsp;yours <br>&mdash; and what each&nbsp;one left&nbsp;behind.</h2>
-      <p class="secintro">The&nbsp;message that&nbsp;actually arrives at&nbsp;02:40, the&nbsp;exact words back, and the&nbsp;thing it produced: a&nbsp;fee quoted from&nbsp;the&nbsp;page that&nbsp;publishes it, a&nbsp;document chased by&nbsp;name, an&nbsp;eligibility question put in&nbsp;front of&nbsp;an&nbsp;officer instead of&nbsp;guessed at. Four of&nbsp;the&nbsp;six turn on&nbsp;a&nbsp;refusal — read those&nbsp;first.</p>
-      <p class="exlabel" style="margin-top:14px;">Every&nbsp;scenario below is a&nbsp;worked illustration built from&nbsp;the&nbsp;fees page and prospectus an&nbsp;institution would load — not a&nbsp;customer story, and no&nbsp;institution, applicant or agent named or implied here is real. The&nbsp;<b>$24,000</b> tuition and <b>$2,000</b> deposit are the&nbsp;illustrative figures this&nbsp;page uses throughout; your&nbsp;own fee schedule supplies the&nbsp;real ones. Plan prices are the&nbsp;ones on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>.</p>
-    </div>
-
-    <!--illus:scene--><div class="scenestrip reveal" aria-label="The three moments in every worked example"><figure><img src="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A customer making a call from the sofa in the evening" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>After hours — the call comes in</b>The customer calls when it suits them, not when your desk is open.</figcaption></figure><figure><img src="https://images.pexels.com/photos/7972304/pexels-photo-7972304.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A student holding admission papers outside a campus building" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>University — answered from your own facts</b>Prices, hours and rules you approved. Nothing invented.</figcaption></figure><figure><img src="https://images.pexels.com/photos/13736440/pexels-photo-13736440.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="An owner in an apron reading the morning’s records on a tablet" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Next morning — what is waiting</b>A booking, a quote, a record with an owner and a deadline.</figcaption></figure></div><!--/illus:scene-->
-    <div class="panelset exset reveal" style="margin-top:38px;">
-          <div class="pstabs" role="tablist" aria-label="Six worked examples">
-        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Sourced &amp; refused</button>
-        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Volume absorbed</button>
-        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Refused &amp; routed</button>
-        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Officer decides</button>
-        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Identity first</button>
-        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Document chased</button>
-      </div>
-          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Sourced &amp; refused">
-            <div class="excard">
-        <div class="exhead"><span class="when">02:40 local</span><span class="via">WhatsApp</span><span class="tag solved">Sourced &amp; refused</span></div>
-        <div class="exbody">
-          <p class="exq">Good afternoon. I want to&nbsp;apply for&nbsp;the&nbsp;MSc in&nbsp;Data Science. What is the&nbsp;fee for&nbsp;international students, and do I have the&nbsp;right degree for&nbsp;it?</p>
-          <div class="exturn"><span class="who">Saleringo</span>Tuition for&nbsp;2026 entry at&nbsp;overseas fee status is <b>$24,000</b> for&nbsp;the&nbsp;year, with&nbsp;a&nbsp;<b>$2,000</b> deposit on&nbsp;acceptance — both from&nbsp;the&nbsp;2026 fees page, and I'm&nbsp;sending you the&nbsp;link so you can see it in&nbsp;writing rather than take my&nbsp;word for&nbsp;it.</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>On&nbsp;your&nbsp;degree: the&nbsp;published requirement is a&nbsp;good honours degree in&nbsp;a&nbsp;quantitative subject. Whether yours meets it is a&nbsp;judgement about&nbsp;your&nbsp;transcript, and it belongs to&nbsp;an&nbsp;admissions officer, not to&nbsp;me. Upload the&nbsp;transcript here and it is in&nbsp;the&nbsp;queue before your&nbsp;evening ends.</div>
-          <div class="exturn"><span class="who">Applicant</span>Uploaded. When will I hear?</div>
-          <div class="exturn"><span class="who">Saleringo</span>Your&nbsp;office publishes a&nbsp;ten-working-day target for&nbsp;this&nbsp;programme, so that&nbsp;is what I'll&nbsp;tell you — and I'll&nbsp;message you if it slips, rather than leaving you counting.</div>
-          <div class="exout">
-            <div class="hl5" role="presentation">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Fee and deposit quoted from&nbsp;the&nbsp;<b>2026</b> page, with&nbsp;the&nbsp;year stated out loud</span><span class="amt">$24,000/yr</span></div>
-            <div class="exrow"><i>✓</i><span>Transcript captured at&nbsp;02:44 and attached to&nbsp;a&nbsp;new applicant record</span></div>
-            <div class="exrow"><i>✓</i><span>Source page stored against every&nbsp;figure quoted</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;opinion on&nbsp;eligibility. No&nbsp;"you should be fine".</span></div>
-          </div>
-          <p class="exlabel">Worked illustration, not a&nbsp;customer story. The&nbsp;refusal is the&nbsp;point: the&nbsp;fee is a&nbsp;published fact, and the&nbsp;degree question is not.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Volume absorbed">
-            <div class="excard">
-        <div class="exhead"><span class="when">Results day, 08:20</span><span class="via">Phone</span><span class="tag solved">Volume absorbed</span></div>
-        <div class="exbody">
-          <p class="exq">I missed my&nbsp;offer by&nbsp;one grade. Have you still got places on&nbsp;Economics, and can you take me?</p>
-          <div class="exturn"><span class="who">Saleringo</span>The&nbsp;Clearing vacancy list your&nbsp;office published this&nbsp;morning shows Economics as&nbsp;open, and it is being updated through&nbsp;the&nbsp;day. I&nbsp;can tell you it is open. I&nbsp;cannot tell you whether you'll&nbsp;be taken — that&nbsp;is a&nbsp;decision, and only an&nbsp;admissions tutor makes it.</div>
-          <div class="exturn"><span class="who">Applicant</span>The&nbsp;line has been engaged for&nbsp;forty minutes.</div>
-          <div class="exturn"><span class="who">Saleringo</span>I&nbsp;know. I've&nbsp;taken your&nbsp;grades, your&nbsp;UCAS number and your&nbsp;subject, put you in&nbsp;the&nbsp;Clearing queue with&nbsp;all of&nbsp;it already written down, and you'll&nbsp;get a&nbsp;call back rather than a&nbsp;redial. If you'd&nbsp;rather keep holding, that&nbsp;is fine too, and your&nbsp;place in&nbsp;the&nbsp;queue stays.</div>
-          <div class="exout">
-            <div class="hl5" role="presentation">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Vacancy status read from&nbsp;the&nbsp;list published that&nbsp;morning, not from&nbsp;memory</span></div>
-            <div class="exrow"><i>✓</i><span>Grades and UCAS number captured before a&nbsp;tutor picked up, so the&nbsp;call starts at&nbsp;minute two</span></div>
-            <div class="exrow"><i>✓</i><span>A&nbsp;caller who would have hung up on&nbsp;the&nbsp;engaged tone is still in&nbsp;the&nbsp;queue</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;offer made, implied, or hinted at&nbsp;on&nbsp;the&nbsp;phone.</span></div>
-          </div>
-          <p class="exlabel">UCAS publishes the&nbsp;2026 Clearing window as&nbsp;2 July to&nbsp;19 October, and says more than 50,000 students find a&nbsp;place through&nbsp;it each&nbsp;year. Most of&nbsp;those calls land in&nbsp;a&nbsp;few days, into&nbsp;an&nbsp;office that&nbsp;cannot hire for&nbsp;a&nbsp;week.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Refused &amp; routed">
-            <div class="excard">
-        <div class="exhead"><span class="when">23:15</span><span class="via">Web chat</span><span class="tag human">Refused &amp; routed</span></div>
-        <div class="exbody">
-          <p class="exq">If I get the&nbsp;offer, how much money do I need to&nbsp;show in&nbsp;my&nbsp;bank account for&nbsp;the&nbsp;visa, and how long should it be there?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I&nbsp;am not going to&nbsp;answer that, and I&nbsp;want to&nbsp;be straight about&nbsp;why. Immigration advice is regulated — in&nbsp;the&nbsp;UK it can only be given by&nbsp;advisers authorised under&nbsp;the&nbsp;Immigration and Asylum Act 1999 and regulated by&nbsp;the&nbsp;Immigration Advice Authority, and I&nbsp;am not one. A&nbsp;wrong number from&nbsp;me could cost you a&nbsp;refusal.</div>
-          <div class="exturn"><span class="who">Applicant</span>An&nbsp;agent gave me a&nbsp;figure already.</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Then please check it against the&nbsp;official government guidance rather than against me. I've&nbsp;booked you fifteen minutes with&nbsp;our&nbsp;international student advice team on&nbsp;Thursday, and I've&nbsp;written your&nbsp;question into&nbsp;your&nbsp;file word for&nbsp;word so you don't have to&nbsp;explain it twice.</div>
-          <div class="exout">
-            <div class="hl5" role="presentation">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Refusal given with&nbsp;the&nbsp;reason named, not a&nbsp;vague deflection</span></div>
-            <div class="exrow"><i>✓</i><span>Adviser appointment booked at&nbsp;quarter past eleven at&nbsp;night</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;applicant's&nbsp;own words preserved on&nbsp;the&nbsp;file for&nbsp;the&nbsp;adviser</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;figure, no&nbsp;timeframe, no&nbsp;interpretation of&nbsp;any country's&nbsp;immigration rules.</span></div>
-          </div>
-          <p class="exlabel">Australia restricts immigration assistance under&nbsp;the&nbsp;Migration Act 1958 to&nbsp;agents registered with&nbsp;the&nbsp;OMARA and other exempt persons. The&nbsp;refusal is written once and holds wherever you recruit.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Officer decides">
-            <div class="excard">
-        <div class="exhead"><span class="when">11:00</span><span class="via">Phone</span><span class="tag human">Officer decides</span></div>
-        <div class="exbody">
-          <p class="exq">I have four students for&nbsp;September. Last year you gave our&nbsp;agency a&nbsp;partial award on&nbsp;the&nbsp;fee — is that&nbsp;running again?</p>
-          <div class="exturn"><span class="who">Saleringo</span>The&nbsp;figure I&nbsp;can give you is the&nbsp;one published for&nbsp;2026: <b>$24,000</b> at&nbsp;overseas status, and the&nbsp;merit scholarship on&nbsp;the&nbsp;funding page closing 31 March. Anything about&nbsp;a&nbsp;prior arrangement with&nbsp;your&nbsp;agency is not published, so it is not mine to&nbsp;repeat.</div>
-          <div class="exturn"><span class="who">Agent</span>It was agreed with&nbsp;your&nbsp;recruitment manager.</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Very likely — and she is the&nbsp;person who should confirm it, not me. I've&nbsp;sent her&nbsp;your&nbsp;agency name and the&nbsp;four programmes, and she'll&nbsp;come back today. I'd&nbsp;rather you wait a&nbsp;few hours for&nbsp;a&nbsp;figure that&nbsp;holds than take one from&nbsp;me that&nbsp;doesn't.</div>
-          <div class="exout">
-            <div class="hl5" role="presentation">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Published tuition and scholarship close stated exactly as&nbsp;printed</span><span class="amt">$24,000/yr</span></div>
-            <div class="exrow"><i>✓</i><span>Four prospective applicants captured against the&nbsp;agency record</span></div>
-            <div class="exrow"><i>✓</i><span>Commercial question routed to&nbsp;the&nbsp;named person who owns it</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;unpublished discount confirmed, denied or hinted&nbsp;at.</span></div>
-          </div>
-          <p class="exlabel">Agents ask this&nbsp;question constantly, and a&nbsp;front desk that&nbsp;improvises an&nbsp;answer creates a&nbsp;commitment your&nbsp;finance office has to&nbsp;honour or explain away.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Identity first">
-            <div class="excard">
-        <div class="exhead"><span class="when">19:40</span><span class="via">Phone</span><span class="tag human">Identity first</span></div>
-        <div class="exbody">
-          <p class="exq">I'm&nbsp;ringing about&nbsp;my&nbsp;daughter's&nbsp;application. Has she been made an&nbsp;offer yet? She won't tell me anything.</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I&nbsp;can hear that&nbsp;you're&nbsp;worried, and I&nbsp;still can't tell you. Her&nbsp;application is her&nbsp;personal data, and I&nbsp;can only discuss it with&nbsp;her, verified, or with&nbsp;someone she has put in&nbsp;writing as&nbsp;permitted to&nbsp;ask.</div>
-          <div class="exturn"><span class="who">Caller</span>I'm&nbsp;paying for&nbsp;it.</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>I&nbsp;understand, and it doesn't change the&nbsp;answer. What I&nbsp;can do is send you the&nbsp;published decision timeline and the&nbsp;form she can use to&nbsp;add you as&nbsp;a&nbsp;nominated contact — two minutes, and then someone here can talk to&nbsp;you properly.</div>
-          <div class="exout">
-            <div class="hl5" role="presentation">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Nothing case-specific disclosed to&nbsp;an&nbsp;unverified caller</span></div>
-            <div class="exrow"><i>✓</i><span>Published timeline and the&nbsp;nominated-contact form sent instead of&nbsp;a&nbsp;flat no</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;attempt, the&nbsp;refusal and the&nbsp;reason written to&nbsp;the&nbsp;audit log</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;confirmation that&nbsp;the&nbsp;daughter has even applied.</span></div>
-          </div>
-          <p class="exlabel">In&nbsp;the&nbsp;United States, the&nbsp;Family Educational Rights and Privacy Act (20 U.S.C. § 1232g) requires written consent before personally identifiable information from&nbsp;a&nbsp;student's&nbsp;education records is disclosed, with&nbsp;limited exceptions; under&nbsp;the&nbsp;UK and EU GDPR the&nbsp;same file is personal data. Confirming an&nbsp;application exists is already a&nbsp;disclosure.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Document chased">
-            <div class="excard">
-        <div class="exhead"><span class="when">Three days before the&nbsp;close</span><span class="via">Automatic</span><span class="tag solved">Document chased</span></div>
-        <div class="exbody">
-          <p class="exq">— application started in&nbsp;January, transcript in, English test never uploaded. Nobody has chased it —</p>
-          <div class="exturn"><span class="who">Saleringo, unprompted</span>Hello — your&nbsp;application for&nbsp;September is complete except for&nbsp;one thing: an&nbsp;English language test result. The&nbsp;scholarship you asked about&nbsp;closes on&nbsp;<b>31 March</b>, which is Friday, and an&nbsp;application can't be considered for&nbsp;it while a&nbsp;required document is missing. Here is the&nbsp;upload link.</div>
-          <div class="exturn"><span class="who">Applicant</span>I sat the&nbsp;test but the&nbsp;result isn't out until April.</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Then that&nbsp;is worth telling an&nbsp;officer rather than leaving in&nbsp;the&nbsp;system as&nbsp;silence. I've&nbsp;noted the&nbsp;test date and the&nbsp;result date on&nbsp;your&nbsp;file and flagged it for&nbsp;the&nbsp;team today. Whether anything can be done about&nbsp;the&nbsp;deadline is their&nbsp;call, and I&nbsp;am not going to&nbsp;promise you it can.</div>
-          <div class="exout">
-            <div class="hl5" role="presentation">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;actual missing document named, not "please complete your&nbsp;application"</span></div>
-            <div class="exrow"><i>✓</i><span>Timed against your&nbsp;published funding deadline, not a&nbsp;generic drip</span></div>
-            <div class="exrow"><i>✓</i><span>Test date and result date written to&nbsp;the&nbsp;file and flagged to&nbsp;a&nbsp;person</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;extension offered, implied or promised by&nbsp;the&nbsp;AI.</span></div>
-          </div>
-          <p class="exlabel">Applications go quiet at&nbsp;the&nbsp;document stage more often than at&nbsp;the&nbsp;decision stage. This is the&nbsp;message everybody agrees should go out and nobody has three days spare to&nbsp;send.</p>
-        </div>
-      </div>
-          </div>
-        </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What it will and won't answer</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;line, written&nbsp;down <br>before an&nbsp;applicant hears&nbsp;it.</h3>
-      <p class="secintro">Your&nbsp;office approves every&nbsp;row of&nbsp;this&nbsp;before go-live. The&nbsp;third column is the&nbsp;one to&nbsp;read twice — six of&nbsp;these are refusals, and no&nbsp;amount of&nbsp;pressure, from&nbsp;an&nbsp;applicant or an&nbsp;agent, moves them.</p>
-    </div>
-    <div class="qbank reveal">
-      <div class="qrow hd"><span>Applicant asks</span><span>What happens</span><span>Handled by</span></div>
-      <div class="qrow"><span class="qq">What's&nbsp;the&nbsp;tuition for&nbsp;international students?</span>
-        <span class="qa">Quotes the&nbsp;figure published for&nbsp;that&nbsp;entry year and that&nbsp;fee status, names the&nbsp;page, sends the&nbsp;link.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">When is the&nbsp;application deadline?</span>
-        <span class="qa">Reads your&nbsp;published deadline for&nbsp;that&nbsp;programme and cycle, in&nbsp;the&nbsp;applicant's&nbsp;timezone.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Which English tests and scores do you accept?</span>
-        <span class="qa">Lists exactly what the&nbsp;entry requirements page lists — no&nbsp;additions, no&nbsp;helpful summaries.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">What documents do I send, and where?</span>
-        <span class="qa">Names each&nbsp;required document and sends the&nbsp;upload route your&nbsp;office publishes.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Is accommodation guaranteed for&nbsp;first years?</span>
-        <span class="qa">Answers from&nbsp;the&nbsp;accommodation page, including the&nbsp;conditions printed on&nbsp;it.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">When does the&nbsp;scholarship close?</span>
-        <span class="qa">Reads the&nbsp;funding page for&nbsp;that&nbsp;year. If the&nbsp;page still shows last cycle, it says so.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Has my&nbsp;application moved yet?</span>
-        <span class="qa">Answers only after identity is verified your&nbsp;way, and logs the&nbsp;check with&nbsp;the&nbsp;disclosure.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you look at&nbsp;my&nbsp;transcript and tell me if it's&nbsp;enough?</span>
-        <span class="qa">Refused. It attaches the&nbsp;transcript and puts it in&nbsp;front of&nbsp;an&nbsp;admissions officer.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">My&nbsp;fee status — am I home or overseas?</span>
-        <span class="qa">Refused. Fee status is assessed by&nbsp;your&nbsp;office; the&nbsp;AI records what the&nbsp;applicant stated and marks it unverified.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">Our&nbsp;agency had a&nbsp;partial award last year — still on?</span>
-        <span class="qa">Quotes only the&nbsp;published figure, then routes the&nbsp;commercial question to&nbsp;the&nbsp;person who owns it.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">What are my&nbsp;chances if I apply?</span>
-        <span class="qa">Refused. No&nbsp;likelihood, no&nbsp;encouragement, no&nbsp;"that&nbsp;looks strong" — in&nbsp;any wording.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">How much do I need in&nbsp;the&nbsp;bank for&nbsp;the&nbsp;visa?</span>
-        <span class="qa">Refused. Immigration advice is regulated; it routes to&nbsp;your&nbsp;advice team and the&nbsp;official guidance.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Can you waive the&nbsp;deposit for&nbsp;me?</span>
-        <span class="qa">Refused. It states the&nbsp;published deposit and never negotiates a&nbsp;figure.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Has my&nbsp;daughter been given an&nbsp;offer?</span>
-        <span class="qa">Refused. It will not confirm that&nbsp;a&nbsp;named person has even applied, to&nbsp;an&nbsp;unverified caller.</span><span class="qs never">Never</span></div>
-    </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">An ordinary&nbsp;February week <br>at&nbsp;one&nbsp;admissions office.</h3>
-      <p class="secintro">Not results day. A&nbsp;dull mid-cycle week — with&nbsp;the&nbsp;out-of-hours share marked, because that&nbsp;is the&nbsp;part currently arriving while the&nbsp;office is dark and the&nbsp;applicant is at&nbsp;her&nbsp;desk.</p>
-    </div>
-    <div class="weekstrip reveal">
-      <div class="weekday"><span class="d">Mon</span><div class="n">44<small> enq</small></div>
-        <ul><li><i>·</i>29 outside 9&ndash;5</li><li><i>·</i>6 document chases</li></ul></div>
-      <div class="weekday"><span class="d">Tue</span><div class="n">39<small> enq</small></div>
-        <ul><li><i>·</i>25 outside 9&ndash;5</li><li><i>·</i>5 document chases</li></ul></div>
-      <div class="weekday"><span class="d">Wed</span><div class="n">41<small> enq</small></div>
-        <ul><li><i>·</i>27 outside 9&ndash;5</li><li><i>·</i>2 agent calls</li></ul></div>
-      <div class="weekday"><span class="d">Thu</span><div class="n">38<small> enq</small></div>
-        <ul><li><i>·</i>25 outside 9&ndash;5</li><li><i>·</i>4 refusals logged</li></ul></div>
-      <div class="weekday peak"><span class="d">Fri</span><div class="n">36<small> enq</small></div>
-        <ul><li><i>·</i>24 outside 9&ndash;5</li><li><i>·</i>busiest evening</li></ul></div>
-      <div class="weekday peak"><span class="d">Sat</span><div class="n">30<small> enq</small></div>
-        <ul><li><i>·</i><b>office closed</b></li><li><i>·</i>all 30 out of&nbsp;hours</li></ul></div>
-      <div class="weekday"><span class="d">Sun</span><div class="n">26<small> enq</small></div>
-        <ul><li><i>·</i><b>office closed</b></li><li><i>·</i>all 26 out of&nbsp;hours</li></ul></div>
-    </div>
-    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;mid-size admissions office in&nbsp;a&nbsp;typical February week. <b>186 of&nbsp;254 enquiries land outside 09:00&ndash;17:00 local</b> — 73%, the&nbsp;timezone arithmetic day by&nbsp;day. Results day and Clearing run several times this in&nbsp;the&nbsp;weeks with&nbsp;least slack. A&nbsp;shape, not a&nbsp;forecast — your&nbsp;enquiry log is the&nbsp;only number that&nbsp;matters.</p>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What one recovered applicant is worth</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;arithmetic <br>on&nbsp;one applicant who&nbsp;enrolled.</h3>
-      <p class="secintro">Each step is written out, and every input is a&nbsp;number already printed here or&nbsp;on&nbsp;the&nbsp;pricing page. Nothing is rounded in&nbsp;our&nbsp;favour, and nothing here says how many you would win.</p>
-    </div>
-    <div class="mathbox reveal" style="max-width:660px;margin-top:26px;">
-      <div class="mathrow"><span class="lbl"><b>One international undergraduate, one year</b><span class="sub">the&nbsp;illustrative published fee this&nbsp;page uses throughout</span></span><span class="val">$24,000</span></div>
-      <div class="mathrow"><span class="lbl"><b>Saleringo Start, twelve months</b><span class="sub">website chat plus the&nbsp;CRM behind it — $79 a&nbsp;month</span></span><span class="val">−$948</span></div>
-      <div class="mathrow"><span class="lbl"><b>Saleringo Grow, twelve months</b><span class="sub">once your&nbsp;WhatsApp number joins the&nbsp;same inbox — $249 a&nbsp;month</span></span><span class="val">−$2,988</span></div>
-      <div class="mathrow total"><span class="lbl"><b>One enrolment, against a&nbsp;full year on&nbsp;Grow</b></span><span class="val">8× the&nbsp;bill</span></div>
-      <p class="mathnote">On&nbsp;Start it is <b>25×</b>. A&nbsp;student who stays three years is that&nbsp;figure several times over, but a&nbsp;year is the&nbsp;honest unit and attrition is real. Plan rates are the&nbsp;published ones on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>; AI Phone, if you add it for&nbsp;results day, is Scale from&nbsp;$599/mo plus voice from&nbsp;$0.14/min.</p>
-      <p class="mathnote">The&nbsp;<b>$24,000</b> is this&nbsp;page's&nbsp;illustrative fee — yours is whatever your&nbsp;own schedule says. This&nbsp;tells you what one enrolment is worth against the&nbsp;cost, nothing about&nbsp;how many you would win.</p>
-    </div>
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your Universities admissions guide,<br>and we show it answering from that.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own admissions guide &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; Universities<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="9:00 AM — the owner’s screen" xmlns="http://www.w3.org/2000/svg"><title>9:00 AM — the owner’s screen</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >9:00 AM — the officer’s screen</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >New inquiry</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Jihoon Oh · transfer · Computer Science · cal…</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Documents sent</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >three documents · Nov 14 deadline · sent by t…</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Officer task</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >call back after 10:00 · credit-recognition ch…</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Waiting for a person</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >eligibility and chances question · full threa…</text></svg><figcaption class="illcap">What the call produced, waiting on the morning screen.</figcaption></figure></div>
   </div>
 </section>
 
-<section class="faqsec sec-light2 t-md">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>Admissions FAQ</span>
-      <h2 class="h2" style="margin-top:22px">Asked by&nbsp;registrars.</h2>
-    </div>
-    <div class="faq reveal">
-      <details>
-        <summary>How do we know an&nbsp;answer came from&nbsp;our&nbsp;own pages?</summary>
-        <p>Because every&nbsp;answer stores its&nbsp;source and the&nbsp;date that&nbsp;source last changed, and the&nbsp;applicant is sent the&nbsp;link. When a&nbsp;dispute lands — "your&nbsp;website said the&nbsp;deadline was the&nbsp;fifteenth" — you open the&nbsp;conversation and see which page was quoted and what it said at&nbsp;that&nbsp;moment. You are arguing about&nbsp;a&nbsp;record, not a&nbsp;memory. A&nbsp;question with&nbsp;no&nbsp;approved source is a&nbsp;handoff, not a&nbsp;paraphrase.</p>
-      </details>
-      <details>
-        <summary>What happens on&nbsp;results day and during Clearing?</summary>
-        <p>Volume spikes are the&nbsp;case for&nbsp;this, not the&nbsp;exception. It answers every&nbsp;caller at&nbsp;once and takes grades, UCAS number and subject before a&nbsp;tutor picks up — the&nbsp;human conversation starts at&nbsp;minute two. It makes no&nbsp;offers and tells no&nbsp;one their&nbsp;chances.</p>
-        <p>Plans include monthly conversation allowances with&nbsp;alerts at&nbsp;80% and 100%, so you add capacity before August, not during it. We never silently stop answering your&nbsp;applicants.</p>
-      </details>
-      <details>
-        <summary>Applicant records are personal data. Where do they&nbsp;live?</summary>
-        <p>In&nbsp;the&nbsp;CRM, with&nbsp;a&nbsp;data processing agreement, a&nbsp;named subprocessor list and a&nbsp;retention setting you choose. Every&nbsp;identity check, disclosure and refusal is written to&nbsp;an audit log you can export. The log is part of the product, not an&nbsp;add-on — in&nbsp;this&nbsp;trade, showing what was said to&nbsp;whom is half the&nbsp;value. See <a href="../security.html" style="color:var(--teal-deep);font-weight:700;">Security &amp; trust</a> and the&nbsp;<a href="../security.html#dpa" style="color:var(--teal-deep);font-weight:700;">DPA</a>.</p>
-      </details>
-      <details>
-        <summary>We have several faculties with&nbsp;different rules. Can it hold that?</summary>
-        <p>Yes — that&nbsp;is the&nbsp;Scale shape: one institution-approved source library with&nbsp;per-faculty overrides for&nbsp;deadlines, fees and entry criteria, faculty-level inboxes, and a&nbsp;central view across&nbsp;all of&nbsp;them. Where two faculties genuinely differ, the&nbsp;AI answers from&nbsp;the&nbsp;right one or asks which programme before it answers at&nbsp;all. See <a href="../pricing.html" style="color:var(--teal-deep);font-weight:700;">Pricing</a>.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="t-sm sec-dark"><div class="wrap" style="max-width:760px;margin:0 auto;">
-</div></section>
-
-<section class="concsec t-sm sec-dark">
-  <div class="wrap">
-    <div class="concwrap reveal">
-      <div class="concl">
-        <span class="cnl">You have seen the&nbsp;admissions half</span>
-        <p class="cnp">The&nbsp;02:40 question answered from&nbsp;a&nbsp;page you published, the&nbsp;document chased by&nbsp;name, the&nbsp;applicant filed, and the&nbsp;five things it refuses to&nbsp;do. What this&nbsp;page has not shown you is the&nbsp;price &mdash; and this&nbsp;pack is on&nbsp;the&nbsp;roadmap, so the&nbsp;honest next step is the&nbsp;pricing page rather than a&nbsp;signature.</p>
-      </div>
-      <a class="btn btn-teal concbtn" href="../pricing.html">See what it would cost<span class="cir">&#8599;</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="closer bg-aurora" id="closer">
-  <div class="stars" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="reveal">Somebody is writing to&nbsp;you <br>right now, <em>in&nbsp;their&nbsp;afternoon.</em></h2>
-    <p class="lead onDark reveal">Point it at&nbsp;the&nbsp;pages you already publish, decide what it may never say, and let it answer tonight's&nbsp;fee question while your&nbsp;officers assess files.</p>
-    <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
-    </div>
-    <div class="reveal" style="position:relative;margin-top:38px;display:flex;flex-direction:column;align-items:center;gap:12px;">
-      <span style="font-size:var(--fs-xs);color:var(--tx2);font-weight:600;">Applicants do not wait for&nbsp;opening hours — <b style="color:#141A1F;">founding cohort now open</b></span>
-    </div>
-
-    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
-      <div class="lh">Get your&nbsp;admissions setup plan</div>
-      <p class="lsub">Tell us which programmes you recruit for&nbsp;and where applicants message you tonight. We reply with&nbsp;the&nbsp;pipeline stages, the&nbsp;applicant fields, the&nbsp;document reminders and the&nbsp;refusal list we would set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
-      <form class="eaform" data-earlyaccess method="post">
-        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
-        <input type="text" name="business" placeholder="Institution name" aria-label="Institution name">
-        <input type="text" name="country" placeholder="Country" aria-label="Country">
-        <input type="hidden" name="industry" required value="Universities">
-        <input type="hidden" name="context" value="Universities industry page">
-        <select name="locations" aria-label="How many faculties or campuses">
-          <option value="">How many faculties or campuses?</option>
-          <option>One</option><option>Two or three</option><option>Four or more</option>
-        </select>
-        <select name="channel" aria-label="Main channel">
-          <option value="">Where applicants message now…</option>
-          <option>WhatsApp / messenger</option><option>Website chat</option>
-          <option>Phone</option><option>All of&nbsp;them</option>
-        </select>
-        <button class="btn btn-teal" type="submit">Get the&nbsp;admissions setup plan →</button>
-        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
-        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
-        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
-      </form>
-      <p class="eanote" style="margin-top:18px;"><span class="pilltag pt-teal">✓ Sourced answers only — nothing goes live until your&nbsp;office signs it off</span></p>
-    </div>
-    <div class="trust">Security or procurement questions? <a href="../security.html" style="color:var(--tx2);">See where your&nbsp;data lives ↗</a></div>
-  </div>
-  <!--#footer-->
+<!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v83.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v84.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -919,26 +338,18 @@
     </div>
   </div></footer>
 <!--/#footer-->
-</section>
-
 </main>
 
-<!-- sticky conversion bar — IntersectionObserver in site.js -->
-<div class="stickycta">
-  <div class="wrap">
-    <span class="msg">Somebody is asking about&nbsp;your&nbsp;fees tonight. <b>Answered from&nbsp;your&nbsp;page, sourced, filed.</b></span>
-    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
-  </div>
-</div>
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your Universities admissions guide
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
 
-<script src="../../assets/js/site.js?v=83.0"></script>
-<script src="../../assets/js/demofull.js?v=83.0" defer></script>
-<script src="../../assets/js/balance.js?v=83.0" defer></script>
-<script src="../../assets/js/panels.js?v=83.0" defer></script>
-<script src="../../assets/js/wrap.js?v=83.0" defer></script>
-<script src="../../assets/js/rail.js?v=83.0" defer></script>
-<script src="../../assets/js/canvas.js?v=83.0" defer></script>
-<script src="../../assets/js/scenes.js?v=83.0" defer></script>
-<script src="../../assets/js/guide.js?v=83.0"></script>
+
+<script src="../../assets/js/site.js?v=84.0"></script>
+<script src="../../assets/js/balance.js?v=84.0" defer></script>
+<script src="../../assets/js/panels.js?v=84.0" defer></script>
+<script src="../../assets/js/wrap.js?v=84.0" defer></script>
+<script src="../../assets/js/rail.js?v=84.0" defer></script>
+<script src="../../assets/js/guide.js?v=84.0"></script>
+<script src="../../assets/js/demofull.js?v=84.0" defer></script>
 </body>
 </html>

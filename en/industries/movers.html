@@ -3,255 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Phone Agent for Movers &amp; Removals | Saleringo</title>
-<meta name="description" content="An AI phone agent for removals firms. Takes both postcodes, floor, lift, parking and the date, books the pre-move survey — and never prices a move nobody has seen.">
+<title>AI answering for Movers &mdash; how a missed call becomes a booking</title>
+<meta name="description" content="The AI answers Movers inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="canonical" href="https://claude.saleringo.com/en/industries/movers.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Saleringo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:url" content="https://claude.saleringo.com/en/industries/movers.html">
-<meta property="og:title" content="AI Phone Agent for Movers &amp; Removals">
-<meta property="og:description" content="An AI phone agent for removals firms. Takes both postcodes, floor, lift, parking and the date, books the pre-move survey — and never prices a move nobody has seen.">
+<meta property="og:title" content="AI answering for Movers &mdash; how a missed call becomes a booking">
+<meta property="og:description" content="The AI answers Movers inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <meta property="og:image" content="https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Phone Agent for Movers &amp; Removals">
-<meta name="twitter:description" content="An AI phone agent for removals firms. Takes both postcodes, floor, lift, parking and the date, books the pre-move survey — and never prices a move nobody has seen.">
 <meta name="twitter:image" content="https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+<meta name="twitter:title" content="AI answering for Movers &mdash; how a missed call becomes a booking">
+<meta name="twitter:description" content="The AI answers Movers inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it give a caller a price over the phone?","acceptedAnswer":{"@type":"Answer","text":"Only where your own rules allow one. A single item or a small part-load can be priced from your list. A house move with a floor, a lift, a permit street and a piano in it does not get a number from the AI \u2014 it gets a pre-move survey in the diary, which is the thing the call was actually for."}},{"@type":"Question","name":"Do you integrate with Moveware, MoveMan or Voxme?","acceptedAnswer":{"@type":"Answer","text":"Not directly, and we are not going to pretend otherwise. Today the survey card and the enquiry land in Saleringo's own inbox and CRM, and push out through Zapier or CSV export. Direct removals-software links are on the roadmap and founding-cohort members vote on the order."}},{"@type":"Question","name":"The chain slips and the keys are late. What does it say?","acceptedAnswer":{"@type":"Answer","text":"It reads the waiting-time rate off your rate card and says the number out loud. It does not promise the crew can stay, because the crew has another job at four \u2014 that decision goes to your move manager, with the job and the diary attached."}},{"@type":"Question","name":"Can it take on a piano, a safe or a full home gym?","acceptedAnswer":{"@type":"Answer","text":"It writes them down by name and puts them in front of a person. It never accepts a specialist or prohibited item on the phone, and it never tells a caller their gas bottles or paint tins will go on the van."}},{"@type":"Question","name":"Can I start with evenings and weekends only?","acceptedAnswer":{"@type":"Answer","text":"That is how most firms begin. Forward the line after 5 PM and at weekends, read the transcripts for a week, then widen the window once the answers sound like your firm. Reversing it is one forwarding change on your side; there is no ticket to raise."}},{"@type":"Question","name":"How much for a three-bed to Brighton?","acceptedAnswer":{"@type":"Answer","text":"Takes both postcodes, bedrooms, floor, lift, parking and the date \u2014 then books the survey rather than guessing a number."}},{"@type":"Question","name":"Do you even cover my postcode?","acceptedAnswer":{"@type":"Answer","text":"Answers from your service-area list, and says no plainly rather than taking a job the van cannot reach."}},{"@type":"Question","name":"Can you do Friday the 26th?","acceptedAnswer":{"@type":"Answer","text":"Reads the diary and offers what is actually free that week \u2014 never a date that is not in it."}},{"@type":"Question","name":"Do you do the packing as well?","acceptedAnswer":{"@type":"Answer","text":"Names the packing options you offer and what each one is called on your price list."}},{"@type":"Question","name":"Can you store it for three weeks between completions?","acceptedAnswer":{"@type":"Answer","text":"Says whether containers are free on those dates and quotes the weekly storage rate from your list."}},{"@type":"Question","name":"Do I need a parking permit?","acceptedAnswer":{"@type":"Answer","text":"Says whether that address sits in a controlled zone on your list, and who applies for the bay suspension."}},{"@type":"Question","name":"Can you beat the quote I have been given?","acceptedAnswer":{"@type":"Answer","text":"States what is inside your price, declines to discount, and routes the request to the owner."}},{"@type":"Question","name":"Am I covered for the painting in the hallway?","acceptedAnswer":{"@type":"Answer","text":"Reads back only the cover levels your firm has given it; the limit and the claim decision go to your office."}},{"@type":"Question","name":"Just give me a rough price now.","acceptedAnswer":{"@type":"Answer","text":"Refused where your rules require a survey. It books the survey instead, and says why in one sentence."}}]}
+{"@context":"https://schema.org","@type":"WebPage","name":"AI answering for Movers &mdash; how a missed call becomes a booking","description":"The AI answers Movers inquiries, books, and files a customer record. The example call, what it never says, and the CRM fields it leaves behind.","url":"https://claude.saleringo.com/en/industries/movers.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"en"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"AI Phone Agent for Movers & Removals","item":"https://claude.saleringo.com/en/industries/movers.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claude.saleringo.com/en/index.html"},{"@type":"ListItem","position":2,"name":"Trades","item":"https://claude.saleringo.com/en/industries.html"},{"@type":"ListItem","position":3,"name":"Movers","item":"https://claude.saleringo.com/en/industries/movers.html"}]}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/scenes.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/crm.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/examples.css?v=83.0">
-<link rel="stylesheet" href="../../assets/css/ledger.css?v=83.0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/scenes.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/crm.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/examples.css?v=84.0">
+<link rel="stylesheet" href="../../assets/css/ledger.css?v=84.0">
 <style>
-  /* ── HERO — full-bleed photograph, the night scene laid over it ────── */
-  .hero{position:relative;overflow:hidden;padding-bottom:78px;}
-  .hero.photohero{min-height:min(94vh,960px);}
-  /* shot at midday — graded down so it reads as the last hour of a long loading day */
-  /* 1600x1067 landscape in a taller hero — hold the centre so the carry and the lorry both survive */
-  .hero .bgimg img{filter:brightness(1.17) saturate(1.04) contrast(1.10);object-position:center 46%;}
-  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,0.72) 0%,rgba(255,255,255,0.379) 28%,
-    rgba(255,255,255,0.531) 62%,rgba(255,255,255,0.96) 100%);}
-  .grainlayer{position:absolute;inset:0;pointer-events:none;z-index:1;}
-  .heroinner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:136px 32px 0;
-    display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center;}
-  .hero .hero-panel{max-width:680px;}
-  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h1);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#141A1F;margin-top:20px;}
-  .hero h1 .teal{color:var(--teal);}
-  .hero .sub{margin-top:20px;font-size:var(--fs-body);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .hero .ctas{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .fbadge{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;color:var(--teal);
-    background:var(--teal-glass);border:1px solid rgba(11,120,120,.4);border-radius:999px;padding:8px 18px;}
-  .fbadge i{font-style:normal;}
-  .micro{margin-top:12px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .whofor{margin-top:26px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;}
-  .whotxt{font-size:var(--fs-xs);color:var(--tx2);font-weight:600;} .whotxt b{color:#141A1F;}
-  .hero .scene-frame{margin:0;}
-  .hero .specstrip{grid-column:1/-1;margin-top:40px;justify-content:flex-start;gap:28px;}
 
-  /* 2 · 90-second timeline */
-  .tlsec{background:linear-gradient(180deg,#F6F4EE,#F6F4EE);}
-  .tlsec .cols{display:grid;grid-template-columns:330px 1fr;gap:70px;align-items:stretch;margin-top:54px;}
-  .tlstick{position:sticky;top:34px;display:flex;justify-content:center;}
-  .tlstick .phoneframe{transform:rotate(-2deg);}
-  .tlrow{display:grid;grid-template-columns:60px 24px 1fr;gap:0 18px;padding-bottom:26px;}
-  .tlrow .tm{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);text-align:right;padding-top:16px;}
-  .tlrow .td{position:relative;display:flex;justify-content:center;}
-  .tlrow .td i{width:11px;height:11px;border-radius:50%;background:var(--teal);margin-top:20px;box-shadow:0 0 0 5px rgba(11,120,120,.13);font-style:normal;}
-  .tlrow:not(:last-child) .td:after{content:"";position:absolute;left:50%;top:35px;bottom:-26px;width:1px;
-    background:linear-gradient(180deg,rgba(11,120,120,.45),rgba(20,26,31,.078));}
-  .tlrow .tb{border:1px solid var(--hair);border-radius:14px;padding:16px 20px;background:rgba(20,26,31,.042);}
-  .tlrow .tb .spk{font-size:var(--fs-label);font-weight:800;letter-spacing:.14em;color:var(--tx3);}
-  .tlrow .tb .spk.ai{color:var(--teal);}
-  .tlrow .tb p{margin-top:7px;font-size:var(--fs-xs);line-height:1.65;color:#141A1F;font-weight:500;}
-  .tlrow .tb p em{font-style:normal;color:var(--teal);font-weight:700;}
-  .tlrow.warn .tb{background:rgba(183,121,31,.09);border-color:rgba(183,121,31,.34);}
-  .tlrow.warn .td i{background:var(--amber);box-shadow:0 0 0 5px rgba(183,121,31,.14);}
-  .tlrow.warn .tb .spk{color:var(--amber);}
-  .tlrow.done .tb{background:rgba(11,120,120,.09);border-color:rgba(11,120,120,.34);}
-  .tlfoot{margin-top:8px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-
-  /* 3 · the money */
-  /* overflow:hidden clips the bg-dusk aura (inset:-10%), which otherwise
-     pushes the page 127px wide and creates a horizontal scrollbar */
-  .moneysec{overflow:hidden;}
-  .moneytop{margin-top:48px;display:grid;grid-template-columns:.82fr 1.18fr;gap:62px;align-items:start;}
-  .bignum{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-num);font-weight:600;letter-spacing:-.055em;line-height:.84;}
-  .bigcap{margin-top:20px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:600;max-width:300px;}
-  .figrow{display:flex;flex-wrap:wrap;}
-  .fig{padding:0 30px;border-left:1px solid var(--hair);}
-  .fig:first-child{padding-left:0;border-left:0;}
-  .fig b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;color:#141A1F;letter-spacing:-.03em;}
-  .fig span{display:block;margin-top:7px;font-size:var(--fs-xs);color:var(--tx2);font-weight:600;max-width:186px;line-height:1.55;}
-  .moneytop .photocard{margin-top:36px;min-height:320px;}
-  .moneysec .baGrid{margin-top:62px;}
-  .srcnote{margin-top:32px;font-size:var(--fs-xs);color:var(--tx3);font-weight:500;}
-  .srcnote a{color:var(--teal);font-weight:600;}
-
-  /* 4 · safety escalation (light) */
-  .safesec{}
-  .safesplit{min-height:470px;margin-bottom:8px;border:1px solid #E6EBF1;border-radius:26px;overflow:hidden;
-    background:#fff;box-shadow:0 32px 78px rgba(20,26,31,.10);}
-  .safesplit .copy{padding:58px 54px;}
-  .warngrid{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .warncard{background:#fff;border:1px solid #EFDCD7;border-left:4px solid var(--red);border-radius:14px;padding:26px;
-    box-shadow:0 20px 50px rgba(20,26,31,.07);}
-  .warncard.amber{border-color:#F2E3C6;border-left-color:var(--amber);}
-  .warncard .tag{font-size:var(--fs-label);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B14A3E;}
-  .warncard.amber .tag{color:#8D642F;}
-  .warncard b{display:block;margin-top:12px;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
-  .warncard p{margin-top:8px;font-size:var(--fs-xs);line-height:1.65;color:var(--l-mut);font-weight:500;}
-  .ladder{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-  .lstep{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:22px;}
-  .lstep .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-2xs);font-weight:700;color:#0B7878;letter-spacing:.14em;}
-  .lstep b{display:block;margin-top:10px;font-size:var(--fs-sm);color:var(--l-ink);letter-spacing:-.01em;}
-  .lstep span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.6;color:var(--l-mut);font-weight:500;}
-  .safenote{margin-top:38px;font-size:var(--fs-xs);color:var(--l-mut);font-weight:600;}
-  .safenote a{color:#0B7878;font-weight:700;}
-
-  /* 5 · survey-card proof (dark) */
-  .dispsec{position:relative;background:linear-gradient(180deg,#F6F4EE,#FFFFFF);}
-  .dispsec .wrap{position:relative;z-index:1;}
-  .dispcols{margin-top:52px;display:grid;grid-template-columns:1.14fr .86fr;gap:38px;align-items:start;}
-  .dispsec .msgthread{background:#FFFFFF;}
-  .dispside .rrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
-  .dispside p.note{margin-top:18px;font-size:var(--fs-xs);line-height:1.7;color:var(--tx2);font-weight:500;}
-  .dispsec .quotecard{margin:58px auto 0;max-width:780px;}
-
-  /* 6 · integrations + risk (white) */
-  .intsec{background:#FDFDFE;}
-  .intsec .head{text-align:center;max-width:660px;margin:0 auto;}
-  .grplabel{text-align:center;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.22em;color:#6F767F;text-transform:uppercase;margin:40px 0 16px;}
-  .intsec .riskrow{margin-top:66px;}
-  .whoband{margin-top:76px;padding-top:56px;border-top:1px solid var(--l-hair);}
-  .whoband .audgrid{grid-template-columns:repeat(3,1fr);margin-top:26px;}
-  .whoband .audcard{min-height:268px;}
-  .whoband .photocap{margin-top:16px;text-align:center;}
-  .intnote{margin-top:34px;text-align:center;font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
-  .cohortbar{margin:56px auto 0;max-width:820px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
-    border:1px dashed #D9E1E9;border-radius:14px;padding:22px 26px;background:#fff;}
-  .cohortbar b{font-size:var(--fs-sm);color:var(--l-ink);}
-  .cohortbar span{font-size:var(--fs-xs);color:var(--l-mut);font-weight:500;}
-
-  /* 7 · faq (paper) */
-  .faqsec{}
-  .faqsec .head{text-align:center;margin-bottom:44px;}
-
-  /* 8 · closer + footer */
-  .closer{position:relative;text-align:center;overflow:hidden;}
-  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2);font-weight:600;letter-spacing:-.045em;color:#141A1F;line-height:1.05;}
-  .closer .lead{margin:24px auto 0;}
-  .closer .ctas{margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-  .bigfooter{margin-top:126px;}
-
-  @media (max-width:1100px){
-    .heroinner{grid-template-columns:1fr;gap:34px;padding:128px 24px 0;}
-    .hero.photohero{min-height:0;}
-    .tlsec .cols{grid-template-columns:1fr;gap:46px;}
-    .tlstick{position:static;}
-    .tlstick .phoneframe{transform:none;}
-    .moneytop,.dispcols{grid-template-columns:1fr;gap:40px;}
-  }
-  @media (max-width:900px){
-    .heroinner{padding:118px 18px 0;}
-    .hero .specstrip{gap:16px;}
-    .hero .scene-overlay{position:static;max-width:none;margin:10px 14px 0;}
-    .hero .scene-frame{padding-bottom:14px;}
-    .warngrid,.ladder{grid-template-columns:1fr;}
-    .whoband .audgrid{grid-template-columns:1fr 1fr;}
-    .safesplit{min-height:0;}
-    .safesplit .copy{padding:44px 24px;}
-    .figrow{gap:26px;}
-    .fig{padding:0;border-left:0;}
-    .tlrow{grid-template-columns:50px 20px 1fr;gap:0 12px;}
-  }
-
-  /* ══ v4 · CRM surface, honest integrations, multi-location, inline lead form ══ */
-  .crmduo{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
-  .crmduo.rev .m{order:2;}
-  @media(max-width:940px){.crmduo{grid-template-columns:1fr;gap:30px;}.crmduo.rev .m{order:0;}}
-  .ptlist{margin-top:24px;}
-  .ptlist li{list-style:none;display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--hair);
-    font-size:var(--fs-sm);line-height:1.68;color:var(--tx2);font-weight:500;}
-  .ptlist li:last-child{border-bottom:0;}
-  .ptlist li b{color:#141A1F;font-weight:700;}
-  .ptlist li i{flex:none;font-style:normal;color:var(--teal);font-weight:800;font-size:var(--fs-xs);padding-top:1px;}
-  .mockcap{margin-top:12px;font-size:var(--fs-2xs);color:var(--tx3);font-weight:600;letter-spacing:.03em;text-align:center;}
-  .secintro{margin-top:16px;font-size:var(--fs-body);line-height:1.78;color:var(--tx2);font-weight:500;}
-
-  /* three-state integration status */
-  .statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;}
-  @media(max-width:900px){.statgrid{grid-template-columns:1fr;}}
-  .statcol{border-radius:14px;padding:22px 22px 24px;border:1px solid var(--hair);background:rgba(20,26,31,.034);}
-  .statcol .hl4{display:flex;align-items:center;gap:9px;font-size:var(--fs-2xs);font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;}
-  .statcol .hl4 i{width:8px;height:8px;border-radius:50%;flex:none;font-style:normal;}
-  .statcol.now{border-color:rgba(58,201,138,.32);background:rgba(58,201,138,.065);}
-  .statcol.now .hl4{color:#141A1F;} .statcol.now .hl4 i{background:#2F855A;}
-  .statcol.man{border-color:rgba(183,121,31,.28);background:rgba(183,121,31,.055);}
-  .statcol.man .hl4{color:#B7791F;} .statcol.man .hl4 i{background:#B7791F;}
-  .statcol.road .hl4{color:#8A9BB4;} .statcol.road .hl4 i{background:#5B6B84;}
-  .statcol ul{margin-top:14px;}
-  .statcol li{list-style:none;padding:9px 0;font-size:var(--fs-xs);line-height:1.6;color:#141A1F;
-    font-weight:700;border-bottom:1px solid var(--hair);}
-  .statcol li:last-child{border-bottom:0;}
-  .statcol li span{display:block;margin-top:4px;font-size:var(--fs-2xs);font-weight:500;color:var(--tx2);}
-  .statnote{margin-top:24px;font-size:var(--fs-xs);line-height:1.75;color:var(--tx3);font-weight:600;}
-
-  /* multi-location */
-  .mlgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;}
-  @media(max-width:820px){.mlgrid{grid-template-columns:1fr;}}
-  .mlcard{border:1px solid var(--hair);border-radius:14px;padding:24px 24px 26px;background:rgba(20,26,31,.036);}
-  .mlcard .n{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-xs);font-weight:600;color:var(--teal);letter-spacing:.06em;}
-  .mlcard b{display:block;margin-top:9px;font-size:var(--fs-body);color:#141A1F;letter-spacing:-.014em;}
-  .mlcard p{margin-top:9px;font-size:var(--fs-xs);line-height:1.72;color:var(--tx2);font-weight:500;}
-  .mlsites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;}
-  @media(max-width:760px){.mlsites{grid-template-columns:1fr;}}
-  .mlsite{border:1px solid var(--app-line,rgba(20,26,31,.117));border-radius:8px;padding:15px 16px;
-    background:var(--app-panel,#FFFFFF);}
-  .mlsite .h{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;color:#141A1F;}
-  .mlsite .h i{width:7px;height:7px;border-radius:2px;background:var(--teal);flex:none;font-style:normal;}
-  .mlsite dl{margin-top:11px;}
-  .mlsite .r{display:flex;gap:10px;padding:6px 0;font-size:var(--fs-2xs);border-top:1px solid rgba(20,26,31,.091);}
-  .mlsite .r:first-of-type{border-top:0;}
-  .mlsite .r dt{width:76px;flex:none;color:var(--tx3);font-weight:800;font-size:var(--fs-label);
-    letter-spacing:.05em;text-transform:uppercase;padding-top:2px;}
-  .mlsite .r dd{color:#141A1F;font-weight:600;margin:0;}
-
-  /* inline lead form */
-  .leadbox{max-width:660px;margin:0 auto;text-align:left;}
-  .leadbox .lh{font-size:var(--fs-xs);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--teal);text-align:center;}
-  .leadbox .lsub{margin:12px auto 24px;text-align:center;font-size:var(--fs-sm);
-    line-height:1.72;color:var(--tx2);font-weight:500;}
-  .leadbox .eaform{max-width:100%;}
-  .badgerow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-  .badgerow span{font-size:var(--fs-2xs);font-weight:700;letter-spacing:.02em;color:var(--tx2);
-    border:1px solid var(--hair2);border-radius:999px;padding:6px 13px;background:rgba(20,26,31,.039);}
-  /* the honest-status grid sits on this page's white band */
-  .intsec .statcol{border-color:var(--l-hair);background:#fff;}
-  .intsec .statcol.now{border-color:rgba(20,26,31,.34);background:rgba(255,255,255,.05);}
-  .intsec .statcol.now .hl4{color:#0B7878;}
-  .intsec .statcol.man{border-color:rgba(200,132,40,.3);background:rgba(183,121,31,.06);}
-  .intsec .statcol.man .hl4{color:#8D642F;}
-  .intsec .statcol.road .hl4{color:#616B75;}
-  .intsec .statcol li{color:var(--l-ink);border-bottom-color:var(--l-hair);}
-  .intsec .statcol li span{color:var(--l-mut);}
-  .intsec .statnote{color:#616B75;}
-  @media (max-width:560px){.whoband .audgrid{grid-template-columns:1fr;}}
+  .hero{display:block;padding:0 0 74px;}
+  .hero-inner{padding-top:130px;}
+  .heroband{max-width:820px;}
+  .nightline{display:grid;gap:16px;padding:26px 24px;}
+  .nl{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;}
+  .nl .t{font-size:var(--fs-2xs);letter-spacing:.14em;color:rgba(20,26,31,.5);
+    text-transform:uppercase;padding-top:9px;}
+  .nl .t em{display:block;font-style:normal;color:rgba(20,26,31,.66);
+    letter-spacing:.02em;text-transform:none;font-size:var(--fs-xs);}
+  @media (max-width:640px){.nl{grid-template-columns:1fr;gap:6px;}.nl .t{padding-top:0;}}
+  .kolist{margin-top:26px;display:grid;gap:16px;}
+  .kolist li{list-style:none;padding-left:26px;position:relative;
+    font-size:var(--fs-body);line-height:1.8;color:var(--tx2);}
+  .kolist li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;
+    border-radius:50%;border:1.5px solid var(--teal);}
+  .kolist li b{display:block;color:#141A1F;margin-bottom:4px;}
+  .sec-light .kolist li,.bg-paper .kolist li,.sec-light2 .kolist li{color:var(--l-tx2);}
+  .sec-light .kolist li b,.bg-paper .kolist li b,.sec-light2 .kolist li b{color:var(--l-ink);}
+  .fieldgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+  @media (max-width:760px){.fieldgrid{grid-template-columns:1fr;}}
+  .fieldgrid span{padding:16px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    font-size:var(--fs-sm);line-height:1.65;color:var(--l-tx2);}
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;}
+  .pipe b{padding:11px 18px;border:1px solid var(--hair-d);border-radius:8px;
+    font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .pipe i{font-style:normal;color:var(--teal);}
+  .otherwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .otherwall a{padding:11px 18px;border:1px solid #D5DBE4;border-radius:8px;
+    text-decoration:none;color:var(--l-ink);font-size:var(--fs-sm);font-weight:500;
+    transition:all .3s var(--ease);}
+  .otherwall a:hover{border-color:var(--teal);background:rgba(11,120,120,.08);}
+  /* ══ 사고가 나면 · 약관과 보안 페이지의 문장을 옮겨 적은 것 ══ */
+  .ifwrong{margin-top:30px;padding:22px 24px;border:1px solid var(--hair-d);border-radius:8px;}
+  .ifwrong > b{display:block;font-size:var(--fs-body);color:#141A1F;margin-bottom:10px;}
+  .ifwrong ul{display:grid;gap:10px;}
+  .ifwrong li{list-style:none;font-size:var(--fs-sm);line-height:1.75;color:var(--tx2);}
+  .ifwrong li b{color:#141A1F;}
+  .ifwrong a{color:var(--teal);font-weight:700;text-decoration:none;white-space:nowrap;}
+  /* ══ the playbook · what each door captures ══ */
+  #playbook .trio p a{color:var(--teal);font-weight:700;text-decoration:none;}
+  #playbook .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media(max-width:880px){#playbook .trio{grid-template-columns:1fr;}}
+  #playbook .trio>div{background:#fff;border:1px solid var(--l-hair);border-radius:14px;padding:24px 24px 26px;}
+  #playbook .trio b{display:block;font-size:var(--fs-body);letter-spacing:-.01em;color:var(--l-ink);}
+  #playbook .trio p{margin-top:8px;font-size:var(--fs-xs);line-height:1.7;color:var(--l-mut);font-weight:500;}
+  #playbook .h3{font-family:'Bricolage Grotesque',sans-serif;font-size:var(--fs-h2s);font-weight:600;letter-spacing:-.03em;color:var(--l-ink);}
+  #playbook .dtwrap{overflow-x:auto;}
+  #playbook .dtable{width:100%;margin-top:16px;border-collapse:collapse;}
+  #playbook .dtable th,#playbook .dtable td{padding:13px 12px;text-align:left;font-size:var(--fs-xs);line-height:1.65;
+    border-bottom:1px solid #E3E7EE;vertical-align:top;color:var(--l-mut);font-weight:500;}
+  #playbook .dtable th{color:var(--l-ink);font-weight:700;}
+  #playbook .dtable td b{color:var(--l-ink);}
+  @media(max-width:700px){#playbook .dtable{min-width:640px;}}
 </style>
 <!--#alt-->
 <link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/industries/movers.html">
@@ -259,24 +99,20 @@
 <link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/industries/movers.html">
 <!--/#alt-->
 </head>
-<body data-grade="home">
-
-<!-- ═══════ 1 · HERO — the crew is mid-carry, the phone is in the van ═══════ -->
+<body data-grade="voice">
 <header class="hero photohero">
   <div class="bgimg" aria-hidden="true">
-    <img class="ph" src="https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-           srcset="https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="100vw"
-         alt="A remover carrying a blanket-wrapped sofa across a sunlit street, the box lorry waiting on the far kerb"
-         width="1600" height="1067" loading="eager" fetchpriority="high" decoding="async">
+    <img class="ph" src="https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt=""
+         width="1900" height="1425" loading="eager" fetchpriority="high" decoding="async"
+         srcset="https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/7464712/pexels-photo-7464712.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+         sizes="(max-width:900px) 100vw, 60vw">
   </div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="tint" aria-hidden="true"></div>
   <div class="grainlayer grain" aria-hidden="true"></div>
-
   <!--#nav-->
 <div class="navwrap"><nav class="nav" aria-label="Main">
-  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v83.0">v83.0</span>
+  <a class="logo" href="../index.html"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v84.0">v84.0</span>
   <span class="links" id="navlinks">
     <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">How it works<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">The whole thing</p><ul aria-labelledby="nh-how-0"><li><a href="../platform.html">Platform &amp; CRM</a></li><li><a href="../platform.html#inside">Inside one answer</a></li><li><a href="../platform.html#who-next">Who it hands off to</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">The channels it answers on</p><ul aria-labelledby="nh-how-1"><li><a href="../voice.html">AI phone</a></li><li><a href="../webchat.html">Website chat</a></li><li><a href="../whatsapp.html">WhatsApp &amp; messengers</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">Around it</p><ul aria-labelledby="nh-how-2"><li><a href="../integrations.html">Integrations</a></li><li><a href="../verified-ai.html">How answers are checked</a></li><li><a href="../ai-answering-service.html">Buyer&rsquo;s guide: the three kinds</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../index.html?tour=keeps#what-it-keeps">Tour: what it captures and keeps<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
     <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">See it work<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">Watch it happen</p><ul aria-labelledby="nh-see-0"><li><a href="../demo.html">See a conversation</a></li><li><a href="../demo.html#yourprices">Quoted from your own prices</a></li><li><a href="../index.html#try">Try it on this page</a></li><li><a href="../about.html#call-them">Call our AI now</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">Read the transcripts</p><ul aria-labelledby="nh-see-1"><li><a href="../examples.html">Worked examples</a></li><li><a href="../examples.html#pick-a-trade">Pick a trade, read the call</a></li><li><a href="../index.html#what-it-keeps">What it captures and keeps</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">Judge it for yourself</p><ul aria-labelledby="nh-see-2"><li><a href="../ai-answering-service.html#ask">What to ask any vendor</a></li><li><a href="../verified-ai.html#life">The life of one answer</a></li><li><a href="../about.html">Who is behind it</a></li></ul></div><p class="np-foot"><a class="np-tour" href="../demo.html?tour=proof#yourprices">Tour: prove it works<span aria-hidden="true"> →</span></a><a class="np-all" href="../sitemap.html">Every page · site map</a></p></div></div></span>
@@ -291,56 +127,25 @@
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav></div>
 <!--/#nav-->
-
-  <div class="heroinner">
-    <div class="hero-panel">
-      <span class="eyebrow"><i></i>For&nbsp;removals firms · domestic &amp;&nbsp;office</span>
-      <h1>6:40&nbsp;PM. Your&nbsp;crew is still <br><span class="teal">carrying someone else's&nbsp;sofa.</span></h1>
-      <p class="sub">The&nbsp;phone is in&nbsp;the&nbsp;van, and the&nbsp;person ringing it completes on&nbsp;the&nbsp;26th. Saleringo answers, takes both postcodes, the&nbsp;floor, the&nbsp;lift, the&nbsp;parking and the&nbsp;piano, and puts a&nbsp;<em style="font-style:normal;color:#141A1F;font-weight:700;">pre-move survey</em> in&nbsp;your&nbsp;surveyor's&nbsp;diary before they hang up. What it will not do is price a&nbsp;move nobody has seen.</p>
+  <div class="wrap hero-inner">
+    <div class="heroband hero-panel">
+      <span class="eyebrow"><i></i>Movers &middot; removals &middot; packing</span>
+      <h1>The estimate call comes<br>while the crew is carrying someone else&rsquo;s sofa.</h1>
+      <p class="sub">A moving inquiry goes to three companies at once. The first to answer books the survey, and the one that books the survey signs the job.</p>
       <div class="ctas">
-        <a class="btn btn-teal" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">&#8599;</span></a>
-        <a class="btn btn-ghostd" data-book data-fallback="../get-started.html" href="../get-started.html">Get my&nbsp;plan<span class="cir">&#8599;</span></a>
+        <a class="btn btn-teal" href="#call">Hear that call<span class="cir">&darr;</span></a>
+        <a class="btn btn-ghostd" href="../get-started.html">Get my plan &mdash; Movers</a>
       </div>
-      <p class="heroscroll"><a href="../index.html#demo60">New here? Start with&nbsp;the two-step tour &mdash; about&nbsp;two minutes&nbsp;&nbsp;&rarr;</a></p>
-      <div class="fbadge"><i>★</i>Founding cohort — 50% off for&nbsp;3 months</div>
-      <div class="micro">Onboarding now · Keep your&nbsp;number · Evenings and weekends first, if you like</div>
-      <div class="whofor">
-        <span class="whotxt">Built for&nbsp;two-van and ten-van firms where the&nbsp;person who quotes is also on&nbsp;the&nbsp;tail-lift — <b>founding cohort now open</b></span>
-      </div>
-    </div>
-
-    <div>
-    <div class="scene-frame">
-      <div class="photo-scrim" style="height:clamp(300px,38vw,520px);">
-        <img class="ph" src="https://images.pexels.com/photos/4246097/pexels-photo-4246097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-             srcset="https://images.pexels.com/photos/4246097/pexels-photo-4246097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/4246097/pexels-photo-4246097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1024 1024w, https://images.pexels.com/photos/4246097/pexels-photo-4246097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-             sizes="100vw" alt="Two people carrying cardboard boxes down a narrow wooden staircase with a handrail in the way"
-             loading="lazy" decoding="async" width="1600" height="2400">
-      </div>
-      <div class="scene-overlay tl"><b>Quote request · 6:41 PM</b><span>Inbound call · completion set for&nbsp;Friday the&nbsp;26th · van still loading</span></div>
-      <div class="scene-overlay br"><b>Survey booked · 6:43 PM</b><span>Thu 7:30 PM, video · both postcodes and the&nbsp;piano on&nbsp;the&nbsp;card</span></div>
-    </div>
-    <p class="photocap">Second floor, no&nbsp;lift, one turn on&nbsp;the&nbsp;stairs that&nbsp;decides the&nbsp;crew size — the&nbsp;detail
-      a&nbsp;voicemail never captures. Illustrative photography; not a&nbsp;Saleringo customer job.</p>
-    </div>
-
-    <div class="specstrip">
-      <span><i>●</i><b>Evenings &amp; weekends</b> or 24/7</span>
-      <span><i>●</i><b>Survey-first</b> by&nbsp;default</span>
-      <span><i>●</i><b>Both postcodes</b> before anything&nbsp;else</span>
-      <span><i>●</i><b>Every&nbsp;call</b> recorded &amp; logged</span>
     </div>
   </div>
 </header>
 
-<!--demo:v2-->
-<section class="sec-light t-md" id="demo">
+<main>
+
+<section class="t-md sec-dark bg-dusk" id="call">
   <div class="wrap">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow light"><i></i>Hear it &middot; Movers</span>
-      <h2 class="h2" style="margin-top:20px;">The call, the next morning&rsquo;s message, <br>and what was waiting at nine.</h2>
-      <p class="lead" style="margin-top:16px;">A scripted call for a movers: two synthetic voices, an example price list, and every field it captured with its source. Press play &mdash; about two and a half minutes.</p>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Monday 9:33 PM, the call</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">How it goes<br>while the crew is still on a job.</h2>
     <div class="reveal d60v2" data-d60 data-d60-script="../../assets/demo/movers.json" data-d60-audio="../../assets/audio/demo/">
       
       <div class="d60tabs" role="tablist" aria-label="Chapters">
@@ -380,7 +185,7 @@
             <p class="lbl">Handed to a person — and what the person receives</p>
             <ul data-d60-handlist><li>The whole conversation, both channels</li><li>Every captured field, with its source</li><li>Why it stopped: damage coverage is a promise under the policy, not a fact I can make</li></ul>
           </div>
-          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">The owner’s morning screen — what is waiting at 9:00</p><div data-d60-morninglist></div></div>
+          <div class="d60card d60morning" data-d60-morning hidden><p class="lbl">9:00 AM, the owner’s screen — what is waiting</p><div data-d60-morninglist></div></div>
         </div>
       </div>
 
@@ -390,754 +195,116 @@
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
-          <a class="btn btn-teal" href="../../get-started.html">Get my plan for this trade</a>
+          <a class="btn btn-teal" href="../get-started.html">Get my plan for this trade</a>
           <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">Call the live AI — no form first</a>
           <span class="telnote">Korean number — international rates apply</span>
         </div>
       </div>
     </div>
     
-    <noscript><p class="lead">The demo needs JavaScript. The same story is written out in the worked examples below.</p></noscript>
+    <noscript><div class="appwin" style="margin-top:34px;">
+      <div class="bar"><i></i><i></i><i></i>
+        <span class="tt">Movers &mdash; <b>studio to two-bed</b></span>
+        <span class="illus">Example &middot; a fictional conversation</span>
+        <span class="closed">crew out</span></div>
+      <div class="body nightline"><div class="nl us"><span class="t"><em>Customer</em>9:33 PM</span><div class="bub user">I&rsquo;m moving from a studio to a two-bedroom on the 15th next month. Roughly what would that cost?</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+13 s</span><div class="bub ai">It depends on how much you have, so the exact figure comes after a survey. From our rate card, a studio-to-two-bedroom move usually runs <b>$600 to $1,000</b>. The 15th is a Saturday and fills fast &mdash; I can do a survey this <b>Thursday at 7:00 PM</b>.</div></div><div class="nl us"><span class="t"><em>Customer</em>9:34 PM</span><div class="bub user">Thursday at seven works. My current place is a third-floor walk-up, no elevator. Ethan Brooks, 555-0631, at 42 Elm Street.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+8 s</span><div class="bub ai">Third floor, no elevator &mdash; noted. That may need extra crew, and the surveyor will confirm on Thursday. Do you have the new address too?</div></div><div class="nl us"><span class="t"><em>Customer</em>9:35 PM</span><div class="bub user">Yes, 110 Oakridge Avenue, and that building has an elevator.</div></div><div class="nl sr"><span class="t"><em>Saleringo</em>+6 s</span><div class="bub ai">Oakridge, with an elevator &mdash; noted. Your survey is booked for Thursday at 7:00 PM and I&rsquo;m texting the confirmation. The move date is confirmed with the contract after the survey, so the 15th is down as your preferred date for now.</div></div></div>
+    </div></noscript>
+    <p class="seccap reveal" style="margin-top:16px;">Not a customer case &mdash; an example of how the product answers once
+      this trade’s price list and safety rules are loaded. Amounts are typical published ranges; what is actually quoted comes
+      from the price list the owner enters.</p>
   </div>
 </section>
-<!--/demo:v2-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main>
-
-<section class="tlsec bg-grid t-md">
+<section class="t-md sec-dark bg-grid" id="cost">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>Minute by&nbsp;minute</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:760px">The&nbsp;90&nbsp;seconds <br>that&nbsp;won the&nbsp;survey.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One ordinary shape of&nbsp;an&nbsp;evening quote request — from&nbsp;the&nbsp;first ring to&nbsp;a&nbsp;survey slot the&nbsp;caller can write on&nbsp;the&nbsp;calendar. Scripted demo, timings from&nbsp;live test calls.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>When it is missed</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">A missed call<br>is written down nowhere.</h2>
+    <div class="illrow reveal"><p class="sub" style="max-width:none;margin-top:0;">Moving inquiries cluster around weekends and month-end, exactly when the owner is on a truck. The hours spent lifting are the hours next month&rsquo;s work is decided. And a price named without seeing the load, when it differs from the bill on the day, becomes an argument on the doorstep.</p><figure class="illfig "><svg class="illus" viewBox="0 0 640 300" role="img" aria-label="Closed hours" xmlns="http://www.w3.org/2000/svg"><title>Closed hours</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Closed hours</text><circle cx="150" cy="150" r="104" fill="none" stroke="#141A1F" stroke-width="22"/><path d="M223.539 223.539 A104 104 0 0 1 46 150" fill="none" stroke="#0B7878" stroke-width="22" stroke-linecap="butt"/><text x="150" y="28" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >0</text><text x="276" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >6</text><text x="150" y="280" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >12</text><text x="24" y="154" font-size="10.5" fill="#616B75" font-weight="700" text-anchor="middle" >18</text><text x="150" y="144" font-size="24" fill="#141A1F" font-weight="800" text-anchor="middle" >15 hours</text><text x="150" y="166" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="middle" >of 24 hours</text><text x="150" y="184" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="middle" >closed</text><circle cx="87.7742" cy="66.6696" r="7" fill="#B7791F" stroke="#FFFFFF" stroke-width="2"/><rect x="300" y="82" width="14" height="14" rx="4" fill="#0B7878"/><text x="322" y="94" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >open 9–18</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#141A1F"/><text x="322" y="128" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >closed</text><circle cx="307" cy="157" r="6" fill="#B7791F"/><text x="322" y="162" font-size="13" fill="#141A1F" font-weight="700" text-anchor="start" >9:33 PM — call</text><text x="300" y="204" font-size="12" fill="#616B75" font-weight="600" text-anchor="start" >calls still arrive in these hours</text></svg><figcaption class="illcap">Open about nine of the day’s twenty-four hours. Calls arrive in the other fifteen too.</figcaption></figure></div>
+  </div>
+</section>
 
-    <div class="cols">
-      <div class="tlstick reveal">
-        <div class="phoneframe"><div class="screen">
-          <div class="notch"></div>
-          <div class="callcard">
-            <div class="callhead">
-              <span class="avatar av-a">HB</span>
-              <span class="who"><b>Incoming call</b><span>+44 7••• •••41 · 6:41 PM</span></span>
-              <span class="timer sg">01:30</span>
-            </div>
-            <div class="wave live" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="transcript">
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">We complete on&nbsp;the&nbsp;26th and I need a&nbsp;price tonight.</span></div>
-              <div class="line"><span class="spk ai">AI</span><span class="tx">I can get you a&nbsp;real one — not a&nbsp;guess. Can I take <em>both postcodes</em> first?</span></div>
-              <div class="line"><span class="spk cu">CALLER</span><span class="tx">SE15 to&nbsp;BN1. Second floor, no&nbsp;lift.</span></div>
-            </div>
-          </div>
-          <div class="resultrow"><span class="rchip">✓ Survey booked · surveyor notified</span></div>
-        </div></div>
-      </div>
-
-      <div class="reveal">
-        <div class="tlrow">
-          <span class="tm sg">0:00</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"We complete on&nbsp;the&nbsp;26th and I need a&nbsp;price. Three-bed terrace, second floor, no&nbsp;lift. I'm ringing round tonight."</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:13</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"I can get you a&nbsp;real price, but not off the&nbsp;top of&nbsp;my&nbsp;head — a&nbsp;second floor with&nbsp;no&nbsp;lift changes the&nbsp;crew and the&nbsp;hours. Can I take both postcodes first?"</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:31</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">AI</span><p>"SE15 to&nbsp;BN1. Is there a&nbsp;bay outside, or is it a&nbsp;controlled zone? If the&nbsp;bay needs suspending we apply for&nbsp;it — the&nbsp;council sets that&nbsp;fee, not&nbsp;us."</p></div>
-        </div>
-        <div class="tlrow">
-          <span class="tm sg">0:52</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">CALLER</span><p>"It's&nbsp;a&nbsp;permit street. And there's&nbsp;an&nbsp;upright piano in&nbsp;the&nbsp;front room. So what's&nbsp;the&nbsp;number?"</p></div>
-        </div>
-        <div class="tlrow warn">
-          <span class="tm sg">1:08</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk">SURVEY GATE</span><p>The&nbsp;caller asks for&nbsp;a&nbsp;figure now. The&nbsp;AI does not produce one: your&nbsp;rules require a&nbsp;survey for&nbsp;a&nbsp;piano and a&nbsp;second-floor carry. It says so in&nbsp;one sentence and offers the&nbsp;next two survey slots instead.</p></div>
-        </div>
-        <div class="tlrow done">
-          <span class="tm sg">1:30</span><span class="td"><i></i></span>
-          <div class="tb"><span class="spk ai">RESULT</span><p>Survey card created · both postcodes, floor, lift, parking zone, piano and the&nbsp;26th attached · video survey Thursday 7:30 PM · surveyor's&nbsp;diary updated before the&nbsp;caller hung&nbsp;up.</p></div>
-        </div>
-        <p class="tlfoot">Scripted demo built from&nbsp;the&nbsp;founding-cohort playbook. Your&nbsp;survey rules, your&nbsp;service area, your&nbsp;price list.</p>
-      </div>
+<section class="t-md sec-dark bg-spot" id="refuses">
+  <div class="wrap">
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What it will not do</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">The things a machine<br>must not say in this trade.</h2>
+    <p class="sub reveal" style="max-width:none;">The four below are not settings you switch on and off. They are blocked
+      from the start when the Movers answering is built. Anything that touches them is not answered &mdash; it goes to a person.</p>
+    <div class="illrow reveal"><ul class="kolist" style="margin-top:0;"><li><b>It never fixes a price without seeing the load.</b>It gives the range and books the survey. Most disputes in this trade start with a number given blind.</li><li><b>It never skips the stairs question.</b>Elevator or not, and which floor, are always asked and written down as said. Extra crew or a hoist are never quietly dropped from the job.</li><li><b>It never pencils in the move date as booked.</b>The survey is the booking. The move date is fixed by the contract, not by the phone call.</li><li><b>It never promises what damage is covered.</b>Whether a broken TV is replaced in full depends on the valuation option chosen. The owner explains it from the policy; the AI passes the question on.</li></ul><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="The gate before a person" xmlns="http://www.w3.org/2000/svg"><title>The gate before a person</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">The gate before a person</text><rect x="12" y="52" width="214" height="92" rx="14" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="30" y="78" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >The customer asks</text><text x="30" y="106" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >“I’m moving from a stu</text><text x="30" y="126" font-size="13.5" fill="#141A1F" font-weight="700" text-anchor="start" >dio to a two-bedr…”</text><path d="M232 98 L256 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M262 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="44" width="190" height="110" rx="14" fill="#FFFFFF" stroke="#141A1F" stroke-width="1.5" /><circle cx="286" cy="68" r="6" fill="none" stroke="#0B7878" stroke-width="1.6"/><text x="300" y="72" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >On the price list?</text><circle cx="286" cy="98" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="102" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Needs a judgement?</text><circle cx="286" cy="128" r="6" fill="none" stroke="#B7791F" stroke-width="1.6"/><text x="300" y="132" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Safety involved?</text><path d="M361 160 L355 200" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M361 200 l-7 -4 v8 z" fill="#0B7878"/><rect x="266" y="204" width="190" height="62" rx="12" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="286" y="230" font-size="13.5" fill="#0B7878" font-weight="800" text-anchor="start" >It answers</text><text x="286" y="250" font-size="11" fill="#3B454D" font-weight="600" text-anchor="start" >word for word, with the source</text><path d="M462 98 L486 98" stroke="#0B7878" stroke-width="1.6" fill="none"/><path d="M492 98 l-7 -4 v8 z" fill="#0B7878"/><rect x="496" y="44" width="132" height="222" rx="14" fill="rgba(183,121,31,.12)" stroke="#B7791F" stroke-width="1.2" /><text x="512" y="72" font-size="13" fill="#B7791F" font-weight="800" text-anchor="start" >Handed to a person</text><rect x="512" y="90" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="109" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >the whole conversation</text><rect x="512" y="130" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="149" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >every captured field</text><rect x="512" y="170" width="100" height="28" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1" /><text x="522" y="189" font-size="11.5" fill="#3B454D" font-weight="700" text-anchor="start" >why it stopped</text></svg><figcaption class="illcap">On the price list it answers; a judgement or a safety issue goes to a person — with the whole conversation and every captured field.</figcaption></figure></div>
+    <div class="ifwrong reveal">
+      <b>If something goes wrong</b>
+      <ul>
+        <li>If an AI answer causes a loss, our liability is capped at <b>the fees you paid in the three months before
+          the month of the incident</b>. Losses from our wilful misconduct or gross negligence are compensated as the law provides,
+          outside that cap. <a href="../terms.html#liability">Terms &sect;7 &rarr;</a></li>
+        <li>Every call leaves a recording (you can switch it off), a summary, and the facts it answered from.
+          Those records belong to you and can be exported in full at any time.
+          <a href="../terms.html#the-terms">Terms &sect;8 &rarr;</a></li>
+        <li>Replies are composed by a language model running in the United States. Customer records, bookings and call
+          recordings are stored on our production servers in Seoul. <a href="../security.html#measures">Where the data lives &rarr;</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="dialsec t-md sec-dark bg-grid">
+<section class="t-md sec-light bg-paper" id="crm">
   <div class="wrap">
-    <div class="nightfig scenefig reveal">
-      <div class="scenebox" data-scene="nightclock"></div>
-      <div>
-        <p class="scenecap"><b>An&nbsp;office on&nbsp;nine to&nbsp;five, Monday to&nbsp;Friday, is beside the&nbsp;phone for <span class="num">40 of 168 hours</span>.</b> The&nbsp;other 128 are when somebody sits down after dinner to&nbsp;ring four removals firms in&nbsp;one evening.</p>
-        <p class="scenecap" style="margin-top:12px;">This is not a&nbsp;statistic we
-          collected. It is what an&nbsp;ordinary working week divides into.</p>
-      </div>
-    </div>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>What is left behind</span><span class="line"></span></div>
+    <h2 class="h2 reveal">When the call ends,<br>these fields are already filled.</h2>
+    <p class="sub reveal" style="max-width:none;">The Movers CRM comes with Movers fields. You do not bend a generic CRM's
+      blanks to your trade over months &mdash; it is written in your trade's words from day one.</p>
+    <div class="illrow reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 328" role="img" aria-label="Customer record" xmlns="http://www.w3.org/2000/svg"><title>Customer record</title><rect x="12" y="12" width="616" height="304" rx="14" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="32" y="40" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Customer record</text><text x="32" y="70" font-size="17" fill="#141A1F" font-weight="800" text-anchor="start" >Ethan Brooks</text><text x="228" y="70" font-size="12.5" fill="#616B75" font-weight="600" text-anchor="start" font-family="ui-monospace,monospace">555-06··</text><rect x="400" y="54" width="44.1" height="20" rx="10" fill="rgba(11,120,120,.10)" stroke="none" stroke-width="1" /><text x="422.05" y="68" font-size="11" fill="#0B7878" font-weight="700" text-anchor="middle" >Phone</text><rect x="452.1" y="54" width="64.56" height="20" rx="10" fill="rgba(47,133,90,.12)" stroke="none" stroke-width="1" /><text x="484.38" y="68" font-size="11" fill="#2F855A" font-weight="700" text-anchor="middle" >WhatsApp</text><path d="M32 96 H608" stroke="#E2DDD3"/><text x="32" y="118" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >From and to addresses,</text><rect x="270" y="109" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 132 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="138" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 146 H608" stroke="#E2DDD3"/><text x="32" y="168" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Elevator, or extra cre</text><rect x="270" y="159" width="200" height="9" rx="4.5" fill="#3B454D"/><path d="M270 182 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="188" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 196 H608" stroke="#E2DDD3"/><text x="32" y="218" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Preferred move date</text><rect x="270" y="209" width="160" height="9" rx="4.5" fill="#3B454D"/><path d="M270 232 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="238" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text><path d="M32 246 H608" stroke="#E2DDD3"/><text x="32" y="268" font-size="11.5" fill="#616B75" font-weight="700" text-anchor="start" >Size of the load (stud</text><rect x="270" y="259" width="240" height="9" rx="4.5" fill="#3B454D"/><path d="M270 282 l3.5 3.5 l7 -7" stroke="#0B7878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="286" y="288" font-size="11" fill="#0B7878" font-weight="700" text-anchor="start" >from the call</text></svg><figcaption class="illcap">The card a call leaves behind, with the source of every field.</figcaption></figure><div class="fieldgrid" style="margin-top:0;"><span>From and to addresses, with floors</span><span>Elevator, or extra crew and hoist needed</span><span>Preferred move date</span><span>Size of the load (studio, two-bedroom, house)</span><span>Survey time booked</span><span>Range quoted</span></div></div>
   </div>
 </section>
 
-<section class="moneysec bg-dusk t-xl">
+<section class="t-md sec-dark bg-grid" id="pipeline">
   <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;arithmetic of&nbsp;one evening call</span><span class="line"></span></div>
-    <div class="moneytop">
-      <div class="reveal">
-        <div class="bignum gradtext warm">£0</div>
-        <p class="bigcap">What a&nbsp;removals quote is worth before anyone has both postcodes, the&nbsp;floor, the&nbsp;lift and the&nbsp;date. The&nbsp;first job on&nbsp;the&nbsp;call is not a&nbsp;price. It is a&nbsp;survey in&nbsp;the&nbsp;diary.</p>
-        <div class="photocard">
-          <img class="ph" src="https://images.pexels.com/photos/7464372/pexels-photo-7464372.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/7464372/pexels-photo-7464372.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7464372/pexels-photo-7464372.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7464372/pexels-photo-7464372.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7464372/pexels-photo-7464372.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A remover in overalls standing among packed cartons with a clipboard, counting what is in the room" loading="lazy" decoding="async" width="1600" height="2400">
-          <span class="kicker">Who answers at&nbsp;6:41</span>
-          <h3>Usually, nobody.</h3>
-          <p>The&nbsp;crew is on&nbsp;a&nbsp;job until the&nbsp;job is finished. Ringing back at&nbsp;nine the&nbsp;next morning is ringing back after the&nbsp;survey was booked somewhere else.</p>
-          <span class="stat"><b>20 min</b>is all a&nbsp;video survey takes — once it is in&nbsp;the&nbsp;diary</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <h2 class="h2 onDark">A&nbsp;person moving house is not <br>waiting for&nbsp;your&nbsp;crew to&nbsp;finish.</h2>
-        <p class="lead onDark" style="margin-top:18px;">They have a&nbsp;completion date and a&nbsp;browser tab with&nbsp;four firms in&nbsp;it. They are not comparing prices yet — nobody has given them one. They are comparing who picked up, who asked sensible questions, and who put something in&nbsp;the&nbsp;diary. The&nbsp;survey is the&nbsp;sale.</p>
-        <div class="figrow" style="margin-top:38px;">
-          <div class="fig"><b class="sg">Fri</b><span>the&nbsp;day completions cluster — and the&nbsp;day your&nbsp;diary is already full</span></div>
-          <div class="fig"><b class="sg">40 / 168</b><span>hours a&nbsp;week a&nbsp;nine-to-five office is on&nbsp;the&nbsp;phone</span></div>
-          <div class="fig"><b class="sg">2</b><span>postcodes, before any sentence with&nbsp;a&nbsp;number in&nbsp;it</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="baGrid reveal">
-      <div class="baCol before">
-        <div class="hl4" role="heading" aria-level="3">Tuesday evening · without&nbsp;an&nbsp;answer</div>
-        <ul>
-          <li><i>✕</i><span><b style="color:#141A1F;">6:41 PM</b> — the&nbsp;call rings out. Voicemail plays to&nbsp;somebody with&nbsp;a&nbsp;completion date and a&nbsp;list.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">6:44 PM</b> — they dial the&nbsp;next firm on&nbsp;the&nbsp;list. Someone answers.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">6:52 PM</b> — that&nbsp;firm has both postcodes, the&nbsp;floor and a&nbsp;survey slot on&nbsp;Thursday.</span></li>
-          <li><i>✕</i><span><b style="color:#141A1F;">9:10 AM</b> — you return the&nbsp;voicemail. The&nbsp;survey is booked, and the&nbsp;packing and the&nbsp;storage went with&nbsp;it.</span></li>
-        </ul>
-      </div>
-      <div class="baArrow" aria-hidden="true">→</div>
-      <div class="baCol after">
-        <div class="hl4" role="heading" aria-level="3">Tuesday evening · with&nbsp;Saleringo answering</div>
-        <ul>
-          <li><i>✓</i><span><b style="color:#141A1F;">6:41 PM</b> — answered on&nbsp;the&nbsp;second ring. Both postcodes, bedrooms, floor, lift and parking taken.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">6:42 PM</b> — the&nbsp;piano and the&nbsp;American fridge written down by&nbsp;name, not&nbsp;priced.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">6:43 PM</b> — video survey booked Thursday 7:30 PM; the&nbsp;caller has a&nbsp;time before hanging&nbsp;up.</span></li>
-          <li><i>✓</i><span><b style="color:#141A1F;">7:00 AM</b> — recording, transcript and a&nbsp;filled survey card are waiting in&nbsp;your&nbsp;inbox.</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="srcnote">The&nbsp;one external figure on&nbsp;this&nbsp;page: HMRC's&nbsp;UK monthly property transactions commentary records a&nbsp;large peak in&nbsp;March&nbsp;2025, and a&nbsp;drop the&nbsp;month after. The&nbsp;cause was moves brought forward ahead of&nbsp;the&nbsp;stamp-duty threshold change on&nbsp;1&nbsp;April&nbsp;2025. Your&nbsp;week is set by&nbsp;dates nobody in&nbsp;your&nbsp;office controls · <a href="https://www.gov.uk/government/statistics/monthly-property-transactions-completed-in-the-uk-with-value-40000-or-above" rel="nofollow noopener">HMRC, GOV.UK ↗</a></p>
-  </div>
-</section>
-
-<section class="safesec bg-paper t-md">
-  <div class="wrap">
-    <div class="photosplit safesplit reveal">
-      <div class="media">
-        <img class="ph" src="https://images.pexels.com/photos/7464689/pexels-photo-7464689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
-           srcset="https://images.pexels.com/photos/7464689/pexels-photo-7464689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7464689/pexels-photo-7464689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/7464689/pexels-photo-7464689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/7464689/pexels-photo-7464689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-           sizes="(max-width:900px) 100vw, 50vw"
-             alt="Two removers in overalls easing a blanket-wrapped piece of furniture into the back of a van at the kerb" loading="lazy" decoding="async" width="1600" height="2400">
-      </div>
-      <div class="copy">
-        <span class="eyebrow light"><i></i>Where the&nbsp;AI stops quoting</span>
-        <h2 class="h2" style="margin-top:20px">Some&nbsp;calls are not a&nbsp;price. <br>They are a&nbsp;survey you have not&nbsp;done&nbsp;yet.</h2>
-        <p class="lead" style="margin-top:18px;">A&nbsp;number given on&nbsp;a&nbsp;Tuesday evening and withdrawn on&nbsp;Thursday costs more than the&nbsp;job was worth. So the&nbsp;refusals below ship enabled. They are not a&nbsp;confidence threshold and they are not a&nbsp;setting anyone can switch off to&nbsp;hit a&nbsp;booking target.</p>
-      </div>
-    </div>
-
-    <div class="warngrid reveal">
-      <div class="warncard">
-        <span class="tag">Hard stop</span>
-        <b>No&nbsp;firm price without&nbsp;the&nbsp;survey</b>
-        <p>Where your&nbsp;own rules require a&nbsp;pre-move survey, the&nbsp;AI will not produce a&nbsp;figure — not a&nbsp;ballpark, not a&nbsp;"from", not "roughly". It says which fact is missing, and offers the&nbsp;next two survey slots.</p>
-      </div>
-      <div class="warncard">
-        <span class="tag">Hard stop</span>
-        <b>No&nbsp;crew and no&nbsp;date that&nbsp;is not in&nbsp;the&nbsp;diary</b>
-        <p>Friday the&nbsp;26th is either free in&nbsp;your&nbsp;diary or it is not. The&nbsp;AI reads what is there and offers that. It never holds a&nbsp;date on&nbsp;goodwill, and it never names a&nbsp;crew that&nbsp;is booked elsewhere.</p>
-      </div>
-      <div class="warncard amber">
-        <span class="tag">Hard boundary</span>
-        <b>No&nbsp;specialist item accepted, no&nbsp;cover level invented</b>
-        <p>Pianos, safes, aquariums, gym rigs, mowers with&nbsp;fuel in&nbsp;them: written down by&nbsp;name, put to&nbsp;a&nbsp;person, never agreed to&nbsp;on&nbsp;the&nbsp;phone. And it quotes no&nbsp;insurance limit you have not given it.</p>
-      </div>
-    </div>
-
-    <div class="ladder reveal">
-      <div class="lstep"><span class="n sg">STEP 01</span><b>Detect</b><span>A&nbsp;price request that&nbsp;your&nbsp;rules say needs a&nbsp;survey, or an&nbsp;item on&nbsp;your&nbsp;specialist list, flips the&nbsp;call out of&nbsp;quoting mode.</span></div>
-      <div class="lstep"><span class="n sg">STEP 02</span><b>Say so plainly</b><span>One sentence, in&nbsp;wording you approved: what is missing and why the&nbsp;number would be wrong. No&nbsp;stalling, no&nbsp;"our&nbsp;team will be in&nbsp;touch".</span></div>
-      <div class="lstep"><span class="n sg">STEP 03</span><b>Book the&nbsp;survey instead</b><span>Real slots from&nbsp;the&nbsp;surveyor's&nbsp;diary, video or in-person, so the&nbsp;caller leaves the&nbsp;call with&nbsp;a&nbsp;time rather than a&nbsp;promise.</span></div>
-      <div class="lstep"><span class="n sg">STEP 04</span><b>Leave a&nbsp;trail</b><span>Recording, transcript and the&nbsp;reason it refused land on&nbsp;the&nbsp;survey card for&nbsp;the&nbsp;morning review.</span></div>
-    </div>
-    <p class="safenote">Completion-day timing sits under&nbsp;the&nbsp;same rule: it quotes your&nbsp;waiting-time rate, and it never guarantees an&nbsp;hour that&nbsp;belongs to&nbsp;somebody else's&nbsp;chain. <a href="../verified-ai.html">How answers get approved →</a></p>
-  </div>
-</section>
-
-<section class="dispsec grain t-xl">
-  <div class="wrap">
-    <div class="secrule reveal"><span class="eyebrow"><i></i>The&nbsp;other side of&nbsp;the&nbsp;call</span><span class="line"></span></div>
-    <h2 class="h2 onDark reveal" style="max-width:700px">Your&nbsp;surveyor knows the&nbsp;job <br>before the&nbsp;caller hangs&nbsp;up.</h2>
-    <p class="lead onDark reveal" style="margin-top:18px;">One inbox for&nbsp;phone, web chat and messaging — and a&nbsp;survey card that&nbsp;carries every&nbsp;fact the&nbsp;AI took. Nobody rings back to&nbsp;ask for&nbsp;the&nbsp;destination postcode.</p>
-
-    <div class="dispcols">
-      <div class="scene-frame tiltcard reveal">
-        <svg viewBox="0 0 1000 640" role="img" aria-label="The surveyor's phone showing the survey card: both postcodes, the floor and lift, the parking zone, the piano written down by name, the completion date, and the video survey slot already agreed — all filled in before the call ended.">
-          <defs>
-            <linearGradient id="mvBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-            <radialGradient id="mvGlow"><stop offset="0" stop-color="#17BDBD" stop-opacity=".32"/><stop offset="1" stop-color="#17BDBD" stop-opacity="0"/></radialGradient>
-            <linearGradient id="mvScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
-          </defs>
-          <rect width="1000" height="640" fill="url(#mvBg)"/>
-          <ellipse cx="500" cy="330" rx="380" ry="290" fill="url(#mvGlow)"/>
-
-          <!-- the back of a box lorry, just enough of it to place the phone -->
-          <g opacity=".5">
-            <path d="M0 470 H1000 V640 H0 Z" fill="#F6F4EE"/>
-            <path d="M96 470 V318 h808 v152" fill="none" stroke="#141A1F" stroke-width="3"/>
-            <path d="M96 318 h808 M500 470 V318" stroke="#141A1F" stroke-width="2"/>
-            <path d="M150 470 h700" stroke="#141A1F" stroke-width="6"/>
-          </g>
-
-          <!-- the phone, in the surveyor's hand -->
-          <g transform="translate(330,52)">
-            <rect width="340" height="560" rx="42" fill="#F6F4EE" stroke="#141A1F" stroke-width="2.5"/>
-            <rect x="14" y="14" width="312" height="532" rx="32" fill="url(#mvScreen)"/>
-            <rect x="130" y="22" width="80" height="14" rx="7" fill="#F6F4EE"/>
-
-            <g font-family="Plus Jakarta Sans,sans-serif">
-              <text x="40" y="76" font-family="Space Grotesk,sans-serif" font-size="12.5" fill="#17BDBD" letter-spacing="2.4">SURVEY CARD · 6:43 PM</text>
-              <rect x="222" y="60" width="82" height="24" rx="12" fill="rgba(232,164,76,.2)"/>
-              <text x="263" y="76" font-size="12" fill="#E8A44C" text-anchor="middle" font-weight="800">COMPLETES 26th</text>
-
-              <text x="40" y="112" font-size="19" fill="#F6F4EE" font-weight="700">SE15 → BN1</text>
-              <text x="40" y="136" font-size="12.5" fill="#94A2B8" font-weight="600">3-bed terrace · 2nd floor · no&nbsp;lift</text>
-
-              <path d="M40 156 H300" stroke="rgba(20,26,31,.10)" stroke-width="1.5"/>
-
-              <text x="40" y="184" font-size="12" fill="#5E6C82" font-weight="800">IN&nbsp;THE&nbsp;CALLER’S WORDS</text>
-              <rect x="34" y="196" width="272" height="76" rx="12" fill="rgba(20,26,31,.05)"/>
-              <text x="48" y="220" font-size="12.5" fill="#F6F4EE" font-weight="600">“Permit street, and there’s&nbsp;an</text>
-              <text x="48" y="240" font-size="12.5" fill="#F6F4EE" font-weight="600">upright piano in&nbsp;the&nbsp;front</text>
-              <text x="48" y="260" font-size="12.5" fill="#F6F4EE" font-weight="600">room.”</text>
-
-              <rect x="34" y="286" width="272" height="46" rx="12" fill="rgba(217,106,94,.14)"/>
-              <text x="48" y="306" font-size="12" fill="#E58C81" font-weight="800">NOT&nbsp;PRICED ON&nbsp;THE&nbsp;CALL</text>
-              <text x="48" y="324" font-size="12" fill="#E9AFA8" font-weight="600">Piano + 2nd floor · survey rule</text>
-
-              <text x="40" y="364" font-size="12" fill="#5E6C82" font-weight="800">ALREADY AGREED</text>
-              <g>
-                <rect x="34" y="376" width="130" height="56" rx="12" fill="rgba(23,189,189,.14)"/>
-                <text x="48" y="398" font-size="12.5" fill="#5FA9A9" font-weight="700">Video survey</text>
-                <text x="48" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">Thu 19:30</text>
-                <rect x="176" y="376" width="130" height="56" rx="12" fill="rgba(20,26,31,.05)"/>
-                <text x="190" y="398" font-size="12.5" fill="#8FA0B2" font-weight="700">Length</text>
-                <text x="190" y="420" font-family="Space Grotesk,sans-serif" font-size="19" fill="#F6F4EE" font-weight="600">20 min</text>
-              </g>
-
-              <rect x="34" y="448" width="272" height="30" rx="15" fill="rgba(20,26,31,.05)"/>
-              <text x="170" y="468" font-size="12.5" fill="#8FA0B2" text-anchor="middle" font-weight="700">▶ Play the&nbsp;90-second recording</text>
-
-              <rect x="34" y="490" width="272" height="44" rx="22" fill="#17BDBD"/>
-              <text x="170" y="518" font-size="14" fill="#F6F4EE" text-anchor="middle" font-weight="800">Add to&nbsp;my&nbsp;diary · Thu</text>
-            </g>
-          </g>
-
-          <text x="500" y="616" font-family="Plus Jakarta Sans,sans-serif" font-size="13" fill="#5E6C82" text-anchor="middle" font-weight="600">Nobody rang back for&nbsp;the&nbsp;destination postcode. The&nbsp;card was full before the&nbsp;caller hung&nbsp;up.</text>
-        </svg>
-        <div class="scene-overlay tr"><b>Sent to&nbsp;Dan at&nbsp;6:43 PM</b><span>Both postcodes, access, awkward items and the&nbsp;recording attached</span></div>
-      </div>
-
-      <div class="dispside reveal">
-        <div class="msgthread">
-          <div class="mhead"><span class="avatar av-d" style="width:30px;height:30px;font-size:var(--fs-2xs);">DR</span>
-            <span><b>Dan · surveyor</b><br><span>Survey booked · 6:43 PM</span></span></div>
-          <div class="mbody">
-            <div class="m out">New survey — SE15 to&nbsp;BN1, 3-bed terrace, 2nd floor, no&nbsp;lift. Permit street both ends. Upright piano flagged, not&nbsp;priced. Completion Fri&nbsp;26th. Video survey Thu&nbsp;19:30.<span class="tick">✓✓</span></div>
-            <div class="m in">Got it. I'll ask for&nbsp;the&nbsp;loft and the&nbsp;garage on&nbsp;the&nbsp;call.</div>
-            <div class="m out">Added to&nbsp;the&nbsp;card. Customer has the&nbsp;time and the&nbsp;link.<span class="tick">✓✓</span></div>
-          </div>
-        </div>
-        <div class="rrow"><span class="rchip">✓ CRM updated</span><span class="rchip">✓ Customer texted the&nbsp;survey link</span></div>
-        <p class="note">The&nbsp;same thread works the&nbsp;other way: your&nbsp;surveyor writes "add the&nbsp;loft", and it is on&nbsp;the&nbsp;card the&nbsp;move manager quotes from.</p>
-      </div>
-    </div>
-
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Pipeline</span><span class="line"></span></div>
+    <h2 class="h2 onDark reveal">Where every inquiry stands,<br>on one line.</h2>
+    <div class="pipe reveal"><b>Inquiry</b><i>&rarr;</i><b>Survey booked</b><i>&rarr;</i><b>Survey</b><i>&rarr;</i><b>Contract</b><i>&rarr;</i><b>Move and settlement</b></div>
+    <div class="illwide reveal"><figure class="illfig "><svg class="illus" viewBox="0 0 640 275" role="img" aria-label="Pipeline" xmlns="http://www.w3.org/2000/svg"><title>Pipeline</title><text x="12" y="30" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" letter-spacing=".08em">Pipeline</text><rect x="12" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="24" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="24" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Inquiry</text><text x="113.6" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >4</text><rect x="24" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="34" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="24" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="34" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="34" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M127.6 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="137.6" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="149.6" y="60" width="89.6" height="3" rx="1.5" fill="#0B7878"/><text x="149.6" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Survey bo</text><text x="239.2" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >3</text><rect x="149.6" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="113" width="55.68" height="5" rx="2.5" fill="#3B454D"/><rect x="159.6" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="149.6" y="194" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="159.6" y="205" width="34.8" height="5" rx="2.5" fill="#E2DDD3"/><rect x="159.6" y="216" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M253.2 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="263.2" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="275.2" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="275.2" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Survey</text><text x="364.8" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >2</text><rect x="275.2" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><rect x="275.2" y="148" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="285.2" y="159" width="45.24" height="5" rx="2.5" fill="#E2DDD3"/><rect x="285.2" y="170" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M378.8 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="388.8" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="400.8" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="400.8" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Contract</text><text x="490.4" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="400.8" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="410.8" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="410.8" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/><path d="M504.4 154 l6 -4 v8 z" fill="#E2DDD3"/><rect x="514.4" y="48" width="113.6" height="212" rx="12" fill="#F6F4EE" stroke="none" stroke-width="1" /><rect x="526.4" y="60" width="89.6" height="3" rx="1.5" fill="#E2DDD3"/><text x="526.4" y="86" font-size="12" fill="#141A1F" font-weight="700" text-anchor="start" >Move and </text><text x="616" y="86" font-size="12" fill="#616B75" font-weight="700" text-anchor="end" >1</text><rect x="526.4" y="102" width="89.6" height="36" rx="8" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><rect x="536.4" y="113" width="55.68" height="5" rx="2.5" fill="#E2DDD3"/><rect x="536.4" y="124" width="31.32" height="5" rx="2.5" fill="#E2DDD3"/></svg><figcaption class="illcap">The Movers pipeline as it is. How many inquiries sit at each stage, at a glance.</figcaption></figure></div>
   </div>
 </section>
 
 <section class="packcard t-md sec-dark bg-grid" id="the-pack">
   <div class="wrap">
     <a class="pc-link" href="./movers-pack.html">
-      <span class="pc-k">The&nbsp;Movers & removals pack</span>
-      <b class="pc-h">Everything in&nbsp;the&nbsp;pack, on&nbsp;a&nbsp;page of&nbsp;its&nbsp;own</b>
-      <span class="pc-d">The&nbsp;CRM behind the&nbsp;call, the&nbsp;fields and pipeline stages this&nbsp;trade works in, the&nbsp;systems it hands to, and every&nbsp;refusal written down. It is a&nbsp;manifest, so it lives where a&nbsp;manifest belongs rather than in&nbsp;the&nbsp;middle of&nbsp;an&nbsp;argument.</span>
+      <span class="pc-k">The Movers pack</span>
+      <b class="pc-h">Everything in the pack, on one separate page</b>
+      <span class="pc-d">The CRM fields and stages that follow every call, what it connects to, and what it never says
+        &mdash; written up as a list, not a claim, so it lives apart from this page.</span>
       <span class="pc-go" aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>
 
-<section class="sec-dark bg-grid t-md" id="multi-depot">
+<section class="t-md sec-light2" id="others">
   <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Two depots. Three towns. One owner.</span>
-      <h2 class="h2 onDark" style="margin-top:18px;">The&nbsp;coast depot does&nbsp;not&nbsp;offer <br><em style="font-style:normal;color:var(--teal);">the&nbsp;London depot's</em>&nbsp;Friday.</h2>
-      <p class="secintro">If you run more than one depot, the&nbsp;fastest way to&nbsp;lose a&nbsp;Friday is a&nbsp;date promised
-        against the&nbsp;wrong diary. Each&nbsp;depot is set up as its&nbsp;own firm inside one account.</p>
-    </div>
-    <div class="mlgrid reveal">
-      <div class="mlcard"><span class="n">01</span><b>Its&nbsp;own number, diary and price list</b>
-        <p>Each&nbsp;depot answers on&nbsp;its&nbsp;own line, offers dates from&nbsp;its&nbsp;own diary, and quotes from&nbsp;its&nbsp;own list.
-          A&nbsp;caller in&nbsp;one service area never hears another&nbsp;depot's&nbsp;availability.</p></div>
-      <div class="mlcard"><span class="n">02</span><b>Its&nbsp;own vans, crews and storage</b>
-        <p>Surveys go to&nbsp;the&nbsp;surveyor who covers that&nbsp;postcode, and storage is offered only where there are containers actually free.</p></div>
-      <div class="mlcard"><span class="n">03</span><b>Each&nbsp;manager sees only their&nbsp;own depot</b>
-        <p>A&nbsp;depot manager opens the&nbsp;board and sees their&nbsp;enquiries, their&nbsp;surveys, their&nbsp;quotes — not the&nbsp;whole company's.</p></div>
-      <div class="mlcard"><span class="n">04</span><b>You see all of&nbsp;them, side by&nbsp;side</b>
-        <p>One report, every&nbsp;depot in&nbsp;the&nbsp;same row: enquiries answered, surveys booked, quote conversion,
-          storage weeks live. Where the&nbsp;vans are earning, and where they are standing.</p></div>
-    </div>
-    <p class="statnote">Depots, numbers, service areas, price lists, survey rules and who-sees-what are configured with&nbsp;you during
-      onboarding — we write the&nbsp;survey rule and the&nbsp;refusal wording with&nbsp;you, line by&nbsp;line.</p>
+    <div class="secrule reveal"><span class="eyebrow"><i></i>Other trades</span><span class="line"></span></div>
+    <h2 class="h2 reveal">If your trade is not here,<br>it can still usually be built.</h2>
+    <div class="photowall reveal"><a href="./auto-repair.html"><img src="https://images.pexels.com/photos/34337558/pexels-photo-34337558.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Auto repair</b></a><a href="./self-storage.html"><img src="https://images.pexels.com/photos/38573375/pexels-photo-38573375.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Self storage</b></a><a href="./equipment-rental.html"><img src="https://images.pexels.com/photos/11973732/pexels-photo-11973732.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Equipment rental</b></a><a href="./car-wash.html"><img src="https://images.pexels.com/photos/6872148/pexels-photo-6872148.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Car wash & detailing</b></a><a href="./car-dealers.html"><img src="https://images.pexels.com/photos/36729875/pexels-photo-36729875.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Car dealerships</b></a><a href="./towing.html"><img src="https://images.pexels.com/photos/17429097/pexels-photo-17429097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Towing & roadside</b></a><a href="./it-repair.html"><img src="https://images.pexels.com/photos/6754839/pexels-photo-6754839.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Computer & phone repair</b></a><a href="./courier.html"><img src="https://images.pexels.com/photos/5025638/pexels-photo-5025638.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=560&amp;h=420&amp;fit=crop" alt="" loading="lazy" decoding="async" width="560" height="420"><b>Couriers & same-day delivery</b></a></div>
+    <div class="otherwall reveal"><a href="./dental.html">Dental</a><a href="./clinics.html">Clinics & med-spa</a><a href="./academies.html">Academies & tutoring</a><a href="./salons.html">Hair & beauty salons</a><a href="./veterinary.html">Veterinary</a><a href="./auto-repair.html">Auto repair</a><a href="./real-estate.html">Real estate</a><a href="./venues.html">Wedding & event venues</a><a href="./senior-care.html">Senior care</a><a href="./fitness.html">Gyms & fitness</a><a href="./home-services.html">Home services</a><a href="./pest-control.html">Pest control</a><a href="./property-management.html">Property management</a><a href="./restaurants.html">Restaurants</a><a href="./stays.html">Boutique stays</a><a href="./golf.html">Golf clubs</a><a href="./funeral-homes.html">Funeral homes</a><a href="./legal.html">Law firms</a><a href="./universities.html">Universities</a><a href="./public-sector.html">Public sector</a><a href="./self-storage.html">Self storage</a><a href="./equipment-rental.html">Equipment rental</a><a href="./ecommerce.html">Online stores</a><a href="./franchise.html">Franchises</a><a href="./pharmacy.html">Pharmacy</a><a href="./hospital-outpatient.html">Hospitals & outpatient</a><a href="./physio-rehab.html">Physio & rehab</a><a href="./korean-medicine.html">Acupuncture & traditional medicine</a><a href="./optician.html">Opticians</a><a href="./counseling.html">Counseling & therapy</a><a href="./childcare.html">Daycare & preschool</a><a href="./driving-school.html">Driving schools</a><a href="./music-art-academy.html">Music & art schools</a><a href="./yoga-pilates.html">Yoga & pilates studios</a><a href="./martial-arts.html">Martial arts dojos</a><a href="./nail-spa.html">Nail & spa</a><a href="./barbershop.html">Barbershops</a><a href="./pet-grooming.html">Pet grooming & boarding</a><a href="./cleaning-services.html">Cleaning services</a><a href="./interior-renovation.html">Renovation contractors</a><a href="./landscaping.html">Landscaping & lawn care</a><a href="./locksmith.html">Locksmiths</a><a href="./appliance-repair.html">Appliance repair</a><a href="./laundry.html">Dry cleaning & laundry</a><a href="./car-wash.html">Car wash & detailing</a><a href="./car-dealers.html">Car dealerships</a><a href="./towing.html">Towing & roadside</a><a href="./cafes-bakeries.html">Cafés & bakeries</a><a href="./catering.html">Catering</a><a href="./travel-agency.html">Travel agencies</a><a href="./photo-studio.html">Photo studios</a><a href="./florist.html">Florists</a><a href="./accounting-tax.html">Accountants & tax</a><a href="./insurance-agency.html">Insurance agencies</a><a href="./home-security.html">Home security & CCTV installers</a><a href="./solar.html">Solar & energy installers</a><a href="./it-repair.html">Computer & phone repair</a><a href="./courier.html">Couriers & same-day delivery</a><a href="./print-signage.html">Print shops & signage</a><a href="./coworking.html">Coworking spaces</a><a href="./tours-activities.html">Tours & activities</a><a href="./schools.html">Schools & international schools</a><a href="./staffing.html">Staffing & recruitment agencies</a><a href="./imaging.html">Imaging & health-screening centres</a></div>
   </div>
 </section>
 
-<section class="intsec sec-light2 t-xl">
+<section class="founding t-xl bg-aurora" id="start">
+  <div class="grainlayer grain" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>Your&nbsp;existing systems, honestly</span>
-      <h2 class="h2" style="margin-top:22px">No&nbsp;fake logo&nbsp;wall. <br>Here's&nbsp;what's actually&nbsp;live.</h2>
-      <p class="lead" style="margin-top:16px;">Today, enquiries and survey cards flow out through&nbsp;Zapier, CSV export, and a&nbsp;direct feed if your&nbsp;team wants one. Removals platforms are on&nbsp;the&nbsp;roadmap — and the&nbsp;founding cohort votes on&nbsp;the&nbsp;build order.</p>
-    </div>
-
-    <div class="statgrid reveal" id="integrations">
-      <div class="statcol now"><div class="hl4" role="heading" aria-level="3"><i></i>Live today</div>
-        <ul>
-          <li>Zapier &amp; direct feeds<span>Push enquiries, survey cards and stage changes into&nbsp;whatever runs your&nbsp;office</span></li>
-          <li>CSV export<span>Enquiries, surveys, quotes and the&nbsp;whole pipeline, whenever you ask</span></li>
-          <li>Google &amp; Outlook Calendar<span>Survey slots and move dates land on&nbsp;the&nbsp;diary your&nbsp;surveyor already uses</span></li>
-        </ul>
-      </div>
-      <div class="statcol man"><div class="hl4" role="heading" aria-level="3"><i></i>Bridge for&nbsp;now</div>
-        <ul>
-          <li>Moveware · MoveMan · Voxme<span>No&nbsp;direct link. Enquiries and survey cards reach them through&nbsp;Zapier or CSV export</span></li>
-          <li>HubSpot<span>Same path — nothing is ripped out and nothing is migrated</span></li>
-        </ul>
-      </div>
-      <div class="statcol road"><div class="hl4" role="heading" aria-level="3"><i></i>In&nbsp;build</div>
-        <ul>
-          <li>Direct removals-software integrations<span>Founding customers vote on&nbsp;the&nbsp;build order. We will not name a&nbsp;month we cannot stand behind</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="statnote">Until then, every&nbsp;enquiry lands in Saleringo's&nbsp;built-in&nbsp;inbox and CRM — and exports
-      cleanly to&nbsp;whatever runs your&nbsp;office. If the&nbsp;system you use is not on&nbsp;this&nbsp;list, ask before you buy.</p>
-
-    <div class="riskrow reveal">
-      <div class="riskitem light"><span class="ic">☎</span><b>Keep your&nbsp;number</b><span>Forward evenings and weekends first. Nothing to&nbsp;port, nothing to&nbsp;rip out.</span></div>
-      <div class="riskitem light"><span class="ic">◔</span><b>Live in&nbsp;about&nbsp;15 minutes</b><span>Call forwarding plus your&nbsp;price list. No&nbsp;IT project, no&nbsp;new hardware.</span></div>
-      <div class="riskitem light"><span class="ic">✍</span><b>Your&nbsp;words only</b><span>It answers from&nbsp;the&nbsp;price list and survey rules you approved &mdash; otherwise a&nbsp;person takes the&nbsp;call.</span></div>
-      <div class="riskitem light"><span class="ic">1:1</span><b>Human onboarding</b><span>We write the&nbsp;survey rule and the&nbsp;refusal wording with&nbsp;you, line by&nbsp;line.</span></div>
-    </div>
-
-    <div class="whoband reveal">
-      <div class="secrule"><span class="eyebrow light"><i></i>Three people, one 6:41 PM call</span><span class="line"></span></div>
-      <div class="audgrid">
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/7464721/pexels-photo-7464721.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/7464721/pexels-photo-7464721.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7464721/pexels-photo-7464721.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7464721/pexels-photo-7464721.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7464721/pexels-photo-7464721.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="Two removers sitting in the cab of a moving-company van, one at the wheel, both looking out" loading="lazy" decoding="async" width="1600" height="1067">
-          <b>The&nbsp;crew, still on&nbsp;the&nbsp;job</b><span>Cannot answer a&nbsp;quote call with&nbsp;a&nbsp;wardrobe in&nbsp;their&nbsp;hands, and should not have to</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/7464222/pexels-photo-7464222.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/7464222/pexels-photo-7464222.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7464222/pexels-photo-7464222.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7464222/pexels-photo-7464222.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7464222/pexels-photo-7464222.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A man sitting on a bare floorboard beside stacked cartons in an empty room, arched window behind him" loading="lazy" decoding="async" width="1600" height="2400">
-          <b>The&nbsp;person moving on&nbsp;the&nbsp;26th</b><span>Ringing four firms this&nbsp;evening, booking the&nbsp;one that&nbsp;answers with&nbsp;a&nbsp;real next step</span>
-        </div>
-        <div class="audcard">
-          <img class="ph" src="https://images.pexels.com/photos/7464730/pexels-photo-7464730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-           srcset="https://images.pexels.com/photos/7464730/pexels-photo-7464730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400 400w, https://images.pexels.com/photos/7464730/pexels-photo-7464730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w, https://images.pexels.com/photos/7464730/pexels-photo-7464730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/7464730/pexels-photo-7464730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w"
-           sizes="(max-width:900px) 100vw, 33vw"
-               alt="A remover marking up an inventory list on a clipboard next to a stack of packed cartons" loading="lazy" decoding="async" width="1600" height="1067">
-          <b>Whoever runs your&nbsp;office</b><span>Opens the&nbsp;laptop at&nbsp;7 AM to&nbsp;survey cards, recordings and both postcodes, already filed</span>
-        </div>
-      </div>
-      <p class="photocap light">Illustrative photography — these are not Saleringo customers.</p>
-    </div>
-
-    <div class="cohortbar reveal">
-      <span class="pilltag pt-teal">FOUNDING COHORT</span>
-      <b>50% off for&nbsp;3 months · priority onboarding · a&nbsp;vote on&nbsp;the&nbsp;next integration</b>
-      <span>Onboarding now.</span>
-      <a class="linkcta" href="../index.html#early-access" style="border-color:#0B7878;color:#0B7878;">Watch it answer my&nbsp;questions&nbsp;&nbsp;→</a>
-    </div>
+    <div class="illrow reveal"><div>
+    <h2 class="h2 onDark">Send us your Movers price list,<br>and we show it answering from that.</h2>
+    <p class="sub" style="max-width:none;">No payment details. Within one business day you get a recording of the AI answering
+      your customers' ten most common questions from your own price list &mdash; and if it is not right, you stop there.</p>
+    <div class="ctas">
+      <a class="btn btn-teal" href="../get-started.html">Get my plan &mdash; Movers<span class="cir">&#8599;</span></a>
+      <a class="btn btn-ghostd" href="../pricing.html">See the prices first</a>
+    </div></div><figure class="illfig "><svg class="illus" viewBox="0 0 640 280" role="img" aria-label="9:00 AM — the owner’s screen" xmlns="http://www.w3.org/2000/svg"><title>9:00 AM — the owner’s screen</title><rect x="150" y="10" width="340" height="260" rx="22" fill="#141A1F" stroke="none" stroke-width="1" /><rect x="160" y="20" width="320" height="240" rx="16" fill="#F6F4EE" stroke="none" stroke-width="1" /><text x="178" y="46" font-size="12" fill="#616B75" font-weight="700" text-anchor="start" >9:00 AM — the owner’s screen</text><rect x="178" y="60" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="85" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >✓</text><text x="212" y="78" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >New survey</text><text x="212" y="93" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >Ethan Brooks · Thu 7:00 PM · Elm Street walk-…</text><rect x="178" y="108" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="133" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >#</text><text x="212" y="126" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Range on file #2266</text><text x="212" y="141" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >$600 to $1,000 · sent by text · opened</text><rect x="178" y="156" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="181" font-size="14" fill="#0B7878" font-weight="800" text-anchor="start" >@</text><text x="212" y="174" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Owner task</text><text x="212" y="189" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >survey Thu 7:00 PM · extra crew check for the…</text><rect x="178" y="204" width="284" height="40" rx="10" fill="#FFFFFF" stroke="#E2DDD3" stroke-width="1" /><text x="192" y="229" font-size="14" fill="#B7791F" font-weight="800" text-anchor="start" >!</text><text x="212" y="222" font-size="12.5" fill="#141A1F" font-weight="700" text-anchor="start" >Waiting for a person</text><text x="212" y="237" font-size="10.5" fill="#616B75" font-weight="600" text-anchor="start" >damage coverage question · full thread attach…</text></svg><figcaption class="illcap">What the call produced, waiting on the morning screen.</figcaption></figure></div>
   </div>
 </section>
 
-<section class="sec-dark bg-grid t-xl" id="worked-examples">
-  <div class="wrap">
-    <div class="head reveal" >
-      <span class="eyebrow"><i></i>Six worked examples</span>
-      <h2 class="h2 onDark" style="margin-top:20px;">Six calls your&nbsp;office&nbsp;gets <br>every&nbsp;week — and&nbsp;what <br>each&nbsp;one left&nbsp;behind.</h2>
-      <p class="secintro">Not a&nbsp;demo reel. Six ordinary enquiries, the&nbsp;exact words back, and the&nbsp;thing each&nbsp;exchange produced: a&nbsp;survey in&nbsp;the&nbsp;diary, a&nbsp;part-load priced off your&nbsp;own list, a&nbsp;cover question put
-        in&nbsp;front of&nbsp;a&nbsp;person instead of&nbsp;guessed at. Four of&nbsp;them the&nbsp;AI refuses something outright — read those&nbsp;first.</p>
-      <p class="exlabel" style="margin-top:14px;">Every&nbsp;scenario below is an&nbsp;illustration built from&nbsp;the&nbsp;price list and survey rules a&nbsp;removals firm would load — not customer stories, and no&nbsp;removals firm named or&nbsp;implied here is a&nbsp;Saleringo customer. The&nbsp;pounds and hours belong to&nbsp;one fictional firm; your&nbsp;own price list sets your&nbsp;numbers.</p>
-    </div>
-
-    <!--illus:scene--><div class="scenestrip reveal" aria-label="The three moments in every worked example"><figure><img src="https://images.pexels.com/photos/9052866/pexels-photo-9052866.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="A customer making a call from the sofa in the evening" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>After hours — the call comes in</b>The customer calls when it suits them, not when your desk is open.</figcaption></figure><figure><img src="https://images.pexels.com/photos/7464687/pexels-photo-7464687.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="Two movers carrying boxes through a bright new home" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Movers — answered from your own facts</b>Prices, hours and rules you approved. Nothing invented.</figcaption></figure><figure><img src="https://images.pexels.com/photos/13736440/pexels-photo-13736440.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720&amp;h=480&amp;fit=crop" alt="An owner in an apron reading the morning’s records on a tablet" loading="lazy" decoding="async" width="720" height="480"><figcaption><b>Next morning — what is waiting</b>A booking, a quote, a record with an owner and a deadline.</figcaption></figure></div><!--/illus:scene-->
-    <div class="panelset exset reveal" style="margin-top:38px;">
-          <div class="pstabs" role="tablist" aria-label="Six worked examples">
-        <button type="button" role="tab" aria-controls="ex-1" aria-selected="false">Survey booked</button>
-        <button type="button" role="tab" aria-controls="ex-2" aria-selected="false">Priced by your rules</button>
-        <button type="button" role="tab" aria-controls="ex-3" aria-selected="false">Office decides</button>
-        <button type="button" role="tab" aria-controls="ex-4" aria-selected="false">Office decides · WhatsApp</button>
-        <button type="button" role="tab" aria-controls="ex-5" aria-selected="false">Quoted, not discounted</button>
-        <button type="button" role="tab" aria-controls="ex-6" aria-selected="false">Refused outright</button>
-      </div>
-          <div class="pspanel" id="ex-1" role="tabpanel" aria-label="Survey booked">
-            <div class="excard">
-        <div class="exhead"><span class="when">Tue 18:41</span><span class="via">Phone</span><span class="tag human">Survey booked</span></div>
-        <div class="exbody">
-          <p class="exq">We complete on&nbsp;the&nbsp;26th. Three-bed terrace, second floor, no&nbsp;lift, and there's&nbsp;an&nbsp;upright piano. Just give me a&nbsp;rough number.</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I'm not going to, and I'd&nbsp;rather say why than
-            waste your&nbsp;evening. A&nbsp;second-floor carry with&nbsp;no&nbsp;lift and a&nbsp;piano changes the&nbsp;crew and the&nbsp;hours, and any
-            number I gave you now would be withdrawn on&nbsp;Thursday. What I can do is book the&nbsp;survey that&nbsp;produces the&nbsp;real one.</div>
-          <div class="exturn"><span class="who">Caller</span>How long does that&nbsp;take?</div>
-          <div class="exturn"><span class="who">Saleringo</span>Twenty minutes on&nbsp;video, no&nbsp;charge, and you walk
-            the&nbsp;rooms with&nbsp;your&nbsp;phone. Thursday 7:30 PM or Saturday 10:00 — Dan covers SE15. I have both postcodes,
-            the&nbsp;floor and the&nbsp;26th on&nbsp;the&nbsp;card already.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Survey card created — both postcodes, floor, lift, parking zone and the&nbsp;completion date</span><span class="amt">Thu 19:30</span></div>
-            <div class="exrow"><i>✓</i><span>Piano and American fridge written down by&nbsp;name, for&nbsp;the&nbsp;surveyor to&nbsp;price</span></div>
-            <div class="exrow"><i>✓</i><span>Answered at&nbsp;6:41 PM, while three other firms were on&nbsp;voicemail</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;rough number. No&nbsp;"from". No&nbsp;figure the&nbsp;survey would have to&nbsp;take back.</span></div>
-          </div>
-          <p class="exlabel">The&nbsp;refusal is the&nbsp;conversion event. A&nbsp;caller who is told plainly why the&nbsp;number is not available yet books the&nbsp;survey; a&nbsp;caller given a&nbsp;guess shops it against three firms who guessed lower.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-2" role="tabpanel" aria-label="Priced by your rules">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sat 08:10</span><span class="via">Web chat</span><span class="tag solved">Priced by&nbsp;your&nbsp;rules</span></div>
-        <div class="exbody">
-          <p class="exq">It's&nbsp;one two-seater sofa, ground floor to&nbsp;ground floor, about&nbsp;nine miles. Do I really need a&nbsp;survey for&nbsp;that?</p>
-          <div class="exturn"><span class="who">Saleringo</span>No. Your&nbsp;firm prices single items on&nbsp;the&nbsp;call, so:
-            a&nbsp;two-man part-load inside the&nbsp;local zone is <b>£180</b> for&nbsp;the&nbsp;first two hours, and <b>£45</b> per half hour after
-            that. Ground to&nbsp;ground with&nbsp;nine miles between them normally sits inside the&nbsp;two hours.</div>
-          <div class="exturn"><span class="who">Visitor</span>There's&nbsp;a&nbsp;gate to&nbsp;get through&nbsp;at&nbsp;the&nbsp;other end and it's&nbsp;a&nbsp;permit street.</div>
-          <div class="exturn"><span class="who">Saleringo</span>Then the&nbsp;price holds, but the&nbsp;bay suspension does not
-            come from&nbsp;me — we apply for&nbsp;it and the&nbsp;council charges what it charges, which goes on&nbsp;your&nbsp;invoice at&nbsp;cost.
-            I've noted the&nbsp;gate width question for&nbsp;the&nbsp;crew. Thursday morning or Saturday afternoon?</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Priced on&nbsp;the&nbsp;call because your&nbsp;own rules allow it at&nbsp;this&nbsp;size</span><span class="amt">£180</span></div>
-            <div class="exrow"><i>✓</i><span>Answered at&nbsp;8:10 on&nbsp;a&nbsp;Saturday, in&nbsp;chat, with&nbsp;no&nbsp;form to&nbsp;fill in</span></div>
-            <div class="exrow"><i>✓</i><span>Access questions asked <b>inside</b> the&nbsp;quote, not discovered on&nbsp;the&nbsp;day</span></div>
-            <div class="exrow"><i>✕</i><span>The&nbsp;council's&nbsp;permit fee is passed through, never estimated as if it were yours</span></div>
-          </div>
-          <p class="exlabel">Same product, opposite behaviour — because the&nbsp;rule is yours, not&nbsp;ours. You decide the&nbsp;size and shape of&nbsp;job that&nbsp;can be priced without&nbsp;a&nbsp;survey, and the&nbsp;AI holds that&nbsp;line in&nbsp;both directions.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-3" role="tabpanel" aria-label="Office decides">
-            <div class="excard">
-        <div class="exhead"><span class="when">Fri 13:52</span><span class="via">Phone</span><span class="tag human">Office decides</span></div>
-        <div class="exbody">
-          <p class="exq">We're loaded and sitting outside the&nbsp;new place. The&nbsp;chain has slipped, the&nbsp;keys aren't released yet. Can your&nbsp;crew just wait?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>Waiting time on&nbsp;your&nbsp;job is <b>£45</b> per half hour
-            after the&nbsp;first free hour — that&nbsp;is on&nbsp;the&nbsp;quote you signed, so at&nbsp;least the&nbsp;number is not a&nbsp;surprise.
-            Whether the&nbsp;crew can stay past four is not mine to&nbsp;promise: they are on&nbsp;another job this&nbsp;evening.</div>
-          <div class="exturn"><span class="who">Caller</span>So what happens if it drags?</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>I've put your&nbsp;move manager on&nbsp;it now with&nbsp;the&nbsp;job,
-            the&nbsp;diary and this&nbsp;call attached, and she will ring you inside ten minutes with&nbsp;a&nbsp;straight answer — including
-            what an&nbsp;overnight in&nbsp;the&nbsp;van would cost if it comes to&nbsp;that. I'm not going to&nbsp;tell you it'll&nbsp;be fine.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Waiting-time rate quoted from&nbsp;the&nbsp;signed quote, out loud, immediately</span><span class="amt">£45 / half hr</span></div>
-            <div class="exrow"><i>✓</i><span>Escalated to&nbsp;the&nbsp;move manager with&nbsp;the&nbsp;job and the&nbsp;diary attached</span></div>
-            <div class="exrow"><i>✓</i><span>Call flagged as completion-day; the&nbsp;board shows it above everything else</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;promise the&nbsp;crew can stay. No&nbsp;guess at&nbsp;when a&nbsp;solicitor will release keys.</span></div>
-          </div>
-          <p class="exlabel">Completion day is the&nbsp;one where a&nbsp;reassuring answer does the&nbsp;most damage. The&nbsp;rate is a&nbsp;fact and it says the&nbsp;fact; the&nbsp;crew's&nbsp;evening is a&nbsp;judgment and it hands that&nbsp;over.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-4" role="tabpanel" aria-label="Office decides · WhatsApp">
-            <div class="excard">
-        <div class="exhead"><span class="when">Thu 19:12</span><span class="via">WhatsApp</span><span class="tag human">Office decides</span></div>
-        <div class="exbody">
-          <p class="exq">There's&nbsp;a&nbsp;painting in&nbsp;the&nbsp;hallway worth about&nbsp;four thousand. Am I covered if something happens to&nbsp;it?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I can tell you which cover levels your&nbsp;firm offers,
-            because those&nbsp;are written down for&nbsp;me. What I am not going to&nbsp;do is tell you a&nbsp;single item at&nbsp;that&nbsp;value is
-            covered, because the&nbsp;limit per&nbsp;item and the&nbsp;declaration rules are a&nbsp;decision your&nbsp;office makes, not&nbsp;me.</div>
-          <div class="exturn"><span class="who">Customer</span>Who do I speak to, then?</div>
-          <div class="exturn"><span class="who">Saleringo</span>It's&nbsp;with&nbsp;the&nbsp;office as a&nbsp;high-value declaration and it
-            is the&nbsp;first thing on&nbsp;the&nbsp;desk in&nbsp;the&nbsp;morning. I've also added the&nbsp;painting to&nbsp;the&nbsp;survey card so the&nbsp;surveyor
-            sees it on&nbsp;Thursday rather than the&nbsp;crew seeing it on&nbsp;the&nbsp;day.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Cover levels read back exactly as your&nbsp;firm wrote them — nothing added</span></div>
-            <div class="exrow"><i>✓</i><span>High-value item flagged on&nbsp;the&nbsp;survey card before anyone quotes</span></div>
-            <div class="exrow"><i>✓</i><span>Declaration routed to&nbsp;a&nbsp;person with&nbsp;the&nbsp;message attached</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;limit quoted that&nbsp;it was not given. No&nbsp;reassurance about&nbsp;a&nbsp;claim.</span></div>
-          </div>
-          <p class="exlabel">Liability is the&nbsp;one subject where a&nbsp;helpful sentence becomes a&nbsp;dispute nine weeks later. The&nbsp;AI produces the&nbsp;record and hands over&nbsp;the&nbsp;decision.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-5" role="tabpanel" aria-label="Quoted, not discounted">
-            <div class="excard">
-        <div class="exhead"><span class="when">Wed 12:40</span><span class="via">Phone</span><span class="tag solved">Quoted, not discounted</span></div>
-        <div class="exbody">
-          <p class="exq">Another&nbsp;firm has come in&nbsp;three hundred cheaper for&nbsp;the&nbsp;same day. Can you match it?</p>
-          <div class="exturn"><span class="who">Saleringo</span>I can't discount — the&nbsp;quote came off the&nbsp;survey and
-            I have no&nbsp;authority to&nbsp;move it. What I can do is tell you what is inside our&nbsp;number, so you're comparing the&nbsp;same
-            job: four men rather than three because of&nbsp;the&nbsp;second-floor carry, blankets and materials included, the&nbsp;piano
-            carried by&nbsp;the&nbsp;two who do pianos, and waiting time capped at&nbsp;the&nbsp;rate on&nbsp;the&nbsp;quote.</div>
-          <div class="exturn"><span class="who">Caller</span>And if I want to&nbsp;think about&nbsp;it?</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Then I'll hold the&nbsp;26th until Friday — that&nbsp;is
-            as long as the&nbsp;diary allows — and check back. If you want somebody to&nbsp;look at&nbsp;the&nbsp;price itself, that's&nbsp;the&nbsp;owner's&nbsp;call
-            and I'll put you through. I'm not going to&nbsp;invent a&nbsp;discount to&nbsp;keep you on&nbsp;the&nbsp;phone.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Quote held under&nbsp;pressure; nothing improvised to&nbsp;win the&nbsp;call</span><span class="amt">£1,150</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;comparison made like-for-like, in&nbsp;crew and hours rather than adjectives</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;date held only as long as the&nbsp;diary actually allows</span></div>
-            <div class="exrow"><i>✕</i><span>It never negotiates. Anything off the&nbsp;price list goes to&nbsp;a&nbsp;person.</span></div>
-          </div>
-          <p class="exlabel">An&nbsp;answering system that&nbsp;discounts costs a&nbsp;removals firm more than one that&nbsp;misses calls. Negotiating a&nbsp;price is a&nbsp;permanent handoff here, never a&nbsp;confidence threshold.</p>
-        </div>
-      </div>
-          </div>
-          <div class="pspanel" id="ex-6" role="tabpanel" aria-label="Refused outright">
-            <div class="excard">
-        <div class="exhead"><span class="when">Sun 21:47</span><span class="via">Phone</span><span class="tag human">Refused outright</span></div>
-        <div class="exbody">
-          <p class="exq">There's&nbsp;a&nbsp;gun safe bolted into&nbsp;the&nbsp;garage floor, two patio gas bottles and a&nbsp;mower with&nbsp;petrol in&nbsp;it. That's&nbsp;all fine, isn't it?</p>
-          <div class="exturn hand"><span class="who">Saleringo</span>I'm not the&nbsp;one who can say yes to&nbsp;any of&nbsp;those,
-            and I'd&nbsp;rather be blunt now than have the&nbsp;crew find out on&nbsp;the&nbsp;day. Full gas bottles and fuel in&nbsp;a&nbsp;tank are
-            on&nbsp;the&nbsp;prohibited list — the&nbsp;mower travels drained. The&nbsp;safe depends on&nbsp;its&nbsp;weight and how it comes off the&nbsp;floor,
-            and that&nbsp;is a&nbsp;survey question, not a&nbsp;phone one.</div>
-          <div class="exturn"><span class="who">Caller</span>So can you do the&nbsp;move or not?</div>
-          <div class="exturn hand"><span class="who">Saleringo</span>Very probably, but I'm not going to&nbsp;say yes on&nbsp;behalf
-            of&nbsp;the&nbsp;people who have to&nbsp;lift it. All three items are on&nbsp;the&nbsp;card, the&nbsp;survey is booked for&nbsp;Thursday, and
-            the&nbsp;surveyor will give you a&nbsp;straight answer on&nbsp;the&nbsp;safe with&nbsp;his&nbsp;eyes on&nbsp;it.</div>
-          <div class="exout">
-            <div class="hl5" role="heading" aria-level="3">What it left behind</div>
-            <div class="exrow"><i>✓</i><span>Prohibited items named plainly, from&nbsp;your&nbsp;own list, at&nbsp;9:47 on&nbsp;a&nbsp;Sunday</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;safe put to&nbsp;the&nbsp;surveyor with&nbsp;weight and fixing flagged</span></div>
-            <div class="exrow"><i>✓</i><span>The&nbsp;enquiry kept — a&nbsp;refusal and a&nbsp;booked survey in&nbsp;the&nbsp;same call</span></div>
-            <div class="exrow"><i>✕</i><span>No&nbsp;specialist item accepted on&nbsp;the&nbsp;phone. Ever.</span></div>
-          </div>
-          <p class="exlabel">The&nbsp;guardrail ships enabled, and there is no&nbsp;switch that&nbsp;turns it off when the&nbsp;diary looks empty. Ask any vendor to&nbsp;play you this exact moment on&nbsp;their&nbsp;demo, before you look at&nbsp;anything else.</p>
-        </div>
-      </div>
-          </div>
-        </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>Quoted, booked, or&nbsp;handed over</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;line, agreed with&nbsp;your&nbsp;firm <br>before the&nbsp;first call lands.</h3>
-      <p class="secintro">Every row here is signed off by&nbsp;your&nbsp;firm at&nbsp;onboarding. The&nbsp;third column is the&nbsp;one that&nbsp;matters: four of&nbsp;these are refusals, and a&nbsp;caller in&nbsp;a&nbsp;hurry does not move them.</p>
-    </div>
-    <div class="qbank reveal">
-      <div class="qrow hd"><span>Caller asks</span><span>What happens</span><span>Handled by</span></div>
-      <div class="qrow"><span class="qq">How much for&nbsp;a&nbsp;three-bed to&nbsp;Brighton?</span>
-        <span class="qa">Takes both postcodes, bedrooms, floor, lift, parking and the&nbsp;date — then books the&nbsp;survey rather than guessing a&nbsp;number.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Do you even cover my&nbsp;postcode?</span>
-        <span class="qa">Answers from&nbsp;your&nbsp;service-area list, and says no&nbsp;plainly rather than taking a&nbsp;job the&nbsp;van cannot reach.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you do Friday the&nbsp;26th?</span>
-        <span class="qa">Reads the&nbsp;diary and offers what is actually free that&nbsp;week — never a&nbsp;date that&nbsp;is not in&nbsp;it.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Do you do the&nbsp;packing as well?</span>
-        <span class="qa">Names the&nbsp;packing options you offer and what each&nbsp;one is called on&nbsp;your&nbsp;price list.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you store it for&nbsp;three weeks between completions?</span>
-        <span class="qa">Says whether containers are free on&nbsp;those&nbsp;dates and quotes the&nbsp;weekly storage rate from&nbsp;your&nbsp;list.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Do I need a&nbsp;parking permit?</span>
-        <span class="qa">Says whether that&nbsp;address sits in&nbsp;a&nbsp;controlled zone on&nbsp;your&nbsp;list, and who applies for&nbsp;the&nbsp;bay suspension.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">What time would the&nbsp;crew get to&nbsp;us?</span>
-        <span class="qa">Gives the&nbsp;loading window from&nbsp;the&nbsp;diary — the&nbsp;hour your&nbsp;crew leaves, not the&nbsp;hour someone else releases keys.</span><span class="qs auto">AI</span></div>
-      <div class="qrow"><span class="qq">Can you beat the&nbsp;quote I've been given?</span>
-        <span class="qa">States what is inside your&nbsp;price, declines to&nbsp;discount, and routes the&nbsp;request to&nbsp;the&nbsp;owner.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">The&nbsp;chain has slipped — can the&nbsp;crew wait?</span>
-        <span class="qa">Quotes your&nbsp;waiting-time rate out loud; whether the&nbsp;crew stays goes to&nbsp;your&nbsp;move manager.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">Am I covered for&nbsp;the&nbsp;painting in&nbsp;the&nbsp;hallway?</span>
-        <span class="qa">Reads back only the&nbsp;cover levels your&nbsp;firm has given it; the&nbsp;limit and the&nbsp;claim decision go to&nbsp;your&nbsp;office.</span><span class="qs pers">Person</span></div>
-      <div class="qrow"><span class="qq">Just give me a&nbsp;rough price now.</span>
-        <span class="qa">Refused where your&nbsp;rules require a&nbsp;survey. It books the&nbsp;survey instead, and says why in&nbsp;one sentence.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Can you promise the&nbsp;keys will be there by&nbsp;two?</span>
-        <span class="qa">Refused. It never guarantees a&nbsp;completion-day hour that&nbsp;depends on&nbsp;somebody else's&nbsp;chain.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Can you take these two gas bottles?</span>
-        <span class="qa">Refused. Prohibited and specialist items are named from&nbsp;your&nbsp;list and never accepted on&nbsp;the&nbsp;phone.</span><span class="qs never">Never</span></div>
-      <div class="qrow"><span class="qq">Is Tuesday's&nbsp;crew free on&nbsp;Friday? Pencil them&nbsp;in.</span>
-        <span class="qa">Refused as a&nbsp;promise. It never books a&nbsp;crew or a&nbsp;date that&nbsp;is not already in&nbsp;the&nbsp;diary.</span><span class="qs never">Never</span></div>
-    </div>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>The&nbsp;week it handles</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">An&nbsp;ordinary&nbsp;week <br>at a&nbsp;four-van&nbsp;firm.</h3>
-      <p class="secintro">Not a&nbsp;record week. A&nbsp;dull one in&nbsp;early autumn — with&nbsp;the&nbsp;out-of-hours share marked, because that is
-        the&nbsp;part currently going to&nbsp;voicemail.</p>
-    </div>
-    <div class="weekstrip reveal">
-      <div class="weekday"><span class="d">Mon</span><div class="n">21<small> enq</small></div>
-        <ul><li><i>·</i>4 surveys booked</li><li><i>·</i>6 out of&nbsp;hours</li></ul></div>
-      <div class="weekday"><span class="d">Tue</span><div class="n">18<small> enq</small></div>
-        <ul><li><i>·</i>3 surveys booked</li><li><i>·</i>7 out of&nbsp;hours</li></ul></div>
-      <div class="weekday"><span class="d">Wed</span><div class="n">17<small> enq</small></div>
-        <ul><li><i>·</i>3 surveys booked</li><li><i>·</i>6 out of&nbsp;hours</li></ul></div>
-      <div class="weekday"><span class="d">Thu</span><div class="n">19<small> enq</small></div>
-        <ul><li><i>·</i>4 surveys booked</li><li><i>·</i>7 out of&nbsp;hours</li><li><i>·</i>1 completion-day call</li></ul></div>
-      <div class="weekday peak"><span class="d">Fri</span><div class="n">24<small> enq</small></div>
-        <ul><li><i>·</i>5 surveys booked</li><li><i>·</i>9 out of&nbsp;hours</li><li><i>·</i>4 completion-day calls</li></ul></div>
-      <div class="weekday peak"><span class="d">Sat</span><div class="n">13<small> enq</small></div>
-        <ul><li><i>·</i>3 surveys booked</li><li><i>·</i><b>office closed</b></li><li><i>·</i>1 completion-day call</li></ul></div>
-      <div class="weekday"><span class="d">Sun</span><div class="n">6<small> enq</small></div>
-        <ul><li><i>·</i>2 surveys booked</li><li><i>·</i><b>office closed</b></li></ul></div>
-    </div>
-    <p class="exlabel" style="margin-top:12px;">Illustrative volumes for&nbsp;a&nbsp;four-van firm — the&nbsp;same
-      week the&nbsp;Monday board further down this&nbsp;page reports: <b>118 enquiries, 24 surveys booked, 15&nbsp;of&nbsp;them taken outside office
-      hours, 6 completion-day calls routed</b>. <b>54 of&nbsp;the&nbsp;118 arrive when the&nbsp;office is shut</b>, and Friday alone carries two-thirds of&nbsp;the&nbsp;completion-day traffic.</p>
-    <p class="exlabel" style="margin-top:12px;">This is not a&nbsp;forecast: the&nbsp;only week that&nbsp;counts is in&nbsp;your&nbsp;own call log, and the&nbsp;<a href="../pricing.html#calculator" style="color:var(--teal);font-weight:700;">calculator on&nbsp;the&nbsp;pricing page</a>
-      takes it.</p>
-
-    <div class="reveal" style="max-width:660px;margin-top:56px;">
-      <span class="eyebrow"><i></i>What one recovered enquiry is worth</span>
-      <h3 class="h2 onDark" style="margin-top:18px;font-size:var(--fs-h2s);">The&nbsp;arithmetic <br>on&nbsp;one move you didn't&nbsp;lose.</h3>
-      <p class="secintro">The&nbsp;whole sum is set out below, built only from&nbsp;numbers this&nbsp;page and the&nbsp;pricing page have already published. Nothing is rounded in&nbsp;our&nbsp;favour.</p>
-    </div>
-    <div class="mathbox reveal" style="max-width:660px;margin-top:26px;">
-      <div class="mathrow"><span class="lbl"><b>One recovered three-bedroom move</b><span class="sub">the&nbsp;quote published in&nbsp;the&nbsp;worked examples above, after survey</span></span><span class="val">£1,150</span></div>
-      <div class="mathrow"><span class="lbl"><b>Saleringo Scale</b><span class="sub">the&nbsp;plan that&nbsp;includes AI Phone — chat-only starts lower</span></span><span class="val">−$599</span></div>
-      <div class="mathrow"><span class="lbl"><b>Voice minutes</b><span class="sub">the&nbsp;published worked example: 300 calls × 4 min × $0.14</span></span><span class="val">−$168</span></div>
-      <div class="mathrow"><span class="lbl"><b>A&nbsp;full month, everything in</b><span class="sub">the&nbsp;published sample invoice total</span></span><span class="val">$767</span></div>
-      <div class="mathrow total"><span class="lbl"><b>What one recovered move covers</b></span><span class="val">the&nbsp;month, and then some</span></div>
-      <p class="mathnote">Two currencies, and we will not print an&nbsp;exchange rate that&nbsp;will be wrong by&nbsp;Tuesday.
-        At&nbsp;any rate in&nbsp;living memory, <b>£1,150 is comfortably more than $767</b> — one recovered three-bedroom move covers
-        the&nbsp;month with&nbsp;room left.</p>
-      <p class="mathnote">Plan and per-minute rates are published on&nbsp;the&nbsp;<a href="../pricing.html" style="color:var(--teal);font-weight:700;">pricing page</a>; the&nbsp;£1,150 belongs to&nbsp;the&nbsp;fictional
-        firm in&nbsp;the&nbsp;examples above. Nothing here estimates how many enquiries you would recover; it prices one against the&nbsp;monthly cost.</p>
-    </div>
-  </div>
-</section>
-
-<section class="faqsec bg-paper t-md">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow light"><i></i>FAQ</span>
-      <h2 class="h2" style="margin-top:22px">Removals firms ask&nbsp;us</h2>
-    </div>
-    <div class="faq reveal">
-      <details>
-        <summary>Will it give a&nbsp;caller a&nbsp;price over&nbsp;the&nbsp;phone?</summary>
-        <p>Only where your&nbsp;own rules allow one. A&nbsp;single item or a&nbsp;small part-load can be priced from&nbsp;your&nbsp;list. A&nbsp;house move with&nbsp;a&nbsp;floor, a&nbsp;lift, a&nbsp;permit street and a&nbsp;piano in&nbsp;it does not get a&nbsp;number from&nbsp;the&nbsp;AI — it gets a&nbsp;pre-move survey in&nbsp;the&nbsp;diary, which is the&nbsp;thing the&nbsp;call was actually for.</p>
-      </details>
-      <details>
-        <summary>Do you integrate with&nbsp;Moveware, MoveMan or Voxme?</summary>
-        <p>Not directly, and we are not going to&nbsp;pretend otherwise. Today the&nbsp;survey card and the&nbsp;enquiry land in Saleringo's&nbsp;own inbox and CRM, and push out through&nbsp;Zapier or CSV export. Direct removals-software links are on&nbsp;the&nbsp;roadmap and founding-cohort members vote on&nbsp;the&nbsp;order.</p>
-      </details>
-      <details>
-        <summary>The&nbsp;chain slips and the&nbsp;keys are late. What does it say?</summary>
-        <p>It reads the&nbsp;waiting-time rate off your&nbsp;rate card and says the&nbsp;number out loud. It does not promise the&nbsp;crew can stay, because the&nbsp;crew has another job at&nbsp;four — that&nbsp;decision goes to&nbsp;your&nbsp;move manager, with&nbsp;the&nbsp;job and the&nbsp;diary attached.</p>
-      </details>
-      <details>
-        <summary>Can it handle a&nbsp;piano, a&nbsp;safe or a&nbsp;full home gym?</summary>
-        <p>It writes them down by&nbsp;name and puts them in&nbsp;front of&nbsp;a&nbsp;person. It never accepts a&nbsp;specialist or prohibited item on&nbsp;the&nbsp;phone, and it never tells a&nbsp;caller their&nbsp;gas bottles or paint tins will go on&nbsp;the&nbsp;van.</p>
-      </details>
-      <details>
-        <summary>Can I start with&nbsp;evenings and weekends only?</summary>
-        <p>That is how most firms begin. Forward the&nbsp;line after 5 PM and at&nbsp;weekends, read the&nbsp;transcripts for&nbsp;a&nbsp;week, then widen the&nbsp;window once the&nbsp;answers sound like your&nbsp;firm. Reversing it is one forwarding change on your side; there is no ticket to raise.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="sec-dark t-sm" id="monday" style="background:linear-gradient(180deg,#F6F4EE,#F6F4EE);">
-  <div class="wrap">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:22px;">
-      <h2 class="h2 onDark" style="max-width:28ch;">The&nbsp;screen your&nbsp;move manager opens&nbsp;on&nbsp;Monday.</h2>
-      <a class="linkcta" href="../platform.html">Every&nbsp;report, in&nbsp;detail&nbsp;&nbsp;→</a>
-    </div>
-    <div class="kpitiles reveal">
-      <div class="kpitile"><div class="lb">Enquiries answered</div><div class="vl">118</div><div class="dl flat">phone · chat · messenger</div></div>
-      <div class="kpitile hi"><div class="lb">Handled by&nbsp;AI alone</div><div class="vl">71%</div><div class="dl">29% passed to&nbsp;a&nbsp;person</div></div>
-      <div class="kpitile"><div class="lb">Surveys booked</div><div class="vl">24</div><div class="dl flat">15 taken outside office hours</div></div>
-      <div class="kpitile"><div class="lb">Completion-day calls</div><div class="vl">6</div><div class="dl flat">rate quoted, decision routed</div></div>
-      <div class="kpitile"><div class="lb">Quotes out</div><div class="vl">19</div><div class="dl flat">all of&nbsp;them after a&nbsp;survey</div></div>
-      <div class="kpitile"><div class="lb">Pipeline value</div><div class="vl">£61.4k</div><div class="dl flat">open quotes + booked moves</div></div>
-    </div>
-    <p class="mockcap" style="text-align:left;">Product illustration with&nbsp;sample data. Your&nbsp;figures are your&nbsp;own — exportable to&nbsp;PDF or Excel.</p>
-  </div>
-</section>
-
-<section class="concsec t-sm sec-dark">
-  <div class="wrap">
-    <div class="concwrap reveal">
-      <div class="concl">
-        <span class="cnl">You have seen the&nbsp;6:41 PM half</span>
-        <p class="cnp">The&nbsp;call answered, both postcodes taken, the&nbsp;survey in&nbsp;the&nbsp;diary before the&nbsp;caller hangs up. What happens to&nbsp;that&nbsp;enquiry afterwards &mdash; the&nbsp;pipeline, the&nbsp;quote, the&nbsp;Monday report &mdash; is the&nbsp;other half of&nbsp;the&nbsp;product.</p>
-      </div>
-      <a class="btn btn-teal concbtn" href="../platform.html">See the&nbsp;CRM behind the&nbsp;call<span class="cir">&#8599;</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="closer bg-spot">
-  <div class="stars" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="reveal">Tonight four firms get the&nbsp;same&nbsp;call. <br>Be the&nbsp;one that&nbsp;<em>picks up.</em></h2>
-    <p class="lead onDark reveal">Join the&nbsp;founding cohort: half price for&nbsp;three months, priority onboarding, and a&nbsp;vote on&nbsp;the&nbsp;next integration.</p>
-    <div class="ctas reveal">
-      <a class="btn btn-teal" href="#early-access">Get the&nbsp;plan for&nbsp;my&nbsp;trade<span class="cir">↗</span></a>
-      <a class="btn btn-ghostd" href="../demo.html">Read a&nbsp;full call, start to&nbsp;finish<span class="cir">↗</span></a>
-    </div>
-
-    <div class="leadbox reveal" style="margin-top:52px;" id="early-access">
-      <div class="lh">Get your&nbsp;firm's&nbsp;setup plan</div>
-      <p class="lsub">Tell us your&nbsp;service area, your&nbsp;survey rules and where enquiries land at&nbsp;seven in&nbsp;the&nbsp;evening. We reply with&nbsp;the&nbsp;pipeline
-        stages, the&nbsp;survey-card fields and the&nbsp;refusal wording we would set up for&nbsp;you — written by&nbsp;a&nbsp;person.</p>
-      <form class="eaform" data-earlyaccess method="post">
-        <input class="full" type="email" name="email" placeholder="Work email" required aria-label="Work email">
-        <input type="text" name="business" placeholder="Company name" aria-label="Company name">
-        <input type="text" name="country" placeholder="Country" aria-label="Country">
-        <input type="hidden" name="industry" required value="Movers &amp; removals">
-        <input type="hidden" name="context" value="Movers and removals industry page">
-        <select name="trade" aria-label="Your trade">
-          <option value="">Your&nbsp;trade…</option>
-          <option>Domestic removals</option><option>Office &amp; commercial</option><option>Removals and storage</option><option>More than one</option>
-        </select>
-        <select name="locations" aria-label="How many depots">
-          <option value="">How many depots?</option>
-          <option>One</option><option>Two or three</option><option>Four or more</option>
-        </select>
-        <button class="btn btn-teal" type="submit">Get the&nbsp;removals setup plan →</button>
-        <div class="badgerow full"><span>14-day refund</span><span>Cancel anytime</span><span>No&nbsp;lock-in</span></div>
-        <p class="eanote full">A&nbsp;human replies within&nbsp;one business day. No&nbsp;newsletter, no&nbsp;spam.</p>
-        <p class="eanote full" data-ea-done hidden style="color:var(--teal);">Your&nbsp;message is ready below — pick whichever way you prefer to&nbsp;send it.</p>
-      </form>
-    </div>
-  </div>
-
-  <!--#footer-->
+<!--#footer-->
 <footer class="bigfooter"><div class="wrap">
     <div class="cols">
       <div class="brand">
-        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v83.0</span>
+        <span class="logo"><img class="lmark" src="../../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v84.0</span>
         <p>AI phone, chat &amp; messenger answering &mdash; with&nbsp;the&nbsp;industry CRM that&nbsp;turns every&nbsp;conversation into&nbsp;a&nbsp;booking, a&nbsp;quote and a&nbsp;customer.</p>
         <p class="fmail">hello@saleringo.com</p>
         <a class="lnk fmap" href="../sitemap.html">Every page on this site &mdash; site map &amp; guided tours <span aria-hidden="true">&rarr;</span></a>
@@ -1171,26 +338,18 @@
     </div>
   </div></footer>
 <!--/#footer-->
-</section>
-
 </main>
 
-<!-- sticky conversion bar — IntersectionObserver in site.js, gated on #cta-gate -->
-<div class="stickycta">
-  <div class="wrap">
-    <span class="msg">The&nbsp;next quote request is in&nbsp;somebody's&nbsp;evening. <b>Survey booked, both postcodes, one Monday number.</b></span>
-    <a class="btn btn-teal" href="#early-access">Get my&nbsp;plan<span class="cir">↗</span></a>
-  </div>
-</div>
+<div class="stickycta"><div class="wrap"><span class="msg">Hear it answer from your Movers price list
+  <b>before you decide.</b></span><a class="btn btn-teal" href="../get-started.html">Get my plan<span class="cir">&#8599;</span></a></div></div>
 
-<script src="../../assets/js/site.js?v=83.0"></script>
-<script src="../../assets/js/demofull.js?v=83.0" defer></script>
-<script src="../../assets/js/balance.js?v=83.0" defer></script>
-<script src="../../assets/js/panels.js?v=83.0" defer></script>
-<script src="../../assets/js/wrap.js?v=83.0" defer></script>
-<script src="../../assets/js/rail.js?v=83.0" defer></script>
-<script src="../../assets/js/canvas.js?v=83.0" defer></script>
-<script src="../../assets/js/scenes.js?v=83.0" defer></script>
-<script src="../../assets/js/guide.js?v=83.0"></script>
+
+<script src="../../assets/js/site.js?v=84.0"></script>
+<script src="../../assets/js/balance.js?v=84.0" defer></script>
+<script src="../../assets/js/panels.js?v=84.0" defer></script>
+<script src="../../assets/js/wrap.js?v=84.0" defer></script>
+<script src="../../assets/js/rail.js?v=84.0" defer></script>
+<script src="../../assets/js/guide.js?v=84.0"></script>
+<script src="../../assets/js/demofull.js?v=84.0" defer></script>
 </body>
 </html>

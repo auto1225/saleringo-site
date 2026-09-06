@@ -88,17 +88,17 @@ TRADES4 = [
 },
 {
  'slug': 'nail-spa', 'owner': '원장님', 'name': '네일·스파', 'photo': ph('PENDING'),
- 'when': {'eyebrow': '젤 굳히는 동안의 통화', 'h2': '두 손이 손님 손 위에 있는 동안<br>이렇게 흘러갑니다.', 'tt': '토요일 오후', 'badge': '손을 놓을 수 없는 시간'},
+ 'when': {'eyebrow': '젤 굳히는 동안의 통화', 'h2': '두 손이 손님 손 위에 있는 동안<br>이렇게 흘러갑니다.', 'tt': '금요일 오후', 'badge': '손을 놓을 수 없는 시간'},
  'kicker': '네일 &middot; 페디 &middot; 스파',
  'h1': '두 손이 손님 손 위에 있을 때<br>전화가 웁니다.',
  'sub': '젤을 올리는 중에는 전화기를 잡을 수 없습니다. '
-        '토요일 오후에 오는 예약 문의는 그래서 대부분 부재중이 됩니다.',
+        '금요일 오후에 오는 예약 문의는 그래서 대부분 부재중이 됩니다.',
  'cost': '네일 손님은 3주마다 돌아오는 손님입니다. 첫 예약 한 통을 놓치면 그 3주짜리 주기가 통째로 옆 샵에 갑니다. '
-         '문의는 &ldquo;오늘 저녁 되나요, 타샵 제거도 되나요&rdquo; 두 문장이면 끝나는데, '
+         '문의는 &ldquo;내일 저녁 되나요, 타샵 제거도 되나요&rdquo; 두 문장이면 끝나는데, '
          '그 두 문장에 답할 사람이 램프 앞에서 손님 손을 잡고 있습니다.',
- 'call': [('손님', '1:05 PM', '오늘 저녁에 젤 제거하고 새로 하고 싶은데요. 다른 샵에서 한 거예요. 얼마 나와요?'),
+ 'call': [('손님', '1:05 PM', '내일 저녁에 젤 제거하고 새로 하고 싶은데요. 다른 샵에서 한 거예요. 얼마 나와요?'),
           ('Saleringo', '+21초', '젤 네일은 <b>5만 5천원</b>이고, 타샵 제거는 <b>1만 5천원</b>이 추가됩니다. '
-                                 '제거까지 하면 <b>1시간 반</b> 정도 잡으시면 되고, 오늘은 <b>저녁 6시 30분</b>이 비어 있습니다.'),
+                                 '제거까지 하면 <b>1시간 반</b> 정도 잡으시면 되고, 내일은 <b>저녁 6시 30분</b>이 비어 있습니다.'),
           ('손님', '1:06 PM', '6시 반으로 해 주세요. 페디도 같이 될까요?'),
           ('Saleringo', '+10초', '페디큐어는 <b>6만원</b>이고 함께 하시면 2시간 반으로 잡겠습니다. '
                                  '6시 30분에 두 자리로 예약했습니다. 성함과 연락처 남겨 주시면 확인 문자 보내 드릴게요.')],
@@ -120,13 +120,13 @@ TRADES4 = [
   'kicker': 'Nail salons &middot; pedicure &middot; day spa',
   'h1': 'The phone rings<br>while both hands are on a client.',
   'sub': 'Mid-gel, nobody can pick up a phone. '
-         'Saturday-afternoon booking calls go to voicemail for exactly that reason.',
+         'Friday-afternoon booking calls go to voicemail for exactly that reason.',
   'cost': 'A nail client comes back every three weeks. Miss her first call and that whole three-week cycle walks to '
-          'the salon next door. The inquiry is two sentences — &ldquo;anything tonight, and can you remove another '
+          'the salon next door. The inquiry is two sentences — &ldquo;anything tomorrow evening, and can you remove another '
           'salon’s gel?&rdquo; — and the only person who can answer is under the lamp holding someone’s hand.',
-  'call': [('Customer', '1:05 PM', 'Can I get a gel removal and a new set this evening? Another place did it. What would that run?'),
+  'call': [('Customer', '1:05 PM', 'Can I get a gel removal and a new set tomorrow evening? Another place did it. What would that run?'),
            ('Saleringo', '+21 s', 'A gel manicure is <b>$55</b>, and removal of another salon’s gel adds <b>$12</b>. '
-                                  'With the soak-off, plan on about <b>an hour and a half</b>. Tonight I have <b>6:30 PM</b> open.'),
+                                  'With the soak-off, plan on about <b>an hour and a half</b>. Tomorrow I have <b>6:30 PM</b> open.'),
            ('Customer', '1:06 PM', 'Six thirty, please. Could I add a pedicure?'),
            ('Saleringo', '+10 s', 'A pedicure is <b>$65</b>, and together I’ll block two and a half hours. You’re booked '
                                   'at 6:30 for both. May I have your name and a mobile number for the confirmation text?')],
@@ -141,10 +141,10 @@ TRADES4 = [
   'fields': ['Service requested and time needed', 'Removal of another salon’s gel', 'Slot and technician',
              'Price quoted from your menu', 'First visit or returning', 'Confirmation text sent'],
   'stages': ['Inquiry', 'Booked', 'Day-before reminder', 'Visit', 'Three-week refill reminder'],
-  'when': {'eyebrow': 'The call while the gel cures', 'h2': 'While both hands are on a client,<br>this is how it goes.', 'tt': 'Saturday afternoon', 'badge': 'Cannot let go of the hand'},
+  'when': {'eyebrow': 'The call while the gel cures', 'h2': 'While both hands are on a client,<br>this is how it goes.', 'tt': 'Friday afternoon', 'badge': 'Cannot let go of the hand'},
   'lead': 'The call that comes while you are under the lamp. No nail condition assessed — soak-off time added, the slot booked.',
   'room': 'booked-by-appointment',
-  'room_d': 'The Saturday 1:05 PM call for a soak-off and a new set: the menu price quoted, the long slot held for tonight — and a sore or discoloured nail sent to a doctor, never assessed.',
+  'room_d': 'The Saturday 1:05 PM call for a soak-off and a new set: the menu price quoted, the long slot held for tomorrow evening — and a sore or discoloured nail sent to a doctor, never assessed.',
   'room_no': ('0', 'nail or skin conditions the AI is allowed to diagnose'),
  },
 },
@@ -413,7 +413,7 @@ TRADES4 = [
  'kicker': '조경 &middot; 정원 관리 &middot; 잔디 · 수목',
  'h1': '예초기를 멘 채로는<br>전화를 받을 수 없습니다.',
  'sub': '봄부터 가을까지 사장님은 남의 집 마당에 있습니다. '
-        '주말에 손님이 올 사람이 금요일 오전에 &ldquo;오늘 잔디 되나요&rdquo;라고 전화를 겁니다.',
+        '주말에 손님이 올 사람이 화요일 오전에 &ldquo;이번 주에 잔디 되나요&rdquo;라고 전화를 겁니다.',
  'cost': '조경 문의는 날씨와 계절에 묶여 있습니다. 4월과 5월에 놓친 전화는 그해 정기 관리 계약이고, '
          '정기 관리 한 집은 한 시즌에 여덟 번에서 열 번 방문입니다. 그런데 그 전화가 오는 시간은 정확히 예초기 엔진이 돌아가는 시간이고, '
          '점심에 부재중을 보고 걸어도 그 집은 이미 다른 팀과 날짜를 잡았습니다.',
@@ -442,7 +442,7 @@ TRADES4 = [
   'kicker': 'Landscaping &middot; lawn care &middot; tree work',
   'h1': 'You cannot answer a phone<br>on a mower.',
   'sub': 'From spring to fall the owner is in somebody else’s yard. '
-         'A homeowner with weekend guests calls on Friday morning asking &ldquo;can you mow today?&rdquo;',
+         'A homeowner with weekend guests calls on Tuesday morning asking &ldquo;can you mow this week?&rdquo;',
   'cost': 'Landscaping inquiries are tied to weather and season. A call missed in April or May is that year’s maintenance '
           'contract, and one contract is eight to ten visits a season. But the call comes precisely while the mower is '
           'running, and when you see the missed call at lunch, that house has already booked another crew.',

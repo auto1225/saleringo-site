@@ -60,10 +60,12 @@ def script_of(slug, lang):
 
 def block(lang, slug, home=False, pick=None, rel="../"):
     d = dict(S[lang]); d["svg"] = PHONE_SVG; d["slug"] = slug; d["rel"] = rel; d["lang"] = lang
+    d["prel"] = rel[3:] if rel.startswith("../") else rel   # 같은 언어 폴더 안의 페이지 링크 (assets 보다 한 단계 얕다)
     sc = script_of(slug, lang) or {}
     ch = sc.get("chapters") or (["밤 11:42, 전화", "다음 날 아침, 카카오톡", "오전 9:00, 사장님 화면"] if lang == "ko"
                                 else ["11:42 PM, the call", "Next morning, WhatsApp", "9:00 AM, the owner’s screen"])
     subs = sc.get("chapterSubs") or ["", "", ""]
+    d["mornT"] = (esc(ch[2]) + "에 놓여 있는 것") if lang == "ko" else (esc(ch[2]) + " — what is waiting")
     d.update(ch1=esc(ch[0]), ch2=esc(ch[1]), ch3=esc(ch[2]), s1=esc(subs[0]), s2=esc(subs[1]), s3=esc(subs[2]),
              biz=esc(sc.get("biz", "")), meta=esc(sc.get("meta", "")), cust=esc((sc.get("customer") or {}).get("name", "")),
              honest=esc(sc.get("honest", "")), hand="".join("<li>%s</li>" % esc(x) for x in sc.get("handoff", [])))
@@ -98,7 +100,7 @@ def block(lang, slug, home=False, pick=None, rel="../"):
       <div class="d60end" data-d60-end hidden>
         <p class="d60summary" data-d60-summary></p>
         <div class="d60endrow">
-          <a class="btn btn-teal" href="{rel}get-started.html">{ctaT}</a>
+          <a class="btn btn-teal" href="{prel}get-started.html">{ctaT}</a>
           <a class="btn btn-ghostd" data-tel-link href="tel:+827052770820">{cta2}</a>
           <span class="telnote">{cta2n}</span>
         </div>
