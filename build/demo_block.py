@@ -26,7 +26,7 @@ S = {
         videoN="가로형 · 세로형 두 가지가 있습니다. 소리를 켜 주세요.", close="닫기", vert="세로형", horiz="가로형",
         fieldsT="받아 적은 것 — 항목마다 출처가 붙습니다", recT="고객 카드 — 채널이 셋이어도 카드는 한 장", phone="전화",
         matched="같은 손님 — 전화번호로 이어 붙임, 대화 계속", handT="사람에게 넘어감 — 담당자가 받는 것",
-        mornT="사장님 아침 화면 — 9:00에 놓여 있는 것", pickL="내 업종으로 듣기", pickHint="55개 업종 · 같은 플레이어, 다른 통화",
+        mornT="사장님 아침 화면 — 9:00에 놓여 있는 것", pickL="내 업종으로 듣기", pickHint="{n}개 업종 · 같은 플레이어, 다른 통화",
         cta1="내 업종으로 같은 흐름 보기", cta2="지금 AI에게 전화해 보기", cta2n="AI가 먼저 받습니다", tour="6단계 안내 여정 →",
         caller="발신",
     ),
@@ -36,7 +36,7 @@ S = {
         videoN="Landscape and vertical cuts. Turn your sound on.", close="Close", vert="Vertical", horiz="Landscape",
         fieldsT="What it captured — with the source of every field", recT="The customer record — one, not three", phone="Phone",
         matched="Same customer — matched by phone number, thread continued", handT="Handed to a person — and what the person receives",
-        mornT="The owner’s morning screen — what is waiting at 9:00", pickL="Hear it for my trade", pickHint="55 trades · same player, a different call",
+        mornT="The owner’s morning screen — what is waiting at 9:00", pickL="Hear it for my trade", pickHint="{n} trades · same player, a different call",
         cta1="Pick my trade — the same flow in my business", cta2="Call the live AI — no form first", cta2n="Korean number — international rates apply", tour="Guided 6-step journey →",
         caller="From",
     ),
@@ -75,7 +75,7 @@ def block(lang, slug, home=False, pick=None, rel="../"):
     if home and pick:
         opts = "".join('<option value="%s"%s>%s</option>' % (esc(s), ' selected' if s == slug else '', esc(n)) for s, n in pick)
         pick_html = ('<label class="d60pick"><span>%s</span><select data-d60-pick aria-label="%s">%s</select>'
-                     '<small>%s</small></label>' % (d["pickL"], d["pickL"], opts, d["pickHint"]))
+                     '<small>%s</small></label>' % (d["pickL"], d["pickL"], opts, d["pickHint"].replace("{n}", str(len(pick)))))
     d["pick"] = pick_html
     d["videoBtn"] = ('<button class="btn btn-ghostd" type="button" data-d60-video hidden>&#9655; %s</button>' % d["video"]) if home else ""
     d["videoDlg"] = ("""
@@ -165,7 +165,7 @@ def trade_names():
         from trades import TRADES
         from trades2 import TRADES2
         all_t = TRADES + TRADES2
-        for mod, key in (("trades3", "TRADES3"), ("trades4", "TRADES4"), ("trades5", "TRADES5")):
+        for mod, key in (("trades3", "TRADES3"), ("trades4", "TRADES4"), ("trades5", "TRADES5"), ("trades6", "TRADES6"), ("trades7", "TRADES7")):
             try:
                 m = __import__(mod); all_t = all_t + getattr(m, key)
             except Exception:

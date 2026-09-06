@@ -79,12 +79,13 @@ async def main():
     customers = "--customers" in sys.argv   # 손님 대사만 다시 만든다 (목소리 배정을 바꿨을 때)
     only = [a for a in sys.argv[1:] if not a.startswith("-")]
     S = load_all()
-    order = sorted(S)                       # 목소리 배정은 전체 목록의 자리로 — 일부만 다시 돌려도 같은 목소리
+    order = sorted(S)
     slugs = [s for s in order if not only or s in only]
     sem = asyncio.Semaphore(3)
     jobs = []
+    import zlib
     for slug in slugs:
-        k = order.index(slug)
+        k = zlib.crc32(slug.encode('utf-8'))   # 목소리 배정은 slug 해시로 고정 — 업종을 더 넣어도 기존 배정이 안 바뀐다
         for lang in ("ko", "en"):
             cust = CUSTOMER[lang][k % len(CUSTOMER[lang])]
             for i, ln in enumerate(S[slug][lang]["lines"]):

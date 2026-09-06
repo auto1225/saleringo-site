@@ -38,7 +38,15 @@ try:
     from trades5 import TRADES5
 except Exception:
     TRADES5 = []
-NEW_TRADES = TRADES3 + TRADES4 + TRADES5
+try:
+    from trades6 import TRADES6
+except Exception:
+    TRADES6 = []
+try:
+    from trades7 import TRADES7
+except Exception:
+    TRADES7 = []
+NEW_TRADES = TRADES3 + TRADES4 + TRADES5 + TRADES6 + TRADES7
 ALL = TRADES + TRADES2 + NEW_TRADES
 import json as _json
 _PHOTOS = _json.load(io.open('build/demo/photos.json', encoding='utf-8')) if os.path.exists('build/demo/photos.json') else {}

@@ -34,7 +34,15 @@ try:
     from trades5 import TRADES5
 except Exception:
     TRADES5 = []
-NEW_TRADES = TRADES3 + TRADES4 + TRADES5
+try:
+    from trades6 import TRADES6
+except Exception:
+    TRADES6 = []
+try:
+    from trades7 import TRADES7
+except Exception:
+    TRADES7 = []
+NEW_TRADES = TRADES3 + TRADES4 + TRADES5 + TRADES6 + TRADES7
 TRADES = TRADES + TRADES2 + NEW_TRADES
 
 # 새 업종의 대표 사진은 build/demo/photos.json 에서 — 대본을 쓴 사람이 사진까지 고르지 않는다.

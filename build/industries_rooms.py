@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """en/industries.html 의 방(room) 목록에 새 업종을 넣는다. 멱등 (<!--gen:room--> 표식).
 
-새 업종 데이터(trades3~5)의 en.room / en.room_d / en.room_no 로 <li> 를 만들어 해당 방 <ul> 끝에 붙인다.
+새 업종 데이터(trades3~7)의 en.room / en.room_d / en.room_no 로 <li> 를 만들어 해당 방 <ul> 끝에 붙인다.
 실행: python build/industries_rooms.py"""
 import io
 import os
@@ -14,7 +14,7 @@ os.chdir(ROOT)
 sys.path.insert(0, os.path.join(ROOT, "build", "ko"))
 
 NEW = []
-for mod, key in (("trades3", "TRADES3"), ("trades4", "TRADES4"), ("trades5", "TRADES5")):
+for mod, key in (("trades3", "TRADES3"), ("trades4", "TRADES4"), ("trades5", "TRADES5"), ("trades6", "TRADES6"), ("trades7", "TRADES7")):
     try:
         NEW += getattr(__import__(mod), key)
     except Exception as ex:

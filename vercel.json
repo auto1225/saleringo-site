@@ -254,6 +254,26 @@
       "permanent": true
     },
     {
+      "source": "/en/industries/courier-pack",
+      "destination": "/en/industries/courier-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/courier",
+      "destination": "/en/industries/courier.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/coworking-pack",
+      "destination": "/en/industries/coworking-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/coworking",
+      "destination": "/en/industries/coworking.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries/dental-pack",
       "destination": "/en/industries/dental-pack.html",
       "permanent": true
@@ -344,6 +364,16 @@
       "permanent": true
     },
     {
+      "source": "/en/industries/home-security-pack",
+      "destination": "/en/industries/home-security-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/home-security",
+      "destination": "/en/industries/home-security.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries/home-services-pack",
       "destination": "/en/industries/home-services-pack.html",
       "permanent": true
@@ -364,6 +394,16 @@
       "permanent": true
     },
     {
+      "source": "/en/industries/imaging-pack",
+      "destination": "/en/industries/imaging-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/imaging",
+      "destination": "/en/industries/imaging.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries/insurance-agency-pack",
       "destination": "/en/industries/insurance-agency-pack.html",
       "permanent": true
@@ -381,6 +421,16 @@
     {
       "source": "/en/industries/interior-renovation",
       "destination": "/en/industries/interior-renovation.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/it-repair-pack",
+      "destination": "/en/industries/it-repair-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/it-repair",
+      "destination": "/en/industries/it-repair.html",
       "permanent": true
     },
     {
@@ -534,6 +584,16 @@
       "permanent": true
     },
     {
+      "source": "/en/industries/print-signage-pack",
+      "destination": "/en/industries/print-signage-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/print-signage",
+      "destination": "/en/industries/print-signage.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries/property-management-pack",
       "destination": "/en/industries/property-management-pack.html",
       "permanent": true
@@ -584,6 +644,16 @@
       "permanent": true
     },
     {
+      "source": "/en/industries/schools-pack",
+      "destination": "/en/industries/schools-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/schools",
+      "destination": "/en/industries/schools.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries/self-storage-pack",
       "destination": "/en/industries/self-storage-pack.html",
       "permanent": true
@@ -604,6 +674,26 @@
       "permanent": true
     },
     {
+      "source": "/en/industries/solar-pack",
+      "destination": "/en/industries/solar-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/solar",
+      "destination": "/en/industries/solar.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/staffing-pack",
+      "destination": "/en/industries/staffing-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/staffing",
+      "destination": "/en/industries/staffing.html",
+      "permanent": true
+    },
+    {
       "source": "/en/industries/stays-pack",
       "destination": "/en/industries/stays-pack.html",
       "permanent": true
@@ -611,6 +701,16 @@
     {
       "source": "/en/industries/stays",
       "destination": "/en/industries/stays.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/tours-activities-pack",
+      "destination": "/en/industries/tours-activities-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/industries/tours-activities",
+      "destination": "/en/industries/tours-activities.html",
       "permanent": true
     },
     {
@@ -919,6 +1019,26 @@
       "permanent": true
     },
     {
+      "source": "/ko/industries/courier-pack",
+      "destination": "/ko/industries/courier-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/courier",
+      "destination": "/ko/industries/courier.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/coworking-pack",
+      "destination": "/ko/industries/coworking-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/coworking",
+      "destination": "/ko/industries/coworking.html",
+      "permanent": true
+    },
+    {
       "source": "/ko/industries/dental-pack",
       "destination": "/ko/industries/dental-pack.html",
       "permanent": true
@@ -1009,6 +1129,16 @@
       "permanent": true
     },
     {
+      "source": "/ko/industries/home-security-pack",
+      "destination": "/ko/industries/home-security-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/home-security",
+      "destination": "/ko/industries/home-security.html",
+      "permanent": true
+    },
+    {
       "source": "/ko/industries/home-services-pack",
       "destination": "/ko/industries/home-services-pack.html",
       "permanent": true
@@ -1029,6 +1159,16 @@
       "permanent": true
     },
     {
+      "source": "/ko/industries/imaging-pack",
+      "destination": "/ko/industries/imaging-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/imaging",
+      "destination": "/ko/industries/imaging.html",
+      "permanent": true
+    },
+    {
       "source": "/ko/industries/insurance-agency-pack",
       "destination": "/ko/industries/insurance-agency-pack.html",
       "permanent": true
@@ -1046,6 +1186,16 @@
     {
       "source": "/ko/industries/interior-renovation",
       "destination": "/ko/industries/interior-renovation.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/it-repair-pack",
+      "destination": "/ko/industries/it-repair-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/it-repair",
+      "destination": "/ko/industries/it-repair.html",
       "permanent": true
     },
     {
@@ -1199,6 +1349,16 @@
       "permanent": true
     },
     {
+      "source": "/ko/industries/print-signage-pack",
+      "destination": "/ko/industries/print-signage-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/print-signage",
+      "destination": "/ko/industries/print-signage.html",
+      "permanent": true
+    },
+    {
       "source": "/ko/industries/property-management-pack",
       "destination": "/ko/industries/property-management-pack.html",
       "permanent": true
@@ -1249,6 +1409,16 @@
       "permanent": true
     },
     {
+      "source": "/ko/industries/schools-pack",
+      "destination": "/ko/industries/schools-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/schools",
+      "destination": "/ko/industries/schools.html",
+      "permanent": true
+    },
+    {
       "source": "/ko/industries/self-storage-pack",
       "destination": "/ko/industries/self-storage-pack.html",
       "permanent": true
@@ -1269,6 +1439,26 @@
       "permanent": true
     },
     {
+      "source": "/ko/industries/solar-pack",
+      "destination": "/ko/industries/solar-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/solar",
+      "destination": "/ko/industries/solar.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/staffing-pack",
+      "destination": "/ko/industries/staffing-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/staffing",
+      "destination": "/ko/industries/staffing.html",
+      "permanent": true
+    },
+    {
       "source": "/ko/industries/stays-pack",
       "destination": "/ko/industries/stays-pack.html",
       "permanent": true
@@ -1276,6 +1466,16 @@
     {
       "source": "/ko/industries/stays",
       "destination": "/ko/industries/stays.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/tours-activities-pack",
+      "destination": "/ko/industries/tours-activities-pack.html",
+      "permanent": true
+    },
+    {
+      "source": "/ko/industries/tours-activities",
+      "destination": "/ko/industries/tours-activities.html",
       "permanent": true
     },
     {
@@ -3005,6 +3205,142 @@
       "permanent": false
     },
     {
+      "source": "/industries/courier-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/courier-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier-pack",
+      "destination": "/en/industries/courier-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/courier-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier-pack.html",
+      "destination": "/en/industries/courier-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/courier.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier",
+      "destination": "/en/industries/courier.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/courier.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/courier.html",
+      "destination": "/en/industries/courier.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/coworking-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking-pack",
+      "destination": "/en/industries/coworking-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/coworking-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking-pack.html",
+      "destination": "/en/industries/coworking-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/coworking.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking",
+      "destination": "/en/industries/coworking.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/coworking.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/coworking.html",
+      "destination": "/en/industries/coworking.html",
+      "permanent": false
+    },
+    {
       "source": "/industries/dental-pack",
       "has": [
         {
@@ -3617,6 +3953,74 @@
       "permanent": false
     },
     {
+      "source": "/industries/home-security-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-security-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security-pack",
+      "destination": "/en/industries/home-security-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-security-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security-pack.html",
+      "destination": "/en/industries/home-security-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-security.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security",
+      "destination": "/en/industries/home-security.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/home-security.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/home-security.html",
+      "destination": "/en/industries/home-security.html",
+      "permanent": false
+    },
+    {
       "source": "/industries/home-services-pack",
       "has": [
         {
@@ -3753,6 +4157,74 @@
       "permanent": false
     },
     {
+      "source": "/industries/imaging-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/imaging-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging-pack",
+      "destination": "/en/industries/imaging-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/imaging-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging-pack.html",
+      "destination": "/en/industries/imaging-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/imaging.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging",
+      "destination": "/en/industries/imaging.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/imaging.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/imaging.html",
+      "destination": "/en/industries/imaging.html",
+      "permanent": false
+    },
+    {
       "source": "/industries/insurance-agency-pack",
       "has": [
         {
@@ -3886,6 +4358,74 @@
     {
       "source": "/industries/interior-renovation.html",
       "destination": "/en/industries/interior-renovation.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/it-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair-pack",
+      "destination": "/en/industries/it-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/it-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair-pack.html",
+      "destination": "/en/industries/it-repair-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/it-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair",
+      "destination": "/en/industries/it-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/it-repair.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/it-repair.html",
+      "destination": "/en/industries/it-repair.html",
       "permanent": false
     },
     {
@@ -4909,6 +5449,74 @@
       "permanent": false
     },
     {
+      "source": "/industries/print-signage-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/print-signage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage-pack",
+      "destination": "/en/industries/print-signage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/print-signage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage-pack.html",
+      "destination": "/en/industries/print-signage-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/print-signage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage",
+      "destination": "/en/industries/print-signage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/print-signage.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/print-signage.html",
+      "destination": "/en/industries/print-signage.html",
+      "permanent": false
+    },
+    {
       "source": "/industries/property-management-pack",
       "has": [
         {
@@ -5249,6 +5857,74 @@
       "permanent": false
     },
     {
+      "source": "/industries/schools-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/schools-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools-pack",
+      "destination": "/en/industries/schools-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/schools-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools-pack.html",
+      "destination": "/en/industries/schools-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/schools.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools",
+      "destination": "/en/industries/schools.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/schools.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/schools.html",
+      "destination": "/en/industries/schools.html",
+      "permanent": false
+    },
+    {
       "source": "/industries/self-storage-pack",
       "has": [
         {
@@ -5385,6 +6061,142 @@
       "permanent": false
     },
     {
+      "source": "/industries/solar-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/solar-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar-pack",
+      "destination": "/en/industries/solar-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/solar-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar-pack.html",
+      "destination": "/en/industries/solar-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/solar.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar",
+      "destination": "/en/industries/solar.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/solar.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/solar.html",
+      "destination": "/en/industries/solar.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/staffing-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing-pack",
+      "destination": "/en/industries/staffing-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/staffing-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing-pack.html",
+      "destination": "/en/industries/staffing-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/staffing.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing",
+      "destination": "/en/industries/staffing.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/staffing.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/staffing.html",
+      "destination": "/en/industries/staffing.html",
+      "permanent": false
+    },
+    {
       "source": "/industries/stays-pack",
       "has": [
         {
@@ -5450,6 +6262,74 @@
     {
       "source": "/industries/stays.html",
       "destination": "/en/industries/stays.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities-pack",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/tours-activities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities-pack",
+      "destination": "/en/industries/tours-activities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities-pack.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/tours-activities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities-pack.html",
+      "destination": "/en/industries/tours-activities-pack.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/tours-activities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities",
+      "destination": "/en/industries/tours-activities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko(-[A-Za-z]+)?\\b.*"
+        }
+      ],
+      "destination": "/ko/industries/tours-activities.html",
+      "permanent": false
+    },
+    {
+      "source": "/industries/tours-activities.html",
+      "destination": "/en/industries/tours-activities.html",
       "permanent": false
     },
     {
