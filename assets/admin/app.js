@@ -125,8 +125,21 @@ function renderRoute(m, query) {
 let rerun = null;
 
 /* ── Boot ────────────────────────────────────────────────────────── */
+
+/* /admin/orders 처럼 경로로 들어온 주소를 해시 경로로 바꾼다.
+   로그인 화면이 ?next=/admin/orders 로 돌려보내면 주소창은 그 경로인데
+   화면을 고르는 것은 해시라서, 그대로 두면 주소는 주문인데 대시보드가
+   떠 있는 상태가 된다. 주소를 먼저 맞춰 두고 라우터를 시작한다. */
+function pathToHash() {
+  if (location.hash) return;
+  const p = location.pathname.replace(/^\/admin\/?/, '').replace(/\/+$/, '');
+  if (!p || p === 'index' || p === 'login') return;
+  if (!/^[A-Za-z0-9/_-]{1,120}$/.test(p)) return;
+  try { history.replaceState(null, '', '/admin#/' + p + location.search); } catch (e) { /* ignore */ }
+}
+
 async function boot() {
-  initLang(); applyTheme();
+  initLang(); applyTheme(); pathToHash();
   const [pricing] = await Promise.all([loadPricing(), refreshMe().catch((e) => { toastError(e); throw e; })]);
   ctx.pricing = pricing; setPricing(pricing);
   renderShell();
