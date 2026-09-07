@@ -28,6 +28,7 @@
   "footer.how-answers-are-checked": "How answers are checked",
   "footer.integrations": "Integrations",
   "footer.legal": "Law firms",
+  "footer.login": "Customer sign-in",
   "footer.missed-call-calculator": "Missed-call calculator",
   "footer.movers-amp-removals": "Movers",
   "footer.online-amp-multi-site": "Online &amp; multi-site",
@@ -52,6 +53,7 @@
   "footer.self-storage": "Self storage",
   "footer.senior-living-amp-care": "Senior care",
   "footer.site-map": "Site map",
+  "footer.status-amp-incidents": "Status &amp; incidents",
   "footer.terms": "Terms",
   "footer.terms-of-service": "Terms of service",
   "footer.the-product": "The product",
@@ -101,6 +103,7 @@
   "nav.integrations": "Integrations",
   "nav.judge-it-for-yourself": "Judge it for yourself",
   "nav.legal": "Law firms",
+  "nav.login": "Sign in",
   "nav.missed-call-calculator": "Missed-call calculator",
   "nav.movers-amp-removals": "Movers",
   "nav.online-amp-multi-site": "Online &amp; multi-site",
@@ -130,6 +133,7 @@
   "nav.senior-living-amp-care": "Senior care",
   "nav.site-map-amp-tours": "Site map &amp; tours",
   "nav.subprocessors": "Subprocessors",
+  "nav.tel-note": "Korean number — international rates apply. AI answers first.",
   "nav.terms-of-service": "Terms of service",
   "nav.the-audit-trail": "The audit trail",
   "nav.the-channels-it-answers-on": "The channels it answers on",
@@ -163,7 +167,5 @@
   "nav.who-it-hands-off-to": "Who it hands off to",
   "nav.worked-examples": "Worked examples",
   "nav.your-nbsp-trade": "Your&nbsp;trade",
-  "nav.your-rights": "Your rights",
-  "footer.status-amp-incidents": "Status &amp; incidents",
-  "nav.tel-note": "Korean number — international rates apply. AI answers first."
+  "nav.your-rights": "Your rights"
 }

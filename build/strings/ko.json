@@ -28,6 +28,7 @@
   "footer.how-answers-are-checked": "답변 검증 방식",
   "footer.integrations": "연동",
   "footer.legal": "법률사무소",
+  "footer.login": "고객사 로그인",
   "footer.missed-call-calculator": "놓친 전화 계산기",
   "footer.movers-amp-removals": "이사 · 용달",
   "footer.online-amp-multi-site": "온라인 &amp; 다점포",
@@ -52,6 +53,7 @@
   "footer.self-storage": "셀프 스토리지",
   "footer.senior-living-amp-care": "요양원 · 방문요양",
   "footer.site-map": "사이트맵",
+  "footer.status-amp-incidents": "상태 &amp; 장애 이력",
   "footer.terms": "약관",
   "footer.terms-of-service": "이용약관",
   "footer.the-product": "제품",
@@ -101,6 +103,7 @@
   "nav.integrations": "연동",
   "nav.judge-it-for-yourself": "직접 써 보고 판단하기",
   "nav.legal": "법률사무소",
+  "nav.login": "로그인",
   "nav.missed-call-calculator": "놓친 전화 계산기",
   "nav.movers-amp-removals": "이사 · 용달",
   "nav.online-amp-multi-site": "온라인 &amp; 다점포",
@@ -130,6 +133,7 @@
   "nav.senior-living-amp-care": "요양원 · 방문요양",
   "nav.site-map-amp-tours": "사이트맵 &amp; 둘러보기",
   "nav.subprocessors": "수탁업체",
+  "nav.tel-note": "070 번호 · AI가 먼저 받습니다",
   "nav.terms-of-service": "이용약관",
   "nav.the-audit-trail": "감사 기록",
   "nav.the-channels-it-answers-on": "응대하는 채널",
@@ -163,7 +167,5 @@
   "nav.who-it-hands-off-to": "누구에게 넘기는가",
   "nav.worked-examples": "업종별 통화 예시",
   "nav.your-nbsp-trade": "업종",
-  "nav.your-rights": "정보주체의 권리",
-  "footer.status-amp-incidents": "상태 &amp; 장애 이력",
-  "nav.tel-note": "070 번호 · AI가 먼저 받습니다"
+  "nav.your-rights": "정보주체의 권리"
 }

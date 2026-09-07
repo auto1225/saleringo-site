@@ -706,6 +706,13 @@ body[data-chan] .chip.on{background:var(--accent-glass);
 .nav .telcta b{color:#141A1F;}
 .nav .telcta:hover b{color:var(--accent);}
 @media (max-width:1100px){.nav .telcta{display:none;}}
+/* 로그인 — 요금을 내고 쓰시는 분이 돌아오는 문. 팔러 나가는 단추(견적 받기)
+   옆에 두되, 그 단추와 경쟁하지 않게 글자 링크로 둔다. 좁은 화면에서도
+   남긴다: 버거 메뉴 안에 넣으면 이미 고객인 분이 메뉴를 열어 찾아야 한다. */
+.nav .navlogin{font-size:var(--fs-xs);font-weight:700;color:var(--tx2);white-space:nowrap;}
+.nav .navlogin:hover{color:#141A1F;}
+.navwrap.onlight .nav .navlogin{color:var(--l-mut);}
+.navwrap.onlight .nav .navlogin:hover{color:var(--l-ink);}
 
 /* ── proof block that replaces an empty rectangle ── */
 .proofgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;}

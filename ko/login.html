@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고객사 로그인 &mdash; Saleringo</title>
+<meta name="description" content="쓰고 계신 주소를 넣으시면 그 주소의 로그인 화면으로 보내 드립니다. 주문했지만 아직 개통 전이시면 주문 조회로 확인하십시오.">
+<link rel="canonical" href="https://claude.saleringo.com/ko/login.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saleringo">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://claude.saleringo.com/ko/login.html">
+<meta property="og:title" content="고객사 로그인 &mdash; Saleringo">
+<meta property="og:description" content="쓰고 계신 주소를 넣으시면 그 주소의 로그인 화면으로 보내 드립니다. 주문했지만 아직 개통 전이시면 주문 조회로 확인하십시오.">
+<meta name="twitter:title" content="고객사 로그인 &mdash; Saleringo">
+<meta name="twitter:description" content="쓰고 계신 주소를 넣으시면 그 주소의 로그인 화면으로 보내 드립니다. 주문했지만 아직 개통 전이시면 주문 조회로 확인하십시오.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230FA3A3'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"고객사 로그인 — Saleringo","description":"쓰고 계신 주소를 넣으시면 그 주소의 로그인 화면으로 보내 드립니다. 주문했지만 아직 개통 전이시면 주문 조회로 확인하십시오.","url":"https://claude.saleringo.com/ko/login.html","isPartOf":{"@type":"WebSite","name":"Saleringo","url":"https://saleringo.com/"},"inLanguage":"ko-KR"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://claude.saleringo.com/ko/index.html"},{"@type":"ListItem","position":2,"name":"고객사 로그인","item":"https://claude.saleringo.com/ko/login.html"}]}
+</script>
+<link rel="stylesheet" href="../assets/css/site.css?v=87.0">
+<link rel="stylesheet" href="../assets/css/scenes.css?v=87.0">
+<link rel="stylesheet" href="../assets/css/crm.css?v=87.0">
+<link rel="stylesheet" href="../assets/css/examples.css?v=87.0">
+<link rel="stylesheet" href="../assets/css/ko.css?v=87.0">
+<link rel="stylesheet" href="../assets/css/ledger.css?v=87.0">
+<style>
+
+  .lgwrap{max-width:620px;margin:0 auto;}
+  .lgform{margin-top:32px;}
+  .lgfield{display:grid;gap:10px;}
+  .lgfield > label{font-size:var(--fs-sm);font-weight:600;color:#141A1F;}
+  .lgaddr{display:flex;align-items:stretch;border:1px solid var(--hair-d);border-radius:10px;
+    background:#FFFFFF;overflow:hidden;}
+  .lgaddr input{flex:1 1 auto;min-width:0;border:0;padding:14px 16px;font-size:var(--fs-body);
+    font-family:var(--mono,ui-monospace,monospace);color:#141A1F;background:transparent;}
+  .lgaddr input:focus{outline:none;}
+  .lgaddr .suffix{display:flex;align-items:center;padding:0 16px;background:rgba(20,26,31,.045);
+    border-left:1px solid var(--hair-d);font-family:var(--mono,ui-monospace,monospace);
+    font-size:var(--fs-sm);color:var(--tx2);white-space:nowrap;}
+  .lgaddr:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(11,120,120,.12);}
+  .lghint{font-size:var(--fs-xs);color:var(--tx3);line-height:1.7;}
+  .lgpreview{font-family:var(--mono,ui-monospace,monospace);font-size:var(--fs-xs);color:var(--teal);}
+  .lgerr{min-height:20px;font-size:var(--fs-xs);color:var(--red,#C0392B);font-weight:600;}
+  .lgform .btn{margin-top:4px;}
+  .lgcards{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:700px){.lgcards{grid-template-columns:1fr;}}
+  .lgcard{padding:24px 22px;border:1px solid var(--hair-d);border-radius:14px;
+    background:rgba(20,26,31,.028);}
+  .lgcard b{display:block;color:#141A1F;font-size:var(--fs-body);margin-bottom:8px;}
+  .lgcard p{font-size:var(--fs-sm);line-height:1.8;color:var(--tx2);}
+  .lgcard .lnk{display:inline-block;margin-top:12px;font-size:var(--fs-sm);font-weight:600;}
+  .lgnote{margin-top:34px;padding-top:22px;border-top:1px solid var(--hair-d);
+    font-size:var(--fs-xs);line-height:1.85;color:var(--tx3);}
+</style>
+<!--#alt-->
+<link rel="alternate" hreflang="en" href="https://claude.saleringo.com/en/login.html">
+<link rel="alternate" hreflang="ko-KR" href="https://claude.saleringo.com/ko/login.html">
+<link rel="alternate" hreflang="x-default" href="https://claude.saleringo.com/en/login.html">
+<!--/#alt-->
+</head>
+<body data-grade="trust">
+<header class="hero nophoto sec-dark bg-aurora">
+  <div class="scrim" aria-hidden="true"></div>
+  <!--#nav-->
+<div class="navwrap"><nav class="nav" aria-label="주 메뉴">
+  <a class="logo" href="./index.html"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" decoding="async">Saleringo</a><span class="ver" title="Site build v86.0">v86.0</span>
+  <span class="links" id="navlinks">
+    <span class="navitem"><button class="navtop" type="button" id="nt-how" aria-expanded="false" aria-controls="np-how">작동 방식<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-how" hidden aria-labelledby="nt-how"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-how-0">전체 구성</p><ul aria-labelledby="nh-how-0"><li><a href="./platform.html">플랫폼 &amp; CRM</a></li><li><a href="./platform.html#inside">응대 한 건이 만들어지는 과정</a></li><li><a href="./platform.html#who-next">누구에게 넘기는가</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-1">응대하는 채널</p><ul aria-labelledby="nh-how-1"><li><a href="./voice.html">AI 전화</a></li><li><a href="./webchat.html">웹사이트 채팅</a></li><li><a href="./whatsapp.html">카카오톡 &amp; 메신저</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-how-2">함께 붙는 것</p><ul aria-labelledby="nh-how-2"><li><a href="./integrations.html">연동</a></li><li><a href="./verified-ai.html">답변 검증 방식</a></li><li><a href="./ai-answering-service.html">고르기 전에: AI 응대 세 가지</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-see" aria-expanded="false" aria-controls="np-see">직접 보기<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-see" hidden aria-labelledby="nt-see"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-see-0">직접 보기</p><ul aria-labelledby="nh-see-0"><li><a href="./demo.html">대화 한 건 보기</a></li><li><a href="./about.html#call-them">지금 AI에 전화해 보기</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-1">통화 기록 읽기</p><ul aria-labelledby="nh-see-1"><li><a href="./examples.html">업종별 통화 예시</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-see-2">직접 써 보고 판단하기</p><ul aria-labelledby="nh-see-2"><li><a href="./ai-answering-service.html#ask">업체에 물어봐야 할 것</a></li><li><a href="./verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="./about.html">누가 만드는가</a></li></ul></div><p class="np-foot"><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trade" aria-expanded="false" aria-controls="np-trade">업종<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trade" hidden aria-labelledby="nt-trade"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trade-0">의료 &amp; 요양</p><ul aria-labelledby="nh-trade-0"><li><a href="./industries/dental.html">치과</a></li><li><a href="./industries/clinics.html">의원 · 피부과</a></li><li><a href="./industries/veterinary.html">동물병원</a></li><li><a href="./industries/senior-care.html">요양원 · 방문요양</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-1">주거 &amp; 부동산</p><ul aria-labelledby="nh-trade-1"><li><a href="./industries/home-services.html">설비 · 수리</a></li><li><a href="./industries/pest-control.html">방역 · 해충방제</a></li><li><a href="./industries/property-management.html">건물관리</a></li><li><a href="./industries/real-estate.html">부동산</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-2">차량 &amp; 보관</p><ul aria-labelledby="nh-trade-2"><li><a href="./industries/auto-repair.html">자동차 정비</a></li><li><a href="./industries/equipment-rental.html">장비 대여</a></li><li><a href="./industries/self-storage.html">셀프 스토리지</a></li><li><a href="./industries/movers.html">이사 · 용달</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-3">예약제 업종</p><ul aria-labelledby="nh-trade-3"><li><a href="./industries/salons.html">미용실</a></li><li><a href="./industries/fitness.html">헬스장</a></li><li><a href="./industries/academies.html">학원</a></li><li><a href="./industries/golf.html">골프장 · 연습장</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-4">공간 &amp; 접객</p><ul aria-labelledby="nh-trade-4"><li><a href="./industries/stays.html">펜션 · 숙박</a></li><li><a href="./industries/venues.html">웨딩홀 · 행사장</a></li><li><a href="./industries/restaurants.html">음식점</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-5">전문직 &amp; 공공</p><ul aria-labelledby="nh-trade-5"><li><a href="./industries/legal.html">법률사무소</a></li><li><a href="./industries/funeral-homes.html">장례식장</a></li><li><a href="./industries/universities.html">대학 입학상담</a></li><li><a href="./industries/public-sector.html">공공기관</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trade-6">온라인 &amp; 다점포</p><ul aria-labelledby="nh-trade-6"><li><a href="./industries/ecommerce.html">온라인 쇼핑몰</a></li><li><a href="./industries/franchise.html">프랜차이즈 본부</a></li></ul></div><p class="np-foot"><a class="np-all" href="./industries.html">전체 업종 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-price" aria-expanded="false" aria-controls="np-price">요금<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-price" hidden aria-labelledby="nt-price"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-price-0">숫자</p><ul aria-labelledby="nh-price-0"><li><a href="./pricing.html#plans">요금제와 가격</a></li><li><a href="./checkout.html">주문서 · 바로 시작</a></li><li><a href="./pricing.html#crm">CRM 포함 범위</a></li><li><a href="./pricing.html#channels">채널과 분당 요금</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-1">불리한 것도 적은 부분</p><ul aria-labelledby="nh-price-1"><li><a href="./pricing.html#alternatives">무엇과 비교하는지</a></li><li><a href="./pricing.html#not-paying">내지 않아도 되는 비용</a></li><li><a href="./index.html#calculator">놓친 전화 계산기</a></li><li><a href="./pricing.html#faq">요금 관련 질문</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-price-2">데이터가 어디에 있는가</p><ul aria-labelledby="nh-price-2"><li><a href="./pricing.html#countries">국가와 통화</a></li><li><a href="./cross-border.html">해외 대상 사업</a></li><li><a href="./get-started.html">견적 받기</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./pricing.html?tour=costs#alternatives">둘러보기: 비용은 얼마인가<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+    <span class="navitem"><button class="navtop" type="button" id="nt-trust" aria-expanded="false" aria-controls="np-trust">보안<i class="cv" aria-hidden="true"></i></button><div class="navpanel" id="np-trust" hidden aria-labelledby="nt-trust"><div class="np-in"><div class="np-col"><p class="np-h" id="nh-trust-0">어떻게 보관하는가</p><ul aria-labelledby="nh-trust-0"><li><a href="./security.html">보안 &amp; 신뢰</a></li><li><a href="./security.html#measures">보안 조치 목록</a></li><li><a href="./security.html#subprocessors">수탁업체</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-1">하지 않는 일</p><ul aria-labelledby="nh-trust-1"><li><a href="./verified-ai.html">답변 검증 방식</a></li><li><a href="./verified-ai.html#life">답변 하나가 만들어지기까지</a></li><li><a href="./verified-ai.html#audit">감사 기록</a></li></ul></div><div class="np-col"><p class="np-h" id="nh-trust-2">회사 &amp; 법적 고지</p><ul aria-labelledby="nh-trust-2"><li><a href="./about.html">회사 소개</a></li><li><a href="./privacy.html">개인정보처리방침</a></li><li><a href="./terms.html">이용약관</a></li><li><a href="./sitemap.html">사이트맵 &amp; 둘러보기</a></li></ul></div><p class="np-foot"><a class="np-tour" href="./verified-ai.html?tour=refuses#life">둘러보기: 하지 않는 일<span aria-hidden="true"> →</span></a><a class="np-all" href="./sitemap.html">모든 페이지 · 사이트맵</a></p></div></div></span>
+  </span>
+  <a class="telcta" data-tel href="tel:+827052770820" title="070 번호 · AI가 먼저 받습니다"><span aria-hidden="true">&#9990;</span><b data-tel-label>+82 70-5277-0820</b></a>
+  <a class="navlogin" href="./login.html" aria-current="page">로그인</a>
+  <a class="langsw" href="../en/login.html" hreflang="en" lang="en">English</a>
+  <span class="sep"></span>
+  <a class="btn btn-white" href="./get-started.html">견적 받기<span class="cir">&#8599;</span></a>
+  <button class="burger" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav></div>
+<!--/#nav-->
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><i></i>고객사 로그인</span>
+    <h1 style="margin-top:24px;">쓰고 계신 주소로<br>들어가십니다.</h1>
+    <p class="sub">업체마다 주소가 다릅니다. 사장님 주소를 넣으시면 그 주소의 로그인 화면으로 보내 드립니다. 비밀번호는 이 화면에서 받지 않습니다.</p>
+  </div>
+</header>
+
+<main>
+<section class="t-md sec-light bg-paper">
+  <div class="wrap">
+    <div class="lgwrap">
+      <form class="lgform" data-workspace-login novalidate>
+        <div class="lgfield">
+          <label for="wsaddr">쓰고 계신 주소</label>
+          <div class="lgaddr">
+            <input id="wsaddr" name="workspace" type="text" data-ws-input
+                   autocomplete="organization" autocapitalize="none" autocorrect="off"
+                   spellcheck="false" inputmode="url" placeholder="예: saebom"
+                   aria-describedby="wshint">
+            <span class="suffix" aria-hidden="true">.saleringo.com</span>
+          </div>
+          <p class="lgpreview" data-ws-preview hidden></p>
+          <p class="lgerr" data-ws-error role="alert" aria-live="polite"></p>
+          <p class="lghint" id="wshint">개통 안내 메일에 적힌 주소입니다. 주소창에서 통째로 복사해 붙여 넣으셔도 되고, 앞부분만 적으셔도 됩니다. 자기 도메인을 쓰고 계시면 그 도메인을 그대로 넣으십시오.</p>
+        </div>
+        <p><button class="btn btn-teal" type="submit" data-ws-go>로그인 화면으로<span class="cir">&#8599;</span></button></p>
+      </form>
+
+      <noscript><p class="lghint" style="margin-top:16px;">자바스크립트가 꺼져 있습니다. 주소창에 <b>사장님주소.saleringo.com/login</b> 을 바로 치시면 됩니다.</p></noscript>
+
+      <div class="lgcards">
+        <div class="lgcard">
+          <b>주문은 했는데 아직 안 열렸습니다</b>
+          <p>개통 전에는 로그인할 화면이 아직 없습니다. 주문번호와 접수하실 때 쓰신 이메일로 지금 어느 단계인지 보실 수 있습니다.</p>
+          <a class="lnk" href="./order-status.html">주문 조회 &rarr;</a>
+        </div>
+        <div class="lgcard">
+          <b>아직 고객이 아닙니다</b>
+          <p>계정은 주문서를 받고 사람이 확인한 뒤에 열어 드립니다. 스스로 가입하는 화면은 두지 않았습니다 — 회선과 지식베이스를 같이 준비해야 첫날부터 제대로 받기 때문입니다.</p>
+          <a class="lnk" href="./checkout.html">주문서 열기 &rarr;</a>
+        </div>
+      </div>
+
+      <p class="lgnote">주소가 기억나지 않으시면 hello@saleringo.com 으로 회사 이름과 함께 보내 주십시오. 사람이 확인해서 알려 드립니다. 직원 계정 추가와 비밀번호 재설정은 로그인하신 뒤 설정에서 하시거나, 같은 주소로 요청하시면 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<!--#footer-->
+<footer class="bigfooter"><div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="logo"><img class="lmark" src="../assets/img/saleringo-mark.png" alt="" width="128" height="128" loading="lazy" decoding="async">Saleringo</span><span class="ver ver-f">v86.0</span>
+        <p>전화 · 채팅 · 메신저를 AI가 대신 받고, 업종별 CRM이 모든 대화를 예약과 견적, 그리고 고객으로 남깁니다.</p>
+        <p class="fmail"><a href="mailto:hello@saleringo.com">hello@saleringo.com</a></p>
+        <a class="lnk fmap" href="./sitemap.html">이 사이트의 모든 페이지 &mdash; 사이트맵과 둘러보기 <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="fcol"><div class="hl3">제품</div><a class="lnk" href="./platform.html">플랫폼 &amp; CRM</a>
+        <a class="lnk" href="./voice.html">AI 전화</a>
+        <a class="lnk" href="./webchat.html">웹사이트 채팅</a>
+        <a class="lnk" href="./whatsapp.html">카카오톡 &amp; 메신저</a>
+        <a class="lnk" href="./integrations.html">연동</a>
+        <a class="lnk" href="./verified-ai.html">답변 검증 방식</a>
+        <a class="lnk" href="./ai-answering-service.html">고르기 전에 읽을 것</a></div>
+      <div class="fcol ftrades"><div class="hl3">업종</div><div class="ftgrid"><div class="fgrp"><div class="hl5">의료 &amp; 요양</div><a class="lnk" href="./industries/dental.html">치과</a><a class="lnk" href="./industries/clinics.html">의원 · 피부과</a><a class="lnk" href="./industries/veterinary.html">동물병원</a><a class="lnk" href="./industries/senior-care.html">요양원 · 방문요양</a></div><div class="fgrp"><div class="hl5">주거 &amp; 부동산</div><a class="lnk" href="./industries/home-services.html">설비 · 수리</a><a class="lnk" href="./industries/pest-control.html">방역 · 해충방제</a><a class="lnk" href="./industries/property-management.html">건물관리</a><a class="lnk" href="./industries/real-estate.html">부동산</a></div><div class="fgrp"><div class="hl5">차량 &amp; 보관</div><a class="lnk" href="./industries/auto-repair.html">자동차 정비</a><a class="lnk" href="./industries/equipment-rental.html">장비 대여</a><a class="lnk" href="./industries/self-storage.html">셀프 스토리지</a><a class="lnk" href="./industries/movers.html">이사 · 용달</a></div><div class="fgrp"><div class="hl5">예약제 업종</div><a class="lnk" href="./industries/salons.html">미용실</a><a class="lnk" href="./industries/fitness.html">헬스장</a><a class="lnk" href="./industries/academies.html">학원</a><a class="lnk" href="./industries/golf.html">골프장 · 연습장</a></div><div class="fgrp"><div class="hl5">공간 &amp; 접객</div><a class="lnk" href="./industries/stays.html">펜션 · 숙박</a><a class="lnk" href="./industries/venues.html">웨딩홀 · 행사장</a><a class="lnk" href="./industries/restaurants.html">음식점</a></div><div class="fgrp"><div class="hl5">전문직 &amp; 공공</div><a class="lnk" href="./industries/legal.html">법률사무소</a><a class="lnk" href="./industries/funeral-homes.html">장례식장</a><a class="lnk" href="./industries/universities.html">대학 입학상담</a><a class="lnk" href="./industries/public-sector.html">공공기관</a></div><div class="fgrp"><div class="hl5">온라인 &amp; 다점포</div><a class="lnk" href="./industries/ecommerce.html">온라인 쇼핑몰</a><a class="lnk" href="./industries/franchise.html">프랜차이즈 본부</a></div></div><a class="lnk ftall" href="./industries.html">전체 업종 →</a></div>
+      <div class="fcol"><div class="hl3">가격과 확인</div><a class="lnk" href="./pricing.html">요금</a>
+        <a class="lnk" href="./pricing.html#plans">요금제</a>
+        <a class="lnk" href="./pricing.html#not-paying">내지 않아도 되는 비용</a>
+        <a class="lnk" href="./index.html#calculator">놓친 전화 계산기</a>
+        <a class="lnk" href="./pricing.html#countries">국가와 통화</a>
+        <a class="lnk" href="./demo.html">대화 한 건 보기</a>
+        <a class="lnk" href="./get-started.html">견적 받기</a>
+        <a class="lnk" href="./login.html" aria-current="page">고객사 로그인</a></div>
+      <div class="fcol"><div class="hl3">회사 &amp; 신뢰</div><a class="lnk" href="./about.html">회사 소개</a>
+        <a class="lnk" href="./security.html">보안 &amp; 신뢰</a>
+        <a class="lnk" href="./verified-ai.html">답변 검증 방식</a>
+        <a class="lnk" href="./privacy.html">개인정보처리방침</a>
+        <a class="lnk" href="./terms.html">이용약관</a>
+        <a class="lnk" href="./status.html">상태 &amp; 장애 이력</a>
+        <a class="lnk" href="./sitemap.html">사이트맵</a></div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Saleringo &middot; 정직한마케팅 주식회사 &mdash; 대한민국 법인, 전 세계 고객에게 서비스합니다</span>
+      <span class="r"><a class="lnk" href="./sitemap.html">사이트맵</a><a class="lnk" href="./privacy.html">개인정보</a><a class="lnk" href="./terms.html">약관</a><a class="langsw" href="../en/login.html" hreflang="en" lang="en">English</a><span>한국어 &middot; 대한민국 사업자를 위한 페이지</span></span>
+    </div>
+  </div></footer>
+<!--/#footer-->
+
+
+<script src="../assets/js/site.js?v=87.0"></script>
+<script src="../assets/js/balance.js?v=87.0" defer></script>
+<script src="../assets/js/wrap.js?v=87.0" defer></script>
+<script src="../assets/js/login.js?v=87.0" defer></script>
+</body>
+</html>
