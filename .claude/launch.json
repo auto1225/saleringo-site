@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8777"],
       "port": 8777
+    },
+    {
+      "name": "vercel-dev",
+      "runtimeExecutable": "vercel",
+      "runtimeArgs": ["dev", "--listen", "3777", "--yes"],
+      "port": 3777
     }
   ]
 }

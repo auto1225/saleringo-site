@@ -13,3 +13,8 @@ __pycache__/
 
 # 음성 다듬기 표식 (build/demo_trim.py)
 *.mp3.trim
+
+# ruflo/claude-flow 가 만드는 로컬 캐시. 저장소에 올릴 것이 아니다.
+.claude-flow/
+.claude/proven-config.json
+.claude/.proven-config-version

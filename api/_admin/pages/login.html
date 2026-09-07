@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>판매 관리자 로그인 · Saleringo</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/admin/admin.css?v=86.0">
+<link rel="stylesheet" href="/assets/admin/parts.css?v=86.0">
+</head>
+<body>
+<main class="login-wrap">
+  <form class="login-card" id="loginForm" novalidate>
+    <div class="brand">Saleringo <small data-i18n="app.title">판매 관리자</small></div>
+    <h1 data-i18n="login.title" style="font-size:22px;margin-bottom:4px">판매 관리자 로그인</h1>
+    <p class="muted small" data-i18n="login.sub" style="margin-bottom:18px">정직한마케팅 운영자 전용</p>
+    <div class="stack">
+      <div class="fld">
+        <label for="username" data-i18n="login.username">아이디</label>
+        <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required autofocus>
+      </div>
+      <div class="fld">
+        <label for="password" data-i18n="login.password">비밀번호</label>
+        <div class="pw-wrap">
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button type="button" class="btn-link" id="togglePw" aria-pressed="false" data-i18n="btn.show">보기</button>
+        </div>
+      </div>
+      <p class="err-line" id="err" role="alert" aria-live="assertive"></p>
+      <button type="submit" class="btn btn-primary" id="submit" style="width:100%;min-height:44px" data-i18n="btn.login">로그인</button>
+    </div>
+    <div class="foot">
+      <span class="health" id="health"><span class="dot" aria-hidden="true"></span><span data-i18n="login.db_checking">DB 상태 확인 중…</span></span>
+      <button type="button" class="btn btn-sm mono" id="lang" aria-label="Language">EN</button>
+    </div>
+  </form>
+</main>
+<script type="module" src="/assets/admin/login.js?v=86.0"></script>
+</body>
+</html>

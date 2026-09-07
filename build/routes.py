@@ -127,15 +127,27 @@ def build():
 
 
 cfg, en, ko = build()
-# 보안 헤더 블록(/(.*))은 이 스크립트가 만들지 않는다. 있으면 그대로 실어 나른다 —
-# 한 번 지워져 배포된 적이 있어서(2026-09-04) 여기서 붙든다.
+# 이 스크립트가 만들지 않는 블록은 있으면 그대로 실어 나른다. 다시 쓰면서
+# 지워 버리면 배포가 조용히 망가지기 때문이다.
+#   · 보안 헤더 /(.*)      — 한 번 지워져 배포된 적이 있다(2026-09-04).
+#   · functions/rewrites   — 판매 관리자(/admin, /api/admin)가 이걸로 산다.
+#     이게 사라지면 관리자 화면과 API 가 통째로 404 가 된다.
+#   · /admin·/api/admin 헤더(noindex, no-store).
 if os.path.exists('vercel.json'):
     try:
         _prev = json.loads(io.open('vercel.json', encoding='utf-8').read())
         _have = set(h.get('source') for h in cfg.get('headers', []))
         for h in _prev.get('headers', []):
-            if h.get('source') == '/(.*)' and h['source'] not in _have:
+            src = h.get('source') or ''
+            if src in _have:
+                continue
+            if (src == '/(.*)' or src.startswith('/admin')
+                    or src.startswith('/api/admin') or src.startswith('/assets/admin')):
                 cfg.setdefault('headers', []).append(h)
+                _have.add(src)
+        for key in ('functions', 'rewrites'):
+            if _prev.get(key):
+                cfg[key] = _prev[key]
     except ValueError:
         pass
 text = json.dumps(cfg, ensure_ascii=False, indent=2) + '\n'
