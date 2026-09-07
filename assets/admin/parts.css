@@ -20,7 +20,12 @@ html[lang^="ko"] .btn{font-family:'IBM Plex Sans KR','IBM Plex Sans',sans-serif;
 .btn-link:hover{color:var(--ink);text-decoration:underline;}
 .btn.on{background:var(--ink);border-color:var(--ink);color:var(--paper);}
 .btngroup{display:inline-flex;flex-wrap:wrap;gap:6px;}
-.seg{display:inline-flex;border:1px solid var(--hair3);border-radius:var(--r);overflow:hidden;}
+/* 좁은 화면에서 칸이 많아지면 이 띠가 페이지를 넓혀 가로 스크롤을 만든다.
+   띠 안에서만 밀리게 두면 본문은 그대로 있는다. */
+.seg{display:inline-flex;border:1px solid var(--hair3);border-radius:var(--r);overflow-x:auto;
+  max-width:100%;scrollbar-width:none;}
+.seg::-webkit-scrollbar{display:none;}
+.seg button{flex:0 0 auto;white-space:nowrap;}
 .seg button{background:none;border:0;padding:0 12px;min-height:34px;font:500 13px var(--font-body);color:var(--ink2);cursor:pointer;}
 .seg button + button{border-left:1px solid var(--hair2);}
 .seg button[aria-pressed=true]{background:var(--ink);color:var(--paper);}
