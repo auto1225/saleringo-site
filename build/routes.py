@@ -63,6 +63,20 @@ def build():
     redirects = [
         {'source': '/favicon.ico', 'destination': '/favicon.svg', 'permanent': False},
     ]
+    # ── 0. 로그인·가입은 운영 앱이 받는다 ─────────────────────────────────
+    # 이 사이트는 파는 곳이고, 로그인·가입은 saleringo.com 이 한다.
+    # 하루쯤 있었던 /ko/login.html(주소를 물어보던 문)을 저장해 둔 사람과,
+    # 그냥 /login 을 쳐 보는 사람이 404 를 만나지 않게 한다.
+    for src in ('/login', '/login.html', '/en/login', '/en/login.html',
+                '/ko/login', '/ko/login.html'):
+        redirects.append({'source': src,
+                          'destination': 'https://saleringo.com/login',
+                          'permanent': True})
+    for src in ('/signup', '/signup.html', '/en/signup', '/en/signup.html',
+                '/ko/signup', '/ko/signup.html'):
+        redirects.append({'source': src,
+                          'destination': 'https://saleringo.com/signup',
+                          'permanent': True})
 
     # ── 1. 언어가 붙은 주소에서 .html 빼기 ────────────────────────────────
     # /en/pricing → /en/pricing.html, /ko/pricing → /ko/pricing.html

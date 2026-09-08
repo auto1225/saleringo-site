@@ -9,6 +9,66 @@
       "permanent": false
     },
     {
+      "source": "/login",
+      "destination": "https://saleringo.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/login.html",
+      "destination": "https://saleringo.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/en/login",
+      "destination": "https://saleringo.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/en/login.html",
+      "destination": "https://saleringo.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/ko/login",
+      "destination": "https://saleringo.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/ko/login.html",
+      "destination": "https://saleringo.com/login",
+      "permanent": true
+    },
+    {
+      "source": "/signup",
+      "destination": "https://saleringo.com/signup",
+      "permanent": true
+    },
+    {
+      "source": "/signup.html",
+      "destination": "https://saleringo.com/signup",
+      "permanent": true
+    },
+    {
+      "source": "/en/signup",
+      "destination": "https://saleringo.com/signup",
+      "permanent": true
+    },
+    {
+      "source": "/en/signup.html",
+      "destination": "https://saleringo.com/signup",
+      "permanent": true
+    },
+    {
+      "source": "/ko/signup",
+      "destination": "https://saleringo.com/signup",
+      "permanent": true
+    },
+    {
+      "source": "/ko/signup.html",
+      "destination": "https://saleringo.com/signup",
+      "permanent": true
+    },
+    {
       "source": "/en/about",
       "destination": "/en/about.html",
       "permanent": true
@@ -61,11 +121,6 @@
     {
       "source": "/en/integrations",
       "destination": "/en/integrations.html",
-      "permanent": true
-    },
-    {
-      "source": "/en/login",
-      "destination": "/en/login.html",
       "permanent": true
     },
     {
@@ -831,11 +886,6 @@
     {
       "source": "/ko/integrations",
       "destination": "/ko/integrations.html",
-      "permanent": true
-    },
-    {
-      "source": "/ko/login",
-      "destination": "/ko/login.html",
       "permanent": true
     },
     {
@@ -1920,40 +1970,6 @@
     {
       "source": "/integrations.html",
       "destination": "/en/integrations.html",
-      "permanent": false
-    },
-    {
-      "source": "/login",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^ko(-[A-Za-z]+)?\\b.*"
-        }
-      ],
-      "destination": "/ko/login.html",
-      "permanent": false
-    },
-    {
-      "source": "/login",
-      "destination": "/en/login.html",
-      "permanent": false
-    },
-    {
-      "source": "/login.html",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^ko(-[A-Za-z]+)?\\b.*"
-        }
-      ],
-      "destination": "/ko/login.html",
-      "permanent": false
-    },
-    {
-      "source": "/login.html",
-      "destination": "/en/login.html",
       "permanent": false
     },
     {
